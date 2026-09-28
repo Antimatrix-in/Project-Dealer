@@ -1,0 +1,348 @@
+import React from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { PROJECTS_DATA } from "@/data/projects";
+import {
+  ArrowLeft,
+  Layers,
+  Code2,
+  FileCheck2,
+  Presentation,
+  CheckCircle2,
+  Sparkles,
+  Cpu,
+  MonitorCheck,
+  BookOpen,
+  ArrowRight
+} from "lucide-react";
+import ProjectDetailActions from "./ProjectDetailActions";
+
+interface ProjectPageProps {
+  params: Promise<{ id: string }>;
+}
+
+export async function generateStaticParams() {
+  return PROJECTS_DATA.map((p) => ({
+    id: p.id,
+  }));
+}
+
+export async function generateMetadata({ params }: ProjectPageProps) {
+  const { id } = await params;
+  const project = PROJECTS_DATA.find((p) => p.id === id || p.slug === id);
+  if (!project) return { title: "Project Not Found" };
+
+  return {
+    title: `${project.title} - AntiMatrix Academic Project Center`,
+    description: project.abstract.slice(0, 160),
+  };
+}
+
+export default async function ProjectDetailPage({ params }: ProjectPageProps) {
+  const { id } = await params;
+  const project = PROJECTS_DATA.find((p) => p.id === id || p.slug === id);
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedProjects = PROJECTS_DATA.filter(
+    (p) => p.category === project.category && p.id !== project.id
+  ).slice(0, 3);
+
+  return (
+    <div className="pt-28 pb-20 bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Breadcrumb / Back button */}
+        <div className="mb-6 flex items-center justify-between">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-[#64748B] hover:text-[#0B1F4D] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Projects Catalog</span>
+          </Link>
+          <div className="flex items-center gap-2 text-xs">
+            <span className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700">
+              {project.level}
+            </span>
+            <span className="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-900 font-mono font-bold">
+              {project.year}
+            </span>
+          </div>
+        </div>
+
+        {/* Top Header Banner Card */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-sm mb-10">
+          <div className="max-w-4xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 border border-amber-200 text-amber-900">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
+              {project.category}
+            </div>
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
+              {project.title}
+            </h1>
+
+            <p className="text-base sm:text-lg text-[#64748B] font-normal leading-relaxed">
+              {project.tagline}
+            </p>
+
+            {/* Quick Action Buttons (Client Component) */}
+            <div className="pt-2">
+              <ProjectDetailActions projectTitle={project.title} category={project.category} />
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content Layout Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left 2 Columns: Abstract, Features, Modules, Diagrams */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Project Abstract Section */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
+                <BookOpen className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-xl font-bold text-[#0F172A]">Project Abstract &amp; Academic Scope</h2>
+              </div>
+              <p className="text-sm text-[#64748B] leading-relaxed font-normal whitespace-pre-line">
+                {project.abstract}
+              </p>
+
+              {project.problemStatement && (
+                <div className="mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-rose-700 font-mono">
+                    Problem Statement:
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {project.problemStatement}
+                  </p>
+                </div>
+              )}
+
+              {project.proposedSolution && (
+                <div className="mt-3 p-4 rounded-xl bg-amber-50/60 border border-amber-200 space-y-1">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-amber-900 font-mono">
+                    Proposed System Architecture:
+                  </h4>
+                  <p className="text-xs text-slate-700 leading-relaxed">
+                    {project.proposedSolution}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Key Features Section */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
+                <Sparkles className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-xl font-bold text-[#0F172A]">Key Features &amp; Novelty</h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {project.features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span className="text-xs text-[#0F172A] leading-normal font-medium">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Modules Breakdown */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
+                <Layers className="w-5 h-5 text-[#0B1F4D]" />
+                <h2 className="text-xl font-bold text-[#0F172A]">Project Modules &amp; Workflow</h2>
+              </div>
+              <p className="text-xs text-[#64748B]">
+                Modular breakdown as required for Phase 1, Phase 2, and Final Review project submissions:
+              </p>
+
+              <div className="space-y-3 pt-2">
+                {project.modules.map((mod, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors space-y-1.5"
+                  >
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-sm font-bold text-[#0B1F4D]">
+                        {mod.name}
+                      </h4>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white text-slate-500 border border-slate-200">
+                        Module 0{idx + 1}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">
+                      {mod.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Screenshots & Architecture Flow */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100">
+                <MonitorCheck className="w-5 h-5 text-[#F5A623]" />
+                <h2 className="text-xl font-bold text-[#0F172A]">Screenshots &amp; Architecture Flow</h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                {(project.screenshots && project.screenshots.length > 0
+                  ? project.screenshots
+                  : [
+                      {
+                        title: "System Architecture Flow",
+                        caption: `Complete modular block diagram and data pipeline for ${project.title}.`,
+                        type: "architecture" as const,
+                      },
+                      {
+                        title: "Interactive System Dashboard",
+                        caption: "Live execution control panel showing real-time inputs, processing logs, and outputs.",
+                        type: "dashboard" as const,
+                      },
+                      {
+                        title: "Model Evaluation & Results",
+                        caption: "Performance metrics, accuracy graphs, and comparative benchmark results.",
+                        type: "results" as const,
+                      },
+                    ]
+                ).map((screen, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 group"
+                  >
+                    <div className="h-32 rounded-lg bg-gradient-to-br from-[#0B1F4D] to-[#142A63] border border-slate-200 flex flex-col items-center justify-center p-3 text-center relative overflow-hidden transition-colors">
+                      <Cpu className="w-8 h-8 text-[#F5A623] mb-2 group-hover:scale-110 transition-transform" />
+                      <span className="font-mono text-xs font-semibold text-white z-10">
+                        {screen.title}
+                      </span>
+                      <span className="text-[10px] text-amber-300 z-10 uppercase tracking-widest font-mono">
+                        {screen.type} preview
+                      </span>
+                    </div>
+                    <h4 className="text-xs font-bold text-[#0F172A] line-clamp-1">{screen.title}</h4>
+                    <p className="text-[11px] text-[#64748B] leading-relaxed line-clamp-2">
+                      {screen.caption}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Tech Stack, Documentation Deliverables, Mentor Support */}
+          <div className="space-y-6">
+            {/* Technologies Used Card */}
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                <Code2 className="w-4 h-4 text-[#F5A623]" />
+                <h3 className="text-base font-bold text-[#0F172A]">Technologies Used</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-medium text-[#0B1F4D] font-mono"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Complete Documentation Included Card */}
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                <FileCheck2 className="w-4 h-4 text-emerald-600" />
+                <h3 className="text-base font-bold text-[#0F172A]">Documentation Included</h3>
+              </div>
+              <p className="text-xs text-[#64748B]">
+                Everything required for your university thesis submission is bundled:
+              </p>
+              <ul className="space-y-2.5 text-xs">
+                {project.documentationIncluded.map((doc, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-[#0F172A]">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{doc}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="pt-3 border-t border-slate-100">
+                <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-[11px] text-amber-900 font-medium">
+                  🛡️ <strong>Low Plagiarism Guarantee:</strong> Plagiarism similarity report included (Turnitin verified).
+                </div>
+              </div>
+            </div>
+
+            {/* Viva Guidance Card */}
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <div className="flex items-center gap-2">
+                <Presentation className="w-4 h-4 text-[#F5A623]" />
+                <h3 className="text-base font-bold text-[#0F172A]">Viva Guidance</h3>
+              </div>
+              <p className="text-xs text-[#64748B] leading-relaxed">
+                Includes line-by-line algorithm walkthrough, mathematical derivations explanation, and 1-on-1 mock question drills before your exam.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Projects in Same Domain */}
+        {relatedProjects.length > 0 && (
+          <div className="mt-16 pt-12 border-t border-slate-200">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h3 className="text-2xl font-bold text-[#0F172A]">Related Academic Projects</h3>
+                <p className="text-xs sm:text-sm text-[#64748B]">
+                  More trending titles in {project.category}
+                </p>
+              </div>
+              <Link
+                href={`/projects?category=${encodeURIComponent(project.category)}`}
+                className="text-xs font-bold text-[#0B1F4D] hover:underline flex items-center gap-1"
+              >
+                View all in domain <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedProjects.map((rel) => (
+                <div
+                  key={rel.id}
+                  className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex flex-col justify-between space-y-3"
+                >
+                  <div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 mb-2 inline-block">
+                      {rel.year}
+                    </span>
+                    <h4 className="text-sm font-bold text-[#0F172A] line-clamp-2 hover:text-[#0B1F4D]">
+                      <Link href={`/projects/${rel.id}`}>{rel.title}</Link>
+                    </h4>
+                    <p className="text-xs text-[#64748B] line-clamp-2 mt-1">
+                      {rel.tagline}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/projects/${rel.id}`}
+                    className="pt-2 text-xs font-bold text-[#0B1F4D] hover:text-[#D97706] flex items-center gap-1"
+                  >
+                    <span>Read Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
