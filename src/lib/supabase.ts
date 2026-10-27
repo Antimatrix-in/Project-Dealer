@@ -45,7 +45,7 @@ export async function submitProjectInquiry(inquiry: ProjectInquiry): Promise<{ s
     console.log("AntiMatrix Inquiry Received:", inquiry);
     return {
       success: true,
-      message: "Consultation inquiry received! Our academic coordinator will contact you on WhatsApp / Phone within 2 hours.",
+      message: "Consultation inquiry received! Our project coordinator will contact you on WhatsApp / Phone within 2 hours.",
       data: inquiry
     };
   } catch (err: any) {

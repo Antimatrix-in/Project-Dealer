@@ -3,6 +3,7 @@
 import React from "react";
 import { Sparkles, MessageCircle, MonitorPlay, PhoneCall } from "lucide-react";
 import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 interface ProjectDetailActionsProps {
   projectTitle: string;
@@ -13,15 +14,25 @@ export default function ProjectDetailActions({
   projectTitle,
   category,
 }: ProjectDetailActionsProps) {
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent(
-      `Hi AntiMatrix! I want the demo, base paper, and pricing details for the project:\n"${projectTitle}" (${category}).\nPlease send the abstract and synopsis.`
-    );
-    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
-  };
+  const whatsAppUrl = getWhatsAppUrl({
+    category,
+    projectTitle,
+    requirements: "Need complete working source code, base paper, report, and viva guidance",
+  });
 
   return (
     <div className="flex flex-wrap items-center gap-3">
+      {/* Primary WhatsApp Action */}
+      <a
+        href={whatsAppUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer shadow-[#FF6B00]/25"
+      >
+        <MessageCircle className="w-4 h-4 text-white" />
+        <span>Inquire on WhatsApp</span>
+      </a>
+
       <button
         onClick={() =>
           openConsultationModal({
@@ -29,26 +40,18 @@ export default function ProjectDetailActions({
             category,
           })
         }
-        className="px-6 py-3.5 rounded-xl btn-primary-gold text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+        className="px-6 py-3.5 rounded-xl bg-[#FFF1E8] hover:bg-[#FFE3D4] border border-[#FF6B00]/25 text-[#FF6B00] font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <MonitorPlay className="w-4 h-4 text-white" />
-        <span>Contact for Live Demo</span>
-      </button>
-
-      <button
-        onClick={handleWhatsApp}
-        className="px-6 py-3.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-700 font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
-      >
-        <MessageCircle className="w-4 h-4 text-emerald-600" />
-        <span>WhatsApp Inquiry</span>
+        <MonitorPlay className="w-4 h-4 text-[#FF6B00]" />
+        <span>Request Live Demo</span>
       </button>
 
       <a
-        href="tel:+919876543210"
-        className="px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-[#0F172A] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 shadow-xs"
+        href={`tel:+${WHATSAPP_NUMBER}`}
+        className="px-5 py-3.5 rounded-xl bg-white hover:bg-[#FFF9F5] border border-slate-200 text-[#101828] hover:text-[#FF6B00] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 shadow-xs"
       >
-        <PhoneCall className="w-4 h-4 text-[#F5A623]" />
-        <span>Call Desk</span>
+        <PhoneCall className="w-4 h-4 text-[#FF6B00]" />
+        <span>Call Desk ({WHATSAPP_DISPLAY})</span>
       </a>
 
       <button
@@ -58,9 +61,9 @@ export default function ProjectDetailActions({
             category,
           })
         }
-        className="px-5 py-3.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#0F172A] font-medium text-xs sm:text-sm transition-colors cursor-pointer flex items-center gap-2"
+        className="px-5 py-3.5 rounded-xl bg-white hover:bg-[#FFF9F5] border border-slate-200 text-[#101828] font-medium text-xs sm:text-sm transition-colors cursor-pointer flex items-center gap-2"
       >
-        <Sparkles className="w-4 h-4 text-[#F5A623]" />
+        <Sparkles className="w-4 h-4 text-[#FF6B00]" />
         <span>Request Customization</span>
       </button>
     </div>

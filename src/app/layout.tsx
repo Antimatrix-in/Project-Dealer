@@ -17,11 +17,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "AntiMatrix - Transform Your Ideas Into Academic Projects",
+  title: "AntiMatrix - Transform Your Ideas Into Real-World Projects",
   description:
-    "AntiMatrix helps engineering and computer science students complete academic projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
+    "AntiMatrix helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
   keywords: [
-    "Academic Projects",
     "Final Year Projects",
     "AI Machine Learning Projects",
     "Python Projects",
@@ -50,7 +49,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#0A1128] selection:bg-amber-100 selection:text-amber-900 font-sans">
+      <body className="min-h-full flex flex-col bg-[#FFF9F5] text-[#101828] selection:bg-[#FFF1E8] selection:text-[#D90429] font-sans">
         <Navbar />
         <main className="flex-1">
           {children}

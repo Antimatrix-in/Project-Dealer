@@ -100,7 +100,7 @@ export const STUDENT_REVIEWS: StudentReview[] = [
 ];
 
 export const COMPANY_STATS = [
-  { label: "Projects Completed", value: "500+", icon: "FolderCheck", change: "+120 this academic year" },
+  { label: "Projects Completed", value: "500+", icon: "FolderCheck", change: "+120 this year" },
   { label: "Happy Students Mentored", value: "1,200+", icon: "Users", change: "Across 45+ premier colleges" },
   { label: "Technology Domains", value: "15+", icon: "Cpu", change: "AI, ML, Cloud, Web, Mobile, IoT" },
   { label: "Viva Success Rate", value: "99.8%", icon: "CheckCircle", change: "A+ & O grade track record" }

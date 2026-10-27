@@ -12,11 +12,13 @@ import {
   CheckCircle2,
   Sparkles,
   Building2,
-  PhoneCall,
-  ExternalLink
+  ExternalLink,
+  ClipboardList
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { PROJECT_CATEGORIES } from "@/data/projects";
+import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import CtaBanner from "@/components/home/CtaBanner";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -58,7 +60,7 @@ export default function ContactPage() {
             particleCount: 90,
             spread: 75,
             origin: { y: 0.6 },
-            colors: ["#F59E0B", "#D97706", "#EAB308", "#10B981"],
+            colors: ["#FF6B00", "#FF3D3D", "#D90429", "#00A86B"],
           });
         } catch (e) {}
       }
@@ -70,103 +72,122 @@ export default function ContactPage() {
   };
 
   const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      `Hi AntiMatrix! I want to discuss my academic project:\n` +
-      `• Name: ${formData.name || "Student"}\n` +
-      `• College: ${formData.college || "Engineering College"}\n` +
-      `• Domain: ${formData.category || "Academic Project"}\n` +
-      `• Requirements: ${formData.requirement || formData.message || "Need guidance"}`
-    );
-    window.open(`https://wa.me/919876543210?text=${text}`, "_blank");
+    const url = getWhatsAppUrl({
+      category: formData.category,
+      projectTitle: formData.requirement,
+      college: formData.college,
+      department: formData.degree,
+      requirements: formData.message || formData.requirement,
+    });
+    window.open(url, "_blank");
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#050914] min-h-screen">
+    <div className="pt-28 pb-20 bg-[#FFF9F5] min-h-screen">
       {/* Background Header */}
-      <div className="relative py-12 overflow-hidden bg-grid-navy border-b border-amber-500/10 mb-12">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-amber-500/10 rounded-full blur-[110px] pointer-events-none" />
+      <div className="relative py-16 bg-[#FFF1E8]/70 border-b border-[#FF6B00]/15 mb-12 overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#FF6B00]/08 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#FF3D3D]/06 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
-            badge="Get In Touch"
-            title="Connect with Our"
-            titleGradient="Project Mentors"
-            subtitle="Schedule a free technical consultation, discuss your college guide's requirements, or request a live working project demonstration."
+            badge="AntiMatrix Support Cell"
+            title="Need Help With Your"
+            titleGradient="Project?"
+            subtitle="Tell us about your project requirements and our team will contact you with the best solution."
           />
+          {/* Top Quick Action Buttons */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00A86B] hover:bg-[#00925C] text-white font-bold text-xs shadow-sm transition-all hover:scale-105 active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4 text-white" />
+              <span>WhatsApp Now</span>
+            </a>
+
+            <a
+              href={GOOGLE_ENQUIRY_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white font-bold text-xs shadow-sm transition-all hover:scale-105 active:scale-95 group border border-[#FF3D3D]/30"
+            >
+              <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+              <span>Fill Project Enquiry Form</span>
+              <ExternalLink className="w-3.5 h-3.5 text-white/80 ml-0.5" />
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Contact Information Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 rounded-2xl bg-[#0A1128] border border-amber-500/20 space-y-3 hover:border-amber-400/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-amber-950/60 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 hover:border-[#FF6B00]/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#FFF1E8] border border-[#FF6B00]/25 flex items-center justify-center text-[#FF6B00]">
               <Phone className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Call Support</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Direct hotline for immediate academic counseling.
+            <h4 className="text-base font-bold text-[#101828]">Call Support</h4>
+            <p className="text-xs text-[#526581] leading-relaxed">
+              Direct hotline for immediate project counseling.
             </p>
             <div className="pt-1">
               <a
-                href="tel:+919876543210"
-                className="text-xs font-mono font-bold text-amber-400 hover:underline block"
+                href={`tel:+${WHATSAPP_NUMBER}`}
+                className="text-xs font-mono font-bold text-[#FF6B00] hover:underline block"
               >
-                +91 98765 43210
-              </a>
-              <a
-                href="tel:+919876543211"
-                className="text-xs font-mono font-bold text-amber-400 hover:underline block"
-              >
-                +91 98765 43211
+                {WHATSAPP_DISPLAY}
               </a>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#0A1128] border border-amber-500/20 space-y-3 hover:border-emerald-500/40 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 hover:border-[#00A86B]/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-[#00A86B]/30 flex items-center justify-center text-[#00A86B]">
               <MessageCircle className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">WhatsApp Helpline</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <h4 className="text-base font-bold text-[#101828]">WhatsApp Helpline</h4>
+            <p className="text-xs text-[#526581] leading-relaxed">
               Instant responses, base paper sharing, and screenshots.
             </p>
             <div className="pt-1">
               <button
                 onClick={handleWhatsAppDirect}
-                className="text-xs font-bold text-emerald-400 hover:underline cursor-pointer flex items-center gap-1"
+                className="text-xs font-bold text-[#00A86B] hover:underline cursor-pointer flex items-center gap-1"
               >
                 <span>Chat on WhatsApp &rarr;</span>
               </button>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#0A1128] border border-amber-500/20 space-y-3 hover:border-yellow-500/40 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-yellow-950/60 border border-yellow-500/30 flex items-center justify-center text-yellow-400">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 hover:border-[#FF3D3D]/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#FFF1E8] border border-[#FF3D3D]/25 flex items-center justify-center text-[#FF3D3D]">
               <Mail className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Email Desk</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <h4 className="text-base font-bold text-[#101828]">Email Desk</h4>
+            <p className="text-xs text-[#526581] leading-relaxed">
               Send your synopsis drafts, problem statements, and requirements.
             </p>
             <div className="pt-1">
               <a
-                href="mailto:projects@antimatrix.tech"
-                className="text-xs font-bold text-yellow-400 hover:underline"
+                href="mailto:projects@antimatrix.co.in"
+                className="text-xs font-bold text-[#FF6B00] hover:underline"
               >
-                projects@antimatrix.tech
+                projects@antimatrix.co.in
               </a>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#0A1128] border border-amber-500/20 space-y-3 hover:border-amber-400/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-amber-950/60 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3 hover:border-[#FF6B00]/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#FFF9F5] border border-slate-200 flex items-center justify-center text-[#101828]">
               <Clock className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Operating Hours</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <h4 className="text-base font-bold text-[#101828]">Operating Hours</h4>
+            <p className="text-xs text-[#526581] leading-relaxed">
               Mon - Sat: 9:00 AM - 9:00 PM IST
             </p>
-            <p className="text-[11px] text-amber-400 font-medium">
+            <p className="text-[11px] text-[#FF6B00] font-medium">
               *Emergency review support during university exam weeks.
             </p>
           </div>
@@ -175,38 +196,58 @@ export default function ContactPage() {
         {/* Main Section: Contact Form + Headquarters & Map Preview */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
           {/* Left Form (3 Cols) */}
-          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-[#0A1128] border border-amber-500/30 backdrop-blur-xl shadow-2xl">
-            <div className="mb-6 space-y-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-950/80 border border-amber-500/30 text-amber-300">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Project Requirement Form</span>
+          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-white border border-[#FF6B00]/20 shadow-[0_4px_25px_-4px_rgba(255,107,0,0.06)]">
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00] font-mono">
+                  <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" />
+                  <span>Project Requirement Form</span>
+                </div>
+                <h3 className="text-2xl font-bold text-[#101828]">Send Us Your Project Details</h3>
+                <p className="text-xs text-[#526581]">
+                  Fill in the details below or open Google Forms to submit project requirements.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-white">Send Us Your Project Details</h3>
-              <p className="text-xs text-slate-400">
-                Fill in the details below and an AntiMatrix domain mentor will get in touch with you shortly.
-              </p>
+
+              {/* Project Enquiry (Google Form CTA) */}
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group shrink-0 border border-[#FF3D3D]/30"
+              >
+                <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                <span>Project Enquiry</span>
+                <ExternalLink className="w-3 h-3 text-white/80 ml-0.5" />
+              </a>
             </div>
 
             {submitted ? (
               <div className="py-10 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-[#00A86B] flex items-center justify-center mx-auto shadow-sm">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-bold text-white">Thank You, {formData.name}!</h4>
-                <p className="text-sm text-slate-300 max-w-md mx-auto">
-                  Your project requirements have been transmitted to our academic engineering cell. We will call and message you on WhatsApp within 15 minutes.
+                <h4 className="text-2xl font-bold text-[#101828]">Thank You, {formData.name}!</h4>
+                <p className="text-sm text-[#526581] max-w-md mx-auto leading-relaxed">
+                  Your project requirements have been transmitted to our engineering cell in Chennai, Tamil Nadu. Our domain mentors will call and message you on WhatsApp (<strong>+91 91595 14326</strong>) within 15 minutes. You can also email synopsis files and base papers to{" "}
+                  <a
+                    href="mailto:projects@antimatrix.co.in"
+                    className="text-[#00A86B] font-bold hover:underline"
+                  >
+                    projects@antimatrix.co.in
+                  </a>.
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={handleWhatsAppDirect}
-                    className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors flex items-center justify-center gap-2"
+                    className="px-6 py-3 rounded-xl bg-[#00A86B] hover:bg-[#00925C] text-white font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm"
                   >
                     <MessageCircle className="w-4 h-4" />
                     Follow Up on WhatsApp
                   </button>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-3 rounded-xl bg-[#060B18] hover:bg-[#0E1738] text-white font-semibold text-xs border border-white/10"
+                    className="px-6 py-3 rounded-xl bg-[#FFF9F5] hover:bg-[#FFF1E8] text-[#101828] font-semibold text-xs border border-slate-200"
                   >
                     Submit Another Inquiry
                   </button>
@@ -216,8 +257,8 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
-                      Full Name <span className="text-amber-400">*</span>
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
+                      Full Name <span className="text-[#FF3D3D]">*</span>
                     </label>
                     <input
                       type="text"
@@ -226,13 +267,13 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Karthik Rajan"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
-                      WhatsApp / Phone Number <span className="text-amber-400">*</span>
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
+                      WhatsApp / Phone Number <span className="text-[#FF3D3D]">*</span>
                     </label>
                     <input
                       type="tel"
@@ -240,16 +281,16 @@ export default function ContactPage() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="e.g. +91 98765 43210"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                      placeholder="e.g. +91 91595 14326"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
-                      Email Address <span className="text-amber-400">*</span>
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
+                      Email Address <span className="text-[#FF3D3D]">*</span>
                     </label>
                     <input
                       type="email"
@@ -258,12 +299,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="e.g. student@college.edu"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
                       College / University
                     </label>
                     <input
@@ -272,15 +313,15 @@ export default function ContactPage() {
                       value={formData.college}
                       onChange={handleChange}
                       placeholder="e.g. Anna University / SRM / VIT"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
-                      Degree & Branch
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
+                      Degree &amp; Branch
                     </label>
                     <input
                       type="text"
@@ -288,19 +329,19 @@ export default function ContactPage() {
                       value={formData.degree}
                       onChange={handleChange}
                       placeholder="e.g. B.E CSE / B.Tech IT / M.Tech"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1">
+                    <label className="block text-xs font-bold text-[#101828] mb-1">
                       Project Domain (10 Categories)
                     </label>
                     <select
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white text-sm focus:outline-none focus:border-amber-400"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                     >
                       <option value="">Select Domain...</option>
                       {PROJECT_CATEGORIES.map((c) => (
@@ -313,7 +354,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-bold text-[#101828] mb-1">
                     Project Requirement / Title Idea
                   </label>
                   <input
@@ -322,12 +363,12 @@ export default function ContactPage() {
                     value={formData.requirement}
                     onChange={handleChange}
                     placeholder="e.g. Need Final Year Deep Learning X-Ray project with base paper & PPT"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1">
+                  <label className="block text-xs font-bold text-[#101828] mb-1">
                     Detailed Message or Guide Instructions
                   </label>
                   <textarea
@@ -336,7 +377,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe any specific guidelines, review deadlines, or tools requested by your college guide..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#060B18] border border-amber-500/20 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-400"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#FFF9F5] border border-slate-200 text-[#101828] placeholder-slate-400 text-sm focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white"
                   />
                 </div>
 
@@ -344,13 +385,13 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-bold text-sm shadow-xl shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white font-bold text-sm shadow-md shadow-[#FF6B00]/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     {loading ? (
-                      <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <>
-                        <Send className="w-4 h-4 text-slate-950" />
+                        <Send className="w-4 h-4 text-white" />
                         <span>Submit Project Requirement</span>
                       </>
                     )}
@@ -359,9 +400,9 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="py-3.5 px-5 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-600/30 text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="py-3.5 px-5 rounded-xl bg-emerald-50 border border-[#00A86B]/30 text-[#00A86B] hover:bg-emerald-100 text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <MessageCircle className="w-4 h-4 text-[#00A86B]" />
                     <span>WhatsApp Directly</span>
                   </button>
                 </div>
@@ -369,69 +410,76 @@ export default function ContactPage() {
             )}
           </div>
 
-          {/* Right Column: Google Maps Location & Center Details (2 Cols) */}
+          {/* Right Column: Headquarters & Map Preview (2 Cols) */}
           <div className="lg:col-span-2 space-y-6">
             {/* Center Location Card */}
-            <div className="p-6 rounded-3xl bg-[#0A1128] border border-amber-500/20 space-y-4">
-              <div className="flex items-center gap-2 pb-2 border-b border-white/10">
-                <Building2 className="w-5 h-5 text-amber-400" />
-                <h3 className="text-base font-bold text-white">AntiMatrix Project Center</h3>
+            <div className="p-6 rounded-3xl bg-white border border-[#FF6B00]/20 shadow-xs space-y-4">
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-[#FF6B00]" />
+                  <h3 className="text-base font-bold text-[#101828]">AntiMatrix Project Center</h3>
+                </div>
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00] font-mono">
+                  <MapPin className="w-3 h-3 text-[#FF6B00]" />
+                  Chennai, Tamil Nadu
+                </span>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                AntiMatrix Tech Innovation Tower, Cyber IT Hub, Rajiv Gandhi Salai (OMR), Chennai, Tamil Nadu - 600096
+              <p className="text-xs font-semibold text-[#101828] leading-relaxed">
+                Chennai, Tamil Nadu
               </p>
-              <div className="text-xs text-slate-400 space-y-1">
-                <p>📍 Landmark: Near IT Tech Park Metro & TIDEL Park</p>
-                <p>🚆 5 mins from Taramani Railway Station</p>
+              <div className="text-xs text-[#526581] space-y-1">
+                <p>📍 Location: Chennai, Tamil Nadu, India</p>
+                <p>🚆 Remote &amp; Direct Mentorship Support Available</p>
               </div>
             </div>
 
-            {/* Interactive Styled Google Maps Mockup Section */}
-            <div className="rounded-3xl bg-[#0A1128] border border-amber-500/30 overflow-hidden shadow-2xl relative group">
-              <div className="h-64 sm:h-72 w-full bg-[#060B18] relative flex flex-col items-center justify-center p-6 text-center">
-                {/* Visual Map Grid Pattern */}
-                <div className="absolute inset-0 bg-grid-navy opacity-50" />
-
-                {/* Map Roads & Contours graphic mock */}
-                <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M 0 50 Q 150 120 300 80 T 600 150" fill="none" stroke="#F59E0B" strokeWidth="3" />
-                  <path d="M 50 0 Q 180 200 120 400" fill="none" stroke="#3B82F6" strokeWidth="2" />
-                  <path d="M 200 300 Q 350 200 500 250" fill="none" stroke="#EAB308" strokeWidth="2" />
-                </svg>
-
-                {/* Center Pin Marker */}
-                <div className="relative z-10 flex flex-col items-center animate-bounce">
-                  <div className="p-3 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-500 text-slate-950 shadow-xl shadow-amber-500/50">
-                    <MapPin className="w-6 h-6" />
+            {/* Interactive Styled Google Maps Card */}
+            <div className="rounded-3xl bg-white border border-[#FF6B00]/20 overflow-hidden shadow-xs relative group">
+              <div className="w-full h-64 sm:h-72 relative bg-slate-100">
+                <iframe
+                  title="AntiMatrix Project Center - Chennai, Tamil Nadu"
+                  src="https://maps.google.com/maps?q=Chennai,+Tamil+Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="absolute top-3 left-3 z-10 pointer-events-none">
+                  <div className="px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00A86B] animate-pulse" />
+                    <span className="text-xs font-bold text-[#101828]">Chennai, Tamil Nadu</span>
                   </div>
-                  <div className="w-3 h-1.5 rounded-full bg-amber-400/40 blur-[1px] mt-1" />
                 </div>
-
-                <div className="relative z-10 mt-3 space-y-1">
-                  <h4 className="text-sm font-bold text-white">AntiMatrix Cyber Tech Hub</h4>
-                  <p className="text-[11px] text-amber-300 font-mono">OMR IT Corridor, Chennai</p>
+              </div>
+              <div className="p-3.5 bg-[#FFF9F5] border-t border-[#FF6B00]/15 flex items-center justify-between">
+                <div className="text-left">
+                  <p className="text-xs font-bold text-[#101828]">AntiMatrix Project Center</p>
+                  <p className="text-[11px] text-[#FF6B00] font-mono">Chennai, Tamil Nadu</p>
                 </div>
-
                 <a
-                  href="https://maps.google.com/?q=OMR+IT+Corridor+Chennai"
+                  href="https://maps.google.com/?q=Chennai,+Tamil+Nadu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 px-4 py-2 rounded-xl bg-[#0A1128] hover:bg-[#0E1738] border border-amber-500/25 text-white text-xs font-semibold z-10 flex items-center gap-1.5 shadow-md"
+                  className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#FFF1E8] border border-slate-200 text-[#101828] hover:text-[#FF6B00] text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
                 >
                   <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3 h-3 text-amber-400" />
+                  <ExternalLink className="w-3 h-3 text-[#FF6B00]" />
                 </a>
               </div>
             </div>
 
             {/* Fast Response Badge */}
-            <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/25 text-xs text-slate-300 flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-amber-400 shrink-0" />
+            <div className="p-4 rounded-2xl bg-[#FFF1E8] border border-[#FF6B00]/25 text-xs text-[#101828] flex items-center gap-3">
+              <Sparkles className="w-5 h-5 text-[#FF6B00] shrink-0" />
               <span>
-                Average response time on WhatsApp & Phone is <strong className="text-amber-300 font-bold">under 15 minutes</strong> during working hours.
+                Average response time on WhatsApp &amp; Phone is <strong className="text-[#FF6B00] font-bold">under 15 minutes</strong> during working hours.
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Dedicated WhatsApp & Project Assistance Section */}
+        <div className="pt-10">
+          <CtaBanner />
         </div>
       </div>
     </div>

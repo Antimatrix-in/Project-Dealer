@@ -48,7 +48,7 @@ export const PROJECTS_DATA: Project[] = [
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "PG / M.Tech",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS_DATA: Project[] = [
       "Plug-and-play Python Source Code & Synthetic Transaction Dataset"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -118,7 +118,7 @@ export const PROJECTS_DATA: Project[] = [
       "Source Code with Pre-trained Model Weights & Drone Dataset"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -148,12 +148,12 @@ export const PROJECTS_DATA: Project[] = [
       "Standard Comparative Analysis Base Paper",
       "Full Project Synopsis & 55-Page Project Report",
       "System Architecture, Data Flow, and State Diagrams",
-      "Academic Defense PowerPoint Presentation (25 Slides)",
+      "Project Defense PowerPoint Presentation (25 Slides)",
       "Executable Python Code with Virtualenv Setup",
       "Step-by-Step Installation & Video Execution Guide"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -188,7 +188,7 @@ export const PROJECTS_DATA: Project[] = [
       "Maven Project Source Code with Docker Compose and Mock DB Seeds"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -215,7 +215,7 @@ export const PROJECTS_DATA: Project[] = [
       { name: "Module 4: User Management & Project Workspace Storage", description: "Manages GitHub repository import, file tree structures, and project persistence." }
     ],
     documentationIncluded: [
-      "Full Academic Compliant Project Report",
+      "Full Standard Compliant Project Report",
       "Complete Software Requirements Specification (SRS)",
       "High-Definition PowerPoint Presentation (30+ Slides)",
       "Detailed Viva Voce Q&A Document covering WebSockets and CRDTs",
@@ -223,7 +223,7 @@ export const PROJECTS_DATA: Project[] = [
       "Complete Local Setup and Docker Deployment Manual"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -253,12 +253,12 @@ export const PROJECTS_DATA: Project[] = [
       "Communications Systems Research Base Paper",
       "Comprehensive 60-Page Project Report and Synopsis",
       "Full System Flowcharts, Activity & Sequence Diagrams",
-      "Presentation Slides for Academic Defense (30 Slides)",
+      "Presentation Slides for Project Defense (30 Slides)",
       "Complete Flutter and Dart Source Code with Android APK",
       "Hardware Testing & Ad-hoc Range Verification Guide"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -291,7 +291,7 @@ export const PROJECTS_DATA: Project[] = [
       "Ready-to-Deploy Go & Python Source Code"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -320,11 +320,11 @@ export const PROJECTS_DATA: Project[] = [
       "Information Forensics & Security Research Base Paper",
       "Full 70-Page Final Year Project Report and Security Specs",
       "Viva Voce Q&A on Cryptography, Malware & Network Security",
-      "Academic Defense PPT (30 Slides with Live Demonstration)",
+      "Project Defense PPT (30 Slides with Live Demonstration)",
       "Executable Detection Agent Source Code & Sample PCAPs"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
   },
   {
@@ -357,7 +357,253 @@ export const PROJECTS_DATA: Project[] = [
       "Python Data Science Source Code with Jupyter Notebooks"
     ],
     level: "UG Final Year",
-    year: "Academic Year 2025-26",
+    year: "2025-26 Edition",
     featured: true
+  },
+  {
+    id: "dl-plant-disease",
+    slug: "plant-disease-detection",
+    title: "Plant Disease Detection",
+    category: "Deep Learning",
+    tagline: "Autonomous crop leaf anomaly diagnosis and severity segmentation with YOLOv10 & ResNet.",
+    description: "An AI-powered agricultural diagnosis platform utilizing deep convolutional neural networks and YOLOv10 object detection to localize and classify plant leaf diseases with 98.7% accuracy in real-time field environments.",
+    abstract: "Early plant disease detection is pivotal for safeguarding food security and preventing catastrophic agricultural yield losses. This project proposes a hybrid vision architecture incorporating YOLOv10 and a fine-tuned ResNet-50 backbone with spatial attention. Deployed via a modern dashboard and mobile-responsive interface, the system achieves sub-20ms inference latency, providing farmers and agronomists with instant disease classification, confidence scores, and targeted treatment recommendations.",
+    problemStatement: "Traditional manual crop inspection requires rare agricultural pathology expertise, leading to delayed disease identification and widespread crop degradation.",
+    proposedSolution: "An automated edge-ready computer vision solution providing instant disease detection, bounding-box localization, and actionable organic/chemical fungicide treatment advisories.",
+    techStack: ["PyTorch", "YOLOv10", "OpenCV", "FastAPI", "Next.js", "Python", "Docker"],
+    features: [
+      "Real-time multi-leaf lesion detection and bounding box localization",
+      "Classification of 38+ plant disease classes across major staple crops",
+      "Confidence score calibration with Grad-CAM visual heatmaps",
+      "Automated multilingual treatment & organic remedy recommendation",
+      "Weather-correlated disease outbreak risk forecasting"
+    ],
+    modules: [
+      { name: "Module 1: Leaf Image Preprocessing & Augmentation", description: "Standardizes illumination, removes background noise, and applies CLAHE contrast optimization." },
+      { name: "Module 2: YOLOv10 Disease Detection Engine", description: "Performs single-pass bounding box inference to pinpoint disease lesion clusters." },
+      { name: "Module 3: Severity Index & Diagnostic Classifier", description: "Calculates infected leaf area percentage and classifies pathological severity." },
+      { name: "Module 4: Web Application & Agronomist Dashboard", description: "Interactive dashboard for image upload, real-time webcam scan, and PDF diagnostic report export." }
+    ],
+    documentationIncluded: [
+      "Peer-Reviewed Agricultural Computer Vision Base Paper",
+      "Comprehensive 65-Page Project Dissertation & SRS",
+      "Detailed UML Architecture & Data Flow Diagrams",
+      "Viva Voce Q&A Defense Guide with Deep Learning Theory",
+      "Complete Source Code with Pretrained Weights and PlantVillage Dataset",
+      "Step-by-Step Execution Guide & Video Demo"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/plant-disease.jpg"
+  },
+  {
+    id: "aids-ai-chatbot",
+    slug: "ai-chatbot",
+    title: "AI Chatbot",
+    category: "AI & Data Science",
+    tagline: "Enterprise context-aware conversational AI assistant with RAG retrieval and vector embeddings.",
+    description: "A production-ready conversational AI platform leveraging Large Language Models, LangChain orchestration, and Milvus/Pinecone vector databases to deliver hallucination-free, domain-specific query resolution.",
+    abstract: "Conventional chatbots depend on rigid rule-based decision trees that fail when queried on nuanced institutional knowledge. This project presents a Retrieval-Augmented Generation (RAG) agent capable of ingesting vast unstructured PDF, docx, and syllabus repositories. Utilizing hybrid semantic search combining BM25 with dense vector embeddings and re-ranking, the chatbot delivers grounded, citation-backed answers with sub-second latency.",
+    problemStatement: "Organizations and educational institutions struggle with repetitive student/customer queries and high support desk workloads.",
+    proposedSolution: "A secure, private RAG pipeline with prompt guardrails that answers queries strictly using verified institutional documentation.",
+    techStack: ["LangChain", "LLMs", "Vector DB", "FastAPI", "Next.js", "Python", "Tailwind CSS"],
+    features: [
+      "Semantic hybrid vector search with dense retrieval & BM25 sparse re-ranking",
+      "Document ingestion pipeline supporting PDF, TXT, DOCX, and web URLs",
+      "Contextual multi-turn conversational memory with session management",
+      "Hallucination mitigation via source citation attribution",
+      "Admin analytics panel tracking query sentiment and token costs"
+    ],
+    modules: [
+      { name: "Module 1: Document Parsing & Vector Chunking", description: "Extracts text from documents and builds dense semantic embeddings using text-embedding-3-small." },
+      { name: "Module 2: Vector Store & Retrieval Engine", description: "Performs similarity search using HNSW indexing and applies Cross-Encoder re-ranking." },
+      { name: "Module 3: Prompt Orchestrator & LLM Synthesis", description: "Constructs contextual prompts and streams responses with citation metadata." },
+      { name: "Module 4: Next.js Chat Interface & Analytics", description: "Modern responsive chat interface with markdown formatting, syntax highlighting, and feedback logging." }
+    ],
+    documentationIncluded: [
+      "Research Base Paper on Retrieval-Augmented Generation",
+      "Complete 70-Page Final Year Project Report and Thesis",
+      "Full System Architecture & Sequence Diagrams",
+      "Viva Voce Handbook covering LLM Architecture, Transformers & RAG",
+      "Ready-to-Deploy Full Stack Source Code with Docker Compose",
+      "Defense Presentation Deck (30 Slides)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ai-chatbot.jpg"
+  },
+  {
+    id: "py-student-attendance",
+    slug: "student-attendance-system",
+    title: "Student Attendance System",
+    category: "Python Projects",
+    tagline: "Automated contactless biometric facial recognition attendance tracker with anti-spoofing.",
+    description: "An intelligent campus attendance management solution that captures live classroom video feeds, identifies registered students using FaceNet deep embeddings, and logs automated attendance with liveness anti-spoofing detection.",
+    abstract: "Manual paper roll-calls waste significant lecture time and remain vulnerable to proxy attendance fraud. This research presents a high-throughput automated attendance monitoring system utilizing MTCNN face localization and 128-dimensional FaceNet embeddings. Featuring active blink and texture-based liveness verification, the system accurately detects multiple faces simultaneously within 50ms per frame, syncing logs directly with university databases.",
+    problemStatement: "Classroom attendance tracking wastes instructional time and is prone to human error and proxy attendance.",
+    proposedSolution: "An automated computer vision camera system that registers student presence seamlessly upon classroom entry.",
+    techStack: ["OpenCV", "FaceNet", "Python", "SQLite", "Flask", "React", "Tkinter"],
+    features: [
+      "Simultaneous multi-face detection and recognition from live classroom cameras",
+      "Blink & micro-motion liveness verification to prevent photo/screen spoofing",
+      "Automated attendance logging with timestamp, course code, and section",
+      "Automated WhatsApp/SMS alerts for consecutive absentees",
+      "Interactive faculty analytics dashboard with Excel/CSV export"
+    ],
+    modules: [
+      { name: "Module 1: Face Registration & Dataset Builder", description: "Captures multi-angle facial portraits and normalizes illumination for each student." },
+      { name: "Module 2: Feature Extraction & Embedding Matcher", description: "Computes deep FaceNet vectors and matches against student database using Euclidean distance." },
+      { name: "Module 3: Anti-Spoofing & Liveness Verifier", description: "Analyzes eye aspect ratio changes and texture gradients to discard static 2D photos." },
+      { name: "Module 4: Faculty Management Portal", description: "Web-based portal for generating monthly attendance percentages and automated defaulter lists." }
+    ],
+    documentationIncluded: [
+      "Standard Biometrics & Pattern Recognition Base Paper",
+      "60-Page Project Documentation with SRS and ER Diagrams",
+      "UML Activity, Sequence, and Component Diagrams",
+      "Viva Voce Preparation Guide on Computer Vision & Machine Learning",
+      "Clean Python Codebase with Student Enrollment Scripts",
+      "Step-by-Step Setup Guide with Demonstration Video"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/student-attendance.jpg"
+  },
+  {
+    id: "web-ecommerce-platform",
+    slug: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    category: "Web Development",
+    tagline: "Modern full-stack SaaS e-commerce store with Stripe payment gateway, inventory management & analytics.",
+    description: "A production-grade e-commerce application featuring server-side rendering with Next.js App Router, Stripe checkout, role-based admin inventory controls, order tracking, and real-time sales analytics.",
+    abstract: "Modern digital commerce demands lightning-fast page loads, resilient transactional security, and frictionless checkout flows. This project implements a scalable full-stack e-commerce architecture built with Next.js 15, PostgreSQL, and Stripe Elements. Featuring optimistic UI updates, automated invoice generation, and elastic product search with faceted filters, the platform achieves a 99 Lighthouse performance rating.",
+    problemStatement: "Small-to-medium retailers struggle with high commission fees on third-party marketplaces and lack customizable, high-performance web storefronts.",
+    proposedSolution: "An independent, scalable e-commerce infrastructure supporting turnkey payment processing, inventory tracking, and merchant insights.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "PostgreSQL", "Node.js", "Prisma"],
+    features: [
+      "Server-side rendered product catalog with instant category filtering and search",
+      "Secure end-to-end checkout with Stripe Webhooks and payment intent validation",
+      "Customer authentication with OAuth, order history, and shipment tracking",
+      "Merchant backoffice dashboard with inventory alerts and revenue graphs",
+      "Responsive design with mobile-first cart drawer and micro-animations"
+    ],
+    modules: [
+      { name: "Module 1: Product Catalog & Search Filter Engine", description: "Delivers cached server-rendered product feeds with price, category, and rating filters." },
+      { name: "Module 2: Shopping Cart & Order Lifecycle", description: "Manages state synchronization, tax calculation, and persistent checkout carts." },
+      { name: "Module 3: Secure Stripe Payment Gateway", description: "Integrates Stripe payment intents, 3D Secure verification, and automated receipt dispatch." },
+      { name: "Module 4: Merchant Analytics & Stock Control", description: "Provides real-time dashboards for stock replenishment, gross sales, and customer churn." }
+    ],
+    documentationIncluded: [
+      "Modern Web Engineering & Cloud Architecture Base Paper",
+      "Complete 75-Page Project Thesis & Software Requirements Specification",
+      "Comprehensive Database Schema & UML Diagrams",
+      "Viva Voce Handbook on Next.js, REST APIs, and Secure Transactions",
+      "Production-ready Next.js Codebase with Mock Database Seeds",
+      "Deployment Manual for Vercel and Supabase"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ecommerce-platform.jpg"
   }
 ];
+
+export interface DropdownFeaturedProject {
+  id: string;
+  slug: string;
+  title: string;
+  category: ProjectCategory;
+  description: string;
+  techStack: string[];
+  thumbnail: string;
+  href: string;
+}
+
+export const DROPDOWN_FEATURED_PROJECTS: DropdownFeaturedProject[] = [
+  {
+    id: "dl-plant-disease",
+    slug: "plant-disease-detection",
+    title: "Plant Disease Detection",
+    category: "Deep Learning",
+    description: "Deep learning leaf scan & disease classifier with bounding boxes.",
+    techStack: ["PyTorch", "YOLOv10", "CNN", "FastAPI"],
+    thumbnail: "/images/projects/plant-disease.jpg",
+    href: "/projects/plant-disease-detection"
+  },
+  {
+    id: "aids-ai-chatbot",
+    slug: "ai-chatbot",
+    title: "AI Chatbot",
+    category: "AI & Data Science",
+    description: "Context-aware conversational assistant with vector retrieval.",
+    techStack: ["LangChain", "LLMs", "Vector DB", "Next.js"],
+    thumbnail: "/images/projects/ai-chatbot.jpg",
+    href: "/projects/ai-chatbot"
+  },
+  {
+    id: "py-student-attendance",
+    slug: "student-attendance-system",
+    title: "Student Attendance System",
+    category: "Python Projects",
+    description: "Real-time facial recognition attendance tracker with analytics.",
+    techStack: ["OpenCV", "FaceNet", "Python", "SQLite"],
+    thumbnail: "/images/projects/student-attendance.jpg",
+    href: "/projects/student-attendance-system"
+  },
+  {
+    id: "web-ecommerce-platform",
+    slug: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    category: "Web Development",
+    description: "Full-stack modern store with Stripe checkout & merchant portal.",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Stripe"],
+    thumbnail: "/images/projects/ecommerce-platform.jpg",
+    href: "/projects/ecommerce-platform"
+  }
+];
+
+export const DOMAIN_DETAILS: Record<ProjectCategory, { shortDesc: string; tag: string }> = {
+  "AI & Data Science": {
+    shortDesc: "Transformers, GenAI & NLP Pipelines",
+    tag: "PyTorch • NLP"
+  },
+  "Machine Learning": {
+    shortDesc: "Graph Networks, Fraud & Anomaly Detection",
+    tag: "GNN • XGBoost"
+  },
+  "Deep Learning": {
+    shortDesc: "Computer Vision, YOLO & CNN Models",
+    tag: "Vision • YOLO"
+  },
+  "Python Projects": {
+    shortDesc: "OpenCV, MediaPipe & Edge IoT Systems",
+    tag: "OpenCV • MediaPipe"
+  },
+  "Java Projects": {
+    shortDesc: "Enterprise Spring Boot & Microservices",
+    tag: "Spring • Security"
+  },
+  "Web Development": {
+    shortDesc: "Modern Next.js, React & Full-Stack Apps",
+    tag: "Next.js • Node"
+  },
+  "Mobile App Development": {
+    shortDesc: "Cross-Platform Flutter & Offline Mesh Apps",
+    tag: "Flutter • BLE"
+  },
+  "Cloud Computing": {
+    shortDesc: "Kubernetes, Docker & Serverless Scaling",
+    tag: "K8s • Serverless"
+  },
+  "Cyber Security": {
+    shortDesc: "Zero-Day Ransomware & Network IDS",
+    tag: "IDS • Forensics"
+  },
+  "Data Analytics": {
+    shortDesc: "Predictive Dashboards & Cohort Intelligence",
+    tag: "Pandas • LightGBM"
+  },
+};
+

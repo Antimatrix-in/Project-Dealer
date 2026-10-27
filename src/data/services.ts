@@ -4,8 +4,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "project-development",
     title: "Project Development",
-    shortDesc: "End-to-end implementation of customized academic projects with production-grade source code.",
-    description: "We architect and develop academic final year and semester projects from scratch. Whether you require novel base paper implementations, custom research concepts, or system prototypes in AI, Machine Learning, Web, Cloud, or Mobile apps, our expert engineers deliver clean, modular, and fully functional systems.",
+    shortDesc: "End-to-end implementation of customized projects with production-grade source code.",
+    description: "We architect and develop final year and semester projects from scratch. Whether you require novel base paper implementations, custom research concepts, or system prototypes in AI, Machine Learning, Web, Cloud, or Mobile apps, our expert engineers deliver clean, modular, and fully functional systems.",
     iconName: "Code2",
     deliverables: [
       "100% Working & Tested Source Code",
@@ -14,7 +14,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Remote Desktop Installation & Code Walkthrough",
       "Continuous Revision Support until College Submission"
     ],
-    highlights: ["Academic Standard Compatible", "Production Grade Code", "10 Tech Domains"]
+    highlights: ["Industry Standard Compatible", "Production Grade Code", "10 Tech Domains"]
   },
   {
     id: "project-customization",
@@ -34,8 +34,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "documentation-support",
     title: "Documentation Support",
-    shortDesc: "Academic reports following Anna University, VTU, and premier university formatting guidelines.",
-    description: "Professional, publication-quality academic documentation crafted by technical researchers. We prepare complete project reports, synopses, system requirements specifications (SRS), UML diagrams, and problem analyses formatted to pass university plagiarism and similarity checks.",
+    shortDesc: "Comprehensive reports following Anna University, VTU, and premier university formatting guidelines.",
+    description: "Professional, publication-quality project documentation crafted by technical researchers. We prepare complete project reports, synopses, system requirements specifications (SRS), UML diagrams, and problem analyses formatted to pass university plagiarism and similarity checks.",
     iconName: "FileText",
     deliverables: [
       "Final Year Project Thesis / Report (60 - 100 Pages)",
@@ -167,7 +167,7 @@ export const PROCESS_STEPS = [
     step: 4,
     title: "Documentation",
     shortTitle: "Reports & PPT",
-    description: "We compile comprehensive academic reports, UML diagrams, presentation slide decks, and viva Q&A sheets.",
+    description: "We compile comprehensive project reports, UML diagrams, presentation slide decks, and viva Q&A sheets.",
     details: "All documentation is strictly formatted to your university's guidelines with plagiarism verification checks.",
     icon: "FileCheck"
   },

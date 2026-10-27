@@ -11,9 +11,9 @@ import FaqSection from "@/components/home/FaqSection";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata = {
-  title: "AntiMatrix - Transform Your Ideas Into Academic Projects",
+  title: "AntiMatrix - Transform Your Ideas Into Real-World Projects",
   description:
-    "AntiMatrix provides premier academic project guidance in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
+    "AntiMatrix provides premier project guidance in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
 };
 
 export default function HomePage() {
@@ -46,7 +46,7 @@ export default function HomePage() {
       {/* 9. FAQ Section */}
       <FaqSection />
 
-      {/* 10. Contact CTA ("Need Help With Your Academic Project?", WhatsApp Now, Contact Us) */}
+      {/* 10. Contact CTA ("Need Help With Your Project?", WhatsApp Now, Contact Us) */}
       <CtaBanner />
     </div>
   );

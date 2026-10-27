@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Sparkles,
   ChevronDown,
   Menu,
   X,
@@ -20,17 +20,22 @@ import {
   ShieldAlert,
   BarChart3,
   ArrowRight,
-  PhoneCall
+  PhoneCall,
+  Layers,
+  ClipboardList
 } from "lucide-react";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
-import { PROJECT_CATEGORIES } from "@/data/projects";
+import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS } from "@/data/projects";
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 import TopContactBar from "./TopContactBar";
+import ProjectsMegaMenu from "./ProjectsMegaMenu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,22 +45,35 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
     setDropdownOpen(false);
-  }, [pathname]);
+  }
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 180);
+  };
 
   const categoryIcons: Record<string, React.ReactNode> = {
-    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#F5A623]" />,
-    "Machine Learning": <Cpu className="w-4 h-4 text-[#F5A623]" />,
-    "Deep Learning": <Eye className="w-4 h-4 text-[#F5A623]" />,
-    "Python Projects": <FileCode2 className="w-4 h-4 text-[#F5A623]" />,
-    "Java Projects": <Coffee className="w-4 h-4 text-[#F5A623]" />,
-    "Web Development": <Globe className="w-4 h-4 text-[#F5A623]" />,
-    "Mobile App Development": <Smartphone className="w-4 h-4 text-[#F5A623]" />,
-    "Cloud Computing": <Cloud className="w-4 h-4 text-[#F5A623]" />,
-    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#F5A623]" />,
-    "Data Analytics": <BarChart3 className="w-4 h-4 text-[#F5A623]" />,
+    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#FF6B00]" />,
+    "Machine Learning": <Cpu className="w-4 h-4 text-[#FF8A00]" />,
+    "Deep Learning": <Eye className="w-4 h-4 text-[#FF3D3D]" />,
+    "Python Projects": <FileCode2 className="w-4 h-4 text-[#FF6B00]" />,
+    "Java Projects": <Coffee className="w-4 h-4 text-[#D90429]" />,
+    "Web Development": <Globe className="w-4 h-4 text-[#FF8A00]" />,
+    "Mobile App Development": <Smartphone className="w-4 h-4 text-[#FF3D3D]" />,
+    "Cloud Computing": <Cloud className="w-4 h-4 text-[#00A86B]" />,
+    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#D90429]" />,
+    "Data Analytics": <BarChart3 className="w-4 h-4 text-[#FF6B00]" />,
   };
 
   const navLinks = [
@@ -66,37 +84,44 @@ export default function Navbar() {
     { label: "Contact", href: "/contact" },
   ];
 
+  const defaultWhatsAppLink = getWhatsAppUrl();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
-      {/* Top Contact Bar */}
+      {/* Top Contact Bar with Warm Orange-Red Gradient */}
       <TopContactBar />
 
       {/* Main Navbar */}
       <div
         className={`w-full transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_4px_20px_-4px_rgba(11,31,77,0.06)] py-3"
-            : "bg-white/90 backdrop-blur-md border-b border-slate-100 py-3.5"
+            ? "bg-white/95 backdrop-blur-xl border-b border-[#FF6B00]/15 shadow-[0_4px_20px_-4px_rgba(255,107,0,0.06)] py-3"
+            : "bg-[#FFF9F5]/90 backdrop-blur-md border-b border-[#FF6B00]/10 py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0B1F4D] via-[#142A63] to-[#F5A623] p-[1.5px] shadow-sm shadow-[#0B1F4D]/15 group-hover:scale-105 transition-transform">
-                <div className="w-full h-full bg-[#0B1F4D] rounded-[10px] flex items-center justify-center">
-                  <span className="text-lg font-black tracking-tighter text-[#F5A623] font-mono">
-                    AM
-                  </span>
-                </div>
+            {/* Brand Logo with Official AntiMatrix Logo */}
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="relative w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs p-1 flex items-center justify-center group-hover:border-[#FF6B00]/60 group-hover:shadow-sm transition-all">
+                <Image
+                  src="/images/antimatrix-icon.png"
+                  alt="AntiMatrix Logo"
+                  width={36}
+                  height={36}
+                  className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
+                  priority
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tight text-[#0B1F4D] group-hover:text-[#F5A623] transition-colors flex items-center gap-1.5 font-sans">
-                  AntiMatrix
-                  <span className="w-2 h-2 rounded-full bg-[#F5A623]" />
-                </span>
-                <span className="text-[10px] tracking-wider uppercase text-[#64748B] font-semibold font-mono">
-                  Academic Project Center
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xl font-extrabold tracking-tight text-[#101828] group-hover:text-[#FF6B00] transition-colors font-sans">
+                    AntiMatrix
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-[#FF6B00]" />
+                </div>
+                <span className="text-[10px] tracking-wider uppercase text-[#526581] font-semibold font-mono">
+                  Project Center
                 </span>
               </div>
             </Link>
@@ -107,63 +132,39 @@ export default function Navbar() {
                 href="/"
                 className={`px-3.5 py-2 rounded-xl text-sm font-medium transition-colors ${
                   pathname === "/"
-                    ? "text-[#0B1F4D] font-bold bg-slate-100 border border-slate-200"
-                    : "text-[#0F172A] hover:text-[#0B1F4D] hover:bg-slate-50"
+                    ? "text-[#FF6B00] font-bold bg-[#FFF1E8] border border-[#FF6B00]/25 shadow-xs"
+                    : "text-[#101828] hover:text-[#FF6B00] hover:bg-[#FFF1E8]/50"
                 }`}
               >
                 Home
               </Link>
 
-              {/* Projects Dropdown Menu (10 Categories) */}
+              {/* Projects Mega Menu Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
-                    pathname.startsWith("/projects")
-                      ? "text-[#0B1F4D] font-bold bg-slate-100 border border-slate-200"
-                      : "text-[#0F172A] hover:text-[#0B1F4D] hover:bg-slate-50"
+                    pathname.startsWith("/projects") || dropdownOpen
+                      ? "text-[#FF6B00] font-bold bg-[#FFF1E8] border border-[#FF6B00]/25 shadow-xs"
+                      : "text-[#101828] hover:text-[#FF6B00] hover:bg-[#FFF1E8]/50"
                   }`}
+                  aria-expanded={dropdownOpen}
+                  aria-haspopup="true"
                 >
                   <span>Projects</span>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180 text-[#F5A623]" : "text-slate-400"
+                      dropdownOpen ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
                     }`}
                   />
                 </button>
 
                 {dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-96 rounded-2xl bg-white border border-slate-200/90 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl p-3 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 max-h-[80vh] overflow-y-auto z-50">
-                    <div className="px-3 py-2 border-b border-slate-100 mb-1 flex items-center justify-between">
-                      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
-                        10 Academic Domains
-                      </span>
-                      <Link
-                        href="/projects"
-                        className="text-[11px] text-[#F5A623] hover:text-[#D97706] flex items-center gap-1 font-bold"
-                      >
-                        View All <ArrowRight className="w-3 h-3" />
-                      </Link>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-                      {PROJECT_CATEGORIES.map((category) => (
-                        <Link
-                          key={category}
-                          href={`/projects?category=${encodeURIComponent(category)}`}
-                          className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors text-xs font-semibold text-slate-700 hover:text-[#0B1F4D] group"
-                        >
-                          <div className="p-1.5 rounded-lg bg-amber-50/80 border border-amber-200/60 group-hover:border-[#F5A623] transition-colors shrink-0">
-                            {categoryIcons[category]}
-                          </div>
-                          <span className="truncate">{category}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                  <ProjectsMegaMenu onClose={() => setDropdownOpen(false)} />
                 )}
               </div>
 
@@ -175,8 +176,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-3.5 py-2 rounded-xl text-sm font-medium transition-colors ${
                       active
-                        ? "text-[#0B1F4D] font-bold bg-slate-100 border border-slate-200"
-                        : "text-[#0F172A] hover:text-[#0B1F4D] hover:bg-slate-50"
+                        ? "text-[#FF6B00] font-bold bg-[#FFF1E8] border border-[#FF6B00]/25 shadow-xs"
+                        : "text-[#101828] hover:text-[#FF6B00] hover:bg-[#FFF1E8]/50"
                     }`}
                   >
                     {link.label}
@@ -185,41 +186,56 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Desktop Right Buttons */}
+            {/* Desktop Right Buttons: [ WhatsApp ] [ Project Enquiry ] */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="https://wa.me/919876543210?text=Hi%20AntiMatrix%2C%20I%20need%20academic%20project%20consultation."
+                href={defaultWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 text-emerald-700 text-xs font-bold transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100/90 border border-[#00A86B]/40 text-[#00A86B] text-xs font-bold transition-all shadow-xs hover:shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
+                <MessageCircle className="w-4 h-4 text-[#00A86B]" />
                 <span>WhatsApp</span>
               </a>
 
-              <button
-                onClick={() => openConsultationModal()}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-primary-gold text-white text-xs font-bold transition-all cursor-pointer"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white text-xs font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#FF3D3D]/30"
               >
-                <Sparkles className="w-3.5 h-3.5 text-white" />
-                <span>Get Project</span>
-              </button>
+                <ClipboardList className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
+                <span>Project Enquiry</span>
+              </a>
             </div>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Action Buttons: [ WhatsApp ] [ Project Enquiry ] */}
             <div className="flex items-center gap-2 lg:hidden">
-              <button
-                onClick={() => openConsultationModal()}
-                className="px-3 py-1.5 rounded-lg btn-primary-gold text-white text-xs font-bold shadow-sm"
+              <a
+                href={defaultWhatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-emerald-50 text-[#00A86B] border border-[#00A86B]/30 text-xs font-bold flex items-center justify-center gap-1.5"
+                aria-label="WhatsApp Us"
               >
-                Get Project
-              </button>
+                <MessageCircle className="w-3.5 h-3.5 text-[#00A86B]" />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] text-white text-xs font-bold shadow-sm flex items-center gap-1.5"
+              >
+                <ClipboardList className="w-3.5 h-3.5 text-white" />
+                <span>Enquiry</span>
+              </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                className="p-2 rounded-xl text-slate-700 hover:text-[#FF6B00] hover:bg-[#FFF1E8]/50 transition-colors"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6 text-[#0B1F4D]" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-[#FF6B00]" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
@@ -227,42 +243,137 @@ export default function Navbar() {
 
         {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
+          <div className="lg:hidden bg-[#FFF9F5]/98 backdrop-blur-2xl border-b border-[#FF6B00]/15 px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
+            {/* Mobile Top Brand Header */}
+            <div className="p-3 bg-white rounded-xl border border-slate-200/80 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <Image
+                  src="/images/antimatrix-icon.png"
+                  alt="AntiMatrix"
+                  width={28}
+                  height={28}
+                  className="w-7 h-7 object-contain"
+                />
+                <div>
+                  <span className="text-sm font-extrabold text-[#101828]">AntiMatrix</span>
+                  <span className="block text-[9px] font-mono text-[#526581] uppercase">
+                    Project Center
+                  </span>
+                </div>
+              </div>
+              <span className="text-[10px] font-semibold text-[#FF6B00] bg-[#FFF1E8] border border-[#FF6B00]/25 px-2 py-0.5 rounded-full">
+                2025-26 Curated
+              </span>
+            </div>
+
             <div className="flex flex-col space-y-1">
               <Link
                 href="/"
-                className="px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-slate-50"
+                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  pathname === "/"
+                    ? "text-[#FF6B00] bg-[#FFF1E8] font-bold"
+                    : "text-[#101828] hover:bg-[#FFF1E8]/50"
+                }`}
               >
                 Home
               </Link>
-              <Link
-                href="/projects"
-                className="px-3 py-2 rounded-lg text-sm font-bold text-[#0B1F4D] bg-slate-100 flex items-center justify-between border border-slate-200"
-              >
-                <span>Explore Projects</span>
-                <ArrowRight className="w-4 h-4 text-[#F5A623]" />
-              </Link>
 
-              <div className="pl-3 py-2 space-y-1 border-l-2 border-[#F5A623] ml-2">
-                <span className="text-[11px] font-bold text-[#0B1F4D] uppercase tracking-wider block mb-1 font-mono">
-                  10 Academic Categories
-                </span>
-                {PROJECT_CATEGORIES.map((cat) => (
-                  <Link
-                    key={cat}
-                    href={`/projects?category=${encodeURIComponent(cat)}`}
-                    className="block text-xs text-slate-700 hover:text-[#0B1F4D] py-1 font-medium"
+              {/* Mobile Projects Accordion / Section */}
+              <div className="rounded-xl border border-slate-200/90 overflow-hidden bg-white">
+                <div className="p-3 bg-[#FFF9F5] flex items-center justify-between border-b border-slate-100">
+                  <button
+                    onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+                    className="flex items-center gap-2 text-sm font-bold text-[#101828]"
                   >
-                    {cat}
+                    <Layers className="w-4 h-4 text-[#FF6B00]" />
+                    <span>10 Project Domains</span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        mobileProjectsOpen ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
+                      }`}
+                    />
+                  </button>
+                  <Link
+                    href="/projects"
+                    className="text-xs font-bold text-[#FF6B00] hover:text-[#D90429] flex items-center gap-1"
+                  >
+                    View All →
                   </Link>
-                ))}
+                </div>
+
+                {mobileProjectsOpen && (
+                  <div className="p-3 space-y-3">
+                    {/* 10 Domains Grid */}
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {PROJECT_CATEGORIES.map((cat) => (
+                        <Link
+                          key={cat}
+                          href={`/projects?category=${encodeURIComponent(cat)}`}
+                          className="flex items-center gap-2 p-2 rounded-lg bg-white border border-slate-200/70 hover:border-[#FF6B00]/40 text-xs text-slate-700 font-semibold"
+                        >
+                          <div className="p-1 rounded bg-[#FFF1E8] shrink-0">
+                            {categoryIcons[cat]}
+                          </div>
+                          <span className="truncate">{cat}</span>
+                        </Link>
+                      ))}
+                    </div>
+
+                    {/* Featured Projects Mini Thumbnails on Mobile */}
+                    <div className="pt-2 border-t border-slate-200/60">
+                      <span className="text-[11px] font-bold text-[#101828] uppercase tracking-wider block mb-2 font-mono">
+                        Featured Projects
+                      </span>
+                      <div className="grid grid-cols-2 gap-2">
+                        {DROPDOWN_FEATURED_PROJECTS.map((proj) => (
+                          <Link
+                            key={proj.id}
+                            href={proj.href}
+                            className="bg-white rounded-lg border border-slate-200 overflow-hidden group block"
+                          >
+                            <div className="relative aspect-video w-full bg-slate-100">
+                              <Image
+                                src={proj.thumbnail}
+                                alt={proj.title}
+                                fill
+                                sizes="150px"
+                                className="object-cover"
+                              />
+                            </div>
+                            <div className="p-1.5">
+                              <span className="block text-[10px] font-bold text-slate-900 truncate">
+                                {proj.title}
+                              </span>
+                              <span className="text-[9px] text-[#FF6B00] font-semibold">
+                                View Project →
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* View All Projects Button */}
+                    <Link
+                      href="/projects"
+                      className="w-full py-2 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <span>View All Projects</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-white" />
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {navLinks.slice(1).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-2 rounded-lg text-sm font-semibold text-[#0F172A] hover:bg-slate-50"
+                  className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                    pathname === link.href
+                      ? "text-[#FF6B00] bg-[#FFF1E8] font-bold"
+                      : "text-[#101828] hover:bg-[#FFF1E8]/50"
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -271,31 +382,31 @@ export default function Navbar() {
 
             <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
               <a
-                href="https://wa.me/919876543210?text=Hi%20AntiMatrix%2C%20I%20need%20academic%20project%20consultation."
+                href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs group"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                WhatsApp Us (+91 98765 43210)
+                <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                <span>Project Enquiry</span>
+              </a>
+
+              <a
+                href={defaultWhatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 border border-[#00A86B]/40 text-[#00A86B] text-xs font-bold flex items-center justify-center gap-2 shadow-xs"
+              >
+                <MessageCircle className="w-4 h-4 text-[#00A86B]" />
+                WhatsApp Us ({WHATSAPP_DISPLAY})
               </a>
               <a
-                href="tel:+919876543210"
-                className="w-full py-2.5 px-4 rounded-xl bg-slate-50 border border-slate-200 text-[#0F172A] text-xs font-semibold flex items-center justify-center gap-2"
+                href={`tel:+${WHATSAPP_NUMBER}`}
+                className="w-full py-2 px-4 rounded-xl bg-white border border-slate-200 text-[#101828] text-xs font-semibold flex items-center justify-center gap-2"
               >
-                <PhoneCall className="w-4 h-4 text-[#F5A623]" />
-                Call Desk (+91 98765 43210)
+                <PhoneCall className="w-4 h-4 text-[#FF6B00]" />
+                Call Desk ({WHATSAPP_DISPLAY})
               </a>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openConsultationModal();
-                }}
-                className="w-full py-2.5 px-4 rounded-xl btn-primary-gold text-white text-xs font-bold flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-4 h-4 text-white" />
-                Get Project Consultation
-              </button>
             </div>
           </div>
         )}

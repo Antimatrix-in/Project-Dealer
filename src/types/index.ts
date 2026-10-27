@@ -37,6 +37,7 @@ export interface Project {
   level: "UG Final Year" | "PG / M.Tech" | "Diploma / Mini Project";
   year: string;
   featured?: boolean;
+  thumbnail?: string;
 }
 
 export interface ServiceItem {

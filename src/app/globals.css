@@ -2,97 +2,132 @@
 
 @layer base {
   :root {
-    --background: #FFFFFF;
-    --background-secondary: #F8FAFC;
-    --foreground: #0F172A;
-    --navy-primary: #0B1F4D;
-    --gold-accent: #F5A623;
-    --muted-text: #64748B;
-    --border-color: #E2E8F0;
+    /* Theme 07: Warm Orange-Red Color Palette */
+    --primary-orange: #FF6B00;
+    --secondary-orange: #FF8A00;
+    --coral-red: #FF3D3D;
+    --deep-red: #D90429;
+    --light-peach: #FFF1E8;
+    --warm-cream: #FFF9F5;
+    --white: #FFFFFF;
+    --text-primary: #101828;
+    --text-secondary: #526581;
+    --dark-navy: #101B30;
+    --success-green: #00A86B;
+
+    /* Semantic tokens */
+    --background: #FFF9F5;
+    --background-secondary: #FFF1E8;
+    --foreground: #101828;
+    --muted-text: #526581;
+    --border-color: rgba(255, 107, 0, 0.15);
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #0F172A;
+    background-color: #FFF9F5;
+    color: #101828;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    selection-background-color: #FEF3C7;
-    selection-color: #92400E;
+    selection-background-color: #FFF1E8;
+    selection-color: #D90429;
   }
 }
 
-/* Custom Scrollbar for Light SaaS Theme */
+/* Custom Scrollbar for Warm Orange-Red Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #FFF9F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #FFD2BC;
   border-radius: 9999px;
-  border: 2px solid #F8FAFC;
+  border: 2px solid #FFF9F5;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #FF8A00;
 }
 
-/* Stripe/Linear Style Soft Glassmorphism */
-.saas-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 4px 20px -2px rgba(11, 31, 77, 0.05), 0 2px 6px -1px rgba(11, 31, 77, 0.02);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.saas-card:hover {
-  border-color: rgba(245, 166, 35, 0.45);
-  box-shadow: 0 20px 35px -8px rgba(11, 31, 77, 0.09), 0 6px 12px -2px rgba(245, 166, 35, 0.08);
-  transform: translateY(-3px);
-}
-
-.saas-glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-/* Premium Gold Gradient for Accent Text */
+/* Theme 07 Primary Orange-Red Gradient */
+.text-gradient-orange-red,
+.text-gradient-primary,
 .text-gradient-gold {
-  background: linear-gradient(135deg, #B45309 0%, #D97706 30%, #F5A623 70%, #D97706 100%);
+  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.bg-gradient-orange-red,
+.bg-gradient-primary,
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #F5A623 0%, #D97706 100%);
+  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
 }
 
+.btn-primary-orange-red,
+.btn-primary-gradient,
 .btn-primary-gold {
-  background: linear-gradient(135deg, #F5A623 0%, #D97706 100%);
+  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px 0 rgba(245, 166, 35, 0.35);
+  box-shadow: 0 4px 16px -2px rgba(255, 107, 0, 0.35);
   transition: all 0.25s ease;
 }
 
+.btn-primary-orange-red:hover,
+.btn-primary-gradient:hover,
 .btn-primary-gold:hover {
-  background: linear-gradient(135deg, #E09612 0%, #C26303 100%);
-  box-shadow: 0 6px 20px 0 rgba(245, 166, 35, 0.45);
+  background: linear-gradient(110deg, #FF8A00 0%, #FF3D3D 50%, #D90429 100%);
+  box-shadow: 0 6px 22px -2px rgba(217, 4, 41, 0.45);
   transform: translateY(-1px);
 }
 
-/* SaaS Grid & Dot Backgrounds */
+/* WhatsApp Success Button */
+.btn-whatsapp {
+  background-color: #00A86B;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px 0 rgba(0, 168, 107, 0.3);
+  transition: all 0.25s ease;
+}
+.btn-whatsapp:hover {
+  background-color: #00925C;
+  box-shadow: 0 6px 18px 0 rgba(0, 168, 107, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Theme 07 Card with Soft Peach Border and Hover Lift */
+.saas-card,
+.peach-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 107, 0, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(16, 27, 48, 0.04), 0 2px 6px -1px rgba(255, 107, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.saas-card:hover,
+.peach-card:hover {
+  border-color: rgba(255, 107, 0, 0.4);
+  box-shadow: 0 20px 35px -8px rgba(255, 107, 0, 0.12), 0 6px 14px -2px rgba(217, 4, 41, 0.08);
+  transform: translateY(-3px);
+}
+
+.saas-glass {
+  background: rgba(255, 249, 245, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 107, 0, 0.15);
+}
+
+/* Theme 07 Grid & Hero Backgrounds */
 .bg-grid-subtle {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(11, 31, 77, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 31, 77, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 107, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 107, 0, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(245, 166, 35, 0.08) 0%, rgba(11, 31, 77, 0.03) 45%, transparent 75%);
+  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.12) 0%, rgba(255, 61, 61, 0.06) 40%, rgba(255, 241, 232, 0.4) 70%, transparent 100%);
 }
 
 @keyframes floatElement {

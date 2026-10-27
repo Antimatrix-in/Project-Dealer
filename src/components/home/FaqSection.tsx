@@ -3,14 +3,15 @@
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
 import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "What deliverables are included with an academic project?",
-      answer: "Every complete academic project includes 100% working and tested source code, standard reference base paper, 60-90 page project report/thesis formatted to your university's guidelines, project synopsis, standard SRS with UML diagrams, phase-specific PPT presentation slides, and an exhaustive 100+ question Viva Voce preparation handbook."
+      question: "What deliverables are included with a project?",
+      answer: "Every complete project includes 100% working and tested source code, standard reference base paper, 60-90 page project report/thesis formatted to your university's guidelines, project synopsis, standard SRS with UML diagrams, phase-specific PPT presentation slides, and an exhaustive 100+ question Viva Voce preparation handbook."
     },
     {
       question: "Will the documentation pass our college Turnitin / Urkund plagiarism check?",
@@ -21,8 +22,8 @@ export default function FaqSection() {
       answer: "Yes! Our Project Customization service is tailored for guide-driven modifications. Whether your guide demands incorporating a novel attention block into a CNN, swapping datasets, adding a new UI module, or comparing two algorithms, our engineers implement the exact requirements."
     },
     {
-      question: "How fast can you deliver an academic project for an urgent review deadline?",
-      answer: "For urgent submissions (Phase 0, Phase 1, or Final Review), we have pre-verified academic implementations ready for immediate same-day or 24-48 hour delivery with complete setup and walkthrough. Custom development typically spans 1 to 2 weeks with milestone reviews."
+      question: "How fast can you deliver a project for an urgent review deadline?",
+      answer: "For urgent submissions (Phase 0, Phase 1, or Final Review), we have pre-verified implementations ready for immediate same-day or 24-48 hour delivery with complete setup and walkthrough. Custom development typically spans 1 to 2 weeks with milestone reviews."
     },
     {
       question: "What support is provided for the final Viva Voce examination?",
@@ -40,17 +41,17 @@ export default function FaqSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-[#0B1F4D] mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#F5A623]" />
-            <span className="font-mono uppercase tracking-wider text-[11px] font-bold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF1E8] border border-[#FF6B00]/25 text-xs font-semibold text-[#FF6B00] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse" />
+            <span className="uppercase tracking-wider text-[11px] font-bold">
               Got Questions?
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
-            Frequently Asked <span className="text-gradient-gold">Questions</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101828] tracking-tight">
+            Frequently Asked <span className="text-gradient-orange-red">Questions</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#64748B] leading-relaxed">
-            Everything you need to know about our academic project development, university guidelines compliance, and viva guidance.
+          <p className="mt-4 text-base sm:text-lg text-[#526581] leading-relaxed">
+            Everything you need to know about our project development, university guidelines compliance, and viva guidance.
           </p>
         </div>
 
@@ -62,8 +63,8 @@ export default function FaqSection() {
                 key={idx}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-[#F8FAFC] border-[#F5A623] shadow-md"
-                    : "bg-white border-slate-200 hover:border-slate-300 shadow-xs"
+                    ? "bg-[#FFF9F5] border-[#FF6B00] shadow-sm ring-1 ring-[#FF6B00]/20"
+                    : "bg-white border-slate-200 hover:border-[#FF6B00]/40 shadow-xs"
                 }`}
               >
                 <button
@@ -71,22 +72,22 @@ export default function FaqSection() {
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5">
-                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-[#0B1F4D]">
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00]">
                       0{idx + 1}
                     </span>
-                    <h3 className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-[#0B1F4D]" : "text-[#0F172A]"}`}>
+                    <h3 className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-[#FF6B00]" : "text-[#101828]"}`}>
                       {faq.question}
                     </h3>
                   </div>
                   <ChevronDown
                     className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-[#F5A623]" : ""
+                      isOpen ? "rotate-180 text-[#FF6B00]" : ""
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#64748B] leading-relaxed border-t border-slate-200/80 pt-4">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#526581] leading-relaxed border-t border-[#FF6B00]/15 pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -96,31 +97,31 @@ export default function FaqSection() {
         </div>
 
         {/* Quick Help Card */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+        <div className="mt-12 p-6 rounded-2xl bg-[#FFF9F5] border border-[#FF6B00]/25 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#F5A623] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF1E8] border border-[#FF6B00]/25 flex items-center justify-center text-[#FF6B00] shrink-0">
               <HelpCircle className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-[#0F172A]">Have a specific question not covered here?</h4>
-              <p className="text-xs text-[#64748B]">Talk directly with an academic mentor on WhatsApp or schedule a call.</p>
+              <h4 className="text-sm font-bold text-[#101828]">Have a specific question not covered here?</h4>
+              <p className="text-xs text-[#526581]">Talk directly with a technical mentor on WhatsApp or schedule a call.</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => openConsultationModal()}
-              className="px-4 py-2.5 rounded-xl btn-primary-gold text-white font-bold text-xs shadow-sm transition-all cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white font-bold text-xs shadow-sm transition-all cursor-pointer"
             >
               Ask an Expert
             </button>
             <a
-              href="https://wa.me/919876543210?text=Hi%20AntiMatrix!%20I%20have%20a%20question%20regarding%20academic%20projects."
+              href={getWhatsAppUrl({ requirements: "General inquiry / project questions" })}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold hover:bg-emerald-100 transition-colors flex items-center gap-1.5"
+              className="px-4 py-2.5 rounded-xl bg-emerald-50 border border-[#00A86B]/30 text-[#00A86B] text-xs font-bold hover:bg-emerald-100 transition-colors flex items-center gap-1.5"
             >
-              <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+              <MessageCircle className="w-3.5 h-3.5 text-[#00A86B]" />
               <span>WhatsApp</span>
             </a>
           </div>

@@ -1,15 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  SlidersHorizontal,
-  GraduationCap,
-  FileText,
-  Code2,
-  Award,
-  Headphones,
-  CheckCircle2
-} from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function WhyChooseUs() {
@@ -17,67 +10,103 @@ export default function WhyChooseUs() {
     {
       title: "Customized Projects",
       badge: "Bespoke Architecture",
-      icon: <SlidersHorizontal className="w-6 h-6 text-[#F5A623]" />,
+      image: "/images/features/customized-projects.jpg",
+      imageAlt: "Students discussing software project planning and architecture in modern tech lab",
       desc: "Tailored to your specific university guidelines, college syllabus, and guide preferences with custom feature sets.",
       details: "Custom module integration, personalized algorithms, and flexible architecture tailored to your departmental review.",
+      benefits: [
+        "Guide-specific module customizations",
+        "Personalized algorithms & custom datasets",
+        "100% university syllabus compliance"
+      ]
     },
     {
       title: "Expert Guidance",
       badge: "Industry Mentors",
-      icon: <GraduationCap className="w-6 h-6 text-[#0B1F4D]" />,
+      image: "/images/features/expert-guidance.jpg",
+      imageAlt: "Software engineering mentor helping student with coding and project review",
       desc: "Direct 1-on-1 mentorship from senior software engineers and domain specialists throughout your project lifecycle.",
       details: "Architecture design reviews, algorithm walkthroughs, and code review sessions before every college submission.",
+      benefits: [
+        "1-on-1 direct mentor code walkthroughs",
+        "System architecture & logic reviews",
+        "Pre-submission rehearsal sessions"
+      ]
     },
     {
       title: "Complete Documentation",
       badge: "Low Plagiarism Guaranteed",
-      icon: <FileText className="w-6 h-6 text-[#F5A623]" />,
-      desc: "Turnkey 60-90 page project reports, IEEE standard base paper reviews, synopsis, and UML architectural diagrams.",
+      image: "/images/features/complete-documentation.jpg",
+      imageAlt: "Project documentation workspace with bound thesis book and UML diagrams",
+      desc: "Turnkey 60-90 page project reports, authentic standard base paper reviews, synopsis, and UML architectural diagrams.",
       details: "Formatted specifically to your university thesis guidelines (Anna Univ, VTU, JNTU, SRM, VIT) with zero plagiarism anxiety.",
+      benefits: [
+        "60-90 page thesis report (Word & PDF)",
+        "Standard base paper & synopsis included",
+        "Complete UML class & sequence diagrams"
+      ]
     },
     {
       title: "Source Code Included",
       badge: "Production Standard",
-      icon: <Code2 className="w-6 h-6 text-[#0B1F4D]" />,
+      image: "/images/features/source-code.jpg",
+      imageAlt: "Modern developer desk displaying VS Code editor with clean source code",
       desc: "Full unminified source code, clean directory structures, comprehensive comments, and single-click installation scripts.",
       details: "Includes all pre-trained model weights (.h5, .pt, .onnx), database migrations, and clean requirements.txt / pom.xml.",
+      benefits: [
+        "Clean, well-commented source code",
+        "Pre-trained weights & dataset packages",
+        "Single-click dependency setup scripts"
+      ]
     },
     {
       title: "Viva Preparation",
       badge: "High Distinction",
-      icon: <Award className="w-6 h-6 text-[#F5A623]" />,
+      image: "/images/features/viva-preparation.jpg",
+      imageAlt: "Student presenting project viva defense in front of examiners in conference auditorium",
       desc: "Exhaustive viva voce question banks, external examiner question simulations, and polished PowerPoint slide decks.",
       details: "Mock defense sessions, algorithm explanation cue cards, and line-by-line code explanation to secure high distinction.",
+      benefits: [
+        "Exhaustive viva voce Q&A handbook",
+        "Professional presentation slide deck (PPT)",
+        "Examiner defense simulation & cue cards"
+      ]
     },
     {
       title: "Technical Support",
       badge: "Live Screen Share",
-      icon: <Headphones className="w-6 h-6 text-[#0B1F4D]" />,
+      image: "/images/features/technical-support.jpg",
+      imageAlt: "Support engineer providing remote technical developer assistance via screen share",
       desc: "Remote installation and environment setup assistance via AnyDesk, Google Meet, and instant WhatsApp support.",
       details: "Environment setup, dependency conflict resolution, and on-demand live run verification right on your laptop.",
+      benefits: [
+        "AnyDesk / Google Meet remote setup",
+        "Environment & dependency troubleshooting",
+        "Direct WhatsApp instant mentor helpline"
+      ]
     },
   ];
 
   return (
-    <section className="py-24 bg-[#F8FAFC] border-y border-slate-200/80 relative">
+    <section className="py-24 bg-[#FFF9F5] border-y border-[#FF6B00]/15 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-[#0B1F4D] mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#F5A623]" />
-            <span className="font-mono uppercase tracking-wider text-[11px] font-bold">The AntiMatrix Standard</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF1E8] border border-[#FF6B00]/25 text-xs font-semibold text-[#FF6B00] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse" />
+            <span className="uppercase tracking-wider text-[11px] font-bold">The AntiMatrix Standard</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
-            Why Choose <span className="text-gradient-gold">AntiMatrix</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101828] tracking-tight">
+            Why Choose <span className="text-gradient-orange-red">AntiMatrix</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#64748B] leading-relaxed">
-            We provide a startup-grade technology foundation and academic defense ecosystem that guarantees seamless project completion.
+          <p className="mt-4 text-base sm:text-lg text-[#526581] leading-relaxed">
+            We provide a startup-grade technology foundation and viva defense ecosystem that guarantees seamless project completion.
           </p>
         </div>
 
-        {/* 6 Premium Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 6 Premium Cards with Real High-Quality Banner Images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((item, idx) => (
             <motion.div
               key={idx}
@@ -85,34 +114,55 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative rounded-2xl bg-white border border-slate-200/90 p-7 shadow-[0_4px_20px_-4px_rgba(11,31,77,0.05)] hover:shadow-[0_16px_35px_-6px_rgba(11,31,77,0.1)] hover:border-[#F5A623]/50 transition-all duration-300 flex flex-col justify-between"
+              className="group relative rounded-[16px] bg-white border border-slate-200/90 shadow-[0_4px_25px_-4px_rgba(255,107,0,0.06)] hover:shadow-[0_22px_40px_-8px_rgba(255,107,0,0.16)] hover:border-[#FF6B00]/60 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden h-full"
             >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
-                    {item.icon}
+              <div className="flex flex-col flex-1">
+                {/* Top 40% Professional Banner Image with Hover Zoom Effect */}
+                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    priority={idx < 3}
+                  />
+
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent pointer-events-none" />
+
+                  {/* Floating Badge on Banner */}
+                  <div className="absolute top-3.5 right-3.5 z-10">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/95 text-[#101828] font-mono shadow-md border border-white/80 backdrop-blur-md">
+                      {item.badge}
+                    </span>
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-[#0B1F4D] font-mono">
-                    {item.badge}
-                  </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#0F172A] mb-2.5 group-hover:text-[#0B1F4D] transition-colors">
-                  {item.title}
-                </h3>
+                {/* Bottom 60% Card Content: Title, Description & Benefits */}
+                <div className="p-6 sm:p-7 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-[#101828] mb-2.5 group-hover:text-[#FF6B00] transition-colors leading-snug">
+                    {item.title}
+                  </h3>
 
-                <p className="text-sm text-[#0F172A] font-medium leading-relaxed mb-3">
-                  {item.desc}
-                </p>
+                  <p className="text-sm text-[#101828] font-medium leading-relaxed mb-2.5">
+                    {item.desc}
+                  </p>
 
-                <p className="text-xs text-[#64748B] leading-relaxed">
-                  {item.details}
-                </p>
-              </div>
+                  <p className="text-xs text-[#526581] leading-relaxed mb-5">
+                    {item.details}
+                  </p>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-500">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>100% University Guide Compliant</span>
+                  {/* Benefits Checklist */}
+                  <div className="mt-auto pt-4 border-t border-slate-100 space-y-2">
+                    {item.benefits.map((benefit, bIdx) => (
+                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#101828]">
+                        <CheckCircle2 className="w-4 h-4 text-[#00A86B] shrink-0" />
+                        <span>{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
