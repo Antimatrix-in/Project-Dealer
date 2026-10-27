@@ -67,28 +67,28 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen pt-28 pb-16 bg-[#FFF9F5] flex flex-col justify-center items-center px-4 relative overflow-hidden">
+    <div className="min-h-screen pt-28 pb-16 bg-[#080808] flex flex-col justify-center items-center px-4 relative overflow-hidden text-white">
       {/* Background Decorative Glows */}
-      <div className="absolute top-10 right-1/4 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-[#FF3D3D]/08 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-10 right-1/4 w-96 h-96 bg-[#FF7900]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-[#FF9500]/08 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Back to Home Link */}
       <div className="w-full max-w-md mb-4 flex justify-between items-center text-xs">
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-[#526581] hover:text-[#FF6B00] font-semibold transition-colors"
+          className="inline-flex items-center gap-1.5 text-[#B8B8B8] hover:text-[#FF7900] font-semibold transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Main Website</span>
         </Link>
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00] font-mono text-[11px] font-bold">
-          <ShieldCheck className="w-3.5 h-3.5" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#161616] border border-[#2A2A2A] text-[#FF7900] font-mono text-[11px] font-bold">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#FF7900]" />
           Secure Gateway
         </span>
       </div>
 
       {/* Login Card */}
-      <div className="w-full max-w-md bg-white rounded-3xl border border-[#FF6B00]/20 shadow-[0_15px_45px_-10px_rgba(255,107,0,0.12),0_4px_20px_-4px_rgba(16,27,48,0.06)] p-8 sm:p-10 relative z-10">
+      <div className="w-full max-w-md bg-[#161616] rounded-3xl border border-[#2A2A2A] shadow-2xl p-8 sm:p-10 relative z-10">
         {/* Brand Header */}
         <div className="text-center mb-8">
           <div className="inline-block mb-4">
@@ -103,18 +103,18 @@ export default function AdminLoginPage() {
               />
             </div>
           </div>
-          <h1 className="text-2xl font-extrabold text-[#101828] tracking-tight">
-            Admin <span className="text-gradient-orange-red">Login</span>
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">
+            Admin <span className="text-gradient-orange">Login</span>
           </h1>
-          <p className="mt-1.5 text-xs text-[#526581]">
+          <p className="mt-1.5 text-xs text-[#B8B8B8]">
             Authorized portal for project consultations and student inquiries management.
           </p>
         </div>
 
         {/* Error Alert Message */}
         {errorMessage && (
-          <div className="mb-6 p-3.5 rounded-xl bg-red-50 border border-red-200/80 text-red-700 text-xs flex items-start gap-2.5 animate-in fade-in duration-200">
-            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+          <div className="mb-6 p-3.5 rounded-xl bg-[#1D1D1D] border border-[#FF4500]/50 text-[#FF9500] text-xs flex items-start gap-2.5 animate-in fade-in duration-200">
+            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-[#FF4500]" />
             <span className="leading-relaxed font-medium">{errorMessage}</span>
           </div>
         )}
@@ -123,11 +123,11 @@ export default function AdminLoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Field */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#101828] font-mono mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-white font-mono mb-1.5">
               Admin Email
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-[#B8B8B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 required
@@ -136,7 +136,7 @@ export default function AdminLoginPage() {
                 placeholder="antimatrix2026@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFF9F5] border border-slate-200 text-sm text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-sm text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900] transition-all"
               />
             </div>
           </div>
@@ -144,12 +144,12 @@ export default function AdminLoginPage() {
           {/* Password Field */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#101828] font-mono">
+              <label className="block text-xs font-bold uppercase tracking-wider text-white font-mono">
                 Password
               </label>
             </div>
             <div className="relative">
-              <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Lock className="w-4 h-4 text-[#B8B8B8] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type={showPassword ? "text" : "password"}
                 required
@@ -157,13 +157,13 @@ export default function AdminLoginPage() {
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#FFF9F5] border border-slate-200 text-sm text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white transition-all"
+                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-sm text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900] transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? "Hide password" : "Show password"}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#FF6B00] transition-colors cursor-pointer"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#B8B8B8] hover:text-[#FF7900] transition-colors cursor-pointer"
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -176,7 +176,7 @@ export default function AdminLoginPage() {
               type="submit"
               disabled={loading}
               id="admin-login-submit"
-              className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF3D3D] to-[#D90429] hover:opacity-95 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-[#FF6B00]/25 hover:shadow-lg"
+              className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-[#FF7900]/25"
             >
               {loading ? (
                 <>
@@ -194,8 +194,8 @@ export default function AdminLoginPage() {
         </form>
 
         {/* Footer Security Badge */}
-        <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-center gap-2 text-[11px] text-[#526581]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#00A86B]" />
+        <div className="mt-8 pt-6 border-t border-[#2A2A2A] flex items-center justify-center gap-2 text-[11px] text-[#B8B8B8]">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#FF7900]" />
           <span>Encrypted Session • HMAC Token Signed • Rate-Limited</span>
         </div>
       </div>

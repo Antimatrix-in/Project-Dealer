@@ -71,19 +71,19 @@ export default function CategoryGrid() {
   ];
 
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-24 bg-[#080808] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF1E8] border border-[#FF6B00]/25 text-xs font-semibold text-[#FF6B00] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1D1D1D] border border-[#FF7900]/30 text-xs font-semibold text-[#FF7900] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#FF7900] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">10 Trending Domains</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101828] tracking-tight">
-            Popular Project <span className="text-gradient-orange-red">Categories</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF] tracking-tight">
+            Popular Project <span className="text-gradient-orange">Categories</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#526581] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#B8B8B8] leading-relaxed">
             Choose from comprehensive project domains aligned with current university syllabi and emerging industry technology stacks.
           </p>
         </div>
@@ -98,16 +98,16 @@ export default function CategoryGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group relative rounded-[16px] bg-white border border-slate-200/90 shadow-[0_4px_25px_-4px_rgba(255,107,0,0.06)] hover:shadow-[0_20px_35px_-8px_rgba(255,107,0,0.16)] hover:border-[#FF6B00]/60 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
+                className="group relative rounded-[16px] bg-[#161616] border border-[#2A2A2A] shadow-[0_4px_25px_-4px_rgba(0,0,0,0.7)] hover:shadow-[0_20px_35px_-8px_rgba(255,121,0,0.18)] hover:border-[#FF7900] transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
               >
                 <div>
-                  {/* Top 40% Featured Technology Illustration with Official Logos */}
-                  <div className="h-52 sm:h-56 w-full relative overflow-hidden rounded-t-[15px] border-b border-slate-100">
+                  {/* Top 40% Featured Technology Illustration */}
+                  <div className="h-52 sm:h-56 w-full relative overflow-hidden rounded-t-[15px] border-b border-[#2A2A2A]">
                     <CategoryIllustration category={cat.name} />
 
                     {/* Floating Project Count Badge */}
                     <div className="absolute top-3 right-3 z-20">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-white/95 text-[#101828] shadow-md border border-white/80 backdrop-blur-md">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-[#161616]/95 text-[#FF7900] shadow-md border border-[#2A2A2A] backdrop-blur-md">
                         {cat.count} Projects
                       </span>
                     </div>
@@ -116,14 +116,14 @@ export default function CategoryGrid() {
                   {/* Card Body */}
                   <div className="p-5 sm:p-5">
                     {/* Category Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#FF6B00] transition-colors leading-snug mb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#FFFFFF] group-hover:text-[#FF7900] transition-colors leading-snug mb-2">
                       <Link href={`/projects/${cat.slug}`}>
                         {cat.name}
                       </Link>
                     </h3>
 
                     {/* Short Description */}
-                    <p className="text-xs text-[#526581] leading-relaxed line-clamp-3 mb-4">
+                    <p className="text-xs text-[#B8B8B8] leading-relaxed line-clamp-3 mb-4">
                       {cat.desc}
                     </p>
                   </div>
@@ -134,10 +134,10 @@ export default function CategoryGrid() {
                   <Link
                     href={`/projects/${cat.slug}`}
                     id={`explore-category-${cat.slug}`}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#FFF9F5] hover:bg-gradient-to-r hover:from-[#FF6B00] hover:to-[#D90429] text-[#101828] hover:text-white border border-[#FF6B00]/25 hover:border-transparent text-xs font-bold transition-all duration-200 flex items-center justify-between group/btn shadow-xs cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#1D1D1D] hover:bg-[#222222] text-[#FFFFFF] hover:text-[#FF7900] border border-[#2A2A2A] hover:border-[#FF7900] text-xs font-bold transition-all duration-200 flex items-center justify-between group/btn shadow-xs cursor-pointer"
                   >
                     <span>Explore Projects</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#FF6B00] group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#FF7900] group-hover/btn:translate-x-1 transition-all" />
                   </Link>
                 </div>
               </motion.div>

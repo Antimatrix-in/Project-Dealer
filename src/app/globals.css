@@ -2,137 +2,161 @@
 
 @layer base {
   :root {
-    /* Theme 07: Warm Orange-Red Color Palette */
-    --primary-orange: #FF6B00;
-    --secondary-orange: #FF8A00;
-    --coral-red: #FF3D3D;
-    --deep-red: #D90429;
-    --light-peach: #FFF1E8;
-    --warm-cream: #FFF9F5;
-    --white: #FFFFFF;
-    --text-primary: #101828;
-    --text-secondary: #526581;
-    --dark-navy: #101B30;
-    --success-green: #00A86B;
+    /* Strict Black & Orange Palette */
+    --bg-main: #080808;
+    --bg-secondary: #101010;
+    --bg-card: #161616;
+    --bg-elevated: #1D1D1D;
+    --primary-orange: #FF7900;
+    --secondary-orange: #FF9500;
+    --orange-dark: #FF4500;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B8B8B8;
+    --border-color: #2A2A2A;
 
     /* Semantic tokens */
-    --background: #FFF9F5;
-    --background-secondary: #FFF1E8;
-    --foreground: #101828;
-    --muted-text: #526581;
-    --border-color: rgba(255, 107, 0, 0.15);
+    --background: #080808;
+    --background-secondary: #101010;
+    --foreground: #FFFFFF;
+    --muted-text: #B8B8B8;
   }
 
   body {
-    background-color: #FFF9F5;
-    color: #101828;
+    background-color: #080808;
+    color: #FFFFFF;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    selection-background-color: #FFF1E8;
-    selection-color: #D90429;
+    selection-background-color: #FF7900;
+    selection-color: #080808;
   }
 }
 
-/* Custom Scrollbar for Warm Orange-Red Theme */
+/* Custom Scrollbar for Black & Orange Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFF9F5;
+  background: #080808;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FFD2BC;
+  background: #2A2A2A;
   border-radius: 9999px;
-  border: 2px solid #FFF9F5;
+  border: 2px solid #080808;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF8A00;
+  background: #FF7900;
 }
 
-/* Theme 07 Primary Orange-Red Gradient */
+/* Primary Orange Gradient Text */
 .text-gradient-orange-red,
 .text-gradient-primary,
-.text-gradient-gold {
-  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
+.text-gradient-gold,
+.text-gradient-orange {
+  background: linear-gradient(120deg, #FF7900 0%, #FF9500 50%, #FF4500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Background Gradients */
 .bg-gradient-orange-red,
 .bg-gradient-primary,
-.bg-gradient-gold {
-  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
+.bg-gradient-gold,
+.bg-gradient-orange {
+  background: linear-gradient(120deg, #FF7900 0%, #FF4500 100%);
 }
 
+/* Primary Button Gradient */
 .btn-primary-orange-red,
 .btn-primary-gradient,
-.btn-primary-gold {
-  background: linear-gradient(110deg, #FF6B00 0%, #FF3D3D 55%, #D90429 100%);
+.btn-primary-gold,
+.btn-primary-orange {
+  background: linear-gradient(120deg, #FF7900, #FF4500);
   color: #FFFFFF;
-  box-shadow: 0 4px 16px -2px rgba(255, 107, 0, 0.35);
+  box-shadow: 0 4px 18px -2px rgba(255, 121, 0, 0.4);
   transition: all 0.25s ease;
+  border: 1px solid rgba(255, 121, 0, 0.3);
 }
 
 .btn-primary-orange-red:hover,
 .btn-primary-gradient:hover,
-.btn-primary-gold:hover {
-  background: linear-gradient(110deg, #FF8A00 0%, #FF3D3D 50%, #D90429 100%);
-  box-shadow: 0 6px 22px -2px rgba(217, 4, 41, 0.45);
+.btn-primary-gold:hover,
+.btn-primary-orange:hover {
+  background: linear-gradient(120deg, #FF9500, #FF4500);
+  box-shadow: 0 6px 24px -2px rgba(255, 121, 0, 0.6);
   transform: translateY(-1px);
 }
 
-/* WhatsApp Success Button */
-.btn-whatsapp {
-  background-color: #00A86B;
+/* Secondary Dark Button */
+.btn-secondary-dark {
+  background: #161616;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px 0 rgba(0, 168, 107, 0.3);
+  border: 1px solid #2A2A2A;
+  transition: all 0.25s ease;
+}
+.btn-secondary-dark:hover {
+  background: #1D1D1D;
+  border-color: #FF7900;
+  color: #FF7900;
+  transform: translateY(-1px);
+}
+
+/* WhatsApp Button (Dark & Orange themed to respect strict palette) */
+.btn-whatsapp {
+  background-color: #161616;
+  color: #FFFFFF;
+  border: 1px solid #2A2A2A;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
 }
 .btn-whatsapp:hover {
-  background-color: #00925C;
-  box-shadow: 0 6px 18px 0 rgba(0, 168, 107, 0.4);
+  background-color: #1D1D1D;
+  border-color: #FF7900;
+  color: #FF7900;
+  box-shadow: 0 6px 20px 0 rgba(255, 121, 0, 0.25);
   transform: translateY(-1px);
 }
 
-/* Theme 07 Card with Soft Peach Border and Hover Lift */
+/* Charcoal Cards with Subtle Borders and Orange Glow on Hover */
 .saas-card,
-.peach-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(255, 107, 0, 0.12);
-  box-shadow: 0 4px 20px -2px rgba(16, 27, 48, 0.04), 0 2px 6px -1px rgba(255, 107, 0, 0.02);
+.peach-card,
+.charcoal-card {
+  background: #161616;
+  border: 1px solid #2A2A2A;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .saas-card:hover,
-.peach-card:hover {
-  border-color: rgba(255, 107, 0, 0.4);
-  box-shadow: 0 20px 35px -8px rgba(255, 107, 0, 0.12), 0 6px 14px -2px rgba(217, 4, 41, 0.08);
+.peach-card:hover,
+.charcoal-card:hover {
+  border-color: #FF7900;
+  box-shadow: 0 12px 30px -4px rgba(255, 121, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.6);
   transform: translateY(-3px);
 }
 
 .saas-glass {
-  background: rgba(255, 249, 245, 0.88);
+  background: rgba(22, 22, 22, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 107, 0, 0.15);
+  border: 1px solid #2A2A2A;
 }
 
-/* Theme 07 Grid & Hero Backgrounds */
+/* Dark Grid & Hero Backgrounds */
 .bg-grid-subtle {
-  background-size: 32px 32px;
+  background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(255, 107, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 107, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 121, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 121, 0, 0.05) 1px, transparent 1px);
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 0, 0.12) 0%, rgba(255, 61, 61, 0.06) 40%, rgba(255, 241, 232, 0.4) 70%, transparent 100%);
+  background: radial-gradient(circle at 50% 0%, rgba(255, 121, 0, 0.15) 0%, rgba(255, 69, 0, 0.05) 35%, rgba(8, 8, 8, 0.95) 70%, #080808 100%);
 }
 
 @keyframes floatElement {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-6px) rotate(0.5deg); }
 }
 
 .animate-float-slow {
@@ -140,8 +164,8 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.85; }
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
 .animate-pulse-glow {
