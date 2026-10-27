@@ -1,0 +1,58 @@
+[
+  {
+    "id": "inq-2026-001",
+    "name": "Aravind Swaminathan",
+    "email": "aravind.swami@gmail.com",
+    "phone": "+91 98401 23456",
+    "college": "PSG College of Technology, Coimbatore",
+    "degree": "B.E. Computer Science & Engineering",
+    "category": "AI & Data Science",
+    "projectTitle": "Multimodal Medical AI: Chest Radiograph & EHR Diagnostic Assistant",
+    "requirement": "Need working PyTorch ViT source code with Grad-CAM heatmap visualization and IEEE standard base paper.",
+    "urgency": "1 Week",
+    "status": "In Progress",
+    "createdAt": "2026-10-26T09:15:00.000Z"
+  },
+  {
+    "id": "inq-2026-002",
+    "name": "Sneha Ramachandran",
+    "email": "sneha.ram@outlook.com",
+    "phone": "+91 97890 54321",
+    "college": "SSN College of Engineering, Chennai",
+    "degree": "B.Tech Information Technology",
+    "category": "Deep Learning",
+    "projectTitle": "Autonomous Aerial Drone Surveillance: YOLOv10 & DeepSORT",
+    "requirement": "Requires real-time webcam inference demonstration and 70-page thesis report with plagiarism check.",
+    "urgency": "2-3 Days",
+    "status": "In Progress",
+    "createdAt": "2026-10-25T14:30:00.000Z"
+  },
+  {
+    "id": "inq-2026-003",
+    "name": "Karthik Venkatesh",
+    "email": "karthik.v@citchennai.edu.in",
+    "phone": "+91 94441 98765",
+    "college": "Chennai Institute of Technology",
+    "degree": "B.E. Artificial Intelligence & Data Science",
+    "category": "Machine Learning",
+    "projectTitle": "Graph Neural Network & XGBoost Hybrid for Real-Time Fraud Detection",
+    "requirement": "Need complete Neo4j and Kafka pipeline setup with PPT slides for Phase 1 university review.",
+    "urgency": "1-2 Weeks",
+    "status": "Completed",
+    "createdAt": "2026-10-24T11:00:00.000Z"
+  },
+  {
+    "id": "inq-2026-004",
+    "name": "Pooja Balasubramanian",
+    "email": "pooja.bala@vit.ac.in",
+    "phone": "+91 96000 11223",
+    "college": "Vellore Institute of Technology (VIT)",
+    "degree": "M.Tech Software Engineering",
+    "category": "Cloud Computing",
+    "projectTitle": "Cloud-Native Serverless Workflow Engine on Kubernetes",
+    "requirement": "Looking for Helm charts, Knative event configuration, and viva preparation guide.",
+    "urgency": "Immediate",
+    "status": "Pending",
+    "createdAt": "2026-10-27T08:45:00.000Z"
+  }
+]
