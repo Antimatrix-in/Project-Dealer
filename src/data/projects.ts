@@ -13,7 +13,400 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   "Data Analytics"
 ];
 
+export const CATEGORY_SLUG_MAP: Record<ProjectCategory, string> = {
+  "AI & Data Science": "ai-data-science",
+  "Machine Learning": "machine-learning",
+  "Deep Learning": "deep-learning",
+  "Python Projects": "python-projects",
+  "Java Projects": "java-projects",
+  "Web Development": "web-development",
+  "Mobile App Development": "mobile-app-development",
+  "Cloud Computing": "cloud-computing",
+  "Cyber Security": "cyber-security",
+  "Data Analytics": "data-analytics"
+};
+
 export const PROJECTS_DATA: Project[] = [
+  {
+    id: "ai-data-science",
+    slug: "ai-data-science",
+    title: "AI & Data Science",
+    category: "AI & Data Science",
+    tagline: "Multimodal AI Architectures, Large Language Models, Clinical Decision Support & Transformer Systems",
+    description: "End-to-end AI & Data Science project framework featuring Vision Transformers (ViT), BioBERT clinical NLP, Generative AI retrieval pipelines, and explainable AI heatmaps.",
+    abstract: "Artificial Intelligence and Data Science represent the vanguard of engineering research. This project domain provides complete, IEEE-aligned implementations combining modern deep transformer models with multimodal feature extraction. Evaluated against real-world benchmark datasets, our solutions deliver high predictive accuracy, explainable attention maps (Grad-CAM/SHAP), and production-grade REST APIs suitable for university final year and master's submissions.",
+    problemStatement: "Bridging the gap between theoretical AI concepts and functional, low-latency applications that integrate multimodal datasets and explainable inference.",
+    proposedSolution: "A unified transformer pipeline with dual-stream multimodal attention, robust preprocessing, automated hyperparameter tuning, and a responsive web dashboard.",
+    techStack: ["PyTorch", "Python 3.11", "Transformers", "BioBERT", "FastAPI", "Next.js", "Docker", "PostgreSQL"],
+    features: [
+      "Dual-stream Multimodal Attention & Transformer Models",
+      "Grad-CAM Visual Heatmaps for Model Explainability",
+      "LLM-powered Automated Diagnostic & Summary Generation",
+      "Robust Preprocessing & Feature Imputation Pipeline",
+      "Real-Time Web Dashboard with Interactive Inference",
+      "Complete IEEE Format Base Paper & Plagiarism Report"
+    ],
+    modules: [
+      { name: "Module 1: Data Ingestion & Sanitization", description: "Processes multimodal image and textual records with CLAHE enhancement, normalization, and tokenization." },
+      { name: "Module 2: Feature Extraction & Cross-Attention", description: "Extracts deep latent embeddings using transformer backbones with cross-modal fusion layers." },
+      { name: "Module 3: Classification & Explainability Engine", description: "Multi-class predictive modeling with Grad-CAM and SHAP attribution overlays." },
+      { name: "Module 4: Web Application & Inference Dashboard", description: "Responsive Next.js user interface with FastAPI backend for live parameter testing." }
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & Implementation Guide",
+      "Comprehensive 65+ Page SRS and System Design Document",
+      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "High-Impact PPT Presentation (35 Slides with Visual Animations)",
+      "Complete Clean Source Code with Docker Setup",
+      "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ai-chatbot.jpg"
+  },
+  {
+    id: "machine-learning",
+    slug: "machine-learning",
+    title: "Machine Learning",
+    category: "Machine Learning",
+    tagline: "Graph Neural Networks, Ensemble Boosting Classifiers, Anomaly Detection & Predictive Modeling",
+    description: "High-accuracy Machine Learning project architecture utilizing Graph Convolutional Networks (GCN), XGBoost, LightGBM, and automated feature engineering for relational anomaly detection.",
+    abstract: "Machine learning engineering requires rigorous feature extraction, imbalance mitigation, and cross-validation across complex tabular and relational graph datasets. This project framework pioneers a hybrid architecture combining GNN relational topological embeddings with gradient-boosted decision trees. Delivering sub-50ms inference latency, it solves challenging real-world tasks such as fraud ring detection, customer churn forecasting, and credit risk scoring.",
+    problemStatement: "Standard machine learning approaches fail on skewed, high-dimensional datasets and struggle to capture relational interactions among interconnected entities.",
+    proposedSolution: "A hybrid framework integrating relational graph convolution with ensemble gradient boosting, automated SMOTE balancing, and SHAP explainability.",
+    techStack: ["Python", "Scikit-Learn", "PyTorch Geometric", "XGBoost", "LightGBM", "Pandas", "FastAPI", "Neo4j"],
+    features: [
+      "Heterogeneous Graph Modeling for Relational Entities",
+      "Sub-50ms Low-Latency Inference with ONNX Runtime",
+      "Adaptive Class Balancing & Focal Loss Optimization",
+      "Interactive 2D/3D Network Visualization Dashboard",
+      "TreeExplainer & SHAP Regulatory Audit Generation",
+      "Automated Alert Triggers & Anomaly Scorer"
+    ],
+    modules: [
+      { name: "Module 1: Ingestion & Feature Engineering", description: "Automated scaling, encoding, missing value imputation, and synthetic oversampling." },
+      { name: "Module 2: Graph Convolution & Topological Encoding", description: "Learns structural neighborhood embeddings using multi-layer Relational GCN." },
+      { name: "Module 3: Hybrid Scoring & Classification Ensemble", description: "Blends graph embeddings with tabular metrics through tuned XGBoost and LightGBM models." },
+      { name: "Module 4: Risk Analytics & Investigation Portal", description: "Interactive frontend providing metric charts, confusion matrices, and decision tree breakdowns." }
+    ],
+    documentationIncluded: [
+      "Standard Peer-Reviewed Base Paper",
+      "Complete 70-Page Final Year Project Report & Thesis",
+      "Full Software Requirements Specification (SRS)",
+      "Viva Voce Preparation Guide with Algorithm Complexities",
+      "Professional 30-Slide Defense PowerPoint Presentation",
+      "Clean Python Source Code & Synthetic Tabular Datasets"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ai-chatbot.jpg"
+  },
+  {
+    id: "deep-learning",
+    slug: "deep-learning",
+    title: "Deep Learning",
+    category: "Deep Learning",
+    tagline: "YOLOv10 Real-Time Vision, Autonomous Aerial Surveillance, 3D CNNs & Edge AI",
+    description: "Cutting-edge Deep Learning computer vision platform implementing anchor-free YOLOv10 object detection, DeepSORT trajectory tracking, and real-time GPU video inference.",
+    abstract: "Deep learning computer vision applications demand high frame-rate inference, occlusion resilience, and precision localization. This comprehensive project suite features state-of-the-art convolutional and attention-based architectures (YOLOv10, ResNet, U-Net) optimized for real-time video feeds. Complete with pre-trained weights, edge deployment configurations, and tensor optimization, it delivers 55+ FPS on commodity hardware.",
+    problemStatement: "High computational complexity and real-time processing bottlenecks in computer vision models deployed on resource-constrained academic setups.",
+    proposedSolution: "An anchor-free deep convolutional network with coordinate attention and Kalman-filter tracking, accelerated via TensorRT and CUDA.",
+    techStack: ["PyTorch", "YOLOv10", "TensorFlow", "DeepSORT", "OpenCV", "CUDA", "FastAPI", "Next.js"],
+    features: [
+      "Anchor-Free YOLOv10 Real-Time Object Detection",
+      "DeepSORT Kalman-Filter Multi-Object Trajectory Tracking",
+      "55+ FPS Optimized Pipeline on Standard CPU/GPU",
+      "Automated Bounding Box Annotation & Confidence Heatmaps",
+      "Webcam & RTSP Video Stream Ingestion Support",
+      "Complete Thesis, Source Code & Viva Defense Q&A"
+    ],
+    modules: [
+      { name: "Module 1: Video Ingestion & Frame Normalization", description: "Captures RTSP/webcam frames, resizes, and performs CLAHE contrast adjustments." },
+      { name: "Module 2: Convolutional Backbone & Head Inference", description: "Extracts multi-scale spatial features through coordinate attention blocks for bounding box regression." },
+      { name: "Module 3: Trajectory Association & DeepSORT Tracking", description: "Maintains unique object IDs across occlusions using Kalman filtering and cosine feature distance." },
+      { name: "Module 4: Real-Time Web Dashboard", description: "Displays live annotated video playback with FPS counters, detection logs, and alert triggers." }
+    ],
+    documentationIncluded: [
+      "Standard Peer-Reviewed Research Base Paper",
+      "Complete 75-Page Project Thesis & Documentation",
+      "Full System Architecture & UML Flow Diagrams",
+      "Comprehensive Viva Voce Handbook with Math Proofs",
+      "35-Slide Professional PowerPoint Presentation",
+      "Ready-to-Run Python Codebase with Pre-Trained Weights"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/plant-disease.jpg"
+  },
+  {
+    id: "python-projects",
+    slug: "python-projects",
+    title: "Python Projects",
+    category: "Python Projects",
+    tagline: "Computer Vision Safety, MediaPipe Landmark Tracking, IoT Automation & Desktop GUIs",
+    description: "Practical Python applications combining OpenCV, MediaPipe facial landmark mesh algorithms, automated alert sounders, and modern graphical interfaces.",
+    abstract: "Our Python project domain delivers modular, PEP8-compliant applications designed for immediate execution and high-impact viva demonstrations. Focusing on real-time computer vision, safety automation, and desktop GUI engineering, each system is crafted with intuitive controls, SQLite databases, and comprehensive documentation conforming to university guidelines.",
+    problemStatement: "Engineering students require robust, reproducible Python applications with automated setup and zero driver or environment compatibility issues.",
+    proposedSolution: "Self-contained Python applications using MediaPipe and OpenCV with automated virtual environment initialization and standalone execution support.",
+    techStack: ["Python 3.11", "OpenCV", "MediaPipe", "PyQt6", "FastAPI", "SQLite", "NumPy", "Matplotlib"],
+    features: [
+      "Real-Time Facial Landmark Mesh & Eye Aspect Ratio (EAR)",
+      "Automated Drowsiness & Yawn Alert Sound Triggers",
+      "Interactive PyQt6 Desktop GUI with Live Camera Feed",
+      "CSV & SQLite Attendance and Incident Log Export",
+      "Zero-Dependency Standalone Packaging Configuration",
+      "60+ Page University Thesis Report with Flowcharts"
+    ],
+    modules: [
+      { name: "Module 1: Camera Feed & Video Stream Capture", description: "Manages webcam capture, frame buffers, and real-time display synchronization." },
+      { name: "Module 2: Facial Landmark Extraction & Geometric Analysis", description: "Tracks 468 3D facial landmarks and calculates EAR and MAR fatigue metrics." },
+      { name: "Module 3: Alert Trigger & Audio Dispatch", description: "Activates audible sirens and visual warnings when thresholds exceed safety limits." },
+      { name: "Module 4: Logging & Analytics Dashboard", description: "Records timestamped session data into SQLite with exportable summary charts." }
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & System Blueprint",
+      "65-Page Project Thesis with Code Walkthrough",
+      "UML Activity, Sequence, and Component Diagrams",
+      "Viva Voce Q&A Handbook (80+ Questions)",
+      "High-Quality PPT Defense Presentation (30 Slides)",
+      "Clean Python Source Code with Setup Scripts"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/student-attendance.jpg"
+  },
+  {
+    id: "java-projects",
+    slug: "java-projects",
+    title: "Java Projects",
+    category: "Java Projects",
+    tagline: "Enterprise Spring Boot 3 Microservices, Cryptographic Integrity & Cloud REST APIs",
+    description: "Industry-standard enterprise Java applications featuring Spring Boot 3, Spring Security, JWT authentication, Hibernate/JPA, and cryptographic audit proofs.",
+    abstract: "Enterprise Java forms the backbone of global banking and corporate infrastructure. This project framework exposes students to production software engineering patterns: layered MVC design, asynchronous worker pools, Docker containerization, and cryptographic data integrity verification. Each project includes complete database schemas, Swagger REST documentation, and unit test suites.",
+    problemStatement: "University evaluators expect enterprise-scale architecture demonstrating transactional consistency, role-based security, and cryptographic audit capabilities.",
+    proposedSolution: "A scalable Spring Boot 3 microservices backend with JWT security, PostgreSQL persistence, and tamper-evident SHA-256 Merkle tree verification.",
+    techStack: ["Java 21", "Spring Boot 3", "Spring Security", "Hibernate / JPA", "PostgreSQL", "React", "Docker", "Maven"],
+    features: [
+      "Modular Layered Architecture (Controller, Service, Repository, DTO)",
+      "Stateless JWT Authentication with Role-Based Access Control (RBAC)",
+      "Cryptographic Merkle Proofs for Tamper-Evident Record Verification",
+      "Interactive Swagger OpenAPI 3.0 API Documentation",
+      "Asynchronous Email & Notification Processing Engine",
+      "Exhaustive Viva Guide Covering OOPs, Collections & Spring Internals"
+    ],
+    modules: [
+      { name: "Module 1: Security & Identity Gateway", description: "Handles user signup, BCrypt hashing, JWT issuance, and RBAC authorization filters." },
+      { name: "Module 2: Business Logic & Service Tier", description: "Implements transactional domain logic with strict data transfer object (DTO) validation." },
+      { name: "Module 3: Cryptographic Integrity & Audit Logger", description: "Constructs SHA-256 Merkle chains for every record change to guarantee non-repudiation." },
+      { name: "Module 4: React Admin & Client Portal", description: "Modern responsive web portal for record management, audit tracking, and reporting." }
+    ],
+    documentationIncluded: [
+      "Standard Academic Base Paper & System Specifications",
+      "Complete 75-Page Project Report & Thesis Documentation",
+      "Full Database ER Diagrams and UML Blueprints",
+      "Viva Voce Preparation Manual for Java & Spring",
+      "30-Slide Professional PowerPoint Presentation",
+      "Complete Maven Project Source Code with Docker Compose"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ecommerce-platform.jpg"
+  },
+  {
+    id: "web-development",
+    slug: "web-development",
+    title: "Web Development",
+    category: "Web Development",
+    tagline: "Full-Stack Next.js 16, Real-Time WebSockets Collaboration, Cloud IDEs & Responsive Portals",
+    description: "Modern full-stack web applications featuring Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, real-time WebSockets, and Supabase cloud databases.",
+    abstract: "Contemporary web engineering demands high performance, server-side rendering, responsive aesthetics, and real-time bidirectional synchronization. Our Web Development project domain provides complete full-stack web systems featuring modern component libraries, clean REST and WebSocket architectures, optimistic UI updates, and frictionless cloud deployment configurations.",
+    problemStatement: "Evaluators reject outdated basic PHP/HTML projects in favor of modern responsive full-stack architectures with live multi-user features.",
+    proposedSolution: "A cutting-edge Next.js 16 and TypeScript full-stack platform with real-time WebSocket communication, server actions, and cloud database persistence.",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "WebSockets", "Supabase", "Prisma", "Node.js"],
+    features: [
+      "Full-Stack SSR & App Router Architecture with Turbopack",
+      "Real-Time Multi-User Collaboration via WebSockets",
+      "Secure OAuth & Role-Based Authorization Workflows",
+      "Theme 07 Orange-Red Glassmorphism Responsive UI",
+      "Integrated Payment & Order Processing Gateway",
+      "Complete 75-Page Thesis & Software Requirements Specification"
+    ],
+    modules: [
+      { name: "Module 1: Authentication & User Profile Hub", description: "Manages session tokens, OAuth providers, and profile configuration." },
+      { name: "Module 2: Dynamic Catalog & Product Management Tier", description: "Server-side cached catalog with instantaneous faceted filtering and search." },
+      { name: "Module 3: Real-Time Synchronization Engine", description: "WebSocket channels for live collaboration, notifications, and event broadcasts." },
+      { name: "Module 4: Analytics & Admin Management Console", description: "Executive portal with revenue charts, user management, and audit logs." }
+    ],
+    documentationIncluded: [
+      "Standard Peer-Reviewed Base Paper",
+      "75-Page Project Thesis & Requirements Specification",
+      "Database Schema Diagrams & UML System Models",
+      "Viva Voce Handbook on Next.js, React & Modern Web",
+      "30-Slide High-Impact PowerPoint Presentation",
+      "Production-Ready Next.js & TypeScript Codebase"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ecommerce-platform.jpg"
+  },
+  {
+    id: "mobile-app-development",
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    category: "Mobile App Development",
+    tagline: "Cross-Platform Flutter & React Native, Peer-to-Peer Mesh Networks & On-Device AI",
+    description: "Cross-platform iOS and Android mobile applications featuring Flutter, offline-first local SQLite caching, Bluetooth Low Energy (BLE) peer mesh, and automated cloud sync.",
+    abstract: "Mobile development requires robust state management, offline resilience, and cross-platform fidelity. This project domain provides complete mobile solutions built with Flutter and React Native. Highlights include decentralized Bluetooth mesh communication for emergency disaster relief, background GPS telemetry, and on-device machine learning inference.",
+    problemStatement: "Mobile applications often fail when disconnected from cellular coverage, highlighting the need for off-grid peer-to-peer communication.",
+    proposedSolution: "An offline-first Flutter application utilizing BLE mesh topology to relay packets across peer devices without internet connectivity.",
+    techStack: ["Flutter", "Dart", "React Native", "Firebase", "SQLite", "Bluetooth Low Energy", "Provider", "REST API"],
+    features: [
+      "Cross-Platform Codebase Compiling to Android & iOS",
+      "Offline-First SQLite Local Caching with Auto-Sync",
+      "Decentralized Bluetooth Mesh Multi-Hop Messaging",
+      "Interactive Offline Map Caching & Route Plotting",
+      "Push Notification Gateway with Firebase Cloud Messaging",
+      "Complete Thesis, APK Binary & Source Code Included"
+    ],
+    modules: [
+      { name: "Module 1: BLE Mesh Radio & Peer Discovery Engine", description: "Scans, pairs, and routes encrypted packets across neighboring mobile nodes." },
+      { name: "Module 2: Offline Data Store & Transaction Queue", description: "Queues messages locally in SQLite and synchronizes when internet is restored." },
+      { name: "Module 3: Mapping & Geospatial Telemetry", description: "Plots emergency beacons and safe-zone coordinates on vector map tiles." },
+      { name: "Module 4: Emergency SOS & Broadcast Interface", description: "One-tap high-priority distress broadcast with audio-visual alarms." }
+    ],
+    documentationIncluded: [
+      "Standard Base Paper on Mesh Networks & Mobile AI",
+      "Complete 70-Page Final Year Project Report & Thesis",
+      "UML Class, State Machine, and Architecture Diagrams",
+      "Viva Voce Q&A Manual on Flutter & Mobile Architectures",
+      "30-Slide Defense PowerPoint Presentation",
+      "Full Flutter/Dart Source Code & Installable APK File"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/student-attendance.jpg"
+  },
+  {
+    id: "cloud-computing",
+    slug: "cloud-computing",
+    title: "Cloud Computing",
+    category: "Cloud Computing",
+    tagline: "Serverless Workflow Engines, Knative Event Compute & Kubernetes Auto-Scaling",
+    description: "Cloud-native distributed systems platform implementing Kubernetes custom controllers, dynamic Horizontal Pod Autoscalers (HPA), serverless compute, and Prometheus monitoring.",
+    abstract: "Cloud computing projects highlight the power of elasticity, fault tolerance, and container orchestration. This project framework deploys custom Kubernetes operators and Knative serverless workflows that scale from zero to hundreds of microservice replicas in response to incoming traffic bursts, verified with Prometheus metrics and Grafana dashboards.",
+    problemStatement: "Academic institutions require realistic demonstrations of dynamic elasticity and microservice resilience that can be reproduced locally.",
+    proposedSolution: "A lightweight Kubernetes cluster deployment using Docker and Minikube with simulated load generation and real-time auto-scaling.",
+    techStack: ["Kubernetes", "Docker", "Knative", "Golang", "Python", "Prometheus", "Grafana", "Helm"],
+    features: [
+      "Dynamic Scale-to-Zero Event-Driven Function Scaling",
+      "Custom Kubernetes Controller & Custom Resource Definitions (CRDs)",
+      "Real-Time Prometheus Metric Scraping & Grafana Dashboards",
+      "Automated Health Checks & Self-Healing Pod Recovery",
+      "Infrastructure as Code (IaC) with Helm & Dockerfiles",
+      "Exhaustive Viva Voce Guide on Cloud & Distributed Systems"
+    ],
+    modules: [
+      { name: "Module 1: Containerization & Cluster Orchestration", description: "Dockerizes microservices and defines Kubernetes Pods, Deployments, and Services." },
+      { name: "Module 2: Custom Controller & Autoscaler", description: "Monitors queue lengths and dynamically scales pod replicas via Kubernetes API." },
+      { name: "Module 3: Serverless Event Router", description: "Directs incoming HTTP and event requests to cold/hot container instances." },
+      { name: "Module 4: Prometheus & Grafana Observability Portal", description: "Visualizes CPU utilization, memory consumption, latency, and scaling events." }
+    ],
+    documentationIncluded: [
+      "Standard IEEE Base Paper on Cloud Autoscaling",
+      "70-Page Comprehensive Project Report & Thesis",
+      "Kubernetes Architecture & Cluster Topology Blueprints",
+      "Viva Voce Defense Guide on Microservices & Cloud",
+      "30-Slide Professional PowerPoint Presentation",
+      "Ready-to-Deploy Helm Charts, Manifests & Source Code"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ecommerce-platform.jpg"
+  },
+  {
+    id: "cyber-security",
+    slug: "cyber-security",
+    title: "Cyber Security",
+    category: "Cyber Security",
+    tagline: "AI-Driven Zero-Day Ransomware Detection, Deep Packet Inspection & SOC Intrusion Security",
+    description: "Enterprise defensive cybersecurity system implementing AI-powered Network Intrusion Detection (NIDS), ransomware heuristic canary detection, and Security Operations Center (SOC) dashboards.",
+    abstract: "Modern cybersecurity threats bypass conventional signature-based antivirus solutions. This project integrates machine learning anomaly detection with deep packet inspection (DPI) to identify zero-day ransomware, SQL injections, and distributed port scans. Featuring an interactive SOC dashboard, it automatically quarantines malicious IPs and logs forensic audit evidence.",
+    problemStatement: "Signature-based security tools cannot detect zero-day cyber attacks and heuristic malware mutations in real time.",
+    proposedSolution: "A hybrid heuristic and AI anomaly detection engine inspecting network packets and system calls, with automated firewall quarantine triggers.",
+    techStack: ["Python", "Scapy", "Suricata", "PyTorch", "Elasticsearch", "FastAPI", "Next.js", "Docker"],
+    features: [
+      "Real-Time Deep Packet Inspection (DPI) for HTTP, DNS & TCP",
+      "Behavioral Zero-Day Ransomware Canary Trap System",
+      "Interactive SOC Security Analyst Incident Portal",
+      "Automated IP Quarantine & Firewall Rule Injection",
+      "MITRE ATT&CK Framework Threat Mapping Matrix",
+      "Comprehensive Thesis, Source Code & Turnitin Verification"
+    ],
+    modules: [
+      { name: "Module 1: Packet Sniffer & Flow Aggregator", description: "Captures live traffic via Scapy and computes bidirectional network flow statistical vectors." },
+      { name: "Module 2: AI Intrusion Classification Engine", description: "Evaluates network flows against neural anomaly models to detect port scans, DDoS, and exploits." },
+      { name: "Module 3: Canary File & Ransomware Watchdog", description: "Monitors sensitive honeypot files for rapid entropy spikes and mass modification attempts." },
+      { name: "Module 4: SOC Alert & Mitigation Interface", description: "Real-time web dashboard displaying threat alerts, geographic IP origins, and blocklist controls." }
+    ],
+    documentationIncluded: [
+      "Standard Peer-Reviewed Base Paper & Threat Models",
+      "75-Page Project Thesis & Requirements Specification",
+      "Network Topology & Security Architecture Diagrams",
+      "Viva Voce Handbook on Network Security & Cryptography",
+      "35-Slide Defense PowerPoint Presentation",
+      "Complete Python & Next.js Source Code with PCAP Datasets"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/plant-disease.jpg"
+  },
+  {
+    id: "data-analytics",
+    slug: "data-analytics",
+    title: "Data Analytics",
+    category: "Data Analytics",
+    tagline: "Hospital Operational Intelligence, Predictive Patient Flow & Executive BI Dashboards",
+    description: "End-to-end data analytics and business intelligence platform featuring automated ETL data pipelines, LightGBM readmission forecasting, and interactive drill-down executive dashboards.",
+    abstract: "Transforming vast unstructured institutional records into actionable predictive intelligence is critical for modern operations. This project domain delivers scalable data cleaning pipelines, statistical cohort survival analysis, and predictive machine learning models (LightGBM, SHAP). Students present compelling visual insights backed by mathematical rigor and interactive charts.",
+    problemStatement: "Static reports fail to deliver predictive foresight, leaving hospital and business operations vulnerable to patient flow bottlenecks and readmission penalties.",
+    proposedSolution: "An automated data pipeline integrating missing-value imputation, predictive readmission scoring, SHAP risk attributions, and interactive drill-down dashboards.",
+    techStack: ["Python", "Pandas", "Polars", "LightGBM", "SHAP", "PostgreSQL", "Next.js", "Tailwind CSS"],
+    features: [
+      "Automated High-Performance ETL & Data Cleaning Pipeline",
+      "Predictive Patient Flow & Readmission Risk Scoring",
+      "Interactive Cohort Survival & Retention Curve Graphs",
+      "Feature Importance & SHAP Values Explanation Matrix",
+      "Exportable Executive PDF & CSV Intelligence Reports",
+      "Comprehensive 70-Page Thesis with Statistical Proofs"
+    ],
+    modules: [
+      { name: "Module 1: Automated Data Ingestion & Sanitization", description: "Loads multi-table healthcare/business datasets, handles missing values, and detects statistical outliers." },
+      { name: "Module 2: Feature Engineering & Cohort Segmentation", description: "Derives length-of-stay ratios, historical visit frequencies, and comorbidity indices." },
+      { name: "Module 3: Predictive Modeling & Explainability", description: "Trains calibrated LightGBM classifiers with SHAP attribution explanations for individual risk factors." },
+      { name: "Module 4: Executive BI Visualization Dashboard", description: "Interactive dashboard featuring drill-down filters, risk gauges, and PDF summary exports." }
+    ],
+    documentationIncluded: [
+      "Standard Peer-Reviewed Research Base Paper",
+      "Complete 70-Page Final Year Project Thesis & Report",
+      "Database Schema Diagrams & System Flowcharts",
+      "Exhaustive Viva Voce Preparation Guide for Analytics",
+      "30-Slide Professional PowerPoint Presentation",
+      "Clean Python & Next.js Source Code with Sample Datasets"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/ai-chatbot.jpg"
+  },
   {
     id: "aids-01",
     slug: "multimodal-medical-ai-diagnosis",

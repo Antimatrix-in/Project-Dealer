@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PROJECTS_DATA } from "@/data/projects";
 import {
@@ -21,34 +22,81 @@ interface ProjectPageProps {
   params: Promise<{ id: string }>;
 }
 
+function findProject(paramId: string) {
+  const decoded = decodeURIComponent(paramId).trim();
+  const normalized = decoded.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  // 1. Direct slug or id match
+  let match = PROJECTS_DATA.find(
+    (p) => p.slug === decoded || p.id === decoded
+  );
+  if (match) return match;
+
+  // 2. Case-insensitive slug or id match
+  match = PROJECTS_DATA.find(
+    (p) =>
+      p.slug.toLowerCase() === decoded.toLowerCase() ||
+      p.id.toLowerCase() === decoded.toLowerCase()
+  );
+  if (match) return match;
+
+  // 3. Normalized match
+  match = PROJECTS_DATA.find((p) => {
+    const pSlugNorm = p.slug.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const pIdNorm = p.id.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const pTitleNorm = p.title.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const pCatNorm = p.category.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return (
+      pSlugNorm === normalized ||
+      pIdNorm === normalized ||
+      pTitleNorm === normalized ||
+      pCatNorm === normalized
+    );
+  });
+  return match;
+}
+
 export async function generateStaticParams() {
-  return PROJECTS_DATA.map((p) => ({
-    id: p.id,
-  }));
+  const ids = new Set<string>();
+  PROJECTS_DATA.forEach((p) => {
+    if (p.id) ids.add(p.id);
+    if (p.slug) ids.add(p.slug);
+  });
+  return Array.from(ids).map((id) => ({ id }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
   const { id } = await params;
-  const project = PROJECTS_DATA.find((p) => p.id === id || p.slug === id);
+  const project = findProject(id);
   if (!project) return { title: "Project Not Found" };
 
   return {
     title: `${project.title} - AntiMatrix Project Center`,
-    description: project.abstract.slice(0, 160),
+    description: (project.abstract || project.description || project.tagline).slice(0, 160),
   };
 }
 
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { id } = await params;
-  const project = PROJECTS_DATA.find((p) => p.id === id || p.slug === id);
+  const project = findProject(id);
 
   if (!project) {
     notFound();
   }
 
   const relatedProjects = PROJECTS_DATA.filter(
-    (p) => p.category === project.category && p.id !== project.id
+    (p) => p.category === project.category && p.id !== project.id && p.slug !== project.slug
   ).slice(0, 3);
+
+  const projectImage =
+    project.thumbnail ||
+    (project.category === "Deep Learning" || project.category === "AI & Data Science"
+      ? "/images/projects/plant-disease.jpg"
+      : project.category === "Machine Learning" || project.category === "Data Analytics"
+      ? "/images/projects/ai-chatbot.jpg"
+      : project.category === "Python Projects" || project.category === "Mobile App Development"
+      ? "/images/projects/student-attendance.jpg"
+      : "/images/projects/ecommerce-platform.jpg");
 
   return (
     <div className="pt-28 pb-20 bg-[#FFF9F5] min-h-screen">
@@ -60,7 +108,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             className="inline-flex items-center gap-2 text-xs font-semibold text-[#526581] hover:text-[#FF6B00] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to Projects Catalog</span>
+            <span>Back to Projects</span>
           </Link>
           <div className="flex items-center gap-2 text-xs">
             <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-[#101828]">
@@ -72,25 +120,50 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
-        {/* Top Header Banner Card */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#FF6B00]/20 shadow-xs mb-10">
-          <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
-              {project.category}
+        {/* Top Header Banner Card with Project Preview Image */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#FF6B00]/20 shadow-xs mb-10 overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFF1E8] border border-[#FF6B00]/25 text-[#FF6B00]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
+                {project.category}
+              </div>
+
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#101828] tracking-tight leading-tight">
+                {project.title}
+              </h1>
+
+              <p className="text-base sm:text-lg text-[#526581] font-normal leading-relaxed">
+                {project.tagline || project.description}
+              </p>
+
+              {/* Quick Action Buttons (Client Component) */}
+              <div className="pt-2">
+                <ProjectDetailActions projectTitle={project.title} category={project.category} />
+              </div>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#101828] tracking-tight leading-tight">
-              {project.title}
-            </h1>
-
-            <p className="text-base sm:text-lg text-[#526581] font-normal leading-relaxed">
-              {project.tagline}
-            </p>
-
-            {/* Quick Action Buttons (Client Component) */}
-            <div className="pt-2">
-              <ProjectDetailActions projectTitle={project.title} category={project.category} />
+            {/* Project Preview Image / Graphic */}
+            <div className="lg:col-span-4">
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-md bg-slate-100 group">
+                <Image
+                  src={projectImage}
+                  alt={project.title}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 360px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#101828]/60 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-[11px] font-mono">
+                  <span className="px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm border border-white/20">
+                    Live System Preview
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-[#FF6B00]/90 font-bold">
+                    {project.year}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -324,17 +397,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                       {rel.year}
                     </span>
                     <h4 className="text-sm font-bold text-[#101828] line-clamp-2 hover:text-[#FF6B00]">
-                      <Link href={`/projects/${rel.id}`}>{rel.title}</Link>
+                      <Link href={`/projects/${rel.slug || rel.id}`}>{rel.title}</Link>
                     </h4>
                     <p className="text-xs text-[#526581] line-clamp-2 mt-1">
                       {rel.tagline}
                     </p>
                   </div>
                   <Link
-                    href={`/projects/${rel.id}`}
+                    href={`/projects/${rel.slug || rel.id}`}
+                    id={`explore-rel-${rel.slug || rel.id}`}
                     className="pt-2 text-xs font-bold text-[#FF6B00] hover:text-[#D90429] flex items-center gap-1"
                   >
-                    <span>Read Details</span>
+                    <span>Explore Projects</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

@@ -34,14 +34,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   const projectImage = getProjectImage();
+  const projectSlug = project.slug || project.id;
 
   return (
     <div className="group relative flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 p-5 shadow-[0_4px_20px_-4px_rgba(255,107,0,0.05)] hover:shadow-[0_18px_35px_-6px_rgba(255,107,0,0.14)] hover:border-[#FF6B00]/40 transition-all duration-300">
       <div>
         {/* Project Image */}
         <Link
-          href={`/projects/${project.id}`}
+          href={`/projects/${projectSlug}`}
           className="relative aspect-video w-full rounded-xl overflow-hidden mb-4 bg-slate-100 block group/img"
+          aria-label={`Explore ${project.title}`}
         >
           <Image
             src={projectImage}
@@ -66,7 +68,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Project Title */}
         <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#FF6B00] transition-colors line-clamp-2 mb-2 leading-snug">
-          <Link href={`/projects/${project.id}`}>
+          <Link href={`/projects/${projectSlug}`}>
             {project.title}
           </Link>
         </h3>
@@ -114,14 +116,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Buttons: [ View Details ] [ Enquire Now ] */}
+      {/* Buttons: [ Explore Projects ] [ Enquire Now ] */}
       <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
         <Link
-          href={`/projects/${project.id}`}
-          className="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-[#FFF1E8] text-[#101828] hover:text-[#FF6B00] font-bold text-xs text-center transition-all flex items-center justify-center gap-1.5"
+          href={`/projects/${projectSlug}`}
+          id={`explore-btn-${projectSlug}`}
+          className="flex-1 py-2.5 px-3 rounded-xl bg-[#FFF9F5] hover:bg-gradient-to-r hover:from-[#FF6B00] hover:via-[#FF3D3D] hover:to-[#D90429] text-[#101828] hover:text-white border border-[#FF6B00]/25 hover:border-transparent font-bold text-xs text-center transition-all flex items-center justify-center gap-1.5 group/btn cursor-pointer shadow-xs"
         >
-          <span>View Details</span>
-          <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
+          <span>Explore Projects</span>
+          <ArrowRight className="w-3.5 h-3.5 text-[#FF6B00] group-hover/btn:text-white group-hover/btn:translate-x-0.5 transition-all" />
         </Link>
         <a
           href={GOOGLE_ENQUIRY_FORM_URL}

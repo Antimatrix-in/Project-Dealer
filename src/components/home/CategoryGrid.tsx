@@ -10,51 +10,61 @@ export default function CategoryGrid() {
   const categoryConfigs = [
     {
       name: "AI & Data Science",
+      slug: "ai-data-science",
       desc: "Multimodal Diagnostic Systems, Natural Language Processing, BioBERT, and Generative Transformers.",
       count: "45+"
     },
     {
       name: "Machine Learning",
+      slug: "machine-learning",
       desc: "Graph Neural Networks, Anomaly Detection, Predictive Modeling, and Gradient Boosted Ensembles.",
       count: "50+"
     },
     {
       name: "Deep Learning",
+      slug: "deep-learning",
       desc: "YOLOv10 Real-Time Drone Surveillance, 3D CNNs, Facial Mesh Landmarking, and Object Localization.",
       count: "38+"
     },
     {
       name: "Python Projects",
+      slug: "python-projects",
       desc: "Computer Vision Safety, MediaPipe Landmark Tracking, IoT Edge Controllers, and Desktop Systems.",
       count: "60+"
     },
     {
       name: "Java Projects",
+      slug: "java-projects",
       desc: "Enterprise Spring Boot 3 Microservices, Cryptographic Merkle Proofs, and High-Throughput REST APIs.",
       count: "35+"
     },
     {
       name: "Web Development",
+      slug: "web-development",
       desc: "Next.js Full Stack, Real-Time WebSockets Collaboration, Cloud IDEs, and Responsive Web Portals.",
       count: "55+"
     },
     {
       name: "Mobile App Development",
+      slug: "mobile-app-development",
       desc: "Flutter & React Native, Peer-to-Peer Bluetooth Mesh Networks, and On-Device Mobile AI Applications.",
       count: "30+"
     },
     {
       name: "Cloud Computing",
+      slug: "cloud-computing",
       desc: "Serverless Workflow Engines, Knative Event-Driven Compute, and Dynamic Auto-Scaling on Kubernetes.",
       count: "28+"
     },
     {
       name: "Cyber Security",
+      slug: "cyber-security",
       desc: "Zero-Day Ransomware Detection, Network Intrusion Detection (NIDS), DPI, and SOC Security Portals.",
       count: "25+"
     },
     {
       name: "Data Analytics",
+      slug: "data-analytics",
       desc: "Clinical Readmission Forecasters, Operational Intelligence Dashboards, ETL Pipelines, and SHAP Attributions.",
       count: "32+"
     }
@@ -107,7 +117,7 @@ export default function CategoryGrid() {
                   <div className="p-5 sm:p-5">
                     {/* Category Title */}
                     <h3 className="text-base sm:text-lg font-bold text-[#101828] group-hover:text-[#FF6B00] transition-colors leading-snug mb-2">
-                      <Link href={`/projects?category=${encodeURIComponent(cat.name)}`}>
+                      <Link href={`/projects/${cat.slug}`}>
                         {cat.name}
                       </Link>
                     </h3>
@@ -122,7 +132,8 @@ export default function CategoryGrid() {
                 {/* Explore Projects Button at Bottom */}
                 <div className="px-5 pb-5 pt-0">
                   <Link
-                    href={`/projects?category=${encodeURIComponent(cat.name)}`}
+                    href={`/projects/${cat.slug}`}
+                    id={`explore-category-${cat.slug}`}
                     className="w-full py-2.5 px-4 rounded-xl bg-[#FFF9F5] hover:bg-gradient-to-r hover:from-[#FF6B00] hover:to-[#D90429] text-[#101828] hover:text-white border border-[#FF6B00]/25 hover:border-transparent text-xs font-bold transition-all duration-200 flex items-center justify-between group/btn shadow-xs cursor-pointer"
                   >
                     <span>Explore Projects</span>
