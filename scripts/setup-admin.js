@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 
 /**
- * AntiMatrix Secure Admin Setup Script
- * Reads credentials from environment variables and outputs verification details.
+ * AntiMatrix Secure Admin Setup & Credential Management Script
+ * Reads credentials from environment variables and sets up or updates the administrator account in the persistent database store.
+ *
+ * Usage:
+ *   node scripts/setup-admin.js                     # Initialize/verify administrator account
+ *   node scripts/setup-admin.js --reset <new_pass>  # Update/reset administrator password
  */
 
-const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
 
-// Load .env.local if present
+// 1. Load .env.local if present
 const envLocalPath = path.join(__dirname, "..", ".env.local");
 if (fs.existsSync(envLocalPath)) {
   const content = fs.readFileSync(envLocalPath, "utf8");
@@ -24,18 +28,79 @@ if (fs.existsSync(envLocalPath)) {
   });
 }
 
-const adminEmail = process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com";
-const adminPassword = process.env.ADMIN_PASSWORD || "Student@123";
+const adminEmail = (process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com").trim().toLowerCase();
+const defaultPassword =
+  process.env.ADMIN_PASSWORD ||
+  process.env.EMAIL_PASSWORD ||
+  "Student@123";
+
+const storePath = path.join(__dirname, "..", "src", "data", "admin-store.json");
+
+function getStoredAdmins() {
+  try {
+    if (!fs.existsSync(storePath)) return [];
+    return JSON.parse(fs.readFileSync(storePath, "utf8"));
+  } catch (err) {
+    return [];
+  }
+}
+
+function saveAdmins(admins) {
+  const dir = path.dirname(storePath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(storePath, JSON.stringify(admins, null, 2), "utf8");
+}
 
 console.log("==========================================");
 console.log("AntiMatrix Secure Administrator Setup");
 console.log("==========================================");
-console.log(`Configured Email: ${adminEmail}`);
+console.log(`Administrator Email: ${adminEmail}`);
 
-const salt = bcrypt.genSaltSync(12);
-const hashedPassword = bcrypt.hashSync(adminPassword, salt);
+const args = process.argv.slice(2);
+const isReset = args[0] === "--reset";
+const newPasswordArg = isReset ? args[1] : null;
 
-console.log("Bcrypt Salt & Hash generated successfully.");
-console.log(`Password Verification Test: ${bcrypt.compareSync(adminPassword, hashedPassword) ? "PASSED" : "FAILED"}`);
+const passwordToSet = newPasswordArg || defaultPassword;
+const admins = getStoredAdmins();
+const existingIndex = admins.findIndex((a) => a.email.toLowerCase() === adminEmail);
+
+const salt = bcrypt.genSaltSync(10);
+const passwordHash = bcrypt.hashSync(passwordToSet, salt);
+const now = new Date().toISOString();
+
+if (existingIndex !== -1) {
+  if (isReset) {
+    admins[existingIndex].passwordHash = passwordHash;
+    admins[existingIndex].updatedAt = now;
+    saveAdmins(admins);
+    console.log(`[OK] Administrator password updated for ${adminEmail}`);
+  } else {
+    console.log(`[OK] Existing administrator record found (Created: ${admins[existingIndex].createdAt})`);
+    // Verify stored password hash
+    const isValid = bcrypt.compareSync(defaultPassword, admins[existingIndex].passwordHash);
+    console.log(`[CHECK] Default credentials match stored hash: ${isValid ? "PASSED" : "UPDATED"}`);
+    if (!isValid) {
+      admins[existingIndex].passwordHash = passwordHash;
+      admins[existingIndex].updatedAt = now;
+      saveAdmins(admins);
+      console.log(`[SYNC] Stored hash synchronized with configured environment credentials.`);
+    }
+  }
+} else {
+  // Create initial administrator account
+  const newRecord = {
+    id: `admin-${Date.now()}`,
+    email: adminEmail,
+    passwordHash: passwordHash,
+    role: "admin",
+    createdAt: now,
+    updatedAt: now,
+  };
+  admins.push(newRecord);
+  saveAdmins(admins);
+  console.log(`[OK] Created initial administrator record in database store.`);
+}
+
 console.log("==========================================");
-console.log("Admin account is ready for authentication.");
+console.log("Status: READY FOR AUTHENTICATION");
+console.log("==========================================");

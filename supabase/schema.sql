@@ -121,3 +121,17 @@ INSERT INTO public.categories (name, slug, description, icon) VALUES
 ('Web Development', 'web-development', 'Next.js, real-time WebSockets, Web3 blockchain, and full-stack collaborative platforms.', 'Globe'),
 ('Mobile App Development', 'mobile-app-development', 'Flutter, React Native, offline-first mesh systems, and on-device AI applications.', 'Smartphone')
 ON CONFLICT (name) DO NOTHING;
+
+-- 9. Create admin_users table for administrator authentication
+CREATE TABLE IF NOT EXISTS public.admin_users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'admin',
+    created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+ALTER TABLE public.admin_users ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow authenticated read to admin_users" ON public.admin_users FOR SELECT TO authenticated USING (true);
+

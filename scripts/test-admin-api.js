@@ -49,31 +49,45 @@ async function testSuite() {
     console.log('✗ FAIL: Unauthenticated access was not redirected properly');
   }
 
-  // 2. Invalid Login Attempt
-  console.log('\n[TEST 2] Testing invalid login credentials...');
+  // 2. Unknown Email Attempt
+  console.log('\n[TEST 2] Testing unknown email rejection...');
   const res2 = await request('/api/admin/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { email: 'unknown_hacker@evil.com', password: 'SomePassword123' },
+  });
+  console.log(`Response status: ${res2.statusCode}`, res2.body);
+  if (res2.statusCode === 401 && res2.body.error) {
+    console.log('✓ PASS: Unknown email rejected with 401');
+  } else {
+    console.log('✗ FAIL: Unknown email was not rejected properly');
+  }
+
+  // 3. Invalid Password Attempt
+  console.log('\n[TEST 3] Testing invalid password rejection...');
+  const res3 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: { email: 'antimatrix2026@gmail.com', password: 'WrongPassword123' },
   });
-  console.log(`Response status: ${res2.statusCode}`, res2.body);
-  if (res2.statusCode === 401 && res2.body.error) {
-    console.log('✓ PASS: Invalid login rejected with 401');
+  console.log(`Response status: ${res3.statusCode}`, res3.body);
+  if (res3.statusCode === 401 && res3.body.error) {
+    console.log('✓ PASS: Invalid password rejected with 401');
   } else {
-    console.log('✗ FAIL: Invalid login not rejected');
+    console.log('✗ FAIL: Invalid password was not rejected properly');
   }
 
-  // 3. Valid Admin Login
-  console.log('\n[TEST 3] Testing valid admin login credentials...');
-  const res3 = await request('/api/admin/login', {
+  // 4. Valid Admin Login with Whitespace and Mixed Casing Normalization
+  console.log('\n[TEST 4] Testing valid admin login with email whitespace & mixed casing normalization...');
+  const res4 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: 'antimatrix2026@gmail.com', password: 'Student@123' },
+    body: { email: '  AntiMatrix2026@Gmail.Com  ', password: 'Student@123' },
   });
-  console.log(`Response status: ${res3.statusCode}`, res3.body);
-  const setCookie = res3.headers['set-cookie'];
+  console.log(`Response status: ${res4.statusCode}`, res4.body);
+  const setCookie = res4.headers['set-cookie'];
   console.log(`Set-Cookie header: ${setCookie ? setCookie[0] : 'NONE'}`);
-  if (res3.statusCode === 200 && res3.body.success && setCookie) {
+  if (res4.statusCode === 200 && res4.body.success && setCookie) {
     console.log('✓ PASS: Admin authenticated and session cookie received');
   } else {
     console.log('✗ FAIL: Valid login failed');
@@ -82,36 +96,36 @@ async function testSuite() {
 
   const cookieStr = setCookie[0].split(';')[0];
 
-  // 4. Verify Session with Cookie
-  console.log('\n[TEST 4] Verifying session token via /api/admin/session...');
-  const res4 = await request('/api/admin/session', {
+  // 5. Verify Session with Cookie
+  console.log('\n[TEST 5] Verifying session token via /api/admin/session...');
+  const res5 = await request('/api/admin/session', {
     headers: { Cookie: cookieStr },
   });
-  console.log(`Session response:`, res4.body);
-  if (res4.body.authenticated && res4.body.user?.email === 'antimatrix2026@gmail.com') {
+  console.log(`Session response:`, res5.body);
+  if (res5.body.authenticated && res5.body.user?.email === 'antimatrix2026@gmail.com') {
     console.log('✓ PASS: Session verified successfully');
   } else {
     console.log('✗ FAIL: Session could not be verified');
   }
 
-  // 5. Fetch Consultation Requests
-  console.log('\n[TEST 5] Fetching consultation requests via /api/admin/inquiries...');
-  const res5 = await request('/api/admin/inquiries', {
+  // 6. Fetch Consultation Requests & Verify Data Integrity
+  console.log('\n[TEST 6] Fetching consultation requests via /api/admin/inquiries...');
+  const res6 = await request('/api/admin/inquiries', {
     headers: { Cookie: cookieStr },
   });
-  console.log(`Inquiries count: ${res5.body.inquiries?.length}`);
-  console.log(`Stats:`, res5.body.stats);
-  if (res5.body.success && Array.isArray(res5.body.inquiries)) {
-    console.log('✓ PASS: Consultation requests retrieved successfully');
+  console.log(`Inquiries count: ${res6.body.inquiries?.length}`);
+  console.log(`Stats:`, res6.body.stats);
+  if (res6.body.success && Array.isArray(res6.body.inquiries) && res6.body.inquiries.length >= 4) {
+    console.log('✓ PASS: Consultation requests intact and retrieved successfully');
   } else {
-    console.log('✗ FAIL: Could not fetch consultation requests');
+    console.log('✗ FAIL: Could not fetch consultation requests or data lost');
   }
 
-  // 6. Update Status of first inquiry
-  if (res5.body.inquiries && res5.body.inquiries.length > 0) {
-    const targetId = res5.body.inquiries[0].id;
-    console.log(`\n[TEST 6] Updating inquiry status for ID: ${targetId} to 'In Progress'...`);
-    const res6 = await request('/api/admin/inquiries', {
+  // 7. Update Status of first inquiry
+  if (res6.body.inquiries && res6.body.inquiries.length > 0) {
+    const targetId = res6.body.inquiries[0].id;
+    console.log(`\n[TEST 7] Updating inquiry status for ID: ${targetId} to 'In Progress'...`);
+    const res7 = await request('/api/admin/inquiries', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -119,36 +133,36 @@ async function testSuite() {
       },
       body: { id: targetId, status: 'In Progress' },
     });
-    console.log(`Update response:`, res6.body);
-    if (res6.body.success && res6.body.inquiry?.status === 'In Progress') {
+    console.log(`Update response:`, res7.body);
+    if (res7.body.success && res7.body.inquiry?.status === 'In Progress') {
       console.log('✓ PASS: Inquiry status successfully updated to In Progress');
     } else {
       console.log('✗ FAIL: Failed to update inquiry status');
     }
   }
 
-  // 7. Test Logout
-  console.log('\n[TEST 7] Testing logout via /api/admin/logout...');
-  const res7 = await request('/api/admin/logout', {
+  // 8. Test Logout
+  console.log('\n[TEST 8] Testing logout via /api/admin/logout...');
+  const res8 = await request('/api/admin/logout', {
     method: 'POST',
     headers: { Cookie: cookieStr },
   });
-  console.log(`Logout response:`, res7.body);
-  const clearedCookie = res7.headers['set-cookie'];
+  console.log(`Logout response:`, res8.body);
+  const clearedCookie = res8.headers['set-cookie'];
   console.log(`Cleared Cookie header:`, clearedCookie);
-  if (res7.body.success) {
+  if (res8.body.success) {
     console.log('✓ PASS: Logout succeeded and cleared cookie');
   } else {
     console.log('✗ FAIL: Logout failed');
   }
 
-  // 8. Verify session cleared
-  console.log('\n[TEST 8] Verifying session is revoked after logout...');
-  const res8 = await request('/api/admin/session', {
+  // 9. Verify session cleared
+  console.log('\n[TEST 9] Verifying session is revoked after logout...');
+  const res9 = await request('/api/admin/session', {
     headers: { Cookie: clearedCookie ? clearedCookie[0].split(';')[0] : '' },
   });
-  console.log(`Session response after logout:`, res8.body);
-  if (!res8.body.authenticated) {
+  console.log(`Session response after logout:`, res9.body);
+  if (!res9.body.authenticated) {
     console.log('✓ PASS: Protected endpoint rejects cleared session');
   } else {
     console.log('✗ FAIL: Session was not invalidated');

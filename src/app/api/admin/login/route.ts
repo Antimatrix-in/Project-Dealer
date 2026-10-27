@@ -36,10 +36,11 @@ export async function POST(request: Request) {
     }
 
     const { email, password } = body;
+    const normalizedEmail = String(email || "").trim().toLowerCase();
 
     // 3. Verify credentials
-    const isValid = await verifyAdminCredentials(String(email), String(password));
-    if (!isValid) {
+    const authResult = await verifyAdminCredentials(normalizedEmail, String(password || ""));
+    if (!authResult.success) {
       recordFailedAttempt(ip);
       return NextResponse.json(
         { error: "Invalid administrator credentials. Please check your email and password." },
@@ -49,7 +50,7 @@ export async function POST(request: Request) {
 
     // 4. Successful authentication - reset rate limit and issue token
     resetRateLimit(ip);
-    const token = createSessionToken(email.trim().toLowerCase());
+    const token = createSessionToken(authResult.user?.email || normalizedEmail);
 
     const response = NextResponse.json(
       {

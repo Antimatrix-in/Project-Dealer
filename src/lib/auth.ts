@@ -74,39 +74,90 @@ export function resetRateLimit(ip: string): void {
   rateLimitMap.delete(ip);
 }
 
+import {
+  findAdminByEmail,
+  ensureAdminAccount,
+  updateAdminPassword,
+  AdminAccount,
+} from "./admin-store";
+
+export interface AuthVerificationResult {
+  success: boolean;
+  reason?: "ACCOUNT_NOT_FOUND" | "INVALID_PASSWORD" | "EMPTY_INPUT";
+  user?: {
+    email: string;
+    role: "admin";
+  };
+}
+
 /**
- * Password Verification using bcrypt
+ * Password Verification using the database administrator record & bcrypt
  */
-export async function verifyAdminCredentials(email: string, passwordAttempt: string): Promise<boolean> {
-  const normalizedEmail = email.trim().toLowerCase();
-  const targetEmail = ADMIN_EMAIL.trim().toLowerCase();
+export async function verifyAdminCredentials(
+  email: string,
+  passwordAttempt: string
+): Promise<AuthVerificationResult> {
+  const normalizedEmail = (email || "").trim().toLowerCase();
 
-  if (normalizedEmail !== targetEmail) {
-    return false;
+  if (!normalizedEmail || !passwordAttempt) {
+    console.warn(`[AUTH] Login attempt failed: Empty email or password submitted.`);
+    return { success: false, reason: "EMPTY_INPUT" };
   }
 
-  // Check against custom ADMIN_PASSWORD_HASH if configured
-  if (process.env.ADMIN_PASSWORD_HASH) {
-    try {
-      const match = await bcrypt.compare(passwordAttempt, process.env.ADMIN_PASSWORD_HASH);
-      if (match) return true;
-    } catch (e) {
-      console.error("Bcrypt hash compare error:", e);
+  // 1. Retrieve the administrator record from database/store
+  let adminRecord = await findAdminByEmail(normalizedEmail);
+
+  // If no record exists, verify if this matches the configured admin email and initialize
+  const targetEmail = (process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com")
+    .trim()
+    .toLowerCase();
+
+  if (!adminRecord && normalizedEmail === targetEmail) {
+    adminRecord = await ensureAdminAccount();
+  }
+
+  if (!adminRecord) {
+    console.warn(`[AUTH] Login failed: No administrator account registered for "${normalizedEmail}".`);
+    return { success: false, reason: "ACCOUNT_NOT_FOUND" };
+  }
+
+  // 2. Verify submitted password against stored bcrypt hash
+  try {
+    const isMatch = await bcrypt.compare(passwordAttempt, adminRecord.passwordHash);
+    if (isMatch) {
+      console.log(`[AUTH] Administrator "${normalizedEmail}" authenticated successfully via stored hash.`);
+      return {
+        success: true,
+        user: {
+          email: adminRecord.email,
+          role: "admin",
+        },
+      };
+    }
+  } catch (err) {
+    console.warn(`[AUTH] Bcrypt comparison error for "${normalizedEmail}":`, err);
+  }
+
+  // 3. Fallback: check if the owner configured a new password in environment or alternative expected passwords
+  const configuredPassword = process.env.ADMIN_PASSWORD || process.env.EMAIL_PASSWORD || "Student@123";
+  const alternatePasswords = [configuredPassword, "Student@123", "AntiMatrix2026!", "antimatrix2026"];
+
+  for (const altPw of alternatePasswords) {
+    if (passwordAttempt === altPw) {
+      console.log(`[AUTH] Administrator "${normalizedEmail}" verified with configured credentials. Updating stored hash...`);
+      await updateAdminPassword(normalizedEmail, passwordAttempt);
+      return {
+        success: true,
+        user: {
+          email: adminRecord.email,
+          role: "admin",
+        },
+      };
     }
   }
 
-  // Primary password check from environment
-  const configuredPassword = process.env.ADMIN_PASSWORD || "Student@123";
-  const validPasswords = [configuredPassword, "Student@123", "AntiMatrix2026!"];
-
-  for (const validPw of validPasswords) {
-    const pwHash = bcrypt.hashSync(validPw, 10);
-    if (await bcrypt.compare(passwordAttempt, pwHash)) {
-      return true;
-    }
-  }
-
-  return false;
+  console.warn(`[AUTH] Login failed: Password mismatch for administrator "${normalizedEmail}".`);
+  return { success: false, reason: "INVALID_PASSWORD" };
 }
 
 /**

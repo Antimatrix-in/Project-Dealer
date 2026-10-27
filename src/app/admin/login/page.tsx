@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), password }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
       });
 
       const data = await res.json();
@@ -131,8 +131,9 @@ export default function AdminLoginPage() {
               <input
                 type="email"
                 required
+                id="admin-email"
                 autoComplete="email"
-                placeholder="admin@antimatrix.in"
+                placeholder="antimatrix2026@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFF9F5] border border-slate-200 text-sm text-[#101828] placeholder-slate-400 focus:outline-none focus:border-[#FF6B00] focus:ring-1 focus:ring-[#FF6B00] focus:bg-white transition-all"
