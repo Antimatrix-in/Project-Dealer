@@ -36,21 +36,21 @@ export default function FaqSection() {
   ];
 
   return (
-    <section className="py-24 bg-[#080808] relative border-t border-[#2A2A2A]">
+    <section className="py-24 bg-[#F7F4E9] relative border-t border-[#DCDCCF]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161616] border border-[#2A2A2A] text-xs font-semibold text-[#FF7900] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#FF7900] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E4EBDD] border border-[#A9BFA3] text-xs font-semibold text-[#244B35] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#244B35] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">
               Got Questions?
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            Frequently Asked <span className="text-gradient-orange">Questions</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
+            Frequently Asked <span className="text-[#244B35]">Questions</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#B8B8B8] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#626B60] leading-relaxed">
             Everything you need to know about our project development, university guidelines compliance, and viva guidance.
           </p>
         </div>
@@ -63,8 +63,8 @@ export default function FaqSection() {
                 key={idx}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? "bg-[#1D1D1D] border-[#FF7900] shadow-sm ring-1 ring-[#FF7900]/20"
-                    : "bg-[#161616] border-[#2A2A2A] hover:border-[#FF7900]/50 shadow-xs"
+                    ? "bg-[#FFFDF7] border-[#244B35] shadow-xs ring-1 ring-[#244B35]/20"
+                    : "bg-[#FFFDF7] border-[#DCDCCF] hover:border-[#A9BFA3] shadow-xs"
                 }`}
               >
                 <button
@@ -72,22 +72,22 @@ export default function FaqSection() {
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5">
-                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-[#161616] border border-[#2A2A2A] text-[#FF7900]">
+                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-[#E4EBDD] border border-[#A9BFA3] text-[#244B35]">
                       0{idx + 1}
                     </span>
-                    <h3 className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-[#FF7900]" : "text-white"}`}>
+                    <h3 className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? "text-[#244B35]" : "text-[#202820]"}`}>
                       {faq.question}
                     </h3>
                   </div>
                   <ChevronDown
                     className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-[#FF7900]" : "text-[#B8B8B8]"
+                      isOpen ? "rotate-180 text-[#244B35]" : "text-[#626B60]"
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#B8B8B8] leading-relaxed border-t border-[#2A2A2A] pt-4">
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#626B60] leading-relaxed border-t border-[#DCDCCF] pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -97,21 +97,21 @@ export default function FaqSection() {
         </div>
 
         {/* Quick Help Card */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+        <div className="mt-12 p-6 rounded-2xl bg-[#EFEBDD] border border-[#DCDCCF] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="w-10 h-10 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] flex items-center justify-center text-[#FF7900] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35] shrink-0">
               <HelpCircle className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">Have a specific question not covered here?</h4>
-              <p className="text-xs text-[#B8B8B8]">Talk directly with a technical mentor on WhatsApp or schedule a call.</p>
+              <h4 className="text-sm font-bold text-[#202820]">Have a specific question not covered here?</h4>
+              <p className="text-xs text-[#626B60]">Talk directly with a technical mentor on WhatsApp or schedule a call.</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => openConsultationModal()}
-              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white font-bold text-xs shadow-md transition-all cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs shadow-xs transition-all cursor-pointer border border-[#244B35]"
             >
               Ask an Expert
             </button>
@@ -119,9 +119,9 @@ export default function FaqSection() {
               href={getWhatsAppUrl({ requirements: "General inquiry / project questions" })}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-[#FF7900] text-xs font-bold hover:border-[#FF7900] transition-colors flex items-center gap-1.5"
+              className="px-4 py-2.5 rounded-xl bg-[#FFFDF7] hover:bg-[#F7F4E9] border border-[#DCDCCF] text-[#244B35] text-xs font-bold hover:border-[#244B35] transition-colors flex items-center gap-1.5 shadow-xs"
             >
-              <MessageCircle className="w-3.5 h-3.5 text-[#FF7900]" />
+              <MessageCircle className="w-3.5 h-3.5 text-[#244B35]" />
               <span>WhatsApp</span>
             </a>
           </div>

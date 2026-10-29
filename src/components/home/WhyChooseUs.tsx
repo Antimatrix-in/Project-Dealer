@@ -88,19 +88,19 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-[#080808] border-y border-[#2A2A2A] relative">
+    <section className="py-24 bg-[#EFEBDD] border-y border-[#DCDCCF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1D1D1D] border border-[#FF7900]/30 text-xs font-semibold text-[#FF7900] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#FF7900] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E4EBDD] border border-[#A9BFA3] text-xs font-semibold text-[#244B35] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#244B35] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">The AntiMatrix Standard</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#FFFFFF] tracking-tight">
-            Why Choose <span className="text-gradient-orange">AntiMatrix</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
+            Why Choose <span className="text-[#244B35]">AntiMatrix</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#B8B8B8] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#626B60] leading-relaxed">
             We provide a startup-grade technology foundation and viva defense ecosystem that guarantees seamless project completion.
           </p>
         </div>
@@ -113,27 +113,27 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative rounded-[16px] bg-[#161616] border border-[#2A2A2A] shadow-[0_4px_25px_-4px_rgba(0,0,0,0.7)] hover:shadow-[0_22px_40px_-8px_rgba(255,121,0,0.18)] hover:border-[#FF7900] transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden h-full"
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="group relative rounded-[16px] bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs hover:shadow-md hover:border-[#A9BFA3] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
             >
               <div className="flex flex-col flex-1">
                 {/* Banner Image */}
-                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#101010]">
+                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#EFEBDD]">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     priority={idx < 3}
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF7] via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Badge */}
                   <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#161616]/90 text-[#FF7900] font-mono shadow-md border border-[#2A2A2A] backdrop-blur-md">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFDF7]/95 text-[#244B35] font-mono shadow-xs border border-[#DCDCCF] backdrop-blur-xs">
                       {item.badge}
                     </span>
                   </div>
@@ -141,23 +141,23 @@ export default function WhyChooseUs() {
 
                 {/* Card Content */}
                 <div className="p-6 sm:p-7 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-[#FFFFFF] mb-2.5 group-hover:text-[#FF7900] transition-colors leading-snug">
+                  <h3 className="text-xl font-bold text-[#202820] mb-2.5 group-hover:text-[#244B35] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-[#FFFFFF] font-medium leading-relaxed mb-2.5">
+                  <p className="text-sm text-[#202820] font-medium leading-relaxed mb-2.5">
                     {item.desc}
                   </p>
 
-                  <p className="text-xs text-[#B8B8B8] leading-relaxed mb-5">
+                  <p className="text-xs text-[#626B60] leading-relaxed mb-5">
                     {item.details}
                   </p>
 
                   {/* Benefits Checklist */}
-                  <div className="mt-auto pt-4 border-t border-[#2A2A2A] space-y-2">
+                  <div className="mt-auto pt-4 border-t border-[#DCDCCF] space-y-2">
                     {item.benefits.map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#B8B8B8]">
-                        <CheckCircle2 className="w-4 h-4 text-[#FF7900] shrink-0" />
+                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#626B60]">
+                        <CheckCircle2 className="w-4 h-4 text-[#244B35] shrink-0" />
                         <span>{benefit}</span>
                       </div>
                     ))}

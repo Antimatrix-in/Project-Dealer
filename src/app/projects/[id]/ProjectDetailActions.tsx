@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { Sparkles, MessageCircle, MonitorPlay, PhoneCall, ClipboardList, Mail } from "lucide-react";
+import { MessageCircle, MonitorPlay, PhoneCall, ClipboardList, Mail } from "lucide-react";
 import { openConsultationModal } from "@/components/common/ConsultationModal";
-import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 interface ProjectDetailActionsProps {
   projectTitle: string;
@@ -29,7 +29,7 @@ export default function ProjectDetailActions({
         target="_blank"
         rel="noopener noreferrer"
         id="project-detail-whatsapp"
-        className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer shadow-[#FF7900]/25"
+        className="px-5 py-3 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer border border-[#244B35]"
       >
         <MessageCircle className="w-4 h-4 text-white" />
         <span>Inquire on WhatsApp</span>
@@ -44,9 +44,9 @@ export default function ProjectDetailActions({
           })
         }
         id="project-detail-enquiry"
-        className="px-5 py-3 rounded-xl bg-[#161616] hover:bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-[#FF7900] font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer"
+        className="px-5 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <ClipboardList className="w-4 h-4 text-[#FF7900]" />
+        <ClipboardList className="w-4 h-4 text-[#244B35]" />
         <span>Project Enquiry</span>
       </button>
 
@@ -54,9 +54,9 @@ export default function ProjectDetailActions({
       <Link
         href="/contact"
         id="project-detail-contact"
-        className="px-5 py-3 rounded-xl bg-[#161616] hover:bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-white hover:text-[#FF7900] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer"
+        className="px-5 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#202820] hover:text-[#244B35] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <Mail className="w-4 h-4 text-[#FF7900]" />
+        <Mail className="w-4 h-4 text-[#244B35]" />
         <span>Contact Us</span>
       </Link>
 
@@ -68,18 +68,18 @@ export default function ProjectDetailActions({
             category,
           })
         }
-        className="px-4 py-3 rounded-xl bg-[#161616] hover:bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-[#B8B8B8] hover:text-white font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer"
+        className="px-4 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#626B60] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <MonitorPlay className="w-4 h-4 text-[#FF7900]" />
+        <MonitorPlay className="w-4 h-4 text-[#244B35]" />
         <span>Request Demo</span>
       </button>
 
       {/* Call Desk */}
       <a
         href={`tel:+${WHATSAPP_NUMBER}`}
-        className="px-4 py-3 rounded-xl bg-[#161616] hover:bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-[#B8B8B8] hover:text-white font-medium text-xs sm:text-sm transition-colors flex items-center gap-2"
+        className="px-4 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#626B60] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 shadow-xs"
       >
-        <PhoneCall className="w-4 h-4 text-[#FF7900]" />
+        <PhoneCall className="w-4 h-4 text-[#244B35]" />
         <span>Call ({WHATSAPP_DISPLAY})</span>
       </a>
     </div>

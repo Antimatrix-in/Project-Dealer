@@ -138,22 +138,18 @@ export async function verifyAdminCredentials(
     console.warn(`[AUTH] Bcrypt comparison error for "${normalizedEmail}":`, err);
   }
 
-  // 3. Fallback: check if the owner configured a new password in environment or alternative expected passwords
-  const configuredPassword = process.env.ADMIN_PASSWORD || process.env.EMAIL_PASSWORD || "Student@123";
-  const alternatePasswords = [configuredPassword, "Student@123", "AntiMatrix2026!", "antimatrix2026"];
-
-  for (const altPw of alternatePasswords) {
-    if (passwordAttempt === altPw) {
-      console.log(`[AUTH] Administrator "${normalizedEmail}" verified with configured credentials. Updating stored hash...`);
-      await updateAdminPassword(normalizedEmail, passwordAttempt);
-      return {
-        success: true,
-        user: {
-          email: adminRecord.email,
-          role: "admin",
-        },
-      };
-    }
+  // 3. Fallback: check if the owner configured a new password in environment variable
+  const configuredPassword = process.env.ADMIN_PASSWORD || process.env.EMAIL_PASSWORD;
+  if (configuredPassword && passwordAttempt === configuredPassword) {
+    console.log(`[AUTH] Administrator "${normalizedEmail}" verified with configured environment credentials. Updating stored hash...`);
+    await updateAdminPassword(normalizedEmail, passwordAttempt);
+    return {
+      success: true,
+      user: {
+        email: adminRecord.email,
+        role: "admin",
+      },
+    };
   }
 
   console.warn(`[AUTH] Login failed: Password mismatch for administrator "${normalizedEmail}".`);

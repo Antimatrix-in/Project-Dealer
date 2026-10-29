@@ -6,36 +6,36 @@ import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 export default function TopContactBar() {
   return (
-    <div className="bg-[#101010] text-[#B8B8B8] text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-[#2A2A2A] transition-colors relative z-50">
+    <div className="bg-[#EFEBDD] text-[#626B60] text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-[#DCDCCF] transition-colors relative z-50">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
         {/* Left Side: Contact Information */}
         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-[11px] sm:text-xs">
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="flex items-center gap-1.5 text-[#B8B8B8] hover:text-[#FF7900] transition-colors font-medium"
+            className="flex items-center gap-1.5 text-[#626B60] hover:text-[#244B35] transition-colors font-medium"
           >
-            <Phone className="w-3.5 h-3.5 text-[#FF7900]" />
+            <Phone className="w-3.5 h-3.5 text-[#244B35]" />
             <span>{WHATSAPP_DISPLAY}</span>
           </a>
 
           <a
             href="mailto:projects@antimatrix.co.in"
-            className="flex items-center gap-1.5 text-[#B8B8B8] hover:text-[#FF7900] transition-colors font-medium"
+            className="flex items-center gap-1.5 text-[#626B60] hover:text-[#244B35] transition-colors font-medium"
           >
-            <Mail className="w-3.5 h-3.5 text-[#FF7900]" />
+            <Mail className="w-3.5 h-3.5 text-[#244B35]" />
             <span>projects@antimatrix.co.in</span>
           </a>
 
-          <span className="hidden md:flex items-center gap-1.5 text-[#B8B8B8]">
-            <MapPin className="w-3.5 h-3.5 text-[#FF7900]" />
+          <span className="hidden md:flex items-center gap-1.5 text-[#626B60]">
+            <MapPin className="w-3.5 h-3.5 text-[#244B35]" />
             <span>Chennai, Tamil Nadu</span>
           </span>
         </div>
 
         {/* Right Side: Social Icons & Badge */}
-        <div className="flex items-center gap-4 text-[#B8B8B8] text-[11px]">
-          <span className="hidden lg:flex items-center gap-1.5 text-[#B8B8B8] font-medium">
-            <span className="w-2 h-2 rounded-full bg-[#FF7900] animate-pulse" />
+        <div className="flex items-center gap-4 text-[#626B60] text-[11px]">
+          <span className="hidden lg:flex items-center gap-1.5 text-[#626B60] font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#244B35] animate-pulse" />
             <span>Dedicated Mentors Active: Mon – Sat 9AM – 9PM IST</span>
           </span>
           <div className="flex items-center gap-3">
@@ -43,7 +43,7 @@ export default function TopContactBar() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B8B8B8] hover:text-[#FF7900] transition-colors p-1"
+              className="text-[#626B60] hover:text-[#244B35] transition-colors p-1"
               aria-label="GitHub"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@ export default function TopContactBar() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B8B8B8] hover:text-[#FF7900] transition-colors p-1"
+              className="text-[#626B60] hover:text-[#244B35] transition-colors p-1"
               aria-label="LinkedIn"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ export default function TopContactBar() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B8B8B8] hover:text-[#FF7900] transition-colors p-1"
+              className="text-[#626B60] hover:text-[#244B35] transition-colors p-1"
               aria-label="Twitter / X"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ export default function TopContactBar() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B8B8B8] hover:text-[#FF7900] transition-colors p-1"
+              className="text-[#626B60] hover:text-[#244B35] transition-colors p-1"
               aria-label="Instagram"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">

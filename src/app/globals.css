@@ -2,161 +2,169 @@
 
 @layer base {
   :root {
-    /* Strict Black & Orange Palette */
-    --bg-main: #080808;
-    --bg-secondary: #101010;
-    --bg-card: #161616;
-    --bg-elevated: #1D1D1D;
-    --primary-orange: #FF7900;
-    --secondary-orange: #FF9500;
-    --orange-dark: #FF4500;
-    --text-primary: #FFFFFF;
-    --text-secondary: #B8B8B8;
-    --border-color: #2A2A2A;
+    /* Theme 10: Neutral Sand Green Palette */
+    --bg-main: #F7F4E9;
+    --bg-secondary: #EFEBDD;
+    --bg-card: #FFFDF7;
+    --bg-elevated: #FFFFFF;
+    --primary-forest-green: #244B35;
+    --secondary-green: #3F7650;
+    --soft-sage-green: #A9BFA3;
+    --light-sage: #E4EBDD;
+    --primary-text: #202820;
+    --secondary-text: #626B60;
+    --border-color: #DCDCCF;
+    --white: #FFFFFF;
 
     /* Semantic tokens */
-    --background: #080808;
-    --background-secondary: #101010;
-    --foreground: #FFFFFF;
-    --muted-text: #B8B8B8;
+    --background: #F7F4E9;
+    --background-secondary: #EFEBDD;
+    --foreground: #202820;
+    --muted-text: #626B60;
   }
 
   body {
-    background-color: #080808;
-    color: #FFFFFF;
+    background-color: #F7F4E9;
+    color: #202820;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    selection-background-color: #FF7900;
-    selection-color: #080808;
+    selection-background-color: #244B35;
+    selection-color: #FFFFFF;
   }
 }
 
-/* Custom Scrollbar for Black & Orange Theme */
+/* Custom Scrollbar for Neutral Sand Green Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #F7F4E9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A2A2A;
+  background: #DCDCCF;
   border-radius: 9999px;
-  border: 2px solid #080808;
+  border: 2px solid #F7F4E9;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF7900;
+  background: #A9BFA3;
 }
 
-/* Primary Orange Gradient Text */
-.text-gradient-orange-red,
+/* Forest Green Heading & Accent Gradients */
+.text-gradient-forest,
 .text-gradient-primary,
-.text-gradient-gold,
-.text-gradient-orange {
-  background: linear-gradient(120deg, #FF7900 0%, #FF9500 50%, #FF4500 100%);
+.text-gradient-orange,
+.text-gradient-orange-red,
+.text-gradient-gold {
+  background: linear-gradient(135deg, #244B35 0%, #3F7650 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Background Gradients */
-.bg-gradient-orange-red,
+.bg-gradient-forest,
 .bg-gradient-primary,
-.bg-gradient-gold,
-.bg-gradient-orange {
-  background: linear-gradient(120deg, #FF7900 0%, #FF4500 100%);
+.bg-gradient-orange,
+.bg-gradient-orange-red,
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #244B35 0%, #3F7650 100%);
 }
 
-/* Primary Button Gradient */
-.btn-primary-orange-red,
+/* Primary Forest Green Button */
+.btn-primary-forest,
 .btn-primary-gradient,
-.btn-primary-gold,
-.btn-primary-orange {
-  background: linear-gradient(120deg, #FF7900, #FF4500);
+.btn-primary-orange,
+.btn-primary-orange-red,
+.btn-primary-gold {
+  background-color: #244B35;
   color: #FFFFFF;
-  box-shadow: 0 4px 18px -2px rgba(255, 121, 0, 0.4);
+  box-shadow: 0 2px 8px -1px rgba(36, 75, 53, 0.25);
   transition: all 0.25s ease;
-  border: 1px solid rgba(255, 121, 0, 0.3);
+  border: 1px solid #244B35;
 }
 
-.btn-primary-orange-red:hover,
+.btn-primary-forest:hover,
 .btn-primary-gradient:hover,
-.btn-primary-gold:hover,
-.btn-primary-orange:hover {
-  background: linear-gradient(120deg, #FF9500, #FF4500);
-  box-shadow: 0 6px 24px -2px rgba(255, 121, 0, 0.6);
+.btn-primary-orange:hover,
+.btn-primary-orange-red:hover,
+.btn-primary-gold:hover {
+  background-color: #1D3D2B;
+  box-shadow: 0 4px 14px -1px rgba(36, 75, 53, 0.35);
   transform: translateY(-1px);
 }
 
-/* Secondary Dark Button */
-.btn-secondary-dark {
-  background: #161616;
-  color: #FFFFFF;
-  border: 1px solid #2A2A2A;
+/* Secondary Button (Neutral Sand / Cream) */
+.btn-secondary-dark,
+.btn-secondary-neutral {
+  background: #FFFDF7;
+  color: #202820;
+  border: 1px solid #DCDCCF;
   transition: all 0.25s ease;
 }
-.btn-secondary-dark:hover {
-  background: #1D1D1D;
-  border-color: #FF7900;
-  color: #FF7900;
+.btn-secondary-dark:hover,
+.btn-secondary-neutral:hover {
+  background: #EFEBDD;
+  border-color: #244B35;
+  color: #244B35;
   transform: translateY(-1px);
 }
 
-/* WhatsApp Button (Dark & Orange themed to respect strict palette) */
+/* WhatsApp Button (Restrained Green styling) */
 .btn-whatsapp {
-  background-color: #161616;
+  background-color: #244B35;
   color: #FFFFFF;
-  border: 1px solid #2A2A2A;
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid #244B35;
+  box-shadow: 0 2px 10px 0 rgba(36, 75, 53, 0.2);
   transition: all 0.25s ease;
 }
 .btn-whatsapp:hover {
-  background-color: #1D1D1D;
-  border-color: #FF7900;
-  color: #FF7900;
-  box-shadow: 0 6px 20px 0 rgba(255, 121, 0, 0.25);
+  background-color: #1D3D2B;
+  box-shadow: 0 4px 16px 0 rgba(36, 75, 53, 0.3);
   transform: translateY(-1px);
 }
 
-/* Charcoal Cards with Subtle Borders and Orange Glow on Hover */
+/* Theme 10 Cards: Cream/White with Thin Borders & Soft Shadows */
 .saas-card,
 .peach-card,
-.charcoal-card {
-  background: #161616;
-  border: 1px solid #2A2A2A;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.charcoal-card,
+.sand-card {
+  background: #FFFDF7;
+  border: 1px solid #DCDCCF;
+  box-shadow: 0 1px 3px 0 rgba(32, 40, 32, 0.04), 0 1px 2px -1px rgba(32, 40, 32, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .saas-card:hover,
 .peach-card:hover,
-.charcoal-card:hover {
-  border-color: #FF7900;
-  box-shadow: 0 12px 30px -4px rgba(255, 121, 0, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.6);
-  transform: translateY(-3px);
+.charcoal-card:hover,
+.sand-card:hover {
+  border-color: #A9BFA3;
+  box-shadow: 0 8px 24px -4px rgba(36, 75, 53, 0.08), 0 2px 6px -2px rgba(32, 40, 32, 0.04);
+  transform: translateY(-2px);
 }
 
 .saas-glass {
-  background: rgba(22, 22, 22, 0.9);
+  background: rgba(255, 253, 247, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #2A2A2A;
+  border: 1px solid #DCDCCF;
 }
 
-/* Dark Grid & Hero Backgrounds */
+/* Subtle Sand Grid & Hero Backgrounds */
 .bg-grid-subtle {
-  background-size: 36px 36px;
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 121, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 121, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(36, 75, 53, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 75, 53, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(255, 121, 0, 0.15) 0%, rgba(255, 69, 0, 0.05) 35%, rgba(8, 8, 8, 0.95) 70%, #080808 100%);
+  background: radial-gradient(circle at 50% 0%, rgba(169, 191, 163, 0.25) 0%, rgba(239, 235, 221, 0.4) 40%, #F7F4E9 80%);
 }
 
 @keyframes floatElement {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(0.5deg); }
+  50% { transform: translateY(-4px) rotate(0.3deg); }
 }
 
 .animate-float-slow {
@@ -164,8 +172,8 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
 }
 
 .animate-pulse-glow {

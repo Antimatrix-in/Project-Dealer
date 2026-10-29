@@ -60,7 +60,7 @@ export default function ContactPage() {
             particleCount: 90,
             spread: 75,
             origin: { y: 0.6 },
-            colors: ["#FF7900", "#FF9500", "#FF4500", "#FFFFFF"],
+            colors: ["#244B35", "#3F7650", "#A9BFA3", "#FFFFFF"],
           });
         } catch (e) {}
       }
@@ -83,12 +83,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#080808] min-h-screen text-white">
+    <div className="pt-28 pb-20 bg-[#F7F4E9] min-h-screen text-[#202820]">
       {/* Background Header */}
-      <div className="relative py-16 bg-[#101010] border-b border-[#2A2A2A] mb-12 overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#FF7900]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#FF9500]/10 rounded-full blur-3xl pointer-events-none" />
-
+      <div className="relative py-16 bg-[#EFEBDD] border-b border-[#DCDCCF] mb-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
             badge="AntiMatrix Support Cell"
@@ -102,9 +99,9 @@ export default function ContactPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#161616] hover:bg-[#1D1D1D] text-white font-bold text-xs shadow-md border border-[#2A2A2A] hover:border-[#FF7900] transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] text-[#244B35] font-bold text-xs shadow-xs border border-[#DCDCCF] hover:border-[#244B35] transition-all"
             >
-              <MessageCircle className="w-4 h-4 text-[#FF7900]" />
+              <MessageCircle className="w-4 h-4 text-[#244B35]" />
               <span>WhatsApp Now</span>
             </a>
 
@@ -112,7 +109,7 @@ export default function ContactPage() {
               href={GOOGLE_ENQUIRY_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-95 text-white font-bold text-xs shadow-md transition-all group border border-[#FF7900]/30"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs shadow-xs hover:shadow-md transition-all group border border-[#244B35]"
             >
               <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
               <span>Fill Project Enquiry Form</span>
@@ -125,69 +122,69 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Contact Information Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] shadow-xl space-y-3 hover:border-[#FF7900] transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] flex items-center justify-center text-[#FF7900]">
+          <div className="p-6 rounded-2xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs space-y-3 hover:border-[#A9BFA3] transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
               <Phone className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Call Support</h4>
-            <p className="text-xs text-[#B8B8B8] leading-relaxed">
+            <h4 className="text-base font-bold text-[#202820]">Call Support</h4>
+            <p className="text-xs text-[#626B60] leading-relaxed">
               Direct hotline for immediate project counseling.
             </p>
             <div className="pt-1">
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                className="text-xs font-mono font-bold text-[#FF7900] hover:underline block"
+                className="text-xs font-mono font-bold text-[#244B35] hover:underline block"
               >
                 {WHATSAPP_DISPLAY}
               </a>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] shadow-xl space-y-3 hover:border-[#FF7900] transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] flex items-center justify-center text-[#FF7900]">
+          <div className="p-6 rounded-2xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs space-y-3 hover:border-[#A9BFA3] transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
               <MessageCircle className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">WhatsApp Helpline</h4>
-            <p className="text-xs text-[#B8B8B8] leading-relaxed">
+            <h4 className="text-base font-bold text-[#202820]">WhatsApp Helpline</h4>
+            <p className="text-xs text-[#626B60] leading-relaxed">
               Instant responses, base paper sharing, and screenshots.
             </p>
             <div className="pt-1">
               <button
                 onClick={handleWhatsAppDirect}
-                className="text-xs font-bold text-[#FF7900] hover:underline cursor-pointer flex items-center gap-1"
+                className="text-xs font-bold text-[#244B35] hover:underline cursor-pointer flex items-center gap-1"
               >
                 <span>Chat on WhatsApp &rarr;</span>
               </button>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] shadow-xl space-y-3 hover:border-[#FF7900] transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] flex items-center justify-center text-[#FF7900]">
+          <div className="p-6 rounded-2xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs space-y-3 hover:border-[#A9BFA3] transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
               <Mail className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Email Desk</h4>
-            <p className="text-xs text-[#B8B8B8] leading-relaxed">
+            <h4 className="text-base font-bold text-[#202820]">Email Desk</h4>
+            <p className="text-xs text-[#626B60] leading-relaxed">
               Send your synopsis drafts, problem statements, and requirements.
             </p>
             <div className="pt-1">
               <a
                 href="mailto:projects@antimatrix.co.in"
-                className="text-xs font-bold text-[#FF7900] hover:underline"
+                className="text-xs font-bold text-[#244B35] hover:underline"
               >
                 projects@antimatrix.co.in
               </a>
             </div>
           </div>
 
-          <div className="p-6 rounded-2xl bg-[#161616] border border-[#2A2A2A] shadow-xl space-y-3 hover:border-[#FF7900] transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] flex items-center justify-center text-[#FF7900]">
+          <div className="p-6 rounded-2xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs space-y-3 hover:border-[#A9BFA3] transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
               <Clock className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-bold text-white">Operating Hours</h4>
-            <p className="text-xs text-[#B8B8B8] leading-relaxed">
+            <h4 className="text-base font-bold text-[#202820]">Operating Hours</h4>
+            <p className="text-xs text-[#626B60] leading-relaxed">
               Mon - Sat: 9:00 AM - 9:00 PM IST
             </p>
-            <p className="text-[11px] text-[#FF7900] font-medium">
+            <p className="text-[11px] text-[#244B35] font-medium">
               *Emergency review support during university exam weeks.
             </p>
           </div>
@@ -196,15 +193,15 @@ export default function ContactPage() {
         {/* Main Section: Contact Form + Headquarters & Map Preview */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
           {/* Left Form (3 Cols) */}
-          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-[#161616] border border-[#2A2A2A] shadow-xl">
-            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#2A2A2A]">
+          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs">
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#DCDCCF]">
               <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#1D1D1D] border border-[#2A2A2A] text-[#FF7900] font-mono">
-                  <Sparkles className="w-3.5 h-3.5 text-[#FF7900]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#E4EBDD] border border-[#A9BFA3] text-[#244B35] font-mono">
+                  <Sparkles className="w-3.5 h-3.5 text-[#244B35]" />
                   <span>Project Requirement Form</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white">Send Us Your Project Details</h3>
-                <p className="text-xs text-[#B8B8B8]">
+                <h3 className="text-2xl font-bold text-[#202820]">Send Us Your Project Details</h3>
+                <p className="text-xs text-[#626B60]">
                   Fill in the details below or open Google Forms to submit project requirements.
                 </p>
               </div>
@@ -214,7 +211,7 @@ export default function ContactPage() {
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-95 text-white text-xs font-bold transition-all shadow-md group shrink-0 border border-[#FF7900]/30"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white text-xs font-bold transition-all shadow-xs group shrink-0 border border-[#244B35]"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
@@ -224,15 +221,15 @@ export default function ContactPage() {
 
             {submitted ? (
               <div className="py-10 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-[#1D1D1D] border border-[#2A2A2A] text-[#FF7900] flex items-center justify-center mx-auto shadow-md">
+                <div className="w-16 h-16 rounded-full bg-[#E4EBDD] border border-[#A9BFA3] text-[#244B35] flex items-center justify-center mx-auto shadow-xs">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-bold text-white">Thank You, {formData.name}!</h4>
-                <p className="text-sm text-[#B8B8B8] max-w-md mx-auto leading-relaxed">
-                  Your project requirements have been transmitted to our engineering cell in Chennai, Tamil Nadu. Our domain mentors will call and message you on WhatsApp (<strong className="text-white">+91 91595 14326</strong>) within 15 minutes. You can also email synopsis files and base papers to{" "}
+                <h4 className="text-2xl font-bold text-[#202820]">Thank You, {formData.name}!</h4>
+                <p className="text-sm text-[#626B60] max-w-md mx-auto leading-relaxed">
+                  Your project requirements have been transmitted to our engineering cell in Chennai, Tamil Nadu. Our domain mentors will call and message you on WhatsApp (<strong className="text-[#202820]">+91 91595 14326</strong>) within 15 minutes. You can also email synopsis files and base papers to{" "}
                   <a
                     href="mailto:projects@antimatrix.co.in"
-                    className="text-[#FF7900] font-bold hover:underline"
+                    className="text-[#244B35] font-bold hover:underline"
                   >
                     projects@antimatrix.co.in
                   </a>.
@@ -240,14 +237,14 @@ export default function ContactPage() {
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <button
                     onClick={handleWhatsAppDirect}
-                    className="px-6 py-3 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-[#FF7900] font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                    className="px-6 py-3 rounded-xl bg-[#FFFDF7] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#FF7900]" />
+                    <MessageCircle className="w-4 h-4 text-[#244B35]" />
                     Follow Up on WhatsApp
                   </button>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-3 rounded-xl bg-[#1D1D1D] hover:bg-[#252525] text-white font-semibold text-xs border border-[#2A2A2A] cursor-pointer"
+                    className="px-6 py-3 rounded-xl bg-[#EFEBDD] hover:bg-[#E4EBDD] text-[#202820] font-semibold text-xs border border-[#DCDCCF] cursor-pointer"
                   >
                     Submit Another Inquiry
                   </button>
@@ -257,8 +254,8 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
-                      Full Name <span className="text-[#FF7900]">*</span>
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
+                      Full Name <span className="text-[#244B35]">*</span>
                     </label>
                     <input
                       type="text"
@@ -267,13 +264,13 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Karthik Rajan"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
-                      WhatsApp / Phone Number <span className="text-[#FF7900]">*</span>
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
+                      WhatsApp / Phone Number <span className="text-[#244B35]">*</span>
                     </label>
                     <input
                       type="tel"
@@ -282,15 +279,15 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="e.g. +91 91595 14326"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
-                      Email Address <span className="text-[#FF7900]">*</span>
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
+                      Email Address <span className="text-[#244B35]">*</span>
                     </label>
                     <input
                       type="email"
@@ -299,12 +296,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="e.g. student@college.edu"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
                       College / University
                     </label>
                     <input
@@ -313,14 +310,14 @@ export default function ContactPage() {
                       value={formData.college}
                       onChange={handleChange}
                       placeholder="e.g. Anna University / SRM / VIT"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
                       Degree &amp; Branch
                     </label>
                     <input
@@ -329,23 +326,23 @@ export default function ContactPage() {
                       value={formData.degree}
                       onChange={handleChange}
                       placeholder="e.g. B.E CSE / B.Tech IT / M.Tech"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-white mb-1">
+                    <label className="block text-xs font-bold text-[#202820] mb-1">
                       Project Domain (10 Categories)
                     </label>
                     <select
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                     >
-                      <option value="" className="bg-[#1D1D1D] text-white">Select Domain...</option>
+                      <option value="" className="bg-[#FFFDF7] text-[#202820]">Select Domain...</option>
                       {PROJECT_CATEGORIES.map((c) => (
-                        <option key={c} value={c} className="bg-[#1D1D1D] text-white">
+                        <option key={c} value={c} className="bg-[#FFFDF7] text-[#202820]">
                           {c}
                         </option>
                       ))}
@@ -354,7 +351,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-white mb-1">
+                  <label className="block text-xs font-bold text-[#202820] mb-1">
                     Project Requirement / Title Idea
                   </label>
                   <input
@@ -363,12 +360,12 @@ export default function ContactPage() {
                     value={formData.requirement}
                     onChange={handleChange}
                     placeholder="e.g. Need Final Year Deep Learning X-Ray project with base paper & PPT"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-white mb-1">
+                  <label className="block text-xs font-bold text-[#202820] mb-1">
                     Detailed Message or Guide Instructions
                   </label>
                   <textarea
@@ -377,7 +374,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe any specific guidelines, review deadlines, or tools requested by your college guide..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] text-sm focus:outline-none focus:border-[#FF7900] focus:ring-1 focus:ring-[#FF7900]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35]"
                   />
                 </div>
 
@@ -385,7 +382,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white font-bold text-sm shadow-md shadow-[#FF7900]/25 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="flex-1 py-3.5 px-6 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 border border-[#244B35]"
                   >
                     {loading ? (
                       <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -400,9 +397,9 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="py-3.5 px-5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] hover:border-[#FF7900] text-[#FF7900] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="py-3.5 px-5 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#FF7900]" />
+                    <MessageCircle className="w-4 h-4 text-[#244B35]" />
                     <span>WhatsApp Directly</span>
                   </button>
                 </div>
@@ -413,29 +410,29 @@ export default function ContactPage() {
           {/* Right Column: Headquarters & Map Preview (2 Cols) */}
           <div className="lg:col-span-2 space-y-6">
             {/* Center Location Card */}
-            <div className="p-6 rounded-3xl bg-[#161616] border border-[#2A2A2A] shadow-xl space-y-4">
-              <div className="flex items-center justify-between pb-2 border-b border-[#2A2A2A]">
+            <div className="p-6 rounded-3xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs space-y-4">
+              <div className="flex items-center justify-between pb-2 border-b border-[#DCDCCF]">
                 <div className="flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-[#FF7900]" />
-                  <h3 className="text-base font-bold text-white">AntiMatrix Project Center</h3>
+                  <Building2 className="w-5 h-5 text-[#244B35]" />
+                  <h3 className="text-base font-bold text-[#202820]">AntiMatrix Project Center</h3>
                 </div>
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#1D1D1D] border border-[#2A2A2A] text-[#FF7900] font-mono">
-                  <MapPin className="w-3 h-3 text-[#FF7900]" />
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#E4EBDD] border border-[#A9BFA3] text-[#244B35] font-mono">
+                  <MapPin className="w-3 h-3 text-[#244B35]" />
                   Chennai, Tamil Nadu
                 </span>
               </div>
-              <p className="text-xs font-semibold text-white leading-relaxed">
+              <p className="text-xs font-semibold text-[#202820] leading-relaxed">
                 Chennai, Tamil Nadu
               </p>
-              <div className="text-xs text-[#B8B8B8] space-y-1">
+              <div className="text-xs text-[#626B60] space-y-1">
                 <p>📍 Location: Chennai, Tamil Nadu, India</p>
                 <p>🚆 Remote &amp; Direct Mentorship Support Available</p>
               </div>
             </div>
 
             {/* Interactive Styled Google Maps Card */}
-            <div className="rounded-3xl bg-[#161616] border border-[#2A2A2A] overflow-hidden shadow-xl relative group">
-              <div className="w-full h-64 sm:h-72 relative bg-[#101010]">
+            <div className="rounded-3xl bg-[#FFFDF7] border border-[#DCDCCF] overflow-hidden shadow-xs relative group">
+              <div className="w-full h-64 sm:h-72 relative bg-[#EFEBDD]">
                 <iframe
                   title="AntiMatrix Project Center - Chennai, Tamil Nadu"
                   src="https://maps.google.com/maps?q=Chennai,+Tamil+Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
@@ -444,34 +441,34 @@ export default function ContactPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
                 <div className="absolute top-3 left-3 z-10 pointer-events-none">
-                  <div className="px-3 py-1.5 rounded-xl bg-black/90 backdrop-blur-sm border border-[#2A2A2A] shadow-sm flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#FF7900] animate-pulse" />
-                    <span className="text-xs font-bold text-white">Chennai, Tamil Nadu</span>
+                  <div className="px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-xs border border-[#DCDCCF] shadow-xs flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#244B35] animate-pulse" />
+                    <span className="text-xs font-bold text-[#202820]">Chennai, Tamil Nadu</span>
                   </div>
                 </div>
               </div>
-              <div className="p-3.5 bg-[#161616] border-t border-[#2A2A2A] flex items-center justify-between">
+              <div className="p-3.5 bg-[#FFFDF7] border-t border-[#DCDCCF] flex items-center justify-between">
                 <div className="text-left">
-                  <p className="text-xs font-bold text-white">AntiMatrix Project Center</p>
-                  <p className="text-[11px] text-[#FF7900] font-mono">Chennai, Tamil Nadu</p>
+                  <p className="text-xs font-bold text-[#202820]">AntiMatrix Project Center</p>
+                  <p className="text-[11px] text-[#244B35] font-mono">Chennai, Tamil Nadu</p>
                 </div>
                 <a
                   href="https://maps.google.com/?q=Chennai,+Tamil+Nadu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-[#1D1D1D] hover:bg-[#252525] border border-[#2A2A2A] hover:border-[#FF7900] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  className="px-3.5 py-1.5 rounded-xl bg-[#EFEBDD] hover:bg-[#E4EBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#202820] text-xs font-semibold flex items-center gap-1.5 transition-colors"
                 >
                   <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3 h-3 text-[#FF7900]" />
+                  <ExternalLink className="w-3 h-3 text-[#244B35]" />
                 </a>
               </div>
             </div>
 
             {/* Fast Response Badge */}
-            <div className="p-4 rounded-2xl bg-[#1D1D1D] border border-[#2A2A2A] text-xs text-white flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-[#FF7900] shrink-0" />
+            <div className="p-4 rounded-2xl bg-[#E4EBDD] border border-[#A9BFA3] text-xs text-[#202820] flex items-center gap-3">
+              <Sparkles className="w-5 h-5 text-[#244B35] shrink-0" />
               <span>
-                Average response time on WhatsApp &amp; Phone is <strong className="text-[#FF7900] font-bold">under 15 minutes</strong> during working hours.
+                Average response time on WhatsApp &amp; Phone is <strong className="text-[#244B35] font-bold">under 15 minutes</strong> during working hours.
               </span>
             </div>
           </div>

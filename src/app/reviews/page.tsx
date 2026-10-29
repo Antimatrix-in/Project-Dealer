@@ -69,12 +69,9 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#080808] min-h-screen text-white">
+    <div className="pt-28 pb-20 bg-[#F7F4E9] min-h-screen text-[#202820]">
       {/* Background Header */}
-      <div className="relative py-16 bg-[#101010] border-b border-[#2A2A2A] mb-10 overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#FF7900]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#FF9500]/10 rounded-full blur-3xl pointer-events-none" />
-
+      <div className="relative py-16 bg-[#EFEBDD] border-b border-[#DCDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
             badge="100% Genuine Student Feedback"
@@ -95,8 +92,8 @@ export default function ReviewsPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                   selectedCategory === cat
-                    ? "bg-gradient-to-r from-[#FF7900] to-[#FF4500] text-white font-bold shadow-md shadow-[#FF7900]/20"
-                    : "bg-[#161616] text-[#B8B8B8] hover:bg-[#1D1D1D] hover:text-[#FF7900] border border-[#2A2A2A]"
+                    ? "bg-[#244B35] text-white font-bold shadow-xs border border-[#244B35]"
+                    : "bg-[#FFFDF7] text-[#626B60] hover:bg-[#EFEBDD] hover:text-[#202820] border border-[#DCDCCF]"
                 }`}
               >
                 {cat}
@@ -106,7 +103,7 @@ export default function ReviewsPage() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 shadow-md"
+            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 shadow-xs border border-[#244B35]"
           >
             <PlusCircle className="w-4 h-4 text-white" />
             <span>Submit Your Review</span>
@@ -118,9 +115,9 @@ export default function ReviewsPage() {
           {filteredReviews.map((rev) => (
             <div
               key={rev.id}
-              className="relative rounded-2xl bg-[#161616] border border-[#2A2A2A] p-6 flex flex-col justify-between shadow-xl hover:border-[#FF7900] transition-all duration-300"
+              className="relative rounded-2xl bg-[#FFFDF7] border border-[#DCDCCF] p-6 flex flex-col justify-between shadow-xs hover:border-[#A9BFA3] hover:shadow-md transition-all duration-300"
             >
-              <div className="absolute top-4 right-4 text-[#FF7900]/10">
+              <div className="absolute top-4 right-4 text-[#A9BFA3]/25">
                 <Quote className="w-7 h-7" />
               </div>
 
@@ -129,47 +126,47 @@ export default function ReviewsPage() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#FF7900] text-[#FF7900]" />
+                      <Star key={i} className="w-4 h-4 fill-[#244B35] text-[#244B35]" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-mono text-[#B8B8B8]">{rev.date}</span>
+                  <span className="text-[11px] font-mono text-[#626B60]">{rev.date}</span>
                 </div>
 
                 {/* Comment Text */}
-                <p className="text-xs sm:text-sm text-white leading-relaxed italic mb-6">
+                <p className="text-xs sm:text-sm text-[#202820] leading-relaxed italic mb-6">
                   &ldquo;{rev.comment}&rdquo;
                 </p>
 
                 {/* Project Tag */}
-                <div className="mb-4 p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-[11px] text-white font-medium">
-                  <span className="text-[#B8B8B8] block text-[10px] uppercase tracking-wider mb-0.5 font-mono">
+                <div className="mb-4 p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[11px] text-[#202820] font-medium">
+                  <span className="text-[#626B60] block text-[10px] uppercase tracking-wider mb-0.5 font-mono">
                     Project Completed:
                   </span>
-                  <span className="line-clamp-1 font-bold text-[#FF7900]">{rev.projectTitle}</span>
+                  <span className="line-clamp-1 font-bold text-[#244B35]">{rev.projectTitle}</span>
                 </div>
               </div>
 
               {/* Student Bio */}
-              <div className="pt-4 border-t border-[#2A2A2A] flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#FF7900] to-[#FF4500] flex items-center justify-center font-bold text-white text-sm shadow-xs shrink-0">
+              <div className="pt-4 border-t border-[#DCDCCF] flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#244B35] flex items-center justify-center font-bold text-white text-sm shadow-xs shrink-0">
                   {rev.studentName.charAt(0)}
                 </div>
                 <div className="overflow-hidden">
                   <div className="flex items-center gap-1.5">
-                    <h4 className="text-sm font-bold text-white truncate">
+                    <h4 className="text-sm font-bold text-[#202820] truncate">
                       {rev.studentName}
                     </h4>
                     {rev.verified && (
-                      <span className="inline-flex items-center gap-1 text-[10px] text-[#FF7900] font-semibold">
+                      <span className="inline-flex items-center gap-1 text-[10px] text-[#244B35] font-semibold">
                         <ShieldCheck className="w-3.5 h-3.5" />
                         Verified
                       </span>
                     )}
                   </div>
-                  <p className="text-[11px] text-[#B8B8B8] truncate">
+                  <p className="text-[11px] text-[#626B60] truncate">
                     {rev.degree}
                   </p>
-                  <p className="text-[10px] text-[#B8B8B8] truncate font-mono">
+                  <p className="text-[10px] text-[#626B60] truncate font-mono">
                     {rev.college}
                   </p>
                 </div>
@@ -186,13 +183,13 @@ export default function ReviewsPage() {
 
       {/* Review Submission Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-lg bg-[#161616] border border-[#2A2A2A] rounded-3xl shadow-2xl p-6 relative text-white">
-            <div className="flex items-center justify-between pb-4 border-b border-[#2A2A2A] mb-4">
-              <h3 className="text-lg font-bold text-white">Share Your AntiMatrix Experience</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs">
+          <div className="w-full max-w-lg bg-[#FFFDF7] border border-[#DCDCCF] rounded-3xl shadow-2xl p-6 relative text-[#202820]">
+            <div className="flex items-center justify-between pb-4 border-b border-[#DCDCCF] mb-4">
+              <h3 className="text-lg font-bold text-[#202820]">Share Your AntiMatrix Experience</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-[#B8B8B8] hover:text-[#FF7900] cursor-pointer"
+                className="text-[#626B60] hover:text-[#244B35] cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -200,9 +197,9 @@ export default function ReviewsPage() {
 
             {submitted ? (
               <div className="text-center py-8 space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-[#FF7900] mx-auto" />
-                <h4 className="text-lg font-bold text-white">Thank You for Your Feedback!</h4>
-                <p className="text-xs text-[#B8B8B8]">
+                <CheckCircle2 className="w-12 h-12 text-[#244B35] mx-auto" />
+                <h4 className="text-lg font-bold text-[#202820]">Thank You for Your Feedback!</h4>
+                <p className="text-xs text-[#626B60]">
                   Your review has been verified and added to our student testimonials wall.
                 </p>
               </div>
@@ -210,7 +207,7 @@ export default function ReviewsPage() {
               <form onSubmit={handleSubmitReview} className="space-y-4 text-xs">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-white font-medium mb-1">Your Full Name *</label>
+                    <label className="block text-[#202820] font-medium mb-1">Your Full Name *</label>
                     <input
                       type="text"
                       required
@@ -219,12 +216,12 @@ export default function ReviewsPage() {
                         setNewReview({ ...newReview, studentName: e.target.value })
                       }
                       placeholder="e.g. Aditi Rao"
-                      className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900]"
+                      className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-1">College / University *</label>
+                    <label className="block text-[#202820] font-medium mb-1">College / University *</label>
                     <input
                       type="text"
                       required
@@ -233,14 +230,14 @@ export default function ReviewsPage() {
                         setNewReview({ ...newReview, college: e.target.value })
                       }
                       placeholder="e.g. Anna University"
-                      className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900]"
+                      className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-white font-medium mb-1">Degree / Branch *</label>
+                    <label className="block text-[#202820] font-medium mb-1">Degree / Branch *</label>
                     <input
                       type="text"
                       required
@@ -249,12 +246,12 @@ export default function ReviewsPage() {
                         setNewReview({ ...newReview, degree: e.target.value })
                       }
                       placeholder="e.g. B.E CSE"
-                      className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900]"
+                      className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-white font-medium mb-1">Project Domain</label>
+                    <label className="block text-[#202820] font-medium mb-1">Project Domain</label>
                     <select
                       value={newReview.category}
                       onChange={(e) =>
@@ -263,10 +260,10 @@ export default function ReviewsPage() {
                           category: e.target.value as any,
                         })
                       }
-                      className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white focus:outline-none focus:border-[#FF7900]"
+                      className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] focus:outline-none focus:border-[#244B35]"
                     >
                       {PROJECT_CATEGORIES.map((c) => (
-                        <option key={c} value={c} className="bg-[#1D1D1D] text-white">
+                        <option key={c} value={c} className="bg-[#FFFDF7] text-[#202820]">
                           {c}
                         </option>
                       ))}
@@ -275,7 +272,7 @@ export default function ReviewsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-white font-medium mb-1">Project Title Completed *</label>
+                  <label className="block text-[#202820] font-medium mb-1">Project Title Completed *</label>
                   <input
                     type="text"
                     required
@@ -284,12 +281,12 @@ export default function ReviewsPage() {
                       setNewReview({ ...newReview, projectTitle: e.target.value })
                     }
                     placeholder="e.g. Multimodal Medical AI Diagnosis"
-                    className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900]"
+                    className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-white font-medium mb-1">Rating</label>
+                  <label className="block text-[#202820] font-medium mb-1">Rating</label>
                   <div className="flex items-center gap-2">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -301,8 +298,8 @@ export default function ReviewsPage() {
                         <Star
                           className={`w-6 h-6 ${
                             star <= newReview.rating
-                              ? "fill-[#FF7900] text-[#FF7900]"
-                              : "text-[#2A2A2A]"
+                              ? "fill-[#244B35] text-[#244B35]"
+                              : "text-[#DCDCCF]"
                           }`}
                         />
                       </button>
@@ -311,7 +308,7 @@ export default function ReviewsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-white font-medium mb-1">Your Detailed Feedback *</label>
+                  <label className="block text-[#202820] font-medium mb-1">Your Detailed Feedback *</label>
                   <textarea
                     rows={4}
                     required
@@ -320,13 +317,13 @@ export default function ReviewsPage() {
                       setNewReview({ ...newReview, comment: e.target.value })
                     }
                     placeholder="How was the project guidance, documentation, viva preparation, and overall experience?"
-                    className="w-full p-2.5 rounded-xl bg-[#1D1D1D] border border-[#2A2A2A] text-white placeholder-[#B8B8B8] focus:outline-none focus:border-[#FF7900]"
+                    className="w-full p-2.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#FF7900] to-[#FF4500] hover:opacity-90 text-white font-bold cursor-pointer shadow-md"
+                  className="w-full py-3 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold cursor-pointer shadow-xs border border-[#244B35]"
                 >
                   Publish Verified Review
                 </button>

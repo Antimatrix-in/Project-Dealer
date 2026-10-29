@@ -1,5 +1,25 @@
 // Test script for AntiMatrix Admin authentication and API endpoints
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+// Load .env.local if present
+const envLocalPath = path.join(__dirname, '..', '.env.local');
+if (fs.existsSync(envLocalPath)) {
+  const content = fs.readFileSync(envLocalPath, 'utf8');
+  content.split('\n').forEach((line) => {
+    const trimmed = line.trim();
+    if (trimmed && !trimmed.startsWith('#')) {
+      const [key, ...rest] = trimmed.split('=');
+      if (key && rest.length > 0 && !process.env[key.trim()]) {
+        process.env[key.trim()] = rest.join('=').trim();
+      }
+    }
+  });
+}
+
+const adminEmail = process.env.ADMIN_EMAIL || 'antimatrix2026@gmail.com';
+const adminPassword = process.env.ADMIN_PASSWORD || 'antimatrix2026@';
 
 async function testSuite() {
   const baseUrl = 'http://127.0.0.1:5001';
@@ -82,7 +102,7 @@ async function testSuite() {
   const res4 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: '  AntiMatrix2026@Gmail.Com  ', password: 'Student@123' },
+    body: { email: `  ${adminEmail.toUpperCase()}  `, password: adminPassword },
   });
   console.log(`Response status: ${res4.statusCode}`, res4.body);
   const setCookie = res4.headers['set-cookie'];

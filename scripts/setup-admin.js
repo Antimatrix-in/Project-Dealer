@@ -31,8 +31,7 @@ if (fs.existsSync(envLocalPath)) {
 const adminEmail = (process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com").trim().toLowerCase();
 const defaultPassword =
   process.env.ADMIN_PASSWORD ||
-  process.env.EMAIL_PASSWORD ||
-  "Student@123";
+  process.env.EMAIL_PASSWORD;
 
 const storePath = path.join(__dirname, "..", "src", "data", "admin-store.json");
 
