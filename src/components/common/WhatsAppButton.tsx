@@ -69,27 +69,27 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       {/* Quick Chat Popup */}
       {isOpen && (
-        <div className="mb-3 w-84 sm:w-96 bg-[#FFFDF7] border border-[#DCDCCF] rounded-3xl shadow-xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
+        <div className="mb-3 w-84 sm:w-96 bg-[#FFFFFF] border border-[#DDDCCF] rounded-3xl shadow-xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200">
           {/* Header */}
-          <div className="p-4 bg-[#EFEBDD] border-b border-[#DCDCCF] text-[#202820] flex items-center justify-between">
+          <div className="p-4 bg-[#EEE9DC] border-b border-[#DDDCCF] text-[#202820] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
-                  <MessageCircle className="w-5 h-5 fill-[#244B35]" />
+                <div className="w-10 h-10 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
+                  <MessageCircle className="w-5 h-5 fill-[#315C3D]" />
                 </div>
-                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#244B35] border-2 border-[#FFFDF7]" />
+                <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#315C3D] border-2 border-[#FFFFFF]" />
               </div>
               <div>
                 <h4 className="font-bold text-sm text-[#202820]">AntiMatrix WhatsApp Desk</h4>
-                <p className="text-[11px] text-[#626B60] flex items-center gap-1 font-mono">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#244B35] animate-pulse" />
+                <p className="text-[11px] text-[#667064] flex items-center gap-1 font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#315C3D] animate-pulse" />
                   Online: {WHATSAPP_DISPLAY}
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-lg text-[#626B60] hover:text-[#244B35] hover:bg-[#E4EBDD] transition-colors"
+              className="p-1 rounded-lg text-[#667064] hover:text-[#315C3D] hover:bg-[#DCE8D9] transition-colors"
               aria-label="Close WhatsApp chat"
             >
               <X className="w-4 h-4" />
@@ -97,15 +97,15 @@ export default function WhatsAppButton() {
           </div>
 
           {/* Body */}
-          <div className="p-4 space-y-3 bg-[#FFFDF7] max-h-[75vh] overflow-y-auto">
-            <div className="p-3 rounded-xl bg-[#EFEBDD] border border-[#DCDCCF] text-xs text-[#626B60] leading-relaxed">
+          <div className="p-4 space-y-3 bg-[#FFFFFF] max-h-[75vh] overflow-y-auto">
+            <div className="p-3 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] text-xs text-[#667064] leading-relaxed">
               👋 <strong className="text-[#202820]">Hello Student!</strong> Discuss your project requirements, domain selection, or viva guidance directly with our mentors.
             </div>
 
             {/* Direct Quick WhatsApp Action Button */}
             <button
               onClick={() => handleOpenWhatsApp()}
-              className="w-full py-3 px-4 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-3 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 text-white" />
               <span>Direct WhatsApp Chat ({WHATSAPP_DISPLAY})</span>
@@ -117,28 +117,28 @@ export default function WhatsAppButton() {
               href={GOOGLE_ENQUIRY_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 px-4 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-xs group"
+              className="w-full py-2.5 px-4 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-xs group"
             >
-              <ClipboardList className="w-4 h-4 text-[#244B35] group-hover:scale-110 transition-transform" />
+              <ClipboardList className="w-4 h-4 text-[#315C3D] group-hover:scale-110 transition-transform" />
               <span>Fill Project Enquiry Google Form</span>
-              <ExternalLink className="w-3.5 h-3.5 ml-auto text-[#626B60]" />
+              <ExternalLink className="w-3.5 h-3.5 ml-auto text-[#667064]" />
             </a>
 
             {/* Toggle Detailed Form / Quick Inquiries */}
-            <div className="flex items-center justify-between pt-1 border-t border-[#DCDCCF] text-[11px]">
+            <div className="flex items-center justify-between pt-1 border-t border-[#DDDCCF] text-[11px]">
               <button
                 type="button"
                 onClick={() => setShowDetailedForm(!showDetailedForm)}
-                className="text-[#244B35] hover:text-[#3F7650] font-bold flex items-center gap-1 cursor-pointer"
+                className="text-[#315C3D] hover:text-[#497A52] font-bold flex items-center gap-1 cursor-pointer"
               >
-                <GraduationCap className="w-3.5 h-3.5 text-[#244B35]" />
+                <GraduationCap className="w-3.5 h-3.5 text-[#315C3D]" />
                 <span>{showDetailedForm ? "Show Quick Inquiries" : "Fill Project Requirements Form"}</span>
               </button>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                className="text-[#626B60] hover:text-[#244B35] flex items-center gap-1 font-semibold font-mono"
+                className="text-[#667064] hover:text-[#315C3D] flex items-center gap-1 font-semibold font-mono"
               >
-                <PhoneCall className="w-3 h-3 text-[#244B35]" />
+                <PhoneCall className="w-3 h-3 text-[#315C3D]" />
                 <span>Call Hotline</span>
               </a>
             </div>
@@ -147,13 +147,13 @@ export default function WhatsAppButton() {
               /* Full Template Form matching WhatsApp template */
               <form onSubmit={handleFormSubmit} className="pt-2 space-y-2 text-xs">
                 <div>
-                  <label className="block text-[10px] font-bold text-[#626B60] uppercase tracking-wider mb-0.5 font-mono">
+                  <label className="block text-[10px] font-bold text-[#667064] uppercase tracking-wider mb-0.5 font-mono">
                     Project Category
                   </label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#244B35]"
+                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
                   >
                     <option value="">Select Category...</option>
                     {PROJECT_CATEGORIES.map((cat) => (
@@ -165,7 +165,7 @@ export default function WhatsAppButton() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-[#626B60] uppercase tracking-wider mb-0.5 font-mono">
+                  <label className="block text-[10px] font-bold text-[#667064] uppercase tracking-wider mb-0.5 font-mono">
                     Project Title / Topic Idea
                   </label>
                   <input
@@ -173,13 +173,13 @@ export default function WhatsAppButton() {
                     placeholder="e.g. AI-Powered Healthcare Diagnosis"
                     value={projectTitle}
                     onChange={(e) => setProjectTitle(e.target.value)}
-                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
+                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#315C3D]"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <label className="block text-[10px] font-bold text-[#626B60] uppercase tracking-wider mb-0.5 font-mono">
+                    <label className="block text-[10px] font-bold text-[#667064] uppercase tracking-wider mb-0.5 font-mono">
                       College
                     </label>
                     <input
@@ -187,11 +187,11 @@ export default function WhatsAppButton() {
                       placeholder="e.g. Anna Univ / SRM"
                       value={college}
                       onChange={(e) => setCollege(e.target.value)}
-                      className="w-full px-2.5 py-1.5 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
+                      className="w-full px-2.5 py-1.5 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#315C3D]"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold text-[#626B60] uppercase tracking-wider mb-0.5 font-mono">
+                    <label className="block text-[10px] font-bold text-[#667064] uppercase tracking-wider mb-0.5 font-mono">
                       Department
                     </label>
                     <input
@@ -199,13 +199,13 @@ export default function WhatsAppButton() {
                       placeholder="e.g. CSE / IT / AI-DS"
                       value={department}
                       onChange={(e) => setDepartment(e.target.value)}
-                      className="w-full px-2.5 py-1.5 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
+                      className="w-full px-2.5 py-1.5 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#315C3D]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-[#626B60] uppercase tracking-wider mb-0.5 font-mono">
+                  <label className="block text-[10px] font-bold text-[#667064] uppercase tracking-wider mb-0.5 font-mono">
                     Specific Requirements
                   </label>
                   <textarea
@@ -213,13 +213,13 @@ export default function WhatsAppButton() {
                     placeholder="e.g. Base paper, PPT, Complete Source Code & Viva handbook"
                     value={requirements}
                     onChange={(e) => setRequirements(e.target.value)}
-                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#244B35]"
+                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-stone-400 focus:outline-none focus:border-[#315C3D]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-xs"
                 >
                   <Send className="w-3.5 h-3.5 text-white" />
                   <span>Send Requirements on WhatsApp</span>
@@ -228,17 +228,17 @@ export default function WhatsAppButton() {
             ) : (
               /* Quick Topic Suggestions */
               <div className="space-y-1.5">
-                <span className="text-[10px] font-bold text-[#626B60] uppercase tracking-wider block font-mono">
+                <span className="text-[10px] font-bold text-[#667064] uppercase tracking-wider block font-mono">
                   Popular Topics:
                 </span>
                 {quickPrompts.map((item, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleOpenWhatsApp({ category: item.cat, projectTitle: item.title })}
-                    className="w-full text-left p-2.5 rounded-xl bg-[#F7F4E9] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-xs text-[#626B60] hover:text-[#202820] transition-all cursor-pointer flex items-center justify-between group shadow-2xs"
+                    className="w-full text-left p-2.5 rounded-xl bg-[#F5F1E7] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-xs text-[#667064] hover:text-[#202820] transition-all cursor-pointer flex items-center justify-between group shadow-2xs"
                   >
                     <span className="line-clamp-1 font-medium">{item.label}</span>
-                    <Sparkles className="w-3.5 h-3.5 text-[#A9BFA3] group-hover:text-[#244B35] shrink-0 ml-1.5" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#315C3D] shrink-0 ml-1.5" />
                   </button>
                 ))}
               </div>
@@ -254,7 +254,7 @@ export default function WhatsAppButton() {
           href={GOOGLE_ENQUIRY_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-2 px-4 py-3 rounded-full bg-[#244B35] hover:bg-[#1D3D2B] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#244B35] cursor-pointer font-bold text-xs"
+          className="group flex items-center gap-2 px-4 py-3 rounded-full bg-[#315C3D] hover:bg-[#254930] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#315C3D] cursor-pointer font-bold text-xs"
           aria-label="Open Project Enquiry Google Form"
         >
           <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
@@ -265,10 +265,10 @@ export default function WhatsAppButton() {
         {/* WhatsApp Floating Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative group p-3.5 sm:p-4 rounded-full bg-[#244B35] hover:bg-[#1D3D2B] text-white shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer flex items-center justify-center focus:outline-none border-2 border-[#3F7650]"
+          className="relative group p-3.5 sm:p-4 rounded-full bg-[#315C3D] hover:bg-[#254930] text-white shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer flex items-center justify-center focus:outline-none border-2 border-[#497A52]"
           aria-label="Open WhatsApp Support"
         >
-          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#3F7650] text-white font-extrabold text-[10px] flex items-center justify-center border border-white shadow-sm">
+          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#497A52] text-white font-extrabold text-[10px] flex items-center justify-center border border-white shadow-sm">
             1
           </span>
           <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-white" />

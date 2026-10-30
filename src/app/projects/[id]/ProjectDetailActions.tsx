@@ -29,7 +29,7 @@ export default function ProjectDetailActions({
         target="_blank"
         rel="noopener noreferrer"
         id="project-detail-whatsapp"
-        className="px-5 py-3 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer border border-[#244B35]"
+        className="px-5 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs sm:text-sm shadow-xs transition-all flex items-center gap-2 cursor-pointer border border-[#315C3D]"
       >
         <MessageCircle className="w-4 h-4 text-white" />
         <span>Inquire on WhatsApp</span>
@@ -44,9 +44,9 @@ export default function ProjectDetailActions({
           })
         }
         id="project-detail-enquiry"
-        className="px-5 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+        className="px-5 py-3 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] font-bold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <ClipboardList className="w-4 h-4 text-[#244B35]" />
+        <ClipboardList className="w-4 h-4 text-[#315C3D]" />
         <span>Project Enquiry</span>
       </button>
 
@@ -54,9 +54,9 @@ export default function ProjectDetailActions({
       <Link
         href="/contact"
         id="project-detail-contact"
-        className="px-5 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#202820] hover:text-[#244B35] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+        className="px-5 py-3 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#202820] hover:text-[#315C3D] font-semibold text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <Mail className="w-4 h-4 text-[#244B35]" />
+        <Mail className="w-4 h-4 text-[#315C3D]" />
         <span>Contact Us</span>
       </Link>
 
@@ -68,18 +68,18 @@ export default function ProjectDetailActions({
             category,
           })
         }
-        className="px-4 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#626B60] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
+        className="px-4 py-3 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#667064] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 cursor-pointer shadow-xs"
       >
-        <MonitorPlay className="w-4 h-4 text-[#244B35]" />
+        <MonitorPlay className="w-4 h-4 text-[#315C3D]" />
         <span>Request Demo</span>
       </button>
 
       {/* Call Desk */}
       <a
         href={`tel:+${WHATSAPP_NUMBER}`}
-        className="px-4 py-3 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#626B60] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 shadow-xs"
+        className="px-4 py-3 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#667064] hover:text-[#202820] font-medium text-xs sm:text-sm transition-colors flex items-center gap-2 shadow-xs"
       >
-        <PhoneCall className="w-4 h-4 text-[#244B35]" />
+        <PhoneCall className="w-4 h-4 text-[#315C3D]" />
         <span>Call ({WHATSAPP_DISPLAY})</span>
       </a>
     </div>

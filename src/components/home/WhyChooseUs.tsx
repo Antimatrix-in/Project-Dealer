@@ -88,19 +88,19 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-[#EFEBDD] border-y border-[#DCDCCF] relative">
+    <section className="py-24 bg-[#EEE9DC] border-y border-[#DDDCCF] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E4EBDD] border border-[#A9BFA3] text-xs font-semibold text-[#244B35] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#244B35] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">The AntiMatrix Standard</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Why Choose <span className="text-[#244B35]">AntiMatrix</span>
+            Why Choose <span className="text-[#315C3D]">AntiMatrix</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#626B60] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
             We provide a startup-grade technology foundation and viva defense ecosystem that guarantees seamless project completion.
           </p>
         </div>
@@ -114,11 +114,11 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="group relative rounded-[16px] bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs hover:shadow-md hover:border-[#A9BFA3] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
+              className="group relative rounded-[16px] bg-[#FFFFFF] border border-[#DDDCCF] shadow-xs hover:shadow-md hover:border-[#315C3D] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
             >
               <div className="flex flex-col flex-1">
                 {/* Banner Image */}
-                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#EFEBDD]">
+                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#EEE9DC]">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -129,11 +129,11 @@ export default function WhyChooseUs() {
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF7] via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Badge */}
                   <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFDF7]/95 text-[#244B35] font-mono shadow-xs border border-[#DCDCCF] backdrop-blur-xs">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFFFF]/95 text-[#315C3D] font-mono shadow-xs border border-[#DDDCCF] backdrop-blur-xs">
                       {item.badge}
                     </span>
                   </div>
@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
 
                 {/* Card Content */}
                 <div className="p-6 sm:p-7 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-[#202820] mb-2.5 group-hover:text-[#244B35] transition-colors leading-snug">
+                  <h3 className="text-xl font-bold text-[#202820] mb-2.5 group-hover:text-[#315C3D] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
@@ -149,15 +149,15 @@ export default function WhyChooseUs() {
                     {item.desc}
                   </p>
 
-                  <p className="text-xs text-[#626B60] leading-relaxed mb-5">
+                  <p className="text-xs text-[#667064] leading-relaxed mb-5">
                     {item.details}
                   </p>
 
                   {/* Benefits Checklist */}
-                  <div className="mt-auto pt-4 border-t border-[#DCDCCF] space-y-2">
+                  <div className="mt-auto pt-4 border-t border-[#DDDCCF] space-y-2">
                     {item.benefits.map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#626B60]">
-                        <CheckCircle2 className="w-4 h-4 text-[#244B35] shrink-0" />
+                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#667064]">
+                        <CheckCircle2 className="w-4 h-4 text-[#315C3D] shrink-0" />
                         <span>{benefit}</span>
                       </div>
                     ))}

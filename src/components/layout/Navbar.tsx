@@ -64,16 +64,16 @@ export default function Navbar() {
   };
 
   const categoryIcons: Record<string, React.ReactNode> = {
-    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#244B35]" />,
-    "Machine Learning": <Cpu className="w-4 h-4 text-[#3F7650]" />,
-    "Deep Learning": <Eye className="w-4 h-4 text-[#244B35]" />,
-    "Python Projects": <FileCode2 className="w-4 h-4 text-[#3F7650]" />,
-    "Java Projects": <Coffee className="w-4 h-4 text-[#244B35]" />,
-    "Web Development": <Globe className="w-4 h-4 text-[#3F7650]" />,
-    "Mobile App Development": <Smartphone className="w-4 h-4 text-[#244B35]" />,
-    "Cloud Computing": <Cloud className="w-4 h-4 text-[#3F7650]" />,
-    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#244B35]" />,
-    "Data Analytics": <BarChart3 className="w-4 h-4 text-[#3F7650]" />,
+    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#315C3D]" />,
+    "Machine Learning": <Cpu className="w-4 h-4 text-[#497A52]" />,
+    "Deep Learning": <Eye className="w-4 h-4 text-[#315C3D]" />,
+    "Python Projects": <FileCode2 className="w-4 h-4 text-[#497A52]" />,
+    "Java Projects": <Coffee className="w-4 h-4 text-[#315C3D]" />,
+    "Web Development": <Globe className="w-4 h-4 text-[#497A52]" />,
+    "Mobile App Development": <Smartphone className="w-4 h-4 text-[#315C3D]" />,
+    "Cloud Computing": <Cloud className="w-4 h-4 text-[#497A52]" />,
+    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#315C3D]" />,
+    "Data Analytics": <BarChart3 className="w-4 h-4 text-[#497A52]" />,
   };
 
   const navLinks = [
@@ -93,17 +93,17 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div
-        className={`w-full transition-all duration-300 border-b border-[#DCDCCF] ${
+        className={`w-full transition-all duration-300 border-b border-[#DDDCCF] ${
           scrolled
-            ? "bg-[#F7F4E9]/95 backdrop-blur-md shadow-xs py-3"
-            : "bg-[#F7F4E9]/90 backdrop-blur-xs py-3.5"
+            ? "bg-[#F5F1E7]/95 backdrop-blur-md shadow-xs py-3"
+            : "bg-[#F5F1E7]/90 backdrop-blur-xs py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Brand Logo with Official AntiMatrix Logo */}
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="relative w-10 h-10 rounded-xl bg-[#FFFDF7] border border-[#DCDCCF] p-1 flex items-center justify-center group-hover:border-[#244B35] transition-all shadow-xs">
+              <div className="relative w-10 h-10 rounded-xl bg-[#FFFFFF] border border-[#DDDCCF] p-1 flex items-center justify-center group-hover:border-[#315C3D] transition-all shadow-xs">
                 <Image
                   src="/images/antimatrix-icon.png"
                   alt="AntiMatrix Logo"
@@ -115,12 +115,12 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-extrabold tracking-tight text-[#202820] group-hover:text-[#244B35] transition-colors font-sans">
+                  <span className="text-xl font-extrabold tracking-tight text-[#202820] group-hover:text-[#315C3D] transition-colors font-sans">
                     AntiMatrix
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-[#244B35]" />
+                  <span className="w-2 h-2 rounded-full bg-[#315C3D]" />
                 </div>
-                <span className="text-[10px] tracking-wider uppercase text-[#626B60] font-semibold font-mono">
+                <span className="text-[10px] tracking-wider uppercase text-[#667064] font-semibold font-mono">
                   Project Center
                 </span>
               </div>
@@ -132,8 +132,8 @@ export default function Navbar() {
                 href="/"
                 className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
                   pathname === "/"
-                    ? "text-[#244B35] bg-[#E4EBDD] border border-[#A9BFA3]"
-                    : "text-[#202820] hover:text-[#244B35] hover:bg-[#EFEBDD]"
+                    ? "text-[#315C3D] bg-[#DCE8D9] border border-[#DCE8D9]"
+                    : "text-[#202820] hover:text-[#315C3D] hover:bg-[#EEE9DC]"
                 }`}
               >
                 Home
@@ -149,8 +149,8 @@ export default function Navbar() {
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                     pathname.startsWith("/projects") || dropdownOpen
-                      ? "text-[#244B35] bg-[#E4EBDD] border border-[#A9BFA3]"
-                      : "text-[#202820] hover:text-[#244B35] hover:bg-[#EFEBDD]"
+                      ? "text-[#315C3D] bg-[#DCE8D9] border border-[#DCE8D9]"
+                      : "text-[#202820] hover:text-[#315C3D] hover:bg-[#EEE9DC]"
                   }`}
                   aria-expanded={dropdownOpen}
                   aria-haspopup="true"
@@ -158,7 +158,7 @@ export default function Navbar() {
                   <span>Projects</span>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180 text-[#244B35]" : "text-[#626B60]"
+                      dropdownOpen ? "rotate-180 text-[#315C3D]" : "text-[#667064]"
                     }`}
                   />
                 </button>
@@ -176,8 +176,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
                       active
-                        ? "text-[#244B35] bg-[#E4EBDD] border border-[#A9BFA3]"
-                        : "text-[#202820] hover:text-[#244B35] hover:bg-[#EFEBDD]"
+                        ? "text-[#315C3D] bg-[#DCE8D9] border border-[#DCE8D9]"
+                        : "text-[#202820] hover:text-[#315C3D] hover:bg-[#EEE9DC]"
                     }`}
                   >
                     {link.label}
@@ -192,9 +192,9 @@ export default function Navbar() {
                 href={defaultWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] text-xs font-bold transition-all shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] text-xs font-bold transition-all shadow-xs"
               >
-                <MessageCircle className="w-4 h-4 text-[#244B35]" />
+                <MessageCircle className="w-4 h-4 text-[#315C3D]" />
                 <span>WhatsApp</span>
               </a>
 
@@ -202,7 +202,7 @@ export default function Navbar() {
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#244B35]"
+                className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#315C3D]"
               >
                 <ClipboardList className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
@@ -215,27 +215,27 @@ export default function Navbar() {
                 href={defaultWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2.5 py-1.5 rounded-lg bg-[#FFFDF7] text-[#244B35] border border-[#DCDCCF] text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs"
+                className="px-2.5 py-1.5 rounded-lg bg-[#FFFFFF] text-[#315C3D] border border-[#DDDCCF] text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs"
                 aria-label="WhatsApp Us"
               >
-                <MessageCircle className="w-3.5 h-3.5 text-[#244B35]" />
+                <MessageCircle className="w-3.5 h-3.5 text-[#315C3D]" />
                 <span>WhatsApp</span>
               </a>
               <a
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2.5 py-1.5 rounded-lg bg-[#244B35] text-white text-xs font-bold shadow-xs flex items-center gap-1.5"
+                className="px-2.5 py-1.5 rounded-lg bg-[#315C3D] text-white text-xs font-bold shadow-xs flex items-center gap-1.5"
               >
                 <ClipboardList className="w-3.5 h-3.5 text-white" />
                 <span>Enquiry</span>
               </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-[#202820] hover:text-[#244B35] hover:bg-[#EFEBDD] transition-colors"
+                className="p-2 rounded-xl text-[#202820] hover:text-[#315C3D] hover:bg-[#EEE9DC] transition-colors"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6 text-[#244B35]" /> : <Menu className="w-6 h-6 text-[#202820]" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-[#315C3D]" /> : <Menu className="w-6 h-6 text-[#202820]" />}
               </button>
             </div>
           </div>
@@ -243,9 +243,9 @@ export default function Navbar() {
 
         {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#F7F4E9] border-b border-[#DCDCCF] px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
+          <div className="lg:hidden bg-[#F5F1E7] border-b border-[#DDDCCF] px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
             {/* Mobile Top Brand Header */}
-            <div className="p-3 bg-[#FFFDF7] rounded-xl border border-[#DCDCCF] flex items-center justify-between">
+            <div className="p-3 bg-[#FFFFFF] rounded-xl border border-[#DDDCCF] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <Image
                   src="/images/antimatrix-icon.png"
@@ -256,12 +256,12 @@ export default function Navbar() {
                 />
                 <div>
                   <span className="text-sm font-extrabold text-[#202820]">AntiMatrix</span>
-                  <span className="block text-[9px] font-mono text-[#626B60] uppercase">
+                  <span className="block text-[9px] font-mono text-[#667064] uppercase">
                     Project Center
                   </span>
                 </div>
               </div>
-              <span className="text-[10px] font-semibold text-[#244B35] bg-[#E4EBDD] border border-[#A9BFA3] px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-semibold text-[#315C3D] bg-[#DCE8D9] border border-[#DDDCCF] px-2 py-0.5 rounded-full">
                 2025-26 Curated
               </span>
             </div>
@@ -271,47 +271,47 @@ export default function Navbar() {
                 href="/"
                 className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
                   pathname === "/"
-                    ? "text-[#244B35] bg-[#E4EBDD] font-bold border border-[#A9BFA3]"
-                    : "text-[#202820] hover:bg-[#EFEBDD]"
+                    ? "text-[#315C3D] bg-[#DCE8D9] font-bold border border-[#DCE8D9]"
+                    : "text-[#202820] hover:bg-[#EEE9DC]"
                 }`}
               >
                 Home
               </Link>
 
               {/* Mobile Projects Accordion / Section */}
-              <div className="rounded-xl border border-[#DCDCCF] overflow-hidden bg-[#FFFDF7]">
-                <div className="p-3 bg-[#EFEBDD] flex items-center justify-between border-b border-[#DCDCCF]">
+              <div className="rounded-xl border border-[#DDDCCF] overflow-hidden bg-[#FFFFFF]">
+                <div className="p-3 bg-[#EEE9DC] flex items-center justify-between border-b border-[#DDDCCF]">
                   <button
                     onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
                     className="flex items-center gap-2 text-sm font-bold text-[#202820]"
                   >
-                    <Layers className="w-4 h-4 text-[#244B35]" />
+                    <Layers className="w-4 h-4 text-[#315C3D]" />
                     <span>10 Project Domains</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        mobileProjectsOpen ? "rotate-180 text-[#244B35]" : "text-[#626B60]"
+                        mobileProjectsOpen ? "rotate-180 text-[#315C3D]" : "text-[#667064]"
                       }`}
                     />
                   </button>
                   <Link
                     href="/projects"
-                    className="text-xs font-bold text-[#244B35] hover:text-[#3F7650] flex items-center gap-1"
+                    className="text-xs font-bold text-[#315C3D] hover:text-[#497A52] flex items-center gap-1"
                   >
                     View All →
                   </Link>
                 </div>
 
                 {mobileProjectsOpen && (
-                  <div className="p-3 space-y-3 bg-[#FFFDF7]">
+                  <div className="p-3 space-y-3 bg-[#FFFFFF]">
                     {/* 10 Domains Grid */}
                     <div className="grid grid-cols-2 gap-1.5">
                       {PROJECT_CATEGORIES.map((cat) => (
                         <Link
                           key={cat}
                           href={`/projects?category=${encodeURIComponent(cat)}`}
-                          className="flex items-center gap-2 p-2 rounded-lg bg-[#F7F4E9] border border-[#DCDCCF] hover:border-[#244B35] text-xs text-[#626B60] hover:text-[#202820] font-semibold"
+                          className="flex items-center gap-2 p-2 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] hover:border-[#315C3D] text-xs text-[#667064] hover:text-[#202820] font-semibold"
                         >
-                          <div className="p-1 rounded bg-[#E4EBDD] shrink-0">
+                          <div className="p-1 rounded bg-[#DCE8D9] shrink-0">
                             {categoryIcons[cat]}
                           </div>
                           <span className="truncate">{cat}</span>
@@ -320,7 +320,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Featured Projects Mini Thumbnails on Mobile */}
-                    <div className="pt-2 border-t border-[#DCDCCF]">
+                    <div className="pt-2 border-t border-[#DDDCCF]">
                       <span className="text-[11px] font-bold text-[#202820] uppercase tracking-wider block mb-2 font-mono">
                         Featured Projects
                       </span>
@@ -329,9 +329,9 @@ export default function Navbar() {
                           <Link
                             key={proj.id}
                             href={proj.href}
-                            className="bg-[#F7F4E9] rounded-lg border border-[#DCDCCF] overflow-hidden group block hover:border-[#244B35]"
+                            className="bg-[#F5F1E7] rounded-lg border border-[#DDDCCF] overflow-hidden group block hover:border-[#315C3D]"
                           >
-                            <div className="relative aspect-video w-full bg-[#EFEBDD]">
+                            <div className="relative aspect-video w-full bg-[#EEE9DC]">
                               <Image
                                 src={proj.thumbnail}
                                 alt={proj.title}
@@ -344,7 +344,7 @@ export default function Navbar() {
                               <span className="block text-[10px] font-bold text-[#202820] truncate">
                                 {proj.title}
                               </span>
-                              <span className="text-[9px] text-[#244B35] font-semibold">
+                              <span className="text-[9px] text-[#315C3D] font-semibold">
                                 View Project →
                               </span>
                             </div>
@@ -356,7 +356,7 @@ export default function Navbar() {
                     {/* View All Projects Button */}
                     <Link
                       href="/projects"
-                      className="w-full py-2 rounded-xl bg-[#244B35] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs"
+                      className="w-full py-2 rounded-xl bg-[#315C3D] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs"
                     >
                       <span>View All Projects</span>
                       <ArrowRight className="w-3.5 h-3.5 text-white" />
@@ -371,8 +371,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
                     pathname === link.href
-                      ? "text-[#244B35] bg-[#E4EBDD] font-bold border border-[#A9BFA3]"
-                      : "text-[#202820] hover:bg-[#EFEBDD]"
+                      ? "text-[#315C3D] bg-[#DCE8D9] font-bold border border-[#DCE8D9]"
+                      : "text-[#202820] hover:bg-[#EEE9DC]"
                   }`}
                 >
                   {link.label}
@@ -380,12 +380,12 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="pt-2 border-t border-[#DCDCCF] flex flex-col gap-2">
+            <div className="pt-2 border-t border-[#DDDCCF] flex flex-col gap-2">
               <a
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs group"
+                className="w-full py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs group"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
@@ -395,16 +395,16 @@ export default function Navbar() {
                 href={defaultWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-[#FFFDF7] border border-[#DCDCCF] hover:border-[#244B35] text-[#244B35] text-xs font-bold flex items-center justify-center gap-2 shadow-xs"
+                className="w-full py-2.5 px-4 rounded-xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] text-xs font-bold flex items-center justify-center gap-2 shadow-xs"
               >
-                <MessageCircle className="w-4 h-4 text-[#244B35]" />
+                <MessageCircle className="w-4 h-4 text-[#315C3D]" />
                 WhatsApp Us ({WHATSAPP_DISPLAY})
               </a>
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                className="w-full py-2 px-4 rounded-xl bg-[#FFFDF7] border border-[#DCDCCF] text-[#202820] hover:text-[#244B35] text-xs font-semibold flex items-center justify-center gap-2"
+                className="w-full py-2 px-4 rounded-xl bg-[#FFFFFF] border border-[#DDDCCF] text-[#202820] hover:text-[#315C3D] text-xs font-semibold flex items-center justify-center gap-2"
               >
-                <PhoneCall className="w-4 h-4 text-[#244B35]" />
+                <PhoneCall className="w-4 h-4 text-[#315C3D]" />
                 Call Desk ({WHATSAPP_DISPLAY})
               </a>
             </div>

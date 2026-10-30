@@ -2,33 +2,33 @@
 
 @layer base {
   :root {
-    /* Theme 10: Neutral Sand Green Palette */
-    --bg-main: #F7F4E9;
-    --bg-secondary: #EFEBDD;
-    --bg-card: #FFFDF7;
-    --bg-elevated: #FFFFFF;
-    --primary-forest-green: #244B35;
-    --secondary-green: #3F7650;
-    --soft-sage-green: #A9BFA3;
-    --light-sage: #E4EBDD;
+    /* Theme 10: Neutral Sand Green (Balanced & Modern) Palette */
+    --bg-main: #F5F1E7;
+    --bg-secondary: #EEE9DC;
+    --bg-card: #FFFFFF;
+    --primary-green: #315C3D;
+    --secondary-green: #497A52;
+    --soft-green: #DCE8D9;
     --primary-text: #202820;
-    --secondary-text: #626B60;
-    --border-color: #DCDCCF;
+    --secondary-text: #667064;
+    --border-color: #DDDCCF;
+    --footer-bg: #243B2C;
+    --footer-text: #F5F1E7;
     --white: #FFFFFF;
 
     /* Semantic tokens */
-    --background: #F7F4E9;
-    --background-secondary: #EFEBDD;
+    --background: #F5F1E7;
+    --background-secondary: #EEE9DC;
     --foreground: #202820;
-    --muted-text: #626B60;
+    --muted-text: #667064;
   }
 
   body {
-    background-color: #F7F4E9;
+    background-color: #F5F1E7;
     color: #202820;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    selection-background-color: #244B35;
+    selection-background-color: #315C3D;
     selection-color: #FFFFFF;
   }
 }
@@ -39,15 +39,15 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F4E9;
+  background: #F5F1E7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DCDCCF;
+  background: #DDDCCF;
   border-radius: 9999px;
-  border: 2px solid #F7F4E9;
+  border: 2px solid #F5F1E7;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A9BFA3;
+  background: #DCE8D9;
 }
 
 /* Forest Green Heading & Accent Gradients */
@@ -56,7 +56,7 @@
 .text-gradient-orange,
 .text-gradient-orange-red,
 .text-gradient-gold {
-  background: linear-gradient(135deg, #244B35 0%, #3F7650 100%);
+  background: linear-gradient(135deg, #315C3D 0%, #497A52 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -67,7 +67,7 @@
 .bg-gradient-orange,
 .bg-gradient-orange-red,
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #244B35 0%, #3F7650 100%);
+  background: linear-gradient(135deg, #315C3D 0%, #497A52 100%);
 }
 
 /* Primary Forest Green Button */
@@ -76,11 +76,11 @@
 .btn-primary-orange,
 .btn-primary-orange-red,
 .btn-primary-gold {
-  background-color: #244B35;
+  background-color: #315C3D;
   color: #FFFFFF;
-  box-shadow: 0 2px 8px -1px rgba(36, 75, 53, 0.25);
+  box-shadow: 0 2px 8px -1px rgba(49, 92, 61, 0.25);
   transition: all 0.25s ease;
-  border: 1px solid #244B35;
+  border: 1px solid #315C3D;
 }
 
 .btn-primary-forest:hover,
@@ -88,48 +88,48 @@
 .btn-primary-orange:hover,
 .btn-primary-orange-red:hover,
 .btn-primary-gold:hover {
-  background-color: #1D3D2B;
-  box-shadow: 0 4px 14px -1px rgba(36, 75, 53, 0.35);
+  background-color: #254930;
+  box-shadow: 0 4px 14px -1px rgba(49, 92, 61, 0.35);
   transform: translateY(-1px);
 }
 
 /* Secondary Button (Neutral Sand / Cream) */
 .btn-secondary-dark,
 .btn-secondary-neutral {
-  background: #FFFDF7;
+  background: #FFFFFF;
   color: #202820;
-  border: 1px solid #DCDCCF;
+  border: 1px solid #DDDCCF;
   transition: all 0.25s ease;
 }
 .btn-secondary-dark:hover,
 .btn-secondary-neutral:hover {
-  background: #EFEBDD;
-  border-color: #244B35;
-  color: #244B35;
+  background: #EEE9DC;
+  border-color: #315C3D;
+  color: #315C3D;
   transform: translateY(-1px);
 }
 
 /* WhatsApp Button (Restrained Green styling) */
 .btn-whatsapp {
-  background-color: #244B35;
+  background-color: #315C3D;
   color: #FFFFFF;
-  border: 1px solid #244B35;
-  box-shadow: 0 2px 10px 0 rgba(36, 75, 53, 0.2);
+  border: 1px solid #315C3D;
+  box-shadow: 0 2px 10px 0 rgba(49, 92, 61, 0.2);
   transition: all 0.25s ease;
 }
 .btn-whatsapp:hover {
-  background-color: #1D3D2B;
-  box-shadow: 0 4px 16px 0 rgba(36, 75, 53, 0.3);
+  background-color: #254930;
+  box-shadow: 0 4px 16px 0 rgba(49, 92, 61, 0.3);
   transform: translateY(-1px);
 }
 
-/* Theme 10 Cards: Cream/White with Thin Borders & Soft Shadows */
+/* Theme 10 Cards: White with Thin Neutral Borders & Soft Shadows */
 .saas-card,
 .peach-card,
 .charcoal-card,
 .sand-card {
-  background: #FFFDF7;
-  border: 1px solid #DCDCCF;
+  background: #FFFFFF;
+  border: 1px solid #DDDCCF;
   box-shadow: 0 1px 3px 0 rgba(32, 40, 32, 0.04), 0 1px 2px -1px rgba(32, 40, 32, 0.04);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -138,28 +138,28 @@
 .peach-card:hover,
 .charcoal-card:hover,
 .sand-card:hover {
-  border-color: #A9BFA3;
-  box-shadow: 0 8px 24px -4px rgba(36, 75, 53, 0.08), 0 2px 6px -2px rgba(32, 40, 32, 0.04);
+  border-color: #315C3D;
+  box-shadow: 0 8px 24px -4px rgba(49, 92, 61, 0.08), 0 2px 6px -2px rgba(32, 40, 32, 0.04);
   transform: translateY(-2px);
 }
 
 .saas-glass {
-  background: rgba(255, 253, 247, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #DCDCCF;
+  border: 1px solid #DDDCCF;
 }
 
 /* Subtle Sand Grid & Hero Backgrounds */
 .bg-grid-subtle {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(36, 75, 53, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(36, 75, 53, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(49, 92, 61, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(49, 92, 61, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(169, 191, 163, 0.25) 0%, rgba(239, 235, 221, 0.4) 40%, #F7F4E9 80%);
+  background: radial-gradient(circle at 50% 0%, rgba(220, 232, 217, 0.5) 0%, rgba(238, 233, 220, 0.4) 40%, #F5F1E7 80%);
 }
 
 @keyframes floatElement {

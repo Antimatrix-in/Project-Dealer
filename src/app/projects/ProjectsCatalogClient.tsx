@@ -50,9 +50,9 @@ export default function ProjectsCatalogClient({
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#F7F4E9] min-h-screen relative">
+    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen relative">
       {/* Background Header */}
-      <div className="relative py-16 bg-[#EFEBDD] border-b border-[#DCDCCF] mb-10 overflow-hidden">
+      <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
             badge="Verified Project Repository"
@@ -65,21 +65,21 @@ export default function ProjectsCatalogClient({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search Bar & Filters Control Center */}
-        <div className="p-6 rounded-3xl bg-[#FFFDF7] border border-[#DCDCCF] shadow-xs mb-8 space-y-5">
+        <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-xs mb-8 space-y-5">
           {/* Main Search Input */}
           <div className="relative">
-            <Search className="w-5 h-5 text-[#626B60] absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-[#667064] absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by project title, keyword, or technology (e.g. PyTorch, YOLO, Spring Boot, Flutter, Kubernetes)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3.5 rounded-xl bg-[#F7F4E9] border border-[#DCDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#244B35] focus:ring-1 focus:ring-[#244B35] transition-colors"
+              className="w-full pl-12 pr-10 py-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#626B60] hover:text-[#244B35] cursor-pointer"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#667064] hover:text-[#315C3D] cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -90,7 +90,7 @@ export default function ProjectsCatalogClient({
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs text-[#202820] font-bold uppercase tracking-wider font-mono">
               <span>Domain Filter (10 Categories):</span>
-              <span className="text-[#244B35]">
+              <span className="text-[#315C3D]">
                 {filteredProjects.length} Projects Available
               </span>
             </div>
@@ -101,8 +101,8 @@ export default function ProjectsCatalogClient({
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-[#244B35] text-white font-bold shadow-xs border border-[#244B35]"
-                      : "bg-[#F7F4E9] text-[#626B60] hover:bg-[#EFEBDD] hover:text-[#202820] border border-[#DCDCCF]"
+                      ? "bg-[#315C3D] text-white font-bold shadow-xs border border-[#315C3D]"
+                      : "bg-[#F5F1E7] text-[#667064] hover:bg-[#EEE9DC] hover:text-[#202820] border border-[#DDDCCF]"
                   }`}
                 >
                   {cat}
@@ -112,17 +112,17 @@ export default function ProjectsCatalogClient({
           </div>
 
           {/* Level & Reset Bar */}
-          <div className="pt-2 border-t border-[#DCDCCF] flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="pt-2 border-t border-[#DDDCCF] flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-2">
-              <span className="text-[#626B60] font-medium">Project Level:</span>
+              <span className="text-[#667064] font-medium">Project Level:</span>
               {levels.map((lvl) => (
                 <button
                   key={lvl}
                   onClick={() => setSelectedLevel(lvl)}
                   className={`px-2.5 py-1 rounded-lg transition-colors cursor-pointer ${
                     selectedLevel === lvl
-                      ? "bg-[#E4EBDD] border border-[#A9BFA3] text-[#244B35] font-bold"
-                      : "bg-[#FFFDF7] text-[#626B60] hover:text-[#202820] border border-[#DCDCCF]"
+                      ? "bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] font-bold"
+                      : "bg-[#FFFFFF] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
                   }`}
                 >
                   {lvl}
@@ -133,7 +133,7 @@ export default function ProjectsCatalogClient({
             {(searchQuery || selectedCategory !== "All" || selectedLevel !== "All") && (
               <button
                 onClick={handleReset}
-                className="text-[#244B35] hover:text-[#3F7650] font-bold flex items-center gap-1 cursor-pointer"
+                className="text-[#315C3D] hover:text-[#497A52] font-bold flex items-center gap-1 cursor-pointer"
               >
                 <X className="w-3.5 h-3.5" />
                 Reset All Filters
@@ -144,14 +144,14 @@ export default function ProjectsCatalogClient({
 
         {/* Results Counter and Custom Project Request Callout */}
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
-          <p className="text-[#626B60]">
+          <p className="text-[#667064]">
             Showing <strong className="text-[#202820]">{filteredProjects.length}</strong> verified projects
           </p>
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-[#626B60]">Have a custom topic or university guide requirement?</span>
+            <span className="text-[#667064]">Have a custom topic or university guide requirement?</span>
             <button
               onClick={() => openConsultationModal()}
-              className="text-[#244B35] hover:text-[#3F7650] font-bold cursor-pointer underline"
+              className="text-[#315C3D] hover:text-[#497A52] font-bold cursor-pointer underline"
             >
               Request Custom Project &rarr;
             </button>
@@ -166,18 +166,18 @@ export default function ProjectsCatalogClient({
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 rounded-3xl bg-[#FFFDF7] border border-[#DCDCCF] space-y-4 shadow-xs">
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#E4EBDD] border border-[#A9BFA3] flex items-center justify-center text-[#244B35]">
+          <div className="text-center py-20 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] space-y-4 shadow-xs">
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#DCE8D9] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
               <FolderOpen className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-bold text-[#202820]">No projects found for this query</h3>
-            <p className="text-sm text-[#626B60] max-w-md mx-auto">
+            <p className="text-sm text-[#667064] max-w-md mx-auto">
               We frequently develop customized projects on request. Share your problem statement or guide&apos;s remarks with our mentors!
             </p>
             <div className="pt-2 flex justify-center gap-3">
               <button
                 onClick={handleReset}
-                className="px-4 py-2 rounded-xl bg-[#FFFDF7] hover:bg-[#EFEBDD] text-[#202820] text-xs font-semibold border border-[#DCDCCF] cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] text-xs font-semibold border border-[#DDDCCF] cursor-pointer"
               >
                 Clear Search
               </button>
@@ -187,7 +187,7 @@ export default function ProjectsCatalogClient({
                     projectTitle: searchQuery || "Custom Idea",
                   })
                 }
-                className="px-5 py-2 rounded-xl bg-[#244B35] hover:bg-[#1D3D2B] text-white font-bold text-xs shadow-xs cursor-pointer border border-[#244B35]"
+                className="px-5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs cursor-pointer border border-[#315C3D]"
               >
                 Inquire for Custom Topic
               </button>
@@ -203,4 +203,3 @@ export default function ProjectsCatalogClient({
     </div>
   );
 }
-

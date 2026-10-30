@@ -232,7 +232,7 @@ export const PROJECTS_DATA: Project[] = [
       "Full-Stack SSR & App Router Architecture with Turbopack",
       "Real-Time Multi-User Collaboration via WebSockets",
       "Secure OAuth & Role-Based Authorization Workflows",
-      "Theme 07 Orange-Red Glassmorphism Responsive UI",
+      "Theme 10 Neutral Sand Green Professional Responsive UI",
       "Integrated Payment & Order Processing Gateway",
       "Complete 75-Page Thesis & Software Requirements Specification"
     ],
