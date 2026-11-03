@@ -67,15 +67,13 @@ export default function FeaturedProjects() {
 
         {/* Bottom CTA */}
         <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href={GOOGLE_ENQUIRY_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/project-enquiry"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#315C3D] group cursor-pointer"
           >
             <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
             <span>Project Enquiry</span>
-          </a>
+          </Link>
 
           <Link
             href="/projects"

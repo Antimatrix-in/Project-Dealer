@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   MessageCircle,
   Check,
@@ -10,7 +11,7 @@ import {
   ClipboardList
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState<"plant" | "attendance" | "chatbot">("plant");
@@ -85,15 +86,13 @@ export default function Hero() {
               </a>
 
               {/* Project Enquiry (Forest Green) */}
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/project-enquiry"
                 className="px-7 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2.5 group cursor-pointer border border-[#315C3D]"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
-              </a>
+              </Link>
             </div>
           </motion.div>
 

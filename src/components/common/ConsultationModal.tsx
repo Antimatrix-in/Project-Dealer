@@ -101,6 +101,7 @@ export default function ConsultationModal() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          source: "Consultation Request",
           website: honeypot,
           company_hp: honeypotCompany,
           _f_rendered_at: renderedAt,

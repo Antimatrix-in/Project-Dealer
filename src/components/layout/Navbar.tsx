@@ -199,15 +199,13 @@ export default function Navbar() {
                 <span>WhatsApp</span>
               </a>
 
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/project-enquiry"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#315C3D]"
               >
                 <ClipboardList className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
-              </a>
+              </Link>
 
               <Link
                 href="/admin/login"
@@ -400,15 +398,14 @@ export default function Navbar() {
 
             <div className="pt-2 border-t border-[#DDDCCF] flex flex-col gap-2">
               <div className="grid grid-cols-2 gap-2">
-                <a
-                  href={GOOGLE_ENQUIRY_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/project-enquiry"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="py-2.5 px-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs group"
                 >
                   <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                   <span>Project Enquiry</span>
-                </a>
+                </Link>
 
                 <Link
                   href="/admin/login"

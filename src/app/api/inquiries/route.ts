@@ -38,42 +38,95 @@ export async function POST(request: Request) {
     }
 
     const name = String(body.name || "").trim();
-    const phone = String(body.phone || "").trim();
+    const mobileNumber = String(body.mobileNumber || body.mobile || body.phone || "").trim();
+    const whatsappNumber = String(body.whatsappNumber || body.whatsapp || mobileNumber || body.phone || "").trim();
     const email = String(body.email || "").trim();
     const college = String(body.college || "").trim();
-    const degree = String(body.degree || "").trim();
-    const category = String(body.category || "").trim();
-    const projectTitle = String(body.projectTitle || body.requirement || "").trim();
+    const department = String(body.department || body.dept || body.degree || "").trim();
+    const projectDomain = String(body.projectDomain || body.domain || body.category || "").trim();
+    const customDomain = String(body.customDomain || body.otherDomain || "").trim();
+    const projectTitle = String(body.projectTitle || (projectDomain ? `${projectDomain} Project Consultation` : body.requirement || "")).trim();
     const requirement = String(body.requirement || body.message || "").trim();
     const urgency = String(body.urgency || "1-2 Weeks").trim();
+    const defaultSource = (body.projectDomain || body.department || body.college) ? "Project Enquiry" : "General Website Contact";
+    const source = (String(body.source || defaultSource).trim()) as
+      | "Project Enquiry"
+      | "General Website Contact"
+      | "Consultation Request";
 
-    // 3. Strict Server-Side Field Validation
-    if (!name || name.length < 2) {
-      return NextResponse.json(
-        { error: "Please enter your full name (at least 2 characters)." },
-        { status: 400 }
-      );
-    }
+    const hasHoneypot = Boolean(
+      (body.website && String(body.website).trim().length > 0) ||
+      (body.company_hp && String(body.company_hp).trim().length > 0)
+    );
 
-    if (!phone || !isValidPhone(phone)) {
-      return NextResponse.json(
-        { error: "Please enter a valid WhatsApp or contact phone number (8 to 16 digits)." },
-        { status: 400 }
-      );
-    }
+    // 3. Strict Server-Side Field Validation (skipped for honeypot bot trap)
+    if (!hasHoneypot) {
+      if (!name || name.length < 2) {
+        return NextResponse.json(
+          { error: "Please enter your full name (at least 2 characters)." },
+          { status: 400 }
+        );
+      }
 
-    if (email && !isValidEmail(email)) {
-      return NextResponse.json(
-        { error: "Please enter a valid email address (e.g. student@college.edu)." },
-        { status: 400 }
-      );
+      if (!mobileNumber || !isValidPhone(mobileNumber)) {
+        return NextResponse.json(
+          { error: "Please enter a valid Mobile Number (8 to 16 numeric digits)." },
+          { status: 400 }
+        );
+      }
+
+      if (!whatsappNumber || !isValidPhone(whatsappNumber)) {
+        return NextResponse.json(
+          { error: "Please enter a valid WhatsApp Number (8 to 16 numeric digits)." },
+          { status: 400 }
+        );
+      }
+
+      if (!email || !isValidEmail(email)) {
+        return NextResponse.json(
+          { error: "Please enter a valid email address (e.g. student@college.edu)." },
+          { status: 400 }
+        );
+      }
+
+      // Specific mandatory validations for Project Enquiry
+      if (source === "Project Enquiry") {
+        if (!college || college.length < 2) {
+          return NextResponse.json(
+            { error: "Please enter your College Name." },
+            { status: 400 }
+          );
+        }
+
+        if (!department || department.length < 2) {
+          return NextResponse.json(
+            { error: "Please enter your Department / Branch." },
+            { status: 400 }
+          );
+        }
+
+        if (!projectDomain) {
+          return NextResponse.json(
+            { error: "Please select a Project Domain." },
+            { status: 400 }
+          );
+        }
+
+        if (projectDomain === "Other" && (!customDomain || customDomain.length < 2)) {
+          return NextResponse.json(
+            { error: "Please specify your custom project domain." },
+            { status: 400 }
+          );
+        }
+      }
     }
 
     // 4. Check for Repeated Identical Submissions within 2 minutes
-    if (isDuplicateSubmission(phone, email, requirement)) {
+    const effectiveDomain = projectDomain === "Other" ? customDomain : projectDomain;
+    if (isDuplicateSubmission(whatsappNumber || mobileNumber, email, requirement || effectiveDomain)) {
       return NextResponse.json(
         {
-          error: "We have already received an inquiry with these details recently. Our team will contact you shortly on WhatsApp / Phone."
+          error: "We have already received an enquiry with these details recently. Our team will contact you shortly on WhatsApp."
         },
         { status: 429 }
       );
@@ -94,9 +147,9 @@ export async function POST(request: Request) {
     // 6. Multi-Layer Bot, Honeypot & Behaviour Analysis
     const botAnalysis = await analyzeInquirySubmission({
       name,
-      phone,
+      phone: whatsappNumber || mobileNumber,
       email,
-      requirement,
+      requirement: requirement || effectiveDomain,
       message: body.message,
       honeypot: body.website || body.company_hp,
       honeypotCompany: body.company_hp,
@@ -105,17 +158,23 @@ export async function POST(request: Request) {
       clientIp: ip
     });
 
-    // 6. Persist to storage with bot/spam classification
+    // 7. Persist to storage with bot/spam classification and generated unique ID
     const saved = await saveInquiry({
       name,
       email,
-      phone,
+      phone: mobileNumber,
+      mobileNumber,
+      whatsappNumber,
       college,
-      degree,
-      category,
-      projectTitle: projectTitle || "Custom Project Consultation",
+      department,
+      degree: department,
+      category: effectiveDomain,
+      projectDomain: effectiveDomain,
+      customDomain: projectDomain === "Other" ? customDomain : undefined,
+      projectTitle: projectTitle || `${effectiveDomain} Project Consultation`,
       requirement,
       urgency,
+      source,
       status: botAnalysis.verificationStatus === "Spam" ? "Spam" : botAnalysis.verificationStatus === "Suspicious" ? "Suspicious" : "New",
       verificationStatus: botAnalysis.verificationStatus,
       spamScore: botAnalysis.spamScore,
@@ -128,11 +187,11 @@ export async function POST(request: Request) {
       await submitProjectInquiry({
         name,
         email,
-        phone,
+        phone: whatsappNumber || mobileNumber,
         college,
-        degree,
-        category,
-        projectTitle,
+        degree: department,
+        category: effectiveDomain,
+        projectTitle: projectTitle || `${effectiveDomain} Project`,
         requirement,
         urgency,
         message: body.message
@@ -142,11 +201,17 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: true,
-        message: "Consultation inquiry received! Our academic coordinator will contact you on WhatsApp / Phone within 2 hours.",
+        message: `Project Enquiry [${saved.id}] received! Our academic coordinator will contact you on WhatsApp (${whatsappNumber}) within 2 hours.`,
         data: {
           id: saved.id,
           name: saved.name,
-          verificationStatus: saved.verificationStatus
+          projectDomain: saved.projectDomain,
+          mobileNumber: saved.mobileNumber,
+          whatsappNumber: saved.whatsappNumber,
+          source: saved.source,
+          status: saved.status,
+          verificationStatus: saved.verificationStatus,
+          createdAt: saved.createdAt
         }
       },
       { status: 200 }

@@ -10,6 +10,22 @@ export type ProjectCategory =
   | "Cyber Security"
   | "Data Analytics";
 
+export const PROJECT_ENQUIRY_DOMAINS = [
+  "AI & Data Science",
+  "Machine Learning",
+  "Deep Learning",
+  "Python Projects",
+  "Java Projects",
+  "Web Development",
+  "Mobile App Development",
+  "Cloud Computing",
+  "Cyber Security",
+  "Data Analytics",
+  "Other"
+] as const;
+
+export type ProjectEnquiryDomain = (typeof PROJECT_ENQUIRY_DOMAINS)[number];
+
 export interface ProjectModule {
   name: string;
   description: string;
@@ -68,11 +84,17 @@ export interface ProjectInquiry {
   name: string;
   email: string;
   phone: string;
+  mobileNumber?: string;
+  whatsappNumber?: string;
   college?: string;
+  department?: string;
   degree?: string;
   category?: ProjectCategory | string;
+  projectDomain?: string;
+  customDomain?: string;
   projectTitle?: string;
   requirement?: string;
   message?: string;
   urgency?: "Immediate (1-3 days)" | "1-2 Weeks" | "1 Month" | "Flexible" | string;
+  source?: "Project Enquiry" | "General Website Contact" | "Consultation Request";
 }

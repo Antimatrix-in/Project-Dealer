@@ -124,15 +124,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <span>Explore Projects</span>
           <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:translate-x-0.5 transition-all" />
         </Link>
-        <a
-          href={GOOGLE_ENQUIRY_FORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={`/project-enquiry?domain=${encodeURIComponent(project.category)}&title=${encodeURIComponent(project.title)}`}
           className="py-2.5 px-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] border border-[#DDDCCF] hover:border-[#315C3D] font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 group/btn cursor-pointer whitespace-nowrap"
         >
           <ClipboardList className="w-3.5 h-3.5 text-[#315C3D] group-hover/btn:scale-110 transition-transform" />
           <span>Enquire</span>
-        </a>
+        </Link>
       </div>
     </div>
   );

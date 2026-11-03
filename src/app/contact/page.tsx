@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import SectionHeader from "@/components/common/SectionHeader";
 import {
   Phone,
@@ -80,6 +81,7 @@ export default function ContactPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          source: "General Website Contact",
           website: honeypot,
           company_hp: honeypotCompany,
           _f_rendered_at: renderedAt,
@@ -142,16 +144,13 @@ export default function ContactPage() {
               <span>WhatsApp Now</span>
             </a>
 
-            <a
-              href={GOOGLE_ENQUIRY_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/project-enquiry"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs hover:shadow-md transition-all group border border-[#315C3D]"
             >
               <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-              <span>Fill Project Enquiry Form</span>
-              <ExternalLink className="w-3.5 h-3.5 text-white/80 ml-0.5" />
-            </a>
+              <span>Project Enquiry Desk</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -239,21 +238,18 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-[#202820]">Send Us Your Project Details</h3>
                 <p className="text-xs text-[#667064]">
-                  Fill in the details below or open Google Forms to submit project requirements.
+                  Fill in the contact form below or visit our dedicated Project Enquiry desk.
                 </p>
               </div>
 
-              {/* Project Enquiry (Google Form CTA) */}
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Project Enquiry (Internal Portal CTA) */}
+              <Link
+                href="/project-enquiry"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs group shrink-0 border border-[#315C3D]"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-                <span>Project Enquiry</span>
-                <ExternalLink className="w-3 h-3 text-white/80 ml-0.5" />
-              </a>
+                <span>Project Enquiry Portal</span>
+              </Link>
             </div>
 
             {submitted ? (

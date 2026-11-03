@@ -34,7 +34,7 @@ export default function Footer() {
     { label: "About Us", href: "/about", isExternal: false },
     { label: "Reviews", href: "/reviews", isExternal: false },
     { label: "Contact", href: "/contact", isExternal: false },
-    { label: "Project Enquiry", href: GOOGLE_ENQUIRY_FORM_URL, isExternal: true },
+    { label: "Project Enquiry", href: "/project-enquiry", isExternal: false },
   ];
 
   return (
