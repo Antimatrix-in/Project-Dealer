@@ -20,6 +20,9 @@ export async function GET() {
   const pending = inquiries.filter((i) => i.status === "Pending").length;
   const inProgress = inquiries.filter((i) => i.status === "In Progress").length;
   const completed = inquiries.filter((i) => i.status === "Completed").length;
+  const verified = inquiries.filter((i) => i.verificationStatus === "Verified" || i.status === "Verified").length;
+  const suspicious = inquiries.filter((i) => i.verificationStatus === "Suspicious" || i.status === "Suspicious").length;
+  const spam = inquiries.filter((i) => i.verificationStatus === "Spam" || i.status === "Spam").length;
 
   return NextResponse.json(
     {
@@ -29,7 +32,10 @@ export async function GET() {
         total,
         pending,
         inProgress,
-        completed
+        completed,
+        verified,
+        suspicious,
+        spam
       }
     },
     { status: 200 }
@@ -44,18 +50,28 @@ export async function PATCH(request: Request) {
 
   try {
     const body = await request.json();
-    const { id, status } = body;
+    const { id, status, verificationStatus } = body;
 
-    if (!id || !["Pending", "In Progress", "Completed"].includes(status)) {
+    const validStatuses = [
+      "New",
+      "Pending",
+      "Verified",
+      "In Progress",
+      "Completed",
+      "Suspicious",
+      "Spam"
+    ];
+
+    if (!id || !validStatuses.includes(status)) {
       return NextResponse.json(
-        { error: "Valid Inquiry ID and status ('Pending' | 'In Progress' | 'Completed') are required." },
+        { error: `Valid Inquiry ID and status (${validStatuses.join(", ")}) are required.` },
         { status: 400 }
       );
     }
 
-    await updateInquiryStatus(id, status);
+    await updateInquiryStatus(id, status, verificationStatus);
     return NextResponse.json(
-      { success: true, message: `Status updated to ${status}`, inquiry: { id, status } },
+      { success: true, message: `Status updated to ${status}`, inquiry: { id, status, verificationStatus } },
       { status: 200 }
     );
   } catch (err: any) {

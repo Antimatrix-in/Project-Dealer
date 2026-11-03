@@ -11,6 +11,9 @@
     "requirement": "Need working PyTorch ViT source code with Grad-CAM heatmap visualization and IEEE standard base paper.",
     "urgency": "1 Week",
     "status": "In Progress",
+    "verificationStatus": "Verified",
+    "spamScore": 0,
+    "botSignals": [],
     "createdAt": "2026-10-26T09:15:00.000Z"
   },
   {
@@ -25,6 +28,9 @@
     "requirement": "Requires real-time webcam inference demonstration and 70-page thesis report with plagiarism check.",
     "urgency": "2-3 Days",
     "status": "In Progress",
+    "verificationStatus": "Verified",
+    "spamScore": 0,
+    "botSignals": [],
     "createdAt": "2026-10-25T14:30:00.000Z"
   },
   {
@@ -39,6 +45,9 @@
     "requirement": "Need complete Neo4j and Kafka pipeline setup with PPT slides for Phase 1 university review.",
     "urgency": "1-2 Weeks",
     "status": "Completed",
+    "verificationStatus": "Verified",
+    "spamScore": 0,
+    "botSignals": [],
     "createdAt": "2026-10-24T11:00:00.000Z"
   },
   {
@@ -53,6 +62,9 @@
     "requirement": "Looking for Helm charts, Knative event configuration, and viva preparation guide.",
     "urgency": "Immediate",
     "status": "Pending",
+    "verificationStatus": "Verified",
+    "spamScore": 0,
+    "botSignals": [],
     "createdAt": "2026-10-27T08:45:00.000Z"
   }
 ]

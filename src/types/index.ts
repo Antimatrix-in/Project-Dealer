@@ -74,5 +74,5 @@ export interface ProjectInquiry {
   projectTitle?: string;
   requirement?: string;
   message?: string;
-  urgency?: "Immediate (1-3 days)" | "1-2 Weeks" | "1 Month" | "Flexible";
+  urgency?: "Immediate (1-3 days)" | "1-2 Weeks" | "1 Month" | "Flexible" | string;
 }

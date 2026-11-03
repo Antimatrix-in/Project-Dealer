@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionHeader from "@/components/common/SectionHeader";
 import {
   Phone,
@@ -13,7 +13,9 @@ import {
   Sparkles,
   Building2,
   ExternalLink,
-  ClipboardList
+  ClipboardList,
+  ShieldCheck,
+  AlertCircle
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { PROJECT_CATEGORIES } from "@/data/projects";
@@ -35,6 +37,14 @@ export default function ContactPage() {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [renderedAt, setRenderedAt] = useState<number>(0);
+  const [honeypot, setHoneypot] = useState("");
+  const [honeypotCompany, setHoneypotCompany] = useState("");
+
+  useEffect(() => {
+    setRenderedAt(Date.now());
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -44,14 +54,39 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage("");
+
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      setErrorMessage("Please enter your name (at least 2 characters).");
+      return;
+    }
+
+    const digitsOnly = formData.phone.replace(/\D/g, "");
+    if (digitsOnly.length < 8) {
+      setErrorMessage("Please enter a valid WhatsApp or contact number (8-16 digits).");
+      return;
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
     setLoading(true);
 
     try {
       const res = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website: honeypot,
+          company_hp: honeypotCompany,
+          _f_rendered_at: renderedAt,
+        }),
       });
+
+      const data = await res.json();
 
       if (res.ok) {
         setSubmitted(true);
@@ -63,9 +98,11 @@ export default function ContactPage() {
             colors: ["#315C3D", "#497A52", "#DCE8D9", "#FFFFFF"],
           });
         } catch (e) {}
+      } else {
+        setErrorMessage(data.error || "Submission failed. Please check your entries.");
       }
     } catch (err) {
-      setSubmitted(true);
+      setErrorMessage("Connection issue. Please try again or message us on WhatsApp.");
     } finally {
       setLoading(false);
     }
@@ -252,6 +289,34 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Anti-Bot Honeypot Inputs (Hidden from human visitors) */}
+                <div className="hidden opacity-0 pointer-events-none absolute -left-[9999px]" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    name="company_hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypotCompany}
+                    onChange={(e) => setHoneypotCompany(e.target.value)}
+                  />
+                </div>
+
+                {/* Error Alert Message */}
+                {errorMessage && (
+                  <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#315C3D]/40 text-[#202820] text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
+                    <AlertCircle className="w-4 h-4 text-[#315C3D] shrink-0 mt-0.5" />
+                    <span className="font-medium leading-relaxed">{errorMessage}</span>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-[#202820] mb-1">

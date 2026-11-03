@@ -2,6 +2,17 @@ import fs from "fs";
 import path from "path";
 import { isSupabaseConfigured, supabase } from "./supabase";
 
+export type InquiryStatus =
+  | "New"
+  | "Pending"
+  | "Verified"
+  | "In Progress"
+  | "Completed"
+  | "Suspicious"
+  | "Spam";
+
+export type VerificationStatus = "Verified" | "Suspicious" | "Spam" | "Unverified";
+
 export interface ConsultationRequest {
   id: string;
   name: string;
@@ -14,7 +25,11 @@ export interface ConsultationRequest {
   requirement?: string;
   urgency?: string;
   message?: string;
-  status: "Pending" | "In Progress" | "Completed";
+  status: InquiryStatus;
+  verificationStatus: VerificationStatus;
+  spamScore?: number;
+  botSignals?: string[];
+  clientIp?: string;
   createdAt: string;
 }
 
@@ -33,6 +48,9 @@ const SEED_INQUIRIES: ConsultationRequest[] = [
     requirement: "Need working PyTorch ViT source code with Grad-CAM heatmap visualization and IEEE standard base paper.",
     urgency: "1 Week",
     status: "Pending",
+    verificationStatus: "Verified",
+    spamScore: 0,
+    botSignals: [],
     createdAt: "2026-10-26T09:15:00.000Z"
   },
   {
@@ -47,6 +65,9 @@ const SEED_INQUIRIES: ConsultationRequest[] = [
     requirement: "Requires real-time webcam inference demonstration and 70-page thesis report with plagiarism check.",
     urgency: "2-3 Days",
     status: "In Progress",
+    verificationStatus: "Verified",
+    spamScore: 0,
+    botSignals: [],
     createdAt: "2026-10-25T14:30:00.000Z"
   },
   {
@@ -61,6 +82,9 @@ const SEED_INQUIRIES: ConsultationRequest[] = [
     requirement: "Need complete Neo4j and Kafka pipeline setup with PPT slides for Phase 1 university review.",
     urgency: "1-2 Weeks",
     status: "Completed",
+    verificationStatus: "Verified",
+    spamScore: 0,
+    botSignals: [],
     createdAt: "2026-10-24T11:00:00.000Z"
   },
   {
@@ -75,6 +99,9 @@ const SEED_INQUIRIES: ConsultationRequest[] = [
     requirement: "Looking for Helm charts, Knative event configuration, and viva preparation guide.",
     urgency: "Immediate",
     status: "Pending",
+    verificationStatus: "Verified",
+    spamScore: 0,
+    botSignals: [],
     createdAt: "2026-10-27T08:45:00.000Z"
   }
 ];
@@ -91,7 +118,15 @@ function readLocalInquiries(): ConsultationRequest[] {
     }
     const raw = fs.readFileSync(INQUIRIES_FILE, "utf8");
     const data = JSON.parse(raw);
-    return Array.isArray(data) ? data : SEED_INQUIRIES;
+    if (!Array.isArray(data)) return SEED_INQUIRIES;
+
+    // Ensure all existing records have verificationStatus preserved
+    return data.map((item) => ({
+      ...item,
+      verificationStatus: item.verificationStatus || (item.status === "Spam" ? "Spam" : item.status === "Suspicious" ? "Suspicious" : "Verified"),
+      spamScore: typeof item.spamScore === "number" ? item.spamScore : 0,
+      botSignals: Array.isArray(item.botSignals) ? item.botSignals : [],
+    }));
   } catch (err) {
     console.error("Error reading inquiries file:", err);
     return SEED_INQUIRIES;
@@ -131,7 +166,11 @@ export async function getAllInquiries(): Promise<ConsultationRequest[]> {
           projectTitle: item.project_title || item.projectTitle || "",
           requirement: item.requirement || item.message || "",
           urgency: item.urgency || "1-2 Weeks",
-          status: (item.status === "completed" ? "Completed" : item.status === "in_progress" ? "In Progress" : "Pending") as any,
+          status: (item.status === "completed" ? "Completed" : item.status === "in_progress" ? "In Progress" : item.status === "spam" ? "Spam" : "Pending") as any,
+          verificationStatus: (item.verification_status || item.verificationStatus || (item.status === "spam" ? "Spam" : "Verified")) as any,
+          spamScore: item.spam_score || 0,
+          botSignals: item.bot_signals || [],
+          clientIp: item.client_ip || undefined,
           createdAt: item.created_at || new Date().toISOString()
         }));
       }
@@ -144,6 +183,9 @@ export async function getAllInquiries(): Promise<ConsultationRequest[]> {
 }
 
 export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Promise<ConsultationRequest> {
+  const verificationStatus = inquiryData.verificationStatus || (inquiryData.status === "Spam" ? "Spam" : inquiryData.status === "Suspicious" ? "Suspicious" : "Verified");
+  const initialStatus: InquiryStatus = inquiryData.status || (verificationStatus === "Spam" ? "Spam" : verificationStatus === "Suspicious" ? "Suspicious" : "New");
+
   const newRequest: ConsultationRequest = {
     id: `inq-${Date.now()}`,
     name: inquiryData.name || "Anonymous Student",
@@ -155,7 +197,11 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
     projectTitle: inquiryData.projectTitle || "Custom Project Consultation",
     requirement: inquiryData.requirement || inquiryData.message || "",
     urgency: inquiryData.urgency || "1-2 Weeks",
-    status: "Pending",
+    status: initialStatus,
+    verificationStatus,
+    spamScore: inquiryData.spamScore ?? 0,
+    botSignals: inquiryData.botSignals || [],
+    clientIp: inquiryData.clientIp || "",
     createdAt: new Date().toISOString()
   };
 
@@ -178,7 +224,7 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
           project_title: newRequest.projectTitle,
           requirement: newRequest.requirement,
           urgency: newRequest.urgency,
-          status: "Pending"
+          status: newRequest.status
         }
       ]);
     } catch (err) {
@@ -189,12 +235,25 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
   return newRequest;
 }
 
-export async function updateInquiryStatus(id: string, newStatus: "Pending" | "In Progress" | "Completed"): Promise<boolean> {
+export async function updateInquiryStatus(
+  id: string,
+  newStatus: InquiryStatus,
+  newVerificationStatus?: VerificationStatus
+): Promise<boolean> {
   // Update local file
   const list = readLocalInquiries();
   const index = list.findIndex((item) => item.id === id);
   if (index !== -1) {
     list[index].status = newStatus;
+    if (newVerificationStatus) {
+      list[index].verificationStatus = newVerificationStatus;
+    } else if (newStatus === "Spam") {
+      list[index].verificationStatus = "Spam";
+    } else if (newStatus === "Suspicious") {
+      list[index].verificationStatus = "Suspicious";
+    } else if (newStatus === "Verified" || newStatus === "Completed" || newStatus === "In Progress") {
+      list[index].verificationStatus = "Verified";
+    }
     writeLocalInquiries(list);
   }
 

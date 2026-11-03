@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Send, CheckCircle2, MessageCircle, Sparkles, PhoneCall } from "lucide-react";
+import { X, Send, CheckCircle2, MessageCircle, Sparkles, PhoneCall, ShieldCheck, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 import { PROJECT_CATEGORIES } from "@/data/projects";
 import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
@@ -22,7 +22,13 @@ export default function ConsultationModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   
+  // Anti-bot metadata
+  const [renderedAt, setRenderedAt] = useState<number>(0);
+  const [honeypot, setHoneypot] = useState("");
+  const [honeypotCompany, setHoneypotCompany] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,6 +55,10 @@ export default function ConsultationModal() {
         }));
       }
       setSubmitted(false);
+      setErrorMessage("");
+      setHoneypot("");
+      setHoneypotCompany("");
+      setRenderedAt(Date.now());
       setIsOpen(true);
     };
 
@@ -64,14 +74,40 @@ export default function ConsultationModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage("");
+
+    // Client-side quick checks
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      setErrorMessage("Please enter your name (at least 2 characters).");
+      return;
+    }
+
+    const digitsOnly = formData.phone.replace(/\D/g, "");
+    if (digitsOnly.length < 8) {
+      setErrorMessage("Please provide a valid contact number (8-16 digits).");
+      return;
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrorMessage("Please provide a valid email address.");
+      return;
+    }
+
     setLoading(true);
 
     try {
       const res = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website: honeypot,
+          company_hp: honeypotCompany,
+          _f_rendered_at: renderedAt,
+        }),
       });
+
+      const data = await res.json();
 
       if (res.ok) {
         setSubmitted(true);
@@ -83,10 +119,11 @@ export default function ConsultationModal() {
             colors: ["#315C3D", "#497A52", "#DCE8D9", "#FFFFFF"],
           });
         } catch (e) {}
+      } else {
+        setErrorMessage(data.error || "Submission failed. Please check your entries.");
       }
-    } catch (err) {
-      console.error(err);
-      setSubmitted(true);
+    } catch (err: any) {
+      setErrorMessage("Connection issue. Please try again or WhatsApp us directly.");
     } finally {
       setLoading(false);
     }
@@ -118,25 +155,26 @@ export default function ConsultationModal() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#202820]">Get Project Consultation</h3>
-              <p className="text-xs text-[#315C3D] font-semibold font-mono">AntiMatrix Engineering Center</p>
+              <h3 className="text-xl font-bold text-[#202820]">Book Engineering Project Consultation</h3>
+              <p className="text-xs text-[#667064]">
+                Direct guidance with domain research experts in Chennai &amp; Remote
+              </p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-xl text-[#667064] hover:text-[#315C3D] hover:bg-[#DCE8D9] transition-colors"
-            aria-label="Close modal"
+            className="p-2 rounded-xl text-[#667064] hover:text-[#202820] hover:bg-[#DDDCCF]/40 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="p-6 max-h-[75vh] overflow-y-auto bg-[#FFFFFF]">
+        {/* Modal Content */}
+        <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
           {submitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 mx-auto rounded-full bg-[#DCE8D9] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D] shadow-xs">
-                <CheckCircle2 className="w-9 h-9" />
+              <div className="w-16 h-16 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] flex items-center justify-center mx-auto shadow-xs">
+                <CheckCircle2 className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-bold text-[#202820]">Consultation Request Received!</h4>
               <p className="text-[#667064] max-w-md mx-auto text-sm leading-relaxed">
@@ -168,9 +206,43 @@ export default function ConsultationModal() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="bg-[#DCE8D9] border border-[#DDDCCF] rounded-xl p-3 text-xs text-[#315C3D] flex items-center gap-2">
-                <Sparkles className="w-4 h-4 shrink-0 text-[#315C3D]" />
-                <span>100% verified project guidance, standard base paper review, and free synopsis preparation.</span>
+              {/* Anti-Bot Honeypot Inputs (Hidden from human visitors) */}
+              <div className="hidden opacity-0 pointer-events-none absolute -left-[9999px]" aria-hidden="true">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+                <input
+                  type="text"
+                  name="company_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypotCompany}
+                  onChange={(e) => setHoneypotCompany(e.target.value)}
+                />
+              </div>
+
+              {/* Error Alert */}
+              {errorMessage && (
+                <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#315C3D]/40 text-[#202820] text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
+                  <AlertCircle className="w-4 h-4 text-[#315C3D] shrink-0 mt-0.5" />
+                  <span className="font-medium leading-relaxed">{errorMessage}</span>
+                </div>
+              )}
+
+              <div className="bg-[#DCE8D9] border border-[#DDDCCF] rounded-xl p-3 text-xs text-[#315C3D] flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 shrink-0 text-[#315C3D]" />
+                  <span>100% verified project guidance, standard base paper review, and free synopsis preparation.</span>
+                </div>
+                <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[10px] bg-white/80 px-2 py-0.5 rounded text-[#315C3D] shrink-0">
+                  <ShieldCheck className="w-3 h-3" />
+                  Anti-Bot Protected
+                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

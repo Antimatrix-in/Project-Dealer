@@ -12,6 +12,8 @@ import {
   Layers,
   Mail,
   ShieldCheck,
+  ShieldAlert,
+  AlertTriangle,
   LogOut,
   Clock,
   CheckCircle2,
@@ -70,7 +72,16 @@ export default function AdminDashboardClient({
     const pending = inquiries.filter((i) => i.status === "Pending").length;
     const inProgress = inquiries.filter((i) => i.status === "In Progress").length;
     const completed = inquiries.filter((i) => i.status === "Completed").length;
-    return { total, pending, inProgress, completed };
+    const verified = inquiries.filter(
+      (i) => i.verificationStatus === "Verified" || i.status === "Verified"
+    ).length;
+    const suspicious = inquiries.filter(
+      (i) => i.verificationStatus === "Suspicious" || i.status === "Suspicious"
+    ).length;
+    const spam = inquiries.filter(
+      (i) => i.verificationStatus === "Spam" || i.status === "Spam"
+    ).length;
+    return { total, pending, inProgress, completed, verified, suspicious, spam };
   }, [inquiries]);
 
   // Unique categories for filter dropdown
@@ -85,7 +96,13 @@ export default function AdminDashboardClient({
   // Filtered inquiries for Consultation Management
   const filteredInquiries = useMemo(() => {
     return inquiries.filter((item) => {
-      const matchesStatus = statusFilter === "All" || item.status === statusFilter;
+      const vStatus = item.verificationStatus || (item.status === "Spam" ? "Spam" : item.status === "Suspicious" ? "Suspicious" : "Verified");
+      const matchesStatus =
+        statusFilter === "All" ||
+        item.status === statusFilter ||
+        (statusFilter === "Verified" && vStatus === "Verified") ||
+        (statusFilter === "Suspicious" && vStatus === "Suspicious") ||
+        (statusFilter === "Spam" && vStatus === "Spam");
       const matchesCategory = categoryFilter === "All" || item.category === categoryFilter;
 
       const q = searchQuery.toLowerCase().trim();
@@ -96,7 +113,8 @@ export default function AdminDashboardClient({
         item.phone.toLowerCase().includes(q) ||
         (item.college && item.college.toLowerCase().includes(q)) ||
         (item.projectTitle && item.projectTitle.toLowerCase().includes(q)) ||
-        (item.degree && item.degree.toLowerCase().includes(q));
+        (item.degree && item.degree.toLowerCase().includes(q)) ||
+        (vStatus && vStatus.toLowerCase().includes(q));
 
       return matchesStatus && matchesCategory && matchesSearch;
     });
@@ -125,23 +143,51 @@ export default function AdminDashboardClient({
   };
 
   // Status update handler
-  const handleStatusChange = async (id: string, newStatus: "Pending" | "In Progress" | "Completed") => {
+  const handleStatusChange = async (
+    id: string,
+    newStatus: "New" | "Pending" | "Verified" | "In Progress" | "Completed" | "Suspicious" | "Spam",
+    newVerification?: "Verified" | "Suspicious" | "Spam"
+  ) => {
     setUpdatingId(id);
+    const targetVerification =
+      newVerification ||
+      (newStatus === "Spam" ? "Spam" : newStatus === "Suspicious" ? "Suspicious" : newStatus === "Verified" ? "Verified" : undefined);
+
     try {
       const res = await fetch("/api/admin/inquiries", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, status: newStatus }),
+        body: JSON.stringify({
+          id,
+          status: newStatus,
+          verificationStatus: targetVerification
+        }),
       });
 
       if (res.ok) {
         setInquiries((prev) =>
-          prev.map((i) => (i.id === id ? { ...i, status: newStatus } : i))
+          prev.map((i) =>
+            i.id === id
+              ? {
+                  ...i,
+                  status: newStatus,
+                  ...(targetVerification ? { verificationStatus: targetVerification } : {})
+                }
+              : i
+          )
         );
         if (selectedInquiry && selectedInquiry.id === id) {
-          setSelectedInquiry((prev) => (prev ? { ...prev, status: newStatus } : null));
+          setSelectedInquiry((prev) =>
+            prev
+              ? {
+                  ...prev,
+                  status: newStatus,
+                  ...(targetVerification ? { verificationStatus: targetVerification } : {})
+                }
+              : null
+          );
         }
-        showToast(`Request status updated to ${newStatus}`);
+        showToast(`Request updated to ${newStatus}`);
       } else {
         showToast("Failed to update status. Please try again.");
       }
@@ -150,6 +196,32 @@ export default function AdminDashboardClient({
     } finally {
       setUpdatingId(null);
     }
+  };
+
+  const renderVerificationBadge = (inq: ConsultationRequest) => {
+    const vStatus = inq.verificationStatus || (inq.status === "Spam" ? "Spam" : inq.status === "Suspicious" ? "Suspicious" : "Verified");
+    if (vStatus === "Spam") {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#202820] text-[#FFFFFF] border border-[#DDDCCF]">
+          <ShieldAlert className="w-3.5 h-3.5 text-[#DDDCCF]" />
+          <span>Spam / Bot</span>
+        </span>
+      );
+    }
+    if (vStatus === "Suspicious") {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]">
+          <AlertTriangle className="w-3.5 h-3.5 text-[#315C3D]" />
+          <span>Suspicious ({inq.spamScore || 50}% Flag)</span>
+        </span>
+      );
+    }
+    return (
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D] border border-[#DCE8D9]">
+        <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D]" />
+        <span>Verified Genuine Student</span>
+      </span>
+    );
   };
 
   // Refresh data
@@ -439,52 +511,64 @@ export default function AdminDashboardClient({
               </div>
 
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {/* Total Requests */}
-                <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-[#667064] uppercase font-mono">Total Requests</p>
-                    <p className="text-3xl font-black text-[#202820] mt-1">{stats.total}</p>
-                    <span className="text-[11px] text-[#667064] mt-1 block">From web &amp; project consultation forms</span>
+                    <p className="text-[11px] font-bold text-[#667064] uppercase font-mono">Total Requests</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{stats.total}</p>
+                    <span className="text-[10px] text-[#667064] mt-1 block">All website form entries</span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
-                    <Users className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
+                    <Users className="w-5 h-5" />
+                  </div>
+                </div>
+
+                {/* Verified Genuine */}
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                  <div>
+                    <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Verified Genuine</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{stats.verified}</p>
+                    <span className="text-[10px] text-[#667064] mt-1 block">Passed bot checks</span>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
+                    <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* Pending Requests */}
-                <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-[#315C3D] uppercase font-mono">Pending Review</p>
-                    <p className="text-3xl font-black text-[#315C3D] mt-1">{stats.pending}</p>
-                    <span className="text-[11px] text-[#667064] mt-1 block">Awaiting technical callback</span>
+                    <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Pending Review</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{stats.pending}</p>
+                    <span className="text-[10px] text-[#667064] mt-1 block">Awaiting technical callback</span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
-                    <Clock className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
+                    <Clock className="w-5 h-5" />
                   </div>
                 </div>
 
                 {/* In Progress */}
-                <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-[#497A52] uppercase font-mono">In Progress</p>
-                    <p className="text-3xl font-black text-[#497A52] mt-1">{stats.inProgress}</p>
-                    <span className="text-[11px] text-[#667064] mt-1 block">Demo &amp; paper guidance underway</span>
+                    <p className="text-[11px] font-bold text-[#497A52] uppercase font-mono">In Progress</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#497A52] mt-1">{stats.inProgress}</p>
+                    <span className="text-[10px] text-[#667064] mt-1 block">Guidance underway</span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#497A52]">
-                    <RefreshCw className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#497A52]">
+                    <RefreshCw className="w-5 h-5" />
                   </div>
                 </div>
 
-                {/* Completed */}
-                <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                {/* Flagged Spam / Bots */}
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-[#202820] uppercase font-mono">Completed</p>
-                    <p className="text-3xl font-black text-[#202820] mt-1">{stats.completed}</p>
-                    <span className="text-[11px] text-[#667064] mt-1 block">Project verified &amp; delivered</span>
+                    <p className="text-[11px] font-bold text-[#202820] uppercase font-mono">Bot / Spam Flagged</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{stats.suspicious + stats.spam}</p>
+                    <span className="text-[10px] text-[#667064] mt-1 block">Isolated by honeypot/rate</span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
-                    <CheckCircle2 className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#202820]">
+                    <ShieldAlert className="w-5 h-5" />
                   </div>
                 </div>
               </div>
@@ -657,7 +741,7 @@ export default function AdminDashboardClient({
                 <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
                   <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
                     <span className="text-[#667064] font-mono mr-1">Status:</span>
-                    {["All", "Pending", "In Progress", "Completed"].map((status) => (
+                    {["All", "Verified", "Pending", "In Progress", "Completed", "Suspicious", "Spam"].map((status) => (
                       <button
                         key={status}
                         onClick={() => setStatusFilter(status)}
@@ -689,18 +773,29 @@ export default function AdminDashboardClient({
                     return (
                       <div
                         key={inq.id}
-                        className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D]/40 shadow-sm transition-all flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
+                        className={`p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border shadow-sm transition-all flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 ${
+                          inq.verificationStatus === "Spam" || inq.status === "Spam"
+                            ? "border-[#202820]/30 bg-[#F5F1E7]/50"
+                            : inq.verificationStatus === "Suspicious" || inq.status === "Suspicious"
+                            ? "border-[#315C3D]/50 bg-[#FFFDF9]"
+                            : "border-[#DDDCCF] hover:border-[#315C3D]/40"
+                        }`}
                       >
                         {/* Left Section: Student & Academic Info */}
                         <div className="space-y-2.5 flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2">
                             <h3 className="text-base font-bold text-[#202820]">{inq.name}</h3>
+                            {renderVerificationBadge(inq)}
                             <span
                               className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono ${
                                 inq.status === "Pending"
                                   ? "bg-[#DCE8D9] text-[#315C3D] border border-[#DCE8D9]"
                                   : inq.status === "In Progress"
                                   ? "bg-[#EEE9DC] text-[#497A52] border border-[#DDDCCF]"
+                                  : inq.status === "Spam"
+                                  ? "bg-[#202820] text-white border border-[#DDDCCF]"
+                                  : inq.status === "Suspicious"
+                                  ? "bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]"
                                   : "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
                               }`}
                             >
@@ -749,6 +844,22 @@ export default function AdminDashboardClient({
                             <p className="text-xs text-[#667064] bg-[#F5F1E7] p-2.5 rounded-xl border border-[#DDDCCF] line-clamp-2">
                               <strong className="text-[#202820]">Requirement:</strong> {inq.requirement}
                             </p>
+                          )}
+
+                          {/* Bot Signals Banner if Flagged */}
+                          {inq.botSignals && inq.botSignals.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                              <span className="text-[10px] font-mono text-[#667064]">Signals:</span>
+                              {inq.botSignals.map((sig, idx) => (
+                                <span
+                                  key={idx}
+                                  className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF] flex items-center gap-1"
+                                >
+                                  <AlertTriangle className="w-2.5 h-2.5 text-[#315C3D]" />
+                                  <span>{sig}</span>
+                                </span>
+                              ))}
+                            </div>
                           )}
                         </div>
 
@@ -807,6 +918,31 @@ export default function AdminDashboardClient({
                                 {status}
                               </button>
                             ))}
+                          </div>
+
+                          {/* Quick Moderation / Anti-Spam Controls */}
+                          <div className="flex items-center gap-1.5 text-xs">
+                            <span className="text-[#667064] font-mono text-[11px]">Anti-Bot:</span>
+                            {inq.verificationStatus !== "Verified" && (
+                              <button
+                                onClick={() => handleStatusChange(inq.id, "Verified", "Verified")}
+                                disabled={updatingId === inq.id}
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#DCE8D9] text-[#315C3D] hover:bg-[#cde0c9] border border-[#DCE8D9] transition-all cursor-pointer flex items-center gap-1"
+                              >
+                                <ShieldCheck className="w-3 h-3" />
+                                <span>Mark Verified</span>
+                              </button>
+                            )}
+                            {inq.verificationStatus !== "Spam" && (
+                              <button
+                                onClick={() => handleStatusChange(inq.id, "Spam", "Spam")}
+                                disabled={updatingId === inq.id}
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#EEE9DC] text-[#202820] hover:bg-[#e4ddcc] border border-[#DDDCCF] transition-all cursor-pointer flex items-center gap-1"
+                              >
+                                <ShieldAlert className="w-3 h-3 text-[#202820]" />
+                                <span>Mark as Spam</span>
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -947,80 +1083,221 @@ export default function AdminDashboardClient({
           {/* TAB 4: WEBSITE ENQUIRIES */}
           {activeTab === "enquiries" && (
             <div className="space-y-6 animate-in fade-in duration-200">
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2">
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>Website Form Submissions</span>
-                </div>
-                <h2 className="text-xl font-black text-[#202820]">
-                  Contact &amp; Student Inquiries
-                </h2>
-                <p className="text-xs text-[#667064] mt-1">
-                  Track general inquiry requests and consultation forms received through the public website.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {inquiries.map((inq) => (
-                  <div
-                    key={inq.id}
-                    className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-                  >
-                    <div className="space-y-2 flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <h4 className="text-sm font-bold text-[#202820]">{inq.name}</h4>
-                        <span className="text-[11px] text-[#667064] font-mono">
-                          {new Date(inq.createdAt).toLocaleString("en-IN", {
-                            dateStyle: "medium",
-                            timeStyle: "short",
-                          })}
-                        </span>
-                        <span
-                          className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
-                            inq.status === "Pending"
-                              ? "bg-[#DCE8D9] text-[#315C3D]"
-                              : inq.status === "In Progress"
-                              ? "bg-[#EEE9DC] text-[#497A52]"
-                              : "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
-                          }`}
-                        >
-                          {inq.status}
-                        </span>
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-[#667064]">
-                        <span className="flex items-center gap-1">
-                          <Mail className="w-3.5 h-3.5 text-[#315C3D]" />
-                          <span>{inq.email}</span>
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Phone className="w-3.5 h-3.5 text-[#315C3D]" />
-                          <span>{inq.phone}</span>
-                        </span>
-                        {inq.college && <span>• {inq.college}</span>}
-                      </div>
-
-                      {(inq.requirement || inq.message) && (
-                        <p className="text-xs text-[#202820] bg-[#F5F1E7] p-3 rounded-xl border border-[#DDDCCF]">
-                          {inq.requirement || inq.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="flex items-center gap-2 shrink-0">
-                      <a
-                        href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, "")}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-3 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center gap-1"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>Reply on WhatsApp</span>
-                      </a>
-                    </div>
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2">
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>Website Form Submissions &amp; Bot Guard</span>
                   </div>
-                ))}
+                  <h2 className="text-xl font-black text-[#202820]">
+                    Contact &amp; Student Inquiries
+                  </h2>
+                  <p className="text-xs text-[#667064] mt-1">
+                    Multi-layer protection: Honeypot trap, IP rate limiting, submit-speed verification, and bot detection.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#DCE8D9] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                    {stats.verified} Verified Genuine
+                  </span>
+                  {(stats.suspicious + stats.spam) > 0 && (
+                    <span className="px-3 py-1.5 rounded-xl bg-[#EEE9DC] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                      {stats.suspicious + stats.spam} Flagged
+                    </span>
+                  )}
+                </div>
               </div>
+
+              {/* Search & Status Filter */}
+              <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                  <div className="relative flex-1">
+                    <Search className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      placeholder="Search inquiries by student name, phone, email, or message..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D]"
+                    />
+                  </div>
+                  <button
+                    onClick={handleRefresh}
+                    disabled={refreshing}
+                    className="p-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] transition-colors cursor-pointer shrink-0"
+                    title="Refresh inquiries"
+                  >
+                    <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
+                  <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                    <span className="text-[#667064] font-mono mr-1">Filter:</span>
+                    {["All", "Verified", "Pending", "Suspicious", "Spam"].map((status) => (
+                      <button
+                        key={status}
+                        onClick={() => setStatusFilter(status)}
+                        className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
+                          statusFilter === status
+                            ? "bg-[#315C3D] text-white shadow-xs"
+                            : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                        }`}
+                      >
+                        {status}
+                      </button>
+                    ))}
+                  </div>
+
+                  <span className="text-xs text-[#667064]">
+                    Showing <strong className="text-[#202820]">{filteredInquiries.length}</strong> of{" "}
+                    {inquiries.length} records
+                  </span>
+                </div>
+              </div>
+
+              {/* Inquiry List */}
+              {filteredInquiries.length > 0 ? (
+                <div className="space-y-4">
+                  {filteredInquiries.map((inq) => {
+                    const cleanPhone = inq.phone.replace(/[^0-9]/g, "");
+                    const waLink = `https://wa.me/${cleanPhone.startsWith("91") ? cleanPhone : "91" + cleanPhone}?text=${encodeURIComponent(`Hello ${inq.name}, AntiMatrix team received your inquiry regarding "${inq.projectTitle || "academic project guidance"}":`)}`;
+
+                    return (
+                      <div
+                        key={inq.id}
+                        className={`p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all ${
+                          inq.verificationStatus === "Spam" || inq.status === "Spam"
+                            ? "border-[#202820]/30 bg-[#F5F1E7]/50"
+                            : inq.verificationStatus === "Suspicious" || inq.status === "Suspicious"
+                            ? "border-[#315C3D]/50 bg-[#FFFDF9]"
+                            : "border-[#DDDCCF] hover:border-[#315C3D]/40"
+                        }`}
+                      >
+                        <div className="space-y-2 flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <h4 className="text-sm font-bold text-[#202820]">{inq.name}</h4>
+                            {renderVerificationBadge(inq)}
+                            <span
+                              className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
+                                inq.status === "Pending"
+                                  ? "bg-[#DCE8D9] text-[#315C3D]"
+                                  : inq.status === "In Progress"
+                                  ? "bg-[#EEE9DC] text-[#497A52]"
+                                  : inq.status === "Spam"
+                                  ? "bg-[#202820] text-white"
+                                  : inq.status === "Suspicious"
+                                  ? "bg-[#EEE9DC] text-[#202820]"
+                                  : "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
+                              }`}
+                            >
+                              {inq.status}
+                            </span>
+                            <span className="text-[11px] text-[#667064] font-mono">
+                              {new Date(inq.createdAt).toLocaleString("en-IN", {
+                                dateStyle: "medium",
+                                timeStyle: "short",
+                              })}
+                            </span>
+                          </div>
+
+                          <div className="flex flex-wrap items-center gap-3 text-xs text-[#667064]">
+                            <span className="flex items-center gap-1">
+                              <Mail className="w-3.5 h-3.5 text-[#315C3D]" />
+                              <span>{inq.email || "No email"}</span>
+                            </span>
+                            <span className="flex items-center gap-1">
+                              <Phone className="w-3.5 h-3.5 text-[#315C3D]" />
+                              <span>{inq.phone}</span>
+                            </span>
+                            {inq.college && <span>• {inq.college}</span>}
+                            {inq.clientIp && (
+                              <span className="font-mono text-[10px] text-[#667064] bg-[#EEE9DC] px-1.5 py-0.5 rounded">
+                                IP: {inq.clientIp}
+                              </span>
+                            )}
+                          </div>
+
+                          {(inq.requirement || inq.message) && (
+                            <p className="text-xs text-[#202820] bg-[#F5F1E7] p-3 rounded-xl border border-[#DDDCCF] line-clamp-3">
+                              {inq.requirement || inq.message}
+                            </p>
+                          )}
+
+                          {/* Bot signals */}
+                          {inq.botSignals && inq.botSignals.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                              <span className="text-[10px] font-mono text-[#667064]">Bot Indicators:</span>
+                              {inq.botSignals.map((sig, idx) => (
+                                <span
+                                  key={idx}
+                                  className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF] flex items-center gap-1"
+                                >
+                                  <AlertTriangle className="w-2.5 h-2.5 text-[#315C3D]" />
+                                  <span>{sig}</span>
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2 shrink-0 w-full md:w-auto">
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={waLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center gap-1 shadow-xs transition-colors"
+                            >
+                              <MessageCircle className="w-3.5 h-3.5" />
+                              <span>WhatsApp</span>
+                            </a>
+                            <button
+                              onClick={() => setSelectedInquiry(inq)}
+                              className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-xs font-bold text-[#202820] transition-colors cursor-pointer"
+                            >
+                              Details
+                            </button>
+                          </div>
+
+                          <div className="flex items-center gap-1.5 text-xs">
+                            {inq.verificationStatus !== "Verified" && (
+                              <button
+                                onClick={() => handleStatusChange(inq.id, "Verified", "Verified")}
+                                disabled={updatingId === inq.id}
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#DCE8D9] text-[#315C3D] hover:bg-[#cde0c9] border border-[#DCE8D9] transition-all cursor-pointer flex items-center gap-1"
+                              >
+                                <ShieldCheck className="w-3 h-3" />
+                                <span>Verify</span>
+                              </button>
+                            )}
+                            {inq.verificationStatus !== "Spam" && (
+                              <button
+                                onClick={() => handleStatusChange(inq.id, "Spam", "Spam")}
+                                disabled={updatingId === inq.id}
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#EEE9DC] text-[#202820] hover:bg-[#e4ddcc] border border-[#DDDCCF] transition-all cursor-pointer flex items-center gap-1"
+                              >
+                                <ShieldAlert className="w-3 h-3 text-[#202820]" />
+                                <span>Spam</span>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] space-y-3">
+                  <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
+                  <h3 className="text-base font-bold text-[#202820]">No enquiries matching your filter</h3>
+                  <p className="text-xs text-[#667064]">
+                    Select another status filter or reset your search query.
+                  </p>
+                </div>
+              )}
             </div>
           )}
 
@@ -1164,6 +1441,87 @@ export default function AdminDashboardClient({
 
             {/* Modal Body */}
             <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
+              {/* Bot & Verification Status Banner */}
+              {(() => {
+                const vStatus =
+                  selectedInquiry.verificationStatus ||
+                  (selectedInquiry.status === "Spam"
+                    ? "Spam"
+                    : selectedInquiry.status === "Suspicious"
+                    ? "Suspicious"
+                    : "Verified");
+                if (vStatus === "Spam") {
+                  return (
+                    <div className="p-4 rounded-2xl bg-[#202820] text-white border border-[#DDDCCF] space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold flex items-center gap-1.5 text-[#DDDCCF]">
+                          <ShieldAlert className="w-4 h-4 text-white" />
+                          <span>Automated Bot / Spam Flagged</span>
+                        </span>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/20 text-white font-semibold">
+                          Spam Score: {selectedInquiry.spamScore || 85}/100
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#DDDCCF] leading-relaxed">
+                        This submission was flagged by honeypot or bot heuristics. It is isolated from active workflow queues.
+                      </p>
+                      {selectedInquiry.botSignals && selectedInquiry.botSignals.length > 0 && (
+                        <div className="space-y-1 pt-1 border-t border-white/20">
+                          <span className="text-[10px] font-mono uppercase text-[#DDDCCF] block">Detected Signals:</span>
+                          <ul className="list-disc list-inside space-y-0.5 text-[11px] text-[#EEE9DC]">
+                            {selectedInquiry.botSignals.map((sig, idx) => (
+                              <li key={idx}>{sig}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                if (vStatus === "Suspicious") {
+                  return (
+                    <div className="p-4 rounded-2xl bg-[#EEE9DC] border border-[#DDDCCF] space-y-2 text-[#202820]">
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold flex items-center gap-1.5 text-[#315C3D]">
+                          <AlertTriangle className="w-4 h-4 text-[#315C3D]" />
+                          <span>Flagged as Suspicious Submission</span>
+                        </span>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#DCE8D9] text-[#315C3D] font-semibold">
+                          Spam Score: {selectedInquiry.spamScore || 50}/100
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-[#667064] leading-relaxed">
+                        Noticeable automated or rapid submission pattern detected. Administrator review recommended before calling.
+                      </p>
+                      {selectedInquiry.botSignals && selectedInquiry.botSignals.length > 0 && (
+                        <div className="space-y-1 pt-1 border-t border-[#DDDCCF]">
+                          <span className="text-[10px] font-mono uppercase text-[#667064] block">Detected Signals:</span>
+                          <ul className="list-disc list-inside space-y-0.5 text-[11px] text-[#202820]">
+                            {selectedInquiry.botSignals.map((sig, idx) => (
+                              <li key={idx}>{sig}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+                return (
+                  <div className="p-3.5 rounded-2xl bg-[#DCE8D9]/70 border border-[#315C3D]/30 flex items-center justify-between text-[#202820]">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-5 h-5 text-[#315C3D] shrink-0" />
+                      <div>
+                        <span className="font-bold block text-xs text-[#202820]">Verified Genuine Student</span>
+                        <span className="text-[11px] text-[#667064]">Passed bot trap, human submission timing, and phone checks.</span>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white text-[#315C3D] font-bold border border-[#DDDCCF]">
+                      Score 0/100
+                    </span>
+                  </div>
+                );
+              })()}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
                   <span className="text-[10px] font-mono text-[#667064] uppercase block">WhatsApp Number</span>
@@ -1182,6 +1540,13 @@ export default function AdminDashboardClient({
                   <p className="font-semibold text-xs text-[#202820]">{selectedInquiry.degree || "Not Specified"}</p>
                 </div>
               </div>
+
+              {selectedInquiry.clientIp && (
+                <div className="p-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between text-xs">
+                  <span className="text-[#667064] font-mono text-[11px]">Origin Client IP:</span>
+                  <span className="font-mono font-bold text-[#202820]">{selectedInquiry.clientIp}</span>
+                </div>
+              )}
 
               <div className="p-4 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1.5">
                 <div className="flex items-center justify-between">
@@ -1203,34 +1568,59 @@ export default function AdminDashboardClient({
                 </div>
               )}
 
-              {/* Status Selector in Modal */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-[#202820]">Change Status:</span>
-                  {(["Pending", "In Progress", "Completed"] as const).map((status) => (
-                    <button
-                      key={status}
-                      onClick={() => handleStatusChange(selectedInquiry.id, status)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        selectedInquiry.status === status
-                          ? "bg-[#315C3D] text-white"
-                          : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
-                      }`}
-                    >
-                      {status}
-                    </button>
-                  ))}
+              {/* Status Selector & Anti-Bot Moderation in Modal */}
+              <div className="pt-3 border-t border-[#DDDCCF] space-y-3">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="font-bold text-[#202820]">Status:</span>
+                    {(["Pending", "In Progress", "Completed"] as const).map((status) => (
+                      <button
+                        key={status}
+                        onClick={() => handleStatusChange(selectedInquiry.id, status)}
+                        className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          selectedInquiry.status === status
+                            ? "bg-[#315C3D] text-white"
+                            : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                        }`}
+                      >
+                        {status}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-1.5">
+                    {selectedInquiry.verificationStatus !== "Verified" && (
+                      <button
+                        onClick={() => handleStatusChange(selectedInquiry.id, "Verified", "Verified")}
+                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#DCE8D9] text-[#315C3D] hover:bg-[#cde0c9] border border-[#DCE8D9] transition-all cursor-pointer flex items-center gap-1"
+                      >
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <span>Mark Verified</span>
+                      </button>
+                    )}
+                    {selectedInquiry.verificationStatus !== "Spam" && (
+                      <button
+                        onClick={() => handleStatusChange(selectedInquiry.id, "Spam", "Spam")}
+                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#EEE9DC] text-[#202820] hover:bg-[#e4ddcc] border border-[#DDDCCF] transition-all cursor-pointer flex items-center gap-1"
+                      >
+                        <ShieldAlert className="w-3.5 h-3.5" />
+                        <span>Mark as Spam</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
 
-                <a
-                  href={`https://wa.me/${selectedInquiry.phone.replace(/[^0-9]/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
-                >
-                  <MessageCircle className="w-4 h-4 text-white" />
-                  <span>Chat on WhatsApp</span>
-                </a>
+                <div className="pt-1">
+                  <a
+                    href={`https://wa.me/${selectedInquiry.phone.replace(/[^0-9]/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
+                  >
+                    <MessageCircle className="w-4 h-4 text-white" />
+                    <span>Open WhatsApp Chat with Student</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
