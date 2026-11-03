@@ -1,214 +1,218 @@
-// Test script for AntiMatrix Admin authentication and API endpoints
+// Comprehensive Test Suite for AntiMatrix Admin Authentication & Session Management
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-// Load .env.local if present
-const envLocalPath = path.join(__dirname, '..', '.env.local');
-if (fs.existsSync(envLocalPath)) {
-  const content = fs.readFileSync(envLocalPath, 'utf8');
-  content.split('\n').forEach((line) => {
-    const trimmed = line.trim();
-    if (trimmed && !trimmed.startsWith('#')) {
-      const [key, ...rest] = trimmed.split('=');
-      if (key && rest.length > 0 && !process.env[key.trim()]) {
-        process.env[key.trim()] = rest.join('=').trim();
-      }
+const PORT = 5001;
+const BASE_URL = `http://127.0.0.1:${PORT}`;
+
+async function request(path, options = {}) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(path, BASE_URL);
+    const reqOptions = {
+      method: options.method || 'GET',
+      headers: options.headers || {},
+    };
+    const req = http.request(url, reqOptions, (res) => {
+      let data = '';
+      res.on('data', (chunk) => (data += chunk));
+      res.on('end', () => {
+        let parsed = null;
+        try {
+          parsed = JSON.parse(data);
+        } catch (e) {
+          parsed = data;
+        }
+        resolve({
+          statusCode: res.statusCode,
+          headers: res.headers,
+          body: parsed,
+        });
+      });
+    });
+    req.on('error', reject);
+    if (options.body) {
+      req.write(typeof options.body === 'string' ? options.body : JSON.stringify(options.body));
     }
+    req.end();
   });
 }
 
-const adminUsername = process.env.ADMIN_USERNAME || 'antimatrix2026';
-const adminEmail = process.env.ADMIN_EMAIL || 'antimatrix2026@gmail.com';
-const adminPassword = process.env.ADMIN_PASSWORD || 'antimatrix2026@';
+async function runTests() {
+  console.log('======================================================');
+  console.log('   ANTIMATRIX ADMIN AUTHENTICATION VERIFICATION SUITE ');
+  console.log('======================================================\n');
 
-async function testSuite() {
-  const baseUrl = 'http://127.0.0.1:5001';
-  console.log('--- STARTING ADMIN AUTOMATED TESTS ---');
+  let passed = 0;
+  let failed = 0;
 
-  // Helper for requests
-  async function request(path, options = {}) {
-    return new Promise((resolve, reject) => {
-      const url = new URL(path, baseUrl);
-      const reqOptions = {
-        method: options.method || 'GET',
-        headers: options.headers || {},
-      };
-      const req = http.request(url, reqOptions, (res) => {
-        let data = '';
-        res.on('data', (chunk) => (data += chunk));
-        res.on('end', () => {
-          let parsed = null;
-          try {
-            parsed = JSON.parse(data);
-          } catch (e) {
-            parsed = data;
-          }
-          resolve({
-            statusCode: res.statusCode,
-            headers: res.headers,
-            body: parsed,
-          });
-        });
-      });
-      req.on('error', reject);
-      if (options.body) {
-        req.write(typeof options.body === 'string' ? options.body : JSON.stringify(options.body));
-      }
-      req.end();
-    });
+  function assert(condition, testName, details = '') {
+    if (condition) {
+      console.log(`[PASS] ${testName}`);
+      passed++;
+    } else {
+      console.error(`[FAIL] ${testName} - ${details}`);
+      failed++;
+    }
   }
 
-  // 1. Unauthenticated access to /admin/dashboard
-  console.log('\n[TEST 1] Testing unauthenticated access to /admin/dashboard...');
+  // 1. Access dashboard without login -> redirect to /admin/login
+  console.log('Scenario 1: Access dashboard without login...');
   const res1 = await request('/admin/dashboard');
-  console.log(`Response status: ${res1.statusCode}`);
-  console.log(`Redirect Location: ${res1.headers.location}`);
-  if (res1.statusCode === 307 && res1.headers.location?.includes('/admin/login')) {
-    console.log('✓ PASS: Unauthenticated access blocked and redirected to /admin/login');
-  } else {
-    console.log('✗ FAIL: Unauthenticated access was not redirected properly');
-  }
+  assert(
+    res1.statusCode === 307 && res1.headers.location?.includes('/admin/login'),
+    'Unauthenticated access redirects to /admin/login',
+    `Status: ${res1.statusCode}, Location: ${res1.headers.location}`
+  );
 
-  // 2. Unknown Username Attempt
-  console.log('\n[TEST 2] Testing unknown username rejection...');
+  // 2. Incorrect username -> appropriate error
+  console.log('\nScenario 2: Incorrect username...');
   const res2 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { username: 'unknown_hacker', password: 'SomePassword123' },
+    body: { username: 'invalid_user', password: 'antimatrix2026@' },
   });
-  console.log(`Response status: ${res2.statusCode}`, res2.body);
-  if (res2.statusCode === 401 && res2.body.error) {
-    console.log('✓ PASS: Unknown username rejected with 401');
-  } else {
-    console.log('✗ FAIL: Unknown username was not rejected properly');
-  }
+  assert(
+    res2.statusCode === 401 && res2.body.error?.includes('Invalid administrator credentials'),
+    'Incorrect username returns HTTP 401 with credentials error',
+    `Status: ${res2.statusCode}, Body: ${JSON.stringify(res2.body)}`
+  );
 
-  // 3. Invalid Password Attempt
-  console.log('\n[TEST 3] Testing invalid password rejection for username antimatrix2026...');
+  // 3. Incorrect password for antimatrix2026 -> appropriate error
+  console.log('\nScenario 3: Incorrect password...');
   const res3 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { username: adminUsername, password: 'WrongPassword123' },
+    body: { username: 'antimatrix2026', password: 'wrong_password_123' },
   });
-  console.log(`Response status: ${res3.statusCode}`, res3.body);
-  if (res3.statusCode === 401 && res3.body.error) {
-    console.log('✓ PASS: Invalid password rejected with 401');
-  } else {
-    console.log('✗ FAIL: Invalid password was not rejected properly');
-  }
+  assert(
+    res3.statusCode === 401 && res3.body.error?.includes('Invalid administrator credentials'),
+    'Incorrect password returns HTTP 401 with credentials error',
+    `Status: ${res3.statusCode}, Body: ${JSON.stringify(res3.body)}`
+  );
 
-  // 4. Valid Admin Login using Username (antimatrix2026)
-  console.log('\n[TEST 4] Testing valid admin login using username (antimatrix2026)...');
+  // 4. Correct username (antimatrix2026) and password (antimatrix2026@) -> successful login
+  console.log('\nScenario 4: Correct username & password (antimatrix2026)...');
   const res4 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { username: `  ${adminUsername.toUpperCase()}  `, password: adminPassword },
+    body: { username: 'antimatrix2026', password: 'antimatrix2026@' },
   });
-  console.log(`Response status: ${res4.statusCode}`, res4.body);
-  const setCookie = res4.headers['set-cookie'];
-  console.log(`Set-Cookie header: ${setCookie ? setCookie[0] : 'NONE'}`);
-  if (res4.statusCode === 200 && res4.body.success && setCookie) {
-    console.log('✓ PASS: Admin authenticated via username and session cookie received');
-  } else {
-    console.log('✗ FAIL: Valid username login failed');
-    return;
-  }
+  const cookieHeader = res4.headers['set-cookie'];
+  assert(
+    res4.statusCode === 200 && res4.body.success === true && res4.body.redirectUrl === '/admin/dashboard' && Boolean(cookieHeader),
+    'Successful login returns HTTP 200, redirectUrl, and session cookie',
+    `Status: ${res4.statusCode}, Body: ${JSON.stringify(res4.body)}`
+  );
 
-  const cookieStr = setCookie[0].split(';')[0];
+  const sessionCookie = cookieHeader ? cookieHeader[0].split(';')[0] : '';
 
-  // 5. Verify Session with Cookie
-  console.log('\n[TEST 5] Verifying session token via /api/admin/session...');
-  const res5 = await request('/api/admin/session', {
-    headers: { Cookie: cookieStr },
+  // 5. Successful login -> access admin dashboard
+  console.log('\nScenario 5: Access admin dashboard with session cookie...');
+  const res5 = await request('/admin/dashboard', {
+    headers: { Cookie: sessionCookie },
   });
-  console.log(`Session response:`, res5.body);
-  if (res5.body.authenticated && res5.body.user?.email === 'antimatrix2026@gmail.com') {
-    console.log('✓ PASS: Session verified successfully');
-  } else {
-    console.log('✗ FAIL: Session could not be verified');
-  }
+  assert(
+    res5.statusCode === 200 && typeof res5.body === 'string' && res5.body.includes('Operations Center'),
+    'Dashboard accessible with valid session cookie (HTTP 200)',
+    `Status: ${res5.statusCode}`
+  );
 
-  // 6. Fetch Consultation Requests & Verify Data Integrity
-  console.log('\n[TEST 6] Fetching consultation requests via /api/admin/inquiries...');
-  const res6 = await request('/api/admin/inquiries', {
-    headers: { Cookie: cookieStr },
+  // 6. Refresh / Session check -> session remains valid
+  console.log('\nScenario 6: Session verification check (refresh)...');
+  const res6 = await request('/api/admin/session', {
+    headers: { Cookie: sessionCookie },
   });
-  console.log(`Inquiries count: ${res6.body.inquiries?.length}`);
-  console.log(`Stats:`, res6.body.stats);
-  if (res6.body.success && Array.isArray(res6.body.inquiries) && res6.body.inquiries.length >= 4) {
-    console.log('✓ PASS: Consultation requests intact and retrieved successfully');
-  } else {
-    console.log('✗ FAIL: Could not fetch consultation requests or data lost');
-  }
+  assert(
+    res6.statusCode === 200 && res6.body.authenticated === true && res6.body.user?.role === 'admin',
+    'Session verified as active administrator profile',
+    `Status: ${res6.statusCode}, Body: ${JSON.stringify(res6.body)}`
+  );
 
-  // 7. Update Status of first inquiry
-  if (res6.body.inquiries && res6.body.inquiries.length > 0) {
-    const targetId = res6.body.inquiries[0].id;
-    console.log(`\n[TEST 7] Updating inquiry status for ID: ${targetId} to 'In Progress'...`);
-    const res7 = await request('/api/admin/inquiries', {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        Cookie: cookieStr,
-      },
-      body: { id: targetId, status: 'In Progress' },
-    });
-    console.log(`Update response:`, res7.body);
-    if (res7.body.success && res7.body.inquiry?.status === 'In Progress') {
-      console.log('✓ PASS: Inquiry status successfully updated to In Progress');
-    } else {
-      console.log('✗ FAIL: Failed to update inquiry status');
-    }
-  }
+  // 7. Verify consultation inquiries retrieval
+  console.log('\nScenario 7: Data preservation - fetch inquiries...');
+  const res7 = await request('/api/admin/inquiries', {
+    headers: { Cookie: sessionCookie },
+  });
+  assert(
+    res7.statusCode === 200 && Array.isArray(res7.body.inquiries) && res7.body.inquiries.length >= 4,
+    'Existing consultation records preserved and accessible',
+    `Inquiries count: ${res7.body.inquiries?.length}`
+  );
 
-  // 8. Test Logout
-  console.log('\n[TEST 8] Testing logout via /api/admin/logout...');
+  // 8. Logout -> session is invalidated
+  console.log('\nScenario 8: Logout...');
   const res8 = await request('/api/admin/logout', {
     method: 'POST',
-    headers: { Cookie: cookieStr },
+    headers: { Cookie: sessionCookie },
   });
-  console.log(`Logout response:`, res8.body);
-  const clearedCookie = res8.headers['set-cookie'];
-  console.log(`Cleared Cookie header:`, clearedCookie);
-  if (res8.body.success) {
-    console.log('✓ PASS: Logout succeeded and cleared cookie');
-  } else {
-    console.log('✗ FAIL: Logout failed');
-  }
+  const logoutCookieHeader = res8.headers['set-cookie'];
+  assert(
+    res8.statusCode === 200 && res8.body.success === true && Boolean(logoutCookieHeader),
+    'Logout terminates session and clears cookie',
+    `Status: ${res8.statusCode}, Body: ${JSON.stringify(res8.body)}`
+  );
 
-  // 9. Verify session cleared
-  console.log('\n[TEST 9] Verifying session is revoked after logout...');
+  const clearedCookie = logoutCookieHeader ? logoutCookieHeader[0].split(';')[0] : '';
+
+  // 9. Verify session is revoked after logout
+  console.log('\nScenario 9: Verify session is revoked after logout...');
   const res9 = await request('/api/admin/session', {
-    headers: { Cookie: clearedCookie ? clearedCookie[0].split(';')[0] : '' },
+    headers: { Cookie: clearedCookie },
   });
-  console.log(`Session response after logout:`, res9.body);
-  if (!res9.body.authenticated) {
-    console.log('✓ PASS: Protected endpoint rejects cleared session');
-  } else {
-    console.log('✗ FAIL: Session was not invalidated');
-  }
+  assert(
+    res9.statusCode === 401 && res9.body.authenticated === false,
+    'Session endpoint returns 401 unauthenticated after logout',
+    `Status: ${res9.statusCode}, Body: ${JSON.stringify(res9.body)}`
+  );
 
-  // 10. Also test valid login with Email (antimatrix2026@gmail.com)
-  console.log('\n[TEST 10] Testing backwards-compatible login using email (antimatrix2026@gmail.com)...');
-  const res10 = await request('/api/admin/login', {
+  // 10. Access dashboard after logout -> redirected to /admin/login
+  console.log('\nScenario 10: Access dashboard after logout...');
+  const res10 = await request('/admin/dashboard', {
+    headers: { Cookie: clearedCookie },
+  });
+  assert(
+    res10.statusCode === 307 && res10.headers.location?.includes('/admin/login'),
+    'Dashboard access after logout redirects to /admin/login',
+    `Status: ${res10.statusCode}, Location: ${res10.headers.location}`
+  );
+
+  // 11. Test email alias login (antimatrix2026@gmail.com)
+  console.log('\nScenario 11: Email alias login (antimatrix2026@gmail.com)...');
+  const res11 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: adminEmail, password: adminPassword },
+    body: { email: 'antimatrix2026@gmail.com', password: 'antimatrix2026@' },
   });
-  console.log(`Response status: ${res10.statusCode}`, res10.body);
-  if (res10.statusCode === 200 && res10.body.success) {
-    console.log('✓ PASS: Admin also successfully authenticated via email alias');
-  } else {
-    console.log('✗ FAIL: Email login failed');
-  }
+  assert(
+    res11.statusCode === 200 && res11.body.success === true,
+    'Email alias login also succeeds',
+    `Status: ${res11.statusCode}`
+  );
 
-  console.log('\n=============================================');
-  console.log('ALL 10 ADMIN BACKEND & SECURITY TESTS PASSED!');
-  console.log('=============================================\n');
+  // 12. Test whitespace normalization in username
+  console.log('\nScenario 12: Whitespace tolerance (  ANTIMATRIX2026  )...');
+  const res12 = await request('/api/admin/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { username: '  ANTIMATRIX2026  ', password: '  antimatrix2026@  ' },
+  });
+  assert(
+    res12.statusCode === 200 && res12.body.success === true,
+    'Uppercase and whitespace in username and password handled gracefully',
+    `Status: ${res12.statusCode}`
+  );
+
+  console.log('\n======================================================');
+  console.log(`TEST SUMMARY: ${passed} PASSED, ${failed} FAILED`);
+  console.log('======================================================\n');
+
+  if (failed > 0) {
+    process.exit(1);
+  }
 }
 
-testSuite().catch((err) => {
-  console.error('Test Suite Failed:', err);
+runTests().catch((err) => {
+  console.error('Test execution error:', err);
   process.exit(1);
 });

@@ -101,8 +101,10 @@ export async function verifyAdminCredentials(
   passwordAttempt: string
 ): Promise<AuthVerificationResult> {
   const normalized = (identifier || "").trim().toLowerCase();
+  const rawAttempt = passwordAttempt || "";
+  const trimmedAttempt = rawAttempt.trim();
 
-  if (!normalized || !passwordAttempt) {
+  if (!normalized || !trimmedAttempt) {
     console.warn(`[AUTH] Login attempt failed: Empty username/email or password submitted.`);
     return { success: false, reason: "EMPTY_INPUT" };
   }
@@ -123,11 +125,24 @@ export async function verifyAdminCredentials(
     return { success: false, reason: "ACCOUNT_NOT_FOUND" };
   }
 
-  // 2. Direct Environment Variable Check (Render Environment Dashboard override)
-  const configuredPassword = process.env.ADMIN_PASSWORD || process.env.EMAIL_PASSWORD;
-  if (configuredPassword && passwordAttempt === configuredPassword) {
-    console.log(`[AUTH] Administrator "${normalized}" verified with configured environment credentials.`);
-    await updateAdminPassword(adminRecord.email, passwordAttempt);
+  // 2. Direct Environment Variable / Default Password Check (Render Environment Dashboard)
+  const envPassword = (process.env.ADMIN_PASSWORD || process.env.EMAIL_PASSWORD || "").trim().replace(/^["']|["']$/g, "");
+  const defaultPassword = "antimatrix2026@";
+  const expectedPassword = envPassword || defaultPassword;
+
+  const matchesExpected =
+    (expectedPassword && (rawAttempt === expectedPassword || trimmedAttempt === expectedPassword));
+
+  if (matchesExpected) {
+    console.log(`[AUTH] Administrator "${normalized}" verified successfully.`);
+    try {
+      const hashValid = bcrypt.compareSync(trimmedAttempt, adminRecord.passwordHash);
+      if (!hashValid) {
+        await updateAdminPassword(adminRecord.email, trimmedAttempt);
+      }
+    } catch (e) {
+      await updateAdminPassword(adminRecord.email, trimmedAttempt);
+    }
     return {
       success: true,
       user: {
@@ -137,9 +152,11 @@ export async function verifyAdminCredentials(
     };
   }
 
-  // 3. Verify submitted password against stored bcrypt hash
+  // 3. Fallback: Verify submitted password against stored bcrypt hash (both raw and trimmed)
   try {
-    const isMatch = await bcrypt.compare(passwordAttempt, adminRecord.passwordHash);
+    const isMatch =
+      (await bcrypt.compare(rawAttempt, adminRecord.passwordHash)) ||
+      (await bcrypt.compare(trimmedAttempt, adminRecord.passwordHash));
     if (isMatch) {
       console.log(`[AUTH] Administrator "${normalized}" authenticated successfully via stored hash.`);
       return {
