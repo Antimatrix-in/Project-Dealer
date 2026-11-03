@@ -22,7 +22,8 @@ import {
   ArrowRight,
   PhoneCall,
   Layers,
-  ClipboardList
+  ClipboardList,
+  ShieldCheck
 } from "lucide-react";
 import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS } from "@/data/projects";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
@@ -186,13 +187,13 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Desktop Right Buttons: [ WhatsApp ] [ Project Enquiry ] */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Desktop Right Buttons: [ WhatsApp ] [ Project Enquiry ] [ Admin Login ] */}
+            <div className="hidden lg:flex items-center gap-2.5">
               <a
                 href={defaultWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] text-xs font-bold transition-all shadow-xs"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] text-xs font-bold transition-all shadow-xs"
               >
                 <MessageCircle className="w-4 h-4 text-[#315C3D]" />
                 <span>WhatsApp</span>
@@ -202,15 +203,24 @@ export default function Navbar() {
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4.5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#315C3D]"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#315C3D]"
               >
                 <ClipboardList className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
               </a>
+
+              <Link
+                href="/admin/login"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] hover:text-[#315C3D] border border-[#DDDCCF] hover:border-[#315C3D] text-xs font-bold transition-all shadow-xs group cursor-pointer"
+                title="Administrator Portal"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D] group-hover:scale-110 transition-transform" />
+                <span>Admin Login</span>
+              </Link>
             </div>
 
-            {/* Mobile Action Buttons: [ WhatsApp ] [ Project Enquiry ] */}
-            <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile Action Buttons: [ WhatsApp ] [ Project Enquiry ] [ Admin Login ] [ Hamburger ] */}
+            <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
               <a
                 href={defaultWhatsAppLink}
                 target="_blank"
@@ -230,6 +240,14 @@ export default function Navbar() {
                 <ClipboardList className="w-3.5 h-3.5 text-white" />
                 <span>Enquiry</span>
               </a>
+              <Link
+                href="/admin/login"
+                className="p-1.5 rounded-lg bg-[#FFFFFF] text-[#202820] hover:text-[#315C3D] border border-[#DDDCCF] hover:border-[#315C3D] text-xs font-bold flex items-center justify-center shadow-xs"
+                title="Admin Login"
+                aria-label="Admin Login"
+              >
+                <ShieldCheck className="w-4 h-4 text-[#315C3D]" />
+              </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 rounded-xl text-[#202820] hover:text-[#315C3D] hover:bg-[#EEE9DC] transition-colors"
@@ -381,15 +399,25 @@ export default function Navbar() {
             </div>
 
             <div className="pt-2 border-t border-[#DDDCCF] flex flex-col gap-2">
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-xs group"
-              >
-                <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-                <span>Project Enquiry</span>
-              </a>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href={GOOGLE_ENQUIRY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs group"
+                >
+                  <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                  <span>Project Enquiry</span>
+                </a>
+
+                <Link
+                  href="/admin/login"
+                  className="py-2.5 px-3 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#202820] hover:text-[#315C3D] text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-colors"
+                >
+                  <ShieldCheck className="w-4 h-4 text-[#315C3D]" />
+                  <span>Admin Login</span>
+                </Link>
+              </div>
 
               <a
                 href={defaultWhatsAppLink}

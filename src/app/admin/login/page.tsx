@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Eye, EyeOff, Lock, Mail, ArrowRight, ShieldCheck, AlertCircle, ArrowLeft } from "lucide-react";
+import { Eye, EyeOff, Lock, User, ArrowRight, ShieldCheck, AlertCircle, ArrowLeft } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -36,8 +36,8 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (!email.trim() || !password) {
-      setErrorMessage("Please enter both administrator email and password.");
+    if (!username.trim() || !password) {
+      setErrorMessage("Please enter both administrator username and password.");
       return;
     }
 
@@ -47,13 +47,16 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
+        body: JSON.stringify({
+          username: username.trim(),
+          password
+        }),
       });
 
       const data = await res.json();
 
       if (!res.ok) {
-        setErrorMessage(data.error || "Authentication failed. Please verify credentials.");
+        setErrorMessage(data.error || "Invalid administrator credentials. Please check your username and password.");
         setLoading(false);
         return;
       }
@@ -121,21 +124,22 @@ export default function AdminLoginPage() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email Field */}
+          {/* Username Field */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-[#202820] font-mono mb-1.5">
-              Admin Email
+              Username
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
-                type="email"
+                type="text"
                 required
-                id="admin-email"
-                autoComplete="email"
-                placeholder="antimatrix2026@gmail.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="admin-username"
+                name="username"
+                autoComplete="username"
+                placeholder="antimatrix2026"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-sm text-[#202820] placeholder-[#667064]/70 focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-all"
               />
             </div>
@@ -154,6 +158,7 @@ export default function AdminLoginPage() {
                 type={showPassword ? "text" : "password"}
                 required
                 id="admin-password"
+                name="password"
                 autoComplete="current-password"
                 placeholder="••••••••••••"
                 value={password}

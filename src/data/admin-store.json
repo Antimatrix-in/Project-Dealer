@@ -1,10 +1,11 @@
 [
   {
     "id": "admin-1793085562619",
+    "username": "antimatrix2026",
     "email": "antimatrix2026@gmail.com",
     "passwordHash": "$2b$10$OYbeh3Ds.5smTcT5FtbVvODjHEzpENJVGr28UaxmPuAphudLZsCXK",
     "role": "admin",
     "createdAt": "2026-10-27T07:19:22.618Z",
-    "updatedAt": "2026-10-29T10:02:47.743Z"
+    "updatedAt": "2026-11-03T09:06:40.059Z"
   }
 ]

@@ -5,6 +5,7 @@ import { isSupabaseConfigured, supabase } from "./supabase";
 
 export interface AdminAccount {
   id: string;
+  username?: string;
   email: string;
   passwordHash: string;
   role: "admin";
@@ -63,6 +64,7 @@ export async function findAdminByEmail(email: string): Promise<AdminAccount | nu
       if (!error && data) {
         return {
           id: data.id,
+          username: data.username?.toLowerCase() || (process.env.ADMIN_USERNAME || "antimatrix2026"),
           email: data.email.toLowerCase(),
           passwordHash: data.password_hash,
           role: "admin",
@@ -82,13 +84,83 @@ export async function findAdminByEmail(email: string): Promise<AdminAccount | nu
 }
 
 /**
+ * Find admin account by username or email identifier
+ */
+export async function findAdminByIdentifier(identifier: string): Promise<AdminAccount | null> {
+  const normalized = identifier.trim().toLowerCase();
+  const configuredUsername = (process.env.ADMIN_USERNAME || "antimatrix2026").trim().toLowerCase();
+  const configuredEmail = (process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com").trim().toLowerCase();
+
+  // 1. Check local persistent store
+  const accounts = getLocalAdminAccounts();
+  const found = accounts.find((a) => {
+    const emailMatch = a.email.toLowerCase() === normalized;
+    const usernameMatch = a.username && a.username.toLowerCase() === normalized;
+    const aliasMatch = normalized === configuredUsername && a.email.toLowerCase() === configuredEmail;
+    return emailMatch || usernameMatch || aliasMatch;
+  });
+
+  if (found) {
+    return found;
+  }
+
+  // 2. Try Supabase if configured
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const { data, error } = await supabase
+        .from("admin_users")
+        .select("*")
+        .or(`email.eq.${normalized},username.eq.${normalized}`)
+        .maybeSingle();
+
+      if (!error && data) {
+        return {
+          id: data.id,
+          username: data.username?.toLowerCase() || configuredUsername,
+          email: data.email.toLowerCase(),
+          passwordHash: data.password_hash,
+          role: "admin",
+          createdAt: data.created_at,
+          updatedAt: data.updated_at,
+        };
+      }
+    } catch (err) {
+      console.warn("[AUTH STORE] Supabase admin lookup failed, falling back to local store");
+    }
+  }
+
+  // 3. Fallback to direct email search
+  const byEmail = await findAdminByEmail(normalized);
+  if (byEmail) {
+    return byEmail;
+  }
+
+  // 4. If identifier matches configured username or email, ensure account exists
+  if (normalized === configuredUsername || normalized === configuredEmail) {
+    return await ensureAdminAccount();
+  }
+
+  return null;
+}
+
+/**
  * Ensure an initial administrator account exists without overwriting existing accounts
  */
 export async function ensureAdminAccount(): Promise<AdminAccount> {
+  const adminUsername = (process.env.ADMIN_USERNAME || "antimatrix2026").trim().toLowerCase();
   const adminEmail = (process.env.ADMIN_EMAIL || "antimatrix2026@gmail.com").trim().toLowerCase();
   const existing = await findAdminByEmail(adminEmail);
 
   if (existing) {
+    if (!existing.username) {
+      existing.username = adminUsername;
+      const accounts = getLocalAdminAccounts();
+      const idx = accounts.findIndex((a) => a.email.toLowerCase() === adminEmail);
+      if (idx !== -1) {
+        accounts[idx].username = adminUsername;
+        saveLocalAdminAccounts(accounts);
+      }
+    }
     return existing;
   }
 
@@ -103,6 +175,7 @@ export async function ensureAdminAccount(): Promise<AdminAccount> {
 
   const newAdmin: AdminAccount = {
     id: `admin-${Date.now()}`,
+    username: adminUsername,
     email: adminEmail,
     passwordHash,
     role: "admin",
@@ -120,6 +193,7 @@ export async function ensureAdminAccount(): Promise<AdminAccount> {
     try {
       await supabase.from("admin_users").insert([
         {
+          username: adminUsername,
           email: adminEmail,
           password_hash: passwordHash,
           role: "admin",
@@ -130,7 +204,7 @@ export async function ensureAdminAccount(): Promise<AdminAccount> {
     }
   }
 
-  console.log(`[AUTH STORE] Initial administrator account configured for ${adminEmail}`);
+  console.log(`[AUTH STORE] Initial administrator account configured for ${adminUsername} (${adminEmail})`);
   return newAdmin;
 }
 

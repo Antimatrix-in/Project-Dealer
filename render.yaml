@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: antimatrix
+    name: project-dealer
     runtime: node
     plan: free
     region: oregon
@@ -9,14 +9,15 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.18.0
+      - key: ADMIN_USERNAME
+        value: antimatrix2026
       - key: ADMIN_EMAIL
         value: antimatrix2026@gmail.com
       - key: ADMIN_PASSWORD
-        value: antimatrix2026@
+        sync: false
       - key: ADMIN_SESSION_SECRET
         generateValue: true
       - key: NEXT_PUBLIC_SUPABASE_URL
         sync: false
       - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
         sync: false
-

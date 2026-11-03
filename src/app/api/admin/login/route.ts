@@ -28,29 +28,29 @@ export async function POST(request: Request) {
 
     // 2. Validate input
     const body = await request.json().catch(() => null);
-    if (!body || !body.email || !body.password) {
+    const identifier = body?.username || body?.email;
+    if (!body || !identifier || !body.password) {
       return NextResponse.json(
-        { error: "Email address and password are required." },
+        { error: "Username and password are required." },
         { status: 400 }
       );
     }
 
-    const { email, password } = body;
-    const normalizedEmail = String(email || "").trim().toLowerCase();
+    const normalizedIdentifier = String(identifier || "").trim().toLowerCase();
 
     // 3. Verify credentials
-    const authResult = await verifyAdminCredentials(normalizedEmail, String(password || ""));
+    const authResult = await verifyAdminCredentials(normalizedIdentifier, String(body.password || ""));
     if (!authResult.success) {
       recordFailedAttempt(ip);
       return NextResponse.json(
-        { error: "Invalid administrator credentials. Please check your email and password." },
+        { error: "Invalid administrator credentials. Please check your username and password." },
         { status: 401 }
       );
     }
 
     // 4. Successful authentication - reset rate limit and issue token
     resetRateLimit(ip);
-    const token = createSessionToken(authResult.user?.email || normalizedEmail);
+    const token = createSessionToken(authResult.user?.email || normalizedIdentifier);
 
     const response = NextResponse.json(
       {

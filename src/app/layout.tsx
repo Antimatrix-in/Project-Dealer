@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     "AntiMatrix helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
   keywords: [
     "Final Year Projects",
+    "Engineering Projects",
+    "IEEE Projects 2025 2026",
     "AI Machine Learning Projects",
     "Python Projects",
     "Java Projects",

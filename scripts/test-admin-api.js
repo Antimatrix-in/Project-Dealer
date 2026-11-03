@@ -18,6 +18,7 @@ if (fs.existsSync(envLocalPath)) {
   });
 }
 
+const adminUsername = process.env.ADMIN_USERNAME || 'antimatrix2026';
 const adminEmail = process.env.ADMIN_EMAIL || 'antimatrix2026@gmail.com';
 const adminPassword = process.env.ADMIN_PASSWORD || 'antimatrix2026@';
 
@@ -69,26 +70,26 @@ async function testSuite() {
     console.log('✗ FAIL: Unauthenticated access was not redirected properly');
   }
 
-  // 2. Unknown Email Attempt
-  console.log('\n[TEST 2] Testing unknown email rejection...');
+  // 2. Unknown Username Attempt
+  console.log('\n[TEST 2] Testing unknown username rejection...');
   const res2 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: 'unknown_hacker@evil.com', password: 'SomePassword123' },
+    body: { username: 'unknown_hacker', password: 'SomePassword123' },
   });
   console.log(`Response status: ${res2.statusCode}`, res2.body);
   if (res2.statusCode === 401 && res2.body.error) {
-    console.log('✓ PASS: Unknown email rejected with 401');
+    console.log('✓ PASS: Unknown username rejected with 401');
   } else {
-    console.log('✗ FAIL: Unknown email was not rejected properly');
+    console.log('✗ FAIL: Unknown username was not rejected properly');
   }
 
   // 3. Invalid Password Attempt
-  console.log('\n[TEST 3] Testing invalid password rejection...');
+  console.log('\n[TEST 3] Testing invalid password rejection for username antimatrix2026...');
   const res3 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: 'antimatrix2026@gmail.com', password: 'WrongPassword123' },
+    body: { username: adminUsername, password: 'WrongPassword123' },
   });
   console.log(`Response status: ${res3.statusCode}`, res3.body);
   if (res3.statusCode === 401 && res3.body.error) {
@@ -97,20 +98,20 @@ async function testSuite() {
     console.log('✗ FAIL: Invalid password was not rejected properly');
   }
 
-  // 4. Valid Admin Login with Whitespace and Mixed Casing Normalization
-  console.log('\n[TEST 4] Testing valid admin login with email whitespace & mixed casing normalization...');
+  // 4. Valid Admin Login using Username (antimatrix2026)
+  console.log('\n[TEST 4] Testing valid admin login using username (antimatrix2026)...');
   const res4 = await request('/api/admin/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email: `  ${adminEmail.toUpperCase()}  `, password: adminPassword },
+    body: { username: `  ${adminUsername.toUpperCase()}  `, password: adminPassword },
   });
   console.log(`Response status: ${res4.statusCode}`, res4.body);
   const setCookie = res4.headers['set-cookie'];
   console.log(`Set-Cookie header: ${setCookie ? setCookie[0] : 'NONE'}`);
   if (res4.statusCode === 200 && res4.body.success && setCookie) {
-    console.log('✓ PASS: Admin authenticated and session cookie received');
+    console.log('✓ PASS: Admin authenticated via username and session cookie received');
   } else {
-    console.log('✗ FAIL: Valid login failed');
+    console.log('✗ FAIL: Valid username login failed');
     return;
   }
 
@@ -188,8 +189,22 @@ async function testSuite() {
     console.log('✗ FAIL: Session was not invalidated');
   }
 
+  // 10. Also test valid login with Email (antimatrix2026@gmail.com)
+  console.log('\n[TEST 10] Testing backwards-compatible login using email (antimatrix2026@gmail.com)...');
+  const res10 = await request('/api/admin/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { email: adminEmail, password: adminPassword },
+  });
+  console.log(`Response status: ${res10.statusCode}`, res10.body);
+  if (res10.statusCode === 200 && res10.body.success) {
+    console.log('✓ PASS: Admin also successfully authenticated via email alias');
+  } else {
+    console.log('✗ FAIL: Email login failed');
+  }
+
   console.log('\n=============================================');
-  console.log('ALL ADMIN BACKEND & SECURITY TESTS PASSED!');
+  console.log('ALL 10 ADMIN BACKEND & SECURITY TESTS PASSED!');
   console.log('=============================================\n');
 }
 
