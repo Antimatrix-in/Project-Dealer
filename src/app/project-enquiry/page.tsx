@@ -221,7 +221,7 @@ function ProjectEnquiryForm() {
             </div>
             
             <h1 className="text-2xl sm:text-4xl font-black text-[#202820] tracking-tight">
-              Final Year Engineering <span className="text-[#315C3D]">Project Enquiry</span>
+              Project <span className="text-[#315C3D]">Enquiry</span>
             </h1>
             
             <p className="text-xs sm:text-sm text-[#667064] leading-relaxed">
