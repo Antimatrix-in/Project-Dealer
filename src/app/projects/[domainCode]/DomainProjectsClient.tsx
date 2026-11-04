@@ -265,31 +265,41 @@ export default function DomainProjectsClient({
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <div className="flex items-center justify-center gap-2 pt-4">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 pt-4">
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#FFFFFF] text-xs font-bold text-[#202820] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#EEE9DC] transition-colors"
+                  className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#FFFFFF] text-xs font-bold text-[#202820] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#EEE9DC] transition-colors cursor-pointer"
                 >
                   Previous
                 </button>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
-                  <button
-                    key={num}
-                    onClick={() => setCurrentPage(num)}
-                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all ${
-                      currentPage === num
-                        ? "bg-[#315C3D] text-white shadow-xs"
-                        : "bg-[#FFFFFF] border border-[#DDDCCF] text-[#202820] hover:bg-[#EEE9DC]"
-                    }`}
-                  >
-                    {num}
-                  </button>
-                ))}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => {
+                  const isNear = Math.abs(num - currentPage) <= 2;
+                  const isEdge = num === 1 || num === totalPages;
+                  if (!isNear && !isEdge) {
+                    if (num === currentPage - 3 || num === currentPage + 3) {
+                      return <span key={num} className="px-1 text-xs text-[#667064]">...</span>;
+                    }
+                    return null;
+                  }
+                  return (
+                    <button
+                      key={num}
+                      onClick={() => setCurrentPage(num)}
+                      className={`w-8 h-8 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        currentPage === num
+                          ? "bg-[#315C3D] text-white shadow-xs"
+                          : "bg-[#FFFFFF] border border-[#DDDCCF] text-[#202820] hover:bg-[#EEE9DC]"
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  );
+                })}
                 <button
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#FFFFFF] text-xs font-bold text-[#202820] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#EEE9DC] transition-colors"
+                  className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#FFFFFF] text-xs font-bold text-[#202820] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#EEE9DC] transition-colors cursor-pointer"
                 >
                   Next
                 </button>

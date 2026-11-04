@@ -22,7 +22,7 @@ export async function GET(request: Request) {
   const category = searchParams.get("category") || "";
   const query = searchParams.get("q")?.toLowerCase().trim() || "";
   const page = Math.max(1, parseInt(searchParams.get("page") || "1", 10));
-  const limit = Math.max(1, parseInt(searchParams.get("limit") || "100", 10));
+  const limit = Math.max(1, parseInt(searchParams.get("limit") || "500", 10));
 
   let projects = domain ? getProjectsByDomain(domain) : getAllProjects();
 

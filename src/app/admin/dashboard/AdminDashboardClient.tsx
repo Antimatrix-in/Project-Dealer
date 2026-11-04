@@ -363,7 +363,7 @@ export default function AdminDashboardClient({
     setRefreshing(true);
     try {
       const inqPromise = fetch("/api/admin/inquiries").then((r) => r.json());
-      const projPromise = fetch("/api/projects?limit=100").then((r) => r.json());
+      const projPromise = fetch("/api/projects?limit=500").then((r) => r.json());
 
       const [inqData, projData] = await Promise.all([inqPromise, projPromise]);
 
