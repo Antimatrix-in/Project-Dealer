@@ -22,7 +22,8 @@ import {
 import {
   PROJECT_CATEGORIES,
   DROPDOWN_FEATURED_PROJECTS,
-  DOMAIN_DETAILS
+  DOMAIN_DETAILS,
+  CATEGORY_SLUG_MAP
 } from "@/data/projects";
 import { ProjectCategory } from "@/types";
 
@@ -31,16 +32,28 @@ interface ProjectsMegaMenuProps {
 }
 
 export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
-  const categoryIcons: Record<ProjectCategory, React.ReactNode> = {
-    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#315C3D]" />,
-    "Machine Learning": <Cpu className="w-4 h-4 text-[#497A52]" />,
-    "Deep Learning": <Eye className="w-4 h-4 text-[#315C3D]" />,
+  const categoryIcons: Partial<Record<ProjectCategory, React.ReactNode>> = {
     "Python Projects": <FileCode2 className="w-4 h-4 text-[#497A52]" />,
     "Java Projects": <Coffee className="w-4 h-4 text-[#315C3D]" />,
+    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#315C3D]" />,
+    "Django – Python": <Globe className="w-4 h-4 text-[#497A52]" />,
+    "Data Science – Python": <BarChart3 className="w-4 h-4 text-[#315C3D]" />,
+    "Image Processing – MATLAB": <Eye className="w-4 h-4 text-[#497A52]" />,
+    "Deep Learning": <Eye className="w-4 h-4 text-[#315C3D]" />,
+    "Artificial Intelligence": <BrainCircuit className="w-4 h-4 text-[#315C3D]" />,
+    "Web Application – PHP": <Globe className="w-4 h-4 text-[#497A52]" />,
+    "Android – Java": <Smartphone className="w-4 h-4 text-[#315C3D]" />,
+    "Big Data – Python/Java": <Cpu className="w-4 h-4 text-[#497A52]" />,
+    "Image Processing – Python": <Eye className="w-4 h-4 text-[#315C3D]" />,
+    "Cloud Computing – Python/Java": <Cloud className="w-4 h-4 text-[#497A52]" />,
+    "Data Mining – Python/Java": <BarChart3 className="w-4 h-4 text-[#315C3D]" />,
+    "Blockchain – Python/Java/DotNet": <Layers className="w-4 h-4 text-[#497A52]" />,
+    "Machine Learning – Python": <Cpu className="w-4 h-4 text-[#315C3D]" />,
+    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#315C3D]" />,
+    "Machine Learning": <Cpu className="w-4 h-4 text-[#497A52]" />,
     "Web Development": <Globe className="w-4 h-4 text-[#497A52]" />,
     "Mobile App Development": <Smartphone className="w-4 h-4 text-[#315C3D]" />,
     "Cloud Computing": <Cloud className="w-4 h-4 text-[#497A52]" />,
-    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#315C3D]" />,
     "Data Analytics": <BarChart3 className="w-4 h-4 text-[#497A52]" />,
   };
 
@@ -99,31 +112,32 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
               </div>
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#202820] font-mono">
-                  10 Project Domains
+                  16 Technical Domains
                 </h3>
                 <p className="text-[11px] text-[#667064]">
-                  Select your department or specialization
+                  Official AntiMatrix Engineering Catalog
                 </p>
               </div>
             </div>
             <span className="text-[11px] font-mono font-semibold text-[#315C3D] bg-[#DCE8D9] px-2 py-0.5 rounded-md border border-[#DDDCCF]">
-              10 Domains
+              16 Domains
             </span>
           </div>
 
-          {/* 10 Domains 2-Column Grid */}
-          <div className="grid grid-cols-2 gap-1.5">
+          {/* 16 Domains 2-Column Grid */}
+          <div className="grid grid-cols-2 gap-1.5 max-h-[380px] overflow-y-auto pr-1">
             {PROJECT_CATEGORIES.map((category) => {
               const details = DOMAIN_DETAILS[category];
+              const domainCode = CATEGORY_SLUG_MAP[category];
               return (
                 <Link
                   key={category}
-                  href={`/projects?category=${encodeURIComponent(category)}`}
+                  href={domainCode ? `/projects/${domainCode}` : `/projects`}
                   onClick={onClose}
                   className="group flex items-start gap-2.5 p-2 rounded-xl border border-transparent hover:border-[#315C3D] hover:bg-[#EEE9DC] transition-all duration-150"
                 >
                   <div className="p-2 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] text-[#315C3D] group-hover:bg-[#315C3D] group-hover:text-white transition-colors shrink-0 mt-0.5">
-                    {categoryIcons[category]}
+                    {categoryIcons[category] || <Layers className="w-4 h-4 text-[#315C3D]" />}
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between">

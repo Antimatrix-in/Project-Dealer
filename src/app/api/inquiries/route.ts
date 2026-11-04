@@ -43,9 +43,13 @@ export async function POST(request: Request) {
     const email = String(body.email || "").trim();
     const college = String(body.college || "").trim();
     const department = String(body.department || body.dept || body.degree || "").trim();
-    const projectDomain = String(body.projectDomain || body.domain || body.category || "").trim();
+    const domainName = String(body.domainName || body.projectDomain || body.domain || body.category || "").trim();
+    const projectDomain = String(body.projectDomain || body.domainName || body.domain || body.category || "").trim();
     const customDomain = String(body.customDomain || body.otherDomain || "").trim();
-    const projectTitle = String(body.projectTitle || (projectDomain ? `${projectDomain} Project Consultation` : body.requirement || "")).trim();
+    const domainCode = String(body.domainCode || "").trim().toUpperCase();
+    const projectCode = String(body.projectCode || "").trim().toUpperCase();
+    const enquiryType = (body.enquiryType || (projectCode ? "Project Specific" : "General Domain")) as "Project Specific" | "General Domain";
+    const projectTitle = String(body.projectTitle || (projectCode ? `${projectCode} Project` : projectDomain ? `${projectDomain} Project Consultation` : body.requirement || "")).trim();
     const requirement = String(body.requirement || body.message || "").trim();
     const urgency = String(body.urgency || "1-2 Weeks").trim();
     const defaultSource = (body.projectDomain || body.department || body.college) ? "Project Enquiry" : "General Website Contact";
@@ -170,6 +174,10 @@ export async function POST(request: Request) {
       degree: department,
       category: effectiveDomain,
       projectDomain: effectiveDomain,
+      domainName: domainName || effectiveDomain,
+      domainCode: domainCode || undefined,
+      projectCode: projectCode || undefined,
+      enquiryType,
       customDomain: projectDomain === "Other" ? customDomain : undefined,
       projectTitle: projectTitle || `${effectiveDomain} Project Consultation`,
       requirement,
@@ -206,6 +214,10 @@ export async function POST(request: Request) {
           id: saved.id,
           name: saved.name,
           projectDomain: saved.projectDomain,
+          domainName: saved.domainName,
+          domainCode: saved.domainCode,
+          projectCode: saved.projectCode,
+          enquiryType: saved.enquiryType,
           mobileNumber: saved.mobileNumber,
           whatsappNumber: saved.whatsappNumber,
           source: saved.source,

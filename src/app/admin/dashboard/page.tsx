@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ADMIN_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
 import { getAllInquiries } from "@/lib/inquiries";
+import { getAllDomains, getAllProjects } from "@/lib/projects";
 import AdminDashboardClient from "./AdminDashboardClient";
 
 export const dynamic = "force-dynamic";
@@ -22,11 +23,15 @@ export default async function AdminDashboardPage() {
   }
 
   const initialInquiries = await getAllInquiries();
+  const initialDomains = getAllDomains();
+  const initialProjects = getAllProjects();
 
   return (
     <AdminDashboardClient
       adminEmail={session.email}
       initialInquiries={initialInquiries}
+      initialDomains={initialDomains}
+      initialProjects={initialProjects}
     />
   );
 }

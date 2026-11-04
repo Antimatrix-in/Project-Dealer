@@ -1,204 +1,332 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import SectionHeader from "@/components/common/SectionHeader";
 import ProjectCard from "@/components/common/ProjectCard";
-import { PROJECTS_DATA, PROJECT_CATEGORIES } from "@/data/projects";
-import { Search, X, FolderOpen } from "lucide-react";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { TechnicalDomainWithCount } from "@/lib/projects";
+import { Project } from "@/types";
+import {
+  Search,
+  X,
+  FolderOpen,
+  ArrowRight,
+  Layers,
+  ChevronRight,
+  Cpu,
+  Code2,
+  Terminal,
+  ShieldAlert,
+  BrainCircuit,
+  Eye,
+  Server,
+  Smartphone,
+  Database,
+  Cloud,
+  FileCode,
+  Network,
+  Share2,
+  Activity,
+  CheckCircle2,
+  AlertCircle
+} from "lucide-react";
 import CtaBanner from "@/components/home/CtaBanner";
 
 interface ProjectsCatalogClientProps {
   initialCategory?: string;
+  domains: TechnicalDomainWithCount[];
+  allProjects: Project[];
+}
+
+// Icon helper for the 16 technical domains
+function getDomainIcon(code: string) {
+  switch (code.toUpperCase()) {
+    case "AMPY":
+      return <Terminal className="w-5 h-5 text-[#315C3D]" />;
+    case "AMJV":
+      return <Code2 className="w-5 h-5 text-[#315C3D]" />;
+    case "AMCY":
+      return <ShieldAlert className="w-5 h-5 text-[#315C3D]" />;
+    case "AMDJ":
+      return <Server className="w-5 h-5 text-[#315C3D]" />;
+    case "AMDS":
+      return <Activity className="w-5 h-5 text-[#315C3D]" />;
+    case "AMIM":
+      return <Eye className="w-5 h-5 text-[#315C3D]" />;
+    case "AMDL":
+      return <BrainCircuit className="w-5 h-5 text-[#315C3D]" />;
+    case "AMAI":
+      return <Cpu className="w-5 h-5 text-[#315C3D]" />;
+    case "AMPH":
+      return <FileCode className="w-5 h-5 text-[#315C3D]" />;
+    case "AMAD":
+      return <Smartphone className="w-5 h-5 text-[#315C3D]" />;
+    case "AMBD":
+      return <Database className="w-5 h-5 text-[#315C3D]" />;
+    case "AMIP":
+      return <Eye className="w-5 h-5 text-[#315C3D]" />;
+    case "AMCC":
+      return <Cloud className="w-5 h-5 text-[#315C3D]" />;
+    case "AMDM":
+      return <Share2 className="w-5 h-5 text-[#315C3D]" />;
+    case "AMBC":
+      return <Network className="w-5 h-5 text-[#315C3D]" />;
+    case "AMML":
+      return <BrainCircuit className="w-5 h-5 text-[#315C3D]" />;
+    default:
+      return <Layers className="w-5 h-5 text-[#315C3D]" />;
+  }
 }
 
 export default function ProjectsCatalogClient({
-  initialCategory = "All"
+  domains,
+  allProjects
 }: ProjectsCatalogClientProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-  const [selectedLevel, setSelectedLevel] = useState("All");
+  const [activeView, setActiveView] = useState<"domains" | "allProjects">("domains");
 
-  const categories = ["All", ...PROJECT_CATEGORIES];
-  const levels = ["All", "UG Final Year", "PG / M.Tech"];
-
+  // Filter projects if student types into search
   const filteredProjects = useMemo(() => {
-    return PROJECTS_DATA.filter((project) => {
-      const matchesCategory =
-        selectedCategory === "All" ||
-        project.category.toLowerCase() === selectedCategory.toLowerCase();
-
-      const matchesLevel =
-        selectedLevel === "All" || project.level.includes(selectedLevel);
-
-      const q = searchQuery.toLowerCase().trim();
-      const matchesSearch =
-        !q ||
-        project.title.toLowerCase().includes(q) ||
-        project.tagline.toLowerCase().includes(q) ||
-        project.description.toLowerCase().includes(q) ||
-        project.techStack.some((t) => t.toLowerCase().includes(q));
-
-      return matchesCategory && matchesLevel && matchesSearch;
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return allProjects;
+    return allProjects.filter((p) => {
+      const code = (p.projectCode || p.id || "").toLowerCase();
+      const domainCode = (p.domainCode || "").toLowerCase();
+      const title = (p.title || "").toLowerCase();
+      const desc = (p.description || "").toLowerCase();
+      const tech = (p.techStack || []).some((t) => t.toLowerCase().includes(q));
+      return code.includes(q) || domainCode.includes(q) || title.includes(q) || desc.includes(q) || tech;
     });
-  }, [searchQuery, selectedCategory, selectedLevel]);
-
-  const handleReset = () => {
-    setSearchQuery("");
-    setSelectedCategory("All");
-    setSelectedLevel("All");
-  };
+  }, [searchQuery, allProjects]);
 
   return (
-    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen relative">
-      {/* Background Header */}
+    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen text-[#202820]">
+      {/* Hero Header */}
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
-            badge="Verified Project Repository"
-            title="Explore Verified"
-            titleGradient="Projects Catalog"
-            subtitle="Browse verified and tested engineering projects across 10 modern domains with clean source code and complete thesis documentation."
+            badge="AntiMatrix Technical Repository"
+            title="Browse Projects by"
+            titleGradient="Technical Domain"
+            subtitle="Explore our 16 official engineering technical domains. Select a domain below to browse verified final-year projects, source code, and IEEE documentation."
           />
+
+          {/* Quick Breadcrumbs */}
+          <div className="mt-6 flex items-center justify-center gap-2 text-xs font-semibold text-[#667064]">
+            <Link href="/" className="hover:text-[#315C3D] transition-colors">Home</Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <span className="text-[#315C3D]">16 Technical Domains</span>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Search Bar & Filters Control Center */}
-        <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-xs mb-8 space-y-5">
-          {/* Main Search Input */}
-          <div className="relative">
-            <Search className="w-5 h-5 text-[#667064] absolute left-4 top-1/2 -translate-y-1/2" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        {/* Search & Navigation Bar */}
+        <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+          {/* Search by project code or title */}
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search by project title, keyword, or technology (e.g. PyTorch, YOLO, Spring Boot, Flutter, Kubernetes)..."
+              placeholder="Search across all projects by project code (e.g. AMPY001) or title..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-colors"
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (e.target.value.trim().length > 0) {
+                  setActiveView("allProjects");
+                }
+              }}
+              className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D]"
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery("")}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#667064] hover:text-[#315C3D] cursor-pointer"
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveView("domains");
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#667064] hover:text-[#202820]"
+                title="Clear Search"
               >
                 <X className="w-4 h-4" />
               </button>
             )}
           </div>
 
-          {/* Category Filter Pills (10 Categories) */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs text-[#202820] font-bold uppercase tracking-wider font-mono">
-              <span>Domain Filter (10 Categories):</span>
-              <span className="text-[#315C3D]">
-                {filteredProjects.length} Projects Available
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                    selectedCategory === cat
-                      ? "bg-[#315C3D] text-white font-bold shadow-xs border border-[#315C3D]"
-                      : "bg-[#F5F1E7] text-[#667064] hover:bg-[#EEE9DC] hover:text-[#202820] border border-[#DDDCCF]"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Level & Reset Bar */}
-          <div className="pt-2 border-t border-[#DDDCCF] flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2">
-              <span className="text-[#667064] font-medium">Project Level:</span>
-              {levels.map((lvl) => (
-                <button
-                  key={lvl}
-                  onClick={() => setSelectedLevel(lvl)}
-                  className={`px-2.5 py-1 rounded-lg transition-colors cursor-pointer ${
-                    selectedLevel === lvl
-                      ? "bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] font-bold"
-                      : "bg-[#FFFFFF] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
-                  }`}
-                >
-                  {lvl}
-                </button>
-              ))}
-            </div>
-
-            {(searchQuery || selectedCategory !== "All" || selectedLevel !== "All") && (
-              <button
-                onClick={handleReset}
-                className="text-[#315C3D] hover:text-[#497A52] font-bold flex items-center gap-1 cursor-pointer"
-              >
-                <X className="w-3.5 h-3.5" />
-                Reset All Filters
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Results Counter and Custom Project Request Callout */}
-        <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm">
-          <p className="text-[#667064]">
-            Showing <strong className="text-[#202820]">{filteredProjects.length}</strong> verified projects
-          </p>
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-[#667064]">Have a custom topic or university guide requirement?</span>
+          {/* View Toggles */}
+          <div className="flex items-center gap-2">
             <button
-              onClick={() => openConsultationModal()}
-              className="text-[#315C3D] hover:text-[#497A52] font-bold cursor-pointer underline"
+              onClick={() => setActiveView("domains")}
+              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeView === "domains" && !searchQuery
+                  ? "bg-[#315C3D] text-white shadow-xs"
+                  : "bg-[#F5F1E7] text-[#202820] hover:bg-[#EEE9DC] border border-[#DDDCCF]"
+              }`}
             >
-              Request Custom Project &rarr;
+              <Layers className="w-4 h-4" />
+              <span>16 Technical Domains</span>
+            </button>
+            <button
+              onClick={() => setActiveView("allProjects")}
+              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                activeView === "allProjects" || searchQuery
+                  ? "bg-[#315C3D] text-white shadow-xs"
+                  : "bg-[#F5F1E7] text-[#202820] hover:bg-[#EEE9DC] border border-[#DDDCCF]"
+              }`}
+            >
+              <FolderOpen className="w-4 h-4" />
+              <span>All Projects ({allProjects.length})</span>
             </button>
           </div>
         </div>
 
-        {/* Projects Grid */}
-        {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] space-y-4 shadow-xs">
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#DCE8D9] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
-              <FolderOpen className="w-8 h-8" />
+        {/* SCREEN 1: TECHNICAL DOMAIN SELECTION (16 Domains Grid) */}
+        {activeView === "domains" && !searchQuery && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-[#DDDCCF] pb-4">
+              <div>
+                <h2 className="text-xl font-black text-[#202820]">
+                  Official Technical Domains
+                </h2>
+                <p className="text-xs text-[#667064] mt-0.5">
+                  Select any domain card to view curated IEEE projects and technical implementation details.
+                </p>
+              </div>
+              <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
+                16 Verified Domains
+              </span>
             </div>
-            <h3 className="text-xl font-bold text-[#202820]">No projects found for this query</h3>
-            <p className="text-sm text-[#667064] max-w-md mx-auto">
-              We frequently develop customized projects on request. Share your problem statement or guide&apos;s remarks with our mentors!
-            </p>
-            <div className="pt-2 flex justify-center gap-3">
-              <button
-                onClick={handleReset}
-                className="px-4 py-2 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] text-xs font-semibold border border-[#DDDCCF] cursor-pointer"
-              >
-                Clear Search
-              </button>
-              <button
-                onClick={() =>
-                  openConsultationModal({
-                    projectTitle: searchQuery || "Custom Idea",
-                  })
-                }
-                className="px-5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs cursor-pointer border border-[#315C3D]"
-              >
-                Inquire for Custom Topic
-              </button>
+
+            {/* 16 Domains 4-Column Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {domains.map((domain) => {
+                const hasProjects = domain.projectCount > 0;
+                return (
+                  <div
+                    key={domain.code}
+                    className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D]/40 hover:shadow-md transition-all flex flex-col justify-between space-y-5 group"
+                  >
+                    {/* Top Badges */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="p-2.5 rounded-2xl bg-[#F5F1E7] border border-[#DDDCCF] group-hover:bg-[#DCE8D9] group-hover:border-[#315C3D]/30 transition-colors">
+                          {getDomainIcon(domain.code)}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#F5F1E7] text-[#667064] border border-[#DDDCCF]">
+                            #{domain.sno}
+                          </span>
+                          <span className="text-xs font-mono font-black px-2.5 py-0.5 rounded-md bg-[#DCE8D9] text-[#315C3D] border border-[#315C3D]/30">
+                            {domain.code}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Domain Name */}
+                      <div>
+                        <h3 className="text-base font-bold text-[#202820] group-hover:text-[#315C3D] transition-colors">
+                          {domain.name}
+                        </h3>
+                        <p className="text-xs text-[#667064] mt-1 line-clamp-2 leading-relaxed">
+                          {domain.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Project Count & Action Button */}
+                    <div className="pt-4 border-t border-[#DDDCCF] space-y-3">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-[#667064] font-medium">Available Projects:</span>
+                        {hasProjects ? (
+                          <span className="font-bold text-[#315C3D] font-mono">
+                            {domain.projectCount} {domain.projectCount === 1 ? "Project" : "Projects"}
+                          </span>
+                        ) : (
+                          <span className="font-bold text-[#667064] font-mono">
+                            0 Projects
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Empty state notice for 0 projects */}
+                      {!hasProjects && (
+                        <p className="text-[11px] italic text-[#667064] bg-[#F5F1E7] p-2 rounded-xl border border-[#DDDCCF] text-center">
+                          Projects for this domain will be available soon.
+                        </p>
+                      )}
+
+                      {/* View Projects Button */}
+                      <Link
+                        href={`/projects/${domain.code}`}
+                        className={`w-full py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${
+                          hasProjects
+                            ? "bg-[#315C3D] hover:bg-[#254930] text-white shadow-xs group-hover:translate-y-[-1px]"
+                            : "bg-[#EEE9DC] hover:bg-[#DDDCCF] text-[#202820]"
+                        }`}
+                      >
+                        <span>View Projects</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
 
-        {/* Contact Section: Need Help With Your Project? */}
-        <div className="pt-16">
-          <CtaBanner />
-        </div>
+        {/* SEARCH / ALL PROJECTS VIEW */}
+        {(activeView === "allProjects" || searchQuery) && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-[#DDDCCF] pb-4">
+              <div>
+                <h2 className="text-xl font-black text-[#202820]">
+                  {searchQuery ? `Search Results for "${searchQuery}"` : "All Verified Projects"}
+                </h2>
+                <p className="text-xs text-[#667064] mt-0.5">
+                  Showing {filteredProjects.length} projects across our technical repository.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveView("domains");
+                }}
+                className="text-xs font-bold text-[#315C3D] hover:underline"
+              >
+                ← Back to 16 Domains
+              </button>
+            </div>
+
+            {filteredProjects.length === 0 ? (
+              <div className="p-12 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] text-center space-y-3">
+                <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
+                <h3 className="text-base font-bold text-[#202820]">No projects found</h3>
+                <p className="text-xs text-[#667064] max-w-md mx-auto">
+                  We could not find any projects matching &quot;{searchQuery}&quot;. Please try another search term or browse by domain.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setActiveView("domains");
+                  }}
+                  className="px-5 py-2.5 rounded-xl bg-[#315C3D] text-white text-xs font-bold mt-2 inline-block"
+                >
+                  View 16 Technical Domains
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div className="mt-20">
+        <CtaBanner />
       </div>
     </div>
   );

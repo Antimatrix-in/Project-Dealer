@@ -1,29 +1,48 @@
 import { Project, ProjectCategory } from "@/types";
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = [
-  "AI & Data Science",
-  "Machine Learning",
-  "Deep Learning",
   "Python Projects",
   "Java Projects",
-  "Web Development",
-  "Mobile App Development",
-  "Cloud Computing",
   "Cyber Security",
-  "Data Analytics"
+  "Django – Python",
+  "Data Science – Python",
+  "Image Processing – MATLAB",
+  "Deep Learning",
+  "Artificial Intelligence",
+  "Web Application – PHP",
+  "Android – Java",
+  "Big Data – Python/Java",
+  "Image Processing – Python",
+  "Cloud Computing – Python/Java",
+  "Data Mining – Python/Java",
+  "Blockchain – Python/Java/DotNet",
+  "Machine Learning – Python"
 ];
 
-export const CATEGORY_SLUG_MAP: Record<ProjectCategory, string> = {
-  "AI & Data Science": "ai-data-science",
-  "Machine Learning": "machine-learning",
-  "Deep Learning": "deep-learning",
-  "Python Projects": "python-projects",
-  "Java Projects": "java-projects",
-  "Web Development": "web-development",
-  "Mobile App Development": "mobile-app-development",
-  "Cloud Computing": "cloud-computing",
-  "Cyber Security": "cyber-security",
-  "Data Analytics": "data-analytics"
+export const CATEGORY_SLUG_MAP: Record<string, string> = {
+  "Python Projects": "AMPY",
+  "Java Projects": "AMJV",
+  "Cyber Security": "AMCY",
+  "Django – Python": "AMDJ",
+  "Data Science – Python": "AMDS",
+  "Image Processing – MATLAB": "AMIM",
+  "Deep Learning": "AMDL",
+  "Artificial Intelligence": "AMAI",
+  "Web Application – PHP": "AMPH",
+  "Android – Java": "AMAD",
+  "Big Data – Python/Java": "AMBD",
+  "Image Processing – Python": "AMIP",
+  "Cloud Computing – Python/Java": "AMCC",
+  "Data Mining – Python/Java": "AMDM",
+  "Blockchain – Python/Java/DotNet": "AMBC",
+  "Machine Learning – Python": "AMML",
+  // Legacy aliases
+  "AI & Data Science": "AMAI",
+  "Machine Learning": "AMML",
+  "Web Development": "AMDJ",
+  "Mobile App Development": "AMAD",
+  "Cloud Computing": "AMCC",
+  "Data Analytics": "AMDS"
 };
 
 export const PROJECTS_DATA: Project[] = [
@@ -957,19 +976,7 @@ export const DROPDOWN_FEATURED_PROJECTS: DropdownFeaturedProject[] = [
   }
 ];
 
-export const DOMAIN_DETAILS: Record<ProjectCategory, { shortDesc: string; tag: string }> = {
-  "AI & Data Science": {
-    shortDesc: "Transformers, GenAI & NLP Pipelines",
-    tag: "PyTorch • NLP"
-  },
-  "Machine Learning": {
-    shortDesc: "Graph Networks, Fraud & Anomaly Detection",
-    tag: "GNN • XGBoost"
-  },
-  "Deep Learning": {
-    shortDesc: "Computer Vision, YOLO & CNN Models",
-    tag: "Vision • YOLO"
-  },
+export const DOMAIN_DETAILS: Record<string, { shortDesc: string; tag: string }> = {
   "Python Projects": {
     shortDesc: "OpenCV, MediaPipe & Edge IoT Systems",
     tag: "OpenCV • MediaPipe"
@@ -977,6 +984,71 @@ export const DOMAIN_DETAILS: Record<ProjectCategory, { shortDesc: string; tag: s
   "Java Projects": {
     shortDesc: "Enterprise Spring Boot & Microservices",
     tag: "Spring • Security"
+  },
+  "Cyber Security": {
+    shortDesc: "Zero-Day Ransomware & Network IDS",
+    tag: "IDS • Forensics"
+  },
+  "Django – Python": {
+    shortDesc: "Full-Stack Django, Channels & WebSockets",
+    tag: "Django • Channels"
+  },
+  "Data Science – Python": {
+    shortDesc: "Predictive Intelligence & Healthcare AI",
+    tag: "Pandas • LightGBM"
+  },
+  "Image Processing – MATLAB": {
+    shortDesc: "Wavelets, Biomedical Segmentation & Filter Grids",
+    tag: "MATLAB • Wavelets"
+  },
+  "Deep Learning": {
+    shortDesc: "Computer Vision, YOLO & CNN Models",
+    tag: "Vision • YOLO"
+  },
+  "Artificial Intelligence": {
+    shortDesc: "Vision Transformers, RAG & LLM Agents",
+    tag: "ViT • BioBERT"
+  },
+  "Web Application – PHP": {
+    shortDesc: "LAMP Architecture, Stripe & Portal Engine",
+    tag: "PHP 8 • MySQL"
+  },
+  "Android – Java": {
+    shortDesc: "Native Android, BLE Mesh & Offline SOS",
+    tag: "Android • BLE"
+  },
+  "Big Data – Python/Java": {
+    shortDesc: "Apache Spark, Hadoop & Streaming Data",
+    tag: "Spark • Hadoop"
+  },
+  "Image Processing – Python": {
+    shortDesc: "OpenCV, Scikit-Image & Defect Detection",
+    tag: "OpenCV • SciPy"
+  },
+  "Cloud Computing – Python/Java": {
+    shortDesc: "Kubernetes, Docker & Serverless Autoscaling",
+    tag: "K8s • Serverless"
+  },
+  "Data Mining – Python/Java": {
+    shortDesc: "Association Rules, Clustering & Apriori",
+    tag: "Clustering • Mining"
+  },
+  "Blockchain – Python/Java/DotNet": {
+    shortDesc: "Distributed Consensus, Merkle Trees & Audits",
+    tag: "Smart Contract • Ledger"
+  },
+  "Machine Learning – Python": {
+    shortDesc: "Graph Networks, Fraud & Anomaly Detection",
+    tag: "GNN • XGBoost"
+  },
+  // Legacy aliases
+  "AI & Data Science": {
+    shortDesc: "Transformers, GenAI & NLP Pipelines",
+    tag: "PyTorch • NLP"
+  },
+  "Machine Learning": {
+    shortDesc: "Graph Networks, Fraud & Anomaly Detection",
+    tag: "GNN • XGBoost"
   },
   "Web Development": {
     shortDesc: "Modern Next.js, React & Full-Stack Apps",
@@ -990,13 +1062,9 @@ export const DOMAIN_DETAILS: Record<ProjectCategory, { shortDesc: string; tag: s
     shortDesc: "Kubernetes, Docker & Serverless Scaling",
     tag: "K8s • Serverless"
   },
-  "Cyber Security": {
-    shortDesc: "Zero-Day Ransomware & Network IDS",
-    tag: "IDS • Forensics"
-  },
   "Data Analytics": {
     shortDesc: "Predictive Dashboards & Cohort Intelligence",
     tag: "Pandas • LightGBM"
-  },
+  }
 };
 

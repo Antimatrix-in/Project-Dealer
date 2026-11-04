@@ -44,7 +44,11 @@ export interface ConsultationRequest {
   category?: string;
   projectDomain?: string;
   customDomain?: string;
+  domainName?: string;
+  domainCode?: string;
+  projectCode?: string;
   projectTitle?: string;
+  enquiryType?: "Project Specific" | "General Domain";
   requirement?: string;
   urgency?: string;
   message?: string;
@@ -272,6 +276,10 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
     category: projectDomain,
     projectDomain,
     customDomain: inquiryData.customDomain || "",
+    domainName: inquiryData.domainName || projectDomain,
+    domainCode: inquiryData.domainCode || "",
+    projectCode: inquiryData.projectCode || "",
+    enquiryType: inquiryData.enquiryType || (inquiryData.projectCode ? "Project Specific" : "General Domain"),
     projectTitle: inquiryData.projectTitle || (projectDomain ? `${projectDomain} Project Consultation` : "Custom Project"),
     requirement: inquiryData.requirement || inquiryData.message || "",
     urgency: inquiryData.urgency || "1-2 Weeks",
