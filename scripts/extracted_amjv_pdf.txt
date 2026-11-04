@@ -1,0 +1,53 @@
+
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+JAVA PROJECT CATALOGUE
+19 Project Titles
+DOMAIN CODE  AMJV
+PROJECT CODES  AMJV001 – AMJV019
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMJV
+Page 2
+Java Projects
+PROJECT CODE
+PROJECT TITLE
+AMJV001
+Attribute-Based Storage Supporting Secure Deduplication Of Encrypted Data In Cloud
+AMJV002
+Identity-Based Remote Data Integrity Checking With Perfect Data Privacy Preserving For Cloud Storage
+AMJV003
+Reversible Data Hiding In Encrypted Images Using Interpolation-Based Distributed Space Reservation
+AMJV004
+A Framework For Detection And Prevention Of Novel Keylogger Spyware Attack
+AMJV005
+A Secure And Dynamic Multi-Keyword Ranked Search Scheme Over Encrypted Cloud Data
+AMJV006
+Fine-Grained Two-Factor Access Control For Web-Based Cloud Computing Services
+AMJV007
+A Decrypteable Attribute Based Keyword Search Schema On E-Health Cloud In Intener Of Things
+AMJV008
+Enabling Efficient User Revocation in Identity-based Cloud Storage Auditing for Shared Big Data
+AMJV009
+TKSE: Trustworthy Keyword Search Over Encrypted Data With Two-Side Verifiability via Blockchain
+AMJV010
+A framework based on RSA and AES encryption algorithms for cloud computing services
+AMJV011
+Secured document management through a third party auditor scheme in Cloud Computing
+AMJV012
+A prediction based energy conserving resources allocation scheme for cloud computing
+AMJV013
+Analysis of Cloud Computing Performance, Scalability, Availability, & Security
+AMJV014
+Cloud Computing: A Risk Assessment Model
+AMJV015
+Industry Cloud – Effective Adoption of Cloud Computing for Industry Solutions
+AMJV016
+A Survey of Mobile Cloud Computing Application Models
+AMJV017
+New simulation toolkit for comparison of scheduling algorithm on cloud computing
+AMJV018
+Mobile Cloud Computing Architecture, Application Model, and Challenging Issues
+AMJV019
+A Dynamic Secure Group Sharing Framework in Public Cloud Computin

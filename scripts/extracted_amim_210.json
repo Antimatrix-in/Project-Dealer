@@ -1,0 +1,842 @@
+[
+  {
+    "code": "AMIM001",
+    "title": "A CNN-Model to Classify Low-Grade and High-Grade Glioma From MRI Images"
+  },
+  {
+    "code": "AMIM002",
+    "title": "A CNN-OSELM Multi-Layer Fusion Network With Attention Mechanism for Fish Disease Recognition in Aquaculture"
+  },
+  {
+    "code": "AMIM003",
+    "title": "A Comprehensive Joint Learning System to Detect Skin Cancer"
+  },
+  {
+    "code": "AMIM004",
+    "title": "A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images"
+  },
+  {
+    "code": "AMIM005",
+    "title": "A Nested Attention Guided UNet Architecture for White Matter Hyperintensity Segmentation"
+  },
+  {
+    "code": "AMIM006",
+    "title": "A Review on Alzheimers Disease Through Analysis of MRI Images Using Deep Learning Techniques"
+  },
+  {
+    "code": "AMIM007",
+    "title": "A Systematic Literature Review on Plant Disease Detection Motivations Classification Techniques Datasets Challenges and Future Trends"
+  },
+  {
+    "code": "AMIM008",
+    "title": "A Systematic Review on Federated Learning in Medical Image Analysis"
+  },
+  {
+    "code": "AMIM009",
+    "title": "A Transfer Learning Approach to Breast Cancer Classification in a Federated Learning Framework"
+  },
+  {
+    "code": "AMIM010",
+    "title": "A VAN-Based Multi-Scale Cross-Attention Mechanism for Skin Lesion Segmentation Network"
+  },
+  {
+    "code": "AMIM011",
+    "title": "Abnormality Detection in Chest X-Ray via Residual-Saliency From Normal Generation"
+  },
+  {
+    "code": "AMIM012",
+    "title": "AMSeg A Novel Adversarial Architecture Based Multi-Scale Fusion Framework for Thyroid Nodule Segmentation"
+  },
+  {
+    "code": "AMIM013",
+    "title": "An Automated Chest X-Ray Image Analysis for Covid-19 and Pneumonia Diagnosis using Deep Ensemble Strategy"
+  },
+  {
+    "code": "AMIM014",
+    "title": "An Efficient Transfer and Ensemble Learning Based Computer Aided Breast Abnormality Diagnosis System"
+  },
+  {
+    "code": "AMIM015",
+    "title": "An End-to-End Deep Learning Framework for Real-Time Denoising of Heart Sounds for Cardiac Disease Detection in Unseen Noise"
+  },
+  {
+    "code": "AMIM016",
+    "title": "An Improved Densenet Deep Neural Network Model for Tuberculosis Detection Using Chest X-Ray Images"
+  },
+  {
+    "code": "AMIM017",
+    "title": "Application of X-Ray Imaging and Convolutional Neural Networks in the Prediction of Tomato Seed Viability"
+  },
+  {
+    "code": "AMIM018",
+    "title": "Automated Segmentation of Brain Tumor MRI Images Using Deep Learning"
+  },
+  {
+    "code": "AMIM019",
+    "title": "Automatic Liver Cancer Detection Using Deep Convolution Neural Network"
+  },
+  {
+    "code": "AMIM020",
+    "title": "Biomedical Image Analysis for Colon and Lung Cancer Detection Using Tuna Swarm Algorithm With Deep Learning Model"
+  },
+  {
+    "code": "AMIM021",
+    "title": "BI-RADS-NET-V2 A Composite Multi-Task Neural Network for ComputerAided Diagnosis of Breast Cancer in Ultrasound Images With Semantic and Quantitative Explanations"
+  },
+  {
+    "code": "AMIM022",
+    "title": "Bit-Plane and Correlation Spatial Attention Modules for Plant Disease Classification"
+  },
+  {
+    "code": "AMIM023",
+    "title": "Classification of Liver Fibrosis From Heterogeneous Ultrasound Image"
+  },
+  {
+    "code": "AMIM024",
+    "title": "DeepSkin A Deep Learning Approach for Skin Cancer Classification"
+  },
+  {
+    "code": "AMIM025",
+    "title": "EfficientNetB3-Adaptive Augmented Deep Learning AADL for Multi-Class Plant Disease Classification"
+  },
+  {
+    "code": "AMIM026",
+    "title": "EMED-UNet An Efficient Multi-Encoder-Decoder Based UNet for Medical Image Segmentation"
+  },
+  {
+    "code": "AMIM027",
+    "title": "Exudate Regeneration for Automated Exudate Detection in Retinal Fundus Images"
+  },
+  {
+    "code": "AMIM028",
+    "title": "FieldPlant A Dataset of Field Plant Images for Plant Disease Detection and Classification With Deep Learning"
+  },
+  {
+    "code": "AMIM029",
+    "title": "GARL-Net Graph Based Adaptive Regularized Learning Deep Network for Breast Cancer Classification"
+  },
+  {
+    "code": "AMIM030",
+    "title": "Internet of Things and Deep Learning Enabled Diabetic Retinopathy Diagnosis Using Retinal Fundus Images"
+  },
+  {
+    "code": "AMIM031",
+    "title": "Loop Residual Attention Network for Automatic Segmentation of COVID19 Chest X-Ray Images"
+  },
+  {
+    "code": "AMIM032",
+    "title": "Low-Light Image Enhancement Using a Simple Network Structure"
+  },
+  {
+    "code": "AMIM033",
+    "title": "MACGAN An All-in-One Image Restoration Under Adverse Conditions Using Multidomain Attention-Based Conditional GAN"
+  },
+  {
+    "code": "AMIM034",
+    "title": "Material Compound-Property Retrieval Using Electron Microscope Images for Rubber Material Development"
+  },
+  {
+    "code": "AMIM035",
+    "title": "MGFuse An Infrared and Visible Image Fusion Algorithm Based on Multiscale Decomposition Optimization and Gradient-Weighted Local Energy"
+  },
+  {
+    "code": "AMIM036",
+    "title": "MLFAN Multilevel Feature Attention Network With Texture Prior for Image Denoising"
+  },
+  {
+    "code": "AMIM037",
+    "title": "Modeling of Reptile Search Algorithm With Deep Learning Approach for Copy Move Image Forgery Detection"
+  },
+  {
+    "code": "AMIM038",
+    "title": "Monocular Depth Estimation of Old Photos via Collaboration of Monocular and Stereo Networks"
+  },
+  {
+    "code": "AMIM039",
+    "title": "Multi-Exposure Fusion With Guidance Information Night Color Image Enhancement for Roadside Units"
+  },
+  {
+    "code": "AMIM040",
+    "title": "Multi-FusNet of Cross Channel Network for Image Super-Resolution"
+  },
+  {
+    "code": "AMIM041",
+    "title": "Multiple Training Stage Image Enhancement Enrolled With CCRGAN Pseudo Templates for Large Area Dry Fingerprint Recognition"
+  },
+  {
+    "code": "AMIM042",
+    "title": "Piecewise Weighted Smoothing Regularization in Tight Framelet Domain for Hyperspectral Image Restoration"
+  },
+  {
+    "code": "AMIM043",
+    "title": "Pixel Difference Unmixing Feature Networks for Edge Detection"
+  },
+  {
+    "code": "AMIM044",
+    "title": "Protecting the Distribution of Color Images via Inverse Colorization Visible-Imperceptible Watermarking and Reversible Data Hiding"
+  },
+  {
+    "code": "AMIM045",
+    "title": "Protein Subcellular Localization Prediction by Concatenation of Convolutional Blocks for Deep Features Extraction From Microscopic Images"
+  },
+  {
+    "code": "AMIM046",
+    "title": "Pyramidal Feature Adjustment Networks for High Dynamic Range Imaging of Dynamic Scenes"
+  },
+  {
+    "code": "AMIM047",
+    "title": "SENext Squeeze-and-ExcitationNext for Single Image Super-Resolution"
+  },
+  {
+    "code": "AMIM048",
+    "title": "TnTViT-G Transformer in Transformer Network for Guidance Super Resolution"
+  },
+  {
+    "code": "AMIM049",
+    "title": "Underwater Image Enhancement Based on Adaptive Color Correction and Improved Retinex Algorithm"
+  },
+  {
+    "code": "AMIM050",
+    "title": "Water Classification Using Convolutional Neural Network"
+  },
+  {
+    "code": "AMIM051",
+    "title": "Digital Image Sharing by Diverse Image Media"
+  },
+  {
+    "code": "AMIM052",
+    "title": "A Compressive Sensing based Secure Watermark Detection and Privacy Preserving Storage Framework"
+  },
+  {
+    "code": "AMIM053",
+    "title": "A Novel Data Embedding Method Using Adaptive Pixel Pair Matching"
+  },
+  {
+    "code": "AMIM054",
+    "title": "A Probabilistic Model of Visual Cryptography Scheme With Dynamic Group"
+  },
+  {
+    "code": "AMIM055",
+    "title": "A Secret-Sharing-Based Method for Authentication of Grayscale Document Images via the Use of the PNG Image With a Data Repair Capability"
+  },
+  {
+    "code": "AMIM056",
+    "title": "Robust Watermarking of Compressed and Encrypted JPEG 2000 images"
+  },
+  {
+    "code": "AMIM057",
+    "title": "Two-Level QR Code for Private Message Sharing and Document Authentication"
+  },
+  {
+    "code": "AMIM058",
+    "title": "Securing Digital Data using 256-bit Multimodal Biometrics based Cryptographic Key"
+  },
+  {
+    "code": "AMIM059",
+    "title": "Low Distortion Transform for Reversible Watermarking"
+  },
+  {
+    "code": "AMIM060",
+    "title": "A Novel (K,N) Secret Sharing Scheme from Quadratic Residues for Grayscale Images"
+  },
+  {
+    "code": "AMIM061",
+    "title": "A New Secure Image Transmission Technique via secret fragment visible mosaic images"
+  },
+  {
+    "code": "AMIM062",
+    "title": "Designing an Efficient Image Encryption – Then- Compression System"
+  },
+  {
+    "code": "AMIM063",
+    "title": "A Novel Approach Towards Dynamic And Scalable Video Communication Using OFDMA and C-OFDMA Schemes over Wireless 4G Networks"
+  },
+  {
+    "code": "AMIM064",
+    "title": "Automatic Detection of 3D Quality Defects in Stereoscopic Videos Using Binocular Disparity"
+  },
+  {
+    "code": "AMIM065",
+    "title": "Salient object detection with spatiotemporal background priors for video"
+  },
+  {
+    "code": "AMIM066",
+    "title": "Patch-Based Video Denoising With Optical Flow Estimation"
+  },
+  {
+    "code": "AMIM067",
+    "title": "Blind Super Resolution of Real-Life Video Sequences"
+  },
+  {
+    "code": "AMIM068",
+    "title": "Holoentropy measures for image stitching of scenes acquired under CAMERA unknown or arbitrary positions"
+  },
+  {
+    "code": "AMIM069",
+    "title": "An Accurate Multi-Row Panorama Generation Using Multi-Point Joint Stitching"
+  },
+  {
+    "code": "AMIM070",
+    "title": "Fast Image Dehazing Method Based on Linear Transformation"
+  },
+  {
+    "code": "AMIM071",
+    "title": "A Hierarchical Approach for Rain or Snow Removing in A Single Color Image"
+  },
+  {
+    "code": "AMIM072",
+    "title": "Contrast Enhancement Based on Intrinsic Image Decomposition"
+  },
+  {
+    "code": "AMIM073",
+    "title": "Cartoon and Texture Decomposition based Color Transfer for Fabric Images"
+  },
+  {
+    "code": "AMIM074",
+    "title": "Words Matter: Scene Text for Image Classification and Retrieval"
+  },
+  {
+    "code": "AMIM075",
+    "title": "WLS filter based cartoon and texture decomposition for color transfer in fabric images"
+  },
+  {
+    "code": "AMIM076",
+    "title": "Characterness An Indicator of Text in the Wild"
+  },
+  {
+    "code": "AMIM077",
+    "title": "Interactive Image Segmentation Using Adaptive Constraint Propagation"
+  },
+  {
+    "code": "AMIM078",
+    "title": "FRESH—FRI-Based SingleImage Super-Resolution Algorithm"
+  },
+  {
+    "code": "AMIM079",
+    "title": "Blind Quality Assessment of Tone-Mapped Images Via Analysis of Information, Naturalness, and Structure"
+  },
+  {
+    "code": "AMIM080",
+    "title": "Contrast Enhancement by Nonlinear Diffusion Filtering"
+  },
+  {
+    "code": "AMIM081",
+    "title": "One-Class WriterIndependent Offline Signature Verification Using Feature Dissimilarity Thresholding"
+  },
+  {
+    "code": "AMIM082",
+    "title": "Sensor Pattern Noise Estimation Based on Improved Locally Adaptive DCT Filtering and Weighted Averaging for Source Camera Identification and Verification"
+  },
+  {
+    "code": "AMIM083",
+    "title": "A Mixed GenerativeDiscriminative Based Hashing Method"
+  },
+  {
+    "code": "AMIM084",
+    "title": "A Feature-Enriched Completely Blind Image Quality Evaluator"
+  },
+  {
+    "code": "AMIM085",
+    "title": "A Probabilistic Approach for Color Correction in Image Mosaicking Applications"
+  },
+  {
+    "code": "AMIM086",
+    "title": "Image Denoising by Exploring External and Internal Correlations"
+  },
+  {
+    "code": "AMIM087",
+    "title": "Image Super-Resolution Based on StructureModulated Sparse Representation"
+  },
+  {
+    "code": "AMIM088",
+    "title": "Multifocus Image Fusion Based on NSCT and Focused Area Detection"
+  },
+  {
+    "code": "AMIM089",
+    "title": "Variable-Length Signature for Near-Duplicate Image Matching"
+  },
+  {
+    "code": "AMIM090",
+    "title": "Single Image Superresolution Based on Gradient Profile Sharpness"
+  },
+  {
+    "code": "AMIM091",
+    "title": "Hyperspectral Image Classification Through Bilayer Graph Based Learning"
+  },
+  {
+    "code": "AMIM092",
+    "title": "Images as Occlusions of Textures A Framework for segmentation"
+  },
+  {
+    "code": "AMIM093",
+    "title": "Phase-Based Binarization of Ancient Document Images: Model and Applications"
+  },
+  {
+    "code": "AMIM094",
+    "title": "Progressive Image Denoising Through Hybrid Graph Laplacian Regularization : A Unified Framework"
+  },
+  {
+    "code": "AMIM095",
+    "title": "Context-Dependent Logo Matching and Recognition"
+  },
+  {
+    "code": "AMIM096",
+    "title": "Scene Text Detection via Connected Component Clustering and Nontext Filtering"
+  },
+  {
+    "code": "AMIM097",
+    "title": "Brain Tumor Detection and Classification Using Artificial Intelligence"
+  },
+  {
+    "code": "AMIM098",
+    "title": "Classification of Potholes using Convolutional Neural Network Model"
+  },
+  {
+    "code": "AMIM099",
+    "title": "Deep Learning Based Parkinson''s Disease Progression Analysis Using DaTscan Images"
+  },
+  {
+    "code": "AMIM100",
+    "title": "Artificial Intelligence based Facial Emotions Analysis for Depression Detection"
+  },
+  {
+    "code": "AMIM101",
+    "title": "Grading Of Diabetic Retinopathy Using Deep Learning"
+  },
+  {
+    "code": "AMIM102",
+    "title": "Identification of Plant Disease from Leaf Images Based on Convolutional Neural Network"
+  },
+  {
+    "code": "AMIM103",
+    "title": "Knee Osteoarthritis Detection and Classification Using X-Rays"
+  },
+  {
+    "code": "AMIM104",
+    "title": "Weeds and Crop Image Classification using Deep Learning Technique"
+  },
+  {
+    "code": "AMIM105",
+    "title": "URL Based Phishing Website Detection using Machine Learning Models"
+  },
+  {
+    "code": "AMIM106",
+    "title": "AI-based Gender Identification using Facial Features"
+  },
+  {
+    "code": "AMIM107",
+    "title": "Skin Disease Classification using Deep Learning"
+  },
+  {
+    "code": "AMIM108",
+    "title": "Driver Drowsiness Detection System Using Image Processing"
+  },
+  {
+    "code": "AMIM109",
+    "title": "Classification of Leukemia White Blood Cell Cancer using Image Processing and Machine Learning"
+  },
+  {
+    "code": "AMIM110",
+    "title": "Age Prediction through Facial Images using Deep Learning"
+  },
+  {
+    "code": "AMIM111",
+    "title": "Brain Stroke Classification Through Image Processing and SVM"
+  },
+  {
+    "code": "AMIM112",
+    "title": "Video-Based Driver Drowsiness Detection System"
+  },
+  {
+    "code": "AMIM113",
+    "title": "Enhanced Fog Detection and Visibility Measurement in Adverse Weather Conditions"
+  },
+  {
+    "code": "AMIM114",
+    "title": "Flower Species Detection using Machine Learning Technique"
+  },
+  {
+    "code": "AMIM115",
+    "title": "Face Recognition and Expression Detection for the Visually Impaired"
+  },
+  {
+    "code": "AMIM116",
+    "title": "Night Time Vehicle Detection Using Image Processing and Linear SVM"
+  },
+  {
+    "code": "AMIM117",
+    "title": "Human Action Recognition using Image Processing and Nearest Mean Classifier"
+  },
+  {
+    "code": "AMIM118",
+    "title": "Traffic Light Controller System and Road Congestion Detection based on Counting of Vehicles"
+  },
+  {
+    "code": "AMIM119",
+    "title": "Secure Authentication System Using Visual Cryptography"
+  },
+  {
+    "code": "AMIM120",
+    "title": "Effective Detection of Copy Move Forgery using HOG and Machine Learning"
+  },
+  {
+    "code": "AMIM121",
+    "title": "Traffic Sign Detection and Classification using HOG and SVM"
+  },
+  {
+    "code": "AMIM122",
+    "title": "Breast Cancer Detection and Classification"
+  },
+  {
+    "code": "AMIM123",
+    "title": "Automatic Breast Segmentation and Cancer Detection via SVM in Mammograms"
+  },
+  {
+    "code": "AMIM124",
+    "title": "Computer Aided Theragnosis Using Quantitative Ultrasound Spectroscopy and Maximum Mean Discrepancy in Locally Advanced Breast Cancer"
+  },
+  {
+    "code": "AMIM125",
+    "title": "Tumor Detection in Brain MRI Image Using Template based K-means and Fuzzy C-means Clustering Algorithm"
+  },
+  {
+    "code": "AMIM126",
+    "title": "Brain tumor detection and classification based on two classifier model"
+  },
+  {
+    "code": "AMIM127",
+    "title": "Brain Tumor Segmentation and Its Area Calculation in Brain MR Images using KMean Clustering and Fuzzy C-Mean Algorithm"
+  },
+  {
+    "code": "AMIM128",
+    "title": "Brain Tumor detection and classification"
+  },
+  {
+    "code": "AMIM129",
+    "title": "Diabetes Detection based on Iris abnormal"
+  },
+  {
+    "code": "AMIM130",
+    "title": "Iris Diagnosis – A Quantitative Non-Invasive Tool for Diabetes Detection"
+  },
+  {
+    "code": "AMIM131",
+    "title": "Automated Diagnosis of Glaucoma Using Empirical Wavelet Transform and Correntropy Features Extracted from Fundus Images"
+  },
+  {
+    "code": "AMIM132",
+    "title": "Retinal Disease Screening through Local Binary Patterns"
+  },
+  {
+    "code": "AMIM133",
+    "title": "Glaucoma Detection from Fundus Images Using MATLAB GUI"
+  },
+  {
+    "code": "AMIM134",
+    "title": "Blood Vessel Segmentation in Fundus Images and Detection of Glaucoma"
+  },
+  {
+    "code": "AMIM135",
+    "title": "Blood Vessel Segmentation in Fundus Images and Detection of Glaucoma using SVM"
+  },
+  {
+    "code": "AMIM136",
+    "title": "Red Lesion Detection Using Dynamic Shape Features for Diabetic Retinopathy Screening"
+  },
+  {
+    "code": "AMIM137",
+    "title": "Bagged textural and color features for melanoma skin cancer detection in dermoscopic and standard images"
+  },
+  {
+    "code": "AMIM138",
+    "title": "system to predict the gestational age and extracting the features such as length of the fetus and its orientation"
+  },
+  {
+    "code": "AMIM139",
+    "title": "Automatic Classification of Intracardiac Tumor and Thrombi in Echocardiography based on Sparse Representation"
+  },
+  {
+    "code": "AMIM140",
+    "title": "Real-Time Automatic Artery Segmentation, Reconstruction and Registration for Ultrasound-Guided Regional Anaesthesia of the Femoral Nerve"
+  },
+  {
+    "code": "AMIM141",
+    "title": "Automatic Hookworm Detection in Wireless Capsule Endoscopy Images"
+  },
+  {
+    "code": "AMIM142",
+    "title": "An Automatic Learning-Based Framework for Robust Nucleus Segmentation"
+  },
+  {
+    "code": "AMIM143",
+    "title": "Deep Learning for Face Recognition under Complex Illumination Conditions Based on Log-Gabor and LBP"
+  },
+  {
+    "code": "AMIM144",
+    "title": "Topology Preserving Structural Matching for Automatic Partial Face Recognition"
+  },
+  {
+    "code": "AMIM145",
+    "title": "Facial Age Estimation with Age Difference"
+  },
+  {
+    "code": "AMIM146",
+    "title": "Simultaneous Feature and Dictionary Learning for Image Set Based Face Recognition"
+  },
+  {
+    "code": "AMIM147",
+    "title": "Automated human identification using partial face image"
+  },
+  {
+    "code": "AMIM148",
+    "title": "Aging Face Recognition: A Hierarchical Learning Model Based on Local Patterns Section"
+  },
+  {
+    "code": "AMIM149",
+    "title": "Facial Sketch Synthesis Using Two-dimensional Direct Combined Model- based Face-Specific Markov Network"
+  },
+  {
+    "code": "AMIM150",
+    "title": "Robust Point Set Matching for Partial Face Recognition"
+  },
+  {
+    "code": "AMIM151",
+    "title": "Face Recognition across Non-Uniform Motion Blur, Illumination, and Pose"
+  },
+  {
+    "code": "AMIM152",
+    "title": "Face Sketch Synthesis via Sparse Representation Based Greedy Search"
+  },
+  {
+    "code": "AMIM153",
+    "title": "Mining Weakly Labelled Web Facial Images for Search-Based Face Annotation"
+  },
+  {
+    "code": "AMIM154",
+    "title": "Crime Detection using Facial Features"
+  },
+  {
+    "code": "AMIM155",
+    "title": "A Facial-Expression Monitoring System for Improved Healthcare in Smart Cities"
+  },
+  {
+    "code": "AMIM156",
+    "title": "Dynamic Facial Expression Recognition With Atlas Construction and Sparse Representation"
+  },
+  {
+    "code": "AMIM157",
+    "title": "Robust Representation and Recognition of Facial Emotions Using Extreme Sparse Learning"
+  },
+  {
+    "code": "AMIM158",
+    "title": "Local Directional Number Pattern for Face Analysis: Face and Expression Recognition"
+  },
+  {
+    "code": "AMIM159",
+    "title": "Classification of Chikoo (Sapota) Fruits on basis of RGB colour space using Digital Image Processing"
+  },
+  {
+    "code": "AMIM160",
+    "title": "Machine vision based sorting of Chikoo (sapota) fruit of Dahanu taluka region using Digital Image Processing"
+  },
+  {
+    "code": "AMIM161",
+    "title": "Higher Order Dynamic Conditional Random Fields Ensemble for Crop Type Classification in Radar Images"
+  },
+  {
+    "code": "AMIM162",
+    "title": "Feature based transition region extraction for image segmentation: Application to worm separation from leaves"
+  },
+  {
+    "code": "AMIM163",
+    "title": "Image Forgery Detection"
+  },
+  {
+    "code": "AMIM164",
+    "title": "Illuminant-Based Transformed Spaces for Image Forensics"
+  },
+  {
+    "code": "AMIM165",
+    "title": "Analyzing the Effect of JPEG Compression on Local Variance of Image Intensity"
+  },
+  {
+    "code": "AMIM166",
+    "title": "Revealing the Trace of High-Quality JPEG Compression through Quantization Noise Analysis"
+  },
+  {
+    "code": "AMIM167",
+    "title": "Revealing the Traces of JPEG Compression AntiForensics"
+  },
+  {
+    "code": "AMIM168",
+    "title": "Traffic Light Controller System using Counting of Vehicles in MATLAB"
+  },
+  {
+    "code": "AMIM169",
+    "title": "Car detection in real time environment during fog hazy day"
+  },
+  {
+    "code": "AMIM170",
+    "title": "Smart Traffic Detection System Using Canny Edge Detection"
+  },
+  {
+    "code": "AMIM171",
+    "title": "A Practical Animal Detection and Collision Avoidance System Using Computer Vision Technique"
+  },
+  {
+    "code": "AMIM172",
+    "title": "A Robust and Efficient Approach to License Plate Detection"
+  },
+  {
+    "code": "AMIM173",
+    "title": "Accurate Detection and Recognition of Dirty Vehicle Plate Numbers for High- Speed Applications"
+  },
+  {
+    "code": "AMIM174",
+    "title": "Night Time Vehicle detection and tracking based on SVM"
+  },
+  {
+    "code": "AMIM175",
+    "title": "License Plate deblurring and detection"
+  },
+  {
+    "code": "AMIM176",
+    "title": "Robust Blur Kernel Estimation for License Plate Images From Fast Moving Vehicles"
+  },
+  {
+    "code": "AMIM177",
+    "title": "An Improved Traffic Signs Recognition and Tracking Method for Driver Assistance System in MATLAB"
+  },
+  {
+    "code": "AMIM178",
+    "title": "Moving Object Tracking Under Occlusion Using Hybrid Model"
+  },
+  {
+    "code": "AMIM179",
+    "title": "Principal Visual Word Discovery for Automatic License Plate Detection"
+  },
+  {
+    "code": "AMIM180",
+    "title": "Log-Gabor Filters for Image-Based Vehicle Verification"
+  },
+  {
+    "code": "AMIM181",
+    "title": "Deep Representation based feature extraction and recovering for Finger-vein verification"
+  },
+  {
+    "code": "AMIM182",
+    "title": "Learning Correspondence Structures for Person Reidentification"
+  },
+  {
+    "code": "AMIM183",
+    "title": "Image Registration and reverification process with Pattern Recognition Techniques"
+  },
+  {
+    "code": "AMIM184",
+    "title": "A Security-Enhanced Alignment-Free Fuzzy Vault-Based Fingerprint Cryptosystem Using PairPolar Minutiae Structures"
+  },
+  {
+    "code": "AMIM185",
+    "title": "Distance-Based Encryption: How to Embed Fuzziness in Biometric-Based Encryption"
+  },
+  {
+    "code": "AMIM186",
+    "title": "Fingerprint Liveness Detection From Single Image Using Low-Level Features and Shape Analysis"
+  },
+  {
+    "code": "AMIM187",
+    "title": "Iris Recognition Based on Human-Interpretable Features"
+  },
+  {
+    "code": "AMIM188",
+    "title": "Automated Human Identification Using Ear Imaging"
+  },
+  {
+    "code": "AMIM189",
+    "title": "Detection and Rectification of Distorted Fingerprints"
+  },
+  {
+    "code": "AMIM190",
+    "title": "An Efficient Parallel Approach for Sclera Vein Recognition"
+  },
+  {
+    "code": "AMIM191",
+    "title": "Combining Left and Right Palmprint Images for More Accurate Personal Identification"
+  },
+  {
+    "code": "AMIM192",
+    "title": "Fingerprint Compression Based on Sparse Representation"
+  },
+  {
+    "code": "AMIM193",
+    "title": "Adaptive Fingerprint Image Enhancement With Emphasis on Preprocessing of Data"
+  },
+  {
+    "code": "AMIM194",
+    "title": "An Image-Based Approach to Detection of Fake Coins"
+  },
+  {
+    "code": "AMIM195",
+    "title": "Multiple Moving Object Detection From UAV Videos Using Trajectories of Matched Regional Adjacency Graphs"
+  },
+  {
+    "code": "AMIM196",
+    "title": "Learning Spatio-Temporal Information for MultiObject Tracking"
+  },
+  {
+    "code": "AMIM197",
+    "title": "Robust Visual Tracking via Incremental Subspace Learning and Local Sparse Representation"
+  },
+  {
+    "code": "AMIM198",
+    "title": "A Feature Learning and Object Recognition Framework for Underwater Fish Images"
+  },
+  {
+    "code": "AMIM199",
+    "title": "Detection of Moving Objects Using Fuzzy Color Difference Histogram Based Background Subtraction"
+  },
+  {
+    "code": "AMIM200",
+    "title": "Commutative Encryption and Data Hiding in HEVC Video Compression"
+  },
+  {
+    "code": "AMIM201",
+    "title": "New Framework of Reversible Data Hiding in Encrypted JPEG Bitstreams"
+  },
+  {
+    "code": "AMIM202",
+    "title": "Data hiding scheme based on pixel-value differencing in dual images"
+  },
+  {
+    "code": "AMIM203",
+    "title": "Chaos-based fast colour image encryption scheme with true random number keys from environmental noise"
+  },
+  {
+    "code": "AMIM204",
+    "title": "A Video Watermarking DRM Method Based on H.264 Compressed Domain with Low Bit-Rate Increasement"
+  },
+  {
+    "code": "AMIM205",
+    "title": "A high payload steganographic algorithm based on edge detection"
+  },
+  {
+    "code": "AMIM206",
+    "title": "Reversible Data Hiding in Encrypted Images Based on Progressive Recovery"
+  },
+  {
+    "code": "AMIM207",
+    "title": "Modified Buyer Seller Watermarking Protocol based on Discrete Wavelet Transform"
+  },
+  {
+    "code": "AMIM208",
+    "title": "Data Security using Cryptography and Steganography"
+  },
+  {
+    "code": "AMIM209",
+    "title": "Implementation and performance analysis of DCT DWT SVD based watermarking algorithms for Color images"
+  },
+  {
+    "code": "AMIM210",
+    "title": "Steganography Using Reversible Texture Synthesi"
+  }
+]

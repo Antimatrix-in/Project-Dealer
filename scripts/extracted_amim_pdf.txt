@@ -1,0 +1,489 @@
+
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+IMAGE PROCESSING – MATLAB PROJECT CATALOGUE
+210 Project Titles
+DOMAIN CODE  AMIM
+PROJECT CODES  AMIM001 – AMIM210
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMIM
+Page 1
+Image Processing – MATLAB Projects
+ PROJECT CODE
+PROJECT TITLE
+AMIM001
+A CNN-Model to Classify Low-Grade and High-Grade Glioma From MRI Images
+AMIM002
+A CNN-OSELM Multi-Layer Fusion Network With Attention Mechanism for Fish Disease Recognition in
+Aquaculture
+AMIM003
+A Comprehensive Joint Learning System to Detect Skin Cancer
+AMIM004
+A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images
+AMIM005
+A Nested Attention Guided UNet Architecture for White Matter Hyperintensity Segmentation
+AMIM006
+A Review on Alzheimers Disease Through Analysis of MRI Images Using Deep Learning Techniques
+AMIM007
+A Systematic Literature Review on Plant Disease Detection Motivations Classification Techniques Datasets
+Challenges and Future Trends
+AMIM008
+A Systematic Review on Federated Learning in Medical Image Analysis
+AMIM009
+A Transfer Learning Approach to Breast Cancer Classification in a Federated Learning Framework
+AMIM010
+A VAN-Based Multi-Scale Cross-Attention Mechanism for Skin Lesion Segmentation Network
+AMIM011
+Abnormality Detection in Chest X-Ray via Residual-Saliency From Normal Generation
+AMIM012
+AMSeg A Novel Adversarial Architecture Based Multi-Scale Fusion Framework for Thyroid Nodule
+Segmentation
+AMIM013
+An Automated Chest X-Ray Image Analysis for Covid-19 and Pneumonia Diagnosis using Deep Ensemble
+Strategy
+AMIM014
+An Efficient Transfer and Ensemble Learning Based Computer Aided Breast Abnormality Diagnosis System
+AMIM015
+An End-to-End Deep Learning Framework for Real-Time Denoising of Heart Sounds for Cardiac Disease
+Detection in Unseen Noise
+AMIM016
+An Improved Densenet Deep Neural Network Model for Tuberculosis Detection Using Chest X-Ray Images
+AMIM017
+Application of X-Ray Imaging and Convolutional Neural Networks in the Prediction of Tomato Seed Viability
+AMIM018
+Automated Segmentation of Brain Tumor MRI Images Using Deep Learning
+AMIM019
+Automatic Liver Cancer Detection Using Deep Convolution Neural Network
+AMIM020
+Biomedical Image Analysis for Colon and Lung Cancer Detection Using Tuna Swarm Algorithm With Deep
+Learning Model
+AMIM021
+BI-RADS-NET-V2 A Composite Multi-Task Neural Network for ComputerAided Diagnosis of Breast Cancer in
+Ultrasound Images With Semantic and Quantitative Explanations
+AMIM022
+Bit-Plane and Correlation Spatial Attention Modules for Plant Disease Classification
+AMIM023
+Classification of Liver Fibrosis From Heterogeneous Ultrasound Image
+AMIM024
+DeepSkin A Deep Learning Approach for Skin Cancer Classification
+AMIM025
+EfficientNetB3-Adaptive Augmented Deep Learning AADL for Multi-Class Plant Disease Classification
+AMIM026
+EMED-UNet An Efficient Multi-Encoder-Decoder Based UNet for Medical Image Segmentation
+AMIM027
+Exudate Regeneration for Automated Exudate Detection in Retinal Fundus Images
+AMIM028
+FieldPlant A Dataset of Field Plant Images for Plant Disease Detection and Classification With Deep Learning
+AMIM029
+GARL-Net Graph Based Adaptive Regularized Learning Deep Network for Breast Cancer Classification
+AMIM030
+Internet of Things and Deep Learning Enabled Diabetic Retinopathy Diagnosis Using Retinal Fundus Images
+AntiMatrix Project Center Page 3
+AMIM031
+Loop Residual Attention Network for Automatic Segmentation of COVID19 Chest X-Ray Images
+AMIM032
+Low-Light Image Enhancement Using a Simple Network Structure
+AMIM033
+MACGAN An All-in-One Image Restoration Under Adverse Conditions Using Multidomain Attention-Based
+Conditional GAN
+AMIM034
+Material Compound-Property Retrieval Using Electron Microscope Images for Rubber Material Development
+AMIM035
+MGFuse An Infrared and Visible Image Fusion Algorithm Based on Multiscale Decomposition Optimization and
+Gradient-Weighted Local Energy
+AMIM036
+MLFAN Multilevel Feature Attention Network With Texture Prior for Image Denoising
+AMIM037
+Modeling of Reptile Search Algorithm With Deep Learning Approach for Copy Move Image Forgery Detection
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMIM
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMIM038
+Monocular Depth Estimation of Old Photos via Collaboration of Monocular and Stereo Networks
+AMIM039
+Multi-Exposure Fusion With Guidance Information Night Color Image Enhancement for Roadside Units
+AMIM040
+Multi-FusNet of Cross Channel Network for Image Super-Resolution
+AMIM041
+Multiple Training Stage Image Enhancement Enrolled With CCRGAN Pseudo Templates for Large Area Dry
+Fingerprint Recognition
+AMIM042
+Piecewise Weighted Smoothing Regularization in Tight Framelet Domain for Hyperspectral Image Restoration
+AMIM043
+Pixel Difference Unmixing Feature Networks for Edge Detection
+AMIM044
+Protecting the Distribution of Color Images via Inverse Colorization Visible-Imperceptible Watermarking and
+Reversible Data Hiding
+AMIM045
+Protein Subcellular Localization Prediction by Concatenation of Convolutional Blocks for Deep Features
+Extraction From Microscopic Images
+AMIM046
+Pyramidal Feature Adjustment Networks for High Dynamic Range Imaging of Dynamic Scenes
+AMIM047
+SENext Squeeze-and-ExcitationNext for Single Image Super-Resolution
+AMIM048
+TnTViT-G Transformer in Transformer Network for Guidance Super Resolution
+AMIM049
+Underwater Image Enhancement Based on Adaptive Color Correction and Improved Retinex Algorithm
+AMIM050
+Water Classification Using Convolutional Neural Network
+AMIM051
+Digital Image Sharing by Diverse Image Media
+AMIM052
+A Compressive Sensing based Secure Watermark Detection and Privacy Preserving Storage Framework
+AMIM053
+A Novel Data Embedding Method Using Adaptive Pixel Pair Matching
+AMIM054
+A Probabilistic Model of Visual Cryptography Scheme With Dynamic Group
+AMIM055
+A Secret-Sharing-Based Method for Authentication of Grayscale Document Images via the Use of the PNG
+Image With a Data Repair Capability
+AMIM056
+Robust Watermarking of Compressed and Encrypted JPEG 2000 images
+AMIM057
+Two-Level QR Code for Private Message Sharing and Document Authentication
+AMIM058
+Securing Digital Data using 256-bit Multimodal Biometrics based Cryptographic Key
+AMIM059
+Low Distortion Transform for Reversible Watermarking
+AMIM060
+A Novel (K,N) Secret Sharing Scheme from Quadratic Residues for Grayscale Images
+AMIM061
+A New Secure Image Transmission Technique via secret fragment visible mosaic images
+AMIM062
+Designing an Efficient Image Encryption – Then- Compression System AntiMatrix Project Center Page 4
+AMIM063
+A Novel Approach Towards Dynamic And Scalable Video Communication Using OFDMA and C-OFDMA
+Schemes over Wireless 4G Networks
+AMIM064
+Automatic Detection of 3D Quality Defects in Stereoscopic Videos Using Binocular Disparity
+AMIM065
+Salient object detection with spatiotemporal background priors for video
+AMIM066
+Patch-Based Video Denoising With Optical Flow Estimation
+AMIM067
+Blind Super Resolution of Real-Life Video Sequences
+AMIM068
+Holoentropy measures for image stitching of scenes acquired under CAMERA unknown or arbitrary positions
+AMIM069
+An Accurate Multi-Row Panorama Generation Using Multi-Point Joint Stitching
+AMIM070
+Fast Image Dehazing Method Based on Linear Transformation
+AMIM071
+A Hierarchical Approach for Rain or Snow Removing in A Single Color Image
+AMIM072
+Contrast Enhancement Based on Intrinsic Image Decomposition
+AMIM073
+Cartoon and Texture Decomposition based Color Transfer for Fabric Images
+AMIM074
+Words Matter: Scene Text for Image Classification and Retrieval
+AMIM075
+WLS filter based cartoon and texture decomposition for color transfer in fabric images
+AMIM076
+Characterness An Indicator of Text in the Wild
+AMIM077
+Interactive Image Segmentation Using Adaptive Constraint Propagation
+AMIM078
+FRESH—FRI-Based SingleImage Super-Resolution Algorithm
+AMIM079
+Blind Quality Assessment of Tone-Mapped Images Via Analysis of Information, Naturalness, and Structure
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMIM
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMIM080
+Contrast Enhancement by Nonlinear Diffusion Filtering
+AMIM081
+One-Class WriterIndependent Offline Signature Verification Using Feature Dissimilarity Thresholding
+AMIM082
+Sensor Pattern Noise Estimation Based on Improved Locally Adaptive DCT Filtering and Weighted Averaging
+for Source Camera Identification and Verification
+AMIM083
+A Mixed GenerativeDiscriminative Based Hashing Method
+AMIM084
+A Feature-Enriched Completely Blind Image Quality Evaluator
+AMIM085
+A Probabilistic Approach for Color Correction in Image Mosaicking Applications
+AMIM086
+Image Denoising by Exploring External and Internal Correlations
+AMIM087
+Image Super-Resolution Based on StructureModulated Sparse Representation
+AMIM088
+Multifocus Image Fusion Based on NSCT and Focused Area Detection
+AMIM089
+Variable-Length Signature for Near-Duplicate Image Matching
+AMIM090
+Single Image Superresolution Based on Gradient Profile Sharpness
+AMIM091
+Hyperspectral Image Classification Through Bilayer Graph Based Learning
+AMIM092
+Images as Occlusions of Textures A Framework for segmentation
+AMIM093
+Phase-Based Binarization of Ancient Document Images: Model and Applications
+AMIM094
+Progressive Image Denoising Through Hybrid Graph Laplacian Regularization : A Unified Framework
+AMIM095
+Context-Dependent Logo Matching and Recognition
+AMIM096
+Scene Text Detection via Connected Component Clustering and Nontext Filtering AntiMatrix Project Center
+Page 5
+AMIM097
+Brain Tumor Detection and Classification Using Artificial Intelligence
+AMIM098
+Classification of Potholes using Convolutional Neural Network Model
+AMIM099
+Deep Learning Based Parkinson''s Disease Progression Analysis Using DaTscan Images
+AMIM100
+Artificial Intelligence based Facial Emotions Analysis for Depression Detection
+AMIM101
+Grading Of Diabetic Retinopathy Using Deep Learning
+AMIM102
+Identification of Plant Disease from Leaf Images Based on Convolutional Neural Network
+AMIM103
+Knee Osteoarthritis Detection and Classification Using X-Rays
+AMIM104
+Weeds and Crop Image Classification using Deep Learning Technique
+AMIM105
+URL Based Phishing Website Detection using Machine Learning Models
+AMIM106
+AI-based Gender Identification using Facial Features
+AMIM107
+Skin Disease Classification using Deep Learning
+AMIM108
+Driver Drowsiness Detection System Using Image Processing
+AMIM109
+Classification of Leukemia White Blood Cell Cancer using Image Processing and Machine Learning
+AMIM110
+Age Prediction through Facial Images using Deep Learning
+AMIM111
+Brain Stroke Classification Through Image Processing and SVM
+AMIM112
+Video-Based Driver Drowsiness Detection System
+AMIM113
+Enhanced Fog Detection and Visibility Measurement in Adverse Weather Conditions
+AMIM114
+Flower Species Detection using Machine Learning Technique
+AMIM115
+Face Recognition and Expression Detection for the Visually Impaired
+AMIM116
+Night Time Vehicle Detection Using Image Processing and Linear SVM
+AMIM117
+Human Action Recognition using Image Processing and Nearest Mean Classifier
+AMIM118
+Traffic Light Controller System and Road Congestion Detection based on Counting of Vehicles
+AMIM119
+Secure Authentication System Using Visual Cryptography
+AMIM120
+Effective Detection of Copy Move Forgery using HOG and Machine Learning
+AMIM121
+Traffic Sign Detection and Classification using HOG and SVM
+AMIM122
+Breast Cancer Detection and Classification
+AMIM123
+Automatic Breast Segmentation and Cancer Detection via SVM in Mammograms
+
+--- PAGE 5 ---
+AntiMatrix Project Center | AMIM
+Page 4
+PROJECT CODE
+PROJECT TITLE
+AMIM124
+Computer Aided Theragnosis Using Quantitative Ultrasound Spectroscopy and Maximum Mean Discrepancy in
+Locally Advanced Breast Cancer
+AMIM125
+Tumor Detection in Brain MRI Image Using Template based K-means and Fuzzy C-means Clustering Algorithm
+AMIM126
+Brain tumor detection and classification based on two classifier model
+AMIM127
+Brain Tumor Segmentation and Its Area Calculation in Brain MR Images using KMean Clustering and Fuzzy
+C-Mean Algorithm
+AMIM128
+Brain Tumor detection and classification
+AMIM129
+Diabetes Detection based on Iris abnormal
+AMIM130
+Iris Diagnosis – A Quantitative Non-Invasive Tool for Diabetes Detection AntiMatrix Project Center Page 6
+AMIM131
+Automated Diagnosis of Glaucoma Using Empirical Wavelet Transform and Correntropy Features Extracted
+from Fundus Images
+AMIM132
+Retinal Disease Screening through Local Binary Patterns
+AMIM133
+Glaucoma Detection from Fundus Images Using MATLAB GUI
+AMIM134
+Blood Vessel Segmentation in Fundus Images and Detection of Glaucoma
+AMIM135
+Blood Vessel Segmentation in Fundus Images and Detection of Glaucoma using SVM
+AMIM136
+Red Lesion Detection Using Dynamic Shape Features for Diabetic Retinopathy Screening
+AMIM137
+Bagged textural and color features for melanoma skin cancer detection in dermoscopic and standard images
+AMIM138
+system to predict the gestational age and extracting the features such as length of the fetus and its orientation
+AMIM139
+Automatic Classification of Intracardiac Tumor and Thrombi in Echocardiography based on Sparse
+Representation
+AMIM140
+Real-Time Automatic Artery Segmentation, Reconstruction and Registration for Ultrasound-Guided Regional
+Anaesthesia of the Femoral Nerve
+AMIM141
+Automatic Hookworm Detection in Wireless Capsule Endoscopy Images
+AMIM142
+An Automatic Learning-Based Framework for Robust Nucleus Segmentation
+AMIM143
+Deep Learning for Face Recognition under Complex Illumination Conditions Based on Log-Gabor and LBP
+AMIM144
+Topology Preserving Structural Matching for Automatic Partial Face Recognition
+AMIM145
+Facial Age Estimation with Age Difference
+AMIM146
+Simultaneous Feature and Dictionary Learning for Image Set Based Face Recognition
+AMIM147
+Automated human identification using partial face image
+AMIM148
+Aging Face Recognition: A Hierarchical Learning Model Based on Local Patterns Section
+AMIM149
+Facial Sketch Synthesis Using Two-dimensional Direct Combined Model- based Face-Specific Markov Network
+AMIM150
+Robust Point Set Matching for Partial Face Recognition
+AMIM151
+Face Recognition across Non-Uniform Motion Blur, Illumination, and Pose
+AMIM152
+Face Sketch Synthesis via Sparse Representation Based Greedy Search
+AMIM153
+Mining Weakly Labelled Web Facial Images for Search-Based Face Annotation
+AMIM154
+Crime Detection using Facial Features
+AMIM155
+A Facial-Expression Monitoring System for Improved Healthcare in Smart Cities
+AMIM156
+Dynamic Facial Expression Recognition With Atlas Construction and Sparse Representation
+AMIM157
+Robust Representation and Recognition of Facial Emotions Using Extreme Sparse Learning
+AMIM158
+Local Directional Number Pattern for Face Analysis: Face and Expression Recognition
+AMIM159
+Classification of Chikoo (Sapota) Fruits on basis of RGB colour space using Digital Image Processing
+AMIM160
+Machine vision based sorting of Chikoo (sapota) fruit of Dahanu taluka region using Digital Image Processing
+AMIM161
+Higher Order Dynamic Conditional Random Fields Ensemble for Crop Type Classification in Radar Images
+AMIM162
+Feature based transition region extraction for image segmentation: Application to worm separation from leaves
+AMIM163
+Image Forgery Detection AntiMatrix Project Center Page 7
+AMIM164
+Illuminant-Based Transformed Spaces for Image Forensics
+AMIM165
+Analyzing the Effect of JPEG Compression on Local Variance of Image Intensity
+
+--- PAGE 6 ---
+AntiMatrix Project Center | AMIM
+Page 5
+PROJECT CODE
+PROJECT TITLE
+AMIM166
+Revealing the Trace of High-Quality JPEG Compression through Quantization Noise Analysis
+AMIM167
+Revealing the Traces of JPEG Compression AntiForensics
+AMIM168
+Traffic Light Controller System using Counting of Vehicles in MATLAB
+AMIM169
+Car detection in real time environment during fog hazy day
+AMIM170
+Smart Traffic Detection System Using Canny Edge Detection
+AMIM171
+A Practical Animal Detection and Collision Avoidance System Using Computer Vision Technique
+AMIM172
+A Robust and Efficient Approach to License Plate Detection
+AMIM173
+Accurate Detection and Recognition of Dirty Vehicle Plate Numbers for High- Speed Applications
+AMIM174
+Night Time Vehicle detection and tracking based on SVM
+AMIM175
+License Plate deblurring and detection
+AMIM176
+Robust Blur Kernel Estimation for License Plate Images From Fast Moving Vehicles
+AMIM177
+An Improved Traffic Signs Recognition and Tracking Method for Driver Assistance System in MATLAB
+AMIM178
+Moving Object Tracking Under Occlusion Using Hybrid Model
+AMIM179
+Principal Visual Word Discovery for Automatic License Plate Detection
+AMIM180
+Log-Gabor Filters for Image-Based Vehicle Verification
+AMIM181
+Deep Representation based feature extraction and recovering for Finger-vein verification
+AMIM182
+Learning Correspondence Structures for Person Reidentification
+AMIM183
+Image Registration and reverification process with Pattern Recognition Techniques
+AMIM184
+A Security-Enhanced Alignment-Free Fuzzy Vault-Based Fingerprint Cryptosystem Using PairPolar Minutiae
+Structures
+AMIM185
+Distance-Based Encryption: How to Embed Fuzziness in Biometric-Based Encryption
+AMIM186
+Fingerprint Liveness Detection From Single Image Using Low-Level Features and Shape Analysis
+AMIM187
+Iris Recognition Based on Human-Interpretable Features
+AMIM188
+Automated Human Identification Using Ear Imaging
+AMIM189
+Detection and Rectification of Distorted Fingerprints
+AMIM190
+An Efficient Parallel Approach for Sclera Vein Recognition
+AMIM191
+Combining Left and Right Palmprint Images for More Accurate Personal Identification
+AMIM192
+Fingerprint Compression Based on Sparse Representation
+AMIM193
+Adaptive Fingerprint Image Enhancement With Emphasis on Preprocessing of Data
+AMIM194
+An Image-Based Approach to Detection of Fake Coins
+AMIM195
+Multiple Moving Object Detection From UAV Videos Using Trajectories of Matched Regional Adjacency Graphs
+AMIM196
+Learning Spatio-Temporal Information for MultiObject Tracking
+AMIM197
+Robust Visual Tracking via Incremental Subspace Learning and Local Sparse Representation AntiMatrix Project
+Center Page 8
+AMIM198
+A Feature Learning and Object Recognition Framework for Underwater Fish Images
+AMIM199
+Detection of Moving Objects Using Fuzzy Color Difference Histogram Based Background Subtraction
+AMIM200
+Commutative Encryption and Data Hiding in HEVC Video Compression
+AMIM201
+New Framework of Reversible Data Hiding in Encrypted JPEG Bitstreams
+AMIM202
+Data hiding scheme based on pixel-value differencing in dual images
+AMIM203
+Chaos-based fast colour image encryption scheme with true random number keys from environmental noise
+AMIM204
+A Video Watermarking DRM Method Based on H.264 Compressed Domain with Low Bit-Rate Increasement
+AMIM205
+A high payload steganographic algorithm based on edge detection
+AMIM206
+Reversible Data Hiding in Encrypted Images Based on Progressive Recovery
+AMIM207
+Modified Buyer Seller Watermarking Protocol based on Discrete Wavelet Transform
+AMIM208
+Data Security using Cryptography and Steganography
+AMIM209
+Implementation and performance analysis of DCT DWT SVD based watermarking algorithms for Color images
+
+--- PAGE 7 ---
+AntiMatrix Project Center | AMIM
+Page 6
+PROJECT CODE
+PROJECT TITLE
+AMIM210
+Steganography Using Reversible Texture Synthesis

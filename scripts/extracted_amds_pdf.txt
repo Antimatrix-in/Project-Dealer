@@ -1,0 +1,138 @@
+
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+DATA SCIENCE – PYTHON PROJECT CATALOGUE
+50 Project Titles
+DOMAIN CODE  AMDS
+PROJECT CODES  AMDS001 – AMDS050
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMDS
+Page 1
+Data Science – Python Projects
+ PROJECT CODE
+PROJECT TITLE
+AMDS001
+A Machine Learning and Optimization Framework for the Early Diagnosis of Bovine Respiratory Disease
+AMDS002
+Agent-Based Modelling of Malaria Transmission
+AMDS003
+An Improved Medical Image Compression Method Based on Wavelet Difference Reduction
+AMDS004
+Anchor-Free Feature Aggregation Network for Instrument Detection in Endoscopic Surgery
+AMDS005
+Applying One-Class Algorithms for Data Stream-Based Insider Threat Detection
+AMDS006
+Assessing Inter-Annotator Agreement for Medical Image Segmentation
+AMDS007
+Attack Detection for Medical Cyber-Physical SystemsA Systematic Literature Review
+AMDS008
+Bone Stick Image Classification Study Based on C3CA Attention Mechanism Enhanced Deep Cascade
+Network
+AMDS009
+Brain Age Prediction Based on Resting-State Functional MRI Using Similarity Metric Convolutional Neural
+Network
+AMDS010
+Brain Tumor Detection and Multi-Grade Segmentation Through Hybrid Caps-VGGNet Model
+AMDS011
+BSANet High-Performance 3D Medical Image Segmentation
+AMDS012
+Classification and Localization of Multi-Type Abnormalities on Chest X-Rays Images
+AMDS013
+Classification and Prediction of Drivers Mental Workload Based on Long Time Sequences and Multiple
+Physiological Factors
+AMDS014
+Classification of Diabetic Retinopathy Disease Levels by Extracting Topological Features Using Graph Neural
+Networks
+AMDS015
+Classification of Hemorrhage Using Priori Information of Electrode Arrangement With Electrical Impedance
+Tomography
+AMDS016
+Classification of Polyps in Endoscopic Images Using Self-Supervised Structured Learning
+AMDS017
+Clinical Errors From Acronym Use in Electronic Health Record A Review of NLP-Based Disambiguation
+Techniques
+AMDS018
+Computer Aided Diagnosis for Gastrointestinal Cancer Classification Using Hybrid Rice Optimization With
+Deep Learning
+AMDS019
+Conditional Generative Adversarial Network Model for Conversion of 2 Dimensional Radiographs into 3
+Dimensional Views
+AMDS020
+Crop Response to Disease and Water Scarcity Quantified by Normalized Difference Latent Heat Index
+AMDS021
+Data Augmentation Based on Generative Adversarial Networks for Endoscopic Image Classification
+AMDS022
+Deep CleanerA Few Shot Image Dataset Cleaner Using Supervised Contrastive Learning
+AMDS023
+Deep Learning-Based Multi-Modal Ensemble Classification Approach for Human Breast Cancer Prognosis
+AMDS024
+DeepCurvMRI Deep Convolutional Curvelet Transform-Based MRI Approach for Early Detection of
+Alzheimers Disease AntiMatrix Project Center Page 3
+AMDS025
+Design and Development of an Efficient Risk Prediction Model for Cervical Cancer
+AMDS026
+Detection of Alzheimer Disease on Online Handwriting Using 1D Convolutional Neural Network
+AMDS027
+Effective Feature Engineering Technique for Heart Disease Prediction With Machine Learning
+AMDS028
+Enhancing Breast Cancer Classification in Histopathological Images through Federated Learning Framework
+AMDS029
+Explainable Artificial Intelligence EXAI Models for Early Prediction of Parkinsons Disease Based on Spiral
+and Wave Drawings
+AMDS030
+Failure to Achieve Domain Invariance With Domain Generalization Algorithms An Analysis in Medical Imaging
+AMDS031
+Fusion of Textural and Visual Information for Medical Image Modality Retrieval Using Deep Learning-Based
+Feature Engineering
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMDS
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMDS032
+Gated Deep Reinforcement Learning With Red Deer Optimization for Medical Image Classification
+AMDS033
+HarDNet and Dual-Code Attention Mechanism Based Model for Medical Images Segmentation
+AMDS034
+Improved Prostate Biparameter Magnetic Resonance Image Segmentation Based on Def-UNet
+AMDS035
+Interpretation of Magnetic Resonance Images of Temporomandibular Joint Disorders by Using Deep
+Learning
+AMDS036
+Learning From Multiple Expert Annotators for Enhancing Anomaly Detection in Medical Image Analysis
+AMDS037
+Leveraging Brain MRI for Biomedical Alzheimers Disease Diagnosis Using Enhanced Manta Ray Foraging
+Optimization Based Deep Learning
+AMDS038
+Leveraging Regression Analysis to Predict Overlapping Symptoms of Cardiovascular Diseases
+AMDS039
+Looking Closer to the Transferability Between Natural and Medical Images in Deep Learning
+AMDS040
+Lung-RetinaNet Lung Cancer Detection Using a RetinaNet With Multi-Scale Feature Fusion and Context
+Module
+AMDS041
+Malaria Disease Cell Classification With Highlighting Small Infected Regions
+AMDS042
+Medical Image Segmentation Based on Transformer and HarDNet Structures
+AMDS043
+Medical Ultrasound Image Segmentation With Deep Learning Models
+AMDS044
+Microwave Reflectometry Sensing System for Low-Cost in-vivo Skin Cancer Diagnostics
+AMDS045
+Modified Salp Swarm Algorithm With Deep Learning Based Gastrointestinal Tract Disease Classification on
+Endoscopic Images
+AMDS046
+Multi-Class Retinal Diseases Detection Using Deep CNN With Minimal Memory Consumption
+AMDS047
+Multi-View Computed Tomography Network for Osteoporosis Classification
+AMDS048
+Oppositional Jellyfish Search Optimizer With Deep Transfer Learning Enabled Secure Content-Based
+Biomedical Image Retrieval
+AMDS049
+Performance Improvement of Deep Learning Based Multi-Class ECG Classification Model Using Limited
+Medical Dataset AntiMatrix Project Center Page 4
+AMDS050
+Skin Medical Image Captioning Using Multi-Label Classification and Siamese Network

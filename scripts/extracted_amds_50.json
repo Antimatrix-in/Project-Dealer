@@ -1,0 +1,202 @@
+[
+  {
+    "code": "AMDS001",
+    "title": "A Machine Learning and Optimization Framework for the Early Diagnosis of Bovine Respiratory Disease"
+  },
+  {
+    "code": "AMDS002",
+    "title": "Agent-Based Modelling of Malaria Transmission"
+  },
+  {
+    "code": "AMDS003",
+    "title": "An Improved Medical Image Compression Method Based on Wavelet Difference Reduction"
+  },
+  {
+    "code": "AMDS004",
+    "title": "Anchor-Free Feature Aggregation Network for Instrument Detection in Endoscopic Surgery"
+  },
+  {
+    "code": "AMDS005",
+    "title": "Applying One-Class Algorithms for Data Stream-Based Insider Threat Detection"
+  },
+  {
+    "code": "AMDS006",
+    "title": "Assessing Inter-Annotator Agreement for Medical Image Segmentation"
+  },
+  {
+    "code": "AMDS007",
+    "title": "Attack Detection for Medical Cyber-Physical SystemsA Systematic Literature Review"
+  },
+  {
+    "code": "AMDS008",
+    "title": "Bone Stick Image Classification Study Based on C3CA Attention Mechanism Enhanced Deep Cascade Network"
+  },
+  {
+    "code": "AMDS009",
+    "title": "Brain Age Prediction Based on Resting-State Functional MRI Using Similarity Metric Convolutional Neural Network"
+  },
+  {
+    "code": "AMDS010",
+    "title": "Brain Tumor Detection and Multi-Grade Segmentation Through Hybrid Caps-VGGNet Model"
+  },
+  {
+    "code": "AMDS011",
+    "title": "BSANet High-Performance 3D Medical Image Segmentation"
+  },
+  {
+    "code": "AMDS012",
+    "title": "Classification and Localization of Multi-Type Abnormalities on Chest X-Rays Images"
+  },
+  {
+    "code": "AMDS013",
+    "title": "Classification and Prediction of Drivers Mental Workload Based on Long Time Sequences and Multiple Physiological Factors"
+  },
+  {
+    "code": "AMDS014",
+    "title": "Classification of Diabetic Retinopathy Disease Levels by Extracting Topological Features Using Graph Neural Networks"
+  },
+  {
+    "code": "AMDS015",
+    "title": "Classification of Hemorrhage Using Priori Information of Electrode Arrangement With Electrical Impedance Tomography"
+  },
+  {
+    "code": "AMDS016",
+    "title": "Classification of Polyps in Endoscopic Images Using Self-Supervised Structured Learning"
+  },
+  {
+    "code": "AMDS017",
+    "title": "Clinical Errors From Acronym Use in Electronic Health Record A Review of NLP-Based Disambiguation Techniques"
+  },
+  {
+    "code": "AMDS018",
+    "title": "Computer Aided Diagnosis for Gastrointestinal Cancer Classification Using Hybrid Rice Optimization With Deep Learning"
+  },
+  {
+    "code": "AMDS019",
+    "title": "Conditional Generative Adversarial Network Model for Conversion of 2 Dimensional Radiographs into 3 Dimensional Views"
+  },
+  {
+    "code": "AMDS020",
+    "title": "Crop Response to Disease and Water Scarcity Quantified by Normalized Difference Latent Heat Index"
+  },
+  {
+    "code": "AMDS021",
+    "title": "Data Augmentation Based on Generative Adversarial Networks for Endoscopic Image Classification"
+  },
+  {
+    "code": "AMDS022",
+    "title": "Deep CleanerA Few Shot Image Dataset Cleaner Using Supervised Contrastive Learning"
+  },
+  {
+    "code": "AMDS023",
+    "title": "Deep Learning-Based Multi-Modal Ensemble Classification Approach for Human Breast Cancer Prognosis"
+  },
+  {
+    "code": "AMDS024",
+    "title": "DeepCurvMRI Deep Convolutional Curvelet Transform-Based MRI Approach for Early Detection of Alzheimers Disease AntiMatrix Project Center"
+  },
+  {
+    "code": "AMDS025",
+    "title": "Design and Development of an Efficient Risk Prediction Model for Cervical Cancer"
+  },
+  {
+    "code": "AMDS026",
+    "title": "Detection of Alzheimer Disease on Online Handwriting Using 1D Convolutional Neural Network"
+  },
+  {
+    "code": "AMDS027",
+    "title": "Effective Feature Engineering Technique for Heart Disease Prediction With Machine Learning"
+  },
+  {
+    "code": "AMDS028",
+    "title": "Enhancing Breast Cancer Classification in Histopathological Images through Federated Learning Framework"
+  },
+  {
+    "code": "AMDS029",
+    "title": "Explainable Artificial Intelligence EXAI Models for Early Prediction of Parkinsons Disease Based on Spiral and Wave Drawings"
+  },
+  {
+    "code": "AMDS030",
+    "title": "Failure to Achieve Domain Invariance With Domain Generalization Algorithms An Analysis in Medical Imaging"
+  },
+  {
+    "code": "AMDS031",
+    "title": "Fusion of Textural and Visual Information for Medical Image Modality Retrieval Using Deep Learning-Based Feature Engineering"
+  },
+  {
+    "code": "AMDS032",
+    "title": "Gated Deep Reinforcement Learning With Red Deer Optimization for Medical Image Classification"
+  },
+  {
+    "code": "AMDS033",
+    "title": "HarDNet and Dual-Code Attention Mechanism Based Model for Medical Images Segmentation"
+  },
+  {
+    "code": "AMDS034",
+    "title": "Improved Prostate Biparameter Magnetic Resonance Image Segmentation Based on Def-UNet"
+  },
+  {
+    "code": "AMDS035",
+    "title": "Interpretation of Magnetic Resonance Images of Temporomandibular Joint Disorders by Using Deep Learning"
+  },
+  {
+    "code": "AMDS036",
+    "title": "Learning From Multiple Expert Annotators for Enhancing Anomaly Detection in Medical Image Analysis"
+  },
+  {
+    "code": "AMDS037",
+    "title": "Leveraging Brain MRI for Biomedical Alzheimers Disease Diagnosis Using Enhanced Manta Ray Foraging Optimization Based Deep Learning"
+  },
+  {
+    "code": "AMDS038",
+    "title": "Leveraging Regression Analysis to Predict Overlapping Symptoms of Cardiovascular Diseases"
+  },
+  {
+    "code": "AMDS039",
+    "title": "Looking Closer to the Transferability Between Natural and Medical Images in Deep Learning"
+  },
+  {
+    "code": "AMDS040",
+    "title": "Lung-RetinaNet Lung Cancer Detection Using a RetinaNet With Multi-Scale Feature Fusion and Context Module"
+  },
+  {
+    "code": "AMDS041",
+    "title": "Malaria Disease Cell Classification With Highlighting Small Infected Regions"
+  },
+  {
+    "code": "AMDS042",
+    "title": "Medical Image Segmentation Based on Transformer and HarDNet Structures"
+  },
+  {
+    "code": "AMDS043",
+    "title": "Medical Ultrasound Image Segmentation With Deep Learning Models"
+  },
+  {
+    "code": "AMDS044",
+    "title": "Microwave Reflectometry Sensing System for Low-Cost in-vivo Skin Cancer Diagnostics"
+  },
+  {
+    "code": "AMDS045",
+    "title": "Modified Salp Swarm Algorithm With Deep Learning Based Gastrointestinal Tract Disease Classification on Endoscopic Images"
+  },
+  {
+    "code": "AMDS046",
+    "title": "Multi-Class Retinal Diseases Detection Using Deep CNN With Minimal Memory Consumption"
+  },
+  {
+    "code": "AMDS047",
+    "title": "Multi-View Computed Tomography Network for Osteoporosis Classification"
+  },
+  {
+    "code": "AMDS048",
+    "title": "Oppositional Jellyfish Search Optimizer With Deep Transfer Learning Enabled Secure Content-Based Biomedical Image Retrieval"
+  },
+  {
+    "code": "AMDS049",
+    "title": "Performance Improvement of Deep Learning Based Multi-Class ECG Classification Model Using Limited Medical Dataset AntiMatrix Project Center"
+  },
+  {
+    "code": "AMDS050",
+    "title": "Skin Medical Image Captioning Using Multi-Label Classification and Siamese Network"
+  }
+]

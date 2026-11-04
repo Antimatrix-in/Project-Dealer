@@ -1,0 +1,190 @@
+
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+DJANGO – PYTHON PROJECT CATALOGUE
+81 Project Titles
+DOMAIN CODE  AMDJ
+PROJECT CODES  AMDJ001 – AMDJ081
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMDJ
+Page 1
+Django – Python Projects
+ PROJECT CODE
+PROJECT TITLE
+AMDJ001
+Airline Management System
+AMDJ002
+Art Gallery Management System
+AMDJ003
+Block Chain Cloud Data Security
+AMDJ004
+Blog Application
+AMDJ005
+Blood Bank Information System
+AMDJ006
+Blood Bank Management System
+AMDJ007
+Blood Donation Management System
+AMDJ008
+Blood Provider Bloud Types and Transfusion
+AMDJ009
+Business Directory Management System
+AMDJ010
+Clinic Mangement Drug Process
+AMDJ011
+Cloud Data Share Encrpyted data Share Key
+AMDJ012
+Cloud Data Storage Security
+AMDJ013
+College Management
+AMDJ014
+Communication & Collaboration between Students, Administrators
+AMDJ015
+Company Employee Leave Management
+AMDJ016
+Courier Management System
+AMDJ017
+Create Read Update Delete App In Django
+AMDJ018
+Crop Prediction System
+AMDJ019
+Customer Food Ordering Application
+AMDJ020
+Customer Support Information
+AMDJ021
+Cyber Security Server Accessibility
+AMDJ022
+Data Recovery
+AMDJ023
+Data Security Multiple Access Protection
+AMDJ024
+EHP Block Chain
+AMDJ025
+Employee Management
+AMDJ026
+E-Notes Management System
+AMDJ027
+Eshop Ecommerce Shopping Page 3
+AMDJ028
+Event Management System
+AMDJ029
+Gym Management
+AMDJ030
+Hardware Store Chatbot
+AMDJ031
+Health Blockchain
+AMDJ032
+Health Care Accessibility
+AMDJ033
+Health Care Sector
+AMDJ034
+Improving Pharmacists Efficiency
+AMDJ035
+Insert Data Into Database in Django
+AMDJ036
+Insurance Clime Center
+AMDJ037
+Internet Banking System
+AMDJ038
+Internet Service Provider Management System
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMDJ
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMDJ039
+Inventory Management
+AMDJ040
+Jewelry Purchase Order Process
+AMDJ041
+Job Portal Unemployees Access
+AMDJ042
+Laundry Management
+AMDJ043
+Leave Mangement to Emplyee Apply
+AMDJ044
+Library Support Management
+AMDJ045
+Multi Authority Access Control
+AMDJ046
+Multi Server Management System
+AMDJ047
+Music Hub
+AMDJ048
+Music Industry Hub Directory Information
+AMDJ049
+Music Sector Information
+AMDJ050
+Notes Sharing
+AMDJ051
+Novel Multi Server Control System
+AMDJ052
+Online Examination for Student
+AMDJ053
+Online Examination Student
+AMDJ054
+Online Food Ordering System Page 4
+AMDJ055
+Online Voting System
+AMDJ056
+Organizational Event Management
+AMDJ057
+Paper Presenation Conference Management
+AMDJ058
+Patient Appointment Doctor Allocation System
+AMDJ059
+Preventive Medicine System
+AMDJ060
+Privacy Seach Information on Secure Details
+AMDJ061
+Product Management System
+AMDJ062
+Product Packing Management
+AMDJ063
+Projects Search Engine
+AMDJ064
+Quiz Application
+AMDJ065
+Railway System
+AMDJ066
+Sales Products Management
+AMDJ067
+School System
+AMDJ068
+Student Attendance Management System
+AMDJ069
+Student Careers
+AMDJ070
+Student Chatbot
+AMDJ071
+Student Chatbot Learn Website
+AMDJ072
+Student Evaluation
+AMDJ073
+Student Record Information on Teachers
+AMDJ074
+Students Managements
+AMDJ075
+Task Management System
+AMDJ076
+Task Scheduler Work Load Controller
+AMDJ077
+Veterinary Care for Pets
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMDJ
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMDJ078
+Visitors Meeting Arrangedment System
+AMDJ079
+Voting System
+AMDJ080
+Water Supply and Descrbuted System
+AMDJ081
+Women''s Rights Help Suppor
+Source note: The final supplied title ends with “Women''s Rights Help Suppor”. It is preserved as provided.
