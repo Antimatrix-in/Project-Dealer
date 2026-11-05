@@ -69,7 +69,7 @@ export default function ReviewsPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen text-[#202820]">
+    <div className="pt-32 sm:pt-36 pb-20 bg-[#F5F1E7] min-h-screen text-[#1F2A22]">
       {/* Background Header */}
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">

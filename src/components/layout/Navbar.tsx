@@ -25,7 +25,7 @@ import {
   ClipboardList,
   ShieldCheck
 } from "lucide-react";
-import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS } from "@/data/projects";
+import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS, CATEGORY_SLUG_MAP } from "@/data/projects";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 import { openConsultationModal } from "@/components/common/ConsultationModal";
 import TopContactBar from "./TopContactBar";
@@ -87,6 +87,11 @@ export default function Navbar() {
   ];
 
   const defaultWhatsAppLink = getWhatsAppUrl();
+
+  // On full-screen Admin Dashboard, the portal provides its own dedicated sidebar and header
+  if (pathname?.startsWith("/admin/dashboard")) {
+    return null;
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
@@ -311,19 +316,19 @@ export default function Navbar() {
                 <div className="p-3 bg-[#EEE9DC] flex items-center justify-between border-b border-[#DDDCCF]">
                   <button
                     onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                    className="flex items-center gap-2 text-sm font-bold text-[#202820]"
+                    className="flex items-center gap-2 text-sm font-bold text-[#1F2A22]"
                   >
-                    <Layers className="w-4 h-4 text-[#315C3D]" />
-                    <span>10 Project Domains</span>
+                    <Layers className="w-4 h-4 text-[#285A3B]" />
+                    <span>16 Project Domains</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        mobileProjectsOpen ? "rotate-180 text-[#315C3D]" : "text-[#667064]"
+                        mobileProjectsOpen ? "rotate-180 text-[#285A3B]" : "text-[#657166]"
                       }`}
                     />
                   </button>
                   <Link
                     href="/projects"
-                    className="text-xs font-bold text-[#315C3D] hover:text-[#497A52] flex items-center gap-1"
+                    className="text-xs font-bold text-[#285A3B] hover:text-[#214930] flex items-center gap-1"
                   >
                     View All →
                   </Link>
@@ -331,13 +336,13 @@ export default function Navbar() {
 
                 {mobileProjectsOpen && (
                   <div className="p-3 space-y-3 bg-[#FFFFFF]">
-                    {/* 10 Domains Grid */}
-                    <div className="grid grid-cols-2 gap-1.5">
+                    {/* 16 Domains Grid */}
+                    <div className="grid grid-cols-2 gap-1.5 max-h-[300px] overflow-y-auto pr-1">
                       {PROJECT_CATEGORIES.map((cat) => (
                         <Link
                           key={cat}
-                          href={`/projects?category=${encodeURIComponent(cat)}`}
-                          className="flex items-center gap-2 p-2 rounded-lg bg-[#F5F1E7] border border-[#DDDCCF] hover:border-[#315C3D] text-xs text-[#667064] hover:text-[#202820] font-semibold"
+                          href={`/projects/${CATEGORY_SLUG_MAP[cat] || "AMPY"}`}
+                          className="flex items-center gap-2 p-2 rounded-lg bg-[#F5F1E7] border border-[#D8DDCF] hover:border-[#285A3B] text-xs text-[#657166] hover:text-[#1F2A22] font-semibold"
                         >
                           <div className="p-1 rounded bg-[#DCE8D9] shrink-0">
                             {categoryIcons[cat]}

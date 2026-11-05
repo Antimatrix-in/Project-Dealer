@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Sparkles,
   Phone,
@@ -43,7 +46,13 @@ const FOOTER_DOMAINS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   const whatsAppUrl = getWhatsAppUrl();
+
+  // Hide public website footer on the full-screen Admin Dashboard console
+  if (pathname?.startsWith("/admin/dashboard")) {
+    return null;
+  }
 
   const quickLinks = [
     { label: "Home", href: "/", isExternal: false },

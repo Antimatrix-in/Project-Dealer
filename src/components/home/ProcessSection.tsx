@@ -22,7 +22,7 @@ export default function ProcessSection() {
       title: "Choose Project",
       shortTitle: "Domain Selection",
       icon: <Compass className="w-5 h-5 text-[#315C3D]" />,
-      desc: "Browse our 10+ project domains or propose your own innovative concept. We assist you in selecting a high-impact, guide-approvable topic.",
+      desc: "Browse our 16 project domains or propose your own innovative concept. We assist you in selecting a high-impact, guide-approvable topic.",
       details: "Receive 3 curated project proposals with standard base papers, synopsis documents, and architectural feasibility checks for your college guide.",
     },
     {

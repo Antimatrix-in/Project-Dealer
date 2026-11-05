@@ -43,7 +43,25 @@ export const CATEGORY_SLUG_MAP: Record<string, string> = {
   "Web Development": "AMDJ",
   "Mobile App Development": "AMAD",
   "Cloud Computing": "AMCC",
-  "Data Analytics": "AMDS"
+  "Data Analytics": "AMDS",
+  // Hyphenated slug aliases
+  "ai-data-science": "AMAI",
+  "machine-learning": "AMML",
+  "deep-learning": "AMDL",
+  "python-projects": "AMPY",
+  "java-projects": "AMJV",
+  "web-development": "AMPH",
+  "mobile-app-development": "AMAD",
+  "cloud-computing": "AMCC",
+  "cyber-security": "AMCY",
+  "data-analytics": "AMDS",
+  "data-science": "AMDS",
+  "django": "AMDJ",
+  "big-data": "AMBD",
+  "blockchain": "AMBC",
+  "image-processing-matlab": "AMIM",
+  "image-processing-python": "AMIP",
+  "data-mining": "AMDM"
 };
 
 export const PROJECTS_DATA: Project[] = [

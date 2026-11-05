@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { TECHNICAL_DOMAINS, TechnicalDomain, Project } from "@/types";
-import { PROJECTS_DATA as FALLBACK_PROJECTS } from "@/data/projects";
+import { PROJECTS_DATA as FALLBACK_PROJECTS, CATEGORY_SLUG_MAP } from "@/data/projects";
 
 export { TECHNICAL_DOMAINS };
 
@@ -877,13 +877,32 @@ export function getAllDomains(): TechnicalDomainWithCount[] {
 }
 
 /**
- * Get a specific domain by domain code (e.g. "AMPY")
+ * Get a specific domain by domain code (e.g. "AMPY") or category slug (e.g. "python-projects")
  */
 export function getDomainByCode(code: string): TechnicalDomainWithCount | null {
   if (!code) return null;
-  const upper = code.trim().toUpperCase();
+  const trimmed = code.trim();
+  const upper = trimmed.toUpperCase();
   const domains = getAllDomains();
-  return domains.find((d) => d.code === upper || d.slug.toUpperCase() === upper) || null;
+
+  // 1. Direct code match (e.g. "AMPY" or slug "AMPY")
+  let found = domains.find((d) => d.code === upper || d.slug.toUpperCase() === upper);
+  if (found) return found;
+
+  // 2. Slug or name alias match via CATEGORY_SLUG_MAP
+  const aliasCode = CATEGORY_SLUG_MAP[trimmed] || CATEGORY_SLUG_MAP[trimmed.toLowerCase()];
+  if (aliasCode) {
+    found = domains.find((d) => d.code === aliasCode.toUpperCase());
+    if (found) return found;
+  }
+
+  // 3. Normalized alphanumeric name match
+  const normalized = trimmed.toLowerCase().replace(/[^a-z0-9]/g, "");
+  found = domains.find(
+    (d) => d.name.toLowerCase().replace(/[^a-z0-9]/g, "") === normalized
+  );
+
+  return found || null;
 }
 
 /**

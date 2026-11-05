@@ -76,12 +76,12 @@ export default function CategoryGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
-            <span className="uppercase tracking-wider text-[11px] font-bold">10 Trending Domains</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#D8DDCF] text-xs font-semibold text-[#285A3B] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#285A3B] animate-pulse" />
+            <span className="uppercase tracking-wider text-[11px] font-bold">16 Technical Domains</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Popular Project <span className="text-[#315C3D]">Categories</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1F2A22] tracking-tight">
+            Popular Project <span className="text-[#285A3B]">Categories</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
             Choose from comprehensive project domains aligned with current university syllabi and emerging industry technology stacks.
@@ -143,6 +143,17 @@ export default function CategoryGrid() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Bottom Action: View All 16 Technical Domains */}
+        <div className="mt-14 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#285A3B]"
+          >
+            <span>Browse All 16 Technical Domains</span>
+            <ArrowRight className="w-4 h-4 text-white" />
+          </Link>
         </div>
       </div>
     </section>

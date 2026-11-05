@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   MessageCircle,
   X,
@@ -22,6 +23,7 @@ import {
 import { PROJECT_CATEGORIES } from "@/data/projects";
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [showDetailedForm, setShowDetailedForm] = useState(false);
   const [category, setCategory] = useState("");
@@ -65,6 +67,11 @@ export default function WhatsAppButton() {
     { label: "Python / Computer Vision Project", cat: "Python Projects", title: "Driver Drowsiness / Landmark Tracker" },
     { label: "Java / Spring Boot Microservices", cat: "Java Projects", title: "Enterprise Cryptographic Audit System" },
   ];
+
+  // Hide floating WhatsApp widget on the full-screen Admin Dashboard console
+  if (pathname?.startsWith("/admin/dashboard")) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">

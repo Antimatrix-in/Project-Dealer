@@ -100,7 +100,7 @@ export default function ProjectsCatalogClient({
   }, [searchQuery, allProjects]);
 
   return (
-    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen text-[#202820]">
+    <div className="pt-32 sm:pt-36 pb-20 bg-[#F5F1E7] min-h-screen text-[#1F2A22]">
       {/* Hero Header */}
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -203,19 +203,19 @@ export default function ProjectsCatalogClient({
                 return (
                   <div
                     key={domain.code}
-                    className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D]/40 hover:shadow-md transition-all flex flex-col justify-between space-y-5 group"
+                    className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#D8DDCF] hover:border-[#285A3B] hover:shadow-md transition-all flex flex-col justify-between space-y-5 group"
                   >
                     {/* Top Badges */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <div className="p-2.5 rounded-2xl bg-[#F5F1E7] border border-[#DDDCCF] group-hover:bg-[#DCE8D9] group-hover:border-[#315C3D]/30 transition-colors">
+                        <div className="p-2.5 rounded-2xl bg-[#F5F1E7] border border-[#D8DDCF] group-hover:bg-[#DCE8D9] group-hover:border-[#285A3B]/30 transition-colors">
                           {getDomainIcon(domain.code)}
                         </div>
                         <div className="flex items-center gap-1.5">
-                          <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#F5F1E7] text-[#667064] border border-[#DDDCCF]">
+                          <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#F5F1E7] text-[#657166] border border-[#D8DDCF]">
                             #{domain.sno}
                           </span>
-                          <span className="text-xs font-mono font-black px-2.5 py-0.5 rounded-md bg-[#DCE8D9] text-[#315C3D] border border-[#315C3D]/30">
+                          <span className="text-xs font-mono font-black px-2.5 py-0.5 rounded-md bg-[#DCE8D9] text-[#285A3B] border border-[#285A3B]/30">
                             {domain.code}
                           </span>
                         </div>
@@ -223,25 +223,25 @@ export default function ProjectsCatalogClient({
 
                       {/* Domain Name */}
                       <div>
-                        <h3 className="text-base font-bold text-[#202820] group-hover:text-[#315C3D] transition-colors">
+                        <h3 className="text-base font-bold text-[#1F2A22] group-hover:text-[#285A3B] transition-colors leading-snug">
                           {domain.name}
                         </h3>
-                        <p className="text-xs text-[#667064] mt-1 line-clamp-2 leading-relaxed">
+                        <p className="text-xs text-[#657166] mt-1.5 line-clamp-2 leading-relaxed">
                           {domain.description}
                         </p>
                       </div>
                     </div>
 
                     {/* Project Count & Action Button */}
-                    <div className="pt-4 border-t border-[#DDDCCF] space-y-3">
+                    <div className="pt-4 border-t border-[#D8DDCF] space-y-3">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-[#667064] font-medium">Available Projects:</span>
+                        <span className="text-[#657166] font-medium">Available Projects:</span>
                         {hasProjects ? (
-                          <span className="font-bold text-[#315C3D] font-mono">
+                          <span className="font-bold text-[#285A3B] font-mono">
                             {domain.projectCount} {domain.projectCount === 1 ? "Project" : "Projects"}
                           </span>
                         ) : (
-                          <span className="font-bold text-[#667064] font-mono">
+                          <span className="font-bold text-[#657166] font-mono">
                             0 Projects
                           </span>
                         )}
@@ -249,7 +249,7 @@ export default function ProjectsCatalogClient({
 
                       {/* Empty state notice for 0 projects */}
                       {!hasProjects && (
-                        <p className="text-[11px] italic text-[#667064] bg-[#F5F1E7] p-2 rounded-xl border border-[#DDDCCF] text-center">
+                        <p className="text-[11px] italic text-[#657166] bg-[#F5F1E7] p-2 rounded-xl border border-[#D8DDCF] text-center">
                           Projects for this domain will be available soon.
                         </p>
                       )}
@@ -259,8 +259,8 @@ export default function ProjectsCatalogClient({
                         href={`/projects/${domain.code}`}
                         className={`w-full py-2.5 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 ${
                           hasProjects
-                            ? "bg-[#315C3D] hover:bg-[#254930] text-white shadow-xs group-hover:translate-y-[-1px]"
-                            : "bg-[#EEE9DC] hover:bg-[#DDDCCF] text-[#202820]"
+                            ? "bg-[#285A3B] hover:bg-[#214930] text-white shadow-xs group-hover:translate-y-[-1px]"
+                            : "bg-[#EEE9DC] hover:bg-[#D8DDCF] text-[#1F2A22]"
                         }`}
                       >
                         <span>View Projects</span>

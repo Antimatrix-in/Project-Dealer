@@ -79,18 +79,18 @@ export default function Hero() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] hover:text-[#254930] border border-[#DDDCCF] hover:border-[#315C3D] font-bold text-sm shadow-xs transition-all flex items-center gap-2.5"
+                className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#285A3B] hover:text-[#214930] border border-[#D8DDCF] hover:border-[#285A3B] font-bold text-sm shadow-xs transition-all flex items-center gap-2.5"
               >
-                <MessageCircle className="w-4 h-4 text-[#315C3D]" />
+                <MessageCircle className="w-4 h-4 text-[#285A3B]" />
                 <span>WhatsApp Us</span>
               </a>
 
-              {/* Project Enquiry (Forest Green) */}
+              {/* Project Enquiry (Official Google Form) */}
               <a
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2.5 group cursor-pointer border border-[#315C3D]"
+                className="px-7 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-sm shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2.5 group cursor-pointer border border-[#285A3B]"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>

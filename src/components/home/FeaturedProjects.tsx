@@ -71,7 +71,7 @@ export default function FeaturedProjects() {
             href={GOOGLE_ENQUIRY_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#315C3D] group cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#285A3B] group cursor-pointer"
           >
             <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
             <span>Project Enquiry</span>
@@ -79,10 +79,10 @@ export default function FeaturedProjects() {
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-[#202820] hover:text-[#315C3D] hover:border-[#315C3D] font-bold text-sm transition-all group"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#D8DDCF] text-[#1F2A22] hover:text-[#285A3B] hover:border-[#285A3B] font-bold text-sm transition-all group"
           >
             <span>Explore All Projects in Catalog</span>
-            <ArrowRight className="w-4 h-4 text-[#315C3D] group-hover:translate-x-1.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#285A3B] group-hover:translate-x-1.5 transition-transform" />
           </Link>
         </div>
       </div>

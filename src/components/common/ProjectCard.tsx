@@ -115,11 +115,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Buttons: [ Explore Projects ] [ Enquire Now ] */}
-      <div className="pt-3 border-t border-[#DDDCCF] flex items-center gap-2">
+      <div className="pt-3 border-t border-[#D8DDCF] flex items-center gap-2">
         <Link
           href={`/projects/${projectSlug}`}
           id={`explore-btn-${projectSlug}`}
-          className="flex-1 py-2.5 px-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs text-center transition-all flex items-center justify-center gap-1.5 group/btn cursor-pointer shadow-xs border border-[#315C3D]"
+          className="flex-1 py-2.5 px-3 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-xs text-center transition-all flex items-center justify-center gap-1.5 group/btn cursor-pointer shadow-xs border border-[#285A3B]"
         >
           <span>Explore Projects</span>
           <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:translate-x-0.5 transition-all" />
@@ -128,9 +128,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           href={GOOGLE_ENQUIRY_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="py-2.5 px-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] border border-[#DDDCCF] hover:border-[#315C3D] font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 group/btn cursor-pointer whitespace-nowrap"
+          className="py-2.5 px-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#285A3B] border border-[#D8DDCF] hover:border-[#285A3B] font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 group/btn cursor-pointer whitespace-nowrap"
         >
-          <ClipboardList className="w-3.5 h-3.5 text-[#315C3D] group-hover/btn:scale-110 transition-transform" />
+          <ClipboardList className="w-3.5 h-3.5 text-[#285A3B] group-hover/btn:scale-110 transition-transform" />
           <span>Enquire</span>
         </a>
       </div>

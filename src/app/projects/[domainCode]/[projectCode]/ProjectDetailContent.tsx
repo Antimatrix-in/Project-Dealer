@@ -49,7 +49,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
       : "/images/projects/ecommerce-platform.jpg");
 
   return (
-    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen text-[#202820]">
+    <div className="pt-32 sm:pt-36 pb-20 bg-[#F5F1E7] min-h-screen text-[#1F2A22]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         
         {/* Navigation Breadcrumbs & Back Button */}
@@ -112,7 +112,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                   href={GOOGLE_ENQUIRY_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-[#315C3D] cursor-pointer"
+                  className="px-6 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all flex items-center gap-2 border border-[#285A3B] cursor-pointer"
                 >
                   <ClipboardList className="w-4 h-4 text-white" />
                   <span>Enquire About This Project</span>
@@ -123,9 +123,9 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                   href={whatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] font-bold text-xs sm:text-sm border border-[#DDDCCF] hover:border-[#315C3D] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
+                  className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#285A3B] font-bold text-xs sm:text-sm border border-[#D8DDCF] hover:border-[#285A3B] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#315C3D]" />
+                  <MessageCircle className="w-4 h-4 text-[#285A3B]" />
                   <span>Inquire on WhatsApp</span>
                 </a>
 
@@ -139,9 +139,9 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                       requirement: `Custom requirement for project ${code}: ${project.title}`,
                     })
                   }
-                  className="px-6 py-3.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#202820] hover:text-[#315C3D] font-bold text-xs sm:text-sm border border-[#DDDCCF] hover:border-[#315C3D] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
+                  className="px-6 py-3.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#1F2A22] hover:text-[#285A3B] font-bold text-xs sm:text-sm border border-[#D8DDCF] hover:border-[#285A3B] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-[#315C3D]" />
+                  <Sparkles className="w-4 h-4 text-[#285A3B]" />
                   <span>Request a Requirement</span>
                 </button>
               </div>
@@ -278,21 +278,21 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
           <div className="space-y-6">
             
             {/* Quick Enquiry CTA Card */}
-            <div className="p-6 rounded-3xl bg-[#EEE9DC] border border-[#DDDCCF] shadow-xs space-y-4 text-center">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#315C3D] block">
+            <div className="p-6 rounded-3xl bg-[#EEE9DC] border border-[#D8DDCF] shadow-xs space-y-4 text-center">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#285A3B] block">
                 Interested In This Project?
               </span>
-              <h3 className="text-base font-black text-[#202820]">
+              <h3 className="text-base font-black text-[#1F2A22]">
                 Reserve {code} for Your College Review
               </h3>
-              <p className="text-xs text-[#667064] leading-relaxed">
+              <p className="text-xs text-[#657166] leading-relaxed">
                 Click below to open the official Google Enquiry Form directly.
               </p>
               <a
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer border border-[#285A3B]"
               >
                 <ClipboardList className="w-4 h-4" />
                 <span>Enquire About {code}</span>

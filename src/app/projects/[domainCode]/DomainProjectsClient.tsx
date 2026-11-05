@@ -60,7 +60,7 @@ export default function DomainProjectsClient({
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#F5F1E7] min-h-screen text-[#202820]">
+    <div className="pt-32 sm:pt-36 pb-20 bg-[#F5F1E7] min-h-screen text-[#1F2A22]">
       {/* Top Header Bar */}
       <div className="relative py-14 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -276,10 +276,10 @@ export default function DomainProjectsClient({
                     </div>
 
                     {/* Action Buttons: View Details & Enquire */}
-                    <div className="pt-4 border-t border-[#DDDCCF] grid grid-cols-2 gap-2.5">
+                    <div className="pt-4 border-t border-[#D8DDCF] grid grid-cols-2 gap-2.5">
                       <Link
                         href={detailsUrl}
-                        className="w-full py-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] text-xs font-bold transition-colors flex items-center justify-center gap-1.5 border border-[#DDDCCF]"
+                        className="w-full py-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#285A3B] text-xs font-bold transition-colors flex items-center justify-center gap-1.5 border border-[#D8DDCF]"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>View Details</span>
@@ -289,7 +289,7 @@ export default function DomainProjectsClient({
                         href={GOOGLE_ENQUIRY_FORM_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                        className="w-full py-2.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer border border-[#285A3B]"
                       >
                         <ClipboardList className="w-3.5 h-3.5" />
                         <span>Enquire</span>

@@ -49,9 +49,9 @@ export default function CtaBanner() {
                 href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 border border-[#DDDCCF] hover:border-[#315C3D] shadow-xs"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#285A3B] font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 border border-[#D8DDCF] hover:border-[#285A3B] shadow-xs"
               >
-                <MessageCircle className="w-5 h-5 text-[#315C3D]" />
+                <MessageCircle className="w-5 h-5 text-[#285A3B]" />
                 <span>WhatsApp Now</span>
               </a>
 
@@ -59,7 +59,7 @@ export default function CtaBanner() {
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-xs hover:shadow-md border border-[#315C3D] group"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-xs hover:shadow-md border border-[#285A3B] group"
               >
                 <ClipboardList className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                 <span>Fill Project Enquiry Form</span>
@@ -67,10 +67,10 @@ export default function CtaBanner() {
 
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] hover:text-[#315C3D] font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#DDDCCF] hover:border-[#315C3D] shadow-xs"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#1F2A22] hover:text-[#285A3B] font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 border border-[#D8DDCF] hover:border-[#285A3B] shadow-xs"
               >
                 <span>Contact Us</span>
-                <ArrowRight className="w-4 h-4 text-[#315C3D]" />
+                <ArrowRight className="w-4 h-4 text-[#285A3B]" />
               </Link>
             </div>
 

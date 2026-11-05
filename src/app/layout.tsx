@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F5F1E7] text-[#202820] selection:bg-[#315C3D] selection:text-[#FFFFFF] font-sans">
+      <body className="min-h-full flex flex-col bg-[#F5F1E7] text-[#1F2A22] selection:bg-[#285A3B] selection:text-[#FFFFFF] font-sans antialiased">
         <Navbar />
         <main className="flex-1">
           {children}
