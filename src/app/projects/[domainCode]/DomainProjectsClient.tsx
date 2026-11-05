@@ -19,6 +19,8 @@ import {
   FileCode2
 } from "lucide-react";
 import CtaBanner from "@/components/home/CtaBanner";
+import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import { openConsultationModal } from "@/components/common/ConsultationModal";
 
 interface DomainProjectsClientProps {
   domain: TechnicalDomainWithCount;
@@ -134,6 +136,20 @@ export default function DomainProjectsClient({
             <span>
               Showing {filteredProjects.length} of {projects.length} {projects.length === 1 ? "Project" : "Projects"}
             </span>
+            <button
+              type="button"
+              onClick={() =>
+                openConsultationModal({
+                  category: domain.name,
+                  requirement: `Custom project requirement for domain ${domain.name} (${domain.code})`,
+                })
+              }
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#202820] hover:text-[#315C3D] border border-[#DDDCCF] text-xs font-bold transition-all shadow-xs cursor-pointer font-sans"
+              title="Request a Custom Project or Special Requirement"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#315C3D]" />
+              <span>Request a Requirement</span>
+            </button>
           </div>
         </div>
 
@@ -157,12 +173,18 @@ export default function DomainProjectsClient({
             </div>
 
             <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href={`/project-enquiry?domain=${domain.code}`}
-                className="px-6 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors"
+              <button
+                type="button"
+                onClick={() =>
+                  openConsultationModal({
+                    category: domain.name,
+                    requirement: `Special requirement / custom project topic for ${domain.name} (${domain.code})`,
+                  })
+                }
+                className="px-6 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
               >
-                Submit Domain Enquiry for {domain.code}
-              </Link>
+                Request a Requirement for {domain.code}
+              </button>
               <Link
                 href="/projects"
                 className="px-6 py-3 rounded-xl bg-[#EEE9DC] hover:bg-[#DDDCCF] text-[#202820] font-bold text-xs transition-colors"
@@ -178,12 +200,26 @@ export default function DomainProjectsClient({
             <h3 className="text-sm font-bold text-[#202820]">
               No projects in {domain.name} match &quot;{searchQuery}&quot;
             </h3>
-            <button
-              onClick={() => handleSearchChange("")}
-              className="text-xs font-bold text-[#315C3D] hover:underline"
-            >
-              Clear search filter
-            </button>
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <button
+                onClick={() => handleSearchChange("")}
+                className="px-4 py-2 rounded-lg bg-[#EEE9DC] text-xs font-bold text-[#202820] hover:text-[#315C3D] cursor-pointer"
+              >
+                Clear search filter
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  openConsultationModal({
+                    category: domain.name,
+                    requirement: `Looking for: ${searchQuery} in ${domain.name} (${domain.code})`,
+                  })
+                }
+                className="px-4 py-2 rounded-lg bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold shadow-xs cursor-pointer"
+              >
+                Request this Requirement
+              </button>
+            </div>
           </div>
         ) : (
           /* Projects Grid */
@@ -192,7 +228,6 @@ export default function DomainProjectsClient({
               {paginatedProjects.map((project) => {
                 const code = project.projectCode || project.id;
                 const detailsUrl = `/projects/${domain.code}/${code}`;
-                const enquiryUrl = `/project-enquiry?domain=${encodeURIComponent(domain.code)}&project=${encodeURIComponent(code)}`;
 
                 return (
                   <div
@@ -250,13 +285,15 @@ export default function DomainProjectsClient({
                         <span>View Details</span>
                       </Link>
 
-                      <Link
-                        href={enquiryUrl}
-                        className="w-full py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+                      <a
+                        href={GOOGLE_ENQUIRY_FORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
                       >
                         <ClipboardList className="w-3.5 h-3.5" />
                         <span>Enquire</span>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 );

@@ -19,7 +19,8 @@ import {
   ShieldCheck,
   Check
 } from "lucide-react";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import { openConsultationModal } from "@/components/common/ConsultationModal";
 import CtaBanner from "@/components/home/CtaBanner";
 
 interface ProjectDetailContentProps {
@@ -31,7 +32,6 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
   const domainCode = project.domainCode || "AMPY";
   const domainName = project.domainName || project.category;
 
-  const enquiryUrl = `/project-enquiry?domain=${encodeURIComponent(domainCode)}&project=${encodeURIComponent(code)}`;
   const whatsAppUrl = getWhatsAppUrl({
     category: domainName,
     projectTitle: `[${code}] ${project.title}`,
@@ -107,25 +107,43 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
 
               {/* PROMINENT ACTION BUTTONS */}
               <div className="pt-3 flex flex-wrap items-center gap-3">
-                {/* 1. Enquire About This Project (Required Prominent Button) */}
-                <Link
-                  href={enquiryUrl}
-                  className="px-6 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-[#315C3D]"
+                {/* 1. Enquire About This Project (Opens Google Form directly) */}
+                <a
+                  href={GOOGLE_ENQUIRY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-[#315C3D] cursor-pointer"
                 >
                   <ClipboardList className="w-4 h-4 text-white" />
                   <span>Enquire About This Project</span>
-                </Link>
+                </a>
 
                 {/* 2. WhatsApp Inquire */}
                 <a
                   href={whatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] font-bold text-xs sm:text-sm border border-[#DDDCCF] hover:border-[#315C3D] transition-colors flex items-center gap-2 shadow-xs"
+                  className="px-6 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#315C3D] font-bold text-xs sm:text-sm border border-[#DDDCCF] hover:border-[#315C3D] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 text-[#315C3D]" />
                   <span>Inquire on WhatsApp</span>
                 </a>
+
+                {/* 3. Request a Requirement / Custom Modification */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    openConsultationModal({
+                      projectTitle: project.title,
+                      category: domainName,
+                      requirement: `Custom requirement for project ${code}: ${project.title}`,
+                    })
+                  }
+                  className="px-6 py-3.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#202820] hover:text-[#315C3D] font-bold text-xs sm:text-sm border border-[#DDDCCF] hover:border-[#315C3D] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 text-[#315C3D]" />
+                  <span>Request a Requirement</span>
+                </button>
               </div>
             </div>
 
@@ -268,15 +286,17 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                 Reserve {code} for Your College Review
               </h3>
               <p className="text-xs text-[#667064] leading-relaxed">
-                Click below to open the enquiry desk with project details prefilled. Our academic coordinator will contact you on WhatsApp.
+                Click below to open the official Google Enquiry Form directly.
               </p>
-              <Link
-                href={enquiryUrl}
-                className="w-full py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
               >
                 <ClipboardList className="w-4 h-4" />
                 <span>Enquire About {code}</span>
-              </Link>
+              </a>
             </div>
 
             {/* Technologies Used (Tech Stack) */}

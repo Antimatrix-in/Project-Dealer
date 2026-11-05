@@ -56,7 +56,8 @@ export async function POST(request: Request) {
     const source = (String(body.source || defaultSource).trim()) as
       | "Project Enquiry"
       | "General Website Contact"
-      | "Consultation Request";
+      | "Consultation Request"
+      | "Custom Requirement";
 
     const hasHoneypot = Boolean(
       (body.website && String(body.website).trim().length > 0) ||

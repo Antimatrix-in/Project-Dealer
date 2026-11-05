@@ -13,7 +13,7 @@ export type InquiryStatus =
 
 export type VerificationStatus = "Verified" | "Suspicious" | "Spam" | "Unverified";
 
-export type EnquirySource = "Project Enquiry" | "General Website Contact" | "Consultation Request";
+export type EnquirySource = "Project Enquiry" | "General Website Contact" | "Consultation Request" | "Custom Requirement";
 
 export const PROJECT_ENQUIRY_DOMAINS = [
   "AI & Data Science",
@@ -252,6 +252,8 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
   if (!id) {
     if (source === "Project Enquiry") {
       id = `PE-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    } else if (source === "Custom Requirement") {
+      id = `REQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
     } else {
       id = `inq-${Date.now()}`;
     }

@@ -251,14 +251,17 @@ export default function WhatsAppButton() {
       {/* Floating Action Buttons Container: [ Project Enquiry ] + [ WhatsApp Us ] */}
       <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2.5">
         {/* Project Enquiry Floating Button */}
-        <Link
-          href="/project-enquiry"
+        <a
+          href={GOOGLE_ENQUIRY_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group flex items-center gap-2 px-4 py-3 rounded-full bg-[#315C3D] hover:bg-[#254930] text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-[#315C3D] cursor-pointer font-bold text-xs"
-          aria-label="Open Project Enquiry Desk"
+          aria-label="Open Project Enquiry Google Form"
         >
           <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
           <span className="whitespace-nowrap font-medium">Project Enquiry</span>
-        </Link>
+          <ExternalLink className="w-3 h-3 text-white/80 opacity-80" />
+        </a>
 
         {/* WhatsApp Floating Button */}
         <button

@@ -10,6 +10,8 @@ interface ConsultationEventDetail {
   projectTitle?: string;
   category?: string;
   serviceTitle?: string;
+  requirement?: string;
+  source?: string;
 }
 
 export function openConsultationModal(details?: ConsultationEventDetail) {
@@ -41,18 +43,25 @@ export default function ConsultationModal() {
     urgency: "1-2 Weeks",
   });
 
+  const [customSource, setCustomSource] = useState<string>("Custom Requirement");
+
   useEffect(() => {
     const handleOpen = (e: Event) => {
       const customEvent = e as CustomEvent<ConsultationEventDetail>;
       if (customEvent.detail) {
+        setCustomSource(customEvent.detail.source || "Custom Requirement");
         setFormData((prev) => ({
           ...prev,
           projectTitle: customEvent.detail.projectTitle || prev.projectTitle,
           category: customEvent.detail.category || prev.category,
-          requirement: customEvent.detail.serviceTitle
-            ? `Interested in service: ${customEvent.detail.serviceTitle}`
-            : prev.requirement,
+          requirement:
+            customEvent.detail.requirement ||
+            (customEvent.detail.serviceTitle
+              ? `Interested in service: ${customEvent.detail.serviceTitle}`
+              : prev.requirement),
         }));
+      } else {
+        setCustomSource("Custom Requirement");
       }
       setSubmitted(false);
       setErrorMessage("");
@@ -101,7 +110,7 @@ export default function ConsultationModal() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          source: "Consultation Request",
+          source: customSource || "Custom Requirement",
           website: honeypot,
           company_hp: honeypotCompany,
           _f_rendered_at: renderedAt,
@@ -156,9 +165,9 @@ export default function ConsultationModal() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#202820]">Book Engineering Project Consultation</h3>
+              <h3 className="text-xl font-bold text-[#202820]">Request a Requirement &amp; Consultation</h3>
               <p className="text-xs text-[#667064]">
-                Direct guidance with domain research experts in Chennai &amp; Remote
+                Submit custom project specifications, unique domain topics, or special requests directly to admin
               </p>
             </div>
           </div>
@@ -177,9 +186,9 @@ export default function ConsultationModal() {
               <div className="w-16 h-16 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] flex items-center justify-center mx-auto shadow-xs">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-2xl font-bold text-[#202820]">Consultation Request Received!</h4>
+              <h4 className="text-2xl font-bold text-[#202820]">Requirement Request Received!</h4>
               <p className="text-[#667064] max-w-md mx-auto text-sm leading-relaxed">
-                Thank you, <span className="text-[#315C3D] font-semibold">{formData.name}</span>. An AntiMatrix domain project mentor has received your details and will call / message you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes. You can also send documentation directly to{" "}
+                Thank you, <span className="text-[#315C3D] font-semibold">{formData.name}</span>. Your custom requirement has been submitted to the AntiMatrix Admin Suite and assigned to our domain review team. A project coordinator will contact you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes. You can also send documentation directly to{" "}
                 <a
                   href="mailto:projects@antimatrix.co.in"
                   className="text-[#315C3D] font-bold hover:underline"

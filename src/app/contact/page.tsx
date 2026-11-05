@@ -144,13 +144,16 @@ export default function ContactPage() {
               <span>WhatsApp Now</span>
             </a>
 
-            <Link
-              href="/project-enquiry"
+            <a
+              href={GOOGLE_ENQUIRY_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs shadow-xs hover:shadow-md transition-all group border border-[#315C3D]"
             >
               <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-              <span>Project Enquiry Desk</span>
-            </Link>
+              <span>Fill Project Enquiry Form</span>
+              <ExternalLink className="w-3.5 h-3.5 text-white/80 ml-0.5" />
+            </a>
           </div>
         </div>
       </div>
@@ -242,14 +245,17 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Project Enquiry (Internal Portal CTA) */}
-              <Link
-                href="/project-enquiry"
+              {/* Project Enquiry (Google Form CTA) */}
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs group shrink-0 border border-[#315C3D]"
               >
                 <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
-                <span>Project Enquiry Portal</span>
-              </Link>
+                <span>Project Enquiry Form</span>
+                <ExternalLink className="w-3.5 h-3.5 text-white/80 ml-0.5" />
+              </a>
             </div>
 
             {submitted ? (

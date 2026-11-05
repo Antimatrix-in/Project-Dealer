@@ -178,5 +178,5 @@ export interface ProjectInquiry {
   requirement?: string;
   message?: string;
   urgency?: "Immediate (1-3 days)" | "1-2 Weeks" | "1 Month" | "Flexible" | string;
-  source?: "Project Enquiry" | "General Website Contact" | "Consultation Request";
+  source?: "Project Enquiry" | "General Website Contact" | "Consultation Request" | "Custom Requirement";
 }

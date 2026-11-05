@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS } from "@/data/projects";
 import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+import { openConsultationModal } from "@/components/common/ConsultationModal";
 import TopContactBar from "./TopContactBar";
 import ProjectsMegaMenu from "./ProjectsMegaMenu";
 
@@ -199,13 +200,24 @@ export default function Navbar() {
                 <span>WhatsApp</span>
               </a>
 
-              <Link
-                href="/project-enquiry"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 group cursor-pointer border border-[#315C3D]"
               >
                 <ClipboardList className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
                 <span>Project Enquiry</span>
-              </Link>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => openConsultationModal({ requirement: "Custom Project / Special Requirement" })}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#202820] hover:text-[#315C3D] border border-[#DDDCCF] text-xs font-bold transition-all shadow-xs cursor-pointer"
+                title="Request a Custom Project or Special Requirement"
+              >
+                <span>Request a Requirement</span>
+              </button>
 
               <Link
                 href="/admin/login"
@@ -398,14 +410,16 @@ export default function Navbar() {
 
             <div className="pt-2 border-t border-[#DDDCCF] flex flex-col gap-2">
               <div className="grid grid-cols-2 gap-2">
-                <Link
-                  href="/project-enquiry"
+                <a
+                  href={GOOGLE_ENQUIRY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2.5 px-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs group"
+                  className="py-2.5 px-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs group cursor-pointer"
                 >
                   <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                   <span>Project Enquiry</span>
-                </Link>
+                </a>
 
                 <Link
                   href="/admin/login"
@@ -415,6 +429,17 @@ export default function Navbar() {
                   <span>Admin Login</span>
                 </Link>
               </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openConsultationModal({ requirement: "Custom Project / Special Requirement" });
+                }}
+                className="w-full py-2.5 px-4 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] text-[#202820] hover:text-[#315C3D] text-xs font-bold flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+              >
+                <span>Request a Requirement</span>
+              </button>
 
               <a
                 href={defaultWhatsAppLink}

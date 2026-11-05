@@ -55,13 +55,15 @@ export default function CtaBanner() {
                 <span>WhatsApp Now</span>
               </a>
 
-              <Link
-                href="/project-enquiry"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 shadow-xs hover:shadow-md border border-[#315C3D] group"
               >
                 <ClipboardList className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                 <span>Fill Project Enquiry Form</span>
-              </Link>
+              </a>
 
               <Link
                 href="/contact"

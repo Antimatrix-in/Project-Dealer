@@ -21,6 +21,7 @@ import {
   ShieldAlert,
   AlertTriangle,
   ClipboardList,
+  Sparkles,
   LogOut,
   Clock,
   CheckCircle2,
@@ -149,11 +150,14 @@ export default function AdminDashboardClient({
     const spam = inquiries.filter(
       (i) => i.verificationStatus === "Spam" || i.status === "Spam"
     ).length;
+    const customRequirements = inquiries.filter(
+      (i) => i.source === "Custom Requirement" || (i.id && i.id.startsWith("REQ-"))
+    ).length;
     const projectEnquiries = inquiries.filter(
       (i) => i.source === "Project Enquiry" || (i.id && i.id.startsWith("PE-"))
     ).length;
     const consultationRequests = inquiries.filter(
-      (i) => i.source === "Consultation Request" || (!i.source && !i.id?.startsWith("PE-"))
+      (i) => i.source === "Consultation Request" || (!i.source && !i.id?.startsWith("PE-") && !i.id?.startsWith("REQ-"))
     ).length;
     const generalEnquiries = inquiries.filter(
       (i) => i.source === "General Website Contact"
@@ -166,6 +170,7 @@ export default function AdminDashboardClient({
       verified,
       suspicious,
       spam,
+      customRequirements,
       projectEnquiries,
       consultationRequests,
       generalEnquiries
@@ -487,7 +492,15 @@ export default function AdminDashboardClient({
   };
 
   const renderSourceBadge = (source?: string, id?: string) => {
-    const s = source || (id && id.startsWith("PE-") ? "Project Enquiry" : "Consultation Request");
+    const s = source || (id && id.startsWith("PE-") ? "Project Enquiry" : id && id.startsWith("REQ-") ? "Custom Requirement" : "Consultation Request");
+    if (s === "Custom Requirement") {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#254930] border border-[#315C3D]">
+          <Sparkles className="w-3 h-3 text-[#315C3D]" />
+          <span>Custom Requirement</span>
+        </span>
+      );
+    }
     if (s === "Project Enquiry") {
       return (
         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
@@ -1598,8 +1611,9 @@ export default function AdminDashboardClient({
                   <span className="text-[#667064] font-mono text-[11px] mr-1">Category:</span>
                   {[
                     { id: "All", label: "All Categories", count: stats.total },
-                    { id: "Project Enquiry", label: "Project Enquiries", count: stats.projectEnquiries },
+                    { id: "Custom Requirement", label: "Custom Requirements", count: stats.customRequirements },
                     { id: "Consultation Request", label: "Consultation Requests", count: stats.consultationRequests },
+                    { id: "Project Enquiry", label: "Project Enquiries", count: stats.projectEnquiries },
                     { id: "General Website Contact", label: "General Contact", count: stats.generalEnquiries }
                   ].map((cat) => (
                     <button
