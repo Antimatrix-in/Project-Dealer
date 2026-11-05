@@ -14,7 +14,6 @@ import {
   ClipboardList,
   ExternalLink
 } from "lucide-react";
-import { PROJECT_CATEGORIES } from "@/data/projects";
 import {
   getWhatsAppUrl,
   WHATSAPP_NUMBER,
@@ -23,6 +22,25 @@ import {
   CONTACT_EMAIL_MAILTO,
   GOOGLE_ENQUIRY_FORM_URL
 } from "@/lib/whatsapp";
+
+const FOOTER_DOMAINS = [
+  { name: "Python Projects", code: "AMPY" },
+  { name: "Java Projects", code: "AMJV" },
+  { name: "Cyber Security", code: "AMCY" },
+  { name: "Django – Python", code: "AMDJ" },
+  { name: "Data Science – Python", code: "AMDS" },
+  { name: "Image Processing – MATLAB", code: "AMIM" },
+  { name: "Deep Learning", code: "AMDL" },
+  { name: "Artificial Intelligence", code: "AMAI" },
+  { name: "Web Application – PHP", code: "AMPH" },
+  { name: "Android – Java", code: "AMAD" },
+  { name: "Big Data – Python/Java", code: "AMBD" },
+  { name: "Image Processing – Python", code: "AMIP" },
+  { name: "Cloud Computing – Python/Java", code: "AMCC" },
+  { name: "Data Mining – Python/Java", code: "AMDM" },
+  { name: "Blockchain – Python/Java/DotNet", code: "AMBC" },
+  { name: "Machine Learning – Python", code: "AMML" },
+];
 
 export default function Footer() {
   const whatsAppUrl = getWhatsAppUrl();
@@ -157,24 +175,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Categories Column (10 Project Domains - lg:col-span-3) */}
+          {/* Categories Column (16 Project Domains - lg:col-span-3) */}
           <div className="lg:col-span-3">
             <h4 className="text-[#F5F1E7] text-sm font-bold tracking-wider uppercase mb-4 font-mono">
-              10 Project Domains
+              16 Project Domains
             </h4>
-            <ul className="space-y-2 text-xs">
-              {PROJECT_CATEGORIES.map((cat) => (
-                <li key={cat}>
+            <ul className="space-y-1.5 text-xs">
+              {FOOTER_DOMAINS.map((domain) => (
+                <li key={domain.code}>
                   <Link
-                    href={`/projects?category=${encodeURIComponent(cat)}`}
-                    className="text-[#DCE8D9]/80 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+                    href={`/projects/${domain.code}`}
+                    className="text-[#DCE8D9]/80 hover:text-white transition-colors flex items-center gap-1.5 font-medium group"
                   >
-                    <ArrowRight className="w-3 h-3 text-[#DCE8D9] shrink-0" />
-                    <span>{cat}</span>
+                    <ArrowRight className="w-3 h-3 text-[#DCE8D9] shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                    <span>{domain.name}</span>
                   </Link>
                 </li>
               ))}
-              <li className="pt-1">
+              <li className="pt-2">
                 <Link
                   href="/projects"
                   className="text-[#DCE8D9] hover:text-white hover:underline font-bold block"
