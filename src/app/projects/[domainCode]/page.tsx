@@ -14,22 +14,10 @@ interface DomainPageProps {
   params: Promise<{ domainCode: string }>;
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const params: { domainCode: string }[] = [];
-
-  // All 16 domain codes
-  TECHNICAL_DOMAINS.forEach((d) => {
-    params.push({ domainCode: d.code });
-  });
-
-  // Also include existing projects for backwards compatibility
-  const projects = getAllProjects();
-  projects.forEach((p) => {
-    if (p.slug) params.push({ domainCode: p.slug });
-    if (p.id) params.push({ domainCode: p.id });
-  });
-
-  return params;
+  return [];
 }
 
 export async function generateMetadata({ params }: DomainPageProps) {

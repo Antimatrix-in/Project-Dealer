@@ -36,6 +36,7 @@ export const CATEGORY_SLUG_MAP: Record<string, string> = {
   "Data Mining – Python/Java": "AMDM",
   "Blockchain – Python/Java/DotNet": "AMBC",
   "Machine Learning – Python": "AMML",
+  "Machine Learning - Python": "AMML",
   // Legacy aliases
   "AI & Data Science": "AMAI",
   "Machine Learning": "AMML",
@@ -1017,7 +1018,15 @@ export const DOMAIN_DETAILS: Record<string, { shortDesc: string; tag: string }> 
     shortDesc: "Native Android, BLE Mesh & Offline SOS",
     tag: "Android • BLE"
   },
+  "Big Data – Python / Java": {
+    shortDesc: "Apache Spark, Hadoop & Streaming Data",
+    tag: "Spark • Hadoop"
+  },
   "Big Data – Python/Java": {
+    shortDesc: "Apache Spark, Hadoop & Streaming Data",
+    tag: "Spark • Hadoop"
+  },
+  "Big Data - Python / Java": {
     shortDesc: "Apache Spark, Hadoop & Streaming Data",
     tag: "Spark • Hadoop"
   },
@@ -1025,19 +1034,51 @@ export const DOMAIN_DETAILS: Record<string, { shortDesc: string; tag: string }> 
     shortDesc: "OpenCV, Scikit-Image & Defect Detection",
     tag: "OpenCV • SciPy"
   },
+  "Image Processing - Python": {
+    shortDesc: "OpenCV, Scikit-Image & Defect Detection",
+    tag: "OpenCV • SciPy"
+  },
+  "Cloud Computing – Python / Java": {
+    shortDesc: "Kubernetes, Docker & Serverless Autoscaling",
+    tag: "K8s • Serverless"
+  },
   "Cloud Computing – Python/Java": {
     shortDesc: "Kubernetes, Docker & Serverless Autoscaling",
     tag: "K8s • Serverless"
+  },
+  "Cloud Computing - Python / Java": {
+    shortDesc: "Kubernetes, Docker & Serverless Autoscaling",
+    tag: "K8s • Serverless"
+  },
+  "Data Mining – Python / Java": {
+    shortDesc: "Association Rules, Clustering & Apriori",
+    tag: "Clustering • Mining"
   },
   "Data Mining – Python/Java": {
     shortDesc: "Association Rules, Clustering & Apriori",
     tag: "Clustering • Mining"
   },
+  "Data Mining - Python / Java": {
+    shortDesc: "Association Rules, Clustering & Apriori",
+    tag: "Clustering • Mining"
+  },
+  "Blockchain – Python / Java / DotNet": {
+    shortDesc: "Distributed Consensus, Merkle Trees & Audits",
+    tag: "Smart Contract • Ledger"
+  },
   "Blockchain – Python/Java/DotNet": {
     shortDesc: "Distributed Consensus, Merkle Trees & Audits",
     tag: "Smart Contract • Ledger"
   },
+  "Blockchain - Python / Java / DotNet": {
+    shortDesc: "Distributed Consensus, Merkle Trees & Audits",
+    tag: "Smart Contract • Ledger"
+  },
   "Machine Learning – Python": {
+    shortDesc: "Graph Networks, Fraud & Anomaly Detection",
+    tag: "GNN • XGBoost"
+  },
+  "Machine Learning - Python": {
     shortDesc: "Graph Networks, Fraud & Anomaly Detection",
     tag: "GNN • XGBoost"
   },

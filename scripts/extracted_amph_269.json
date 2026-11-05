@@ -1,0 +1,1078 @@
+[
+  {
+    "code": "AMPH001",
+    "title": "Web based Graphical Password Authentication System"
+  },
+  {
+    "code": "AMPH002",
+    "title": "Student Information System"
+  },
+  {
+    "code": "AMPH003",
+    "title": "Employee Tracking System"
+  },
+  {
+    "code": "AMPH004",
+    "title": "Agri Shop: Farmers Online Selling Application"
+  },
+  {
+    "code": "AMPH005",
+    "title": "Library App - Library Management System"
+  },
+  {
+    "code": "AMPH006",
+    "title": "Telephone Billing System"
+  },
+  {
+    "code": "AMPH007",
+    "title": "Inventory Management system"
+  },
+  {
+    "code": "AMPH008",
+    "title": "Online Election System"
+  },
+  {
+    "code": "AMPH009",
+    "title": "Vehicle management system"
+  },
+  {
+    "code": "AMPH010",
+    "title": "Doctor Appointment Booking System"
+  },
+  {
+    "code": "AMPH011",
+    "title": "Insurance Database"
+  },
+  {
+    "code": "AMPH012",
+    "title": "SQL based Employee Management System"
+  },
+  {
+    "code": "AMPH013",
+    "title": "Result alert system with E-mail and SMS"
+  },
+  {
+    "code": "AMPH014",
+    "title": "Hospital Appointment Booking and Patient Prescription Application"
+  },
+  {
+    "code": "AMPH015",
+    "title": "Implementation of mini search engine"
+  },
+  {
+    "code": "AMPH016",
+    "title": "Hospital Management System"
+  },
+  {
+    "code": "AMPH017",
+    "title": "Online Voting System Project Application"
+  },
+  {
+    "code": "AMPH018",
+    "title": "Smart Health Prediction Using Data Mining"
+  },
+  {
+    "code": "AMPH019",
+    "title": "Customer Complaint Report Software"
+  },
+  {
+    "code": "AMPH020",
+    "title": "E Commerce Product Rating Based On Customer Review Mining"
+  },
+  {
+    "code": "AMPH021",
+    "title": "E-Vaccination management System app"
+  },
+  {
+    "code": "AMPH022",
+    "title": "Online Complaint Registration and Management system : street light, water pipe leakage, rain water drainage, road"
+  },
+  {
+    "code": "AMPH023",
+    "title": "Organ Sharing - Donator & Finder Application"
+  },
+  {
+    "code": "AMPH024",
+    "title": "Online Bus reservation system"
+  },
+  {
+    "code": "AMPH025",
+    "title": "Bank Management System"
+  },
+  {
+    "code": "AMPH026",
+    "title": "Student Attendance Management system"
+  },
+  {
+    "code": "AMPH027",
+    "title": "Online Examination system"
+  },
+  {
+    "code": "AMPH028",
+    "title": "Virtual Shopping System"
+  },
+  {
+    "code": "AMPH029",
+    "title": "Web Based Bus Ticket Reservation System"
+  },
+  {
+    "code": "AMPH030",
+    "title": "Web based Online Blood Donation system"
+  },
+  {
+    "code": "AMPH031",
+    "title": "Web based application for Insurance Services"
+  },
+  {
+    "code": "AMPH032",
+    "title": "Security system for DNS using cryptography"
+  },
+  {
+    "code": "AMPH033",
+    "title": "Stock Management and Control System"
+  },
+  {
+    "code": "AMPH034",
+    "title": "Accounting Journal Entries System"
+  },
+  {
+    "code": "AMPH035",
+    "title": "Agriculture Exam Reviewer"
+  },
+  {
+    "code": "AMPH036",
+    "title": "Airline Reservation System"
+  },
+  {
+    "code": "AMPH037",
+    "title": "Apartment Gate Security Visitor Controller"
+  },
+  {
+    "code": "AMPH038",
+    "title": "Assessment Management"
+  },
+  {
+    "code": "AMPH039",
+    "title": "Attendance Management System"
+  },
+  {
+    "code": "AMPH040",
+    "title": "Audit Management System"
+  },
+  {
+    "code": "AMPH041",
+    "title": "Automated Timetable Generator"
+  },
+  {
+    "code": "AMPH042",
+    "title": "Badminton Court Club Daily System"
+  },
+  {
+    "code": "AMPH043",
+    "title": "Banking Transaction Services Provider"
+  },
+  {
+    "code": "AMPH044",
+    "title": "Beauty Parlour Hair Salon Services"
+  },
+  {
+    "code": "AMPH045",
+    "title": "Bike Rental Portal System"
+  },
+  {
+    "code": "AMPH046",
+    "title": "Blood Bank Linked in Hospital"
+  },
+  {
+    "code": "AMPH047",
+    "title": "Blood Bank Management System"
+  },
+  {
+    "code": "AMPH048",
+    "title": "Blood Bank Report Details"
+  },
+  {
+    "code": "AMPH049",
+    "title": "Blood Donations Hander Controller"
+  },
+  {
+    "code": "AMPH050",
+    "title": "Blood Doner Management System"
+  },
+  {
+    "code": "AMPH051",
+    "title": "Book Store Sale System"
+  },
+  {
+    "code": "AMPH052",
+    "title": "BP Monitoring Management System"
+  },
+  {
+    "code": "AMPH053",
+    "title": "Bus Booking System"
+  },
+  {
+    "code": "AMPH054",
+    "title": "Bus Ticket Booking Seat Allocation"
+  },
+  {
+    "code": "AMPH055",
+    "title": "Campus Recruitment System"
+  },
+  {
+    "code": "AMPH056",
+    "title": "Car Parking Management System"
+  },
+  {
+    "code": "AMPH057",
+    "title": "Car Rental Management System"
+  },
+  {
+    "code": "AMPH058",
+    "title": "Car Test Drive System"
+  },
+  {
+    "code": "AMPH059",
+    "title": "Cargo Shipment Management System"
+  },
+  {
+    "code": "AMPH060",
+    "title": "Chat Multiple User Create Application"
+  },
+  {
+    "code": "AMPH061",
+    "title": "Child Day Care"
+  },
+  {
+    "code": "AMPH062",
+    "title": "Child Safety"
+  },
+  {
+    "code": "AMPH063",
+    "title": "Child Safety Secure Information System"
+  },
+  {
+    "code": "AMPH064",
+    "title": "Cinema Ticket Booking System"
+  },
+  {
+    "code": "AMPH065",
+    "title": "Club Management System"
+  },
+  {
+    "code": "AMPH066",
+    "title": "College Admission Management System"
+  },
+  {
+    "code": "AMPH067",
+    "title": "College Admission Predictor"
+  },
+  {
+    "code": "AMPH068",
+    "title": "College Management System"
+  },
+  {
+    "code": "AMPH069",
+    "title": "College Noties Class and Exam Time Table System"
+  },
+  {
+    "code": "AMPH070",
+    "title": "College Time Table System"
+  },
+  {
+    "code": "AMPH071",
+    "title": "Comment Posting"
+  },
+  {
+    "code": "AMPH072",
+    "title": "Company Employee Leave Management"
+  },
+  {
+    "code": "AMPH073",
+    "title": "Company Visitor Entry System"
+  },
+  {
+    "code": "AMPH074",
+    "title": "Courier Parcel Delivery Management System"
+  },
+  {
+    "code": "AMPH075",
+    "title": "Courier Track Parcel Services"
+  },
+  {
+    "code": "AMPH076",
+    "title": "Crime Reporting Issues System"
+  },
+  {
+    "code": "AMPH077",
+    "title": "Crop Photo and Images"
+  },
+  {
+    "code": "AMPH078",
+    "title": "Crypto Currency Wallet System"
+  },
+  {
+    "code": "AMPH079",
+    "title": "Customer Service Provider Ticket System"
+  },
+  {
+    "code": "AMPH080",
+    "title": "Daily Expense Report Tracker"
+  },
+  {
+    "code": "AMPH081",
+    "title": "Daily Expense Tracker"
+  },
+  {
+    "code": "AMPH082",
+    "title": "Dairy Product Management"
+  },
+  {
+    "code": "AMPH083",
+    "title": "Directory Details Information Service Provider Details"
+  },
+  {
+    "code": "AMPH084",
+    "title": "Doctor and Patient Management System"
+  },
+  {
+    "code": "AMPH085",
+    "title": "Doctor Appointment"
+  },
+  {
+    "code": "AMPH086",
+    "title": "Document Sharing and Backup Information"
+  },
+  {
+    "code": "AMPH087",
+    "title": "Donation Management System"
+  },
+  {
+    "code": "AMPH088",
+    "title": "Drag and Drop Image"
+  },
+  {
+    "code": "AMPH089",
+    "title": "Driving School"
+  },
+  {
+    "code": "AMPH090",
+    "title": "Ecommerce Management System"
+  },
+  {
+    "code": "AMPH091",
+    "title": "Ecommerce Shoping and Delivery Website"
+  },
+  {
+    "code": "AMPH092",
+    "title": "ECommerce Shoping Multi Products Sales System"
+  },
+  {
+    "code": "AMPH093",
+    "title": "E-Doctor Patient Management System"
+  },
+  {
+    "code": "AMPH094",
+    "title": "Efficient Doctor Patient"
+  },
+  {
+    "code": "AMPH095",
+    "title": "E-Learning"
+  },
+  {
+    "code": "AMPH096",
+    "title": "Employee Attendance In Time & Out Time Entry System"
+  },
+  {
+    "code": "AMPH097",
+    "title": "Employee Attendance System"
+  },
+  {
+    "code": "AMPH098",
+    "title": "Employee Furlough"
+  },
+  {
+    "code": "AMPH099",
+    "title": "Employee Payroll Allowance Information"
+  },
+  {
+    "code": "AMPH100",
+    "title": "Employee Power"
+  },
+  {
+    "code": "AMPH101",
+    "title": "Employee Task Work Scheduler"
+  },
+  {
+    "code": "AMPH102",
+    "title": "Employee Visitors Pass"
+  },
+  {
+    "code": "AMPH103",
+    "title": "Empoyee Assign Projects Status System"
+  },
+  {
+    "code": "AMPH104",
+    "title": "Empoyee Equipments Maintenance System"
+  },
+  {
+    "code": "AMPH105",
+    "title": "E-Page Student Performance"
+  },
+  {
+    "code": "AMPH106",
+    "title": "E-PASS Schedule System"
+  },
+  {
+    "code": "AMPH107",
+    "title": "Event Booking System"
+  },
+  {
+    "code": "AMPH108",
+    "title": "Event Management"
+  },
+  {
+    "code": "AMPH109",
+    "title": "Events Calendar Holidays System"
+  },
+  {
+    "code": "AMPH110",
+    "title": "Exam Hall Room Schedule System"
+  },
+  {
+    "code": "AMPH111",
+    "title": "Exam Rank Result Schedule"
+  },
+  {
+    "code": "AMPH112",
+    "title": "Exam Result System"
+  },
+  {
+    "code": "AMPH113",
+    "title": "Expense Maintenance Control System"
+  },
+  {
+    "code": "AMPH114",
+    "title": "Facebook Like Notification"
+  },
+  {
+    "code": "AMPH115",
+    "title": "Faculty Evaluation System"
+  },
+  {
+    "code": "AMPH116",
+    "title": "Farm Sales Maintenance System"
+  },
+  {
+    "code": "AMPH117",
+    "title": "Farmer Delivery Courier to Buyer System"
+  },
+  {
+    "code": "AMPH118",
+    "title": "Farmer Kit Market System"
+  },
+  {
+    "code": "AMPH119",
+    "title": "Farmer Sales Products Sytem"
+  },
+  {
+    "code": "AMPH120",
+    "title": "Farming Management System"
+  },
+  {
+    "code": "AMPH121",
+    "title": "Farming Products Purchasing"
+  },
+  {
+    "code": "AMPH122",
+    "title": "Fees Collection System"
+  },
+  {
+    "code": "AMPH123",
+    "title": "Financial Services Funds Provider"
+  },
+  {
+    "code": "AMPH124",
+    "title": "Fitness Management System"
+  },
+  {
+    "code": "AMPH125",
+    "title": "Flight Booking System"
+  },
+  {
+    "code": "AMPH126",
+    "title": "Food Court Ordering System"
+  },
+  {
+    "code": "AMPH127",
+    "title": "Food Order"
+  },
+  {
+    "code": "AMPH128",
+    "title": "Food Ordering and Management System"
+  },
+  {
+    "code": "AMPH129",
+    "title": "Forum Management System"
+  },
+  {
+    "code": "AMPH130",
+    "title": "Fruits Buying Ecommerce"
+  },
+  {
+    "code": "AMPH131",
+    "title": "Game Play in Child"
+  },
+  {
+    "code": "AMPH132",
+    "title": "Graphical Password Authentication"
+  },
+  {
+    "code": "AMPH133",
+    "title": "Graphical Password one Image Multiple Location"
+  },
+  {
+    "code": "AMPH134",
+    "title": "Gym Information System"
+  },
+  {
+    "code": "AMPH135",
+    "title": "Help Desk Support in Client"
+  },
+  {
+    "code": "AMPH136",
+    "title": "Help Support Desk"
+  },
+  {
+    "code": "AMPH137",
+    "title": "Home Budget and Expense Controller"
+  },
+  {
+    "code": "AMPH138",
+    "title": "Hospital Dcotor Information Details"
+  },
+  {
+    "code": "AMPH139",
+    "title": "Hospital Management System"
+  },
+  {
+    "code": "AMPH140",
+    "title": "Hospital Treatment Appointment Mangement"
+  },
+  {
+    "code": "AMPH141",
+    "title": "Hotel Dine and Lounge Reseration System"
+  },
+  {
+    "code": "AMPH142",
+    "title": "Hotel Floor and Room Booking System"
+  },
+  {
+    "code": "AMPH143",
+    "title": "Hotel Reservation Allocation"
+  },
+  {
+    "code": "AMPH144",
+    "title": "Hotel Room Booking"
+  },
+  {
+    "code": "AMPH145",
+    "title": "House Rental and Tenants Payment Report System"
+  },
+  {
+    "code": "AMPH146",
+    "title": "HR Employee Event and Notice System"
+  },
+  {
+    "code": "AMPH147",
+    "title": "Image Editors Rechanged Image Colors"
+  },
+  {
+    "code": "AMPH148",
+    "title": "Index Management System(Truecaller"
+  },
+  {
+    "code": "AMPH149",
+    "title": "Insurance Information System"
+  },
+  {
+    "code": "AMPH150",
+    "title": "Internet Banking Management System"
+  },
+  {
+    "code": "AMPH151",
+    "title": "Internet based Discussion Forum"
+  },
+  {
+    "code": "AMPH152",
+    "title": "Inventory Management Systems"
+  },
+  {
+    "code": "AMPH153",
+    "title": "Inventory Mangement"
+  },
+  {
+    "code": "AMPH154",
+    "title": "Inventory Products Store orders System"
+  },
+  {
+    "code": "AMPH155",
+    "title": "Inventory Purchase Vendor Sales System"
+  },
+  {
+    "code": "AMPH156",
+    "title": "Job Portal"
+  },
+  {
+    "code": "AMPH157",
+    "title": "Job Portal ERP"
+  },
+  {
+    "code": "AMPH158",
+    "title": "Job Portal System"
+  },
+  {
+    "code": "AMPH159",
+    "title": "Land Registration System"
+  },
+  {
+    "code": "AMPH160",
+    "title": "Laundry Expenditure Report System"
+  },
+  {
+    "code": "AMPH161",
+    "title": "Leave Management System"
+  },
+  {
+    "code": "AMPH162",
+    "title": "Library Booking System"
+  },
+  {
+    "code": "AMPH163",
+    "title": "Library Manage Book Issue"
+  },
+  {
+    "code": "AMPH164",
+    "title": "Library Management System"
+  },
+  {
+    "code": "AMPH165",
+    "title": "Library System"
+  },
+  {
+    "code": "AMPH166",
+    "title": "Library Time Monitoring"
+  },
+  {
+    "code": "AMPH167",
+    "title": "Loan Management System"
+  },
+  {
+    "code": "AMPH168",
+    "title": "Lobby Chat Rooms Information System"
+  },
+  {
+    "code": "AMPH169",
+    "title": "Mess Management System"
+  },
+  {
+    "code": "AMPH170",
+    "title": "Mobile Shopping"
+  },
+  {
+    "code": "AMPH171",
+    "title": "Mobile Shopping System"
+  },
+  {
+    "code": "AMPH172",
+    "title": "Multi Member Live Chat APP"
+  },
+  {
+    "code": "AMPH173",
+    "title": "Music Analysis"
+  },
+  {
+    "code": "AMPH174",
+    "title": "News Portal Management System"
+  },
+  {
+    "code": "AMPH175",
+    "title": "NGO Management System"
+  },
+  {
+    "code": "AMPH176",
+    "title": "Notes Making"
+  },
+  {
+    "code": "AMPH177",
+    "title": "Office Chat Box System"
+  },
+  {
+    "code": "AMPH178",
+    "title": "Office Election Voting System"
+  },
+  {
+    "code": "AMPH179",
+    "title": "Old Age Home Management System"
+  },
+  {
+    "code": "AMPH180",
+    "title": "Online Bakery Shop System"
+  },
+  {
+    "code": "AMPH181",
+    "title": "Online Blood Bank Project"
+  },
+  {
+    "code": "AMPH182",
+    "title": "Online Bus Pass System"
+  },
+  {
+    "code": "AMPH183",
+    "title": "Online Daily Expense Tracker"
+  },
+  {
+    "code": "AMPH184",
+    "title": "Online E-Learning with Payment"
+  },
+  {
+    "code": "AMPH185",
+    "title": "Online E-voting System"
+  },
+  {
+    "code": "AMPH186",
+    "title": "Online Exam Management System"
+  },
+  {
+    "code": "AMPH187",
+    "title": "Online Examination and Performance"
+  },
+  {
+    "code": "AMPH188",
+    "title": "Online Examination System"
+  },
+  {
+    "code": "AMPH189",
+    "title": "Online Fire Reporting System"
+  },
+  {
+    "code": "AMPH190",
+    "title": "Online Food Ordering System"
+  },
+  {
+    "code": "AMPH191",
+    "title": "Online Forum"
+  },
+  {
+    "code": "AMPH192",
+    "title": "Online Marriage Registration System"
+  },
+  {
+    "code": "AMPH193",
+    "title": "Online Medicine Donation System"
+  },
+  {
+    "code": "AMPH194",
+    "title": "Online Pharmacy Management System"
+  },
+  {
+    "code": "AMPH195",
+    "title": "Online Projects Viva System"
+  },
+  {
+    "code": "AMPH196",
+    "title": "Online Restaurant Management System"
+  },
+  {
+    "code": "AMPH197",
+    "title": "Online Shoe Shopping"
+  },
+  {
+    "code": "AMPH198",
+    "title": "Organic Products Buying"
+  },
+  {
+    "code": "AMPH199",
+    "title": "Parking College Campus Reservation"
+  },
+  {
+    "code": "AMPH200",
+    "title": "Parking Management"
+  },
+  {
+    "code": "AMPH201",
+    "title": "Parking Slot Allocation System"
+  },
+  {
+    "code": "AMPH202",
+    "title": "Parking System Price Collection"
+  },
+  {
+    "code": "AMPH203",
+    "title": "Paying Guest on Home System"
+  },
+  {
+    "code": "AMPH204",
+    "title": "Personal Loan Issue and Collection System"
+  },
+  {
+    "code": "AMPH205",
+    "title": "Pet Shop Purchasing"
+  },
+  {
+    "code": "AMPH206",
+    "title": "Pharmacy Information System"
+  },
+  {
+    "code": "AMPH207",
+    "title": "Pharmacy Management System"
+  },
+  {
+    "code": "AMPH208",
+    "title": "Plant Shopping"
+  },
+  {
+    "code": "AMPH209",
+    "title": "Point of Sale"
+  },
+  {
+    "code": "AMPH210",
+    "title": "Police Complaint"
+  },
+  {
+    "code": "AMPH211",
+    "title": "Post Blog System"
+  },
+  {
+    "code": "AMPH212",
+    "title": "Product Complaint Report System"
+  },
+  {
+    "code": "AMPH213",
+    "title": "Product Details"
+  },
+  {
+    "code": "AMPH214",
+    "title": "Product Stock Maintenance"
+  },
+  {
+    "code": "AMPH215",
+    "title": "Projects Allocation Mangement System"
+  },
+  {
+    "code": "AMPH216",
+    "title": "QR Code Generator"
+  },
+  {
+    "code": "AMPH217",
+    "title": "QR Code Ticketing"
+  },
+  {
+    "code": "AMPH218",
+    "title": "Question Paper Generator"
+  },
+  {
+    "code": "AMPH219",
+    "title": "Question Paper Generator layout"
+  },
+  {
+    "code": "AMPH220",
+    "title": "Question Paper Generator System"
+  },
+  {
+    "code": "AMPH221",
+    "title": "Rail Pass Management System"
+  },
+  {
+    "code": "AMPH222",
+    "title": "Real Estate Search"
+  },
+  {
+    "code": "AMPH223",
+    "title": "Recipes Guidance"
+  },
+  {
+    "code": "AMPH224",
+    "title": "Reports and Tools"
+  },
+  {
+    "code": "AMPH225",
+    "title": "Restaurant Reservation"
+  },
+  {
+    "code": "AMPH226",
+    "title": "Sales And Inventory"
+  },
+  {
+    "code": "AMPH227",
+    "title": "Sales Inventory Management System"
+  },
+  {
+    "code": "AMPH228",
+    "title": "Salon Management System"
+  },
+  {
+    "code": "AMPH229",
+    "title": "School Approval Management System"
+  },
+  {
+    "code": "AMPH230",
+    "title": "School Exam Rank Card Informations"
+  },
+  {
+    "code": "AMPH231",
+    "title": "School Management System"
+  },
+  {
+    "code": "AMPH232",
+    "title": "School Student Record File Management System"
+  },
+  {
+    "code": "AMPH233",
+    "title": "School Student Staff Allocation Management System"
+  },
+  {
+    "code": "AMPH234",
+    "title": "Shopping Sales Management System"
+  },
+  {
+    "code": "AMPH235",
+    "title": "Simple CURD"
+  },
+  {
+    "code": "AMPH236",
+    "title": "Smart City Infrastructures"
+  },
+  {
+    "code": "AMPH237",
+    "title": "Social Media Sharing Platform"
+  },
+  {
+    "code": "AMPH238",
+    "title": "Sports Scheduling"
+  },
+  {
+    "code": "AMPH239",
+    "title": "Staff Salary Leave Management System"
+  },
+  {
+    "code": "AMPH240",
+    "title": "Student Attendance Percentage Tracker"
+  },
+  {
+    "code": "AMPH241",
+    "title": "Student Attendance System"
+  },
+  {
+    "code": "AMPH242",
+    "title": "Student Hostel Room Allocation System"
+  },
+  {
+    "code": "AMPH243",
+    "title": "Student Management System"
+  },
+  {
+    "code": "AMPH244",
+    "title": "Student Placement Management System"
+  },
+  {
+    "code": "AMPH245",
+    "title": "Student Record Management Systems"
+  },
+  {
+    "code": "AMPH246",
+    "title": "Student Result Management System"
+  },
+  {
+    "code": "AMPH247",
+    "title": "Student Supervision System"
+  },
+  {
+    "code": "AMPH248",
+    "title": "System Help Desk"
+  },
+  {
+    "code": "AMPH249",
+    "title": "Task Assigned and Closed"
+  },
+  {
+    "code": "AMPH250",
+    "title": "Task Assigned System"
+  },
+  {
+    "code": "AMPH251",
+    "title": "Task Tool Management System"
+  },
+  {
+    "code": "AMPH252",
+    "title": "Television Shopping"
+  },
+  {
+    "code": "AMPH253",
+    "title": "Tenant and Owner Rental System"
+  },
+  {
+    "code": "AMPH254",
+    "title": "Ticket Booking Portal"
+  },
+  {
+    "code": "AMPH255",
+    "title": "Tourism Package System"
+  },
+  {
+    "code": "AMPH256",
+    "title": "Trade Deposits Collection System"
+  },
+  {
+    "code": "AMPH257",
+    "title": "Trading Stock Management"
+  },
+  {
+    "code": "AMPH258",
+    "title": "Transport Management System"
+  },
+  {
+    "code": "AMPH259",
+    "title": "Travel Agency Management System"
+  },
+  {
+    "code": "AMPH260",
+    "title": "Travel Management System"
+  },
+  {
+    "code": "AMPH261",
+    "title": "Travel Package Expense Management System"
+  },
+  {
+    "code": "AMPH262",
+    "title": "Tuition Fees Collection System"
+  },
+  {
+    "code": "AMPH263",
+    "title": "Voting System"
+  },
+  {
+    "code": "AMPH264",
+    "title": "Water Billing System"
+  },
+  {
+    "code": "AMPH265",
+    "title": "Weather Report to help Agriculture"
+  },
+  {
+    "code": "AMPH266",
+    "title": "Website Design Task Allocation System"
+  },
+  {
+    "code": "AMPH267",
+    "title": "Website Page Creation"
+  },
+  {
+    "code": "AMPH268",
+    "title": "Website Visitor Analysis Tools System"
+  },
+  {
+    "code": "AMPH269",
+    "title": "Zoo Management Syste"
+  }
+]

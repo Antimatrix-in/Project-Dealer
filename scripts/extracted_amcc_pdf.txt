@@ -1,0 +1,265 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+CLOUD COMPUTING – PYTHON / JAVA PROJECT CATALOGUE
+105 Project Titles
+DOMAIN CODE  AMCC
+PROJECT CODES  AMCC001 – AMCC105
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMCC
+Page 1
+Cloud Computing – Python / Java Projects
+ PROJECT CODE
+PROJECT TITLE
+AMCC001
+A Comprehensive Framework for Migrating to Zero Trust Architecture
+AMCC002
+A Configurable Model-Based Reinforcement Learning Framework for Disaggregated Storage Systems
+AMCC003
+A Data Deduplication Scheme Based on DBSCAN With Tolerable Clustering Deviation
+AMCC004
+A Data-Driven Optimization Method Considering Data Correlations for Optimal Power Flow Under Uncertainty
+AMCC005
+A Diabetes Monitoring System and Health-Medical Service Composition Model in Cloud Environment
+AMCC006
+A Hybrid Approach With GAN and DP for Privacy Preservation of IIoT Data
+AMCC007
+A Memetic Algorithm With Reinforcement Learning for Sociotechnical Production Scheduling
+AMCC008
+A Novel Method for Improving Point Cloud Accuracy in Automotive Radar Object Recognition
+AMCC009
+A Review on Attack Graph Analysis for IoT Vulnerability Assessment Challenges Open Issues and Future
+Directions
+AMCC010
+A Secure and Privacy-Preserving Lightweight Authentication and Key Exchange Algorithm for Smart Agriculture
+Monitoring System
+AMCC011
+A Topicality Relevance-Aware Intent Model for Web Search
+AMCC012
+Achieving Decentralized and Dynamic SSO-Identity Access Management System for Multi-Application Outsourced
+in Cloud
+AMCC013
+Adaptive Weighted Low-Rank Sparse Representation for Multi-View Clustering
+AMCC014
+An Asynchronous Federated Learning Arbitration Model for Low-Rate DDoS Attack Detection
+AMCC015
+A Distributed and Decentralized Certificateless Framework for Reliable Shared Data Auditing for FOG-CPS
+Networks
+AMCC016
+A Secure and Cost-Efficient Blockchain Facilitated IoT Software Update Framework
+AMCC017
+Blockchain-Based Service-Oriented Architecture for Consent Management, Access Control, and Auditing
+AMCC018
+Enabling Simultaneous Content Regulation and Privacy Protection for Cloud Storage Image
+AMCC019
+Resource Management and Pricing for Cloud Computing based Mobile Blockchain with Pooling
+AMCC020
+Online Performance Modelling and Prediction for Single- VM Applications in Multi-Tenant Clouds
+AMCC021
+Toward Secure Data Computation and Outsource for Multi-User Cloud-Based IoT
+AMCC022
+Attribute-based pseudonymity for privacy-preserving authentication in cloud services
+AMCC023
+Securing Organization’s Data: A Role-Based Authorized Keyword Search Scheme with Efficient Decryption
+AMCC024
+An Improved Design for a Cloud Intrusion Detection System Using Hybrid Features Selection Approach With ML
+Classifier
+AMCC025
+A Novel Data Placement and Retrieval Service for Cooperative Edge Clouds
+AMCC026
+Secure and Efficient Data Deduplication in Joint Cloud Storage
+AMCC027
+A Generalized Framework for Preserving Both Privacy and Utility in Data Outsourcing
+AMCC028
+Dynamically Optimizing Display Advertising Profits under Diverse Budget Settings
+AMCC029
+FinGAT Financial Graph Attention Networks for Recommending Top-K Profitable Stocks
+AMCC030
+Multi-hop Reasoning Question Generation and Its Application
+AMCC031
+Partition Chain: A Scalable and Reliable Data Storage Strategy for Permissioned Blockchain
+AMCC032
+Suggesting Assess Queries for Interactive Analysis of Multidimensional Data
+AMCC033
+TwiCS: Lightweight Entity Mention Detection in Targeted Twitter Streams
+AMCC034
+An Improved Point Cloud Completion Method Based on SnowflakeNet
+AMCC035
+An Integrated Optimization-Based Algorithm for Energy Efficiency and Resource Allocation in Heterogeneous
+Cloud Computing Centers
+AMCC036
+ANS Assimilating Near Similarity at High Accuracy for Significant Deduction of CNN Storage and Computation
+AMCC037
+Boundary-Aware Supervoxel Segmentation for Indoor 3D Point Clouds
+AMCC038
+Cascaded Contextual Reasoning for Large-Scale Point Cloud Semantic Segmentation
+AMCC039
+Cloud Energy Storage Investment by Collaboration of Microgrids for Profit and Reliability Enhancement
+Considering a TSO-DSO Yearly Reward
+AMCC040
+CloudNet A LiDAR-Based Face Anti-Spoofing Model That Is Robust Against Light Variation
+
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMCC
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMCC041
+Computationally Efficient Neural Rendering for Generator Adversarial Networks Using a Multi-GPU Cluster in a
+Cloud Environment
+AMCC042
+Cybersecurity Status Assessment of Cloud Manufacturing Systems Based on Semiquantitative Information
+AMCC043
+DAPS3D Domain Adaptive Projective Segmentation of 3D LiDAR Point Clouds
+AMCC044
+Deep Reinforcement Learning Based Edge Computing Network Aided Resource Allocation Algorithm for Smart
+Grid
+AMCC045
+Dynamic Resource Allocation Using an Adaptive Multi-Objective Teaching-Learning Based Optimization Algorithm
+in Cloud
+AMCC046
+Exploring Semantic Information Extraction From Different Data Forms in 3D Point Cloud Semantic Segmentation
+AMCC047
+Fast and High Accuracy 3D Point Cloud Registration for Automatic Reconstruction From Laser Scanning Data
+AMCC048
+Hand Gesture Recognition Based on Point Cloud Sequences and Inverse Kinematics Model
+AMCC049
+Indoor Point Cloud Segmentation Using a Modified Region Growing Algorithm and Accurate Normal Estimation
+AMCC050
+LLL-CAdViSE Live Low-Latency Cloud-Based Adaptive Video Streaming Evaluation Framework
+AMCC051
+Local Graph Point Attention Network in Point Cloud Segmentation
+AMCC052
+Multi-Objective Grey Wolf Optimizer Algorithm for Task Scheduling in Cloud-Fog Computing
+AMCC053
+Multi-Task Learning for Electricity Price Forecasting and Resource Management in Cloud Based Industrial IoT
+Systems
+AMCC054
+No-Reference 3D Point Cloud Quality Assessment Using Multi-View Projection and Deep Convolutional Neural
+Network
+AMCC055
+Parametric Classification of Furniture From Point Cloud Developed Using Low Cost Trolley Based Laser Scanning
+System
+AMCC056
+PCAPN An Enhanced Feature Extraction Framework for Point Cloud
+AMCC057
+Point Cloud Adversarial Perturbation Generation for Adversarial Attacks
+AMCC058
+Real-Time Detection Schemes for Memory DoS M-DoS Attacks on Cloud Computing Applications
+AMCC059
+Resource Allocation With Edge-Cloud Collaborative Traffic Prediction in Integrated Radio and Optical Networks
+AMCC060
+Road Traffic Marking Extraction Algorithm Based on Fusion of Single Frame Image and Sparse Point Cloud
+AMCC061
+SdnK8s Routing Optimization Strategy in 5G Cloud Edge Collaboration Scenario
+AMCC062
+Security and Integrity Attacks in Named Data Networking A Survey
+AMCC063
+Self-Supervised Latent Representations of Network Flows and Application to Darknet Traffic Classification
+AMCC064
+Semantic Segmentation of In-Vehicle Point Cloud With Improved RangeNet Loss Function
+AMCC065
+The Role of Network Slicing and Edge Computing in the Metaverse Realization
+AMCC066
+To Drop or to Select Reduce the Negative Effects of Disturbance Features for Point Cloud Classification From an
+Interpretable Perspective
+AMCC067
+Trajectory-Based 3D Point Cloud ROI Determination Methods for Autonomous Mobile Robot
+AMCC068
+Transforming the 5G RAN With Innovation The Confluence of Cloud Native and Intelligence
+AMCC069
+Multi-Objective Task Scheduling Optimization for Load Balancing in Cloud Computing Environment Using Hybrid
+Artificial Bee Colony Algorithm With Reinforcement Learning
+AMCC070
+Efficient and Secure Attribute-Based Access Control with Identical Sub-Policies Frequently Used in Cloud Storage
+AMCC071
+Forward Secure Public Key Encryption with Keyword Search for Outsourced Cloud Storage
+AMCC072
+Server-Aided Fine-Grained Access Control Mechanism with Robust Revocation in Cloud Computing
+AMCC073
+A Lightweight Optimal Scheduling Algorithm for Energy-Efficient and Real-Time cloud Services
+AMCC074
+Mass Customization-Oriented Customer Demand Response Service Platform Based on Cloud Computing and
+Internet of Things
+AMCC075
+A Fine-Grained and Lightweight Data Access Control Model for Mobile Cloud Computing
+AMCC076
+A Practical and Efficient Bidirectional Access Control Scheme for Cloud-Edge Data Sharing
+AMCC077
+Revocable Attribute-Based Data Storage in Mobile Clouds
+AMCC078
+Multi objective Task Scheduling in Cloud Environment Using Decision Tree Algorithm
+AMCC079
+A Block chain-Enabled Privacy-Preserving Verifiable Query Framework for Securing Cloud-Assisted Industrial
+Internet of Things Systems
+AMCC080
+An Efficient Identity-Based Provable Data Possession Protocol With Compressed Cloud Storage
+
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMCC
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMCC081
+An Opportunistic Approach for Cloud Service-Based IoT Routing Framework Administering Data, Transaction, and
+Identity Security
+AMCC082
+CBiLSTM: A Hybrid Deep Learning Model for Efficient Reputation Assessment of Cloud Services
+AMCC083
+An Efficient Privacy-Preserving Public Auditing Protocol for Cloud-Based Medical Storage System
+AMCC084
+A Practical Framework for Secure Document Retrieval in Encrypted Cloud File Systems
+AMCC085
+Efficient, Revocable, and Privacy-Preserving Fine-Grained Data Sharing With Keyword Search for the Cloud
+-Assisted Medical IoT System
+AMCC086
+A Reconfigurable CNN-Based Accelerator Design for Fast and EnergyEfficient Object Detection System on Mobile
+FPGA
+AMCC087
+AMoND Area-Controlled Mobile Ad-Hoc Networking With Digital Twin
+AMCC088
+An Effective WBC Segmentation and Classification Using MobilenetV3ShufflenetV2 Based Deep Learning
+Framework
+AMCC089
+An Empirical Assessment of the Contribution of 5G in Vertical Industries A Case for the Transportation Sector
+AMCC090
+Corrections to Multiple Mobile Charger Charging Strategy Based on Dual Partitioning Model for Wireless
+Rechargeable Sensor Networks
+AMCC091
+Efficient Human Activity Recognition Using Lookup Table-Based Neural Architecture Search for Mobile Devices
+AMCC092
+Extremely Randomized Trees Regressor Scheme for Mobile Network Coverage Prediction and REM Construction
+AMCC093
+Fast Search of Face Recognition Model for a Mobile Device Based on Neural Architecture Comparator
+AMCC094
+Forward-Looking MIMO-SAR for Enhanced Radar Imaging in Autonomous Mobile Robots
+AMCC095
+Information-Centric Mobile Networks A Survey Discussion and Future Research Directions
+AMCC096
+Memory Efficient Local Features Descriptor for Identity Document Detection on Mobile and Embedded Devices
+AMCC097
+Mobile Sensor Nodes Traversal Schemes to Attend Events at Random Locations With Minimal Energy Depletion
+AMCC098
+Path Planning for Mobile Robot Considering Turnabouts on Narrow Road by Deep Q-Network
+AMCC099
+RFSE-GRU Data Balanced Classification Model for Mobile Encrypted Traffic in Big Data Environment
+AMCC100
+Semi-Asynchronous Hierarchical Federated Learning Over Mobile Edge Networks
+AMCC101
+Skip-Concatenated Image Super-Resolution Network for Mobile Devices
+AMCC102
+Smart Edge-Based Driver Drowsiness Detection in Mobile Crowdsourcing
+AMCC103
+The Performance Analysis of SPMA Protocol in High Speed Mobile Ad Hoc Network
+AMCC104
+Vehicle Damage Severity Estimation for Insurance Operations Using InThe-Wild Mobile Images
+AMCC105
+Wideband Monopole Eight-Element MIMO Antenna for 5G Mobile Termi
+Source note: The final supplied title ends with “Wideband Monopole Eight-Element MIMO Antenna for 5G Mobile Termi”. It is preserved as
+supplied; no missing text has been inferred.
+
+

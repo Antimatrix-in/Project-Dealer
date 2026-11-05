@@ -1,0 +1,590 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+WEB APPLICATION – PHP PROJECT CATALOGUE
+269 Project Titles
+DOMAIN CODE  AMPH
+PROJECT CODES  AMPH001 – AMPH269
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMPH
+Page 1
+Web Application – PHP Projects
+ PROJECT CODE
+PROJECT TITLE
+AMPH001
+Web based Graphical Password Authentication System
+AMPH002
+Student Information System
+AMPH003
+Employee Tracking System
+AMPH004
+Agri Shop: Farmers Online Selling Application
+AMPH005
+Library App - Library Management System
+AMPH006
+Telephone Billing System
+AMPH007
+Inventory Management system
+AMPH008
+Online Election System
+AMPH009
+Vehicle management system
+AMPH010
+Doctor Appointment Booking System
+AMPH011
+Insurance Database
+AMPH012
+SQL based Employee Management System
+AMPH013
+Result alert system with E-mail and SMS
+AMPH014
+Hospital Appointment Booking and Patient Prescription Application
+AMPH015
+Implementation of mini search engine
+AMPH016
+Hospital Management System
+AMPH017
+Online Voting System Project Application
+AMPH018
+Smart Health Prediction Using Data Mining
+AMPH019
+Customer Complaint Report Software
+AMPH020
+E Commerce Product Rating Based On Customer Review Mining
+AMPH021
+E-Vaccination management System app
+AMPH022
+Online Complaint Registration and Management system : street light, water pipe leakage, rain water drainage,
+road
+AMPH023
+Organ Sharing - Donator & Finder Application
+AMPH024
+Online Bus reservation system
+AMPH025
+Bank Management System
+AMPH026
+Student Attendance Management system
+AMPH027
+Online Examination system
+AMPH028
+Virtual Shopping System
+AMPH029
+Web Based Bus Ticket Reservation System
+AMPH030
+Web based Online Blood Donation system
+AMPH031
+Web based application for Insurance Services
+AMPH032
+Security system for DNS using cryptography
+AMPH033
+Stock Management and Control System
+AMPH034
+Accounting Journal Entries System
+AMPH035
+Agriculture Exam Reviewer
+AMPH036
+Airline Reservation System AntiMatrix Project Center Page 3
+AMPH037
+Apartment Gate Security Visitor Controller
+AMPH038
+Assessment Management
+AMPH039
+Attendance Management System
+AMPH040
+Audit Management System
+AMPH041
+Automated Timetable Generator
+AMPH042
+Badminton Court Club Daily System
+AMPH043
+Banking Transaction Services Provider
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMPH
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMPH044
+Beauty Parlour Hair Salon Services
+AMPH045
+Bike Rental Portal System
+AMPH046
+Blood Bank Linked in Hospital
+AMPH047
+Blood Bank Management System
+AMPH048
+Blood Bank Report Details
+AMPH049
+Blood Donations Hander Controller
+AMPH050
+Blood Doner Management System
+AMPH051
+Book Store Sale System
+AMPH052
+BP Monitoring Management System
+AMPH053
+Bus Booking System
+AMPH054
+Bus Ticket Booking Seat Allocation
+AMPH055
+Campus Recruitment System
+AMPH056
+Car Parking Management System
+AMPH057
+Car Rental Management System
+AMPH058
+Car Test Drive System
+AMPH059
+Cargo Shipment Management System
+AMPH060
+Chat Multiple User Create Application
+AMPH061
+Child Day Care
+AMPH062
+Child Safety
+AMPH063
+Child Safety Secure Information System
+AMPH064
+Cinema Ticket Booking System
+AMPH065
+Club Management System
+AMPH066
+College Admission Management System
+AMPH067
+College Admission Predictor
+AMPH068
+College Management System
+AMPH069
+College Noties Class and Exam Time Table System
+AMPH070
+College Time Table System
+AMPH071
+Comment Posting
+AMPH072
+Company Employee Leave Management
+AMPH073
+Company Visitor Entry System
+AMPH074
+Courier Parcel Delivery Management System AntiMatrix Project Center Page 4
+AMPH075
+Courier Track Parcel Services
+AMPH076
+Crime Reporting Issues System
+AMPH077
+Crop Photo and Images
+AMPH078
+Crypto Currency Wallet System
+AMPH079
+Customer Service Provider Ticket System
+AMPH080
+Daily Expense Report Tracker
+AMPH081
+Daily Expense Tracker
+AMPH082
+Dairy Product Management
+AMPH083
+Directory Details Information Service Provider Details
+AMPH084
+Doctor and Patient Management System
+AMPH085
+Doctor Appointment
+AMPH086
+Document Sharing and Backup Information
+AMPH087
+Donation Management System
+AMPH088
+Drag and Drop Image
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMPH
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMPH089
+Driving School
+AMPH090
+Ecommerce Management System
+AMPH091
+Ecommerce Shoping and Delivery Website
+AMPH092
+ECommerce Shoping Multi Products Sales System
+AMPH093
+E-Doctor Patient Management System
+AMPH094
+Efficient Doctor Patient
+AMPH095
+E-Learning
+AMPH096
+Employee Attendance In Time & Out Time Entry System
+AMPH097
+Employee Attendance System
+AMPH098
+Employee Furlough
+AMPH099
+Employee Payroll Allowance Information
+AMPH100
+Employee Power
+AMPH101
+Employee Task Work Scheduler
+AMPH102
+Employee Visitors Pass
+AMPH103
+Empoyee Assign Projects Status System
+AMPH104
+Empoyee Equipments Maintenance System
+AMPH105
+E-Page Student Performance
+AMPH106
+E-PASS Schedule System
+AMPH107
+Event Booking System
+AMPH108
+Event Management
+AMPH109
+Events Calendar Holidays System
+AMPH110
+Exam Hall Room Schedule System
+AMPH111
+Exam Rank Result Schedule
+AMPH112
+Exam Result System AntiMatrix Project Center Page 5
+AMPH113
+Expense Maintenance Control System
+AMPH114
+Facebook Like Notification
+AMPH115
+Faculty Evaluation System
+AMPH116
+Farm Sales Maintenance System
+AMPH117
+Farmer Delivery Courier to Buyer System
+AMPH118
+Farmer Kit Market System
+AMPH119
+Farmer Sales Products Sytem
+AMPH120
+Farming Management System
+AMPH121
+Farming Products Purchasing
+AMPH122
+Fees Collection System
+AMPH123
+Financial Services Funds Provider
+AMPH124
+Fitness Management System
+AMPH125
+Flight Booking System
+AMPH126
+Food Court Ordering System
+AMPH127
+Food Order
+AMPH128
+Food Ordering and Management System
+AMPH129
+Forum Management System
+AMPH130
+Fruits Buying Ecommerce
+AMPH131
+Game Play in Child
+AMPH132
+Graphical Password Authentication
+AMPH133
+Graphical Password one Image Multiple Location
+
+--- PAGE 5 ---
+AntiMatrix Project Center | AMPH
+Page 4
+PROJECT CODE
+PROJECT TITLE
+AMPH134
+Gym Information System
+AMPH135
+Help Desk Support in Client
+AMPH136
+Help Support Desk
+AMPH137
+Home Budget and Expense Controller
+AMPH138
+Hospital Dcotor Information Details
+AMPH139
+Hospital Management System
+AMPH140
+Hospital Treatment Appointment Mangement
+AMPH141
+Hotel Dine and Lounge Reseration System
+AMPH142
+Hotel Floor and Room Booking System
+AMPH143
+Hotel Reservation Allocation
+AMPH144
+Hotel Room Booking
+AMPH145
+House Rental and Tenants Payment Report System
+AMPH146
+HR Employee Event and Notice System
+AMPH147
+Image Editors Rechanged Image Colors
+AMPH148
+Index Management System(Truecaller
+AMPH149
+Insurance Information System
+AMPH150
+Internet Banking Management System AntiMatrix Project Center Page 6
+AMPH151
+Internet based Discussion Forum
+AMPH152
+Inventory Management Systems
+AMPH153
+Inventory Mangement
+AMPH154
+Inventory Products Store orders System
+AMPH155
+Inventory Purchase Vendor Sales System
+AMPH156
+Job Portal
+AMPH157
+Job Portal ERP
+AMPH158
+Job Portal System
+AMPH159
+Land Registration System
+AMPH160
+Laundry Expenditure Report System
+AMPH161
+Leave Management System
+AMPH162
+Library Booking System
+AMPH163
+Library Manage Book Issue
+AMPH164
+Library Management System
+AMPH165
+Library System
+AMPH166
+Library Time Monitoring
+AMPH167
+Loan Management System
+AMPH168
+Lobby Chat Rooms Information System
+AMPH169
+Mess Management System
+AMPH170
+Mobile Shopping
+AMPH171
+Mobile Shopping System
+AMPH172
+Multi Member Live Chat APP
+AMPH173
+Music Analysis
+AMPH174
+News Portal Management System
+AMPH175
+NGO Management System
+AMPH176
+Notes Making
+AMPH177
+Office Chat Box System
+AMPH178
+Office Election Voting System
+
+--- PAGE 6 ---
+AntiMatrix Project Center | AMPH
+Page 5
+PROJECT CODE
+PROJECT TITLE
+AMPH179
+Old Age Home Management System
+AMPH180
+Online Bakery Shop System
+AMPH181
+Online Blood Bank Project
+AMPH182
+Online Bus Pass System
+AMPH183
+Online Daily Expense Tracker
+AMPH184
+Online E-Learning with Payment
+AMPH185
+Online E-voting System
+AMPH186
+Online Exam Management System
+AMPH187
+Online Examination and Performance
+AMPH188
+Online Examination System AntiMatrix Project Center Page 7
+AMPH189
+Online Fire Reporting System
+AMPH190
+Online Food Ordering System
+AMPH191
+Online Forum
+AMPH192
+Online Marriage Registration System
+AMPH193
+Online Medicine Donation System
+AMPH194
+Online Pharmacy Management System
+AMPH195
+Online Projects Viva System
+AMPH196
+Online Restaurant Management System
+AMPH197
+Online Shoe Shopping
+AMPH198
+Organic Products Buying
+AMPH199
+Parking College Campus Reservation
+AMPH200
+Parking Management
+AMPH201
+Parking Slot Allocation System
+AMPH202
+Parking System Price Collection
+AMPH203
+Paying Guest on Home System
+AMPH204
+Personal Loan Issue and Collection System
+AMPH205
+Pet Shop Purchasing
+AMPH206
+Pharmacy Information System
+AMPH207
+Pharmacy Management System
+AMPH208
+Plant Shopping
+AMPH209
+Point of Sale
+AMPH210
+Police Complaint
+AMPH211
+Post Blog System
+AMPH212
+Product Complaint Report System
+AMPH213
+Product Details
+AMPH214
+Product Stock Maintenance
+AMPH215
+Projects Allocation Mangement System
+AMPH216
+QR Code Generator
+AMPH217
+QR Code Ticketing
+AMPH218
+Question Paper Generator
+AMPH219
+Question Paper Generator layout
+AMPH220
+Question Paper Generator System
+AMPH221
+Rail Pass Management System
+AMPH222
+Real Estate Search
+AMPH223
+Recipes Guidance
+
+--- PAGE 7 ---
+AntiMatrix Project Center | AMPH
+Page 6
+PROJECT CODE
+PROJECT TITLE
+AMPH224
+Reports and Tools
+AMPH225
+Restaurant Reservation
+AMPH226
+Sales And Inventory AntiMatrix Project Center Page 8
+AMPH227
+Sales Inventory Management System
+AMPH228
+Salon Management System
+AMPH229
+School Approval Management System
+AMPH230
+School Exam Rank Card Informations
+AMPH231
+School Management System
+AMPH232
+School Student Record File Management System
+AMPH233
+School Student Staff Allocation Management System
+AMPH234
+Shopping Sales Management System
+AMPH235
+Simple CURD
+AMPH236
+Smart City Infrastructures
+AMPH237
+Social Media Sharing Platform
+AMPH238
+Sports Scheduling
+AMPH239
+Staff Salary Leave Management System
+AMPH240
+Student Attendance Percentage Tracker
+AMPH241
+Student Attendance System
+AMPH242
+Student Hostel Room Allocation System
+AMPH243
+Student Management System
+AMPH244
+Student Placement Management System
+AMPH245
+Student Record Management Systems
+AMPH246
+Student Result Management System
+AMPH247
+Student Supervision System
+AMPH248
+System Help Desk
+AMPH249
+Task Assigned and Closed
+AMPH250
+Task Assigned System
+AMPH251
+Task Tool Management System
+AMPH252
+Television Shopping
+AMPH253
+Tenant and Owner Rental System
+AMPH254
+Ticket Booking Portal
+AMPH255
+Tourism Package System
+AMPH256
+Trade Deposits Collection System
+AMPH257
+Trading Stock Management
+AMPH258
+Transport Management System
+AMPH259
+Travel Agency Management System
+AMPH260
+Travel Management System
+AMPH261
+Travel Package Expense Management System Code Number of Projects Available 269
+AMPH262
+Tuition Fees Collection System
+AMPH263
+Voting System
+AMPH264
+Water Billing System AntiMatrix Project Center Page 9
+AMPH265
+Weather Report to help Agriculture
+AMPH266
+Website Design Task Allocation System
+AMPH267
+Website Page Creation
+AMPH268
+Website Visitor Analysis Tools System
+
+--- PAGE 8 ---
+AntiMatrix Project Center | AMPH
+Page 7
+PROJECT CODE
+PROJECT TITLE
+AMPH269
+Zoo Management System
+

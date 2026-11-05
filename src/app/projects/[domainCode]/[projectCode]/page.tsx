@@ -7,12 +7,10 @@ interface ProjectCodePageProps {
   params: Promise<{ domainCode: string; projectCode: string }>;
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  const projects = getAllProjects();
-  return projects.map((p) => ({
-    domainCode: p.domainCode || "AMPY",
-    projectCode: p.projectCode || p.id,
-  }));
+  return [];
 }
 
 export async function generateMetadata({ params }: ProjectCodePageProps) {

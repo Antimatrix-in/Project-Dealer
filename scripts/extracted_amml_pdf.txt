@@ -1,0 +1,344 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+MACHINE LEARNING – PYTHON PROJECT CATALOGUE
+144 Project Titles
+DOMAIN CODE  AMML
+PROJECT CODES  AMML001 – AMML144
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMML
+Page 1
+Machine Learning – Python Projects
+ PROJECT CODE
+PROJECT TITLE
+AMML001
+Diagnosis of cardiovascular disorder by CT images using Machine learning technique
+AMML002
+Explaining Graph Neural Networks With Topology-Aware Node Selection: Application in Air Quality Inference
+AMML003
+Future Prediction of COVID-19 based on Supervised Machine Learning Models
+AMML004
+Machine Learning Based Preemptive Diagnosis of Lung Cancer Using Clinical Data
+AMML005
+An Event-Based Framework for Facilitating Real-Time Sentiment Analysis in Educational Contexts
+AMML006
+Logical Mining Assisted Heart Disease Prediction Scheme in Association with Deep Learning Principles
+AMML007
+Feature Extraction and Classification of Bone Tumor using CNN Classifier with KNN Classifier
+AMML008
+Deep Learning-Based Glaucoma Detection with Cropped Optic Cup and Disc and Blood Vessel Segmentation
+AMML009
+Prediction Of Concentration of Air Pollution Using Deep and Machine Learning
+AMML010
+Convolutional and Recurrent Neural Networks for Activity Recognition in Smart Environment
+AMML011
+Automatic Liver Tumor Segmentation on Dynamic Contrast Enhanced MRI Using 4D Information: Deep Learning
+Model Based on 3D Convolution and Convolutional LSTM
+AMML012
+Fake Reviews Detection using Support Vector Machine
+AMML013
+A Smart, Efficient, and Reliable Parking Surveillance System with Edge Artificial Intelligence on IoT Devices
+AMML014
+Stock Market Prediction using Machine Learning
+AMML015
+The Improvement of Character Recognition on ANPR Algorithm using CNN Method with Batch Normalization
+AMML016
+Prediction of Air Pollutant PM10 using Various SVM Models
+AMML017
+Fake logo Detection system
+AMML018
+Lung Disease Detection of Diabetic Patients by DNN Approach Using CT scan Images
+AMML019
+A New CNN-Based Method for Multi-Directional Car License Plate Detection
+AMML020
+An Efficient CNN Model to Detect Copy-Move Image forgery
+AMML021
+Comparative Analysis of Supervised Machine Learning Techniques for AQI Prediction
+AMML022
+Distributed Machine Learning for Multiuser Mobile Edge Computing Systems
+AMML023
+Stroke Risk Prediction with Hybrid Deep Transfer Learning Framework
+AMML024
+Face Detection from Blurred Images based on Convolutional Neural Networks
+AMML025
+Detection of Diabetic Severity through DNN algorithm using fundus image
+AMML026
+CNN Based Fundus Images Classification for Glaucoma Identification
+AMML027
+Analysis of Breast Cancer using Machine Learning Methods
+AMML028
+Autism Spectrum Disorder Detection Techniques
+AMML029
+A Comparative Study of ConvoBiGRU and ConvoBiLSTM on Amazon Dataset
+AMML030
+Based Health monitoring services
+AMML031
+Plant leaf disease detection using convolutional neural network
+AMML032
+Sentiment Analysis for Arabic Tweets on Covid-19 Using Computational Techniques
+AMML033
+Implementation of Personality Detection and Accuracy Prediction for identification of fake and true news using
+Decision Tree and Random Forest Algorithms
+AMML034
+Efficient Net with Optimal Wavelet Neural Network for DR Detection and Grading
+AMML035
+Comparative Analysis of Forecasting Models for Air Quality Index Prediction
+AMML036
+Federated Machine Learning for Detection of Skin Diseases and Enhancement of Internet of Medical Things (IoMT)
+Security
+AMML037
+machine learning
+AMML038
+Analysis of customer reviews and predicting future release of products using Machine Learning
+AMML039
+Drone Detection System for security purpose in Airforce
+AMML040
+Animal Detection In Wildlife system using Inveptionv3 model
+AMML041
+Smart Vehicle Number Plate Scanning System using Optical Character Recognition Strategy
+AMML042
+Brain Tumor Detection from MRI Images using Naive Classifier
+AMML043
+Diagnosis of cardiovascular disorder by CT images using Machine Learning
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMML
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMML044
+Fake Video Identification using Neural Networks
+AMML045
+Crime analysis and Prediction using Neural Networks
+AMML046
+Medical Image Forgery Detection for Smart Healthcare
+AMML047
+Drowsy Status Monitoring System based on Face Feature Analysis
+AMML048
+Detection of Stress in IT Employees using Machine Learning Technique
+AMML049
+Improved Sentimental Analysis to the Movie Reviews using Naive Bayes Classifier
+AMML050
+Speech Emotion Recognition using Machine Learning
+AMML051
+2D-3D Facial Image Analysis for Identification of Facial Features Using Machine Learning Algorithms With
+Hyper-Parameter Optimization for Forensics Applications
+AMML052
+3D Point Cloud Semantic Segmentation System Based on Lightweight FPConv
+AMML053
+3D Reconstruction of Gastrointestinal Regions Using Single-View Methods
+AMML054
+3D Visualization of Pulmonary Vessel Based on Low-Cost Segmentation and Fast Reconstruction
+AMML055
+A Boosting-Based Hybrid Feature Selection and Multi-Layer Stacked Ensemble Learning Model to Detect Phishing
+Websites
+AMML056
+A BP Neural Network-Assisted Smart Decision Method for Education Quality
+AMML057
+A CNN-Model to Classify Low-Grade and High-Grade Glioma From MRI Images
+AMML058
+A CNN-OSELM Multi-Layer Fusion Network With Attention Mechanism for Fish Disease Recognition in
+Aquaculture
+AMML059
+A Comprehensive Joint Learning System to Detect Skin Cancer
+AMML060
+A Deep Ensemble Learning-Based CNN Architecture for Multiclass Retinal Fluid Segmentation in OCT Images
+AMML061
+A Distracted Driving Detection Model Based On Driving Performance
+AMML062
+A Guided Neural Network Approach to Predict Early Readmission of Diabetic Patients
+AMML063
+A Lightweight and Multi-Stage Approach for Android Malware Detection Using Non-Invasive Machine Learning
+Techniques
+AMML064
+A Lightweight Network Deployed on ARM Devices for Hand Gesture Recognition
+AMML065
+A Machine Learning Approach Using Statistical Models for Early Detection of Cardiac Arrest in Newborn Babies in
+the Cardiac Intensive Care Unit
+AMML066
+A Machine Learning Framework for Early-Stage Detection of Autism Spectrum Disorders
+AMML067
+A Machine Learning-Sentiment Analysis on Monkeypox Outbreak An Extensive Dataset to Show the Polarity of
+Public Opinion From Twitter Tweets
+AMML068
+A Multilingual Spam Reviews Detection Based on Pre-Trained Word Embedding and Weighted Swarm Support
+Vector Machines
+AMML069
+A Multi-Stage Machine Learning and Fuzzy Approach to Cyber-Hate Detection
+AMML070
+A Nested Attention Guided UNet Architecture for White Matter Hyperintensity Segmentation
+AMML071
+A Network Intrusion Detection System for Building Automation and Control Systems
+AMML072
+A Novel Machine Learning Approach for Android Malware Detection Based on the Co-Existence of Features
+AMML073
+A Novel Rumor Detection Method Based on Non-Consecutive Semantic Features and Comment Stance
+AMML074
+A Novel Two-Stage Deep Learning Model for Network Intrusion Detection LSTM-AE
+AMML075
+A Privacy-Preserving Learning Method for Analyzing HEV Drivers Driving Behaviors
+AMML076
+A Quantitative Logarithmic Transformation-Based Intrusion Detection System
+AMML077
+A Review of Methodologies for Fake News Analysis
+AMML078
+A Review on Alzheimers Disease Through Analysis of MRI Images Using Deep Learning Techniques
+AMML079
+A Signature Transform of Limit Order Book Data for Stock Price Prediction
+AMML080
+A Stock Price Prediction Method Based on BiLSTM and Improved Transformer
+AMML081
+A Swin Transformer-Based Approach for Motorcycle Helmet Detection
+AMML082
+A Systematic Literature Review on Multimodal Machine Learning Applications Challenges Gaps and Future
+Directions
+AMML083
+A Systematic Literature Review on Plant Disease Detection Motivations Classification Techniques Datasets
+Challenges and Future Trends
+AMML084
+A Systematic Review on Federated Learning in Medical Image Analysis
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMML
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMML085
+A Text Mining and Statistical Approach for Assessment of Pedagogical Impact of Students Evaluation of Teaching
+and Learning Outcome in Education
+AMML086
+A Transfer Learning Approach to Breast Cancer Classification in a Federated Learning Framework
+AMML087
+A VAN-Based Multi-Scale Cross-Attention Mechanism for Skin Lesion Segmentation Network
+AMML088
+Abnormality Detection in Chest X-Ray via Residual-Saliency From Normal Generation
+AMML089
+Air Quality Index Forecasting via Genetic Algorithm-Based Improved Extreme Learning Machine
+AMML090
+AMSeg A Novel Adversarial Architecture Based Multi-Scale Fusion Framework for Thyroid Nodule Segmentation
+AMML091
+An Attention-Based Convolutional Neural Network for Intrusion Detection Model
+AMML092
+An Automated Chest X-Ray Image Analysis for Covid-19 and Pneumonia Diagnosis using Deep Ensemble
+Strategy
+AMML093
+An Efficient Transfer and Ensemble Learning Based Computer Aided Breast Abnormality Diagnosis System
+AMML094
+An End-to-End Deep Learning Framework for Real-Time Denoising of Heart Sounds for Cardiac Disease Detection
+in Unseen Noise
+AMML095
+An Improved Densenet Deep Neural Network Model for Tuberculosis Detection Using Chest X-Ray Images
+AMML096
+Analysis of Facial Expressions to Estimate the Level of Engagement in Online Lectures
+AMML097
+Application of X-Ray Imaging and Convolutional Neural Networks in the Prediction of Tomato Seed Viability
+AMML098
+Automated Segmentation of Brain Tumor MRI Images Using Deep Learning
+AMML099
+Automated Stroke Prediction Using Machine Learning An Explainable and Exploratory Study With a Web
+Application for Early Intervention
+AMML100
+Automatic Liver Cancer Detection Using Deep Convolution Neural Network
+AMML101
+Biomedical Image Analysis for Colon and Lung Cancer Detection Using Tuna Swarm Algorithm With Deep
+Learning Model
+AMML102
+BI-RADS-NET-V2 A Composite Multi-Task Neural Network for Computer-Aided Diagnosis of Breast Cancer in
+Ultrasound Images With Semantic and Quantitative Explanations
+AMML103
+Bit-Plane and Correlation Spatial Attention Modules for Plant Disease Classification
+AMML104
+Classification of Liver Fibrosis From Heterogeneous Ultrasound Image
+AMML105
+Comparative Analysis of Intrusion Detection Systems and Machine Learning-Based Model Analysis Through
+Decision Tree
+AMML106
+Computer Vision-Based Assessment of Autistic Children Analyzing Interactions Emotions Human Pose and Life
+Skills
+AMML107
+Constructing a Meta-Learner for Unsupervised Anomaly Detection
+AMML108
+DeepSkin A Deep Learning Approach for Skin Cancer Classification
+AMML109
+EfficientNetB3-Adaptive Augmented Deep Learning AADL for MultiClass Plant Disease Classification
+AMML110
+EMED-UNet An Efficient Multi-Encoder-Decoder Based UNet for Medical Image Segmentation
+AMML111
+Exudate Regeneration for Automated Exudate Detection in Retinal Fundus Images
+AMML112
+FieldPlant A Dataset of Field Plant Images for Plant Disease Detection and Classification With Deep Learning
+AMML113
+GARL-Net Graph Based Adaptive Regularized Learning Deep Network for Breast Cancer Classification
+AMML114
+Human Behavior Recognition Based on Multiscale Convolutional Neural Network
+AMML115
+Identification of Emotions From Facial Gestures in a Teaching Environment With the Use of Machine Learning
+Techniques
+AMML116
+Internet of Things and Deep Learning Enabled Diabetic Retinopathy Diagnosis Using Retinal Fundus Images
+AMML117
+Loop Residual Attention Network for Automatic Segmentation of COVID19 Chest X-Ray Images
+AMML118
+Game Stats Forecast based on Sports Data using ML algorithms
+AMML119
+Cryptocurrency Price Prediction using Machine Learning
+AMML120
+Lung Cancer Prediction using Machine Learning
+AMML121
+Mental Stress Prediction using Machine Learning
+AMML122
+Parkinson Disease Prediction using Machine Learning
+AMML123
+Personality Prediction using Machine Learning
+AMML124
+Intelligent deep learning approach for gauging emotion from political tweets
+AMML125
+A Hybrid model for Recommendation System using Deep Learning and Collaborative Filtering
+
+--- PAGE 5 ---
+AntiMatrix Project Center | AMML
+Page 4
+PROJECT CODE
+PROJECT TITLE
+AMML126
+Hybrid Model for Stock Price Prediction using RBM and Logistic Regression
+AMML127
+Network threat detection and classification based on machine learning on cloud computing
+AMML128
+ChatBot using Machine Learning
+AMML129
+Credit Card Fraud Detection using Machine Learning
+AMML130
+Rainfall Prediction using Machine Learning
+AMML131
+Crop Prediction using Machine Learning
+AMML132
+Fake Account Prediction in Social Network using Machine Learning Algorithms
+AMML133
+Fake Job Posting using Machine Learning
+AMML134
+Fake News Detection using Machine Learning
+AMML135
+Fault Detection using Convolutional Neural Network Classifier Algorithm
+AMML136
+Heart Disease Prediction using Enhanced Decision Tree Classifier
+AMML137
+Intrusion Detection using Machine Learning Technique
+AMML138
+Iris Flower Species Identification Using Machine Learning Approach
+AMML139
+Liver Disease Prediction using Machine Learning
+AMML140
+Movie Recommendation system using Collaborative Filtring Algorithm
+AMML141
+Underwater Prediction using Machine Learning
+AMML142
+Detection of Virtual Private Network Traffic using Machine Learning
+AMML143
+Fall Detection and Daily Living Activity Recognition using Machine Learning
+AMML144
+AFNN-R: An Effective and Accurate Phishing WebsitesDetection using Optimal Feature Selection and Random
+Forest Classi
+Source note: The source catalogue contains CMLP001–CMLP050, ML001GK–ML067GK and ML151GK–ML177GK; the missing
+ML068GK–ML150GK range was not supplied. Titles have been renumbered sequentially in the new AMML code series, preserving source order.

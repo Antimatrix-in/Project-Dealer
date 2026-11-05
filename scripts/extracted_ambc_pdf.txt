@@ -1,0 +1,50 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+BLOCKCHAIN – PYTHON / JAVA / DOTNET PROJECT CATALOGUE
+16 Project Titles
+DOMAIN CODE  AMBC
+PROJECT CODES  AMBC001 – AMBC016
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMBC
+Page 1
+Blockchain – Python / Java / DotNet Projects
+ PROJECT CODE
+PROJECT TITLE
+AMBC001
+Bank automation system in cloud computing
+AMBC002
+Planning Secure Consumption: Food Safety Using Block chain
+AMBC003
+Intelligent Value Added Service Platform of Smart Library Based on Block chain Technology
+AMBC004
+Performance Evaluation of Data Transactions in Block chain
+AMBC005
+Block chain Enabled Intelligent Digital Forensics System for Autonomous Connected Vehicles
+AMBC006
+Improved Security Block chain for IoT based Healthcare monitoring system
+AMBC007
+Toward Data Authenticity and Integrity for Block chain-Based Mobile Edge Computing
+AMBC008
+A Block chain-Based Fake Product Identification System
+AMBC009
+A Fog and Block chain Software Architecture for a Global Scale Vaccination Strategy
+AMBC010
+Optimized User-Friendly Transaction Time Management in the Block chain Distributed Energy Market
+AMBC011
+Privacy-Preserved Electronic Medical Record Exchanging and Sharing: A Block chain Smart Healthcare
+System
+AMBC012
+Block chain-enabled COVID?19 Contact Tracing Solutions
+AMBC013
+Block chain-Based Privacy Preserving and Energy Saving Mechanism for Electricity Prosumers
+AMBC014
+Block chain-based Lightweight Transaction Process Modeling and Development
+AMBC015
+Block chain-Based Medical Certificate Generation and Verification for IoT-based Healthcare Systems
+AMBC016
+An interactive and secure Block chain web portal for online healthcare service
+
+

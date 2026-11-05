@@ -1,0 +1,253 @@
+
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+DEEP LEARNING PROJECT CATALOGUE
+100 Project Titles
+DOMAIN CODE  AMDL
+PROJECT CODES  AMDL001 – AMDL100
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMDL
+Page 1
+Deep Learning Projects
+ PROJECT CODE
+PROJECT TITLE
+AMDL001
+A Bayesian Deep Learning Approach With Convolutional Feature Engineering to Discriminate Cyber-Physical
+Intrusions in Smart Grid Systems
+AMDL002
+A Deep Learning-Based Brain Age Prediction Model for Preterm Infants via Neonatal MRI
+AMDL003
+A Deep Learning-Based Efficient Firearms Monitoring Technique for Building Secure Smart Cities
+AMDL004
+A Deep Learning-Based Experiment on Forest Wildfire Detection in Machine Vision Course
+AMDL005
+A Deep Learning-based Intelligent Quality Detection Model for Machine Translation
+AMDL006
+A Deep Reinforcement Learning Approach for Competitive Task Assignment in Enterprise Blockchain
+AMDL007
+A Granular Computing-Based Deep Neural Network Approach for Automatic Evaluation of Writing Quality
+AMDL008
+A Hybrid Deep Learning-Based Intelligent System for Sports Action Recognition via Visual Knowledge
+Discovery
+AMDL009
+A hybrid method for identifying the feeding behavior of tilapia
+AMDL010
+A Mean-VaR Based Deep Reinforcement Learning Framework for Practical Algorithmic Trading
+AMDL011
+A Multi-Channel Feature Fusion CNN-Bi-LSTM Epilepsy EEG Classification and Prediction Model Based on
+Attention Mechanism
+AMDL012
+A Multi-Head Self-Attention Transformer-Based Model for Traffic Situation Prediction in Terminal Areas
+AMDL013
+A New Dataset for Forged Smartphone Videos Detection Description and Analysis
+AMDL014
+A Novel SpatioTemporal Deep Learning Vehicle Turns Detection Scheme Using GPS-Only Data
+AMDL015
+A Novel Student Achievement Prediction Method Based on Deep Learning and Attention Mechanism
+AMDL016
+A Ranking Model for Evaluation of Conversation Partners Based on Rapport Levels
+AMDL017
+A Robust Hybrid Classical and Quantum Model for Short-Term Wind Speed Forecasting
+AMDL018
+A Smart Leaf Blow Robot Based on Deep Learning Model
+AMDL019
+A Survey on Deep Learning for Website Fingerprinting Attacks and Defenses
+AMDL020
+A Systematic Review of Facial Expression Detection Methods
+AMDL021
+Adjacency Matrix Deep Learning Prediction Model for Prognosis of the Next Event in a Process
+AMDL022
+Agricultural Text Classification Method Based on Dynamic Fusion of Multiple Features
+AMDL023
+Algorithmic Decision Making Methods for Fair Credit Scoring
+AMDL024
+An Adaptive Masked Attention Mechanism to Act on the Local Text in a Global Context for Aspect-Based
+Sentiment Analysis
+AMDL025
+An Efficient Parameter Estimation Algorithm of the GTD Model Based on the MMP Algorithm
+AMDL026
+An Enhanced Prototypical Network Architecture for Few-Shot Handwritten Urdu Character Recognition
+AMDL027
+An Enhanced Recommendation Model Based on Review Text Graph and Interaction Graph
+AMDL028
+Application of Text Rank Algorithm Fused With LDA in Information Extraction Model
+AMDL029
+Assessing the Benefits of ChatGPT for Business An Empirical Study on Organizational Performance
+AMDL030
+Automated Red Palm Weevil Detection Using Gorilla Troops Optimizer With Deep Learning Model
+AMDL031
+Automatic Generation Control Strategy Based on Deep Forest
+AMDL032
+Automatic Voice Disorder Detection Using Self-Supervised Representations AntiMatrix Project Center Page 3
+AMDL033
+Boosting Performance of Visual Servoing Using Deep Reinforcement Learning From Multiple Demonstrations
+AMDL034
+BukaGini A Stability-Aware Gini Index Feature Selection Algorithm for Robust Model Performance
+AMDL035
+Chaotic-Map Based Encryption for 3D Point and 3D Mesh Fog Data in Edge Computing
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMDL
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMDL036
+CNN-LSTM Driving Style Classification Model Based on Driver Operation Time Series Data
+AMDL037
+Comparison of Real-Time and Batch Job Recommendations
+AMDL038
+CT Lung Nodule Segmentation A Comparative Study of Data Preprocessing and Deep Learning Models
+AMDL039
+Cyber Security in Power Systems Using Meta-Heuristic and Deep Learning Algorithms
+AMDL040
+Data Analysis in Social Networks for Agribusiness A Systematic Review
+AMDL041
+Deep Generative Knowledge Distillation by Likelihood Finetuning
+AMDL042
+Deep Learning Based Interference Exploitation in 1-Bit Massive MIMO Precoding
+AMDL043
+Deep Learning for Multi-Level Detection and Localization of Myocardial Scars Based on Regional Strain
+Validated on Virtual Patients
+AMDL044
+Deep Learning Using Context Vectors to Identify Implicit Aspects
+AMDL045
+Deep Learning-Based Optimization of VisualAuditory Sensory Substitution
+AMDL046
+Deep Multi-Agent Reinforcement Learning With Minimal Cross-Agent Communication for SFC Partitioning
+AMDL047
+Deep Non-Parallel Hyperplane Support Vector Machine for Classification
+AMDL048
+Deep vs. Shallow A Comparative Study of Machine Learning and Deep Learning Approaches for Fake Health
+News Detection
+AMDL049
+DeepFert An Intelligent Fertility Rate Prediction Approach for Men Based on Deep Learning Neural Networks
+AMDL050
+DeepMist Toward Deep Learning Assisted Mist Computing Framework for Managing Healthcare Big Data
+AMDL051
+Design of an Intelligent Educational Evaluation System Using Deep Learning
+AMDL052
+Diagnosis of Chaotic Ferroresonance Phenomena Using Deep Learning
+AMDL053
+End-To-End Deep-Learning-Based Tamil Handwritten Document Recognition and Classification Model
+AMDL054
+Evolution of Deep Learning-Based Sequential Recommender Systems From Current Trends to New
+Perspectives
+AMDL055
+Facial Expression Transfer Based on Conditional Generative Adversarial Networks
+AMDL056
+Fault Classification in Distribution Systems Using Deep Learning With Data Preprocessing Methods Based on
+Fast Dynamic Time Warping and Short-Time Fourier Transform
+AMDL057
+Fault Detection for Medium Voltage Switchgear using a Deep Learning Hybrid 1D-CNN-LSTM Model
+AMDL058
+Gauss-Mapping Black Widow Optimization With Deep Extreme Learning Machine for Android Malware
+Classification Model
+AMDL059
+Generalization of Forgery Detection With Meta Deepfake Detection Model
+AMDL060
+GNNGLY Graph Neural Networks for Glycan Classification
+AMDL061
+Henry Gas Solubility Optimization With Deep Learning Based Facial Emotion Recognition for Human
+Computer Interface
+AMDL062
+Heterogenous Social Media Analysis For Efficient Deep Learning FakeProfile Identification.
+AMDL063
+Identifying ADHD for Children With Coexisting ASD From fNIRs Signals Using Deep Learning Approach
+AMDL064
+Image-Based Partial Discharge Identification in High Voltage Cables Using Hybrid Deep Network AntiMatrix
+Project Center Page 4
+AMDL065
+Intelligent Deployment Solution for Tabling Adapting Deep Learning
+AMDL066
+Intracranial Haemorrhage Diagnosis Using Willow Catkin Optimization With Voting Ensemble Deep Learning
+on CT Brain Imaging
+AMDL067
+Lightweight Deep Learning Framework for Speech Emotion Recognition
+AMDL068
+Local Electricity Market Design Utilizing Network State Dependent Dynamic Network Usage Tariff
+AMDL069
+Mercury A Deep Reinforcement Learning-Based Investment Portfolio Strategy for Risk-Return Balance
+AMDL070
+MixNet Physics Constrained Deep Neural Motion Prediction for Autonomous Racing
+
+--- PAGE 4 ---
+AntiMatrix Project Center | AMDL
+Page 3
+PROJECT CODE
+PROJECT TITLE
+AMDL071
+MLGNA Multi-Label Guided Network for Improving Text Classification
+AMDL072
+Model Focus Improves Performance of Deep Learning-Based Synthetic Face Detectors
+AMDL073
+Modeling of Blockchain Assisted Intrusion Detection on IoT Healthcare System Using Ant Lion Optimizer With
+Hybrid Deep Learning
+AMDL074
+Modified Earthworm Optimization With Deep Learning Assisted Emotion Recognition for Human Computer
+Interface
+AMDL075
+Modified Red Fox Optimizer With Deep Learning Enabled False Data Injection Attack Detection
+AMDL076
+Multi-Camera 3D Object Detection for Autonomous Driving Using Deep Learning and Self-Attention
+Mechanism
+AMDL077
+Multimodal Deep Learning Model of Predicting Future Visual Field for Glaucoma Patients
+AMDL078
+Multi-S3P Protein Secondary Structure Prediction With Specialized MultiNetwork and Self-Attention-Based
+Deep Learning Model
+AMDL079
+Multi-Semantic Discriminative Feature Learning for Sign Gesture Recognition Using Hybrid Deep Neural
+Architecture
+AMDL080
+On the Effect of Log-Mel Spectrogram Parameter Tuning for Deep Learning-Based Speech Emotion
+Recognition
+AMDL081
+Optimal Recommendation Models Based on Knowledge Representation Learning and Graph Attention
+Networks
+AMDL082
+Predicting Relationship Labels and Individual Personality Traits From Telecommunication History in Social
+Networks Using Hawkes Processes
+AMDL083
+Quantum Dwarf Mongoose Optimization With Ensemble Deep Learning Based Intrusion Detection in
+Cyber-Physical Systems
+AMDL084
+Rearranging Pixels is a Powerful Black-Box Attack for RGB and Infrared Deep Learning Models
+AMDL085
+Recognition of the Shape and Location of Multiple Power Lines Based on Deep Learning With
+Post-Processing
+AMDL086
+Recommendation System Based on Deep Sentiment Analysis and Matrix Factorization
+AMDL087
+Research on Asparagus Recognition Based on Deep Learning
+AMDL088
+Research on ATO Control Method for Urban Rail Based on Deep Reinforcement Learning
+AMDL089
+Research on Deep Learning-Driven High-Resolution Image Restoration for Murals From the Perspective of
+Vision Sensing
+AMDL090
+Resolving Power Equipment Data Inconsistency via Heterogeneous Network Alignment
+AMDL091
+Reverse Image Search for Collage A Novel Local Feature-Based Framework
+AMDL092
+Road Crack Detection Using Deep Neural Network Based on Attention Mechanism and Residual Structure
+AMDL093
+Shrimpseed Net Counting of Shrimp Seed Using Deep Learning on Smartphones for Aquaculture
+AMDL094
+SIGNFORMER DeepVision Transformer for Sign Language Recognition
+AMDL095
+SoLGR Social Enhancement Group Recommendation via Light Graph Convolution Networks AntiMatrix
+Project Center Page 5
+AMDL096
+Speech Enhancement Algorithm Based on a Convolutional Neural Network Reconstruction of the Temporal
+Envelope of Speech in Noisy Environments
+AMDL097
+The Biomechanical Analysis on the Tennis Batting Angle Selection under Deep Learning
+AMDL098
+The Key Criteria for Predicting Unusual Behavior in the Elderly With Deep Learning Models Under 5G
+Technology
+AMDL099
+Toward Practical Deep Blind Watermarking for Traitor Tracing
+AMDL100
+Using Deep Learning Model to Identify Iron Chlorosis in Plant

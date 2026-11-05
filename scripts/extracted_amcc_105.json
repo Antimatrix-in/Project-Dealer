@@ -1,0 +1,422 @@
+[
+  {
+    "code": "AMCC001",
+    "title": "A Comprehensive Framework for Migrating to Zero Trust Architecture"
+  },
+  {
+    "code": "AMCC002",
+    "title": "A Configurable Model-Based Reinforcement Learning Framework for Disaggregated Storage Systems"
+  },
+  {
+    "code": "AMCC003",
+    "title": "A Data Deduplication Scheme Based on DBSCAN With Tolerable Clustering Deviation"
+  },
+  {
+    "code": "AMCC004",
+    "title": "A Data-Driven Optimization Method Considering Data Correlations for Optimal Power Flow Under Uncertainty"
+  },
+  {
+    "code": "AMCC005",
+    "title": "A Diabetes Monitoring System and Health-Medical Service Composition Model in Cloud Environment"
+  },
+  {
+    "code": "AMCC006",
+    "title": "A Hybrid Approach With GAN and DP for Privacy Preservation of IIoT Data"
+  },
+  {
+    "code": "AMCC007",
+    "title": "A Memetic Algorithm With Reinforcement Learning for Sociotechnical Production Scheduling"
+  },
+  {
+    "code": "AMCC008",
+    "title": "A Novel Method for Improving Point Cloud Accuracy in Automotive Radar Object Recognition"
+  },
+  {
+    "code": "AMCC009",
+    "title": "A Review on Attack Graph Analysis for IoT Vulnerability Assessment Challenges Open Issues and Future Directions"
+  },
+  {
+    "code": "AMCC010",
+    "title": "A Secure and Privacy-Preserving Lightweight Authentication and Key Exchange Algorithm for Smart Agriculture Monitoring System"
+  },
+  {
+    "code": "AMCC011",
+    "title": "A Topicality Relevance-Aware Intent Model for Web Search"
+  },
+  {
+    "code": "AMCC012",
+    "title": "Achieving Decentralized and Dynamic SSO-Identity Access Management System for Multi-Application Outsourced in Cloud"
+  },
+  {
+    "code": "AMCC013",
+    "title": "Adaptive Weighted Low-Rank Sparse Representation for Multi-View Clustering"
+  },
+  {
+    "code": "AMCC014",
+    "title": "An Asynchronous Federated Learning Arbitration Model for Low-Rate DDoS Attack Detection"
+  },
+  {
+    "code": "AMCC015",
+    "title": "A Distributed and Decentralized Certificateless Framework for Reliable Shared Data Auditing for FOG-CPS Networks"
+  },
+  {
+    "code": "AMCC016",
+    "title": "A Secure and Cost-Efficient Blockchain Facilitated IoT Software Update Framework"
+  },
+  {
+    "code": "AMCC017",
+    "title": "Blockchain-Based Service-Oriented Architecture for Consent Management, Access Control, and Auditing"
+  },
+  {
+    "code": "AMCC018",
+    "title": "Enabling Simultaneous Content Regulation and Privacy Protection for Cloud Storage Image"
+  },
+  {
+    "code": "AMCC019",
+    "title": "Resource Management and Pricing for Cloud Computing based Mobile Blockchain with Pooling"
+  },
+  {
+    "code": "AMCC020",
+    "title": "Online Performance Modelling and Prediction for Single- VM Applications in Multi-Tenant Clouds"
+  },
+  {
+    "code": "AMCC021",
+    "title": "Toward Secure Data Computation and Outsource for Multi-User Cloud-Based IoT"
+  },
+  {
+    "code": "AMCC022",
+    "title": "Attribute-based pseudonymity for privacy-preserving authentication in cloud services"
+  },
+  {
+    "code": "AMCC023",
+    "title": "Securing Organization’s Data: A Role-Based Authorized Keyword Search Scheme with Efficient Decryption"
+  },
+  {
+    "code": "AMCC024",
+    "title": "An Improved Design for a Cloud Intrusion Detection System Using Hybrid Features Selection Approach With ML Classifier"
+  },
+  {
+    "code": "AMCC025",
+    "title": "A Novel Data Placement and Retrieval Service for Cooperative Edge Clouds"
+  },
+  {
+    "code": "AMCC026",
+    "title": "Secure and Efficient Data Deduplication in Joint Cloud Storage"
+  },
+  {
+    "code": "AMCC027",
+    "title": "A Generalized Framework for Preserving Both Privacy and Utility in Data Outsourcing"
+  },
+  {
+    "code": "AMCC028",
+    "title": "Dynamically Optimizing Display Advertising Profits under Diverse Budget Settings"
+  },
+  {
+    "code": "AMCC029",
+    "title": "FinGAT Financial Graph Attention Networks for Recommending Top-K Profitable Stocks"
+  },
+  {
+    "code": "AMCC030",
+    "title": "Multi-hop Reasoning Question Generation and Its Application"
+  },
+  {
+    "code": "AMCC031",
+    "title": "Partition Chain: A Scalable and Reliable Data Storage Strategy for Permissioned Blockchain"
+  },
+  {
+    "code": "AMCC032",
+    "title": "Suggesting Assess Queries for Interactive Analysis of Multidimensional Data"
+  },
+  {
+    "code": "AMCC033",
+    "title": "TwiCS: Lightweight Entity Mention Detection in Targeted Twitter Streams"
+  },
+  {
+    "code": "AMCC034",
+    "title": "An Improved Point Cloud Completion Method Based on SnowflakeNet"
+  },
+  {
+    "code": "AMCC035",
+    "title": "An Integrated Optimization-Based Algorithm for Energy Efficiency and Resource Allocation in Heterogeneous Cloud Computing Centers"
+  },
+  {
+    "code": "AMCC036",
+    "title": "ANS Assimilating Near Similarity at High Accuracy for Significant Deduction of CNN Storage and Computation"
+  },
+  {
+    "code": "AMCC037",
+    "title": "Boundary-Aware Supervoxel Segmentation for Indoor 3D Point Clouds"
+  },
+  {
+    "code": "AMCC038",
+    "title": "Cascaded Contextual Reasoning for Large-Scale Point Cloud Semantic Segmentation"
+  },
+  {
+    "code": "AMCC039",
+    "title": "Cloud Energy Storage Investment by Collaboration of Microgrids for Profit and Reliability Enhancement Considering a TSO-DSO Yearly Reward"
+  },
+  {
+    "code": "AMCC040",
+    "title": "CloudNet A LiDAR-Based Face Anti-Spoofing Model That Is Robust Against Light Variation"
+  },
+  {
+    "code": "AMCC041",
+    "title": "Computationally Efficient Neural Rendering for Generator Adversarial Networks Using a Multi-GPU Cluster in a Cloud Environment"
+  },
+  {
+    "code": "AMCC042",
+    "title": "Cybersecurity Status Assessment of Cloud Manufacturing Systems Based on Semiquantitative Information"
+  },
+  {
+    "code": "AMCC043",
+    "title": "DAPS3D Domain Adaptive Projective Segmentation of 3D LiDAR Point Clouds"
+  },
+  {
+    "code": "AMCC044",
+    "title": "Deep Reinforcement Learning Based Edge Computing Network Aided Resource Allocation Algorithm for Smart Grid"
+  },
+  {
+    "code": "AMCC045",
+    "title": "Dynamic Resource Allocation Using an Adaptive Multi-Objective Teaching-Learning Based Optimization Algorithm in Cloud"
+  },
+  {
+    "code": "AMCC046",
+    "title": "Exploring Semantic Information Extraction From Different Data Forms in 3D Point Cloud Semantic Segmentation"
+  },
+  {
+    "code": "AMCC047",
+    "title": "Fast and High Accuracy 3D Point Cloud Registration for Automatic Reconstruction From Laser Scanning Data"
+  },
+  {
+    "code": "AMCC048",
+    "title": "Hand Gesture Recognition Based on Point Cloud Sequences and Inverse Kinematics Model"
+  },
+  {
+    "code": "AMCC049",
+    "title": "Indoor Point Cloud Segmentation Using a Modified Region Growing Algorithm and Accurate Normal Estimation"
+  },
+  {
+    "code": "AMCC050",
+    "title": "LLL-CAdViSE Live Low-Latency Cloud-Based Adaptive Video Streaming Evaluation Framework"
+  },
+  {
+    "code": "AMCC051",
+    "title": "Local Graph Point Attention Network in Point Cloud Segmentation"
+  },
+  {
+    "code": "AMCC052",
+    "title": "Multi-Objective Grey Wolf Optimizer Algorithm for Task Scheduling in Cloud-Fog Computing"
+  },
+  {
+    "code": "AMCC053",
+    "title": "Multi-Task Learning for Electricity Price Forecasting and Resource Management in Cloud Based Industrial IoT Systems"
+  },
+  {
+    "code": "AMCC054",
+    "title": "No-Reference 3D Point Cloud Quality Assessment Using Multi-View Projection and Deep Convolutional Neural Network"
+  },
+  {
+    "code": "AMCC055",
+    "title": "Parametric Classification of Furniture From Point Cloud Developed Using Low Cost Trolley Based Laser Scanning System"
+  },
+  {
+    "code": "AMCC056",
+    "title": "PCAPN An Enhanced Feature Extraction Framework for Point Cloud"
+  },
+  {
+    "code": "AMCC057",
+    "title": "Point Cloud Adversarial Perturbation Generation for Adversarial Attacks"
+  },
+  {
+    "code": "AMCC058",
+    "title": "Real-Time Detection Schemes for Memory DoS M-DoS Attacks on Cloud Computing Applications"
+  },
+  {
+    "code": "AMCC059",
+    "title": "Resource Allocation With Edge-Cloud Collaborative Traffic Prediction in Integrated Radio and Optical Networks"
+  },
+  {
+    "code": "AMCC060",
+    "title": "Road Traffic Marking Extraction Algorithm Based on Fusion of Single Frame Image and Sparse Point Cloud"
+  },
+  {
+    "code": "AMCC061",
+    "title": "SdnK8s Routing Optimization Strategy in 5G Cloud Edge Collaboration Scenario"
+  },
+  {
+    "code": "AMCC062",
+    "title": "Security and Integrity Attacks in Named Data Networking A Survey"
+  },
+  {
+    "code": "AMCC063",
+    "title": "Self-Supervised Latent Representations of Network Flows and Application to Darknet Traffic Classification"
+  },
+  {
+    "code": "AMCC064",
+    "title": "Semantic Segmentation of In-Vehicle Point Cloud With Improved RangeNet Loss Function"
+  },
+  {
+    "code": "AMCC065",
+    "title": "The Role of Network Slicing and Edge Computing in the Metaverse Realization"
+  },
+  {
+    "code": "AMCC066",
+    "title": "To Drop or to Select Reduce the Negative Effects of Disturbance Features for Point Cloud Classification From an Interpretable Perspective"
+  },
+  {
+    "code": "AMCC067",
+    "title": "Trajectory-Based 3D Point Cloud ROI Determination Methods for Autonomous Mobile Robot"
+  },
+  {
+    "code": "AMCC068",
+    "title": "Transforming the 5G RAN With Innovation The Confluence of Cloud Native and Intelligence"
+  },
+  {
+    "code": "AMCC069",
+    "title": "Multi-Objective Task Scheduling Optimization for Load Balancing in Cloud Computing Environment Using Hybrid Artificial Bee Colony Algorithm With Reinforcement Learning"
+  },
+  {
+    "code": "AMCC070",
+    "title": "Efficient and Secure Attribute-Based Access Control with Identical Sub-Policies Frequently Used in Cloud Storage"
+  },
+  {
+    "code": "AMCC071",
+    "title": "Forward Secure Public Key Encryption with Keyword Search for Outsourced Cloud Storage"
+  },
+  {
+    "code": "AMCC072",
+    "title": "Server-Aided Fine-Grained Access Control Mechanism with Robust Revocation in Cloud Computing"
+  },
+  {
+    "code": "AMCC073",
+    "title": "A Lightweight Optimal Scheduling Algorithm for Energy-Efficient and Real-Time cloud Services"
+  },
+  {
+    "code": "AMCC074",
+    "title": "Mass Customization-Oriented Customer Demand Response Service Platform Based on Cloud Computing and Internet of Things"
+  },
+  {
+    "code": "AMCC075",
+    "title": "A Fine-Grained and Lightweight Data Access Control Model for Mobile Cloud Computing"
+  },
+  {
+    "code": "AMCC076",
+    "title": "A Practical and Efficient Bidirectional Access Control Scheme for Cloud-Edge Data Sharing"
+  },
+  {
+    "code": "AMCC077",
+    "title": "Revocable Attribute-Based Data Storage in Mobile Clouds"
+  },
+  {
+    "code": "AMCC078",
+    "title": "Multi objective Task Scheduling in Cloud Environment Using Decision Tree Algorithm"
+  },
+  {
+    "code": "AMCC079",
+    "title": "A Block chain-Enabled Privacy-Preserving Verifiable Query Framework for Securing Cloud-Assisted Industrial Internet of Things Systems"
+  },
+  {
+    "code": "AMCC080",
+    "title": "An Efficient Identity-Based Provable Data Possession Protocol With Compressed Cloud Storage"
+  },
+  {
+    "code": "AMCC081",
+    "title": "An Opportunistic Approach for Cloud Service-Based IoT Routing Framework Administering Data, Transaction, and Identity Security"
+  },
+  {
+    "code": "AMCC082",
+    "title": "CBiLSTM: A Hybrid Deep Learning Model for Efficient Reputation Assessment of Cloud Services"
+  },
+  {
+    "code": "AMCC083",
+    "title": "An Efficient Privacy-Preserving Public Auditing Protocol for Cloud-Based Medical Storage System"
+  },
+  {
+    "code": "AMCC084",
+    "title": "A Practical Framework for Secure Document Retrieval in Encrypted Cloud File Systems"
+  },
+  {
+    "code": "AMCC085",
+    "title": "Efficient, Revocable, and Privacy-Preserving Fine-Grained Data Sharing With Keyword Search for the Cloud-Assisted Medical IoT System"
+  },
+  {
+    "code": "AMCC086",
+    "title": "A Reconfigurable CNN-Based Accelerator Design for Fast and EnergyEfficient Object Detection System on Mobile FPGA"
+  },
+  {
+    "code": "AMCC087",
+    "title": "AMoND Area-Controlled Mobile Ad-Hoc Networking With Digital Twin"
+  },
+  {
+    "code": "AMCC088",
+    "title": "An Effective WBC Segmentation and Classification Using MobilenetV3ShufflenetV2 Based Deep Learning Framework"
+  },
+  {
+    "code": "AMCC089",
+    "title": "An Empirical Assessment of the Contribution of 5G in Vertical Industries A Case for the Transportation Sector"
+  },
+  {
+    "code": "AMCC090",
+    "title": "Corrections to Multiple Mobile Charger Charging Strategy Based on Dual Partitioning Model for Wireless Rechargeable Sensor Networks"
+  },
+  {
+    "code": "AMCC091",
+    "title": "Efficient Human Activity Recognition Using Lookup Table-Based Neural Architecture Search for Mobile Devices"
+  },
+  {
+    "code": "AMCC092",
+    "title": "Extremely Randomized Trees Regressor Scheme for Mobile Network Coverage Prediction and REM Construction"
+  },
+  {
+    "code": "AMCC093",
+    "title": "Fast Search of Face Recognition Model for a Mobile Device Based on Neural Architecture Comparator"
+  },
+  {
+    "code": "AMCC094",
+    "title": "Forward-Looking MIMO-SAR for Enhanced Radar Imaging in Autonomous Mobile Robots"
+  },
+  {
+    "code": "AMCC095",
+    "title": "Information-Centric Mobile Networks A Survey Discussion and Future Research Directions"
+  },
+  {
+    "code": "AMCC096",
+    "title": "Memory Efficient Local Features Descriptor for Identity Document Detection on Mobile and Embedded Devices"
+  },
+  {
+    "code": "AMCC097",
+    "title": "Mobile Sensor Nodes Traversal Schemes to Attend Events at Random Locations With Minimal Energy Depletion"
+  },
+  {
+    "code": "AMCC098",
+    "title": "Path Planning for Mobile Robot Considering Turnabouts on Narrow Road by Deep Q-Network"
+  },
+  {
+    "code": "AMCC099",
+    "title": "RFSE-GRU Data Balanced Classification Model for Mobile Encrypted Traffic in Big Data Environment"
+  },
+  {
+    "code": "AMCC100",
+    "title": "Semi-Asynchronous Hierarchical Federated Learning Over Mobile Edge Networks"
+  },
+  {
+    "code": "AMCC101",
+    "title": "Skip-Concatenated Image Super-Resolution Network for Mobile Devices"
+  },
+  {
+    "code": "AMCC102",
+    "title": "Smart Edge-Based Driver Drowsiness Detection in Mobile Crowdsourcing"
+  },
+  {
+    "code": "AMCC103",
+    "title": "The Performance Analysis of SPMA Protocol in High Speed Mobile Ad Hoc Network"
+  },
+  {
+    "code": "AMCC104",
+    "title": "Vehicle Damage Severity Estimation for Insurance Operations Using InThe-Wild Mobile Images"
+  },
+  {
+    "code": "AMCC105",
+    "title": "Wideband Monopole Eight-Element MIMO Antenna for 5G Mobile Termi"
+  }
+]

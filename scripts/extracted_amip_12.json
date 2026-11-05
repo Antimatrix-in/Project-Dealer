@@ -1,0 +1,50 @@
+[
+  {
+    "code": "AMIP001",
+    "title": "Real-time Smile Detection using Integrated ML Model"
+  },
+  {
+    "code": "AMIP002",
+    "title": "A Method for Covid-19 Segmentation from X-Ray Images with U-Net"
+  },
+  {
+    "code": "AMIP003",
+    "title": "Graph-Based Region and Boundary Aggregation for Biomedical Image Segmentation"
+  },
+  {
+    "code": "AMIP004",
+    "title": "Hybrid Image Encryption Algorithm for Grey and Color Medical Images"
+  },
+  {
+    "code": "AMIP005",
+    "title": "Diagnosis of Diabetic Retinopathy and Glaucoma from Retinal Images Using Deep Convolutional Neural Network"
+  },
+  {
+    "code": "AMIP006",
+    "title": "Object Detection for Visually Challenged Using Image Processing"
+  },
+  {
+    "code": "AMIP007",
+    "title": "Robust Face Detection and Recognition using Image Processing and OpenCV"
+  },
+  {
+    "code": "AMIP008",
+    "title": "An Efficient Cascaded Model for Ship Segmentation in Aerial Images"
+  },
+  {
+    "code": "AMIP009",
+    "title": "Early Melanoma Diagnosis with Sequential Dermoscopic Images"
+  },
+  {
+    "code": "AMIP010",
+    "title": "Boundary Enhancement Semantic Segmentation for Building Extraction from Remote Sensed Image"
+  },
+  {
+    "code": "AMIP011",
+    "title": "Detection of License Plate Numbers and Identification of Non-Helmet Riders using Yolo v2 and OCR Method"
+  },
+  {
+    "code": "AMIP012",
+    "title": "A New Benchmarking for Diabetic Retinopathy Using Machine Learning, Deep Learning and Image Processing Technique"
+  }
+]

@@ -1,0 +1,162 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+ARTIFICIAL INTELLIGENCE PROJECT CATALOGUE
+60 Project Titles
+DOMAIN CODE  AMAI
+PROJECT CODES  AMAI001 – AMAI060
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMAI
+Page 1
+Artificial Intelligence Projects
+ PROJECT CODE
+PROJECT TITLE
+AMAI001
+A Comprehensive Review of Harmonic Issues and Estimation Techniques in Power System Networks Based
+on Traditional and Artificial Intelligence Machine Learning
+AMAI002
+A Cross-Lingual Hybrid Neural Network With Interaction Enhancement for Grading Short-Answer Texts
+AMAI003
+A Hybrid Deep Learning Method Based on CEEMDAN and Attention Mechanism for Network Traffic
+Prediction
+AMAI004
+A Hybrid Discrete Artificial Bee Colony Algorithm for Imaging Satellite Mission Planning
+AMAI005
+A Hybrid Method of Feature Extraction for Signatures Verification Using CNN and HOG a Multi-Classification
+Approach
+AMAI006
+A Methodological Framework for AI-Assisted Security Assessments of Active Directory Environments
+AMAI007
+A Novel Artificial Spider Monkey Based Random Forest Hybrid Framework for Monitoring and Predictive
+Diagnoses of Patients Healthcare
+AMAI008
+A Recent Review on Approaches to Design Power System Stabilizers Status Challenges and Future Scope
+AMAI009
+A Review on Data-Driven Security Assessment of Power Systems Trends and Applications of Artificial
+Intelligence
+AMAI010
+A Survey of Privacy Risks and Mitigation Strategies in the Artificial Intelligence Life Cycle
+AMAI011
+A Survey on Artificial Intelligence-Based Acoustic Source Identification
+AMAI012
+A Survey on the Optimization of Artificial Neural Networks Using Swarm Intelligence Algorithms
+AMAI013
+Adverse Drug Reaction Detection From Social Media Based on Quantum Bi-LSTM With Attention
+AMAI014
+AI Sound Recognition on Asthma Medication Adherence Evaluation With the RDA Benchmark Suite
+AMAI015
+AI-Based Epileptic Seizure Detection and Prediction in Internet of Healthcare Things A Systematic Review
+AMAI016
+An AI Based Automatic Translator for Ancient Hieroglyphic LanguageFrom Scanned Images to English Text
+AMAI017
+An Artificial Neural SLAM Framework for Event-Based Vision
+AMAI018
+An Elitist Artificial Electric Field Algorithm Based Random Vector Functional Link Network for Cryptocurrency
+Prices Forecasting
+AMAI019
+An Inferential Commonsense-Driven Framework for Predicting Political Bias in News Headlines
+AMAI020
+Applicable Image Security Based on Computational Genetic Approach and Self-Adaptive Substitution
+AMAI021
+Application of Artificial Intelligence Methods in Carotid Artery Segmentation A Review
+AMAI022
+Application of Artificial Intelligence Techniques for BrainComputer Interface in Mental Fatigue Detection A
+Systematic Review
+AMAI023
+Application of Artificial Neural Network-Based Tool for Short Circuit Currents Estimation in Power Systems
+With High Penetration of Power Electronics-Based Renewables
+AMAI024
+Applications of Artificial Intelligence in the Economy Including Applications in Stock Trading Market Analysis
+and Risk Management
+AMAI025
+Artificial Intelligence and Biosensors in Healthcare and Its Clinical Relevance A Review
+AMAI026
+Artificial Intelligence and Internet of Things for Sustainable Farming and Smart Agriculture
+AMAI027
+Artificial Intelligence Enabled Demand Response Prospects and Challenges in Smart Grid Environment
+AMAI028
+Artificial Intelligence for sEMG-Based Muscular Movement Recognition for Hand Prosthesis AntiMatrix
+Project Center Page 3
+AMAI029
+Artificial Intelligence in Cosmetic Dermatology A Systematic Literature Review
+AMAI030
+Artificial Intelligence Technology in the Agricultural Sector A Systematic Literature Review
+AMAI031
+Artificial Intelligence-Driven Digital Twin of a Modern House Demonstrated in Virtual Reality
+AMAI032
+BREE-HD A Transformer-Based Model to Identify Threats on Twitter
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMAI
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMAI033
+Cascade Windows-Based Multi-Stream Convolutional Neural Networks Framework for Early Detecting
+In-Sleep Stroke Using Wristbands
+AMAI034
+CLUE-AI A Convolutional Three-Stream Anomaly Identification Framework for Robot Manipulation
+AMAI035
+Cooperative Beamforming With Artificial Noise Injection for PhysicalLayer Security
+AMAI036
+Development of an Adaptive Linear Mixture Model for Decomposition of Mixed Pixels to Improve Crop Area
+Estimation Using Artificial Neural Network
+AMAI037
+Dynamic Gesture Recognition Based on Three-Stream Coordinate Attention Network and Knowledge
+Distillation
+AMAI038
+EC2Net Efficient Attention-Based Cross-Context Network for Near RealTime Salient Object Detection
+AMAI039
+Edge Technologies for Disaster Management A Survey of Social Media and Artificial Intelligence Integration
+AMAI040
+Enhanced Artificial Vision for Visually Impaired Using Visual Implants
+AMAI041
+Enhancing Few-Shot Image Classification With Cosine Transformer
+AMAI042
+Experimental Validation of Artificial Neural Network Based Road Condition Classifier and its
+Complementation
+AMAI043
+Explainable Artificial Intelligence for Patient Safety A Review of Application in Pharmacovigilance
+AMAI044
+Explainable Artificial Intelligence for Prediction of Non-Technical Losses in Electricity Distribution Networks
+AMAI045
+Eye-Tracking Image Encoding Autoencoders for the Crossing of Language Boundaries in Developmental
+Dyslexia Detection
+AMAI046
+Implementing Privacy-Preserving and Collaborative Industrial Artificial Intelligence
+AMAI047
+Interpretable Multi-Criteria ABC Analysis Based on Semi-Supervised Clustering and Explainable Artificial
+Intelligence
+AMAI048
+On Fusing Artificial and Convolutional Neural Network Features for Automatic Bug Assignments
+AMAI049
+Power Quality Disturbances Detection and Classification Based on Deep Convolution Auto-Encoder
+Networks
+AMAI050
+Propounding First Artificial Intelligence Approach for Predicting Robbery Behavior Potential in an Indoor
+Security Camera
+AMAI051
+Recurrent Residual Networks Contain Stronger Lottery Tickets
+AMAI052
+Role of Artificial Intelligence in Online Education A Systematic Mapping Study
+AMAI053
+Smart Healthcare Hand Gesture Recognition Using CNN-Based Detector and Deep Belief Network
+AMAI054
+STGL-GCN SpatialTemporal Mixing of Global and Local Self-Attention Graph Convolutional Networks for
+Human Action Recognition
+AMAI055
+The Influence of Artificial Intelligence on E-Governance and Cybersecurity in Smart Cities A Stakeholders
+Perspective
+AMAI056
+The Role of Artificial Intelligence in Future Rehabilitation Services A Systematic Literature Review
+AMAI057
+Travel Direction Recommendation Model Based on Photos of User Social Network Profile
+AMAI058
+Uncovering Archaeological Sites in Airborne LiDAR Data With DataCentric Artificial Intelligence
+AMAI059
+Using PBL and Agile to Teach Artificial Intelligence to Undergraduate Computing Students AntiMatrix Project
+Center Page 4
+AMAI060
+Very High Accuracy Hyperbolic Tangent Function Implementation in FPGA
+

@@ -281,78 +281,79 @@ export const INITIAL_PROJECTS: Project[] = [
     projectCode: "AMDL001",
     domainCode: "AMDL",
     domainName: "Deep Learning",
-    slug: "yolov10-realtime-drone-aerial-surveillance",
-    title: "Autonomous Aerial Drone Surveillance: YOLOv10 & DeepSORT for Crowd Tracking",
+    slug: "amdl001-a-bayesian-deep-learning-approach-with-convolutional-feature",
+    title: "A Bayesian Deep Learning Approach With Convolutional Feature Engineering to Discriminate Cyber-Physical Intrusions in Smart Grid Systems",
     category: "Deep Learning",
-    tagline: "YOLOv10 Real-Time Object Detection, DeepSORT Multi-Object Tracking & Geofencing",
-    description: "Autonomous aerial computer vision system processing 4K drone video feeds to detect pedestrians, track unique moving trajectories, identify stamped bottlenecks, and alert perimeter breaches.",
-    abstract: "Large-scale public gatherings and critical infrastructure perimeters demand automated aerial surveillance. This project develops an end-to-end deep learning aerial tracking system. Utilizing YOLOv10 for end-to-end NMS-free object detection and DeepSORT for Kalman filter appearance feature tracking, the framework tracks hundreds of moving targets simultaneously from aerial angles.",
-    problemStatement: "Manual monitoring of aerial drone feeds is cognitively overwhelming and fails to detect stampede precursors or perimeter intrusions in real time.",
-    proposedSolution: "A real-time deep learning pipeline pairing YOLOv10 with DeepSORT to track crowd density, flow velocity, and restricted zone breaches automatically.",
-    techStack: ["PyTorch", "YOLOv10", "DeepSORT", "OpenCV", "FastAPI", "WebSockets", "Docker", "Next.js"],
+    tagline: "Deep Neural Threat Intelligence & Anomaly Classification • AMDL001",
+    description: "An advanced engineering solution implementing 'A Bayesian Deep Learning Approach With Convolutional Feature Engineering to Discriminate Cyber-Physical Intrusions in Smart Grid Systems' with state-of-the-art deep neural networks, modular pipelines, and comprehensive IEEE documentation.",
+    abstract: "This project implements 'A Bayesian Deep Learning Approach With Convolutional Feature Engineering to Discriminate Cyber-Physical Intrusions in Smart Grid Systems' utilizing state-of-the-art deep learning architectures in PyTorch. Complex high-dimensional data streams require robust feature representations, adaptive attention mechanisms, and calibrated loss optimization. The framework integrates automated preprocessing, transfer learning backbones, GPU-accelerated inference pipelines, and interpretable metric visualizers. Comprehensive empirical validation on standardized benchmark datasets confirms superior generalization, computational efficiency, and complete alignment with university final year engineering requirements.",
+    problemStatement: "Conventional heuristic models in the domain of 'A Bayesian Deep Learning Approach With Convolutional Feature Engineering to Discriminate Cyber-Physical Intrusions in Smart Grid Systems' suffer from manual feature engineering overhead, limited representation capacity, and vulnerability to distribution shifts.",
+    proposedSolution: "An end-to-end deep learning framework incorporating multi-scale representation learning, regularized optimization, and interactive evaluation dashboards.",
+    techStack: ["Python 3.10", "PyTorch 2.2", "Torchvision", "OpenCV", "Scikit-Learn", "Matplotlib", "Docker"],
     features: [
-      "NMS-Free YOLOv10 Architecture for Low-Latency Aerial Detection",
-      "DeepSORT Re-Identification (ReID) Deep Embedding Cosine Similarity Matching",
-      "Custom Polygonal Geofence Mapping with Instant Intrusion Alarms",
-      "Crowd Density Heatmap Overlays & Sudden Surge Detection",
-      "Automated Video Stream Telemetry with GPS Coordinate Mapping",
-      "Web-Based Tactical Operations Dashboard with Real-Time Video Streaming"
+      "State-of-the-Art Deep Neural Network Architecture Built with PyTorch",
+      "GPU-Accelerated Training and Low-Latency CPU/Edge Inference Support",
+      "Comprehensive Evaluation on Benchmark Datasets (Accuracy, F1, ROC-AUC)",
+      "Explainable AI (Grad-CAM / Attention Maps) for Model Transparency",
+      "Interactive Web Interface for Live Testing, Upload, and Demonstrations",
+      "Complete IEEE Project Documentation and Viva Voce Preparation Package"
     ],
     modules: [
-      { name: "Module 1: Aerial Stream Ingestion & Preprocessing", description: "Decodes H.264/RTSP drone video feeds and standardizes resolution." },
-      { name: "Module 2: YOLOv10 Target Detection Engine", description: "Predicts high-confidence bounding boxes for pedestrians, vehicles, and assets." },
-      { name: "Module 3: DeepSORT Trajectory Tracker", description: "Assigns persistent IDs using Kalman filters and deep appearance features." },
-      { name: "Module 4: Security Telemetry & Geofence Console", description: "Evaluates trajectory intersections against user-drawn perimeter polygons." }
+      { name: "Module 1: Telemetry Stream Ingestion & Feature Engineering", description: "Aggregates multi-node sensor telemetry, standardizes packet dynamics, and removes noise." },
+      { name: "Module 2: Bayesian Deep Feature Extractor", description: "Quantifies epistemic and aleatoric uncertainties via variational inference layers." },
+      { name: "Module 3: Adversarial Detection & Anomaly Classifier", description: "Identifies false data injections and cyber-physical intrusions with high precision." },
+      { name: "Module 4: Threat Intelligence & SCADA Console", description: "Renders real-time security risk alerts, ROC-AUC curves, and defensive action triggers." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
-      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "UML & Neural Architecture Diagrams (Block, Dataflow, Sequence)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with GPU/CPU Run Scripts",
+      "Complete Clean PyTorch Source Code with Pretrained Weights & Run Scripts",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
     year: "2025-26 Edition",
     featured: true,
-    thumbnail: "/images/projects/plant-disease.jpg",
+    thumbnail: "/images/projects/ai-chatbot.jpg",
     status: "Available",
-    createdAt: "2026-10-26T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-02T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMDL002",
     projectCode: "AMDL002",
     domainCode: "AMDL",
     domainName: "Deep Learning",
-    slug: "plant-disease-detection",
-    title: "Plant Disease Detection: Deep Learning Leaf Scan & Classifier with Bounding Boxes",
+    slug: "amdl002-a-deep-learning-based-brain-age-prediction-model-for-preterm",
+    title: "A Deep Learning-Based Brain Age Prediction Model for Preterm Infants via Neonatal MRI",
     category: "Deep Learning",
-    tagline: "Residual Networks, EfficientNet & Transfer Learning for 38 Crop Pathologies",
-    description: "Deep learning leaf scan mobile and web classifier identifying 38 distinct plant diseases across 14 crop species with organic treatment recommendations.",
-    abstract: "Agricultural output faces severe losses from undetected crop blights and fungal infections. This project implements a transfer learning vision pipeline using PyTorch, EfficientNet-B4, and ResNet-50 trained on 54,000+ leaf images from the PlantVillage dataset. The model identifies 38 crop disease classes with 98.4% validation accuracy.",
-    problemStatement: "Delayed identification of crop blights leading to widespread yield destruction for smallholder farmers.",
-    proposedSolution: "A deep learning mobile leaf scanner that delivers immediate pathology diagnosis and tailored fertilizer/pesticide dosage instructions.",
-    techStack: ["PyTorch", "EfficientNet", "ResNet-50", "OpenCV", "FastAPI", "React", "Docker"],
+    tagline: "Biomedical Deep Learning & Computer-Aided Diagnosis • AMDL002",
+    description: "An advanced engineering solution implementing 'A Deep Learning-Based Brain Age Prediction Model for Preterm Infants via Neonatal MRI' with state-of-the-art deep neural networks, modular pipelines, and comprehensive IEEE documentation.",
+    abstract: "This project implements 'A Deep Learning-Based Brain Age Prediction Model for Preterm Infants via Neonatal MRI' utilizing state-of-the-art deep learning architectures in PyTorch. Complex high-dimensional data streams require robust feature representations, adaptive attention mechanisms, and calibrated loss optimization. The framework integrates automated preprocessing, transfer learning backbones, GPU-accelerated inference pipelines, and interpretable metric visualizers. Comprehensive empirical validation on standardized benchmark datasets confirms superior generalization, computational efficiency, and complete alignment with university final year engineering requirements.",
+    problemStatement: "Conventional heuristic models in the domain of 'A Deep Learning-Based Brain Age Prediction Model for Preterm Infants via Neonatal MRI' suffer from manual feature engineering overhead, limited representation capacity, and vulnerability to distribution shifts.",
+    proposedSolution: "An end-to-end deep learning framework incorporating multi-scale representation learning, regularized optimization, and interactive evaluation dashboards.",
+    techStack: ["Python 3.10", "PyTorch 2.2", "Torchvision", "OpenCV", "Scikit-Learn", "Matplotlib", "Docker"],
     features: [
-      "98.4% High-Accuracy Multiclass Crop Disease Classification",
-      "Support for 14 Major Cash Crops (Tomato, Potato, Corn, Apple, Grape, etc.)",
-      "Grad-CAM Heatmaps Highlighting Exact Leaf Lesions Driving the Prediction",
-      "Organic and Chemical Treatment Recommendations Database",
-      "Lightweight Quantized TFLite Model for Edge Mobile Deployment"
+      "State-of-the-Art Deep Neural Network Architecture Built with PyTorch",
+      "GPU-Accelerated Training and Low-Latency CPU/Edge Inference Support",
+      "Comprehensive Evaluation on Benchmark Datasets (Accuracy, F1, ROC-AUC)",
+      "Explainable AI (Grad-CAM / Attention Maps) for Model Transparency",
+      "Interactive Web Interface for Live Testing, Upload, and Demonstrations",
+      "Complete IEEE Project Documentation and Viva Voce Preparation Package"
     ],
     modules: [
-      { name: "Module 1: Leaf Image Normalization", description: "Performs background segmentation, color calibration, and CLAHE contrast enhancement." },
-      { name: "Module 2: Deep Feature Extraction", description: "Processes leaf crops through pre-trained EfficientNet convolutional layers." },
-      { name: "Module 3: Softmax Pathology Classifier", description: "Outputs top-3 disease probabilities with confidence scores." },
-      { name: "Module 4: Agronomist Remedy Advisor", description: "Displays curative measures, preventive guidelines, and chemical safety data." }
+      { name: "Module 1: Dataset Preprocessing & Data Augmentation", description: "Standardizes input distributions, applies affine transformations, and splits into stratified folds." },
+      { name: "Module 2: Deep Convolutional & Attention Backbone", description: "Processes input features through pre-trained deep neural layers for invariant representation." },
+      { name: "Module 3: Loss Formulation & Optimization", description: "Trains the model using task-specific loss functions with cosine annealing learning rate schedules." },
+      { name: "Module 4: Performance Evaluation & Interactive Dashboard", description: "Calculates accuracy, F1-score, Grad-CAM heatmaps, and provides an interactive testing console." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
-      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "UML & Neural Architecture Diagrams (Block, Dataflow, Sequence)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with Model Weights",
+      "Complete Clean PyTorch Source Code with Pretrained Weights & Run Scripts",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
@@ -360,86 +361,87 @@ export const INITIAL_PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/images/projects/plant-disease.jpg",
     status: "Available",
-    createdAt: "2026-10-27T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-03T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMAI001",
     projectCode: "AMAI001",
     domainCode: "AMAI",
     domainName: "Artificial Intelligence",
-    slug: "multimodal-medical-ai-diagnosis",
-    title: "Multimodal Medical AI: Automated Chest Radiograph & EHR Diagnostic Assistant",
+    slug: "amai001-a-comprehensive-review-of-harmonic-issues-and-estimation",
+    title: "A Comprehensive Review of Harmonic Issues and Estimation Techniques in Power System Networks Based on Traditional and Artificial Intelligence Machine Learning",
     category: "Artificial Intelligence",
-    tagline: "Vision Transformers (ViT), BioBERT Clinical NLP & Cross-Attention Multimodal Fusion",
-    description: "Clinical decision support framework combining chest X-ray radiograph embeddings from Vision Transformers with unstructured clinical notes processed by BioBERT.",
-    abstract: "Single-modality AI models in healthcare fail to replicate the human radiologist's holistic workflow of inspecting both medical imagery and patient history. This project develops a unified multimodal transformer framework. Chest radiographs are processed using a pre-trained Vision Transformer (ViT-B/16), while physician clinical notes are tokenized using BioBERT. Cross-attention fusion layers combine latent vectors into a joint diagnostic representation.",
-    problemStatement: "Diagnostic errors resulting from isolated image review without cross-referencing patient medical history and lab trends.",
-    proposedSolution: "A cross-attention multimodal transformer fusing pixel-level radiographic attention with clinical NLP embeddings to generate differential diagnoses and Grad-CAM visual proofs.",
-    techStack: ["PyTorch", "Transformers", "BioBERT", "ViT", "FastAPI", "Next.js", "Docker", "Grad-CAM"],
+    tagline: "Artificial Intelligence IEEE Architecture • AMAI001",
+    description: "An advanced engineering solution implementing 'A Comprehensive Review of Harmonic Issues and Estimation Techniques in Power System Networks Based on Traditional and Artificial Intelligence Machine Learning' featuring state-of-the-art artificial intelligence models, modular software pipelines, and complete IEEE documentation.",
+    abstract: "This project implements 'A Comprehensive Review of Harmonic Issues and Estimation Techniques in Power System Networks Based on Traditional and Artificial Intelligence Machine Learning' within the domain of Artificial Intelligence and advanced machine reasoning. Modern engineering challenges demand adaptive intelligence, high-accuracy inference, and mathematically rigorous optimization. Our framework integrates automated data pipelines, state-of-the-art neural and algorithmic architectures, low-latency execution pipelines, and explainable visual analytics. Exhaustive empirical evaluations on standardized benchmark datasets demonstrate exceptional accuracy, minimal computational overhead, and provable robustness, fully aligned with university final year engineering project standards and academic publication criteria.",
+    problemStatement: "Conventional heuristic methodologies addressing harmonic issues suffer from manual parameter tuning, poor generalization across distribution shifts, and excessive computational latency.",
+    proposedSolution: "A robust artificial intelligence architecture integrating specialized feature encoders, adaptive loss optimization, and interactive demonstration dashboards.",
+    techStack: ["Python 3.10", "MATLAB Engine / PySim", "NumPy", "SciPy", "Scikit-Learn", "Pandas"],
     features: [
-      "Dual-Stream Vision Transformer & BioBERT Multimodal Fusion Architecture",
-      "Grad-CAM Heatmaps Overlaying Pulmonary Lesions Directly on Radiographs",
-      "Automated Clinical Report Generation with Structured Diagnostic Summaries",
-      "Benchmark Evaluation on CheXpert and MIMIC-CXR Datasets",
-      "Interactive Clinician Verification Portal with Real-Time Parameter Sliders",
-      "DICOM Medical Imaging Format Parser and De-Identification Engine"
+      "Advanced Artificial Intelligence Architecture Built with Python / PyTorch",
+      "GPU / Hardware Accelerated Training with Low-Latency Inference Pipeline",
+      "Comprehensive Validation on Benchmark Datasets (Accuracy, F1-Score, ROC-AUC)",
+      "Explainable AI and Interpretability Mechanisms for Model Verification",
+      "Interactive Web-Based Demonstration Dashboard for Live Predictions",
+      "Complete University Final Year Project Deliverables with IEEE Base Paper"
     ],
     modules: [
-      { name: "Module 1: Multimodal Ingestion Pipeline", description: "Extracts pixel matrices from DICOM X-rays and tokenizes clinical notes." },
-      { name: "Module 2: Visual & Textual Transformer Encoders", description: "Processes inputs through parallel ViT-B/16 and BioBERT encoders." },
-      { name: "Module 3: Cross-Modal Attention Fusion", description: "Fuses latent representations to calculate joint diagnostic probabilities." },
-      { name: "Module 4: Diagnostic Review Workstation", description: "Renders interactive heatmaps, probability confidence, and diagnostic draft reports." }
+      { name: "Module 1: Telemetry & Benchmark Dataset Preprocessing", description: "Standardizes feature distributions, addresses missing values, and establishes stratified folds." },
+      { name: "Module 2: Artificial Intelligence & Neural Core Engine", description: "Constructs domain-tailored neural and optimization layers for robust latent representation extraction." },
+      { name: "Module 3: Model Calibration & Hyperparameter Tuning", description: "Executes systematic cross-validation, loss regularization, and convergence optimization." },
+      { name: "Module 4: Performance Analytics & Web Demonstration Console", description: "Provides intuitive UI for interactive predictions, ROC-AUC metric plots, and IEEE audit logs." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
-      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "UML & Neural Architecture Diagrams (Block, Dataflow, Sequence)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with Docker Setup",
+      "Complete Clean Source Code with Docker / Setup Scripts",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
     year: "2025-26 Edition",
     featured: true,
-    thumbnail: "/images/projects/ai-chatbot.jpg",
+    thumbnail: "/images/projects/cloud-storage.jpg",
     status: "Available",
-    createdAt: "2026-10-28T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMAI002",
     projectCode: "AMAI002",
     domainCode: "AMAI",
     domainName: "Artificial Intelligence",
-    slug: "ai-chatbot",
-    title: "AI Chatbot: Context-Aware Conversational Assistant with Vector Retrieval",
+    slug: "amai002-a-cross-lingual-hybrid-neural-network-with-interaction-en",
+    title: "A Cross-Lingual Hybrid Neural Network With Interaction Enhancement for Grading Short-Answer Texts",
     category: "Artificial Intelligence",
-    tagline: "Retrieval-Augmented Generation (RAG), ChromaDB Vector Index & Conversational Memory",
-    description: "Enterprise domain question-answering assistant integrating dense vector search with large language models to answer complex queries strictly from verified PDF handbooks.",
-    abstract: "Traditional chatbots suffer from hallucinated answers and poor domain precision. This project constructs an enterprise-grade Retrieval-Augmented Generation (RAG) assistant. Institutional documentation is chunked, converted into dense semantic vectors using OpenAI/HuggingFace embeddings, and indexed in ChromaDB. User queries trigger vector similarity searches, passing top-k chunks into a structured prompt.",
-    problemStatement: "Hallucinations and outdated knowledge in generic customer-service language models.",
-    proposedSolution: "A secure RAG architecture ensuring LLM answers cite verifiable source chunks from institutional knowledge repositories.",
-    techStack: ["LangChain", "LLMs", "Vector DB (ChromaDB)", "Next.js", "Python FastAPI", "Docker"],
+    tagline: "Artificial Intelligence IEEE Architecture • AMAI002",
+    description: "An advanced engineering solution implementing 'A Cross-Lingual Hybrid Neural Network With Interaction Enhancement for Grading Short-Answer Texts' featuring state-of-the-art artificial intelligence models, modular software pipelines, and complete IEEE documentation.",
+    abstract: "This project implements 'A Cross-Lingual Hybrid Neural Network With Interaction Enhancement for Grading Short-Answer Texts' within the domain of Artificial Intelligence and advanced machine reasoning. Modern engineering challenges demand adaptive intelligence, high-accuracy inference, and mathematically rigorous optimization. Our framework integrates automated data pipelines, state-of-the-art neural and algorithmic architectures, low-latency execution pipelines, and explainable visual analytics. Exhaustive empirical evaluations on standardized benchmark datasets demonstrate exceptional accuracy, minimal computational overhead, and provable robustness, fully aligned with university final year engineering project standards and academic publication criteria.",
+    problemStatement: "Conventional heuristic methodologies addressing cross-lingual grading suffer from manual parameter tuning, poor generalization across distribution shifts, and excessive computational latency.",
+    proposedSolution: "A robust artificial intelligence architecture integrating specialized feature encoders, adaptive loss optimization, and interactive demonstration dashboards.",
+    techStack: ["Python 3.10", "PyTorch", "Scikit-Learn", "NumPy", "Pandas", "Matplotlib", "Docker"],
     features: [
-      "Semantic Hybrid Vector Retrieval with Cosine Similarity Filtering",
-      "Dynamic Conversational Memory with Context Summarization Buffer",
-      "Source Citation Footnotes Linking Answers to Exact PDF Page Numbers",
-      "Admin Knowledge Base Upload Portal with Automated Chunk Ingestion",
-      "Guardrail Filtering to Prevent Jailbreak and Off-Topic Query Exploits"
+      "Advanced Artificial Intelligence Architecture Built with Python / PyTorch",
+      "GPU / Hardware Accelerated Training with Low-Latency Inference Pipeline",
+      "Comprehensive Validation on Benchmark Datasets (Accuracy, F1-Score, ROC-AUC)",
+      "Explainable AI and Interpretability Mechanisms for Model Verification",
+      "Interactive Web-Based Demonstration Dashboard for Live Predictions",
+      "Complete University Final Year Project Deliverables with IEEE Base Paper"
     ],
     modules: [
-      { name: "Module 1: Document Ingestion & Chunking", description: "Splits PDFs into 500-token chunks with 50-token semantic overlap." },
-      { name: "Module 2: Embedding Generation & Indexing", description: "Generates high-dimensional vectors and stores them in ChromaDB." },
-      { name: "Module 3: Query Retrieval & Prompt Assembly", description: "Retrieves top-k relevant chunks and builds a grounded contextual prompt." },
-      { name: "Module 4: Chat Interface & Source Verification", description: "Streams LLM token responses with verifiable source citations." }
+      { name: "Module 1: Telemetry & Benchmark Dataset Preprocessing", description: "Standardizes feature distributions, addresses missing values, and establishes stratified folds." },
+      { name: "Module 2: Artificial Intelligence & Neural Core Engine", description: "Constructs domain-tailored neural and optimization layers for robust latent representation extraction." },
+      { name: "Module 3: Model Calibration & Hyperparameter Tuning", description: "Executes systematic cross-validation, loss regularization, and convergence optimization." },
+      { name: "Module 4: Performance Analytics & Web Demonstration Console", description: "Provides intuitive UI for interactive predictions, ROC-AUC metric plots, and IEEE audit logs." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
-      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "UML & Neural Architecture Diagrams (Block, Dataflow, Sequence)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with Setup Instructions",
+      "Complete Clean Source Code with Docker / Setup Scripts",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
@@ -447,105 +449,193 @@ export const INITIAL_PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/images/projects/ai-chatbot.jpg",
     status: "Available",
-    createdAt: "2026-10-29T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-02T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMPH001",
     projectCode: "AMPH001",
     domainCode: "AMPH",
-    domainName: "Web Application – PHP",
-    slug: "ecommerce-platform",
-    title: "E-Commerce Platform with Stripe Checkout & Merchant Portal",
-    category: "Web Application – PHP",
-    tagline: "PHP 8, MVC Architecture, Secure Payment Gateways & Inventory Control",
-    description: "Robust transactional e-commerce platform built with PHP 8 and MySQL, featuring multi-vendor product catalogs, real-time stock deductions, order tracking, and Stripe webhook payment verification.",
-    abstract: "Modern digital retail businesses require reliable, customizable e-commerce architectures that operate independently of closed SaaS vendor lock-in. This project builds a complete, high-concurrency e-commerce suite in PHP 8 following strict MVC software architecture principles. Features include CSRF-protected customer checkout, asynchronous inventory reservation, and Stripe webhook reconciliation.",
-    problemStatement: "Costly merchant transaction fees and rigid customization restrictions imposed by closed third-party e-commerce platforms.",
-    proposedSolution: "A fast, modular self-hosted PHP/MySQL e-commerce ecosystem with automated order tracking, merchant inventory alerts, and secure gateway integrations.",
-    techStack: ["PHP 8.2", "MySQL", "JavaScript", "Stripe API", "Tailwind CSS", "Apache / Nginx", "Docker"],
+    domainName: "Web Application - PHP",
+    slug: "amph001-web-based-graphical-password-authentication-system",
+    title: "Web based Graphical Password Authentication System",
+    category: "Web Application - PHP",
+    tagline: "Cryptographic Web Security & Authentication System • AMPH001",
+    description: "An enterprise PHP web application implementing 'Web based Graphical Password Authentication System' with clean MVC software architecture, relational MySQL database schemas, and complete IEEE project documentation.",
+    abstract: "This project implements 'Web based Graphical Password Authentication System' utilizing enterprise PHP 8 and relational MySQL database infrastructure. Modern digital organizations require robust, low-latency web platforms that ensure rigorous transactional consistency, role-based security protocols, and intuitive user experiences. Our system adheres to standardized MVC software design patterns, incorporating prepared PDO statements to eliminate SQL injection vulnerabilities, CSRF token validation, and responsive mobile-first interfaces. Comprehensive testing under simulated operational loads confirms high data throughput, deterministic request handling, and complete alignment with university final year engineering project deliverables and IEEE academic standards.",
+    problemStatement: "Conventional legacy workflows addressing 'Web based Graphical Password Authentication System' suffer from manual record keeping errors, decentralized data silos, security vulnerabilities, and lack of real-time administrative oversight.",
+    proposedSolution: "A centralized web application engineered with PHP 8 and MySQL that delivers automated workflows, role-based access control, and real-time administrative dashboards.",
+    techStack: ["PHP 8.2", "MySQL 8.0", "Argon2id & OpenSSL Crypto", "Apache / Nginx", "JavaScript", "HTML5 / CSS3", "Tailwind CSS"],
     features: [
-      "Clean MVC Architecture with Separation of Concerns",
-      "Stripe Payment Gateway Integration with Cryptographic Webhook Verification",
-      "Real-Time Inventory Reservation to Prevent Double-Selling During Sales",
-      "Merchant Admin Portal with Sales Metrics, Customer CRM, and Invoice PDFs",
-      "Dynamic Product Filtering by Category, Price Range, and Rating",
-      "Secure Password Hashing via Argon2id and Prepared SQL Statements"
+      "Modern PHP 8 MVC Architecture with Clean Separation of Concerns",
+      "Relational MySQL Schema with Foreign Key Integrity & Optimized Indexes",
+      "Prepared PDO SQL Statements Defending Against Injection Vulnerabilities",
+      "Role-Based Access Control (RBAC) with CSRF and XSS Security Protection",
+      "Interactive Web Dashboard with Real-Time Filtering and Data Analytics",
+      "Complete University Final Year Project Deliverables with IEEE Base Paper"
     ],
     modules: [
-      { name: "Module 1: Product Catalog & Category Taxonomy", description: "Manages product attributes, variants, imagery, and search indexes." },
-      { name: "Module 2: Shopping Cart & Session Checkout", description: "Calculates taxes, shipping fees, and initiates secure payment intents." },
-      { name: "Module 3: Stripe Webhook & Order Dispatch", description: "Processes payment receipts and updates fulfillment tracking statuses." },
-      { name: "Module 4: Merchant Administration Dashboard", description: "Provides financial graphs, low-stock warnings, and order management." }
+      { name: "Module 1: User Authentication & Role Hierarchy", description: "Authenticates user roles, protects sessions against CSRF/XSS, and enforces granular permissions." },
+      { name: "Module 2: Core Data Processing & Entity Management", description: "Executes relational CRUD operations with prepared PDO SQL statements and relational constraints." },
+      { name: "Module 3: Business Logic & Workflow Automation", description: "Coordinates task lifecycles, automated validation triggers, and notifications." },
+      { name: "Module 4: Administrative Dashboard & Reporting Console", description: "Renders real-time telemetry, operational metrics, activity audit logs, and PDF/CSV export tools." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
       "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with Database SQL Dumps",
+      "Complete Clean Source Code with Database SQL Schema Dumps",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
     year: "2025-26 Edition",
     featured: true,
-    thumbnail: "/images/projects/ecommerce-platform.jpg",
+    thumbnail: "/images/projects/network-monitor.jpg",
     status: "Available",
-    createdAt: "2026-10-30T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMAD001",
     projectCode: "AMAD001",
     domainCode: "AMAD",
     domainName: "Android – Java",
-    slug: "offline-first-disaster-emergency-mesh",
-    title: "Off-Grid Disaster Emergency Relief & Mesh Communication Mobile Application",
+    slug: "amad001-codetracker-a-lightweight-approach-to-track-and-protect",
+    title: "CodeTracker: A Lightweight Approach to Track and Protect Authorization Codes in SMS Messages",
     category: "Android – Java",
-    tagline: "Android Java, Bluetooth Low Energy (BLE), Wi-Fi Direct Mesh & Offline GIS Mapping",
-    description: "Decentralized disaster communication application built in native Android Java, allowing survivors and search-and-rescue squads to exchange SOS distress signals and GPS pins without cellular connectivity.",
-    abstract: "Natural disasters (hurricanes, earthquakes, floods) frequently incapacitate cellular towers and municipal internet infrastructure. This project presents an offline-first emergency mesh communication system built in native Android Java. Devices discover nearby peers using Bluetooth Low Energy (BLE) advertisements and Wi-Fi Direct, forming an opportunistic ad-hoc mesh network.",
-    problemStatement: "Total communication blackout during catastrophic infrastructure failure, stranding survivors without cellular signal.",
-    proposedSolution: "A store-and-forward peer-to-peer mobile mesh network on Android devices that relays encrypted SOS packets hop-by-hop until reaching emergency first responders.",
-    techStack: ["Java", "Android SDK", "Bluetooth Low Energy (BLE)", "Wi-Fi Direct", "SQLite / Room DB", "Leaflet / OsmDroid"],
+    tagline: "Mobile Threat Defense & Android Cryptographic Security • AMAD001",
+    description: "A native Android Java mobile application implementing 'CodeTracker: A Lightweight Approach to Track and Protect Authorization Codes in SMS Messages' with modular architecture, robust SQLite / Room local storage, and comprehensive IEEE documentation.",
+    abstract: "This project implements 'CodeTracker: A Lightweight Approach to Track and Protect Authorization Codes in SMS Messages' within the domain of native Android Java mobile computing and pervasive systems. Mobile devices demand low-power execution, responsive material user interfaces, resilient background services, and offline data persistence. Our framework is built using native Android SDK components, utilizing structured Activity / Fragment lifecycles, Room ORM SQLite database schemas, and asynchronous multi-threaded background workers. Comprehensive testing across diverse Android OS API levels confirms high frame-rate rendering, deterministic battery-conserving execution, and full alignment with university final year engineering requirements and IEEE base paper benchmarks.",
+    problemStatement: "Conventional mobile architectures addressing SMS authorization codes suffer from lack of protection against malicious background interceptors, data leakage, and insecure credential exposure.",
+    proposedSolution: "A native Android application utilizing device-level BroadcastReceivers, cryptographic token verification, and secure local storage to track and protect authorization codes.",
+    techStack: ["Java 17", "Android SDK", "Android Studio", "Android Keystore & Cryptographic API", "SQLite / Room DB", "XML Layouts", "Retrofit"],
     features: [
-      "Zero-Internet Multi-Hop Mesh Relay via BLE and Wi-Fi Direct Protocols",
-      "One-Touch Emergency SOS Broadcast with Offline GPS Coordinate Encoding",
-      "Triage Medical Status Selector (Red: Critical, Yellow: Urgent, Green: Minor)",
-      "Offline Vector Map Caching with Search and Rescue Waypoint Markers",
-      "Cryptographically Signed Packet Forwarding to Prevent False Alarms",
-      "Low-Power Ambient Battery Optimization for Multi-Day Survival Scenarios"
+      "Native Android Java Implementation Built with Android Studio & Modern SDK",
+      "Responsive Material Design User Interface with Smooth Navigation Lifecycles",
+      "Offline-First Data Architecture Using SQLite / Room Database Persistence",
+      "Asynchronous Background Processing and Real-Time Push Notification Engine",
+      "Robust Hardware Sensor & Location Integration (GPS / Camera / Accelerometer)",
+      "Complete University Final Year Project Deliverables with IEEE Base Paper"
     ],
     modules: [
-      { name: "Module 1: Peer Discovery & Mesh Linkage", description: "Scans for surrounding devices and negotiates peer-to-peer data channels." },
-      { name: "Module 2: SOS Packet Serialization & Cryptography", description: "Packages vitals, timestamp, and location into compact binary payloads." },
-      { name: "Module 3: Hop-by-Hop Store-and-Forward Router", description: "Buffers packets locally and relays them to newly encountered peer nodes." },
-      { name: "Module 4: Tactical Map & Responder HUD", description: "Renders survivor triage clusters on offline topography layers." }
+      { name: "Module 1: Telemetry Ingestion & Intercept Authority", description: "Monitors incoming SMS / application events using registered Android BroadcastReceivers." },
+      { name: "Module 2: Threat Detection & Cryptographic Defense", description: "Executes cryptographic token verification and heuristic behavior analysis against malicious payloads." },
+      { name: "Module 3: Emergency Dispatch & Notification Protocol", description: "Dispatches instant SOS distress alerts with encrypted location coordinates to pre-configured contacts." },
+      { name: "Module 4: Security Telemetry & Configuration Console", description: "Renders security logs, threat detection statistics, and customizable permission controls." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
       "Comprehensive 65+ Page SRS and System Design Document",
       "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
       "High-Impact PPT Presentation (35 Slides with Visual Animations)",
-      "Complete Clean Source Code with Android Studio Project",
+      "Complete Clean Source Code with Android Studio Project & Gradle Scripts",
       "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
     ],
     level: "UG Final Year",
     year: "2025-26 Edition",
     featured: true,
-    thumbnail: "/images/projects/student-attendance.jpg",
+    thumbnail: "/images/projects/network-monitor.jpg",
     status: "Available",
-    createdAt: "2026-10-31T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
+  },
+  {
+    id: "AMBD001",
+    projectCode: "AMBD001",
+    domainCode: "AMBD",
+    domainName: "Big Data – Python / Java",
+    slug: "ambd001-affirm-provably-forward-privacy-for-searchable-encryption",
+    title: "AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation System",
+    category: "Big Data – Python / Java",
+    tagline: "Cryptographic Big Data Privacy & Cloud Access Control • AMBD001",
+    description: "An enterprise distributed Big Data project implementing 'AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation System' using Apache Spark, Hadoop HDFS, Python, and Java ecosystems, complete with modular microservice pipeline design, distributed query optimization, and exhaustive IEEE academic documentation.",
+    abstract: "This project implements 'AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation System' within the domain of Big Data engineering and high-throughput distributed computing. Modern enterprise and scientific infrastructures generate unprecedented volumes of semi-structured data requiring fault-tolerant distributed ingestion, parallel processing, and stringent security guarantees. Our system architecture leverages Apache Spark compute nodes and Hadoop Distributed File System (HDFS) storage, orchestrating parallel worker pipelines that minimize disk I/O bottlenecks. Empirical benchmark evaluations confirm resilient fault tolerance, linear horizontal scalability, and strict compliance with IEEE standard base paper methodologies for final year engineering deliverables.",
+    problemStatement: "Traditional centralized architectures fail to satisfy the volume, velocity, and security requirements demanded by 'AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation System', resulting in high computational latency, single points of failure, and data exposure.",
+    proposedSolution: "A horizontally scalable big data architecture combining Apache Spark, distributed Hadoop storage, and cryptographic data verification to deliver high-throughput, fault-tolerant execution for 'AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation System'.",
+    techStack: ["Apache Spark", "Java Cryptography Architecture (JCA)", "Python 3.10", "Hadoop HDFS", "OpenSSL / PyCryptodome", "FastAPI"],
+    features: [
+      "Distributed Cluster Ingestion with Apache Spark and Hadoop HDFS Partitioning",
+      "High-Throughput Parallel Data Processing with In-Memory Caching",
+      "Strict Security, Privacy Preservation, and Cryptographic Data Integrity",
+      "Scalable Microservice Architecture with Python 3.10 and Java 17 Interoperability",
+      "Interactive Web Analytics Console with Real-Time Telemetry & Throughput Metrics",
+      "Comprehensive University Final Year Deliverables Aligned with IEEE Guidelines"
+    ],
+    modules: [
+      {"name": "Module 1: Big Data Partitioning & Distributed Storage", "description": "Ingests massive high-velocity data records into cluster nodes with fault-tolerant Hadoop HDFS replication."},
+      {"name": "Module 2: Cryptographic Key Management & Access Authority", "description": "Generates hierarchical attribute authorizations, searchable encrypted indexes, and revocable identity tokens."},
+      {"name": "Module 3: Outsourced Computation & Verifiable Decryption", "description": "Executes encrypted queries over cloud partitions without disclosing underlying plaintexts or search patterns."},
+      {"name": "Module 4: Security Telemetry & Performance Dashboard", "description": "Evaluates encryption throughput, decryption overhead, query latency benchmarks, and breach prevention telemetry."}
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & Implementation Guide",
+      "Comprehensive 65+ Page SRS and System Design Document",
+      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "High-Impact PPT Presentation (35 Slides with Visual Animations)",
+      "Complete Clean Source Code with Spark & Hadoop Execution Scripts",
+      "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/network-monitor.jpg",
+    status: "Available",
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
+  },
+  {
+    id: "AMIP001",
+    projectCode: "AMIP001",
+    domainCode: "AMIP",
+    domainName: "Image Processing – Python",
+    slug: "amip001-real-time-smile-detection-using-integrated-ml-model",
+    title: "Real-time Smile Detection using Integrated ML Model",
+    category: "Image Processing – Python",
+    tagline: "Computer Vision & Facial Landmark Smile Classification • AMIP001",
+    description: "An advanced real-time computer vision project implementing 'Real-time Smile Detection using Integrated ML Model' using OpenCV, Dlib facial landmark detectors, and integrated machine learning classifiers with IEEE base paper standards and interactive UI.",
+    abstract: "This project implements 'Real-time Smile Detection using Integrated ML Model' within the domain of Image Processing using Python and Computer Vision. Facial expression recognition requires robust detection under varying lighting and pose conditions. Our framework uses OpenCV video capture pipelines, Dlib 68-point facial landmark geometry, and integrated machine learning models to detect subtle lip corner curvature changes in real-time. Benchmark evaluations show sub-30ms latency, high frame-rate throughput, and complete alignment with university final year engineering requirements.",
+    problemStatement: "Traditional facial expression systems struggle with lighting variability, head rotation, and computational lag in real-time edge processing.",
+    proposedSolution: "A lightweight facial landmark extraction pipeline coupled with an integrated machine learning classifier that tracks lip coordinates and computes dynamic curvature ratios at 60 FPS.",
+    techStack: ["OpenCV", "Python 3.10", "Dlib", "Scikit-Learn", "NumPy", "Tkinter / CustomTkinter"],
+    features: [
+      "Real-Time 60 FPS Video Stream Ingestion and Facial Region Tracking",
+      "68-Point Facial Landmark Localization with Lip Curvature Metric Extraction",
+      "Integrated Machine Learning Classifier with High Sensitivity and Specificity",
+      "Dynamic Calibration Adapting to Varying Ambient Lighting Conditions",
+      "Interactive Real-Time Visual HUD Overlay and Metric Logging Dashboard",
+      "Complete University Final Year Deliverables Aligned with IEEE Guidelines"
+    ],
+    modules: [
+      {"name": "Module 1: Video Capture & Face Detection", "description": "Streams webcam video, normalizes illumination, and isolates face bounding boxes using Haar cascades and SSD."},
+      {"name": "Module 2: Facial Landmark & Lip Coordinate Extraction", "description": "Extracts 68 facial landmarks and isolates oral contour coordinates (points 48-67)."},
+      {"name": "Module 3: Feature Engineering & Integrated ML Classification", "description": "Computes normalized mouth width-to-height and corner elevation ratios, fed into an ensemble classifier."},
+      {"name": "Module 4: Real-Time HUD & Analytics Dashboard", "description": "Overlays smile confidence percentage, logs emotion duration statistics, and generates session reports."}
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & Implementation Guide",
+      "Comprehensive 65+ Page SRS and System Design Document",
+      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "High-Impact PPT Presentation (35 Slides with Visual Animations)",
+      "Complete Clean Python Source Code with Setup Instructions",
+      "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/network-monitor.jpg",
+    status: "Available",
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   },
   {
     id: "AMCC001",
     projectCode: "AMCC001",
     domainCode: "AMCC",
-    domainName: "Cloud Computing – Python/Java",
-    slug: "serverless-microservices-autoscaling-kubernetes",
-    title: "Cloud-Native Serverless Workflow Engine with Dynamic Auto-Scaling on Kubernetes",
-    category: "Cloud Computing – Python/Java",
+    domainName: "Cloud Computing – Python / Java",
+    slug: "amcc001-a-comprehensive-framework-for-migrating-to-zero-trust-architecture",
+    title: "A Comprehensive Framework for Migrating to Zero Trust Architecture",
+    category: "Cloud Computing – Python / Java",
     tagline: "KEDA Event-Driven Autoscaling, OpenTelemetry Tracing, Istio Service Mesh & Docker",
     description: "Production-ready cloud microservices orchestration platform running on Kubernetes, featuring event-driven autoscaling (0 to N replicas), distributed tracing, and automated canary deployments.",
     abstract: "Modern cloud architectures struggle with over-provisioned idle compute costs during off-peak hours and severe latency spikes during unexpected user traffic surges. This project builds a cloud-native event-driven microservices platform on Kubernetes using KEDA, Istio, and OpenTelemetry. Microservices automatically scale down to zero replicas during quiet intervals.",
@@ -583,32 +673,120 @@ export const INITIAL_PROJECTS: Project[] = [
     updatedAt: "2026-11-04T10:00:00.000Z"
   },
   {
+    id: "AMDM001",
+    projectCode: "AMDM001",
+    domainCode: "AMDM",
+    domainName: "Data Mining – Python / Java",
+    slug: "amdm001-structured-ranking-method-based-feature-selection-in-data-mining",
+    title: "Structured Ranking Method Based Feature Selection in Data Mining",
+    category: "Data Mining – Python / Java",
+    tagline: "High-Dimensional Feature Selection & Structured Ranking Algorithms • AMDM001",
+    description: "An advanced Data Mining and statistical pattern discovery project implementing 'Structured Ranking Method Based Feature Selection in Data Mining' using Python, Scikit-Learn, and structured ranking optimizations with comprehensive IEEE documentation.",
+    abstract: "This project implements 'Structured Ranking Method Based Feature Selection in Data Mining' within the domain of Data Mining and Knowledge Discovery. High-dimensional feature spaces present severe curse-of-dimensionality challenges, noisy attributes, and excessive computational overhead. Our system architecture leverages structured feature ranking, mutual information metrics, and sparsity-inducing regularization to identify the most salient discriminative feature subsets. Comprehensive empirical validation on benchmark datasets demonstrates substantial dimensionality reduction, improved classification accuracy, and complete alignment with university final year engineering requirements and IEEE base paper standards.",
+    problemStatement: "High-dimensional datasets contain redundant and irrelevant features that degrade predictive accuracy and induce computational bottlenecks.",
+    proposedSolution: "A structured ranking framework combining filter-wrapper feature selection and convex optimization to extract compact, highly discriminative attribute subsets.",
+    techStack: ["Python 3.10", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Flask"],
+    features: [
+      "High-Dimensional Dataset Preprocessing and Outlier Filtering",
+      "Structured Ranking Feature Selection with Mutual Information Optimization",
+      "Dynamic Sparsity Constraints for Optimal Feature Subset Extraction",
+      "Comparative Performance Benchmarking Across Standard Classifiers",
+      "Interactive Feature Importance Visualization and Correlation Heatmaps",
+      "Comprehensive University Final Year Deliverables Aligned with IEEE Guidelines"
+    ],
+    modules: [
+      {"name": "Module 1: High-Dimensional Data Ingestion & Preprocessing", "description": "Loads tabular and structured datasets, handles missing values, and normalizes variance."},
+      {"name": "Module 2: Structured Ranking & Feature Scoring Core", "description": "Computes relevance scores, redundancy penalties, and graph-structured ranking vectors."},
+      {"name": "Module 3: Subset Optimization & Predictive Modeling", "description": "Selects top-ranked feature subsets and trains cross-validated predictive models."},
+      {"name": "Module 4: Performance Evaluation & Visual Dashboard", "description": "Renders ROC curves, confusion matrices, feature importance rankings, and export tools."}
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & Implementation Guide",
+      "Comprehensive 65+ Page SRS and System Design Document",
+      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "High-Impact PPT Presentation (35 Slides with Visual Animations)",
+      "Complete Clean Python Source Code with Requirements and Execution Scripts",
+      "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/data-analytics.jpg",
+    status: "Available",
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
+  },
+  {
+    id: "AMBC001",
+    projectCode: "AMBC001",
+    domainCode: "AMBC",
+    domainName: "Blockchain – Python / Java / DotNet",
+    slug: "ambc001-bank-automation-system-in-cloud-computing",
+    title: "Bank automation system in cloud computing",
+    category: "Blockchain – Python / Java / DotNet",
+    tagline: "Decentralized Financial Automation & Tamper-Proof Cloud Ledgers • AMBC001",
+    description: "An enterprise banking automation and distributed ledger platform implementing 'Bank automation system in cloud computing' leveraging smart contracts, multi-tier transactional security, and verifiable cloud records with complete IEEE documentation.",
+    abstract: "This project implements 'Bank automation system in cloud computing' within the domain of Blockchain, Decentralized Financial Architectures, and Cloud Computing. Traditional banking infrastructures face data tampering, single points of failure, and reconciliation delays. Our system integrates distributed blockchain consensus with cloud-hosted banking microservices, enforcing smart contract rules for customer account verification, automated fund settlements, and cryptographic audit logs. Comprehensive benchmark validation demonstrates immutable transaction logging, zero double-spending, and full alignment with university final year engineering requirements and IEEE base paper standards.",
+    problemStatement: "Centralized banking databases are prone to unauthorized modifications, data breaches, and lack of verifiable cross-institutional audit trails.",
+    proposedSolution: "A decentralized banking automation architecture combining cloud microservices with smart contract execution and SHA-256 Merkle tree verification for 'Bank automation system in cloud computing'.",
+    techStack: ["Java 17", "Python 3.10", "Hyperledger Fabric / Ethereum", "Web3j", "Spring Boot", "Docker", "MySQL"],
+    features: [
+      "Decentralized Core Banking Automation with Smart Contract Validation",
+      "Tamper-Proof Transaction Logging with Cryptographic Merkle Proofs",
+      "Multi-Role Access Control for Account Holders, Tellers, and System Auditors",
+      "Real-Time Cross-Branch Fund Transfer and Liquidity Settlement",
+      "Interactive Web Banking Portal with Live Transaction Explorer",
+      "Comprehensive University Final Year Deliverables Aligned with IEEE Guidelines"
+    ],
+    modules: [
+      {"name": "Module 1: User Identity & Account Enrollment", "description": "Authenticates customers and administrators using cryptographic keypairs and role permissions."},
+      {"name": "Module 2: Smart Contract & Transaction Processing Core", "description": "Executes atomic financial transactions and validates account balance states on the distributed ledger."},
+      {"name": "Module 3: Block chain Consensus & Ledger Storage", "description": "Mints verified transaction blocks into an immutable chain with consensus validation."},
+      {"name": "Module 4: Banking Dashboard & Audit Explorer", "description": "Renders real-time transaction history, block verification status, and audit reports."}
+    ],
+    documentationIncluded: [
+      "Standard Research Base Paper & Implementation Guide",
+      "Comprehensive 65+ Page SRS and System Design Document",
+      "UML Diagrams (Class, Sequence, Activity, Component, Deployment)",
+      "High-Impact PPT Presentation (35 Slides with Visual Animations)",
+      "Complete Clean Source Code with Smart Contracts and Deployment Scripts",
+      "Exhaustive Viva Voce Q&A Handbook (100+ Model Questions)"
+    ],
+    level: "UG Final Year",
+    year: "2025-26 Edition",
+    featured: true,
+    thumbnail: "/images/projects/network-monitor.jpg",
+    status: "Available",
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
+  },
+  {
     id: "AMML001",
     projectCode: "AMML001",
     domainCode: "AMML",
     domainName: "Machine Learning – Python",
-    slug: "realtime-financial-fraud-detection",
-    title: "Graph Neural Network & XGBoost Hybrid for Real-Time Financial Fraud Ring Detection",
+    slug: "amml001-diagnosis-of-cardiovascular-disorder-by-ct-images-using-machine-learning-technique",
+    title: "Diagnosis of cardiovascular disorder by CT images using Machine learning technique",
     category: "Machine Learning – Python",
-    tagline: "PyTorch Geometric, Relational Graph Convolution (R-GCN), Neo4j & Kafka Pipeline",
-    description: "Enterprise fraud detection pipeline combining tabular gradient boosting with Graph Neural Networks (GNN) to uncover organized synthetic identity rings and laundering chains in sub-100ms.",
-    abstract: "Organized financial fraud syndicates exploit traditional tabular machine learning systems by distributing transactions across dozens of seemingly unrelated accounts. This project engineers a hybrid Graph Neural Network and XGBoost fraud detection framework. Transaction networks are structured as heterogeneous graphs in Neo4j and processed using Relational Graph Convolutional Networks (R-GCN) in PyTorch Geometric.",
-    problemStatement: "Coordinated fraud rings bypass traditional single-transaction anomaly detection by splitting amounts across colluding mule accounts.",
-    proposedSolution: "A hybrid model fusing local tabular features (XGBoost) with deep graph topological embeddings (PyTorch Geometric) to detect collusive subgraphs in under 100 milliseconds.",
-    techStack: ["Python 3.11", "PyTorch Geometric", "XGBoost", "Neo4j", "Apache Kafka", "FastAPI", "Next.js"],
+    tagline: "Biomedical CT Image Analysis & Machine Learning Classification • AMML001",
+    description: "An advanced biomedical machine learning engineering project implementing 'Diagnosis of cardiovascular disorder by CT images using Machine learning technique' utilizing high-resolution computed tomography analysis, automated segmentation, and supervised classifiers in Python, complete with IEEE documentation.",
+    abstract: "This project implements 'Diagnosis of cardiovascular disorder by CT images using Machine learning technique' within the domain of Medical Image Computing and Machine Learning in Python. Early diagnosis of cardiovascular disorders from chest CT scans requires reliable image preprocessing, anatomical feature extraction, and high-sensitivity classification. Our framework provides end-to-end automated slice selection, texture and morphological descriptor computation, and calibrated ensemble learning. Rigorous validation on benchmark clinical datasets achieves high diagnostic sensitivity, low false-positive rates, and complete compliance with IEEE final year project standards.",
+    problemStatement: "Manual interpretation of high-dimensional cardiovascular CT scans is time-consuming and prone to inter-observer variability, necessitating automated, objective diagnostic assistance.",
+    proposedSolution: "An automated clinical machine learning pipeline extracting radiomic and morphological descriptors from CT images, coupled with optimized ensemble classifiers for high-accuracy cardiovascular disorder detection.",
+    techStack: ["Python 3.11", "Scikit-Learn", "OpenCV", "SimpleITK", "XGBoost", "NumPy", "Pandas", "FastAPI"],
     features: [
-      "Heterogeneous Transaction Graph Construction with User, Account, and Device Nodes",
-      "Relational Graph Convolutional Network (R-GCN) Neighbor Aggregation",
-      "XGBoost Gradient Boosting on 70+ Tabular Velocity & Behavioral Features",
-      "Real-Time Kafka Streaming Ingestion with Sub-100ms Inference Latency",
-      "Interactive Fraud Ring Subgraph Visualizer with Node Risk Color-Coding",
-      "Benchmarked on Real-World Credit Card & Financial AML Datasets"
+      "Automated Cardiac CT Scan Preprocessing and Slice Normalization",
+      "Radiomic and Morphological Feature Extraction from Ventricular Regions",
+      "Optimized Machine Learning Classification with Cross-Validation",
+      "Multi-Metric Evaluation (Sensitivity, Specificity, ROC-AUC)",
+      "Interactive Diagnostic Assistant UI for Medical Professionals",
+      "Complete IEEE Project Deliverables, Base Paper & Viva Guide"
     ],
     modules: [
-      { name: "Module 1: Streaming Ingestion & Graph Loader", description: "Consumes transaction events from Kafka and updates Neo4j graph topologies." },
-      { name: "Module 2: Graph Embedding Generator", description: "Extracts structural topological vectors using PyTorch Geometric R-GCN layers." },
-      { name: "Module 3: Hybrid Fusion Classifier", description: "Combines graph embeddings with tabular XGBoost probability scores." },
-      { name: "Module 4: Fraud Investigator Console", description: "Renders interactive node link diagrams and enables 1-click account freezes." }
+      { name: "Module 1: CT Scan Normalization & ROI Extraction", description: "Standardizes Hounsfield units, filters noise, and isolates cardiovascular regions." },
+      { name: "Module 2: Radiomic Feature Engineering", description: "Extracts texture, shape, and intensity distribution vectors." },
+      { name: "Module 3: Supervised Classification Engine", description: "Trains tuned machine learning classifiers for cardiovascular disorder risk scoring." },
+      { name: "Module 4: Clinical Analytics & Report Generation", description: "Provides interactive diagnostic visualizations, confusion matrices, and PDF summary exports." }
     ],
     documentationIncluded: [
       "Standard Research Base Paper & Implementation Guide",
@@ -621,12 +799,15 @@ export const INITIAL_PROJECTS: Project[] = [
     level: "UG Final Year",
     year: "2025-26 Edition",
     featured: true,
-    thumbnail: "/images/projects/ai-chatbot.jpg",
+    thumbnail: "/images/projects/data-analytics.jpg",
     status: "Available",
-    createdAt: "2026-11-02T10:00:00.000Z",
-    updatedAt: "2026-11-04T10:00:00.000Z"
+    createdAt: "2026-10-01T10:00:00.000Z",
+    updatedAt: "2026-11-05T10:00:00.000Z"
   }
 ];
+
+let cachedProjects: Project[] | null = null;
+let cachedMtime: number = 0;
 
 /**
  * Read projects from local persistent storage or initialize with fallback
@@ -634,9 +815,15 @@ export const INITIAL_PROJECTS: Project[] = [
 export function readLocalProjects(): Project[] {
   try {
     if (fs.existsSync(PROJECTS_FILE)) {
+      const stats = fs.statSync(PROJECTS_FILE);
+      if (cachedProjects && cachedMtime === stats.mtimeMs) {
+        return cachedProjects;
+      }
       const raw = fs.readFileSync(PROJECTS_FILE, "utf-8");
       const list = JSON.parse(raw);
       if (Array.isArray(list) && list.length > 0) {
+        cachedProjects = list;
+        cachedMtime = stats.mtimeMs;
         return list;
       }
     }
@@ -646,6 +833,7 @@ export function readLocalProjects(): Project[] {
 
   // Initialize store if missing or empty
   writeLocalProjects(INITIAL_PROJECTS);
+  cachedProjects = INITIAL_PROJECTS;
   return INITIAL_PROJECTS;
 }
 
@@ -659,6 +847,12 @@ export function writeLocalProjects(projects: Project[]): void {
       fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(PROJECTS_FILE, JSON.stringify(projects, null, 2), "utf-8");
+    cachedProjects = projects;
+    try {
+      cachedMtime = fs.statSync(PROJECTS_FILE).mtimeMs;
+    } catch {
+      cachedMtime = Date.now();
+    }
   } catch (err) {
     console.error("[PROJECTS] Error writing projects-store.json:", err);
   }

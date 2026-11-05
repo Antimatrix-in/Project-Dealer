@@ -1,0 +1,43 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+IMAGE PROCESSING – PYTHON PROJECT CATALOGUE
+12 Project Titles
+DOMAIN CODE  AMIP
+PROJECT CODES  AMIP001 – AMIP012
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMIP
+Page 1
+Image Processing – Python Projects
+ PROJECT CODE
+PROJECT TITLE
+AMIP001
+Real-time Smile Detection using Integrated ML Model
+AMIP002
+A Method for Covid-19 Segmentation from X-Ray Images with U-Net
+AMIP003
+Graph-Based Region and Boundary Aggregation for Biomedical Image Segmentation
+AMIP004
+Hybrid Image Encryption Algorithm for Grey and Color Medical Images
+AMIP005
+Diagnosis of Diabetic Retinopathy and Glaucoma from Retinal Images Using Deep Convolutional Neural
+Network
+AMIP006
+Object Detection for Visually Challenged Using Image Processing
+AMIP007
+Robust Face Detection and Recognition using Image Processing and OpenCV
+AMIP008
+An Efficient Cascaded Model for Ship Segmentation in Aerial Images
+AMIP009
+Early Melanoma Diagnosis with Sequential Dermoscopic Images
+AMIP010
+Boundary Enhancement Semantic Segmentation for Building Extraction from Remote Sensed Image
+AMIP011
+Detection of License Plate Numbers and Identification of Non-Helmet Riders using Yolo v2 and OCR Method
+AMIP012
+A New Benchmarking for Diabetic Retinopathy Using Machine Learning, Deep Learning and Image
+Processing Technique
+
+

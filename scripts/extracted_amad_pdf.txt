@@ -1,0 +1,135 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+ANDROID – JAVA PROJECT CATALOGUE
+56 Project Titles
+DOMAIN CODE  AMAD
+PROJECT CODES  AMAD001 – AMAD056
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMAD
+Page 1
+Android – Java Projects
+ PROJECT CODE
+PROJECT TITLE
+AMAD001
+CodeTracker: A Lightweight Approach to Track and Protect Authorization Codes in SMS Messages
+AMAD002
+Lane-Change Detection Based on Vehicle-Trajectory Prediction
+AMAD003
+RoadSense: Smartphone Application to Estimate Road Conditions using Accelerometer and Gyroscope
+AMAD004
+ShiftRoute: Achieving Location Privacy for Map Services on Smartphones
+AMAD005
+MADAM: Effective and Ef?cient Behavior-based Android Malware Detection and Prevention
+AMAD006
+Identifying Mobile Inter-App Communication Risks
+AMAD007
+Modeling User Activity Patterns for Next-Place Prediction
+AMAD008
+Drive Now, Text Later: Nonintrusive Texting-while-Driving Detection using Smartphones
+AMAD009
+Elder Tracking and Fall Detection System using Smart Tiles
+AMAD010
+Blind people Navigation using Mobile phones
+AMAD011
+Women Attack Rescue System for Women’s Safety App
+AMAD012
+How Long to Wait? Predicting Bus Arrival Time With Mobile Phone Based Participatory Sensing
+AMAD013
+Latecomers identification using Barcode and Alerting through Mail
+AMAD014
+Student Attendance System using Android and Barcode Scan
+AMAD015
+UShare - App for the Students to Download their Study Materials
+AMAD016
+Smart Health Prediction Using Data Mining - Diabetes Prediction
+AMAD017
+Android Application For College Address Book
+AMAD018
+Android Application For Job Portal
+AMAD019
+Android Application For Lawyer Administration
+AMAD020
+Student Counselling Management System
+AMAD021
+Anti-ragging system using Android mobile
+AMAD022
+GPS based blood bank system
+AMAD023
+HaemOrgle - Organ Donation between hospitals
+AMAD024
+Smart Village – Posting Complaints in Smart Way
+AMAD025
+Lend-a-hand - App to Organize the Orphanage
+AMAD026
+Providing Location Based Services including Local areas
+AMAD027
+Social I-sharing based on Localization of users
+AMAD028
+E-Placement for College through mobile phones
+AMAD029
+Advanced Student Attendance management system
+AMAD030
+Quit Smoking – App to find Smoker’s Level
+AMAD031
+Rental House Management System
+AMAD032
+Android Application For Book Market
+AMAD033
+College Event Scheduling Management System
+AMAD034
+Latecomers identification using Barcode and Alerting through Mail
+AMAD035
+Generic Medical Store - Place to find the cheapest medicine delivery using Global Positioning System
+AntiMatrix Project Center Page 3
+AMAD036
+Online Farmer Clustering Using Cloud Technology And Data Mining
+AMAD037
+Android Application For Call Taxi
+
+--- PAGE 3 ---
+AntiMatrix Project Center | AMAD
+Page 2
+PROJECT CODE
+PROJECT TITLE
+AMAD038
+Android Application For College Bus Tracking
+AMAD039
+A Mobile Phone Based Medicine Intake Remainder And Monitor
+AMAD040
+Location Based Alarm using GPS
+AMAD041
+File sharing Android Application
+AMAD042
+Android Smart Health Monitoring System
+AMAD043
+Women Safety App
+AMAD044
+Mobile Attendance System Project
+AMAD045
+Android based QR Parking Booking
+AMAD046
+QR based Fake product detection
+AMAD047
+News feed Application
+AMAD048
+Covid Contact Tracing Android Application
+AMAD049
+Online examination System
+AMAD050
+Android Application for Smart Parking System
+AMAD051
+Android Text Encryption Using Various Algorithms
+AMAD052
+Smart blood bank android application
+AMAD053
+Android-Chat-App
+AMAD054
+Home Service Application
+AMAD055
+Currency detector for visually impaired
+AMAD056
+Android File finder and Sortin
+Source note: The final supplied title ends with “Android File finder and Sortin”. It is preserved as provided.
+

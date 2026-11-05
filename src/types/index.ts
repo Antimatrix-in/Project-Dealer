@@ -22,11 +22,11 @@ export const TECHNICAL_DOMAINS: TechnicalDomain[] = [
   { sno: 8, name: "Artificial Intelligence", code: "AMAI", slug: "AMAI", status: "Active", description: "Context-aware conversational agents, generative multimodal frameworks, and intelligent reasoning engines." },
   { sno: 9, name: "Web Application – PHP", code: "AMPH", slug: "AMPH", status: "Active", description: "Secure LAMP stack web applications, transactional portals, dynamic CMS, and institutional management systems." },
   { sno: 10, name: "Android – Java", code: "AMAD", slug: "AMAD", status: "Active", description: "Native Android mobile applications, mesh communication, IoT device control, and location-based services." },
-  { sno: 11, name: "Big Data – Python/Java", code: "AMBD", slug: "AMBD", status: "Active", description: "Distributed batch and stream processing with Apache Spark, Hadoop MapReduce, and large-scale analytics." },
+  { sno: 11, name: "Big Data – Python / Java", code: "AMBD", slug: "AMBD", status: "Active", description: "Distributed batch and stream processing with Apache Spark, Hadoop MapReduce, and large-scale analytics." },
   { sno: 12, name: "Image Processing – Python", code: "AMIP", slug: "AMIP", status: "Active", description: "OpenCV, scikit-image, real-time video filtering, medical scan enhancement, and automated defect detection." },
-  { sno: 13, name: "Cloud Computing – Python/Java", code: "AMCC", slug: "AMCC", status: "Active", description: "Serverless microservices, auto-scaling Kubernetes clusters, distributed tracing, and multi-tenant cloud storage." },
-  { sno: 14, name: "Data Mining – Python/Java", code: "AMDM", slug: "AMDM", status: "Active", description: "Association rule mining, clustering, anomaly detection in high-dimensional datasets, and customer profiling." },
-  { sno: 15, name: "Blockchain – Python/Java/DotNet", code: "AMBC", slug: "AMBC", status: "Active", description: "Decentralized ledgers, smart contracts, tamper-proof audit trails, and distributed consensus mechanisms." },
+  { sno: 13, name: "Cloud Computing – Python / Java", code: "AMCC", slug: "AMCC", status: "Active", description: "Serverless microservices, auto-scaling Kubernetes clusters, distributed tracing, and multi-tenant cloud storage." },
+  { sno: 14, name: "Data Mining – Python / Java", code: "AMDM", slug: "AMDM", status: "Active", description: "Association rule mining, clustering, anomaly detection in high-dimensional datasets, and customer profiling." },
+  { sno: 15, name: "Blockchain – Python / Java / DotNet", code: "AMBC", slug: "AMBC", status: "Active", description: "Decentralized ledgers, smart contracts, tamper-proof audit trails, and distributed consensus mechanisms." },
   { sno: 16, name: "Machine Learning – Python", code: "AMML", slug: "AMML", status: "Active", description: "Supervised and unsupervised algorithms, Graph Neural Networks, gradient boosting, and fraud ring detection." }
 ];
 
@@ -42,13 +42,29 @@ export type ProjectCategory =
   | "Deep Learning"
   | "Artificial Intelligence"
   | "Web Application – PHP"
+  | "Web Application - PHP"
   | "Android – Java"
+  | "Android - Java"
+  | "Big Data – Python / Java"
   | "Big Data – Python/Java"
+  | "Big Data - Python / Java"
+  | "Big Data - Python/Java"
   | "Image Processing – Python"
+  | "Image Processing - Python"
+  | "Cloud Computing – Python / Java"
   | "Cloud Computing – Python/Java"
+  | "Cloud Computing - Python / Java"
+  | "Cloud Computing - Python/Java"
+  | "Data Mining – Python / Java"
   | "Data Mining – Python/Java"
+  | "Data Mining - Python / Java"
+  | "Data Mining - Python/Java"
+  | "Blockchain – Python / Java / DotNet"
   | "Blockchain – Python/Java/DotNet"
+  | "Blockchain - Python / Java / DotNet"
+  | "Blockchain - Python/Java/DotNet"
   | "Machine Learning – Python"
+  | "Machine Learning - Python"
   | "AI & Data Science"
   | "Machine Learning"
   | "Web Development"
@@ -67,12 +83,17 @@ export const PROJECT_ENQUIRY_DOMAINS = [
   "Artificial Intelligence",
   "Web Application – PHP",
   "Android – Java",
+  "Big Data – Python / Java",
   "Big Data – Python/Java",
   "Image Processing – Python",
+  "Cloud Computing – Python / Java",
   "Cloud Computing – Python/Java",
+  "Data Mining – Python / Java",
   "Data Mining – Python/Java",
+  "Blockchain – Python / Java / DotNet",
   "Blockchain – Python/Java/DotNet",
-  "Machine Learning – Python"
+  "Machine Learning – Python",
+  "Machine Learning - Python"
 ] as const;
 
 export type ProjectEnquiryDomain = (typeof PROJECT_ENQUIRY_DOMAINS)[number];

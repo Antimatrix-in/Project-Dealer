@@ -1,0 +1,68 @@
+--- PAGE 1 ---
+ANTIMATRIX PROJECT CENTER
+BIG DATA – PYTHON / JAVA PROJECT CATALOGUE
+22 Project Titles
+DOMAIN CODE  AMBD
+PROJECT CODES  AMBD001 – AMBD022
+BREAK THE MATRIX    THINK DIFFERENT    CREATE THE FUTURE
+
+
+--- PAGE 2 ---
+AntiMatrix Project Center | AMBD
+Page 1
+Big Data – Python / Java Projects
+ PROJECT CODE
+PROJECT TITLE
+AMBD001
+AFFIRM: Provably Forward Privacy for Searchable Encryption in Cooperative Intelligent Transportation
+System
+AMBD002
+Data-driven two-step day-ahead electricity price forecasting considering price spikes
+AMBD003
+Secure Authentication in Cloud Big Data with Hierarchical Attribute Authorization Structure
+AMBD004
+Application research of customer big data analysis for online shop based on smart cloud platform tools
+AMBD005
+Revocable Identity-Based Access Control for Big Data with Verifiable Outsourced Computing
+AMBD006
+Achieving Efficient and Privacy-Preserving Cross-Domain Big Data Deduplication in Cloud
+AMBD007
+Securing Medical Big data through Block chain technology
+AMBD008
+An identity-based message authentication scheme for Internet of vehicles
+AMBD009
+Privacy-preserving collaborative machine learning in biomedical applications
+AMBD010
+Air Quality Forecasting using decision trees algorithms
+AMBD011
+An Exploratory analysis of Machine Learning adaptability in Big Data Analytics Environments: A Data
+Aggregation in the age of Big Data and the Internet of Things
+AMBD012
+Learning Multi-Scale Heterogeneous Representations and Global Topology for Drug-Target Interaction
+Prediction
+AMBD013
+Intelligent Security Performance Prediction for IoT-Enabled Healthcare Networks Using an Improved CNN
+AMBD014
+Research on Power Consumption Prediction Based on Complex Correlation of Big Data
+AMBD015
+Towards Large-Scale and Privacy-Preserving Contact Tracing in COVID-19 Pandemic: A Block chain
+Perspective
+AMBD016
+Ranked Keyword Search over Encrypted Cloud Data Through Machine Learning Method
+AMBD017
+Block chain-based Privacy-preserving and Rewarding Private Data Sharing for IoT
+AMBD018
+Revocable Identity-Based Access Control for Big Data with Verifiable Outsourced Computing
+AMBD019
+Block chain-based Conditional Privacy-Preserving Authentication Protocol with Implicit Certificates for
+Vehicular Edge Computing
+AMBD020
+PMRQ: Achieving Efficient and Privacy-Preserving Multi-Dimensional Range Query in e-Healthcare
+AMBD021
+Prediction of Heart Failure using Support Vector Machine compared with Decision Tree Algorithm for better
+Accuracy
+AMBD022
+CP-BDHCA: Block chain-Based Confidentiality-Privacy Preserving Big Data Scheme for Healthcare Clouds
+and Application
+
+
