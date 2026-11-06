@@ -26,6 +26,7 @@ import {
   CATEGORY_SLUG_MAP
 } from "@/data/projects";
 import { ProjectCategory } from "@/types";
+import { openConsultationModal } from "@/components/common/ConsultationModal";
 
 interface ProjectsMegaMenuProps {
   onClose: () => void;
@@ -249,19 +250,27 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
         </div>
       </div>
 
-      {/* 5. Bottom Bar: "View All Projects →" */}
+      {/* 5. Bottom Bar: "Request a Custom Requirement" + "View All Projects →" */}
       <div className="px-6 py-3 bg-[#EEE9DC] border-t border-[#DDDCCF] flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-xs text-[#667064]">
-          <span className="font-semibold text-[#202820]">Ready to start?</span>
-          <span className="hidden sm:inline text-[#667064]">
-            Explore 100+ UG/PG titles, documentation &amp; live demos.
-          </span>
+          <span className="font-semibold text-[#202820]">Need a custom topic?</span>
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
+              openConsultationModal({ requirement: "Custom Project / Special Requirement" });
+            }}
+            className="text-[#285A3B] hover:text-[#214930] hover:underline font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+          >
+            <span>Request a Custom Requirement</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
         </div>
 
         <Link
           href="/projects"
           onClick={onClose}
-          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold shadow-xs hover:shadow transition-all group shrink-0"
+          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white text-xs font-bold shadow-xs hover:shadow transition-all group shrink-0"
         >
           <span>View All Projects</span>
           <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-1 transition-transform" />
