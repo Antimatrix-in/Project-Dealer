@@ -108,28 +108,17 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
-            {/* Brand Logo with Official AntiMatrix Logo */}
-            <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-              <div className="relative w-9 h-9 rounded-lg bg-[#FAF7F0] border border-[#D8DDCF] p-1 flex items-center justify-center group-hover:border-[#285A3B] transition-colors shadow-2xs">
+            {/* Official Anti-Matrix Brand Logo */}
+            <Link href="/" className="flex items-center shrink-0 group py-0.5" title="Anti-Matrix Project Center">
+              <div className="relative h-8 sm:h-9 md:h-10 w-auto flex items-center">
                 <Image
-                  src="/images/antimatrix-icon.png"
-                  alt="AntiMatrix Logo"
-                  width={32}
-                  height={32}
-                  className="w-7 h-7 object-contain group-hover:scale-105 transition-transform"
+                  src="/images/anti-matrix-logo.png"
+                  alt="Anti-Matrix Official Logo"
+                  width={200}
+                  height={42}
+                  className="h-7.5 sm:h-8.5 md:h-9 w-auto object-contain transition-opacity group-hover:opacity-90"
                   priority
                 />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5 leading-none">
-                  <span className="text-lg sm:text-xl font-extrabold tracking-tight text-[#1F2A22] group-hover:text-[#285A3B] transition-colors font-sans">
-                    AntiMatrix
-                  </span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#285A3B]" />
-                </div>
-                <span className="text-[10px] tracking-wider uppercase text-[#657166] font-semibold font-mono mt-0.5">
-                  Project Center
-                </span>
               </div>
             </Link>
 
@@ -271,21 +260,20 @@ export default function Navbar() {
           <div className="lg:hidden bg-[#FAF7F0] border-b border-[#D8DDCF] px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-lg">
             {/* Mobile Top Brand Header */}
             <div className="p-3 bg-white rounded-xl border border-[#D8DDCF] flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center"
+                title="Anti-Matrix Project Center"
+              >
                 <Image
-                  src="/images/antimatrix-icon.png"
-                  alt="AntiMatrix"
-                  width={28}
-                  height={28}
-                  className="w-7 h-7 object-contain"
+                  src="/images/anti-matrix-logo.png"
+                  alt="Anti-Matrix Official Logo"
+                  width={160}
+                  height={34}
+                  className="h-7 w-auto object-contain"
                 />
-                <div>
-                  <span className="text-sm font-extrabold text-[#1F2A22]">AntiMatrix</span>
-                  <span className="block text-[9px] font-mono text-[#657166] uppercase">
-                    Project Center
-                  </span>
-                </div>
-              </div>
+              </Link>
               <span className="text-[10px] font-semibold text-[#285A3B] bg-[#DCE8D9] border border-[#D8DDCF] px-2 py-0.5 rounded-full">
                 2025-26 Curated
               </span>

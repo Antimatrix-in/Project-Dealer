@@ -105,21 +105,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#365741]">
           {/* Brand Column (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-xs p-1 flex items-center justify-center">
+            <Link href="/" className="inline-flex items-center group" title="Anti-Matrix Project Center">
+              <div className="px-3.5 py-2 rounded-xl bg-white border border-[#DDDCCF]/80 shadow-xs flex items-center justify-center group-hover:border-[#DCE8D9] transition-colors">
                 <Image
-                  src="/images/antimatrix-icon.png"
-                  alt="AntiMatrix"
-                  width={36}
-                  height={36}
-                  className="w-8 h-8 object-contain"
+                  src="/images/anti-matrix-logo.png"
+                  alt="Anti-Matrix Official Logo"
+                  width={190}
+                  height={40}
+                  className="h-8 sm:h-9 w-auto object-contain"
                 />
-              </div>
-              <div>
-                <span className="text-xl font-extrabold text-[#F5F1E7] tracking-tight">AntiMatrix</span>
-                <span className="block text-[10px] tracking-wider uppercase text-[#DCE8D9] font-mono font-bold">
-                  Project Center
-                </span>
               </div>
             </Link>
 

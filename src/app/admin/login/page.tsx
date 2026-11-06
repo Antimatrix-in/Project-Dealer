@@ -97,11 +97,11 @@ export default function AdminLoginPage() {
           <div className="inline-block mb-4 p-2.5 rounded-2xl bg-[#EEE9DC]/70 border border-[#DDDCCF]">
             <div className="relative h-8 w-auto flex items-center justify-center">
               <Image
-                src="/images/antimatrix-logo-clean.png"
-                alt="AntiMatrix"
-                width={150}
-                height={34}
-                className="h-7 w-auto object-contain mx-auto"
+                src="/images/anti-matrix-logo.png"
+                alt="Anti-Matrix Official Logo"
+                width={170}
+                height={36}
+                className="h-8 w-auto object-contain mx-auto"
                 priority
               />
             </div>

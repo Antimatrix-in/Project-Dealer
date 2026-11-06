@@ -635,9 +635,9 @@ export default function AdminDashboardClient({
             <Link href="/" className="inline-block" onClick={() => setMobileSidebarOpen(false)}>
               <div className="relative h-8 w-auto flex items-center">
                 <Image
-                  src="/images/antimatrix-logo-clean.png"
-                  alt="AntiMatrix"
-                  width={140}
+                  src="/images/anti-matrix-logo.png"
+                  alt="Anti-Matrix Official Logo"
+                  width={150}
                   height={32}
                   className="h-7 w-auto object-contain"
                   priority

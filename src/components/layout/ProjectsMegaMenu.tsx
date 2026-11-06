@@ -84,10 +84,10 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
           >
             <div className="relative h-7 w-auto flex items-center">
               <Image
-                src="/images/antimatrix-logo-clean.png"
-                alt="AntiMatrix"
-                width={120}
-                height={28}
+                src="/images/anti-matrix-logo.png"
+                alt="Anti-Matrix Official Logo"
+                width={140}
+                height={30}
                 className="h-6 w-auto object-contain"
                 priority
               />

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import SectionHeader from "@/components/common/SectionHeader";
 import { COMPANY_STATS } from "@/data/reviews";
 import {
@@ -98,8 +99,14 @@ export default function AboutPage() {
             <div className="relative rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] p-8 shadow-xs space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-[#DDDCCF]">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#315C3D] text-white flex items-center justify-center font-bold shadow-xs">
-                    AM
+                  <div className="w-10 h-10 rounded-xl bg-white border border-[#DDDCCF] p-1 flex items-center justify-center shadow-xs">
+                    <Image
+                      src="/images/antimatrix-icon.png"
+                      alt="Anti-Matrix Official Logo"
+                      width={32}
+                      height={32}
+                      className="w-7 h-7 object-contain"
+                    />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-[#202820]">AntiMatrix Standards</h4>
