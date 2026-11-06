@@ -9,6 +9,10 @@ export const GOOGLE_ENQUIRY_FORM_URL =
   process.env.NEXT_PUBLIC_GOOGLE_ENQUIRY_FORM_URL ||
   "https://forms.gle/oKyzxdmdVZLwWWmU6";
 
+export const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/anti-matrix/";
+export const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/antimatrix_in/";
+export const INSTAGRAM_DISPLAY_NAME = "ANTI_MATRIX";
+
 interface WhatsAppMessageParams {
   category?: string;
   projectTitle?: string;
