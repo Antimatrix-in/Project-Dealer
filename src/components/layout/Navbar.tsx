@@ -85,22 +85,20 @@ export default function Navbar() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
-          {/* LEFT: Official Anti-Matrix Brand Logo */}
+          {/* LEFT: Official Anti-Matrix Brand Logo (Light transparent variant for dark header) */}
           <Link
             href="/"
-            className="flex items-center shrink-0 group transition-opacity hover:opacity-95"
+            className="flex items-center shrink-0 group transition-opacity hover:opacity-90 py-0.5"
             title="Anti-Matrix – Break The Matrix"
           >
-            <div className="px-3 sm:px-3.5 py-1.5 rounded-xl bg-white border border-white/20 shadow-xs flex items-center justify-center">
-              <Image
-                src="/images/anti-matrix-logo.png"
-                alt="Anti-Matrix Official Logo"
-                width={190}
-                height={40}
-                className="h-7 sm:h-8 md:h-8.5 w-auto object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/anti-matrix-logo-white.png"
+              alt="Anti-Matrix Official Logo"
+              width={220}
+              height={42}
+              className="h-9 sm:h-10 md:h-10.5 lg:h-11 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* CENTER: Navigation Menu (Single horizontal row of 6 items on desktop) */}
