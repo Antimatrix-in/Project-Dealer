@@ -1,43 +1,22 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  ChevronDown,
-  Menu,
-  X,
-  MessageCircle,
-  BrainCircuit,
-  Cpu,
-  Eye,
-  FileCode2,
-  Coffee,
-  Globe,
-  Smartphone,
-  Cloud,
-  ShieldAlert,
-  BarChart3,
-  ArrowRight,
-  PhoneCall,
-  Layers,
-  ClipboardList,
-  ShieldCheck
-} from "lucide-react";
-import { PROJECT_CATEGORIES, DROPDOWN_FEATURED_PROJECTS, CATEGORY_SLUG_MAP } from "@/data/projects";
-import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER, getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
-import TopContactBar from "./TopContactBar";
-import ProjectsMegaMenu from "./ProjectsMegaMenu";
+import { Menu, X } from "lucide-react";
+import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
+
+interface NavItem {
+  label: string;
+  href: string;
+  match: (pathname: string) => boolean;
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(true);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const pathname = usePathname();
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname() || "";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,403 +30,188 @@ export default function Navbar() {
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
     setMobileMenuOpen(false);
-    setDropdownOpen(false);
   }
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false);
-    }, 180);
-  };
-
-  const categoryIcons: Record<string, React.ReactNode> = {
-    "AI & Data Science": <BrainCircuit className="w-4 h-4 text-[#315C3D]" />,
-    "Machine Learning": <Cpu className="w-4 h-4 text-[#497A52]" />,
-    "Deep Learning": <Eye className="w-4 h-4 text-[#315C3D]" />,
-    "Python Projects": <FileCode2 className="w-4 h-4 text-[#497A52]" />,
-    "Java Projects": <Coffee className="w-4 h-4 text-[#315C3D]" />,
-    "Web Development": <Globe className="w-4 h-4 text-[#497A52]" />,
-    "Mobile App Development": <Smartphone className="w-4 h-4 text-[#315C3D]" />,
-    "Cloud Computing": <Cloud className="w-4 h-4 text-[#497A52]" />,
-    "Cyber Security": <ShieldAlert className="w-4 h-4 text-[#315C3D]" />,
-    "Data Analytics": <BarChart3 className="w-4 h-4 text-[#497A52]" />,
-  };
-
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "About Us", href: "/about" },
-    { label: "Reviews", href: "/reviews" },
-    { label: "Contact", href: "/contact" },
+  // Exactly 6 navigation items in the exact required order:
+  // 1. Home, 2. About, 3. Services, 4. Products, 5. Careers, 6. Support
+  const navItems: NavItem[] = [
+    {
+      label: "Home",
+      href: "/",
+      match: (p) => p === "/",
+    },
+    {
+      label: "About",
+      href: "/about",
+      match: (p) => p === "/about",
+    },
+    {
+      label: "Services",
+      href: "/services",
+      match: (p) => p.startsWith("/services"),
+    },
+    {
+      label: "Products",
+      href: "/projects",
+      match: (p) => p.startsWith("/projects") || p === "/products",
+    },
+    {
+      label: "Careers",
+      href: "/contact#careers",
+      match: (p) => p === "/careers",
+    },
+    {
+      label: "Support",
+      href: "/contact",
+      match: (p) => p === "/contact" || p === "/support",
+    },
   ];
 
-  const defaultWhatsAppLink = getWhatsAppUrl();
-
   // On full-screen Admin Dashboard, the portal provides its own dedicated sidebar and header
-  if (pathname?.startsWith("/admin/dashboard")) {
+  if (pathname.startsWith("/admin/dashboard")) {
     return null;
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
-      {/* Top Contact Bar */}
-      <TopContactBar />
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#0B150F]/95 backdrop-blur-md shadow-md py-3 border-b border-[#244730]"
+          : "bg-[#0D1912]/95 backdrop-blur-md py-4 border-b border-[#1F3D29]"
+      }`}
+    >
+      {/* Subtle radial emerald highlight at top center */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(40,90,59,0.32),rgba(11,21,15,0))] pointer-events-none" />
 
-      {/* Main Navbar */}
-      <div
-        className={`w-full transition-all duration-200 border-b border-[#D8DDCF] ${
-          scrolled
-            ? "bg-[#FFFFFF]/98 backdrop-blur-md shadow-xs py-2.5"
-            : "bg-[#FFFFFF]/95 backdrop-blur-sm py-3"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
-            {/* Official Anti-Matrix Brand Logo */}
-            <Link href="/" className="flex items-center shrink-0 group py-0.5" title="Anti-Matrix Project Center">
-              <div className="relative h-8 sm:h-9 md:h-10 w-auto flex items-center">
-                <Image
-                  src="/images/anti-matrix-logo.png"
-                  alt="Anti-Matrix Official Logo"
-                  width={200}
-                  height={42}
-                  className="h-7.5 sm:h-8.5 md:h-9 w-auto object-contain transition-opacity group-hover:opacity-90"
-                  priority
-                />
-              </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 lg:gap-8">
+          {/* LEFT: Official Anti-Matrix Brand Logo */}
+          <Link
+            href="/"
+            className="flex items-center shrink-0 group transition-opacity hover:opacity-95"
+            title="Anti-Matrix – Break The Matrix"
+          >
+            <div className="px-3 sm:px-3.5 py-1.5 rounded-xl bg-white border border-white/20 shadow-xs flex items-center justify-center">
+              <Image
+                src="/images/anti-matrix-logo.png"
+                alt="Anti-Matrix Official Logo"
+                width={190}
+                height={40}
+                className="h-7 sm:h-8 md:h-8.5 w-auto object-contain"
+                priority
+              />
+            </div>
+          </Link>
+
+          {/* CENTER: Navigation Menu (Single horizontal row of 6 items on desktop) */}
+          <nav
+            className="hidden lg:flex items-center gap-1 xl:gap-2"
+            aria-label="Main Navigation"
+          >
+            {navItems.map((item) => {
+              const isActive = item.match(pathname);
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`px-3.5 xl:px-4 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] font-medium transition-all duration-200 ${
+                    isActive
+                      ? "text-white font-semibold bg-white/[0.1] border border-white/10 shadow-2xs"
+                      : "text-[#D2DFD6] hover:text-white hover:bg-white/[0.05]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT: Action Buttons [ Log In ] [ Get Started ] */}
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
+            {/* Log In: clean subtle light / outlined button */}
+            <Link
+              href="/admin/login"
+              className="h-10 px-4 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] hover:bg-white/[0.08] text-[#E0EBE2] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
+              title="Log In to Anti-Matrix Portal"
+            >
+              Log In
             </Link>
 
-            {/* Desktop Navigation Links (Clean single horizontal row on desktop) */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-              <Link
-                href="/"
-                className={`px-3 py-1.5 rounded-md text-[13px] transition-colors ${
-                  pathname === "/"
-                    ? "text-[#285A3B] font-semibold"
-                    : "text-[#1F2A22]/80 hover:text-[#285A3B] font-medium"
-                }`}
-              >
-                Home
-              </Link>
+            {/* Get Started: prominent green button using brand colors */}
+            <a
+              href={GOOGLE_ENQUIRY_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-10 px-5 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#3E7D54]"
+              title="Get Started with Anti-Matrix"
+            >
+              Get Started
+            </a>
+          </div>
 
-              {/* Projects Mega Menu Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  type="button"
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-[13px] transition-colors cursor-pointer ${
-                    pathname.startsWith("/projects") || dropdownOpen
-                      ? "text-[#285A3B] font-semibold"
-                      : "text-[#1F2A22]/80 hover:text-[#285A3B] font-medium"
+          {/* MOBILE: Hamburger Button */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="h-10 w-10 rounded-xl border border-[#2D5A3C] bg-white/[0.04] hover:bg-white/[0.08] text-white flex items-center justify-center transition-colors lg:hidden"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5 text-[#E0EBE2]" />
+            ) : (
+              <Menu className="w-5 h-5 text-[#E0EBE2]" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-[#0D1912] border-b border-[#1F3D29] px-4 pt-4 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-2xl">
+          {/* Navigation items in exact order */}
+          <div className="flex flex-col space-y-1">
+            {navItems.map((item) => {
+              const isActive = item.match(pathname);
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-white font-semibold bg-white/10 border border-white/10"
+                      : "text-[#D2DFD6] hover:text-white hover:bg-white/5"
                   }`}
-                  aria-expanded={dropdownOpen}
-                  aria-haspopup="true"
                 >
-                  <span>Projects</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      dropdownOpen ? "rotate-180 text-[#285A3B]" : "text-[#657166]"
-                    }`}
-                  />
-                </button>
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
 
-                {dropdownOpen && (
-                  <ProjectsMegaMenu onClose={() => setDropdownOpen(false)} />
-                )}
-              </div>
-
-              {navLinks.slice(1).map((link) => {
-                const active = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3 py-1.5 rounded-md text-[13px] transition-colors ${
-                      active
-                        ? "text-[#285A3B] font-semibold"
-                        : "text-[#1F2A22]/80 hover:text-[#285A3B] font-medium"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Desktop Right Actions: Exactly 3 primary actions [ WhatsApp ] [ Project Enquiry ] [ Admin Login ] */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0">
-              {/* 1. WhatsApp (subtle outlined) */}
-              <a
-                href={defaultWhatsAppLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 px-3.5 rounded-lg bg-white hover:bg-[#F5F1E7] border border-[#D8DDCF] hover:border-[#285A3B] text-[#285A3B] text-xs font-semibold inline-flex items-center gap-1.5 transition-colors shadow-2xs"
-                title={`Chat with us on WhatsApp (${WHATSAPP_DISPLAY})`}
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-[#285A3B]" />
-                <span>WhatsApp</span>
-              </a>
-
-              {/* 2. Project Enquiry (primary green button) */}
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 px-4 rounded-lg bg-[#285A3B] hover:bg-[#214930] text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-colors shadow-xs hover:shadow-sm"
-                title="Open Project Enquiry Form"
-              >
-                <ClipboardList className="w-3.5 h-3.5 text-white" />
-                <span>Project Enquiry</span>
-              </a>
-
-              {/* 3. Admin Login (minimal outlined) */}
+          {/* Action buttons inside mobile drawer */}
+          <div className="border-t border-[#1F3D29] pt-4">
+            <div className="grid grid-cols-2 gap-3">
               <Link
                 href="/admin/login"
-                className="h-9 px-3 rounded-lg bg-transparent hover:bg-[#F5F1E7] border border-[#D8DDCF] hover:border-[#285A3B] text-[#1F2A22] hover:text-[#285A3B] text-xs font-semibold inline-flex items-center gap-1.5 transition-colors"
-                title="Admin Portal Login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="h-11 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#285A3B]" />
-                <span className="hidden xl:inline">Admin</span>
+                Log In
               </Link>
-            </div>
-
-            {/* Mobile / Tablet Actions (< 1024px) */}
-            <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
-              <a
-                href={defaultWhatsAppLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-8 px-2.5 rounded-lg bg-white border border-[#D8DDCF] text-[#285A3B] text-xs font-semibold inline-flex items-center gap-1.5 shadow-2xs"
-                aria-label="WhatsApp Us"
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-[#285A3B]" />
-                <span className="hidden sm:inline">WhatsApp</span>
-              </a>
-
               <a
                 href={GOOGLE_ENQUIRY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-8 px-3 rounded-lg bg-[#285A3B] text-white text-xs font-semibold inline-flex items-center gap-1.5 shadow-xs"
+                onClick={() => setMobileMenuOpen(false)}
+                className="h-11 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors shadow-xs border border-[#3E7D54]"
               >
-                <ClipboardList className="w-3.5 h-3.5 text-white" />
-                <span>Enquiry</span>
+                Get Started
               </a>
-
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="h-8 w-8 rounded-lg border border-[#D8DDCF] bg-white text-[#1F2A22] hover:text-[#285A3B] hover:bg-[#F5F1E7] flex items-center justify-center transition-colors"
-                aria-label="Toggle navigation menu"
-              >
-                {mobileMenuOpen ? <X className="w-4 h-4 text-[#285A3B]" /> : <Menu className="w-4 h-4 text-[#1F2A22]" />}
-              </button>
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FAF7F0] border-b border-[#D8DDCF] px-4 pt-3 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-lg">
-            {/* Mobile Top Brand Header */}
-            <div className="p-3 bg-white rounded-xl border border-[#D8DDCF] flex items-center justify-between">
-              <Link
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center"
-                title="Anti-Matrix Project Center"
-              >
-                <Image
-                  src="/images/anti-matrix-logo.png"
-                  alt="Anti-Matrix Official Logo"
-                  width={160}
-                  height={34}
-                  className="h-7 w-auto object-contain"
-                />
-              </Link>
-              <span className="text-[10px] font-semibold text-[#285A3B] bg-[#DCE8D9] border border-[#D8DDCF] px-2 py-0.5 rounded-full">
-                2025-26 Curated
-              </span>
-            </div>
-
-            <div className="flex flex-col space-y-1">
-              <Link
-                href="/"
-                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                  pathname === "/"
-                    ? "text-[#285A3B] bg-[#DCE8D9] font-bold border border-[#D8DDCF]"
-                    : "text-[#1F2A22] hover:bg-[#F5F1E7]"
-                }`}
-              >
-                Home
-              </Link>
-
-              {/* Mobile Projects Accordion / Section */}
-              <div className="rounded-xl border border-[#D8DDCF] overflow-hidden bg-white">
-                <div className="p-3 bg-[#FAF7F0] flex items-center justify-between border-b border-[#D8DDCF]">
-                  <button
-                    onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-                    className="flex items-center gap-2 text-sm font-bold text-[#1F2A22]"
-                  >
-                    <Layers className="w-4 h-4 text-[#285A3B]" />
-                    <span>16 Project Domains</span>
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        mobileProjectsOpen ? "rotate-180 text-[#285A3B]" : "text-[#657166]"
-                      }`}
-                    />
-                  </button>
-                  <Link
-                    href="/projects"
-                    className="text-xs font-bold text-[#285A3B] hover:text-[#214930] flex items-center gap-1"
-                  >
-                    View All →
-                  </Link>
-                </div>
-
-                {mobileProjectsOpen && (
-                  <div className="p-3 space-y-3 bg-white">
-                    {/* 16 Domains Grid */}
-                    <div className="grid grid-cols-2 gap-1.5 max-h-[300px] overflow-y-auto pr-1">
-                      {PROJECT_CATEGORIES.map((cat) => (
-                        <Link
-                          key={cat}
-                          href={`/projects/${CATEGORY_SLUG_MAP[cat] || "AMPY"}`}
-                          className="flex items-center gap-2 p-2 rounded-lg bg-[#FAF7F0] border border-[#D8DDCF] hover:border-[#285A3B] text-xs text-[#657166] hover:text-[#1F2A22] font-semibold"
-                        >
-                          <div className="p-1 rounded bg-[#DCE8D9] shrink-0">
-                            {categoryIcons[cat]}
-                          </div>
-                          <span className="truncate">{cat}</span>
-                        </Link>
-                      ))}
-                    </div>
-
-                    {/* Featured Projects Mini Thumbnails on Mobile */}
-                    <div className="pt-2 border-t border-[#D8DDCF]">
-                      <span className="text-[11px] font-bold text-[#1F2A22] uppercase tracking-wider block mb-2 font-mono">
-                        Featured Projects
-                      </span>
-                      <div className="grid grid-cols-2 gap-2">
-                        {DROPDOWN_FEATURED_PROJECTS.map((proj) => (
-                          <Link
-                            key={proj.id}
-                            href={proj.href}
-                            className="bg-[#FAF7F0] rounded-lg border border-[#D8DDCF] overflow-hidden group block hover:border-[#285A3B]"
-                          >
-                            <div className="relative aspect-video w-full bg-[#EEE9DC]">
-                              <Image
-                                src={proj.thumbnail}
-                                alt={proj.title}
-                                fill
-                                sizes="150px"
-                                className="object-cover"
-                              />
-                            </div>
-                            <div className="p-1.5">
-                              <span className="block text-[10px] font-bold text-[#1F2A22] truncate">
-                                {proj.title}
-                              </span>
-                              <span className="text-[9px] text-[#285A3B] font-semibold">
-                                View Project →
-                              </span>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* View All Projects Button */}
-                    <Link
-                      href="/projects"
-                      className="w-full py-2 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs"
-                    >
-                      <span>View All Projects</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-white" />
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {navLinks.slice(1).map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                    pathname === link.href
-                      ? "text-[#285A3B] bg-[#DCE8D9] font-bold border border-[#D8DDCF]"
-                      : "text-[#1F2A22] hover:bg-[#F5F1E7]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-
-            <div className="pt-2 border-t border-[#D8DDCF] flex flex-col gap-2">
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href={GOOGLE_ENQUIRY_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2.5 px-3 rounded-lg bg-[#285A3B] hover:bg-[#214930] text-white text-xs font-semibold flex items-center justify-center gap-1.5 shadow-xs group cursor-pointer"
-                >
-                  <ClipboardList className="w-4 h-4 text-white group-hover:scale-105 transition-transform" />
-                  <span>Project Enquiry</span>
-                </a>
-
-                <Link
-                  href="/admin/login"
-                  className="py-2.5 px-3 rounded-lg bg-white hover:bg-[#F5F1E7] border border-[#D8DDCF] hover:border-[#285A3B] text-[#1F2A22] hover:text-[#285A3B] text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-colors"
-                >
-                  <ShieldCheck className="w-4 h-4 text-[#285A3B]" />
-                  <span>Admin Login</span>
-                </Link>
-              </div>
-
-              {/* Request a Requirement button preserved in mobile drawer */}
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openConsultationModal({ requirement: "Custom Project / Special Requirement" });
-                }}
-                className="w-full py-2.5 px-4 rounded-lg bg-white border border-[#D8DDCF] hover:border-[#285A3B] text-[#1F2A22] hover:text-[#285A3B] text-xs font-semibold flex items-center justify-center gap-2 shadow-2xs cursor-pointer transition-colors"
-              >
-                <span>Request a Custom Requirement</span>
-              </button>
-
-              <a
-                href={defaultWhatsAppLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-lg bg-white border border-[#D8DDCF] hover:border-[#285A3B] text-[#285A3B] text-xs font-semibold flex items-center justify-center gap-2 shadow-2xs transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-[#285A3B]" />
-                <span>WhatsApp Us ({WHATSAPP_DISPLAY})</span>
-              </a>
-
-              <a
-                href={`tel:+${WHATSAPP_NUMBER}`}
-                className="w-full py-2 px-4 rounded-lg bg-white border border-[#D8DDCF] text-[#1F2A22] hover:text-[#285A3B] text-xs font-medium flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4 text-[#285A3B]" />
-                <span>Call Desk ({WHATSAPP_DISPLAY})</span>
-              </a>
-            </div>
-          </div>
-        )}
-      </div>
+      )}
     </header>
   );
 }
