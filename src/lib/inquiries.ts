@@ -66,96 +66,8 @@ export type ProjectEnquiry = ConsultationRequest;
 
 const INQUIRIES_FILE = path.join(process.cwd(), "src", "data", "inquiries-store.json");
 
-const SEED_INQUIRIES: ConsultationRequest[] = [
-  {
-    id: "inq-2026-001",
-    name: "Aravind Swaminathan",
-    email: "aravind.swami@gmail.com",
-    phone: "+91 98401 23456",
-    mobileNumber: "+91 98401 23456",
-    whatsappNumber: "+91 98401 23456",
-    college: "PSG College of Technology, Coimbatore",
-    department: "Computer Science & Engineering",
-    degree: "B.E. Computer Science & Engineering",
-    category: "AI & Data Science",
-    projectDomain: "AI & Data Science",
-    projectTitle: "Multimodal Medical AI: Chest Radiograph & EHR Diagnostic Assistant",
-    requirement: "Need working PyTorch ViT source code with Grad-CAM heatmap visualization and IEEE standard base paper.",
-    urgency: "1 Week",
-    source: "Consultation Request",
-    status: "Pending",
-    verificationStatus: "Verified",
-    spamScore: 0,
-    botSignals: [],
-    createdAt: "2026-10-26T09:15:00.000Z"
-  },
-  {
-    id: "inq-2026-002",
-    name: "Sneha Ramachandran",
-    email: "sneha.ram@outlook.com",
-    phone: "+91 97890 54321",
-    mobileNumber: "+91 97890 54321",
-    whatsappNumber: "+91 97890 54321",
-    college: "SSN College of Engineering, Chennai",
-    department: "Information Technology",
-    degree: "B.Tech Information Technology",
-    category: "Deep Learning",
-    projectDomain: "Deep Learning",
-    projectTitle: "Autonomous Aerial Drone Surveillance: YOLOv10 & DeepSORT",
-    requirement: "Requires real-time webcam inference demonstration and 70-page thesis report with plagiarism check.",
-    urgency: "2-3 Days",
-    source: "Consultation Request",
-    status: "In Progress",
-    verificationStatus: "Verified",
-    spamScore: 0,
-    botSignals: [],
-    createdAt: "2026-10-25T14:30:00.000Z"
-  },
-  {
-    id: "inq-2026-003",
-    name: "Karthik Venkatesh",
-    email: "karthik.v@citchennai.edu.in",
-    phone: "+91 94441 98765",
-    mobileNumber: "+91 94441 98765",
-    whatsappNumber: "+91 94441 98765",
-    college: "Chennai Institute of Technology",
-    department: "Artificial Intelligence & Data Science",
-    degree: "B.E. Artificial Intelligence & Data Science",
-    category: "Machine Learning",
-    projectDomain: "Machine Learning",
-    projectTitle: "Graph Neural Network & XGBoost Hybrid for Real-Time Fraud Detection",
-    requirement: "Need complete Neo4j and Kafka pipeline setup with PPT slides for Phase 1 university review.",
-    urgency: "1-2 Weeks",
-    source: "Consultation Request",
-    status: "Completed",
-    verificationStatus: "Verified",
-    spamScore: 0,
-    botSignals: [],
-    createdAt: "2026-10-24T11:00:00.000Z"
-  },
-  {
-    id: "inq-2026-004",
-    name: "Pooja Balasubramanian",
-    email: "pooja.bala@vit.ac.in",
-    phone: "+91 96000 11223",
-    mobileNumber: "+91 96000 11223",
-    whatsappNumber: "+91 96000 11223",
-    college: "Vellore Institute of Technology (VIT)",
-    department: "Software Engineering",
-    degree: "M.Tech Software Engineering",
-    category: "Cloud Computing",
-    projectDomain: "Cloud Computing",
-    projectTitle: "Cloud-Native Serverless Workflow Engine on Kubernetes",
-    requirement: "Looking for Helm charts, Knative event configuration, and viva preparation guide.",
-    urgency: "Immediate",
-    source: "Consultation Request",
-    status: "Pending",
-    verificationStatus: "Verified",
-    spamScore: 0,
-    botSignals: [],
-    createdAt: "2026-10-27T08:45:00.000Z"
-  }
-];
+// Production Safety: No automatic fake seed records on startup
+const SEED_INQUIRIES: ConsultationRequest[] = [];
 
 function readLocalInquiries(): ConsultationRequest[] {
   try {
@@ -164,12 +76,12 @@ function readLocalInquiries(): ConsultationRequest[] {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
-      fs.writeFileSync(INQUIRIES_FILE, JSON.stringify(SEED_INQUIRIES, null, 2), "utf8");
-      return SEED_INQUIRIES;
+      fs.writeFileSync(INQUIRIES_FILE, "[]", "utf8");
+      return [];
     }
     const raw = fs.readFileSync(INQUIRIES_FILE, "utf8");
     const data = JSON.parse(raw);
-    if (!Array.isArray(data)) return SEED_INQUIRIES;
+    if (!Array.isArray(data)) return [];
 
     // Ensure all existing records have source, whatsappNumber, and verificationStatus preserved
     return data.map((item) => ({
@@ -185,7 +97,7 @@ function readLocalInquiries(): ConsultationRequest[] {
     }));
   } catch (err) {
     console.error("Error reading inquiries file:", err);
-    return SEED_INQUIRIES;
+    return [];
   }
 }
 
@@ -246,7 +158,15 @@ export async function getAllInquiries(): Promise<ConsultationRequest[]> {
 export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Promise<ConsultationRequest> {
   const source: EnquirySource = inquiryData.source || "Project Enquiry";
   const verificationStatus = inquiryData.verificationStatus || (inquiryData.status === "Spam" ? "Spam" : inquiryData.status === "Suspicious" ? "Suspicious" : "Verified");
-  const initialStatus: InquiryStatus = inquiryData.status || (verificationStatus === "Spam" ? "Spam" : verificationStatus === "Suspicious" ? "Suspicious" : "New");
+  const initialStatus: InquiryStatus =
+    inquiryData.status ||
+    (verificationStatus === "Spam"
+      ? "Spam"
+      : verificationStatus === "Suspicious"
+      ? "Suspicious"
+      : source === "Consultation Request"
+      ? "Pending"
+      : "New");
 
   let id = inquiryData.id;
   if (!id) {
@@ -254,6 +174,17 @@ export async function saveInquiry(inquiryData: Partial<ConsultationRequest>): Pr
       id = `PE-2026-${Math.floor(1000 + Math.random() * 9000)}`;
     } else if (source === "Custom Requirement") {
       id = `REQ-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+    } else if (source === "Consultation Request") {
+      const current = readLocalInquiries();
+      let maxNum = 0;
+      for (const item of current) {
+        const match = item.id?.match(/^inq-2026-(\d+)$/);
+        if (match) {
+          const num = parseInt(match[1], 10);
+          if (num > maxNum) maxNum = num;
+        }
+      }
+      id = `inq-2026-${String(maxNum + 1).padStart(3, "0")}`;
     } else {
       id = `inq-${Date.now()}`;
     }

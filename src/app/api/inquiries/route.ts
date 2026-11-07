@@ -94,6 +94,22 @@ export async function POST(request: Request) {
         );
       }
 
+      // Production Guard: Prevent automated test runner and demo submissions
+      const emailLower = email.toLowerCase();
+      const nameLower = name.toLowerCase();
+      if (
+        emailLower.endsWith("@example.com") ||
+        emailLower.endsWith("@test.com") ||
+        emailLower.endsWith("@localhost") ||
+        nameLower.includes("tester") ||
+        nameLower === "test student"
+      ) {
+        return NextResponse.json(
+          { error: "Automated test submissions are disabled. Please provide valid student contact details." },
+          { status: 400 }
+        );
+      }
+
       // Specific mandatory validations for Project Enquiry
       if (source === "Project Enquiry") {
         if (!college || college.length < 2) {
@@ -184,7 +200,14 @@ export async function POST(request: Request) {
       requirement,
       urgency,
       source,
-      status: botAnalysis.verificationStatus === "Spam" ? "Spam" : botAnalysis.verificationStatus === "Suspicious" ? "Suspicious" : "New",
+      status:
+        botAnalysis.verificationStatus === "Spam"
+          ? "Spam"
+          : botAnalysis.verificationStatus === "Suspicious"
+          ? "Suspicious"
+          : source === "Consultation Request"
+          ? "Pending"
+          : "New",
       verificationStatus: botAnalysis.verificationStatus,
       spamScore: botAnalysis.spamScore,
       botSignals: botAnalysis.botSignals,
@@ -207,10 +230,11 @@ export async function POST(request: Request) {
       });
     }
 
+    const label = source === "Consultation Request" ? "Consultation Request" : "Project Enquiry";
     return NextResponse.json(
       {
         success: true,
-        message: `Project Enquiry [${saved.id}] received! Our academic coordinator will contact you on WhatsApp (${whatsappNumber}) within 2 hours.`,
+        message: `${label} [${saved.id}] received! Our academic coordinator will contact you on WhatsApp (${whatsappNumber}) within 2 hours.`,
         data: {
           id: saved.id,
           name: saved.name,

@@ -36,6 +36,7 @@ import {
   RefreshCw,
   ExternalLink,
   ChevronRight,
+  ChevronLeft,
   X,
   Menu,
   Check,
@@ -84,6 +85,13 @@ export default function AdminDashboardClient({
   const [sourceFilter, setSourceFilter] = useState<string>("All");
   const [enquiryTypeFilter, setEnquiryTypeFilter] = useState<string>("All");
   const [enquiryDomainFilter, setEnquiryDomainFilter] = useState<string>("All");
+
+  // Dedicated Consultation Management States
+  const [consultationSearchQuery, setConsultationSearchQuery] = useState("");
+  const [consultationStatusFilter, setConsultationStatusFilter] = useState<string>("All");
+  const [consultationDomainFilter, setConsultationDomainFilter] = useState<string>("All");
+  const [consultationPage, setConsultationPage] = useState<number>(1);
+  const CONSULTATIONS_PER_PAGE = 8;
 
   const [projectSearchQuery, setProjectSearchQuery] = useState("");
   const [projectDomainFilter, setProjectDomainFilter] = useState<string>("All");
@@ -176,6 +184,98 @@ export default function AdminDashboardClient({
       generalEnquiries
     };
   }, [inquiries]);
+
+  // Consultation Requests List (Single Source of Truth for Academic Consultations)
+  const consultationRequestsList = useMemo(() => {
+    return inquiries.filter(
+      (i) =>
+        i.source === "Consultation Request" ||
+        (!i.source && !i.id?.startsWith("PE-") && !i.id?.startsWith("REQ-"))
+    );
+  }, [inquiries]);
+
+  // Consultation-specific Statistics (Accurate Counts for Consultation Management)
+  const consultationStats = useMemo(() => {
+    const list = consultationRequestsList;
+    const total = list.length;
+    const pending = list.filter((i) => i.status === "Pending").length;
+    const inProgress = list.filter((i) => i.status === "In Progress").length;
+    const completed = list.filter((i) => i.status === "Completed").length;
+    const verified = list.filter(
+      (i) => i.verificationStatus === "Verified" || i.status === "Verified"
+    ).length;
+    const suspicious = list.filter(
+      (i) => i.verificationStatus === "Suspicious" || i.status === "Suspicious"
+    ).length;
+    const spam = list.filter(
+      (i) => i.verificationStatus === "Spam" || i.status === "Spam"
+    ).length;
+    return {
+      total,
+      pending,
+      inProgress,
+      completed,
+      verified,
+      suspicious,
+      spam
+    };
+  }, [consultationRequestsList]);
+
+  // Filtered Consultation Requests for Tab 2
+  const filteredConsultations = useMemo(() => {
+    return consultationRequestsList.filter((item) => {
+      const vStatus =
+        item.verificationStatus ||
+        (item.status === "Spam"
+          ? "Spam"
+          : item.status === "Suspicious"
+          ? "Suspicious"
+          : "Verified");
+      const itemDomain = item.domainName || item.projectDomain || item.category || "General";
+      const itemDomainCode = item.domainCode || "";
+
+      const matchesStatus =
+        consultationStatusFilter === "All" ||
+        item.status === consultationStatusFilter ||
+        (consultationStatusFilter === "Verified" && vStatus === "Verified") ||
+        (consultationStatusFilter === "Suspicious" && vStatus === "Suspicious") ||
+        (consultationStatusFilter === "Spam" && vStatus === "Spam");
+
+      const matchesDomain =
+        consultationDomainFilter === "All" ||
+        (itemDomainCode && itemDomainCode.toUpperCase() === consultationDomainFilter.toUpperCase()) ||
+        (item.domainCode && item.domainCode.toUpperCase() === consultationDomainFilter.toUpperCase()) ||
+        (itemDomain && itemDomain.toLowerCase().trim() === consultationDomainFilter.toLowerCase().trim());
+
+      const q = consultationSearchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        item.id.toLowerCase().includes(q) ||
+        item.name.toLowerCase().includes(q) ||
+        item.email.toLowerCase().includes(q) ||
+        item.phone.toLowerCase().includes(q) ||
+        (item.mobileNumber && item.mobileNumber.toLowerCase().includes(q)) ||
+        (item.whatsappNumber && item.whatsappNumber.toLowerCase().includes(q)) ||
+        (item.college && item.college.toLowerCase().includes(q)) ||
+        (item.department && item.department.toLowerCase().includes(q)) ||
+        (item.projectDomain && item.projectDomain.toLowerCase().includes(q)) ||
+        (item.projectTitle && item.projectTitle.toLowerCase().includes(q)) ||
+        (item.projectCode && item.projectCode.toLowerCase().includes(q)) ||
+        (item.domainCode && item.domainCode.toLowerCase().includes(q)) ||
+        (item.domainName && item.domainName.toLowerCase().includes(q)) ||
+        (item.degree && item.degree.toLowerCase().includes(q)) ||
+        (item.requirement && item.requirement.toLowerCase().includes(q)) ||
+        (vStatus && vStatus.toLowerCase().includes(q));
+
+      return matchesStatus && matchesDomain && matchesSearch;
+    });
+  }, [consultationRequestsList, consultationStatusFilter, consultationDomainFilter, consultationSearchQuery]);
+
+  const totalConsultationPages = Math.max(1, Math.ceil(filteredConsultations.length / CONSULTATIONS_PER_PAGE));
+  const paginatedConsultations = useMemo(() => {
+    const start = (consultationPage - 1) * CONSULTATIONS_PER_PAGE;
+    return filteredConsultations.slice(start, start + CONSULTATIONS_PER_PAGE);
+  }, [filteredConsultations, consultationPage]);
 
   // Helper to compute next sequential code for a domain
   const getNextProjectCode = (domainCode: string): string => {
@@ -580,7 +680,7 @@ export default function AdminDashboardClient({
       id: "consultations" as TabType,
       label: "Consultation Management",
       icon: Users,
-      badge: stats.pending > 0 ? `${stats.pending} pending` : null,
+      badge: consultationStats.pending > 0 ? `${consultationStats.pending} pending` : null,
       badgeClass: "bg-[#DCE8D9] text-[#315C3D]",
     },
     {
@@ -841,7 +941,7 @@ export default function AdminDashboardClient({
                 <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
                     <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Verified Genuine</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{stats.verified}</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{consultationStats.verified}</p>
                     <span className="text-[10px] text-[#667064] mt-1 block">Passed bot checks</span>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
@@ -852,7 +952,7 @@ export default function AdminDashboardClient({
                 <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
                     <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Pending Review</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{stats.pending}</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{consultationStats.pending}</p>
                     <span className="text-[10px] text-[#667064] mt-1 block">Awaiting technical callback</span>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
@@ -863,7 +963,7 @@ export default function AdminDashboardClient({
                 <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
                     <p className="text-[11px] font-bold text-[#497A52] uppercase font-mono">In Progress</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#497A52] mt-1">{stats.inProgress}</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#497A52] mt-1">{consultationStats.inProgress}</p>
                     <span className="text-[10px] text-[#667064] mt-1 block">Guidance underway</span>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#497A52]">
@@ -874,7 +974,7 @@ export default function AdminDashboardClient({
                 <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
                   <div>
                     <p className="text-[11px] font-bold text-[#202820] uppercase font-mono">Bot / Spam Flagged</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{stats.suspicious + stats.spam}</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{consultationStats.suspicious + consultationStats.spam}</p>
                     <span className="text-[10px] text-[#667064] mt-1 block">Isolated by honeypot/rate</span>
                   </div>
                   <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#202820]">
@@ -895,13 +995,13 @@ export default function AdminDashboardClient({
                       onClick={() => setActiveTab("consultations")}
                       className="text-xs font-bold text-[#315C3D] hover:underline flex items-center gap-1 cursor-pointer"
                     >
-                      <span>View All ({inquiries.length})</span>
+                      <span>View All ({consultationRequestsList.length})</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
 
                   <div className="space-y-3">
-                    {inquiries.slice(0, 4).map((inq) => (
+                    {consultationRequestsList.slice(0, 4).map((inq) => (
                       <div
                         key={inq.id}
                         className="p-4 rounded-2xl bg-[#F5F1E7] border border-[#DDDCCF] hover:border-[#315C3D]/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
@@ -1013,6 +1113,38 @@ export default function AdminDashboardClient({
           {/* TAB 2: CONSULTATION MANAGEMENT */}
           {activeTab === "consultations" && (
             <div className="space-y-6 animate-in fade-in duration-200">
+              {/* Header Card with Real-Time Statistics */}
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2 font-mono">
+                    <Users className="w-3.5 h-3.5" />
+                    <span>Academic Consultations Desk • Verified Records</span>
+                  </div>
+                  <h2 className="text-xl font-black text-[#202820]">
+                    Consultation Management
+                  </h2>
+                  <p className="text-xs text-[#667064] mt-1">
+                    Review and coordinate final year engineering project consultations, verify IEEE project documentation pipelines, and assign dedicated coordinators.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#DCE8D9] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                    {consultationStats.total} Total Consultations
+                  </span>
+                  <span className="px-3 py-1.5 rounded-xl bg-[#EEE9DC] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                    {consultationStats.pending} Pending Review
+                  </span>
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                    {consultationStats.inProgress} In Progress
+                  </span>
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                    {consultationStats.completed} Completed
+                  </span>
+                </div>
+              </div>
+
+              {/* Multi-Filter & Search Toolbar */}
               <div className="p-5 sm:p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
                 <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
                   <div className="relative flex-1">
@@ -1020,17 +1152,23 @@ export default function AdminDashboardClient({
                     <input
                       type="text"
                       placeholder="Search student name, email, phone, college, or project title..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      value={consultationSearchQuery}
+                      onChange={(e) => {
+                        setConsultationSearchQuery(e.target.value);
+                        setConsultationPage(1);
+                      }}
                       className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-colors"
                     />
                   </div>
 
                   <div className="flex items-center gap-2">
                     <select
-                      value={enquiryDomainFilter}
-                      onChange={(e) => setEnquiryDomainFilter(e.target.value)}
-                      className="px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                      value={consultationDomainFilter}
+                      onChange={(e) => {
+                        setConsultationDomainFilter(e.target.value);
+                        setConsultationPage(1);
+                      }}
+                      className="px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] focus:outline-none focus:border-[#315C3D] cursor-pointer"
                     >
                       <option value="All">All 16 Technical Domains</option>
                       {dynamicDomains.map((d) => (
@@ -1054,31 +1192,45 @@ export default function AdminDashboardClient({
                 <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
                   <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
                     <span className="text-[#667064] font-mono mr-1">Status:</span>
-                    {["All", "Verified", "Pending", "In Progress", "Completed", "Suspicious", "Spam"].map((status) => (
+                    {[
+                      { id: "All", label: "All", count: consultationStats.total },
+                      { id: "Pending", label: "Pending", count: consultationStats.pending },
+                      { id: "In Progress", label: "In Progress", count: consultationStats.inProgress },
+                      { id: "Completed", label: "Completed", count: consultationStats.completed },
+                      { id: "Verified", label: "Verified", count: consultationStats.verified },
+                      { id: "Suspicious", label: "Suspicious", count: consultationStats.suspicious },
+                      { id: "Spam", label: "Spam", count: consultationStats.spam }
+                    ].map((status) => (
                       <button
-                        key={status}
-                        onClick={() => setStatusFilter(status)}
-                        className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                          statusFilter === status
+                        key={status.id}
+                        onClick={() => {
+                          setConsultationStatusFilter(status.id);
+                          setConsultationPage(1);
+                        }}
+                        className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+                          consultationStatusFilter === status.id
                             ? "bg-[#315C3D] text-white shadow-xs"
                             : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
                         }`}
                       >
-                        {status}
+                        <span>{status.label}</span>
+                        <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${consultationStatusFilter === status.id ? "bg-white/20 text-white" : "bg-[#DDDCCF] text-[#202820]"}`}>
+                          {status.count}
+                        </span>
                       </button>
                     ))}
                   </div>
 
                   <span className="text-xs text-[#667064]">
-                    Showing <strong className="text-[#202820]">{filteredInquiries.length}</strong> of{" "}
-                    {inquiries.length} records
+                    Showing <strong className="text-[#202820]">{filteredConsultations.length}</strong> of{" "}
+                    {consultationRequestsList.length} consultations
                   </span>
                 </div>
               </div>
 
-              {filteredInquiries.length > 0 ? (
+              {paginatedConsultations.length > 0 ? (
                 <div className="space-y-4">
-                  {filteredInquiries.map((inq) => {
+                  {paginatedConsultations.map((inq) => {
                     const actualWa = (inq.whatsappNumber || inq.phone).replace(/[^0-9]/g, "");
                     const waLink = `https://wa.me/${actualWa.startsWith("91") ? actualWa : "91" + actualWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your AntiMatrix project consultation for "${inq.projectTitle || inq.domainName || inq.projectDomain}":`)}`;
 
@@ -1103,6 +1255,8 @@ export default function AdminDashboardClient({
                                   ? "bg-[#DCE8D9] text-[#315C3D]"
                                   : inq.status === "In Progress"
                                   ? "bg-[#EEE9DC] text-[#497A52]"
+                                  : inq.status === "Completed"
+                                  ? "bg-[#FFFFFF] text-[#315C3D] border border-[#315C3D]"
                                   : "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
                               }`}
                             >
@@ -1141,6 +1295,11 @@ export default function AdminDashboardClient({
                             {inq.projectTitle && inq.projectTitle !== (inq.projectDomain || inq.domainName) && (
                               <p className="font-semibold text-[#202820] truncate">
                                 Topic: {inq.projectTitle}
+                              </p>
+                            )}
+                            {inq.requirement && (
+                              <p className="text-[#667064] text-[11px] line-clamp-2">
+                                Requirement: {inq.requirement}
                               </p>
                             )}
                           </div>
@@ -1186,12 +1345,70 @@ export default function AdminDashboardClient({
                       </div>
                     );
                   })}
+
+                  {/* Pagination Controls */}
+                  {totalConsultationPages > 1 && (
+                    <div className="p-4 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+                      <span className="text-xs text-[#667064]">
+                        Showing page <strong className="text-[#202820]">{consultationPage}</strong> of{" "}
+                        <strong className="text-[#202820]">{totalConsultationPages}</strong> ({filteredConsultations.length} total records)
+                      </span>
+
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => setConsultationPage((p) => Math.max(1, p - 1))}
+                          disabled={consultationPage === 1}
+                          className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#EEE9DC] text-xs font-bold text-[#202820] hover:bg-[#DCE8D9] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                        >
+                          <ChevronLeft className="w-3.5 h-3.5" />
+                          <span>Previous</span>
+                        </button>
+
+                        {Array.from({ length: totalConsultationPages }, (_, idx) => idx + 1).map((pageNum) => (
+                          <button
+                            key={pageNum}
+                            onClick={() => setConsultationPage(pageNum)}
+                            className={`w-8 h-8 rounded-lg text-xs font-bold transition-colors ${
+                              consultationPage === pageNum
+                                ? "bg-[#315C3D] text-white"
+                                : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                            }`}
+                          >
+                            {pageNum}
+                          </button>
+                        ))}
+
+                        <button
+                          onClick={() => setConsultationPage((p) => Math.min(totalConsultationPages, p + 1))}
+                          disabled={consultationPage === totalConsultationPages}
+                          className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#EEE9DC] text-xs font-bold text-[#202820] hover:bg-[#DCE8D9] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                        >
+                          <span>Next</span>
+                          <ChevronRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] space-y-3">
                   <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
-                  <h3 className="text-base font-bold text-[#202820]">No consultation requests found</h3>
-                  <p className="text-xs text-[#667064]">Try adjusting your search query or status filter.</p>
+                  <h3 className="text-base font-bold text-[#202820]">No consultation requests match criteria</h3>
+                  <p className="text-xs text-[#667064]">Try clearing your search query or choosing another status filter.</p>
+                  {(consultationSearchQuery || consultationStatusFilter !== "All" || consultationDomainFilter !== "All") && (
+                    <button
+                      onClick={() => {
+                        setConsultationSearchQuery("");
+                        setConsultationStatusFilter("All");
+                        setConsultationDomainFilter("All");
+                        setConsultationPage(1);
+                      }}
+                      className="px-4 py-2 rounded-xl bg-[#315C3D] text-white text-xs font-bold hover:bg-[#254930] transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                    >
+                      <RefreshCw className="w-3.5 h-3.5" />
+                      <span>Reset Filters</span>
+                    </button>
+                  )}
                 </div>
               )}
             </div>
