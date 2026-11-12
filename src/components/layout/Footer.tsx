@@ -42,7 +42,6 @@ export default function Footer() {
     { label: "Domains", href: "/projects", isExternal: false },
     { label: "Services", href: "/services", isExternal: false },
     { label: "About Us", href: "/about", isExternal: false },
-    { label: "Careers", href: "/careers", isExternal: false },
     { label: "Reviews", href: "/reviews", isExternal: false },
     { label: "Contact", href: "/contact", isExternal: false },
     { label: "Project Enquiry", href: GOOGLE_ENQUIRY_FORM_URL, isExternal: true },

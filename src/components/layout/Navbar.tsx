@@ -32,8 +32,8 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }
 
-  // Exactly 6 navigation items in the exact required order:
-  // 1. Home, 2. About, 3. Services, 4. Domains, 5. Careers, 6. Support
+  // Navigation items:
+  // 1. Home, 2. About, 3. Services, 4. Domains, 5. Support
   const navItems: NavItem[] = [
     {
       label: "Home",
@@ -54,11 +54,6 @@ export default function Navbar() {
       label: "Domains",
       href: "/projects",
       match: (p) => p.startsWith("/projects") || p === "/products" || p === "/domains",
-    },
-    {
-      label: "Careers",
-      href: "/careers",
-      match: (p) => p.startsWith("/careers"),
     },
     {
       label: "Support",
