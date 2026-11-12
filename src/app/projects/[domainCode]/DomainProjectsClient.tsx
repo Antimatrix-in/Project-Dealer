@@ -108,7 +108,7 @@ export default function DomainProjectsClient({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 space-y-8">
         {/* Search Controls (within selected domain only) */}
         <div className="p-5 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
           <div className="relative flex-1">

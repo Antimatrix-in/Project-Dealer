@@ -33,7 +33,7 @@ export default function Navbar() {
   }
 
   // Exactly 6 navigation items in the exact required order:
-  // 1. Home, 2. About, 3. Services, 4. Products, 5. Careers, 6. Support
+  // 1. Home, 2. About, 3. Services, 4. Domains, 5. Careers, 6. Support
   const navItems: NavItem[] = [
     {
       label: "Home",
@@ -51,9 +51,9 @@ export default function Navbar() {
       match: (p) => p.startsWith("/services"),
     },
     {
-      label: "Products",
+      label: "Domains",
       href: "/projects",
-      match: (p) => p.startsWith("/projects") || p === "/products",
+      match: (p) => p.startsWith("/projects") || p === "/products" || p === "/domains",
     },
     {
       label: "Careers",
@@ -100,7 +100,7 @@ export default function Navbar() {
 
           {/* CENTER: Navigation Menu (Single horizontal row of 6 items on desktop) */}
           <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2"
+            className="hidden lg:flex items-center gap-1 xl:gap-2.5 2xl:gap-3"
             aria-label="Main Navigation"
           >
             {navItems.map((item) => {
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`px-3.5 xl:px-4 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] font-medium transition-all duration-200 ${
+                  className={`px-3.5 xl:px-4 2xl:px-4.5 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] 2xl:text-[15px] font-medium transition-all duration-200 ${
                     isActive
                       ? "text-[#F58216] font-semibold bg-[#FFF5EB] border border-[#F58216]/25 shadow-2xs"
                       : "text-[#101D38] hover:text-[#F58216] hover:bg-[#F4F6FA]"
@@ -122,7 +122,7 @@ export default function Navbar() {
           </nav>
 
           {/* RIGHT: Action Buttons [ Log In ] [ Get Started ] */}
-          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
             {/* Log In: clean subtle light / outlined button */}
             <Link
               href="/admin/login"

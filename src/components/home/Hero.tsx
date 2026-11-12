@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-40" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#F58216]/10 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-6xl xl:max-w-7xl 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function Hero() {
           </p>
 
           {/* Trust Features Checklist (Pill Badges) */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-3xl mx-auto pt-1 pb-2">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl xl:max-w-5xl mx-auto pt-1 pb-2">
             {trustFeatures.map((feat, idx) => (
               <div
                 key={idx}
