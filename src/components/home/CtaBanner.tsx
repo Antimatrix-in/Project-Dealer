@@ -20,7 +20,7 @@ export default function CtaBanner() {
 
   return (
     <section className="py-24 bg-[#F4F6FA] relative overflow-hidden border-t border-[#DCE2EA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 relative z-10">
         <div className="relative rounded-3xl bg-[#101D38] text-white p-10 sm:p-16 text-center overflow-hidden shadow-lg border border-[#1A2C50]">
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             {/* Main Headline */}
