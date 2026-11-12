@@ -14,11 +14,6 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: "/careers",
-        destination: "/contact",
-        permanent: false,
-      },
-      {
         source: "/support",
         destination: "/contact",
         permanent: false,

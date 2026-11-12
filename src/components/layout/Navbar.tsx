@@ -57,8 +57,8 @@ export default function Navbar() {
     },
     {
       label: "Careers",
-      href: "/contact#careers",
-      match: (p) => p === "/careers",
+      href: "/careers",
+      match: (p) => p.startsWith("/careers"),
     },
     {
       label: "Support",
