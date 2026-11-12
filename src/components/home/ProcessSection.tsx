@@ -8,10 +8,11 @@ import {
   FileCheck2,
   PackageCheck,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  MessageCircle
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function ProcessSection() {
   const [activeStep, setActiveStep] = useState(1);
@@ -156,17 +157,18 @@ export default function ProcessSection() {
                 </div>
               </div>
 
-              <button
-                onClick={() =>
-                  openConsultationModal({
-                    serviceTitle: `Step ${activeStep}: ${steps[activeStep - 1].title}`,
-                  })
-                }
+              <a
+                href={getWhatsAppUrl({
+                  requirements: `Consultation: Step ${activeStep} (${steps[activeStep - 1].title})`,
+                })}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-3 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs whitespace-nowrap shadow-xs cursor-pointer flex items-center gap-2 border border-[#F58216] transition-all"
               >
+                <MessageCircle className="w-4 h-4 text-white" />
                 <span>Initiate Step {activeStep}</span>
                 <ArrowRight className="w-4 h-4 text-white" />
-              </button>
+              </a>
             </motion.div>
           )}
         </div>
@@ -197,13 +199,17 @@ export default function ProcessSection() {
           ))}
 
           <div className="pt-4 text-center">
-            <button
-              onClick={() => openConsultationModal()}
+            <a
+              href={getWhatsAppUrl({
+                requirements: "Consultation: Start project journey",
+              })}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-3.5 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm shadow-xs flex items-center justify-center gap-2 cursor-pointer border border-[#F58216] transition-all"
             >
               <Sparkles className="w-4 h-4 text-white" />
-              Start Your Project Journey
-            </button>
+              <span>Start Your Project Journey</span>
+            </a>
           </div>
         </div>
 

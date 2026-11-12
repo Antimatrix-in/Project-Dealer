@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
-import ConsultationModal from "@/components/common/ConsultationModal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -124,7 +123,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
-        <ConsultationModal />
       </body>
     </html>
   );

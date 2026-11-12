@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import CtaBanner from "@/components/home/CtaBanner";
 
 interface ServiceCard {
@@ -125,20 +125,21 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              {/* Action Button */}
+              {/* Action Button: Directly opens UPWORKS WhatsApp with service name */}
               <div className="pt-5 mt-6 border-t border-[#DCE2EA]">
-                <button
-                  type="button"
-                  onClick={() =>
-                    openConsultationModal({
-                      serviceTitle: service.title,
-                    })
-                  }
+                <a
+                  href={getWhatsAppUrl({
+                    category: service.title,
+                    requirements: `Inquiry regarding ${service.title} service`,
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-none"
                 >
+                  <MessageCircle className="w-3.5 h-3.5" />
                   <span>Enquire Now</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

@@ -13,9 +13,10 @@ import {
   Server,
   CheckCircle2,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  MessageCircle
 } from "lucide-react";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function ServicesSection() {
   const iconMap: Record<string, React.ReactNode> = {
@@ -76,18 +77,19 @@ export default function ServicesSection() {
               </div>
 
               <div className="pt-3 border-t border-[#DCE2EA] flex items-center justify-between">
-                <button
-                  onClick={() =>
-                    openConsultationModal({
-                      serviceTitle: srv.title,
-                    })
-                  }
+                <a
+                  href={getWhatsAppUrl({
+                    category: srv.title,
+                    requirements: `Inquiry regarding ${srv.title} service`,
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-2.5 px-4 rounded-xl bg-[#101D38] hover:bg-[#1A2C50] text-white font-bold text-xs border border-[#101D38] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs group/btn"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
+                  <MessageCircle className="w-3.5 h-3.5 text-[#F58216]" />
                   <span>Inquire for {srv.title}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

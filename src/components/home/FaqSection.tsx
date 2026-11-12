@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function FaqSection() {
@@ -109,12 +108,14 @@ export default function FaqSection() {
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <button
-              onClick={() => openConsultationModal()}
-              className="px-4 py-2.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs shadow-xs transition-all cursor-pointer border border-[#F58216]"
+            <a
+              href={getWhatsAppUrl({ requirements: "Ask an Expert: General project inquiry" })}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs shadow-xs transition-all cursor-pointer border border-[#F58216] inline-flex items-center justify-center"
             >
               Ask an Expert
-            </button>
+            </a>
             <a
               href={getWhatsAppUrl({ requirements: "General inquiry / project questions" })}
               target="_blank"

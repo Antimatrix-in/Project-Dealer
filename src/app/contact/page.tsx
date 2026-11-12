@@ -53,61 +53,9 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setErrorMessage("");
-
-    if (!formData.name.trim() || formData.name.trim().length < 2) {
-      setErrorMessage("Please enter your name (at least 2 characters).");
-      return;
-    }
-
-    const digitsOnly = formData.phone.replace(/\D/g, "");
-    if (digitsOnly.length < 8) {
-      setErrorMessage("Please enter a valid WhatsApp or contact number (8-16 digits).");
-      return;
-    }
-
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      setErrorMessage("Please enter a valid email address.");
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          source: "General Website Contact",
-          website: honeypot,
-          company_hp: honeypotCompany,
-          _f_rendered_at: renderedAt,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setSubmitted(true);
-        try {
-          confetti({
-            particleCount: 90,
-            spread: 75,
-            origin: { y: 0.6 },
-            colors: ["#101D38", "#F58216", "#FFF5EB", "#FFFFFF"],
-          });
-        } catch (e) {}
-      } else {
-        setErrorMessage(data.error || "Submission failed. Please check your entries.");
-      }
-    } catch (err) {
-      setErrorMessage("Connection issue. Please try again or message us on WhatsApp.");
-    } finally {
-      setLoading(false);
-    }
+    window.open(GOOGLE_ENQUIRY_FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleWhatsAppDirect = () => {
@@ -440,20 +388,15 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="flex-1 py-3.5 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 border border-[#F58216]"
+                  <a
+                    href={GOOGLE_ENQUIRY_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-3.5 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#F58216]"
                   >
-                    {loading ? (
-                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 text-white" />
-                        <span>Submit Project Requirement</span>
-                      </>
-                    )}
-                  </button>
+                    <Send className="w-4 h-4 text-white" />
+                    <span>Submit Project Requirement</span>
+                  </a>
 
                   <button
                     type="button"
