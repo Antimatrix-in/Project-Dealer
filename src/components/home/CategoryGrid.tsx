@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import CategoryIllustration from "./CategoryIllustration";
 
 export default function CategoryGrid() {
   const categoryConfigs = [
@@ -88,7 +87,7 @@ export default function CategoryGrid() {
           </p>
         </div>
 
-        {/* 10 Modern Category Cards with Professional Technology Illustrations */}
+        {/* 10 Modern Category Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {categoryConfigs.map((cat, idx) => {
             return (
@@ -98,39 +97,24 @@ export default function CategoryGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.04 }}
-                className="group relative rounded-[16px] bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs hover:shadow-md hover:border-[#F58216] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden"
+                className="group relative rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] p-6 shadow-xs hover:shadow-md hover:border-[#F58216] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
               >
                 <div>
-                  {/* Top 40% Featured Technology Illustration */}
-                  <div className="h-52 sm:h-56 w-full relative overflow-hidden rounded-t-[15px] border-b border-[#DCE2EA]">
-                    <CategoryIllustration category={cat.name} />
+                  {/* Category / Domain Title */}
+                  <h3 className="text-lg sm:text-xl font-bold text-[#101D38] group-hover:text-[#F58216] transition-colors leading-snug mb-3">
+                    <Link href={`/projects/${cat.slug}`}>
+                      {cat.name}
+                    </Link>
+                  </h3>
 
-                    {/* Floating Project Count Badge */}
-                    <div className="absolute top-3 right-3 z-20">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-[#FFFFFF]/95 text-[#F58216] shadow-xs border border-[#DCE2EA] backdrop-blur-xs">
-                        {cat.count} Projects
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Card Body */}
-                  <div className="p-5 sm:p-5">
-                    {/* Category Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-[#101D38] group-hover:text-[#F58216] transition-colors leading-snug mb-2">
-                      <Link href={`/projects/${cat.slug}`}>
-                        {cat.name}
-                      </Link>
-                    </h3>
-
-                    {/* Short Description */}
-                    <p className="text-xs text-[#5A6B82] leading-relaxed line-clamp-3 mb-4">
-                      {cat.desc}
-                    </p>
-                  </div>
+                  {/* Content / Description */}
+                  <p className="text-xs sm:text-sm text-[#5A6B82] leading-relaxed mb-6 font-normal">
+                    {cat.desc}
+                  </p>
                 </div>
 
                 {/* Explore Projects Button at Bottom */}
-                <div className="px-5 pb-5 pt-0">
+                <div>
                   <Link
                     href={`/projects/${cat.slug}`}
                     id={`explore-category-${cat.slug}`}
