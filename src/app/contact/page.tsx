@@ -12,7 +12,6 @@ import {
   Send,
   CheckCircle2,
   Sparkles,
-  Building2,
   ExternalLink,
   ClipboardList,
   ShieldCheck,
@@ -177,33 +176,17 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Main Section: Contact Form + Headquarters & Map Preview */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-          {/* Left Form (3 Cols) */}
-          <div className="lg:col-span-3 p-8 sm:p-10 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs">
-            <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#DCE2EA]">
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] font-mono">
-                  <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
-                  <span>Project Requirement Form</span>
-                </div>
-                <h3 className="text-2xl font-bold text-[#101D38]">Send Us Your Project Details</h3>
-                <p className="text-xs text-[#5A6B82]">
-                  Fill in the contact form below or visit our dedicated Project Enquiry desk.
-                </p>
-              </div>
-
-              {/* Project Enquiry (Google Form CTA) */}
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#101D38] hover:bg-[#1A2C50] text-white text-xs font-bold transition-all shadow-xs group shrink-0 border border-[#101D38]"
-              >
-                <ClipboardList className="w-4 h-4 text-[#F58216] group-hover:scale-110 transition-transform" />
-                <span>Project Enquiry Form</span>
-                <ExternalLink className="w-3.5 h-3.5 text-white/80 ml-0.5" />
-              </a>
+        {/* Main Section: Clean Contact Form (Centered, Noise-Free, No Map) */}
+        <div className="max-w-4xl mx-auto">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs">
+            {/* Header: Clean & focused, no noise or duplicate buttons */}
+            <div className="mb-8 text-center space-y-2 pb-6 border-b border-[#DCE2EA]">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#101D38]">
+                Send Us Your Project Details
+              </h3>
+              <p className="text-xs sm:text-sm text-[#5A6B82] max-w-lg mx-auto">
+                Fill in your details below and our technical mentors will connect with you to discuss implementation, base paper, and timeline.
+              </p>
             </div>
 
             {submitted ? (
@@ -213,7 +196,7 @@ export default function ContactPage() {
                 </div>
                 <h4 className="text-2xl font-bold text-[#101D38]">Thank You, {formData.name}!</h4>
                 <p className="text-sm text-[#263750] max-w-md mx-auto leading-relaxed">
-                  Your project requirements have been transmitted to our engineering cell in Chennai, Tamil Nadu. Our domain mentors will call and message you on WhatsApp (<strong className="text-[#101D38]">+91 91595 14326</strong>) within 15 minutes.
+                  Your project requirements have been received. Our domain mentors will call and message you on WhatsApp (<strong className="text-[#101D38]">+91 91595 14326</strong>) within 15 minutes.
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <button
@@ -232,7 +215,7 @@ export default function ContactPage() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Anti-Bot Honeypot Inputs (Hidden from human visitors) */}
                 <div className="hidden opacity-0 pointer-events-none absolute -left-[9999px]" aria-hidden="true">
                   <input
@@ -261,9 +244,10 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Clean 2-Column Inputs */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
+                    <label className="block text-xs font-bold text-[#101D38] mb-1.5">
                       Full Name <span className="text-[#F58216]">*</span>
                     </label>
                     <input
@@ -273,12 +257,12 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Karthik Rajan"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
+                    <label className="block text-xs font-bold text-[#101D38] mb-1.5">
                       WhatsApp / Phone Number <span className="text-[#F58216]">*</span>
                     </label>
                     <input
@@ -288,105 +272,48 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="e.g. +91 91595 14326"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
-                      Email Address <span className="text-[#F58216]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="e.g. student@college.edu"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
-                      College / University
-                    </label>
-                    <input
-                      type="text"
-                      name="college"
-                      value={formData.college}
-                      onChange={handleChange}
-                      placeholder="e.g. Anna University / SRM / VIT"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
-                      Degree &amp; Branch
-                    </label>
-                    <input
-                      type="text"
-                      name="degree"
-                      value={formData.degree}
-                      onChange={handleChange}
-                      placeholder="e.g. B.E CSE / B.Tech IT / M.Tech"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-[#101D38] mb-1">
-                      Project Technical Domain (16 Domains)
-                    </label>
-                    <select
-                      name="category"
-                      value={formData.category}
-                      onChange={handleChange}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
-                    >
-                      <option value="" className="bg-white text-[#101D38]">Select Domain...</option>
-                      {PROJECT_CATEGORIES.map((c) => (
-                        <option key={c} value={c} className="bg-white text-[#101D38]">
-                          {c}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
+                {/* Project Domain Selection */}
                 <div>
-                  <label className="block text-xs font-bold text-[#101D38] mb-1">
-                    Project Requirement / Title Idea
+                  <label className="block text-xs font-bold text-[#101D38] mb-1.5">
+                    Project Technical Domain (16 Domains)
                   </label>
-                  <input
-                    type="text"
-                    name="requirement"
-                    value={formData.requirement}
+                  <select
+                    name="category"
+                    value={formData.category}
                     onChange={handleChange}
-                    placeholder="e.g. Need Final Year Deep Learning X-Ray project with base paper & PPT"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
-                  />
+                    className="w-full px-4 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
+                  >
+                    <option value="" className="bg-white text-[#101D38]">Select Domain...</option>
+                    {PROJECT_CATEGORIES.map((c) => (
+                      <option key={c} value={c} className="bg-white text-[#101D38]">
+                        {c}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
+                {/* Project Requirement / Instructions */}
                 <div>
-                  <label className="block text-xs font-bold text-[#101D38] mb-1">
-                    Detailed Message or Guide Instructions
+                  <label className="block text-xs font-bold text-[#101D38] mb-1.5">
+                    Project Requirement / Topic Details <span className="text-[#F58216]">*</span>
                   </label>
                   <textarea
                     rows={4}
-                    name="message"
-                    value={formData.message}
+                    name="requirement"
+                    required
+                    value={formData.requirement}
                     onChange={handleChange}
-                    placeholder="Describe any specific guidelines, review deadlines, or tools requested by your college guide..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
+                    placeholder="Describe your project requirement, preferred IEEE year, or specific tools requested by your college guide..."
+                    className="w-full px-4 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
 
+                {/* Action Buttons */}
                 <div className="pt-2 flex flex-col sm:flex-row gap-3">
                   <a
                     href={GOOGLE_ENQUIRY_FORM_URL}
@@ -401,80 +328,22 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="py-3.5 px-5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] hover:border-[#F58216] text-[#101D38] hover:text-[#F58216] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    className="py-3.5 px-6 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] hover:border-[#F58216] text-[#101D38] hover:text-[#F58216] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   >
                     <MessageCircle className="w-4 h-4 text-[#F58216]" />
                     <span>WhatsApp Directly</span>
                   </button>
                 </div>
+
+                {/* Fast Response Assurance */}
+                <div className="pt-2 text-center">
+                  <p className="text-xs text-[#5A6B82] inline-flex items-center gap-2">
+                    <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
+                    <span>Average response time on WhatsApp &amp; Phone is <strong className="text-[#101D38] font-bold">under 15 minutes</strong> during working hours.</span>
+                  </p>
+                </div>
               </form>
             )}
-          </div>
-
-          {/* Right Column: Headquarters & Map Preview (2 Cols) */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Center Location Card */}
-            <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs space-y-4">
-              <div className="flex items-center justify-between pb-2 border-b border-[#DCE2EA]">
-                <div className="flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-[#F58216]" />
-                  <h3 className="text-base font-bold text-[#101D38]">UPWORKS</h3>
-                </div>
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] font-mono">
-                  <MapPin className="w-3 h-3 text-[#F58216]" />
-                  Chennai, Tamil Nadu
-                </span>
-              </div>
-              <p className="text-xs font-semibold text-[#101D38] leading-relaxed">
-                Chennai, Tamil Nadu
-              </p>
-              <div className="text-xs text-[#5A6B82] space-y-1">
-                <p>📍 Location: Chennai, Tamil Nadu, India</p>
-                <p>🚆 Remote &amp; Direct Mentorship Support Available</p>
-              </div>
-            </div>
-
-            {/* Interactive Styled Google Maps Card */}
-            <div className="rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] overflow-hidden shadow-xs relative group">
-              <div className="w-full h-64 sm:h-72 relative bg-[#F4F6FA]">
-                <iframe
-                  title="UPWORKS - Chennai, Tamil Nadu"
-                  src="https://maps.google.com/maps?q=Chennai,+Tamil+Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                <div className="absolute top-3 left-3 z-10 pointer-events-none">
-                  <div className="px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-xs border border-[#DCE2EA] shadow-xs flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
-                    <span className="text-xs font-bold text-[#101D38]">Chennai, Tamil Nadu</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-3.5 bg-[#FFFFFF] border-t border-[#DCE2EA] flex items-center justify-between">
-                <div className="text-left">
-                  <p className="text-xs font-bold text-[#101D38]">UPWORKS</p>
-                  <p className="text-[11px] text-[#F58216] font-mono">Chennai, Tamil Nadu</p>
-                </div>
-                <a
-                  href="https://maps.google.com/?q=Chennai,+Tamil+Nadu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] border border-[#DCE2EA] hover:border-[#F58216] text-[#101D38] hover:text-[#F58216] text-xs font-semibold flex items-center gap-1.5 transition-colors"
-                >
-                  <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3 h-3 text-[#F58216]" />
-                </a>
-              </div>
-            </div>
-
-            {/* Fast Response Badge */}
-            <div className="p-4 rounded-2xl bg-[#FFF5EB] border border-[#FED7AA] text-xs text-[#101D38] flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-[#F58216] shrink-0" />
-              <span>
-                Average response time on WhatsApp &amp; Phone is <strong className="text-[#F58216] font-bold">under 15 minutes</strong> during working hours.
-              </span>
-            </div>
           </div>
         </div>
 
