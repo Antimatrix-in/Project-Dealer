@@ -2,27 +2,37 @@
 
 @layer base {
   :root {
-    /* Upwork Project Center Official Production Design Palette */
-    --primary-green: #285A3B;
-    --primary-green-hover: #214930;
-    --accent-green: #315C3D;
-    --secondary-green: #497A52;
-    --soft-green: #DCE8D9;
-    --bg-main: #F5F1E7;
-    --bg-secondary: #EEE9DC;
-    --bg-card: #FFFFFF;
-    --primary-text: #1F2A22;
-    --secondary-text: #657166;
-    --border-color: #D8DDCF;
-    --footer-bg: #243B2C;
-    --footer-text: #F5F1E7;
+    /* UPWORKS Official Production Design Palette */
+    --navy-blue: #101D38;
+    --navy-hover: #1A2C50;
+    --orange: #F58216;
+    --orange-hover: #E0720F;
     --white: #FFFFFF;
+    --light-grey: #F4F6FA;
+    --slate: #263750;
+    --slate-muted: #5A6B82;
+    --light-border: #DCE2EA;
+
+    /* Theme Tokens Mapped to UPWORKS Brand Identity */
+    --primary-green: #101D38;
+    --primary-green-hover: #1A2C50;
+    --accent-green: #F58216;
+    --secondary-green: #263750;
+    --soft-green: #F4F6FA;
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F4F6FA;
+    --bg-card: #FFFFFF;
+    --primary-text: #101D38;
+    --secondary-text: #263750;
+    --border-color: #DCE2EA;
+    --footer-bg: #101D38;
+    --footer-text: #F4F6FA;
 
     /* Semantic tokens */
-    --background: #F5F1E7;
-    --background-secondary: #EEE9DC;
-    --foreground: #1F2A22;
-    --muted-text: #657166;
+    --background: #FFFFFF;
+    --background-secondary: #F4F6FA;
+    --foreground: #263750;
+    --muted-text: #5A6B82;
   }
 
   html {
@@ -32,63 +42,69 @@
   }
 
   body {
-    background-color: #F5F1E7;
-    color: #1F2A22;
+    background-color: #F4F6FA;
+    color: #263750;
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    selection-background-color: #285A3B;
+    selection-background-color: #F58216;
     selection-color: #FFFFFF;
   }
 }
 
-/* Custom Scrollbar for Neutral Sand Green Theme */
+/* Custom Scrollbar for Navy-Orange Theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F1E7;
+  background: #F4F6FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8DDCF;
+  background: #DCE2EA;
   border-radius: 9999px;
-  border: 2px solid #F5F1E7;
+  border: 2px solid #F4F6FA;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #DCE8D9;
+  background: #F58216;
 }
 
-/* Forest Green Heading & Accent Gradients */
+/* Navy & Orange Accent Text Utilities */
 .text-gradient-forest,
 .text-gradient-primary,
+.text-gradient-navy {
+  color: #101D38;
+}
+
 .text-gradient-orange,
 .text-gradient-orange-red,
 .text-gradient-gold {
-  background: linear-gradient(135deg, #285A3B 0%, #315C3D 50%, #497A52 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #F58216;
 }
 
 /* Background Gradients */
 .bg-gradient-forest,
 .bg-gradient-primary,
+.bg-gradient-navy {
+  background-color: #101D38;
+}
+
 .bg-gradient-orange,
 .bg-gradient-orange-red,
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #285A3B 0%, #315C3D 100%);
+  background-color: #F58216;
 }
 
-/* Primary Green Button */
+/* Primary Orange / Navy Buttons */
 .btn-primary-forest,
 .btn-primary-gradient,
 .btn-primary-orange,
 .btn-primary-orange-red,
 .btn-primary-gold {
-  background-color: #285A3B;
+  background-color: #F58216;
   color: #FFFFFF;
-  box-shadow: 0 2px 8px -1px rgba(40, 90, 59, 0.25);
+  box-shadow: 0 2px 8px -1px rgba(245, 130, 22, 0.25);
   transition: all 0.25s ease;
-  border: 1px solid #285A3B;
+  border: 1px solid #F58216;
 }
 
 .btn-primary-forest:hover,
@@ -96,49 +112,49 @@
 .btn-primary-orange:hover,
 .btn-primary-orange-red:hover,
 .btn-primary-gold:hover {
-  background-color: #214930;
-  box-shadow: 0 4px 14px -1px rgba(40, 90, 59, 0.35);
+  background-color: #E0720F;
+  box-shadow: 0 4px 14px -1px rgba(245, 130, 22, 0.35);
   transform: translateY(-1px);
 }
 
-/* Secondary Button (Neutral Sand / Cream) */
+/* Secondary Button (White / Navy Outline) */
 .btn-secondary-dark,
 .btn-secondary-neutral {
   background: #FFFFFF;
-  color: #1F2A22;
-  border: 1px solid #D8DDCF;
+  color: #101D38;
+  border: 1px solid #101D38;
   transition: all 0.25s ease;
 }
 .btn-secondary-dark:hover,
 .btn-secondary-neutral:hover {
-  background: #EEE9DC;
-  border-color: #285A3B;
-  color: #285A3B;
+  background: #101D38;
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-/* WhatsApp Button (Restrained Green styling) */
+/* WhatsApp Button (Clean Green/Navy styling) */
 .btn-whatsapp {
-  background-color: #285A3B;
+  background-color: #101D38;
   color: #FFFFFF;
-  border: 1px solid #285A3B;
-  box-shadow: 0 2px 10px 0 rgba(40, 90, 59, 0.2);
+  border: 1px solid #101D38;
+  box-shadow: 0 2px 10px 0 rgba(16, 29, 56, 0.2);
   transition: all 0.25s ease;
 }
 .btn-whatsapp:hover {
-  background-color: #214930;
-  box-shadow: 0 4px 16px 0 rgba(40, 90, 59, 0.3);
+  background-color: #F58216;
+  border-color: #F58216;
+  box-shadow: 0 4px 16px 0 rgba(245, 130, 22, 0.3);
   transform: translateY(-1px);
 }
 
-/* Theme Cards: White with Thin Neutral Borders & Soft Shadows */
+/* Theme Cards: White with Subtle Light Borders & Soft Shadows */
 .saas-card,
 .peach-card,
 .charcoal-card,
 .sand-card {
   background: #FFFFFF;
-  border: 1px solid #D8DDCF;
-  box-shadow: 0 1px 3px 0 rgba(31, 42, 34, 0.04), 0 1px 2px -1px rgba(31, 42, 34, 0.04);
+  border: 1px solid #DCE2EA;
+  box-shadow: 0 1px 3px 0 rgba(16, 29, 56, 0.04), 0 1px 2px -1px rgba(16, 29, 56, 0.04);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -146,28 +162,28 @@
 .peach-card:hover,
 .charcoal-card:hover,
 .sand-card:hover {
-  border-color: #285A3B;
-  box-shadow: 0 8px 24px -4px rgba(40, 90, 59, 0.08), 0 2px 6px -2px rgba(31, 42, 34, 0.04);
+  border-color: #F58216;
+  box-shadow: 0 8px 24px -4px rgba(16, 29, 56, 0.08), 0 2px 6px -2px rgba(16, 29, 56, 0.04);
   transform: translateY(-2px);
 }
 
 .saas-glass {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #D8DDCF;
+  border: 1px solid #DCE2EA;
 }
 
-/* Subtle Sand Grid & Hero Backgrounds */
+/* Subtle Grid & Hero Backgrounds */
 .bg-grid-subtle {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(40, 90, 59, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(40, 90, 59, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 29, 56, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 29, 56, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% 0%, rgba(220, 232, 217, 0.5) 0%, rgba(238, 233, 220, 0.4) 40%, #F5F1E7 80%);
+  background: radial-gradient(circle at 50% 0%, rgba(244, 246, 250, 0.9) 0%, rgba(255, 255, 255, 0.95) 60%, #FFFFFF 100%);
 }
 
 @keyframes floatElement {

@@ -88,19 +88,19 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-[#EEE9DC] border-y border-[#DDDCCF] relative">
+    <section className="py-24 bg-white border-y border-[#DCE2EA] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
-            <span className="uppercase tracking-wider text-[11px] font-bold">The Upwork Project Center Standard</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-xs font-semibold text-[#F58216] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
+            <span className="uppercase tracking-wider text-[11px] font-bold">The UPWORKS Standard</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Why Choose <span className="text-[#315C3D]">Upwork Project Center</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101D38] tracking-tight">
+            Why Choose <span className="text-[#F58216]">UPWORKS</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#263750] leading-relaxed">
             We provide a startup-grade technology foundation and viva defense ecosystem that guarantees seamless project completion.
           </p>
         </div>
@@ -114,11 +114,11 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="group relative rounded-[16px] bg-[#FFFFFF] border border-[#DDDCCF] shadow-xs hover:shadow-md hover:border-[#315C3D] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
+              className="group relative rounded-[16px] bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs hover:shadow-md hover:border-[#F58216] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden h-full"
             >
               <div className="flex flex-col flex-1">
                 {/* Banner Image */}
-                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#EEE9DC]">
+                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#F4F6FA]">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -133,7 +133,7 @@ export default function WhyChooseUs() {
 
                   {/* Floating Badge */}
                   <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFFFF]/95 text-[#315C3D] font-mono shadow-xs border border-[#DDDCCF] backdrop-blur-xs">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFFFF]/95 text-[#F58216] font-mono shadow-xs border border-[#DCE2EA] backdrop-blur-xs">
                       {item.badge}
                     </span>
                   </div>
@@ -141,23 +141,23 @@ export default function WhyChooseUs() {
 
                 {/* Card Content */}
                 <div className="p-6 sm:p-7 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-[#202820] mb-2.5 group-hover:text-[#315C3D] transition-colors leading-snug">
+                  <h3 className="text-xl font-bold text-[#101D38] mb-2.5 group-hover:text-[#F58216] transition-colors leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-[#202820] font-medium leading-relaxed mb-2.5">
+                  <p className="text-sm text-[#101D38] font-medium leading-relaxed mb-2.5">
                     {item.desc}
                   </p>
 
-                  <p className="text-xs text-[#667064] leading-relaxed mb-5">
+                  <p className="text-xs text-[#5A6B82] leading-relaxed mb-5">
                     {item.details}
                   </p>
 
                   {/* Benefits Checklist */}
-                  <div className="mt-auto pt-4 border-t border-[#DDDCCF] space-y-2">
+                  <div className="mt-auto pt-4 border-t border-[#DCE2EA] space-y-2">
                     {item.benefits.map((benefit, bIdx) => (
-                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#667064]">
-                        <CheckCircle2 className="w-4 h-4 text-[#315C3D] shrink-0" />
+                      <div key={bIdx} className="flex items-center gap-2 text-xs font-semibold text-[#263750]">
+                        <CheckCircle2 className="w-4 h-4 text-[#F58216] shrink-0" />
                         <span>{benefit}</span>
                       </div>
                     ))}

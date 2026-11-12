@@ -70,35 +70,35 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 sm:pt-36 pb-16 bg-[#F5F1E7] flex flex-col justify-center items-center px-4 relative overflow-hidden text-[#1F2A22]">
-      {/* Background Subtle Sand/Green Accents */}
-      <div className="absolute top-10 right-1/4 w-96 h-96 bg-[#DCE8D9]/40 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-[#EEE9DC]/80 rounded-full blur-[100px] pointer-events-none" />
+    <div className="min-h-screen pt-32 sm:pt-36 pb-16 bg-[#F4F6FA] flex flex-col justify-center items-center px-4 relative overflow-hidden text-[#263750]">
+      {/* Background Subtle Accents */}
+      <div className="absolute top-10 right-1/4 w-96 h-96 bg-[#101D38]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-[#F58216]/10 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Back to Home Link */}
       <div className="w-full max-w-md mb-4 flex justify-between items-center text-xs">
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-[#667064] hover:text-[#315C3D] font-semibold transition-colors"
+          className="inline-flex items-center gap-1.5 text-[#5A6B82] hover:text-[#101D38] font-semibold transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Main Website</span>
         </Link>
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] font-mono text-[11px] font-bold">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] font-mono text-[11px] font-bold">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#F58216]" />
           Secure Gateway
         </span>
       </div>
 
       {/* Login Card */}
-      <div className="w-full max-w-md bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] shadow-xl p-8 sm:p-10 relative z-10">
+      <div className="w-full max-w-md bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] shadow-xl p-8 sm:p-10 relative z-10">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="inline-block mb-4 p-2.5 rounded-2xl bg-[#EEE9DC]/70 border border-[#DDDCCF]">
+          <div className="inline-block mb-4 p-2.5 rounded-2xl bg-white border border-[#DCE2EA]">
             <div className="relative h-8 w-auto flex items-center justify-center">
               <Image
-                src="/images/upwork-project-center-logo.png"
-                alt="Upwork Project Center Official Logo"
+                src="/images/upworks-logo.png"
+                alt="UPWORKS – Project Development Services"
                 width={170}
                 height={36}
                 className="h-8 w-auto object-contain mx-auto"
@@ -106,18 +106,18 @@ export default function AdminLoginPage() {
               />
             </div>
           </div>
-          <h1 className="text-2xl font-black text-[#202820] tracking-tight">
-            Administrator <span className="text-[#315C3D]">Login</span>
+          <h1 className="text-2xl font-black text-[#101D38] tracking-tight">
+            Administrator <span className="text-[#F58216]">Login</span>
           </h1>
-          <p className="mt-1.5 text-xs text-[#667064]">
+          <p className="mt-1.5 text-xs text-[#5A6B82]">
             Authorized portal for project consultations and student inquiries management.
           </p>
         </div>
 
         {/* Error Alert Message */}
         {errorMessage && (
-          <div className="mb-6 p-3.5 rounded-xl bg-[#FFFFFF] border border-[#315C3D]/40 text-[#202820] text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
-            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-[#315C3D]" />
+          <div className="mb-6 p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
+            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
             <span className="leading-relaxed font-medium">{errorMessage}</span>
           </div>
         )}
@@ -126,11 +126,11 @@ export default function AdminLoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Username Field */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#202820] font-mono mb-1.5">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#101D38] font-mono mb-1.5">
               Username
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-[#5A6B82] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 required
@@ -140,7 +140,7 @@ export default function AdminLoginPage() {
                 placeholder="Enter administrator username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-sm text-[#202820] placeholder-[#667064]/70 focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-sm text-[#101D38] placeholder-slate-400 focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216] transition-all"
               />
             </div>
           </div>
@@ -148,12 +148,12 @@ export default function AdminLoginPage() {
           {/* Password Field */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#202820] font-mono">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#101D38] font-mono">
                 Password
               </label>
             </div>
             <div className="relative">
-              <Lock className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Lock className="w-4 h-4 text-[#5A6B82] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type={showPassword ? "text" : "password"}
                 required
@@ -163,13 +163,13 @@ export default function AdminLoginPage() {
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-sm text-[#202820] placeholder-[#667064]/70 focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-all"
+                className="w-full pl-10 pr-11 py-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-sm text-[#101D38] placeholder-slate-400 focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216] transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? "Hide password" : "Show password"}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#667064] hover:text-[#315C3D] transition-colors cursor-pointer"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#5A6B82] hover:text-[#F58216] transition-colors cursor-pointer"
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -182,7 +182,7 @@ export default function AdminLoginPage() {
               type="submit"
               disabled={loading}
               id="admin-login-submit"
-              className="w-full py-3.5 px-5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 border border-[#315C3D]"
+              className="w-full py-3.5 px-5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 border border-[#F58216]"
             >
               {loading ? (
                 <>
@@ -200,8 +200,8 @@ export default function AdminLoginPage() {
         </form>
 
         {/* Footer Security Badge */}
-        <div className="mt-8 pt-6 border-t border-[#DDDCCF] flex items-center justify-center gap-2 text-[11px] text-[#667064]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D]" />
+        <div className="mt-8 pt-6 border-t border-[#DCE2EA] flex items-center justify-center gap-2 text-[11px] text-[#5A6B82]">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#F58216]" />
           <span>Encrypted Session • HMAC Token Signed • Rate-Limited</span>
         </div>
       </div>

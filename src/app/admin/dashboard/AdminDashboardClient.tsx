@@ -595,31 +595,31 @@ export default function AdminDashboardClient({
     const s = source || (id && id.startsWith("PE-") ? "Project Enquiry" : id && id.startsWith("REQ-") ? "Custom Requirement" : "Consultation Request");
     if (s === "Custom Requirement") {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#254930] border border-[#315C3D]">
-          <Sparkles className="w-3 h-3 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#FFF5EB] text-[#E0720F] border border-[#F58216]">
+          <Sparkles className="w-3 h-3 text-[#F58216]" />
           <span>Custom Requirement</span>
         </span>
       );
     }
     if (s === "Project Enquiry") {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
-          <ClipboardList className="w-3 h-3 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA]">
+          <ClipboardList className="w-3 h-3 text-[#F58216]" />
           <span>Project Enquiry</span>
         </span>
       );
     }
     if (s === "General Website Contact") {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]">
-          <Mail className="w-3 h-3 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#F4F6FA] text-[#101D38] border border-[#DCE2EA]">
+          <Mail className="w-3 h-3 text-[#F58216]" />
           <span>Website Contact</span>
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#F5F1E7] text-[#667064] border border-[#DDDCCF]">
-        <Users className="w-3 h-3 text-[#315C3D]" />
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#F4F6FA] text-[#5A6B82] border border-[#DCE2EA]">
+        <Users className="w-3 h-3 text-[#F58216]" />
         <span>Consultation</span>
       </span>
     );
@@ -629,15 +629,15 @@ export default function AdminDashboardClient({
     const isProjectSpecific = inq.enquiryType === "Project Specific" || Boolean(inq.projectCode);
     if (isProjectSpecific) {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
-          <Layers className="w-3 h-3 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA]">
+          <Layers className="w-3 h-3 text-[#F58216]" />
           <span>Project Specific</span>
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]">
-        <Tag className="w-3 h-3 text-[#315C3D]" />
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#F4F6FA] text-[#101D38] border border-[#DCE2EA]">
+        <Tag className="w-3 h-3 text-[#F58216]" />
         <span>General Domain</span>
       </span>
     );
@@ -647,23 +647,23 @@ export default function AdminDashboardClient({
     const vStatus = inq.verificationStatus || (inq.isSpam ? "Spam" : "Verified");
     if (vStatus === "Spam") {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#202820] text-[#FFFFFF] border border-[#DDDCCF]">
-          <ShieldAlert className="w-3.5 h-3.5 text-[#DDDCCF]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#101D38] text-[#FFFFFF] border border-[#DCE2EA]">
+          <ShieldAlert className="w-3.5 h-3.5 text-[#DCE2EA]" />
           <span>Spam / Bot</span>
         </span>
       );
     }
     if (vStatus === "Suspicious") {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]">
-          <AlertTriangle className="w-3.5 h-3.5 text-[#315C3D]" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#F4F6FA] text-[#101D38] border border-[#DCE2EA]">
+          <AlertTriangle className="w-3.5 h-3.5 text-[#F58216]" />
           <span>Suspicious ({inq.spamScore || 50}% Flag)</span>
         </span>
       );
     }
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D] border border-[#DCE8D9]">
-        <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D]" />
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#FFF5EB] text-[#F58216] border border-[#FFF5EB]">
+        <ShieldCheck className="w-3.5 h-3.5 text-[#F58216]" />
         <span>Verified Genuine Student</span>
       </span>
     );
@@ -681,21 +681,21 @@ export default function AdminDashboardClient({
       label: "Consultation Management",
       icon: Users,
       badge: consultationStats.pending > 0 ? `${consultationStats.pending} pending` : null,
-      badgeClass: "bg-[#DCE8D9] text-[#315C3D]",
+      badgeClass: "bg-[#FFF5EB] text-[#F58216]",
     },
     {
       id: "projects" as TabType,
       label: "Project Management",
       icon: Layers,
       badge: `${projectsList.length} active`,
-      badgeClass: "bg-[#EEE9DC] text-[#667064]",
+      badgeClass: "bg-[#F4F6FA] text-[#5A6B82]",
     },
     {
       id: "enquiries" as TabType,
       label: "Website Enquiries",
       icon: Mail,
       badge: `${stats.total}`,
-      badgeClass: "bg-[#EEE9DC] text-[#667064]",
+      badgeClass: "bg-[#F4F6FA] text-[#5A6B82]",
     },
     {
       id: "account" as TabType,
@@ -706,11 +706,11 @@ export default function AdminDashboardClient({
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F1E7] text-[#202820] flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[#F4F6FA] text-[#101D38] flex flex-col lg:flex-row">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-[#315C3D] text-white text-xs font-semibold shadow-2xl flex items-center gap-2 border border-[#DCE8D9] animate-in fade-in slide-in-from-bottom-2">
-          <Check className="w-4 h-4 text-[#DCE8D9]" />
+        <div className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-[#F58216] text-white text-xs font-semibold shadow-2xl flex items-center gap-2 border border-[#FFF5EB] animate-in fade-in slide-in-from-bottom-2">
+          <Check className="w-4 h-4 text-[#FFF5EB]" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -725,18 +725,18 @@ export default function AdminDashboardClient({
 
       {/* Sidebar (Desktop & Mobile Drawer) */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#FFFFFF] border-r border-[#DDDCCF] flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:w-72 lg:min-h-screen shrink-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#FFFFFF] border-r border-[#DCE2EA] flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:w-72 lg:min-h-screen shrink-0 ${
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Sidebar Header */}
-          <div className="p-6 border-b border-[#DDDCCF] flex items-center justify-between">
+          <div className="p-6 border-b border-[#DCE2EA] flex items-center justify-between">
             <Link href="/" className="inline-block" onClick={() => setMobileSidebarOpen(false)}>
               <div className="relative h-8 w-auto flex items-center">
                 <Image
-                  src="/images/upwork-project-center-logo.png"
-                  alt="Upwork Project Center Official Logo"
+                  src="/images/upworks-logo.png"
+                  alt="UPWORKS – Project Development Services"
                   width={150}
                   height={32}
                   className="h-7 w-auto object-contain"
@@ -746,19 +746,19 @@ export default function AdminDashboardClient({
             </Link>
             <button
               onClick={() => setMobileSidebarOpen(false)}
-              className="p-1 rounded-lg hover:bg-[#EEE9DC] text-[#667064] lg:hidden"
+              className="p-1 rounded-lg hover:bg-[#F4F6FA] text-[#5A6B82] lg:hidden"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
           {/* Admin Tag */}
-          <div className="px-6 py-3.5 bg-[#EEE9DC]/60 border-b border-[#DDDCCF] flex items-center justify-between">
-            <span className="text-[11px] font-mono font-bold uppercase text-[#315C3D] flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#315C3D]" />
+          <div className="px-6 py-3.5 bg-[#F4F6FA]/60 border-b border-[#DCE2EA] flex items-center justify-between">
+            <span className="text-[11px] font-mono font-bold uppercase text-[#F58216] flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#F58216]" />
               Admin Portal
             </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#DCE8D9] text-[#315C3D] font-semibold border border-[#DDDCCF]">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#FFF5EB] text-[#F58216] font-semibold border border-[#DCE2EA]">
               v2.5 • 16 Domains
             </span>
           </div>
@@ -777,12 +777,12 @@ export default function AdminDashboardClient({
                   }}
                   className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     isActive
-                      ? "bg-[#315C3D] text-white shadow-sm"
-                      : "text-[#667064] hover:bg-[#EEE9DC] hover:text-[#202820]"
+                      ? "bg-[#101D38] text-white shadow-sm"
+                      : "text-[#5A6B82] hover:bg-[#F4F6FA] hover:text-[#101D38]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-[#315C3D]"}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? "text-[#F58216]" : "text-[#101D38]"}`} />
                     <span>{item.label}</span>
                   </div>
                   {item.badge && (
@@ -800,29 +800,29 @@ export default function AdminDashboardClient({
           </nav>
 
           {/* Sidebar Footer */}
-          <div className="p-4 border-t border-[#DDDCCF] bg-[#FFFFFF] space-y-3">
+          <div className="p-4 border-t border-[#DCE2EA] bg-[#FFFFFF] space-y-3">
             <Link
               href="/"
               target="_blank"
-              className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-xs font-semibold text-[#202820] transition-colors"
+              className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-xs font-semibold text-[#101D38] transition-colors"
             >
               <span className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#315C3D]" />
+                <Globe className="w-4 h-4 text-[#F58216]" />
                 <span>View Public Website</span>
               </span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#667064]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#5A6B82]" />
             </Link>
 
-            <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
+            <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
               <div className="min-w-0 pr-2">
-                <span className="text-[10px] text-[#667064] block font-mono">Logged in</span>
-                <p className="text-xs font-bold text-[#202820] truncate">{adminEmail}</p>
+                <span className="text-[10px] text-[#5A6B82] block font-mono">Logged in</span>
+                <p className="text-xs font-bold text-[#101D38] truncate">{adminEmail}</p>
               </div>
               <button
                 onClick={handleLogout}
                 disabled={loggingOut}
                 title="Logout"
-                className="p-2 rounded-lg bg-[#FFFFFF] hover:bg-[#DCE8D9] text-[#667064] hover:text-[#315C3D] border border-[#DDDCCF] transition-colors cursor-pointer shrink-0"
+                className="p-2 rounded-lg bg-[#FFFFFF] hover:bg-[#FFF5EB] text-[#5A6B82] hover:text-[#F58216] border border-[#DCE2EA] transition-colors cursor-pointer shrink-0"
               >
                 <LogOut className="w-4 h-4" />
               </button>
@@ -834,25 +834,25 @@ export default function AdminDashboardClient({
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Navbar */}
-        <header className="sticky top-0 z-30 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DDDCCF] px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-30 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DCE2EA] px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setMobileSidebarOpen(true)}
-              className="p-2 rounded-xl bg-[#EEE9DC] text-[#202820] hover:bg-[#DCE8D9] lg:hidden cursor-pointer"
+              className="p-2 rounded-xl bg-[#F4F6FA] text-[#101D38] hover:bg-[#FFF5EB] lg:hidden cursor-pointer"
               aria-label="Open sidebar"
             >
               <Menu className="w-5 h-5" />
             </button>
             <div>
-              <h1 className="text-lg sm:text-xl font-black text-[#202820] capitalize">
+              <h1 className="text-lg sm:text-xl font-black text-[#101D38] capitalize">
                 {activeTab === "overview" && "Dashboard Overview"}
                 {activeTab === "consultations" && "Consultation Requests"}
                 {activeTab === "projects" && "Technical Domains & Projects"}
                 {activeTab === "enquiries" && "Website Inquiries & Contact Forms"}
                 {activeTab === "account" && "Administrator Account & Security"}
               </h1>
-              <p className="text-xs text-[#667064] hidden sm:block">
-                Upwork Project Center Admin Suite • Official 16 Domains Single Source of Truth
+              <p className="text-xs text-[#5A6B82] hidden sm:block">
+                UPWORKS Admin Suite • Official 16 Domains Single Source of Truth
               </p>
             </div>
           </div>
@@ -862,7 +862,7 @@ export default function AdminDashboardClient({
               onClick={handleRefresh}
               disabled={refreshing}
               title="Refresh records"
-              className="p-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA] transition-colors cursor-pointer"
             >
               <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
             </button>
@@ -870,7 +870,7 @@ export default function AdminDashboardClient({
             <Link
               href="/projects"
               target="_blank"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-xs font-bold text-[#315C3D] border border-[#DDDCCF] transition-colors"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-xs font-bold text-[#F58216] border border-[#DCE2EA] transition-colors"
             >
               <span>Projects Catalog</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -880,7 +880,7 @@ export default function AdminDashboardClient({
               onClick={handleLogout}
               disabled={loggingOut}
               id="admin-top-logout-btn"
-              className="px-3.5 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+              className="px-3.5 py-2 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">{loggingOut ? "Signing out..." : "Logout"}</span>
@@ -894,30 +894,30 @@ export default function AdminDashboardClient({
           {activeTab === "overview" && (
             <div className="space-y-8 animate-in fade-in duration-200">
               {/* Welcome Banner */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="p-6 sm:p-8 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div className="space-y-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216]">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>Welcome back, Administrator</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-[#202820]">
-                    Upwork Project Center Operations Center
+                  <h2 className="text-2xl sm:text-3xl font-black text-[#101D38]">
+                    UPWORKS Operations Center
                   </h2>
-                  <p className="text-xs sm:text-sm text-[#667064] max-w-2xl">
+                  <p className="text-xs sm:text-sm text-[#5A6B82] max-w-2xl">
                     Review and coordinate final year engineering project consultations, verify IEEE project documentation pipelines, and monitor student requests across all 16 technical domains.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2.5 w-full md:w-auto">
                   <button
                     onClick={() => setActiveTab("consultations")}
-                    className="px-5 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+                    className="px-5 py-3 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Users className="w-4 h-4" />
                     <span>Manage Consultations</span>
                   </button>
                   <button
                     onClick={() => setActiveTab("projects")}
-                    className="px-5 py-3 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="px-5 py-3 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA] text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Layers className="w-4 h-4" />
                     <span>View {projectsList.length} Projects</span>
@@ -927,57 +927,57 @@ export default function AdminDashboardClient({
 
               {/* KPI Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm hover:border-[#F58216]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-[#667064] uppercase font-mono">Total Requests</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{stats.total}</p>
-                    <span className="text-[10px] text-[#667064] mt-1 block">All website form entries</span>
+                    <p className="text-[11px] font-bold text-[#5A6B82] uppercase font-mono">Total Requests</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#101D38] mt-1">{stats.total}</p>
+                    <span className="text-[10px] text-[#5A6B82] mt-1 block">All website form entries</span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#315C3D]">
+                  <div className="w-10 h-10 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-center text-[#F58216]">
                     <Users className="w-5 h-5" />
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm hover:border-[#F58216]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Verified Genuine</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{consultationStats.verified}</p>
-                    <span className="text-[10px] text-[#667064] mt-1 block">Passed bot checks</span>
+                    <p className="text-[11px] font-bold text-[#F58216] uppercase font-mono">Verified Genuine</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#F58216] mt-1">{consultationStats.verified}</p>
+                    <span className="text-[10px] text-[#5A6B82] mt-1 block">Passed bot checks</span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF5EB] border border-[#FFF5EB] flex items-center justify-center text-[#F58216]">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm hover:border-[#F58216]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-[#315C3D] uppercase font-mono">Pending Review</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#315C3D] mt-1">{consultationStats.pending}</p>
-                    <span className="text-[10px] text-[#667064] mt-1 block">Awaiting technical callback</span>
+                    <p className="text-[11px] font-bold text-[#F58216] uppercase font-mono">Pending Review</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#F58216] mt-1">{consultationStats.pending}</p>
+                    <span className="text-[10px] text-[#5A6B82] mt-1 block">Awaiting technical callback</span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#DCE8D9] border border-[#DCE8D9] flex items-center justify-center text-[#315C3D]">
+                  <div className="w-10 h-10 rounded-xl bg-[#FFF5EB] border border-[#FFF5EB] flex items-center justify-center text-[#F58216]">
                     <Clock className="w-5 h-5" />
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm hover:border-[#F58216]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-[#497A52] uppercase font-mono">In Progress</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#497A52] mt-1">{consultationStats.inProgress}</p>
-                    <span className="text-[10px] text-[#667064] mt-1 block">Guidance underway</span>
+                    <p className="text-[11px] font-bold text-[#F58216] uppercase font-mono">In Progress</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#F58216] mt-1">{consultationStats.inProgress}</p>
+                    <span className="text-[10px] text-[#5A6B82] mt-1 block">Guidance underway</span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#497A52]">
+                  <div className="w-10 h-10 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-center text-[#F58216]">
                     <RefreshCw className="w-5 h-5" />
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm hover:border-[#315C3D]/40 transition-all flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm hover:border-[#F58216]/40 transition-all flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-[#202820] uppercase font-mono">Bot / Spam Flagged</p>
-                    <p className="text-2xl sm:text-3xl font-black text-[#202820] mt-1">{consultationStats.suspicious + consultationStats.spam}</p>
-                    <span className="text-[10px] text-[#667064] mt-1 block">Isolated by honeypot/rate</span>
+                    <p className="text-[11px] font-bold text-[#101D38] uppercase font-mono">Bot / Spam Flagged</p>
+                    <p className="text-2xl sm:text-3xl font-black text-[#101D38] mt-1">{consultationStats.suspicious + consultationStats.spam}</p>
+                    <span className="text-[10px] text-[#5A6B82] mt-1 block">Isolated by honeypot/rate</span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-[#EEE9DC] border border-[#DDDCCF] flex items-center justify-center text-[#202820]">
+                  <div className="w-10 h-10 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-center text-[#101D38]">
                     <ShieldAlert className="w-5 h-5" />
                   </div>
                 </div>
@@ -985,15 +985,15 @@ export default function AdminDashboardClient({
 
               {/* Two Column Layout: Recent Requests & Technical Domains Snapshot */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-[#DDDCCF]">
+                <div className="lg:col-span-2 p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#DCE2EA]">
                     <div>
-                      <h3 className="text-base font-bold text-[#202820]">Recent Consultation Inquiries</h3>
-                      <p className="text-xs text-[#667064]">Latest submissions requiring coordinator action</p>
+                      <h3 className="text-base font-bold text-[#101D38]">Recent Consultation Inquiries</h3>
+                      <p className="text-xs text-[#5A6B82]">Latest submissions requiring coordinator action</p>
                     </div>
                     <button
                       onClick={() => setActiveTab("consultations")}
-                      className="text-xs font-bold text-[#315C3D] hover:underline flex items-center gap-1 cursor-pointer"
+                      className="text-xs font-bold text-[#F58216] hover:underline flex items-center gap-1 cursor-pointer"
                     >
                       <span>View All ({consultationRequestsList.length})</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -1004,35 +1004,35 @@ export default function AdminDashboardClient({
                     {consultationRequestsList.slice(0, 4).map((inq) => (
                       <div
                         key={inq.id}
-                        className="p-4 rounded-2xl bg-[#F5F1E7] border border-[#DDDCCF] hover:border-[#315C3D]/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+                        className="p-4 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EA] hover:border-[#F58216]/40 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
                       >
                         <div className="space-y-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-mono font-bold text-[11px] px-2 py-0.5 rounded-lg bg-[#202820] text-white">
+                            <span className="font-mono font-bold text-[11px] px-2 py-0.5 rounded-lg bg-[#101D38] text-white">
                               {inq.id}
                             </span>
-                            <span className="text-xs font-bold text-[#202820] truncate">{inq.name}</span>
+                            <span className="text-xs font-bold text-[#101D38] truncate">{inq.name}</span>
                             {renderSourceBadge(inq.source, inq.id)}
                             {renderEnquiryTypeBadge(inq)}
                             <span
                               className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
                                 inq.status === "New"
-                                  ? "bg-[#315C3D] text-white"
+                                  ? "bg-[#F58216] text-white"
                                   : inq.status === "Pending"
-                                  ? "bg-[#DCE8D9] text-[#315C3D]"
+                                  ? "bg-[#FFF5EB] text-[#F58216]"
                                   : inq.status === "In Progress"
-                                  ? "bg-[#EEE9DC] text-[#497A52]"
-                                  : "bg-white text-[#202820] border border-[#DDDCCF]"
+                                  ? "bg-[#F4F6FA] text-[#F58216]"
+                                  : "bg-white text-[#101D38] border border-[#DCE2EA]"
                               }`}
                             >
                               {inq.status}
                             </span>
                           </div>
-                          <p className="text-xs text-[#315C3D] font-semibold truncate">
+                          <p className="text-xs text-[#F58216] font-semibold truncate">
                             {inq.domainCode ? `[${inq.domainCode}] ` : ""}
                             {inq.projectDomain || inq.domainName || inq.projectTitle}
                           </p>
-                          <p className="text-[11px] text-[#667064] truncate">
+                          <p className="text-[11px] text-[#5A6B82] truncate">
                             {inq.college || "Academic Student"} • WhatsApp: {inq.whatsappNumber || inq.phone}
                           </p>
                         </div>
@@ -1040,7 +1040,7 @@ export default function AdminDashboardClient({
                         <div className="flex items-center gap-2 shrink-0">
                           <button
                             onClick={() => setSelectedInquiry(inq)}
-                            className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-xs font-bold text-[#202820] transition-colors cursor-pointer"
+                            className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-bold text-[#101D38] transition-colors cursor-pointer"
                           >
                             Details
                           </button>
@@ -1048,7 +1048,7 @@ export default function AdminDashboardClient({
                             href={`https://wa.me/${(inq.whatsappNumber || inq.phone).replace(/[^0-9]/g, "")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center gap-1 transition-colors"
+                            className="px-3 py-1.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold flex items-center gap-1 transition-colors"
                           >
                             <MessageCircle className="w-3.5 h-3.5" />
                             <span>WhatsApp</span>
@@ -1061,45 +1061,45 @@ export default function AdminDashboardClient({
 
                 <div className="space-y-6">
                   {/* System Architecture Card */}
-                  <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                    <h3 className="text-base font-bold text-[#202820] flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-[#315C3D]" />
+                  <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                    <h3 className="text-base font-bold text-[#101D38] flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-[#F58216]" />
                       <span>Security Architecture</span>
                     </h3>
                     <div className="space-y-2.5 text-xs">
-                      <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
-                        <span className="text-[#667064]">Auth Scheme:</span>
-                        <span className="font-bold font-mono text-[#315C3D]">bcrypt (12 rounds)</span>
+                      <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
+                        <span className="text-[#5A6B82]">Auth Scheme:</span>
+                        <span className="font-bold font-mono text-[#F58216]">bcrypt (12 rounds)</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
-                        <span className="text-[#667064]">Session Mode:</span>
-                        <span className="font-bold font-mono text-[#315C3D]">HMAC Signed Cookie</span>
+                      <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
+                        <span className="text-[#5A6B82]">Session Mode:</span>
+                        <span className="font-bold font-mono text-[#F58216]">HMAC Signed Cookie</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
-                        <span className="text-[#667064]">Sequential Codes:</span>
-                        <span className="font-bold font-mono text-[#315C3D]">Domain-Independent</span>
+                      <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
+                        <span className="text-[#5A6B82]">Sequential Codes:</span>
+                        <span className="font-bold font-mono text-[#F58216]">Domain-Independent</span>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
-                        <span className="text-[#667064]">Storage Model:</span>
-                        <span className="font-bold font-mono text-[#315C3D]">Preserved Store File</span>
+                      <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
+                        <span className="text-[#5A6B82]">Storage Model:</span>
+                        <span className="font-bold font-mono text-[#F58216]">Preserved Store File</span>
                       </div>
                     </div>
                   </div>
 
                   {/* 16 Domains Summary */}
-                  <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-3">
+                  <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-base font-bold text-[#202820]">16 Technical Domains</h3>
-                      <span className="text-[11px] font-mono font-bold text-[#315C3D]">
+                      <h3 className="text-base font-bold text-[#101D38]">16 Technical Domains</h3>
+                      <span className="text-[11px] font-mono font-bold text-[#F58216]">
                         {projectsList.length} Projects Total
                       </span>
                     </div>
-                    <p className="text-xs text-[#667064]">
+                    <p className="text-xs text-[#5A6B82]">
                       All 16 official technical domains are actively maintained with independent sequential codes (e.g. AMPY, AMJV, AMML).
                     </p>
                     <button
                       onClick={() => setActiveTab("projects")}
-                      className="w-full py-2.5 px-4 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] font-bold text-xs border border-[#DDDCCF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                      className="w-full py-2.5 px-4 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#F58216] font-bold text-xs border border-[#DCE2EA] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <span>Manage Domains &amp; Projects</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1114,41 +1114,41 @@ export default function AdminDashboardClient({
           {activeTab === "consultations" && (
             <div className="space-y-6 animate-in fade-in duration-200">
               {/* Header Card with Real-Time Statistics */}
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2 font-mono">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216] mb-2 font-mono">
                     <Users className="w-3.5 h-3.5" />
                     <span>Academic Consultations Desk • Verified Records</span>
                   </div>
-                  <h2 className="text-xl font-black text-[#202820]">
+                  <h2 className="text-xl font-black text-[#101D38]">
                     Consultation Management
                   </h2>
-                  <p className="text-xs text-[#667064] mt-1">
+                  <p className="text-xs text-[#5A6B82] mt-1">
                     Review and coordinate final year engineering project consultations, verify IEEE project documentation pipelines, and assign dedicated coordinators.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1.5 rounded-xl bg-[#DCE8D9] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFF5EB] text-[#F58216] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {consultationStats.total} Total Consultations
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#EEE9DC] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#F4F6FA] text-[#101D38] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {consultationStats.pending} Pending Review
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#F58216] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {consultationStats.inProgress} In Progress
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#101D38] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {consultationStats.completed} Completed
                   </span>
                 </div>
               </div>
 
               {/* Multi-Filter & Search Toolbar */}
-              <div className="p-5 sm:p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
+              <div className="p-5 sm:p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
                 <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
                   <div className="relative flex-1">
-                    <Search className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Search className="w-4 h-4 text-[#5A6B82] absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search student name, email, phone, college, or project title..."
@@ -1157,7 +1157,7 @@ export default function AdminDashboardClient({
                         setConsultationSearchQuery(e.target.value);
                         setConsultationPage(1);
                       }}
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-colors"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] placeholder-[#5A6B82] focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216] transition-colors"
                     />
                   </div>
 
@@ -1168,7 +1168,7 @@ export default function AdminDashboardClient({
                         setConsultationDomainFilter(e.target.value);
                         setConsultationPage(1);
                       }}
-                      className="px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] focus:outline-none focus:border-[#315C3D] cursor-pointer"
+                      className="px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-medium text-[#101D38] focus:outline-none focus:border-[#F58216] cursor-pointer"
                     >
                       <option value="All">All 16 Technical Domains</option>
                       {dynamicDomains.map((d) => (
@@ -1182,16 +1182,16 @@ export default function AdminDashboardClient({
                       onClick={handleRefresh}
                       disabled={refreshing}
                       title="Refresh inquiries"
-                      className="p-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] transition-colors cursor-pointer"
+                      className="p-2.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] border border-[#DCE2EA] text-[#F58216] transition-colors cursor-pointer"
                     >
                       <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
                     </button>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DCE2EA] text-xs">
                   <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-                    <span className="text-[#667064] font-mono mr-1">Status:</span>
+                    <span className="text-[#5A6B82] font-mono mr-1">Status:</span>
                     {[
                       { id: "All", label: "All", count: consultationStats.total },
                       { id: "Pending", label: "Pending", count: consultationStats.pending },
@@ -1209,20 +1209,20 @@ export default function AdminDashboardClient({
                         }}
                         className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                           consultationStatusFilter === status.id
-                            ? "bg-[#315C3D] text-white shadow-xs"
-                            : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                            ? "bg-[#F58216] text-white shadow-xs"
+                            : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                         }`}
                       >
                         <span>{status.label}</span>
-                        <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${consultationStatusFilter === status.id ? "bg-white/20 text-white" : "bg-[#DDDCCF] text-[#202820]"}`}>
+                        <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${consultationStatusFilter === status.id ? "bg-white/20 text-white" : "bg-[#DCE2EA] text-[#101D38]"}`}>
                           {status.count}
                         </span>
                       </button>
                     ))}
                   </div>
 
-                  <span className="text-xs text-[#667064]">
-                    Showing <strong className="text-[#202820]">{filteredConsultations.length}</strong> of{" "}
+                  <span className="text-xs text-[#5A6B82]">
+                    Showing <strong className="text-[#101D38]">{filteredConsultations.length}</strong> of{" "}
                     {consultationRequestsList.length} consultations
                   </span>
                 </div>
@@ -1232,16 +1232,16 @@ export default function AdminDashboardClient({
                 <div className="space-y-4">
                   {paginatedConsultations.map((inq) => {
                     const actualWa = (inq.whatsappNumber || inq.phone).replace(/[^0-9]/g, "");
-                    const waLink = `https://wa.me/${actualWa.startsWith("91") ? actualWa : "91" + actualWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your Upwork Project Center project consultation for "${inq.projectTitle || inq.domainName || inq.projectDomain}":`)}`;
+                    const waLink = `https://wa.me/${actualWa.startsWith("91") ? actualWa : "91" + actualWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your UPWORKS project consultation for "${inq.projectTitle || inq.domainName || inq.projectDomain}":`)}`;
 
                     return (
                       <div
                         key={inq.id}
-                        className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D]/40 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 transition-all"
+                        className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] hover:border-[#F58216]/40 shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 transition-all"
                       >
                         <div className="space-y-3 flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#202820] text-white">
+                            <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#101D38] text-white">
                               {inq.id}
                             </span>
                             {renderSourceBadge(inq.source, inq.id)}
@@ -1250,14 +1250,14 @@ export default function AdminDashboardClient({
                             <span
                               className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full ${
                                 inq.status === "New"
-                                  ? "bg-[#315C3D] text-white"
+                                  ? "bg-[#F58216] text-white"
                                   : inq.status === "Pending"
-                                  ? "bg-[#DCE8D9] text-[#315C3D]"
+                                  ? "bg-[#FFF5EB] text-[#F58216]"
                                   : inq.status === "In Progress"
-                                  ? "bg-[#EEE9DC] text-[#497A52]"
+                                  ? "bg-[#F4F6FA] text-[#F58216]"
                                   : inq.status === "Completed"
-                                  ? "bg-[#FFFFFF] text-[#315C3D] border border-[#315C3D]"
-                                  : "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
+                                  ? "bg-[#FFFFFF] text-[#F58216] border border-[#F58216]"
+                                  : "bg-[#FFFFFF] text-[#101D38] border border-[#DCE2EA]"
                               }`}
                             >
                               ● {inq.status}
@@ -1265,16 +1265,16 @@ export default function AdminDashboardClient({
                           </div>
 
                           <div>
-                            <h3 className="text-base font-bold text-[#202820]">{inq.name}</h3>
-                            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#667064] mt-0.5">
+                            <h3 className="text-base font-bold text-[#101D38]">{inq.name}</h3>
+                            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#5A6B82] mt-0.5">
                               {inq.college && (
                                 <span className="flex items-center gap-1">
-                                  <Building2 className="w-3.5 h-3.5 text-[#315C3D]" />
+                                  <Building2 className="w-3.5 h-3.5 text-[#F58216]" />
                                   <span>{inq.college}</span>
                                 </span>
                               )}
                               {(inq.department || inq.degree) && (
-                                <span className="flex items-center gap-1 text-[#315C3D] font-semibold">
+                                <span className="flex items-center gap-1 text-[#F58216] font-semibold">
                                   <GraduationCap className="w-3.5 h-3.5" />
                                   <span>{inq.department || inq.degree}</span>
                                 </span>
@@ -1282,50 +1282,50 @@ export default function AdminDashboardClient({
                             </div>
                           </div>
 
-                          <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1 text-xs">
-                            <span className="font-bold text-[#315C3D] flex items-center gap-1.5 font-mono">
+                          <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1 text-xs">
+                            <span className="font-bold text-[#F58216] flex items-center gap-1.5 font-mono">
                               <Layers className="w-3.5 h-3.5" />
                               <span>Domain: {inq.domainCode ? `${inq.domainCode} • ` : ""}{inq.domainName || inq.projectDomain || inq.category}</span>
                             </span>
                             {inq.projectCode && (
-                              <p className="font-mono font-bold text-[#202820]">
+                              <p className="font-mono font-bold text-[#101D38]">
                                 Target Project Code: {inq.projectCode}
                               </p>
                             )}
                             {inq.projectTitle && inq.projectTitle !== (inq.projectDomain || inq.domainName) && (
-                              <p className="font-semibold text-[#202820] truncate">
+                              <p className="font-semibold text-[#101D38] truncate">
                                 Topic: {inq.projectTitle}
                               </p>
                             )}
                             {inq.requirement && (
-                              <p className="text-[#667064] text-[11px] line-clamp-2">
+                              <p className="text-[#5A6B82] text-[11px] line-clamp-2">
                                 Requirement: {inq.requirement}
                               </p>
                             )}
                           </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end gap-3 shrink-0 w-full lg:w-auto pt-4 lg:pt-0 border-t lg:border-t-0 border-[#DDDCCF]">
+                        <div className="flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end gap-3 shrink-0 w-full lg:w-auto pt-4 lg:pt-0 border-t lg:border-t-0 border-[#DCE2EA]">
                           <div className="flex items-center gap-2">
                             <a
                               href={waLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-3.5 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs"
+                              className="px-3.5 py-1.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs"
                             >
                               <MessageCircle className="w-3.5 h-3.5" />
                               <span>WhatsApp</span>
                             </a>
                             <button
                               onClick={() => setSelectedInquiry(inq)}
-                              className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-xs font-bold text-[#202820] transition-colors cursor-pointer"
+                              className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-bold text-[#101D38] transition-colors cursor-pointer"
                             >
                               Full Details
                             </button>
                           </div>
 
                           <div className="flex items-center gap-1.5 text-xs">
-                            <span className="text-[#667064] font-mono text-[11px]">Set Status:</span>
+                            <span className="text-[#5A6B82] font-mono text-[11px]">Set Status:</span>
                             {(["Pending", "In Progress", "Completed"] as const).map((status) => (
                               <button
                                 key={status}
@@ -1333,8 +1333,8 @@ export default function AdminDashboardClient({
                                 disabled={updatingId === inq.id || inq.status === status}
                                 className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
                                   inq.status === status
-                                    ? "bg-[#315C3D] text-white"
-                                    : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                                    ? "bg-[#F58216] text-white"
+                                    : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                                 } disabled:opacity-50`}
                               >
                                 {status}
@@ -1348,17 +1348,17 @@ export default function AdminDashboardClient({
 
                   {/* Pagination Controls */}
                   {totalConsultationPages > 1 && (
-                    <div className="p-4 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
-                      <span className="text-xs text-[#667064]">
-                        Showing page <strong className="text-[#202820]">{consultationPage}</strong> of{" "}
-                        <strong className="text-[#202820]">{totalConsultationPages}</strong> ({filteredConsultations.length} total records)
+                    <div className="p-4 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
+                      <span className="text-xs text-[#5A6B82]">
+                        Showing page <strong className="text-[#101D38]">{consultationPage}</strong> of{" "}
+                        <strong className="text-[#101D38]">{totalConsultationPages}</strong> ({filteredConsultations.length} total records)
                       </span>
 
                       <div className="flex items-center gap-1.5">
                         <button
                           onClick={() => setConsultationPage((p) => Math.max(1, p - 1))}
                           disabled={consultationPage === 1}
-                          className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#EEE9DC] text-xs font-bold text-[#202820] hover:bg-[#DCE8D9] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                          className="px-3 py-1.5 rounded-lg border border-[#DCE2EA] bg-[#F4F6FA] text-xs font-bold text-[#101D38] hover:bg-[#FFF5EB] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
                         >
                           <ChevronLeft className="w-3.5 h-3.5" />
                           <span>Previous</span>
@@ -1370,8 +1370,8 @@ export default function AdminDashboardClient({
                             onClick={() => setConsultationPage(pageNum)}
                             className={`w-8 h-8 rounded-lg text-xs font-bold transition-colors ${
                               consultationPage === pageNum
-                                ? "bg-[#315C3D] text-white"
-                                : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                                ? "bg-[#F58216] text-white"
+                                : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                             }`}
                           >
                             {pageNum}
@@ -1381,7 +1381,7 @@ export default function AdminDashboardClient({
                         <button
                           onClick={() => setConsultationPage((p) => Math.min(totalConsultationPages, p + 1))}
                           disabled={consultationPage === totalConsultationPages}
-                          className="px-3 py-1.5 rounded-lg border border-[#DDDCCF] bg-[#EEE9DC] text-xs font-bold text-[#202820] hover:bg-[#DCE8D9] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                          className="px-3 py-1.5 rounded-lg border border-[#DCE2EA] bg-[#F4F6FA] text-xs font-bold text-[#101D38] hover:bg-[#FFF5EB] disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
                         >
                           <span>Next</span>
                           <ChevronRight className="w-3.5 h-3.5" />
@@ -1391,10 +1391,10 @@ export default function AdminDashboardClient({
                   )}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] space-y-3">
-                  <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
-                  <h3 className="text-base font-bold text-[#202820]">No consultation requests match criteria</h3>
-                  <p className="text-xs text-[#667064]">Try clearing your search query or choosing another status filter.</p>
+                <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] space-y-3">
+                  <AlertCircle className="w-10 h-10 text-[#5A6B82] mx-auto" />
+                  <h3 className="text-base font-bold text-[#101D38]">No consultation requests match criteria</h3>
+                  <p className="text-xs text-[#5A6B82]">Try clearing your search query or choosing another status filter.</p>
                   {(consultationSearchQuery || consultationStatusFilter !== "All" || consultationDomainFilter !== "All") && (
                     <button
                       onClick={() => {
@@ -1403,7 +1403,7 @@ export default function AdminDashboardClient({
                         setConsultationDomainFilter("All");
                         setConsultationPage(1);
                       }}
-                      className="px-4 py-2 rounded-xl bg-[#315C3D] text-white text-xs font-bold hover:bg-[#254930] transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-[#F58216] text-white text-xs font-bold hover:bg-[#E0720F] transition-colors cursor-pointer inline-flex items-center gap-1.5"
                     >
                       <RefreshCw className="w-3.5 h-3.5" />
                       <span>Reset Filters</span>
@@ -1418,16 +1418,16 @@ export default function AdminDashboardClient({
           {activeTab === "projects" && (
             <div className="space-y-8 animate-in fade-in duration-200">
               {/* Header Card */}
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2 font-mono">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216] mb-2 font-mono">
                     <Layers className="w-3.5 h-3.5" />
                     <span>Official 16 Technical Domains • {projectsList.length} Active Projects</span>
                   </div>
-                  <h2 className="text-xl font-black text-[#202820]">
+                  <h2 className="text-xl font-black text-[#101D38]">
                     Technical Domains &amp; Project Repository
                   </h2>
-                  <p className="text-xs text-[#667064] mt-1">
+                  <p className="text-xs text-[#5A6B82] mt-1">
                     Manage the 16 official technical domains and project repository. Sequential project codes (DOMAINCODE + 3-digit number) are maintained independently per domain.
                   </p>
                 </div>
@@ -1437,7 +1437,7 @@ export default function AdminDashboardClient({
                       setNewProjectDomainCode("AMPY");
                       setIsAddProjectModalOpen(true);
                     }}
-                    className="px-4 py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                    className="px-4 py-2.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
                   >
                     <Plus className="w-4 h-4" />
                     <span>+ Add New Project</span>
@@ -1445,7 +1445,7 @@ export default function AdminDashboardClient({
                   <Link
                     href="/projects"
                     target="_blank"
-                    className="px-4 py-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] text-xs font-bold transition-colors flex items-center gap-1.5"
+                    className="px-4 py-2.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA] text-xs font-bold transition-colors flex items-center gap-1.5"
                   >
                     <span>Public Catalog</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -1454,18 +1454,18 @@ export default function AdminDashboardClient({
               </div>
 
               {/* SECTION 1: OFFICIAL 16 TECHNICAL DOMAINS TABLE / GRID */}
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-[#DDDCCF]">
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-[#DCE2EA]">
                   <div>
-                    <h3 className="text-base font-bold text-[#202820] flex items-center gap-2">
-                      <FolderOpen className="w-4 h-4 text-[#315C3D]" />
+                    <h3 className="text-base font-bold text-[#101D38] flex items-center gap-2">
+                      <FolderOpen className="w-4 h-4 text-[#F58216]" />
                       <span>Official 16 Technical Domains</span>
                     </h3>
-                    <p className="text-xs text-[#667064]">
+                    <p className="text-xs text-[#5A6B82]">
                       Single source of truth. Every domain code prefix defines the sequential project code series.
                     </p>
                   </div>
-                  <span className="text-xs font-mono font-bold text-[#315C3D] bg-[#DCE8D9] px-2.5 py-1 rounded-full border border-[#DDDCCF]">
+                  <span className="text-xs font-mono font-bold text-[#F58216] bg-[#FFF5EB] px-2.5 py-1 rounded-full border border-[#DCE2EA]">
                     16 Domains Active
                   </span>
                 </div>
@@ -1473,7 +1473,7 @@ export default function AdminDashboardClient({
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs border-collapse">
                     <thead>
-                      <tr className="border-b border-[#DDDCCF] text-[#667064] font-mono uppercase text-[11px]">
+                      <tr className="border-b border-[#DCE2EA] text-[#5A6B82] font-mono uppercase text-[11px]">
                         <th className="py-2.5 px-3">S.No.</th>
                         <th className="py-2.5 px-3">Technical Domain</th>
                         <th className="py-2.5 px-3">Domain Code</th>
@@ -1482,38 +1482,38 @@ export default function AdminDashboardClient({
                         <th className="py-2.5 px-3 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#DDDCCF]/60">
+                    <tbody className="divide-y divide-[#DCE2EA]/60">
                       {dynamicDomains.map((domain) => (
                         <tr
                           key={domain.code}
-                          className={`hover:bg-[#F5F1E7]/80 transition-colors ${
-                            projectDomainFilter === domain.code ? "bg-[#DCE8D9]/30" : ""
+                          className={`hover:bg-[#F4F6FA]/80 transition-colors ${
+                            projectDomainFilter === domain.code ? "bg-[#FFF5EB]/30" : ""
                           }`}
                         >
-                          <td className="py-3 px-3 font-mono font-bold text-[#667064]">{domain.sno}</td>
+                          <td className="py-3 px-3 font-mono font-bold text-[#5A6B82]">{domain.sno}</td>
                           <td className="py-3 px-3">
-                            <span className="font-bold text-[#202820] block">{domain.name}</span>
-                            <span className="text-[11px] text-[#667064] line-clamp-1">{domain.description}</span>
+                            <span className="font-bold text-[#101D38] block">{domain.name}</span>
+                            <span className="text-[11px] text-[#5A6B82] line-clamp-1">{domain.description}</span>
                           </td>
                           <td className="py-3 px-3 font-mono font-black">
-                            <span className="px-2.5 py-1 rounded-lg bg-[#202820] text-white">
+                            <span className="px-2.5 py-1 rounded-lg bg-[#101D38] text-white">
                               {domain.code}
                             </span>
                           </td>
                           <td className="py-3 px-3">
                             {domain.projectCount > 0 ? (
-                              <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#DCE8D9] text-[#315C3D] border border-[#DCE8D9]">
+                              <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#FFF5EB] text-[#F58216] border border-[#FFF5EB]">
                                 {domain.projectCount} Projects
                               </span>
                             ) : (
-                              <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#EEE9DC] text-[#667064] border border-[#DDDCCF]">
+                              <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#F4F6FA] text-[#5A6B82] border border-[#DCE2EA]">
                                 0 Projects
                               </span>
                             )}
                           </td>
                           <td className="py-3 px-3">
-                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#DCE8D9] text-[#315C3D]">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#315C3D]" />
+                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold font-mono bg-[#FFF5EB] text-[#F58216]">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#F58216]" />
                               <span>Active</span>
                             </span>
                           </td>
@@ -1526,8 +1526,8 @@ export default function AdminDashboardClient({
                                 }}
                                 className={`px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer transition-all ${
                                   projectDomainFilter === domain.code
-                                    ? "bg-[#315C3D] text-white"
-                                    : "bg-[#EEE9DC] text-[#315C3D] hover:bg-[#DCE8D9] border border-[#DDDCCF]"
+                                    ? "bg-[#F58216] text-white"
+                                    : "bg-[#F4F6FA] text-[#F58216] hover:bg-[#FFF5EB] border border-[#DCE2EA]"
                                 }`}
                               >
                                 Filter Projects
@@ -1535,7 +1535,7 @@ export default function AdminDashboardClient({
                               <Link
                                 href={`/projects/${domain.code}`}
                                 target="_blank"
-                                className="p-1.5 rounded-lg bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#667064] hover:text-[#315C3D] border border-[#DDDCCF]"
+                                className="p-1.5 rounded-lg bg-[#FFFFFF] hover:bg-[#F4F6FA] text-[#5A6B82] hover:text-[#F58216] border border-[#DCE2EA]"
                                 title={`Open /projects/${domain.code} public catalog`}
                               >
                                 <ExternalLink className="w-3.5 h-3.5" />
@@ -1545,7 +1545,7 @@ export default function AdminDashboardClient({
                                   setNewProjectDomainCode(domain.code);
                                   setIsAddProjectModalOpen(true);
                                 }}
-                                className="p-1.5 rounded-lg bg-[#FFFFFF] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] cursor-pointer"
+                                className="p-1.5 rounded-lg bg-[#FFFFFF] hover:bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA] cursor-pointer"
                                 title={`Add project under ${domain.code}`}
                               >
                                 <Plus className="w-3.5 h-3.5" />
@@ -1561,15 +1561,15 @@ export default function AdminDashboardClient({
 
               {/* SECTION 2: PROJECTS REPOSITORY & SEQUENTIAL CODE MANAGEMENT */}
               <div className="space-y-4">
-                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <div className="p-5 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                   <div className="relative flex-1">
-                    <Search className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Search className="w-4 h-4 text-[#5A6B82] absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search by project code (e.g. AMPY001), title, tech stack, or description..."
                       value={projectSearchQuery}
                       onChange={(e) => setProjectSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D]"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] placeholder-[#5A6B82] focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                     />
                   </div>
 
@@ -1577,7 +1577,7 @@ export default function AdminDashboardClient({
                     <select
                       value={projectDomainFilter}
                       onChange={(e) => setProjectDomainFilter(e.target.value)}
-                      className="px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] focus:outline-none focus:border-[#315C3D] cursor-pointer"
+                      className="px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-medium text-[#101D38] focus:outline-none focus:border-[#F58216] cursor-pointer"
                     >
                       <option value="All">All Domains ({projectsList.length} Projects)</option>
                       {dynamicDomains.map((d) => (
@@ -1590,7 +1590,7 @@ export default function AdminDashboardClient({
                     {projectDomainFilter !== "All" && (
                       <button
                         onClick={() => setProjectDomainFilter("All")}
-                        className="px-3 py-2.5 rounded-xl bg-[#EEE9DC] text-xs font-bold text-[#667064] hover:text-[#202820] border border-[#DDDCCF] cursor-pointer"
+                        className="px-3 py-2.5 rounded-xl bg-[#F4F6FA] text-xs font-bold text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA] cursor-pointer"
                       >
                         Reset Filter
                       </button>
@@ -1598,9 +1598,9 @@ export default function AdminDashboardClient({
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-[#667064] px-1">
+                <div className="flex items-center justify-between text-xs text-[#5A6B82] px-1">
                   <span>
-                    Showing <strong className="text-[#202820]">{filteredProjects.length}</strong> of{" "}
+                    Showing <strong className="text-[#101D38]">{filteredProjects.length}</strong> of{" "}
                     {projectsList.length} projects
                     {projectDomainFilter !== "All" && ` in domain ${projectDomainFilter}`}
                   </span>
@@ -1619,42 +1619,42 @@ export default function AdminDashboardClient({
                       return (
                         <div
                           key={proj.id}
-                          className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] hover:border-[#315C3D]/40 shadow-sm transition-all flex flex-col justify-between space-y-4"
+                          className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] hover:border-[#F58216]/40 shadow-sm transition-all flex flex-col justify-between space-y-4"
                         >
                           <div className="space-y-3">
                             <div className="flex items-start justify-between gap-3">
                               <div className="flex items-center gap-2">
-                                <span className="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-[#202820] text-white">
+                                <span className="font-mono font-black text-xs px-2.5 py-1 rounded-lg bg-[#101D38] text-white">
                                   {projCode}
                                 </span>
-                                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
+                                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA]">
                                   {domCode} • {proj.domainName || proj.category}
                                 </span>
                               </div>
-                              <span className="text-[10px] font-mono text-[#667064] bg-[#F5F1E7] px-2 py-0.5 rounded">
+                              <span className="text-[10px] font-mono text-[#5A6B82] bg-[#F4F6FA] px-2 py-0.5 rounded">
                                 {proj.level || "UG Final Year"}
                               </span>
                             </div>
 
-                            <h3 className="text-base font-bold text-[#202820] leading-snug">
+                            <h3 className="text-base font-bold text-[#101D38] leading-snug">
                               {proj.title}
                             </h3>
-                            <p className="text-xs text-[#315C3D] font-semibold line-clamp-1">
+                            <p className="text-xs text-[#F58216] font-semibold line-clamp-1">
                               {proj.tagline}
                             </p>
-                            <p className="text-xs text-[#667064] line-clamp-3 leading-relaxed">
+                            <p className="text-xs text-[#5A6B82] line-clamp-3 leading-relaxed">
                               {proj.description}
                             </p>
 
                             <div className="pt-2">
-                              <span className="text-[10px] font-mono uppercase text-[#667064] block mb-1.5 font-bold">
+                              <span className="text-[10px] font-mono uppercase text-[#5A6B82] block mb-1.5 font-bold">
                                 Technology Stack
                               </span>
                               <div className="flex flex-wrap gap-1.5">
                                 {proj.techStack?.map((tech) => (
                                   <span
                                     key={tech}
-                                    className="px-2 py-0.5 rounded-md bg-[#F5F1E7] border border-[#DDDCCF] text-[11px] text-[#202820] font-medium"
+                                    className="px-2 py-0.5 rounded-md bg-[#F4F6FA] border border-[#DCE2EA] text-[11px] text-[#101D38] font-medium"
                                   >
                                     {tech}
                                   </span>
@@ -1663,15 +1663,15 @@ export default function AdminDashboardClient({
                             </div>
                           </div>
 
-                          <div className="pt-4 border-t border-[#DDDCCF] flex flex-wrap items-center justify-between gap-2">
-                            <span className="text-[11px] text-[#667064] font-mono">
+                          <div className="pt-4 border-t border-[#DCE2EA] flex flex-wrap items-center justify-between gap-2">
+                            <span className="text-[11px] text-[#5A6B82] font-mono">
                               {proj.modules?.length || 4} Modules Included
                             </span>
 
                             <div className="flex items-center gap-2">
                               <button
                                 onClick={() => setSelectedProjectForView(proj)}
-                                className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-xs font-bold text-[#202820] transition-colors cursor-pointer flex items-center gap-1"
+                                className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-bold text-[#101D38] transition-colors cursor-pointer flex items-center gap-1"
                               >
                                 <Eye className="w-3.5 h-3.5" />
                                 <span>Details</span>
@@ -1679,7 +1679,7 @@ export default function AdminDashboardClient({
 
                               <button
                                 onClick={() => openEditModal(proj)}
-                                className="px-3 py-1.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] transition-colors cursor-pointer flex items-center gap-1"
+                                className="px-3 py-1.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216] transition-colors cursor-pointer flex items-center gap-1"
                               >
                                 <Edit className="w-3.5 h-3.5" />
                                 <span>Edit</span>
@@ -1688,7 +1688,7 @@ export default function AdminDashboardClient({
                               <Link
                                 href={`/projects/${domCode}/${projCode}`}
                                 target="_blank"
-                                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors shadow-xs"
+                                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors shadow-xs"
                               >
                                 <span>Public</span>
                                 <ExternalLink className="w-3 h-3" />
@@ -1700,12 +1700,12 @@ export default function AdminDashboardClient({
                     })}
                   </div>
                 ) : (
-                  <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] space-y-3">
-                    <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
-                    <h3 className="text-base font-bold text-[#202820]">
+                  <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] space-y-3">
+                    <AlertCircle className="w-10 h-10 text-[#5A6B82] mx-auto" />
+                    <h3 className="text-base font-bold text-[#101D38]">
                       No projects found under {projectDomainFilter}
                     </h3>
-                    <p className="text-xs text-[#667064]">
+                    <p className="text-xs text-[#5A6B82]">
                       Projects for this domain will be available soon, or click below to add the first project now.
                     </p>
                     <button
@@ -1715,7 +1715,7 @@ export default function AdminDashboardClient({
                         }
                         setIsAddProjectModalOpen(true);
                       }}
-                      className="px-4 py-2 rounded-xl bg-[#315C3D] text-white text-xs font-bold cursor-pointer inline-flex items-center gap-1.5"
+                      className="px-4 py-2 rounded-xl bg-[#F58216] text-white text-xs font-bold cursor-pointer inline-flex items-center gap-1.5"
                     >
                       <Plus className="w-4 h-4" />
                       <span>+ Add First Project to this Domain</span>
@@ -1730,45 +1730,45 @@ export default function AdminDashboardClient({
           {activeTab === "enquiries" && (
             <div className="space-y-6 animate-in fade-in duration-200">
               {/* Header Card */}
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D] mb-2 font-mono">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216] mb-2 font-mono">
                     <Mail className="w-3.5 h-3.5" />
                     <span>Website Enquiries &amp; Academic Project Desk</span>
                   </div>
-                  <h2 className="text-xl font-black text-[#202820]">
+                  <h2 className="text-xl font-black text-[#101D38]">
                     Student Enquiries Repository
                   </h2>
-                  <p className="text-xs text-[#667064] mt-1">
+                  <p className="text-xs text-[#5A6B82] mt-1">
                     Manage Project Enquiries, General Contact Submissions, and Consultation Requests with verified WhatsApp routing across all 16 technical domains.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1.5 rounded-xl bg-[#DCE8D9] text-[#315C3D] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFF5EB] text-[#F58216] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {stats.projectEnquiries} Project Enquiries
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#EEE9DC] text-[#202820] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#F4F6FA] text-[#101D38] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {stats.consultationRequests} Consultations
                   </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#667064] text-xs font-mono font-bold border border-[#DDDCCF]">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] text-[#5A6B82] text-xs font-mono font-bold border border-[#DCE2EA]">
                     {stats.generalEnquiries} Contact Forms
                   </span>
                 </div>
               </div>
 
               {/* Multi-Filter & Search Toolbar */}
-              <div className="p-5 sm:p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
+              <div className="p-5 sm:p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
                 {/* Search & Domain Filter Row */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                   <div className="relative flex-1">
-                    <Search className="w-4 h-4 text-[#667064] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <Search className="w-4 h-4 text-[#5A6B82] absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
                       placeholder="Search by ID (e.g. PE-2026-), student name, college, department, domain, project code, or phone..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] placeholder-[#667064] focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D]"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] placeholder-[#5A6B82] focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                     />
                   </div>
 
@@ -1776,7 +1776,7 @@ export default function AdminDashboardClient({
                     <select
                       value={enquiryDomainFilter}
                       onChange={(e) => setEnquiryDomainFilter(e.target.value)}
-                      className="px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-medium text-[#202820] focus:outline-none focus:border-[#315C3D] cursor-pointer"
+                      className="px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-medium text-[#101D38] focus:outline-none focus:border-[#F58216] cursor-pointer"
                     >
                       <option value="All">All 16 Technical Domains</option>
                       {dynamicDomains.map((d) => (
@@ -1789,7 +1789,7 @@ export default function AdminDashboardClient({
                     <button
                       onClick={handleRefresh}
                       disabled={refreshing}
-                      className="p-2.5 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] transition-colors cursor-pointer shrink-0"
+                      className="p-2.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] border border-[#DCE2EA] text-[#F58216] transition-colors cursor-pointer shrink-0"
                       title="Refresh enquiries"
                     >
                       <RefreshCw className={`w-4 h-4 ${refreshing ? "animate-spin" : ""}`} />
@@ -1798,8 +1798,8 @@ export default function AdminDashboardClient({
                 </div>
 
                 {/* Enquiry Type Filter Row */}
-                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
-                  <span className="text-[#667064] font-mono text-[11px] mr-1">Enquiry Type:</span>
+                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#DCE2EA] text-xs">
+                  <span className="text-[#5A6B82] font-mono text-[11px] mr-1">Enquiry Type:</span>
                   {[
                     { id: "All", label: "All Enquiry Types" },
                     { id: "Project Specific", label: "Project Specific" },
@@ -1810,22 +1810,22 @@ export default function AdminDashboardClient({
                       onClick={() => setEnquiryTypeFilter(type.id)}
                       className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
                         enquiryTypeFilter === type.id
-                          ? "bg-[#315C3D] text-white shadow-xs"
-                          : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                          ? "bg-[#F58216] text-white shadow-xs"
+                          : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                       }`}
                     >
                       {type.label}
                     </button>
                   ))}
 
-                  <span className="text-[#667064] font-mono text-[11px] ml-auto">
-                    Domain Filter: <strong className="text-[#202820]">{enquiryDomainFilter}</strong>
+                  <span className="text-[#5A6B82] font-mono text-[11px] ml-auto">
+                    Domain Filter: <strong className="text-[#101D38]">{enquiryDomainFilter}</strong>
                   </span>
                 </div>
 
                 {/* Source Category Filter Tabs */}
-                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
-                  <span className="text-[#667064] font-mono text-[11px] mr-1">Category:</span>
+                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-[#DCE2EA] text-xs">
+                  <span className="text-[#5A6B82] font-mono text-[11px] mr-1">Category:</span>
                   {[
                     { id: "All", label: "All Categories", count: stats.total },
                     { id: "Custom Requirement", label: "Custom Requirements", count: stats.customRequirements },
@@ -1838,12 +1838,12 @@ export default function AdminDashboardClient({
                       onClick={() => setSourceFilter(cat.id)}
                       className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                         sourceFilter === cat.id
-                          ? "bg-[#315C3D] text-white shadow-xs"
-                          : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                          ? "bg-[#F58216] text-white shadow-xs"
+                          : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                       }`}
                     >
                       <span>{cat.label}</span>
-                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${sourceFilter === cat.id ? "bg-white/20 text-white" : "bg-[#DDDCCF] text-[#202820]"}`}>
+                      <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${sourceFilter === cat.id ? "bg-white/20 text-white" : "bg-[#DCE2EA] text-[#101D38]"}`}>
                         {cat.count}
                       </span>
                     </button>
@@ -1851,17 +1851,17 @@ export default function AdminDashboardClient({
                 </div>
 
                 {/* Status Filter Tabs */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DDDCCF] text-xs">
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#DCE2EA] text-xs">
                   <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-                    <span className="text-[#667064] font-mono text-[11px] mr-1">Status:</span>
+                    <span className="text-[#5A6B82] font-mono text-[11px] mr-1">Status:</span>
                     {["All", "New", "Pending", "In Progress", "Completed", "Verified", "Suspicious", "Spam"].map((status) => (
                       <button
                         key={status}
                         onClick={() => setStatusFilter(status)}
                         className={`px-3 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
                           statusFilter === status
-                            ? "bg-[#315C3D] text-white shadow-xs"
-                            : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                            ? "bg-[#F58216] text-white shadow-xs"
+                            : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                         }`}
                       >
                         {status}
@@ -1869,8 +1869,8 @@ export default function AdminDashboardClient({
                     ))}
                   </div>
 
-                  <span className="text-xs text-[#667064]">
-                    Showing <strong className="text-[#202820]">{filteredInquiries.length}</strong> of{" "}
+                  <span className="text-xs text-[#5A6B82]">
+                    Showing <strong className="text-[#101D38]">{filteredInquiries.length}</strong> of{" "}
                     {inquiries.length} records
                   </span>
                 </div>
@@ -1883,8 +1883,8 @@ export default function AdminDashboardClient({
                     const actualWhatsApp = inq.whatsappNumber || inq.phone;
                     const cleanWa = actualWhatsApp.replace(/[^0-9]/g, "");
                     const targetTopic = inq.projectTitle || inq.projectDomain || inq.domainName || inq.category;
-                    const waLink = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your Upwork Project Center Project Enquiry [${inq.id}] for "${targetTopic}":`)}`;
-                    const emailSubject = encodeURIComponent(`Upwork Project Center Project Enquiry [${inq.id}]`);
+                    const waLink = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your UPWORKS Project Enquiry [${inq.id}] for "${targetTopic}":`)}`;
+                    const emailSubject = encodeURIComponent(`UPWORKS Project Enquiry [${inq.id}]`);
                     const mailtoLink = `mailto:${inq.email}?subject=${emailSubject}`;
 
                     return (
@@ -1892,19 +1892,19 @@ export default function AdminDashboardClient({
                         key={inq.id}
                         className={`p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 transition-all ${
                           inq.status === "New"
-                            ? "border-[#315C3D]/60 ring-1 ring-[#315C3D]/20 bg-[#FDFAF4]"
+                            ? "border-[#F58216]/60 ring-1 ring-[#F58216]/20 bg-[#FDFAF4]"
                             : inq.verificationStatus === "Spam" || inq.status === "Spam"
-                            ? "border-[#202820]/30 bg-[#F5F1E7]/50"
+                            ? "border-[#101D38]/30 bg-[#F4F6FA]/50"
                             : inq.verificationStatus === "Suspicious" || inq.status === "Suspicious"
-                            ? "border-[#315C3D]/50 bg-[#FFFDF9]"
-                            : "border-[#DDDCCF] hover:border-[#315C3D]/40"
+                            ? "border-[#F58216]/50 bg-[#FFFDF9]"
+                            : "border-[#DCE2EA] hover:border-[#F58216]/40"
                         }`}
                       >
                         {/* Left / Main Details */}
                         <div className="space-y-3 flex-1 min-w-0">
                           {/* Top Badges Row */}
                           <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#202820] text-white">
+                            <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#101D38] text-white">
                               {inq.id}
                             </span>
                             {renderSourceBadge(inq.source, inq.id)}
@@ -1914,22 +1914,22 @@ export default function AdminDashboardClient({
                             <span
                               className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full ${
                                 inq.status === "New"
-                                  ? "bg-[#315C3D] text-white"
+                                  ? "bg-[#F58216] text-white"
                                   : inq.status === "Pending"
-                                  ? "bg-[#DCE8D9] text-[#315C3D] border border-[#DCE8D9]"
+                                  ? "bg-[#FFF5EB] text-[#F58216] border border-[#FFF5EB]"
                                   : inq.status === "In Progress"
-                                  ? "bg-[#EEE9DC] text-[#497A52] border border-[#DDDCCF]"
+                                  ? "bg-[#F4F6FA] text-[#F58216] border border-[#DCE2EA]"
                                   : inq.status === "Completed"
-                                  ? "bg-[#FFFFFF] text-[#202820] border border-[#DDDCCF]"
+                                  ? "bg-[#FFFFFF] text-[#101D38] border border-[#DCE2EA]"
                                   : inq.status === "Spam"
-                                  ? "bg-[#202820] text-white border border-[#DDDCCF]"
-                                  : "bg-[#EEE9DC] text-[#202820] border border-[#DDDCCF]"
+                                  ? "bg-[#101D38] text-white border border-[#DCE2EA]"
+                                  : "bg-[#F4F6FA] text-[#101D38] border border-[#DCE2EA]"
                               }`}
                             >
                               ● {inq.status}
                             </span>
 
-                            <span className="text-[11px] text-[#667064] font-mono ml-auto">
+                            <span className="text-[11px] text-[#5A6B82] font-mono ml-auto">
                               {new Date(inq.createdAt).toLocaleString("en-IN", {
                                 dateStyle: "medium",
                                 timeStyle: "short",
@@ -1939,16 +1939,16 @@ export default function AdminDashboardClient({
 
                           {/* Student Name & Academic Dept */}
                           <div>
-                            <h3 className="text-base font-bold text-[#202820]">{inq.name}</h3>
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#667064] mt-0.5">
+                            <h3 className="text-base font-bold text-[#101D38]">{inq.name}</h3>
+                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#5A6B82] mt-0.5">
                               {inq.college && (
                                 <span className="flex items-center gap-1 font-medium">
-                                  <Building2 className="w-3.5 h-3.5 text-[#315C3D]" />
+                                  <Building2 className="w-3.5 h-3.5 text-[#F58216]" />
                                   <span>{inq.college}</span>
                                 </span>
                               )}
                               {(inq.department || inq.degree) && (
-                                <span className="flex items-center gap-1 text-[#315C3D] font-semibold">
+                                <span className="flex items-center gap-1 text-[#F58216] font-semibold">
                                   <GraduationCap className="w-3.5 h-3.5" />
                                   <span>{inq.department || inq.degree}</span>
                                 </span>
@@ -1957,9 +1957,9 @@ export default function AdminDashboardClient({
                           </div>
 
                           {/* Technical Domain & Target Project Details */}
-                          <div className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1.5 text-xs">
+                          <div className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1.5 text-xs">
                             <div className="flex items-center justify-between">
-                              <span className="font-bold text-[#315C3D] flex items-center gap-1.5 font-mono">
+                              <span className="font-bold text-[#F58216] flex items-center gap-1.5 font-mono">
                                 <Layers className="w-3.5 h-3.5" />
                                 <span>
                                   Domain: {inq.domainCode ? `${inq.domainCode} • ` : ""}
@@ -1967,7 +1967,7 @@ export default function AdminDashboardClient({
                                 </span>
                               </span>
                               {inq.urgency && (
-                                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#DCE8D9] text-[#315C3D] font-semibold">
+                                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FFF5EB] text-[#F58216] font-semibold">
                                   Timeline: {inq.urgency}
                                 </span>
                               )}
@@ -1976,49 +1976,49 @@ export default function AdminDashboardClient({
                             {/* Project Specific Details if available */}
                             {inq.projectCode && (
                               <div className="flex items-center gap-2 pt-1">
-                                <span className="font-mono font-bold text-[11px] px-2 py-0.5 rounded bg-[#202820] text-white">
+                                <span className="font-mono font-bold text-[11px] px-2 py-0.5 rounded bg-[#101D38] text-white">
                                   {inq.projectCode}
                                 </span>
-                                <span className="font-semibold text-[#202820] truncate">
+                                <span className="font-semibold text-[#101D38] truncate">
                                   {inq.projectTitle}
                                 </span>
                               </div>
                             )}
 
                             {!inq.projectCode && inq.projectTitle && inq.projectTitle !== (inq.projectDomain || inq.domainName) && (
-                              <p className="font-semibold text-[#202820] truncate">
+                              <p className="font-semibold text-[#101D38] truncate">
                                 Topic: {inq.projectTitle}
                               </p>
                             )}
 
                             {(inq.requirement || inq.message) && (
-                              <p className="text-[#667064] line-clamp-2 leading-relaxed pt-1 border-t border-[#DDDCCF]/60">
+                              <p className="text-[#5A6B82] line-clamp-2 leading-relaxed pt-1 border-t border-[#DCE2EA]/60">
                                 <strong>Requirement:</strong> {inq.requirement || inq.message}
                               </p>
                             )}
                           </div>
 
                           {/* Contact Details Row */}
-                          <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-[#202820]">
-                            <span className="flex items-center gap-1.5 font-mono font-bold text-[#315C3D]">
-                              <MessageCircle className="w-3.5 h-3.5 text-[#315C3D]" />
+                          <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-xs text-[#101D38]">
+                            <span className="flex items-center gap-1.5 font-mono font-bold text-[#F58216]">
+                              <MessageCircle className="w-3.5 h-3.5 text-[#F58216]" />
                               <span>WhatsApp: {inq.whatsappNumber || inq.phone}</span>
                             </span>
 
                             {inq.mobileNumber && inq.mobileNumber !== inq.whatsappNumber && (
-                              <span className="flex items-center gap-1.5 font-mono text-[#667064]">
-                                <Phone className="w-3.5 h-3.5 text-[#667064]" />
+                              <span className="flex items-center gap-1.5 font-mono text-[#5A6B82]">
+                                <Phone className="w-3.5 h-3.5 text-[#5A6B82]" />
                                 <span>Mobile: {inq.mobileNumber}</span>
                               </span>
                             )}
 
-                            <span className="flex items-center gap-1.5 text-[#667064]">
-                              <Mail className="w-3.5 h-3.5 text-[#315C3D]" />
+                            <span className="flex items-center gap-1.5 text-[#5A6B82]">
+                              <Mail className="w-3.5 h-3.5 text-[#F58216]" />
                               <span>{inq.email || "No email"}</span>
                             </span>
 
                             {inq.clientIp && (
-                              <span className="font-mono text-[10px] text-[#667064] bg-[#EEE9DC] px-2 py-0.5 rounded">
+                              <span className="font-mono text-[10px] text-[#5A6B82] bg-[#F4F6FA] px-2 py-0.5 rounded">
                                 IP: {inq.clientIp}
                               </span>
                             )}
@@ -2026,13 +2026,13 @@ export default function AdminDashboardClient({
                         </div>
 
                         {/* Right Section: Direct Actions */}
-                        <div className="flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end gap-2.5 shrink-0 w-full lg:w-auto pt-4 lg:pt-0 border-t lg:border-t-0 border-[#DDDCCF]">
+                        <div className="flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end gap-2.5 shrink-0 w-full lg:w-auto pt-4 lg:pt-0 border-t lg:border-t-0 border-[#DCE2EA]">
                           <div className="flex items-center gap-2">
                             <a
                               href={waLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-3.5 py-1.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
+                              className="px-3.5 py-1.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
                               title={`Chat with ${inq.name} on WhatsApp`}
                             >
                               <MessageCircle className="w-3.5 h-3.5" />
@@ -2041,7 +2041,7 @@ export default function AdminDashboardClient({
 
                             <a
                               href={mailtoLink}
-                              className="p-2 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] text-xs transition-colors"
+                              className="p-2 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] border border-[#DCE2EA] text-[#F58216] text-xs transition-colors"
                               title={`Send Email to ${inq.email}`}
                             >
                               <Mail className="w-3.5 h-3.5" />
@@ -2049,14 +2049,14 @@ export default function AdminDashboardClient({
 
                             <button
                               onClick={() => setSelectedInquiry(inq)}
-                              className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] text-xs font-bold text-[#202820] transition-colors cursor-pointer"
+                              className="px-3 py-1.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-bold text-[#101D38] transition-colors cursor-pointer"
                             >
                               View Details
                             </button>
                           </div>
 
                           <div className="flex items-center gap-1 text-xs">
-                            <span className="text-[#667064] font-mono text-[11px] mr-0.5">Status:</span>
+                            <span className="text-[#5A6B82] font-mono text-[11px] mr-0.5">Status:</span>
                             {(["New", "Pending", "In Progress", "Completed"] as const).map((status) => (
                               <button
                                 key={status}
@@ -2064,8 +2064,8 @@ export default function AdminDashboardClient({
                                 disabled={updatingId === inq.id || inq.status === status}
                                 className={`px-2 py-1 rounded-lg text-[10px] font-bold transition-all cursor-pointer ${
                                   inq.status === status
-                                    ? "bg-[#315C3D] text-white"
-                                    : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                                    ? "bg-[#F58216] text-white"
+                                    : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                                 } disabled:opacity-50`}
                               >
                                 {status}
@@ -2078,7 +2078,7 @@ export default function AdminDashboardClient({
                               <button
                                 onClick={() => handleStatusChange(inq.id, "Completed", "Verified")}
                                 disabled={updatingId === inq.id}
-                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#DCE8D9] text-[#315C3D] hover:bg-[#cde0c9] border border-[#DCE8D9] transition-all cursor-pointer flex items-center gap-1"
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#FFF5EB] text-[#F58216] hover:bg-[#cde0c9] border border-[#FFF5EB] transition-all cursor-pointer flex items-center gap-1"
                               >
                                 <CheckCircle2 className="w-3 h-3" />
                                 <span>Mark Completed</span>
@@ -2089,9 +2089,9 @@ export default function AdminDashboardClient({
                               <button
                                 onClick={() => handleStatusChange(inq.id, "Spam", "Spam")}
                                 disabled={updatingId === inq.id}
-                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#EEE9DC] text-[#202820] hover:bg-[#e4ddcc] border border-[#DDDCCF] transition-all cursor-pointer flex items-center gap-1"
+                                className="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-[#F4F6FA] text-[#101D38] hover:bg-[#e4ddcc] border border-[#DCE2EA] transition-all cursor-pointer flex items-center gap-1"
                               >
-                                <ShieldAlert className="w-3 h-3 text-[#202820]" />
+                                <ShieldAlert className="w-3 h-3 text-[#101D38]" />
                                 <span>Mark as Spam</span>
                               </button>
                             )}
@@ -2102,10 +2102,10 @@ export default function AdminDashboardClient({
                   })}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] space-y-3">
-                  <AlertCircle className="w-10 h-10 text-[#667064] mx-auto" />
-                  <h3 className="text-base font-bold text-[#202820]">No enquiries matching your filter</h3>
-                  <p className="text-xs text-[#667064]">
+                <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] space-y-3">
+                  <AlertCircle className="w-10 h-10 text-[#5A6B82] mx-auto" />
+                  <h3 className="text-base font-bold text-[#101D38]">No enquiries matching your filter</h3>
+                  <p className="text-xs text-[#5A6B82]">
                     Select another category, domain, or status filter, or reset your search query.
                   </p>
                 </div>
@@ -2116,48 +2116,48 @@ export default function AdminDashboardClient({
           {/* TAB 5: ACCOUNT MANAGEMENT */}
           {activeTab === "account" && (
             <div className="space-y-6 animate-in fade-in duration-200">
-              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-bold text-[#315C3D]">
+              <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#DCE2EA] text-xs font-bold text-[#F58216]">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   <span>Authenticated Administrator Profile</span>
                 </div>
-                <h2 className="text-2xl font-black text-[#202820]">
+                <h2 className="text-2xl font-black text-[#101D38]">
                   Account &amp; Security Settings
                 </h2>
-                <p className="text-xs text-[#667064]">
+                <p className="text-xs text-[#5A6B82]">
                   View active security parameters, session management, and server credentials verification.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                  <h3 className="text-base font-bold text-[#202820] flex items-center gap-2">
-                    <User className="w-4 h-4 text-[#315C3D]" />
+                <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                  <h3 className="text-base font-bold text-[#101D38] flex items-center gap-2">
+                    <User className="w-4 h-4 text-[#F58216]" />
                     <span>Administrator Credentials</span>
                   </h3>
 
                   <div className="space-y-3 text-xs">
-                    <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                      <span className="text-[10px] font-mono text-[#667064] uppercase block">
+                    <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                      <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">
                         Admin Email
                       </span>
-                      <p className="font-bold text-sm text-[#202820]">{adminEmail}</p>
+                      <p className="font-bold text-sm text-[#101D38]">{adminEmail}</p>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                      <span className="text-[10px] font-mono text-[#667064] uppercase block">
+                    <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                      <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">
                         Access Level
                       </span>
-                      <p className="font-bold text-sm text-[#315C3D]">
+                      <p className="font-bold text-sm text-[#F58216]">
                         Super Administrator (Full Read &amp; Write Access)
                       </p>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                      <span className="text-[10px] font-mono text-[#667064] uppercase block">
+                    <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                      <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">
                         Session Identifier
                       </span>
-                      <p className="font-mono text-xs text-[#202820]">
+                      <p className="font-mono text-xs text-[#101D38]">
                         upwork_admin_session (HTTP-Only, SameSite=Lax)
                       </p>
                     </div>
@@ -2167,7 +2167,7 @@ export default function AdminDashboardClient({
                     <button
                       onClick={handleLogout}
                       disabled={loggingOut}
-                      className="w-full py-3 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-3 px-4 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <LogOut className="w-4 h-4" />
                       <span>{loggingOut ? "Invalidating Session..." : "Secure Sign Out"}</span>
@@ -2175,48 +2175,48 @@ export default function AdminDashboardClient({
                   </div>
                 </div>
 
-                <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm space-y-4">
-                  <h3 className="text-base font-bold text-[#202820] flex items-center gap-2">
-                    <Lock className="w-4 h-4 text-[#315C3D]" />
+                <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-sm space-y-4">
+                  <h3 className="text-base font-bold text-[#101D38] flex items-center gap-2">
+                    <Lock className="w-4 h-4 text-[#F58216]" />
                     <span>Security Verification Checklist</span>
                   </h3>
 
                   <div className="space-y-3 text-xs">
-                    <div className="p-3 rounded-xl bg-[#DCE8D9]/60 border border-[#DDDCCF] flex items-center gap-2.5">
-                      <Check className="w-4 h-4 text-[#315C3D] shrink-0" />
+                    <div className="p-3 rounded-xl bg-[#FFF5EB]/60 border border-[#DCE2EA] flex items-center gap-2.5">
+                      <Check className="w-4 h-4 text-[#F58216] shrink-0" />
                       <div>
-                        <strong className="text-[#202820] block">Server-Side Authentication</strong>
-                        <span className="text-[#667064] text-[11px]">
+                        <strong className="text-[#101D38] block">Server-Side Authentication</strong>
+                        <span className="text-[#5A6B82] text-[11px]">
                           Sessions verified directly on server runtime; no client-only bypasses.
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-[#DCE8D9]/60 border border-[#DDDCCF] flex items-center gap-2.5">
-                      <Check className="w-4 h-4 text-[#315C3D] shrink-0" />
+                    <div className="p-3 rounded-xl bg-[#FFF5EB]/60 border border-[#DCE2EA] flex items-center gap-2.5">
+                      <Check className="w-4 h-4 text-[#F58216] shrink-0" />
                       <div>
-                        <strong className="text-[#202820] block">Bcrypt Password Hashing</strong>
-                        <span className="text-[#667064] text-[11px]">
+                        <strong className="text-[#101D38] block">Bcrypt Password Hashing</strong>
+                        <span className="text-[#5A6B82] text-[11px]">
                           Passwords securely salted and hashed. Raw passwords never stored in code or logs.
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-[#DCE8D9]/60 border border-[#DDDCCF] flex items-center gap-2.5">
-                      <Check className="w-4 h-4 text-[#315C3D] shrink-0" />
+                    <div className="p-3 rounded-xl bg-[#FFF5EB]/60 border border-[#DCE2EA] flex items-center gap-2.5">
+                      <Check className="w-4 h-4 text-[#F58216] shrink-0" />
                       <div>
-                        <strong className="text-[#202820] block">Domain Code Enforcement</strong>
-                        <span className="text-[#667064] text-[11px]">
+                        <strong className="text-[#101D38] block">Domain Code Enforcement</strong>
+                        <span className="text-[#5A6B82] text-[11px]">
                           Strictly 16 official technical domains with automated sequential project code creation.
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-3 rounded-xl bg-[#DCE8D9]/60 border border-[#DDDCCF] flex items-center gap-2.5">
-                      <Check className="w-4 h-4 text-[#315C3D] shrink-0" />
+                    <div className="p-3 rounded-xl bg-[#FFF5EB]/60 border border-[#DCE2EA] flex items-center gap-2.5">
+                      <Check className="w-4 h-4 text-[#F58216] shrink-0" />
                       <div>
-                        <strong className="text-[#202820] block">Data Preservation</strong>
-                        <span className="text-[#667064] text-[11px]">
+                        <strong className="text-[#101D38] block">Data Preservation</strong>
+                        <span className="text-[#5A6B82] text-[11px]">
                           Production consultation inquiries and project datasets remain fully intact.
                         </span>
                       </div>
@@ -2232,19 +2232,19 @@ export default function AdminDashboardClient({
       {/* MODAL 1: ADD NEW PROJECT MODAL */}
       {isAddProjectModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#202820]">
-            <div className="p-6 bg-[#EEE9DC] border-b border-[#DDDCCF] flex items-center justify-between">
+          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#101D38]">
+            <div className="p-6 bg-[#F4F6FA] border-b border-[#DCE2EA] flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-mono font-bold uppercase text-[#315C3D] block">
+                <span className="text-[11px] font-mono font-bold uppercase text-[#F58216] block">
                   Project Creation Desk
                 </span>
-                <h3 className="text-lg font-black text-[#202820] mt-0.5">
+                <h3 className="text-lg font-black text-[#101D38] mt-0.5">
                   Add New Project Under Domain
                 </h3>
               </div>
               <button
                 onClick={() => setIsAddProjectModalOpen(false)}
-                className="p-1.5 rounded-xl hover:bg-[#DCE8D9] text-[#667064] hover:text-[#315C3D] transition-colors cursor-pointer"
+                className="p-1.5 rounded-xl hover:bg-[#FFF5EB] text-[#5A6B82] hover:text-[#F58216] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -2253,13 +2253,13 @@ export default function AdminDashboardClient({
             <form onSubmit={handleCreateProject} className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
               {/* Technical Domain Selector */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   1. Official Technical Domain (Select from 16 Domains) *
                 </label>
                 <select
                   value={newProjectDomainCode}
                   onChange={(e) => setNewProjectDomainCode(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs font-bold text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs font-bold text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 >
                   {dynamicDomains.map((d) => (
                     <option key={d.code} value={d.code}>
@@ -2270,23 +2270,23 @@ export default function AdminDashboardClient({
               </div>
 
               {/* Next Generated Code Preview */}
-              <div className="p-3.5 rounded-xl bg-[#DCE8D9]/70 border border-[#315C3D]/30 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-[#FFF5EB]/70 border border-[#F58216]/30 flex items-center justify-between">
                 <div>
-                  <span className="font-bold text-xs text-[#315C3D] block">
+                  <span className="font-bold text-xs text-[#F58216] block">
                     Next Sequential Project Code:
                   </span>
-                  <span className="text-[11px] text-[#667064]">
+                  <span className="text-[11px] text-[#5A6B82]">
                     Auto-generated: DOMAINCODE + 3-digit number
                   </span>
                 </div>
-                <span className="font-mono font-black text-sm px-3 py-1 rounded-lg bg-[#202820] text-white">
+                <span className="font-mono font-black text-sm px-3 py-1 rounded-lg bg-[#101D38] text-white">
                   {getNextProjectCode(newProjectDomainCode)}
                 </span>
               </div>
 
               {/* Title */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   2. Project Title *
                 </label>
                 <input
@@ -2295,13 +2295,13 @@ export default function AdminDashboardClient({
                   placeholder="e.g. AI-Powered Drone Surveillance & Real-Time Threat Tracking"
                   value={newProjectTitle}
                   onChange={(e) => setNewProjectTitle(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Tagline */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   3. Tagline / Subtitle
                 </label>
                 <input
@@ -2309,13 +2309,13 @@ export default function AdminDashboardClient({
                   placeholder="e.g. Computer Vision Edge Detection & Automated Geofence Alerts"
                   value={newProjectTagline}
                   onChange={(e) => setNewProjectTagline(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Description */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   4. Short Description *
                 </label>
                 <textarea
@@ -2324,13 +2324,13 @@ export default function AdminDashboardClient({
                   placeholder="Brief summary of the engineering project solution..."
                   value={newProjectDescription}
                   onChange={(e) => setNewProjectDescription(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Abstract */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   5. Full Abstract / Problem &amp; Solution
                 </label>
                 <textarea
@@ -2338,13 +2338,13 @@ export default function AdminDashboardClient({
                   placeholder="Comprehensive technical abstract and academic problem statement..."
                   value={newProjectAbstract}
                   onChange={(e) => setNewProjectAbstract(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Tech Stack */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   6. Technology Stack (Comma-separated)
                 </label>
                 <input
@@ -2352,20 +2352,20 @@ export default function AdminDashboardClient({
                   placeholder="e.g. Python, OpenCV, YOLOv8, PyTorch, Streamlit"
                   value={newProjectTechStack}
                   onChange={(e) => setNewProjectTechStack(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Level & Year */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] mb-1">
+                  <label className="block text-xs font-bold text-[#101D38] mb-1">
                     7. Academic Level
                   </label>
                   <select
                     value={newProjectLevel}
                     onChange={(e) => setNewProjectLevel(e.target.value as any)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                   >
                     <option value="UG Final Year">UG Final Year</option>
                     <option value="PG / M.Tech">PG / M.Tech</option>
@@ -2373,31 +2373,31 @@ export default function AdminDashboardClient({
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] mb-1">
+                  <label className="block text-xs font-bold text-[#101D38] mb-1">
                     8. Edition Year
                   </label>
                   <input
                     type="text"
                     value={newProjectYear}
                     onChange={(e) => setNewProjectYear(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                   />
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#DDDCCF] flex items-center justify-end gap-2.5">
+              <div className="pt-4 border-t border-[#DCE2EA] flex items-center justify-end gap-2.5">
                 <button
                   type="button"
                   onClick={() => setIsAddProjectModalOpen(false)}
-                  className="px-4 py-2.5 rounded-xl bg-[#EEE9DC] text-xs font-bold text-[#667064] hover:text-[#202820] border border-[#DDDCCF] cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-[#F4F6FA] text-xs font-bold text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA] cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submittingNewProject}
-                  className="px-5 py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-sm cursor-pointer disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-all shadow-sm cursor-pointer disabled:opacity-50"
                 >
                   {submittingNewProject ? "Saving..." : "Create & Save Project"}
                 </button>
@@ -2410,19 +2410,19 @@ export default function AdminDashboardClient({
       {/* MODAL 2: EDIT PROJECT MODAL */}
       {selectedProjectForEdit && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#202820]">
-            <div className="p-6 bg-[#EEE9DC] border-b border-[#DDDCCF] flex items-center justify-between">
+          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#101D38]">
+            <div className="p-6 bg-[#F4F6FA] border-b border-[#DCE2EA] flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-mono font-bold uppercase text-[#315C3D] block">
+                <span className="text-[11px] font-mono font-bold uppercase text-[#F58216] block">
                   Project Code: {selectedProjectForEdit.projectCode || selectedProjectForEdit.id}
                 </span>
-                <h3 className="text-lg font-black text-[#202820] mt-0.5">
+                <h3 className="text-lg font-black text-[#101D38] mt-0.5">
                   Edit Project Details
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedProjectForEdit(null)}
-                className="p-1.5 rounded-xl hover:bg-[#DCE8D9] text-[#667064] hover:text-[#315C3D] transition-colors cursor-pointer"
+                className="p-1.5 rounded-xl hover:bg-[#FFF5EB] text-[#5A6B82] hover:text-[#F58216] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -2430,23 +2430,23 @@ export default function AdminDashboardClient({
 
             <form onSubmit={handleUpdateProject} className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
               {/* Domain & Code Info (Read-Only) */}
-              <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] flex items-center justify-between">
                 <div>
-                  <span className="font-bold text-xs text-[#202820] block">
+                  <span className="font-bold text-xs text-[#101D38] block">
                     Domain: {selectedProjectForEdit.domainCode} • {selectedProjectForEdit.domainName || selectedProjectForEdit.category}
                   </span>
-                  <span className="text-[11px] text-[#667064]">
+                  <span className="text-[11px] text-[#5A6B82]">
                     Project Code is immutable to preserve citation links.
                   </span>
                 </div>
-                <span className="font-mono font-black text-sm px-3 py-1 rounded-lg bg-[#202820] text-white">
+                <span className="font-mono font-black text-sm px-3 py-1 rounded-lg bg-[#101D38] text-white">
                   {selectedProjectForEdit.projectCode || selectedProjectForEdit.id}
                 </span>
               </div>
 
               {/* Title */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   Project Title *
                 </label>
                 <input
@@ -2454,26 +2454,26 @@ export default function AdminDashboardClient({
                   required
                   value={editProjectTitle}
                   onChange={(e) => setEditProjectTitle(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Tagline */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   Tagline / Subtitle
                 </label>
                 <input
                   type="text"
                   value={editProjectTagline}
                   onChange={(e) => setEditProjectTagline(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Description */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   Short Description *
                 </label>
                 <textarea
@@ -2481,46 +2481,46 @@ export default function AdminDashboardClient({
                   rows={3}
                   value={editProjectDescription}
                   onChange={(e) => setEditProjectDescription(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Abstract */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   Full Technical Abstract
                 </label>
                 <textarea
                   rows={4}
                   value={editProjectAbstract}
                   onChange={(e) => setEditProjectAbstract(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Tech Stack */}
               <div>
-                <label className="block text-xs font-bold text-[#202820] mb-1">
+                <label className="block text-xs font-bold text-[#101D38] mb-1">
                   Technology Stack (Comma-separated)
                 </label>
                 <input
                   type="text"
                   value={editProjectTechStack}
                   onChange={(e) => setEditProjectTechStack(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                 />
               </div>
 
               {/* Level & Year */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] mb-1">
+                  <label className="block text-xs font-bold text-[#101D38] mb-1">
                     Academic Level
                   </label>
                   <select
                     value={editProjectLevel}
                     onChange={(e) => setEditProjectLevel(e.target.value as any)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                   >
                     <option value="UG Final Year">UG Final Year</option>
                     <option value="PG / M.Tech">PG / M.Tech</option>
@@ -2528,31 +2528,31 @@ export default function AdminDashboardClient({
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] mb-1">
+                  <label className="block text-xs font-bold text-[#101D38] mb-1">
                     Edition Year
                   </label>
                   <input
                     type="text"
                     value={editProjectYear}
                     onChange={(e) => setEditProjectYear(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs text-[#202820] focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] focus:outline-none focus:border-[#F58216]"
                   />
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#DDDCCF] flex items-center justify-end gap-2.5">
+              <div className="pt-4 border-t border-[#DCE2EA] flex items-center justify-end gap-2.5">
                 <button
                   type="button"
                   onClick={() => setSelectedProjectForEdit(null)}
-                  className="px-4 py-2.5 rounded-xl bg-[#EEE9DC] text-xs font-bold text-[#667064] hover:text-[#202820] border border-[#DDDCCF] cursor-pointer"
+                  className="px-4 py-2.5 rounded-xl bg-[#F4F6FA] text-xs font-bold text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA] cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submittingEditProject}
-                  className="px-5 py-2.5 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-all shadow-sm cursor-pointer disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-all shadow-sm cursor-pointer disabled:opacity-50"
                 >
                   {submittingEditProject ? "Saving..." : "Update Project"}
                 </button>
@@ -2565,24 +2565,24 @@ export default function AdminDashboardClient({
       {/* MODAL 3: VIEW FULL PROJECT DETAILS MODAL */}
       {selectedProjectForView && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#202820]">
-            <div className="p-6 bg-[#EEE9DC] border-b border-[#DDDCCF] flex items-center justify-between">
+          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#101D38]">
+            <div className="p-6 bg-[#F4F6FA] border-b border-[#DCE2EA] flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#202820] text-white">
+                  <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#101D38] text-white">
                     {selectedProjectForView.projectCode || selectedProjectForView.id}
                   </span>
-                  <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-[#DCE8D9] text-[#315C3D]">
+                  <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-[#FFF5EB] text-[#F58216]">
                     {selectedProjectForView.domainCode} • {selectedProjectForView.domainName || selectedProjectForView.category}
                   </span>
                 </div>
-                <h3 className="text-base font-black text-[#202820] mt-0.5">
+                <h3 className="text-base font-black text-[#101D38] mt-0.5">
                   {selectedProjectForView.title}
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedProjectForView(null)}
-                className="p-1.5 rounded-xl hover:bg-[#DCE8D9] text-[#667064] hover:text-[#315C3D] transition-colors cursor-pointer"
+                className="p-1.5 rounded-xl hover:bg-[#FFF5EB] text-[#5A6B82] hover:text-[#F58216] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -2590,33 +2590,33 @@ export default function AdminDashboardClient({
 
             <div className="p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
               {/* Tagline */}
-              <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF]">
-                <span className="text-[10px] font-mono uppercase text-[#315C3D] font-bold block mb-0.5">
+              <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA]">
+                <span className="text-[10px] font-mono uppercase text-[#F58216] font-bold block mb-0.5">
                   Tagline
                 </span>
-                <p className="font-semibold text-xs text-[#202820]">{selectedProjectForView.tagline}</p>
+                <p className="font-semibold text-xs text-[#101D38]">{selectedProjectForView.tagline}</p>
               </div>
 
               {/* Abstract */}
-              <div className="p-4 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                <span className="text-[10px] font-mono uppercase text-[#667064] block font-bold">
+              <div className="p-4 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                <span className="text-[10px] font-mono uppercase text-[#5A6B82] block font-bold">
                   Technical Abstract
                 </span>
-                <p className="text-xs text-[#202820] leading-relaxed whitespace-pre-wrap">
+                <p className="text-xs text-[#101D38] leading-relaxed whitespace-pre-wrap">
                   {selectedProjectForView.abstract || selectedProjectForView.description}
                 </p>
               </div>
 
               {/* Tech Stack */}
               <div>
-                <span className="text-[10px] font-mono uppercase text-[#667064] block mb-1.5 font-bold">
+                <span className="text-[10px] font-mono uppercase text-[#5A6B82] block mb-1.5 font-bold">
                   Technology Stack
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedProjectForView.techStack?.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded-md bg-[#EEE9DC] border border-[#DDDCCF] text-xs text-[#202820] font-semibold"
+                      className="px-2.5 py-1 rounded-md bg-[#F4F6FA] border border-[#DCE2EA] text-xs text-[#101D38] font-semibold"
                     >
                       {tech}
                     </span>
@@ -2627,17 +2627,17 @@ export default function AdminDashboardClient({
               {/* Modules Breakdown */}
               {selectedProjectForView.modules && selectedProjectForView.modules.length > 0 && (
                 <div className="space-y-2">
-                  <span className="text-[10px] font-mono uppercase text-[#667064] block font-bold">
+                  <span className="text-[10px] font-mono uppercase text-[#5A6B82] block font-bold">
                     Architecture Modules ({selectedProjectForView.modules.length})
                   </span>
                   <div className="space-y-1.5">
                     {selectedProjectForView.modules.map((m, idx) => (
                       <div
                         key={idx}
-                        className="p-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF]"
+                        className="p-3 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA]"
                       >
-                        <p className="font-bold text-xs text-[#315C3D]">{m.name}</p>
-                        <p className="text-[11px] text-[#667064] mt-0.5">{m.description}</p>
+                        <p className="font-bold text-xs text-[#F58216]">{m.name}</p>
+                        <p className="text-[11px] text-[#5A6B82] mt-0.5">{m.description}</p>
                       </div>
                     ))}
                   </div>
@@ -2647,13 +2647,13 @@ export default function AdminDashboardClient({
               {/* Documentation Deliverables */}
               {selectedProjectForView.documentationIncluded && (
                 <div>
-                  <span className="text-[10px] font-mono uppercase text-[#667064] block mb-1.5 font-bold">
+                  <span className="text-[10px] font-mono uppercase text-[#5A6B82] block mb-1.5 font-bold">
                     Included Deliverables
                   </span>
-                  <ul className="space-y-1 text-xs text-[#202820]">
+                  <ul className="space-y-1 text-xs text-[#101D38]">
                     {selectedProjectForView.documentationIncluded.map((doc, idx) => (
                       <li key={idx} className="flex items-center gap-2">
-                        <Check className="w-3.5 h-3.5 text-[#315C3D] shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#F58216] shrink-0" />
                         <span>{doc}</span>
                       </li>
                     ))}
@@ -2662,8 +2662,8 @@ export default function AdminDashboardClient({
               )}
 
               {/* Footer Links */}
-              <div className="pt-4 border-t border-[#DDDCCF] flex items-center justify-between">
-                <span className="font-mono text-[11px] text-[#667064]">
+              <div className="pt-4 border-t border-[#DCE2EA] flex items-center justify-between">
+                <span className="font-mono text-[11px] text-[#5A6B82]">
                   {selectedProjectForView.level || "UG Final Year"} • {selectedProjectForView.year || "2025-26 Edition"}
                 </span>
 
@@ -2673,14 +2673,14 @@ export default function AdminDashboardClient({
                       setSelectedProjectForView(null);
                       openEditModal(selectedProjectForView);
                     }}
-                    className="px-4 py-2 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-xs font-bold text-[#315C3D] transition-colors cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-xs font-bold text-[#F58216] transition-colors cursor-pointer"
                   >
                     Edit Project
                   </button>
                   <Link
                     href={`/projects/${selectedProjectForView.domainCode || "AMPY"}/${selectedProjectForView.projectCode || selectedProjectForView.id}`}
                     target="_blank"
-                    className="px-4 py-2 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white text-xs font-bold transition-colors flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors flex items-center gap-1.5"
                   >
                     <span>View Public Page</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -2695,21 +2695,21 @@ export default function AdminDashboardClient({
       {/* MODAL 4: FULL INQUIRY DETAILS MODAL */}
       {selectedInquiry && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-in fade-in duration-150">
-          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DDDCCF] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#202820]">
-            <div className="p-6 bg-[#EEE9DC] border-b border-[#DDDCCF] flex items-center justify-between">
+          <div className="w-full max-w-2xl bg-[#FFFFFF] rounded-3xl border border-[#DCE2EA] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 text-[#101D38]">
+            <div className="p-6 bg-[#F4F6FA] border-b border-[#DCE2EA] flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#202820] text-white">
+                  <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-lg bg-[#101D38] text-white">
                     {selectedInquiry.id}
                   </span>
                   {renderSourceBadge(selectedInquiry.source, selectedInquiry.id)}
                   {renderEnquiryTypeBadge(selectedInquiry)}
                 </div>
-                <h3 className="text-lg font-black text-[#202820] mt-0.5">{selectedInquiry.name}</h3>
+                <h3 className="text-lg font-black text-[#101D38] mt-0.5">{selectedInquiry.name}</h3>
               </div>
               <button
                 onClick={() => setSelectedInquiry(null)}
-                className="p-1.5 rounded-xl hover:bg-[#DCE8D9] text-[#667064] hover:text-[#315C3D] transition-colors cursor-pointer"
+                className="p-1.5 rounded-xl hover:bg-[#FFF5EB] text-[#5A6B82] hover:text-[#F58216] transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -2727,9 +2727,9 @@ export default function AdminDashboardClient({
                     : "Verified");
                 if (vStatus === "Spam") {
                   return (
-                    <div className="p-4 rounded-2xl bg-[#202820] text-white border border-[#DDDCCF] space-y-2">
+                    <div className="p-4 rounded-2xl bg-[#101D38] text-white border border-[#DCE2EA] space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="font-bold flex items-center gap-1.5 text-[#DDDCCF]">
+                        <span className="font-bold flex items-center gap-1.5 text-[#DCE2EA]">
                           <ShieldAlert className="w-4 h-4 text-white" />
                           <span>Automated Bot / Spam Flagged</span>
                         </span>
@@ -2737,7 +2737,7 @@ export default function AdminDashboardClient({
                           Spam Score: {selectedInquiry.spamScore || 85}/100
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#DDDCCF] leading-relaxed">
+                      <p className="text-[11px] text-[#DCE2EA] leading-relaxed">
                         This submission was flagged by honeypot or bot heuristics. It is isolated from active workflow queues.
                       </p>
                     </div>
@@ -2745,13 +2745,13 @@ export default function AdminDashboardClient({
                 }
                 if (vStatus === "Suspicious") {
                   return (
-                    <div className="p-4 rounded-2xl bg-[#EEE9DC] border border-[#DDDCCF] space-y-2 text-[#202820]">
+                    <div className="p-4 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-2 text-[#101D38]">
                       <div className="flex items-center justify-between">
-                        <span className="font-bold flex items-center gap-1.5 text-[#315C3D]">
-                          <AlertTriangle className="w-4 h-4 text-[#315C3D]" />
+                        <span className="font-bold flex items-center gap-1.5 text-[#F58216]">
+                          <AlertTriangle className="w-4 h-4 text-[#F58216]" />
                           <span>Flagged as Suspicious Submission</span>
                         </span>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#DCE8D9] text-[#315C3D] font-semibold">
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FFF5EB] text-[#F58216] font-semibold">
                           Spam Score: {selectedInquiry.spamScore || 50}/100
                         </span>
                       </div>
@@ -2759,15 +2759,15 @@ export default function AdminDashboardClient({
                   );
                 }
                 return (
-                  <div className="p-3.5 rounded-2xl bg-[#DCE8D9]/70 border border-[#315C3D]/30 flex items-center justify-between text-[#202820]">
+                  <div className="p-3.5 rounded-2xl bg-[#FFF5EB]/70 border border-[#F58216]/30 flex items-center justify-between text-[#101D38]">
                     <div className="flex items-center gap-2">
-                      <ShieldCheck className="w-5 h-5 text-[#315C3D] shrink-0" />
+                      <ShieldCheck className="w-5 h-5 text-[#F58216] shrink-0" />
                       <div>
-                        <span className="font-bold block text-xs text-[#202820]">Verified Genuine Student</span>
-                        <span className="text-[11px] text-[#667064]">Passed bot trap, human submission timing, and phone checks.</span>
+                        <span className="font-bold block text-xs text-[#101D38]">Verified Genuine Student</span>
+                        <span className="text-[11px] text-[#5A6B82]">Passed bot trap, human submission timing, and phone checks.</span>
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white text-[#315C3D] font-bold border border-[#DDDCCF]">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white text-[#F58216] font-bold border border-[#DCE2EA]">
                       Score 0/100
                     </span>
                   </div>
@@ -2776,99 +2776,99 @@ export default function AdminDashboardClient({
 
               {/* Student Personal & Contact Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                  <span className="text-[10px] font-mono text-[#315C3D] uppercase font-bold flex items-center gap-1">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                  <span className="text-[10px] font-mono text-[#F58216] uppercase font-bold flex items-center gap-1">
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>WhatsApp Number (Direct)</span>
                   </span>
-                  <p className="font-bold text-sm text-[#202820]">
+                  <p className="font-bold text-sm text-[#101D38]">
                     {selectedInquiry.whatsappNumber || selectedInquiry.phone}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                  <span className="text-[10px] font-mono text-[#667064] uppercase block">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                  <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">
                     Mobile Contact Number
                   </span>
-                  <p className="font-bold text-sm text-[#202820]">
+                  <p className="font-bold text-sm text-[#101D38]">
                     {selectedInquiry.mobileNumber || selectedInquiry.phone}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                  <span className="text-[10px] font-mono text-[#667064] uppercase block">Email Address</span>
-                  <p className="font-bold text-xs text-[#202820] truncate">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                  <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">Email Address</span>
+                  <p className="font-bold text-xs text-[#101D38] truncate">
                     {selectedInquiry.email || "Not Provided"}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                  <span className="text-[10px] font-mono text-[#667064] uppercase block">College / Institution</span>
-                  <p className="font-semibold text-xs text-[#202820]">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                  <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">College / Institution</span>
+                  <p className="font-semibold text-xs text-[#101D38]">
                     {selectedInquiry.college || "Not Specified"}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1 sm:col-span-2">
-                  <span className="text-[10px] font-mono text-[#667064] uppercase block">Department / Branch</span>
-                  <p className="font-semibold text-xs text-[#202820]">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1 sm:col-span-2">
+                  <span className="text-[10px] font-mono text-[#5A6B82] uppercase block">Department / Branch</span>
+                  <p className="font-semibold text-xs text-[#101D38]">
                     {selectedInquiry.department || selectedInquiry.degree || "Not Specified"}
                   </p>
                 </div>
               </div>
 
               {/* Technical Domain & Target Project Details */}
-              <div className="p-4 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-2">
+              <div className="p-4 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold uppercase text-[#315C3D]">
+                  <span className="text-[10px] font-mono font-bold uppercase text-[#F58216]">
                     Target Domain: {selectedInquiry.domainCode ? `${selectedInquiry.domainCode} • ` : ""}
                     {selectedInquiry.domainName || selectedInquiry.projectDomain || selectedInquiry.category}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF]">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA]">
                     Type: {selectedInquiry.enquiryType || "Project Specific"}
                   </span>
                 </div>
 
                 {selectedInquiry.projectCode && (
-                  <div className="p-2.5 rounded-lg bg-[#FFFFFF] border border-[#DDDCCF] flex items-center gap-2">
-                    <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-[#202820] text-white">
+                  <div className="p-2.5 rounded-lg bg-[#FFFFFF] border border-[#DCE2EA] flex items-center gap-2">
+                    <span className="font-mono font-bold text-xs px-2 py-0.5 rounded bg-[#101D38] text-white">
                       {selectedInquiry.projectCode}
                     </span>
-                    <span className="font-bold text-xs text-[#202820]">
+                    <span className="font-bold text-xs text-[#101D38]">
                       {selectedInquiry.projectTitle}
                     </span>
                   </div>
                 )}
 
                 {!selectedInquiry.projectCode && selectedInquiry.projectTitle && (
-                  <p className="font-bold text-sm text-[#202820]">{selectedInquiry.projectTitle}</p>
+                  <p className="font-bold text-sm text-[#101D38]">{selectedInquiry.projectTitle}</p>
                 )}
               </div>
 
               {(selectedInquiry.requirement || selectedInquiry.message) && (
-                <div className="p-4 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-[#667064] block">
+                <div className="p-4 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] space-y-1">
+                  <span className="text-[10px] font-mono uppercase text-[#5A6B82] block">
                     Student Project Requirements / Notes
                   </span>
-                  <p className="text-xs text-[#202820] leading-relaxed whitespace-pre-wrap">
+                  <p className="text-xs text-[#101D38] leading-relaxed whitespace-pre-wrap">
                     {selectedInquiry.requirement || selectedInquiry.message}
                   </p>
                 </div>
               )}
 
               {/* Status Selector & Anti-Bot Moderation in Modal */}
-              <div className="pt-3 border-t border-[#DDDCCF] space-y-3">
+              <div className="pt-3 border-t border-[#DCE2EA] space-y-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="font-bold text-[#202820]">Status:</span>
+                    <span className="font-bold text-[#101D38]">Status:</span>
                     {(["New", "Pending", "In Progress", "Completed"] as const).map((status) => (
                       <button
                         key={status}
                         onClick={() => handleStatusChange(selectedInquiry.id, status)}
                         className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                           selectedInquiry.status === status
-                            ? "bg-[#315C3D] text-white"
-                            : "bg-[#EEE9DC] text-[#667064] hover:text-[#202820] border border-[#DDDCCF]"
+                            ? "bg-[#F58216] text-white"
+                            : "bg-[#F4F6FA] text-[#5A6B82] hover:text-[#101D38] border border-[#DCE2EA]"
                         }`}
                       >
                         {status}
@@ -2880,7 +2880,7 @@ export default function AdminDashboardClient({
                     {selectedInquiry.status !== "Completed" && (
                       <button
                         onClick={() => handleStatusChange(selectedInquiry.id, "Completed", "Verified")}
-                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#DCE8D9] text-[#315C3D] hover:bg-[#cde0c9] border border-[#DCE8D9] transition-all cursor-pointer flex items-center gap-1"
+                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#FFF5EB] text-[#F58216] hover:bg-[#cde0c9] border border-[#FFF5EB] transition-all cursor-pointer flex items-center gap-1"
                       >
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Mark Completed</span>
@@ -2890,7 +2890,7 @@ export default function AdminDashboardClient({
                     {selectedInquiry.verificationStatus !== "Spam" && (
                       <button
                         onClick={() => handleStatusChange(selectedInquiry.id, "Spam", "Spam")}
-                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#EEE9DC] text-[#202820] hover:bg-[#e4ddcc] border border-[#DDDCCF] transition-all cursor-pointer flex items-center gap-1"
+                        className="px-3 py-1 rounded-lg text-xs font-bold bg-[#F4F6FA] text-[#101D38] hover:bg-[#e4ddcc] border border-[#DCE2EA] transition-all cursor-pointer flex items-center gap-1"
                       >
                         <ShieldAlert className="w-3.5 h-3.5" />
                         <span>Mark as Spam</span>
@@ -2906,10 +2906,10 @@ export default function AdminDashboardClient({
                     const topic = selectedInquiry.projectTitle || selectedInquiry.domainName || selectedInquiry.projectDomain;
                     return (
                       <a
-                        href={`https://wa.me/${waNum}?text=${encodeURIComponent(`Hello ${selectedInquiry.name}, Upwork Project Center coordinator regarding your Project Enquiry [${selectedInquiry.id}] for "${topic}":`)}`}
+                        href={`https://wa.me/${waNum}?text=${encodeURIComponent(`Hello ${selectedInquiry.name}, UPWORKS coordinator regarding your Project Enquiry [${selectedInquiry.id}] for "${topic}":`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
+                        className="py-2.5 px-4 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
                       >
                         <MessageCircle className="w-4 h-4 text-white" />
                         <span>Reply on WhatsApp ({selectedInquiry.whatsappNumber || selectedInquiry.phone})</span>
@@ -2918,10 +2918,10 @@ export default function AdminDashboardClient({
                   })()}
 
                   <a
-                    href={`mailto:${selectedInquiry.email}?subject=${encodeURIComponent(`Upwork Project Center Project Enquiry [${selectedInquiry.id}]`)}`}
-                    className="py-2.5 px-4 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] font-bold flex items-center justify-center gap-2 transition-colors"
+                    href={`mailto:${selectedInquiry.email}?subject=${encodeURIComponent(`UPWORKS Project Enquiry [${selectedInquiry.id}]`)}`}
+                    className="py-2.5 px-4 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#F58216] border border-[#DCE2EA] font-bold flex items-center justify-center gap-2 transition-colors"
                   >
-                    <Mail className="w-4 h-4 text-[#315C3D]" />
+                    <Mail className="w-4 h-4 text-[#F58216]" />
                     <span>Send Email ({selectedInquiry.email || "No Email"})</span>
                   </a>
                 </div>

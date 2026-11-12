@@ -19,16 +19,16 @@ import { openConsultationModal } from "@/components/common/ConsultationModal";
 
 export default function ServicesSection() {
   const iconMap: Record<string, React.ReactNode> = {
-    Code2: <Code2 className="w-6 h-6 text-[#315C3D]" />,
-    SlidersAdjust: <SlidersHorizontal className="w-6 h-6 text-[#497A52]" />,
-    FileText: <FileText className="w-6 h-6 text-[#315C3D]" />,
-    Presentation: <Presentation className="w-6 h-6 text-[#497A52]" />,
-    GraduationCap: <GraduationCap className="w-6 h-6 text-[#315C3D]" />,
-    Server: <Server className="w-6 h-6 text-[#497A52]" />,
+    Code2: <Code2 className="w-6 h-6 text-[#F58216]" />,
+    SlidersAdjust: <SlidersHorizontal className="w-6 h-6 text-[#F58216]" />,
+    FileText: <FileText className="w-6 h-6 text-[#F58216]" />,
+    Presentation: <Presentation className="w-6 h-6 text-[#F58216]" />,
+    GraduationCap: <GraduationCap className="w-6 h-6 text-[#F58216]" />,
+    Server: <Server className="w-6 h-6 text-[#F58216]" />,
   };
 
   return (
-    <section className="py-20 bg-[#F5F1E7] relative border-t border-[#DDDCCF]">
+    <section className="py-20 bg-white relative border-t border-[#DCE2EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="End-to-End Support"
@@ -41,50 +41,50 @@ export default function ServicesSection() {
           {SERVICES_DATA.map((srv, idx) => (
             <div
               key={srv.id}
-              className="group relative rounded-2xl bg-[#FFFFFF] border border-[#DDDCCF] p-6 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#315C3D] hover:shadow-md flex flex-col justify-between"
+              className="group relative rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] p-6 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F58216] hover:shadow-md flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#DCE8D9] border border-[#DDDCCF] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-[#FFF5EB] border border-[#F58216]/25 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                     {iconMap[srv.iconName]}
                   </div>
-                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D]">
+                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#FFF5EB] border border-[#F58216]/25 text-[#F58216]">
                     Service 0{idx + 1}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#202820] mb-2 group-hover:text-[#315C3D] transition-colors">
+                <h3 className="text-xl font-bold text-[#101D38] mb-2 group-hover:text-[#F58216] transition-colors">
                   {srv.title}
                 </h3>
 
-                <p className="text-xs text-[#315C3D] font-semibold mb-3">
+                <p className="text-xs text-[#F58216] font-semibold mb-3">
                   {srv.shortDesc}
                 </p>
 
-                <p className="text-xs text-[#667064] leading-relaxed mb-4">
+                <p className="text-xs text-[#263750] leading-relaxed mb-4">
                   {srv.description}
                 </p>
 
-                <div className="space-y-1.5 mb-6 pt-3 border-t border-[#DDDCCF]">
+                <div className="space-y-1.5 mb-6 pt-3 border-t border-[#DCE2EA]">
                   {srv.deliverables.slice(0, 3).map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start gap-2 text-xs text-[#202820]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#315C3D] shrink-0 mt-0.5" />
+                    <div key={dIdx} className="flex items-start gap-2 text-xs text-[#263750]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#F58216] shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-[#DDDCCF] flex items-center justify-between">
+              <div className="pt-3 border-t border-[#DCE2EA] flex items-center justify-between">
                 <button
                   onClick={() =>
                     openConsultationModal({
                       serviceTitle: srv.title,
                     })
                   }
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-xs border border-[#315C3D] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#101D38] hover:bg-[#1A2C50] text-white font-bold text-xs border border-[#101D38] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs group/btn"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-white" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
                   <span>Inquire for {srv.title}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -96,7 +96,7 @@ export default function ServicesSection() {
         <div className="mt-12 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#315C3D] hover:text-[#497A52] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#101D38] hover:text-[#F58216] transition-colors"
           >
             <span>Explore All 6 Core Deliverables</span>
             <ArrowRight className="w-4 h-4" />

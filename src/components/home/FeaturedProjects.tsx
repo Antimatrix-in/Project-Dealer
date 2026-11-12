@@ -19,21 +19,21 @@ export default function FeaturedProjects() {
       : PROJECTS_DATA.filter((p) => p.category === selectedCategory).slice(0, 6);
 
   return (
-    <section className="py-24 bg-[#EEE9DC] relative border-t border-[#DDDCCF]">
+    <section className="py-24 bg-[#F4F6FA] relative border-t border-[#DCE2EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-xs font-semibold text-[#F58216] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">
               Verified Project Repository
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Featured <span className="text-[#315C3D]">Projects</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101D38] tracking-tight">
+            Featured <span className="text-[#F58216]">Projects</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#263750] leading-relaxed">
             Handpicked final year implementations with complete source code, standard base papers, documentation, and live demo access.
           </p>
         </div>
@@ -46,8 +46,8 @@ export default function FeaturedProjects() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-[#315C3D] text-white shadow-xs border border-[#315C3D] font-bold"
-                  : "bg-[#FFFFFF] text-[#667064] hover:bg-[#DCE8D9] hover:text-[#202820] border border-[#DDDCCF]"
+                  ? "bg-[#101D38] text-white shadow-xs border border-[#101D38] font-bold"
+                  : "bg-[#FFFFFF] text-[#5A6B82] hover:bg-[#FFF5EB] hover:text-[#101D38] border border-[#DCE2EA]"
               }`}
             >
               {cat}
@@ -71,7 +71,7 @@ export default function FeaturedProjects() {
             href={GOOGLE_ENQUIRY_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#285A3B] hover:bg-[#214930] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#285A3B] group cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm transition-all shadow-xs hover:shadow-md hover:-translate-y-0.5 border border-[#F58216] group cursor-pointer"
           >
             <ClipboardList className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
             <span>Project Enquiry</span>
@@ -79,10 +79,10 @@ export default function FeaturedProjects() {
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#D8DDCF] text-[#1F2A22] hover:text-[#285A3B] hover:border-[#285A3B] font-bold text-sm transition-all group"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#101D38] text-[#101D38] hover:text-[#F58216] hover:border-[#F58216] font-bold text-sm transition-all group"
           >
             <span>Explore All Projects in Catalog</span>
-            <ArrowRight className="w-4 h-4 text-[#285A3B] group-hover:translate-x-1.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#101D38] group-hover:text-[#F58216] group-hover:translate-x-1.5 transition-all" />
           </Link>
         </div>
       </div>

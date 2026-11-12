@@ -76,27 +76,24 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0B150F]/95 backdrop-blur-md shadow-md py-3 border-b border-[#244730]"
-          : "bg-[#0D1912]/95 backdrop-blur-md py-4 border-b border-[#1F3D29]"
+          ? "bg-white/95 backdrop-blur-md shadow-sm py-2.5 border-b border-[#DCE2EA]"
+          : "bg-white/95 backdrop-blur-md py-3.5 border-b border-[#DCE2EA]"
       }`}
     >
-      {/* Subtle radial emerald highlight at top center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(40,90,59,0.32),rgba(11,21,15,0))] pointer-events-none" />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
-          {/* LEFT: Official Upwork Project Center Brand Logo (Light transparent variant for dark header) */}
+          {/* LEFT: Official UPWORKS Brand Logo */}
           <Link
             href="/"
-            className="flex items-center shrink-0 group transition-opacity hover:opacity-90 py-0.5"
-            title="Upwork Project Center"
+            className="flex items-center shrink-0 group transition-opacity hover:opacity-95 py-0.5"
+            title="UPWORKS – Project Development Services"
           >
             <Image
-              src="/images/upwork-project-center-logo-white.png"
-              alt="Upwork Project Center Official Logo"
-              width={220}
-              height={42}
-              className="h-9 sm:h-10 md:h-10.5 lg:h-11 w-auto object-contain"
+              src="/images/upworks-logo.png"
+              alt="UPWORKS – Project Development Services Official Logo"
+              width={240}
+              height={50}
+              className="h-10 sm:h-11 md:h-11.5 lg:h-12 w-auto object-contain"
               priority
             />
           </Link>
@@ -114,8 +111,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`px-3.5 xl:px-4 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] font-medium transition-all duration-200 ${
                     isActive
-                      ? "text-white font-semibold bg-white/[0.1] border border-white/10 shadow-2xs"
-                      : "text-[#D2DFD6] hover:text-white hover:bg-white/[0.05]"
+                      ? "text-[#F58216] font-semibold bg-[#FFF5EB] border border-[#F58216]/25 shadow-2xs"
+                      : "text-[#101D38] hover:text-[#F58216] hover:bg-[#F4F6FA]"
                   }`}
                 >
                   {item.label}
@@ -129,19 +126,19 @@ export default function Navbar() {
             {/* Log In: clean subtle light / outlined button */}
             <Link
               href="/admin/login"
-              className="h-10 px-4 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] hover:bg-white/[0.08] text-[#E0EBE2] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
-              title="Log In to Upwork Project Center Portal"
+              className="h-10 px-4.5 rounded-xl border border-[#101D38] hover:bg-[#101D38] text-[#101D38] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
+              title="Log In to UPWORKS Portal"
             >
               Log In
             </Link>
 
-            {/* Get Started: prominent green button using brand colors */}
+            {/* Get Started: prominent orange button using brand colors */}
             <a
               href={GOOGLE_ENQUIRY_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-10 px-5 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#3E7D54]"
-              title="Get Started with Upwork Project Center"
+              className="h-10 px-5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#F58216]"
+              title="Get Started with UPWORKS"
             >
               Get Started
             </a>
@@ -151,13 +148,13 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="h-10 w-10 rounded-xl border border-[#2D5A3C] bg-white/[0.04] hover:bg-white/[0.08] text-white flex items-center justify-center transition-colors lg:hidden"
+            className="h-10 w-10 rounded-xl border border-[#DCE2EA] bg-[#F4F6FA] hover:bg-[#EAEFF7] text-[#101D38] flex items-center justify-center transition-colors lg:hidden"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5 text-[#E0EBE2]" />
+              <X className="w-5 h-5 text-[#101D38]" />
             ) : (
-              <Menu className="w-5 h-5 text-[#E0EBE2]" />
+              <Menu className="w-5 h-5 text-[#101D38]" />
             )}
           </button>
         </div>
@@ -165,7 +162,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0D1912] border-b border-[#1F3D29] px-4 pt-4 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="lg:hidden bg-white border-b border-[#DCE2EA] px-4 pt-4 pb-6 space-y-4 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
           {/* Navigation items in exact order */}
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => {
@@ -177,8 +174,8 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-white font-semibold bg-white/10 border border-white/10"
-                      : "text-[#D2DFD6] hover:text-white hover:bg-white/5"
+                      ? "text-[#F58216] font-semibold bg-[#FFF5EB] border border-[#F58216]/25"
+                      : "text-[#101D38] hover:text-[#F58216] hover:bg-[#F4F6FA]"
                   }`}
                 >
                   {item.label}
@@ -188,12 +185,12 @@ export default function Navbar() {
           </div>
 
           {/* Action buttons inside mobile drawer */}
-          <div className="border-t border-[#1F3D29] pt-4">
+          <div className="border-t border-[#DCE2EA] pt-4">
             <div className="grid grid-cols-2 gap-3">
               <Link
                 href="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="h-11 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors"
+                className="h-11 rounded-xl border border-[#101D38] text-[#101D38] hover:bg-[#101D38] hover:text-white text-sm font-semibold inline-flex items-center justify-center transition-colors"
               >
                 Log In
               </Link>
@@ -202,7 +199,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="h-11 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors shadow-xs border border-[#3E7D54]"
+                className="h-11 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors shadow-xs border border-[#F58216]"
               >
                 Get Started
               </a>

@@ -11,7 +11,7 @@ export const GOOGLE_ENQUIRY_FORM_URL =
 
 export const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/in/anti-matrix/";
 export const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/antimatrix_in/";
-export const INSTAGRAM_DISPLAY_NAME = "UPWORK_PROJECT_CENTER";
+export const INSTAGRAM_DISPLAY_NAME = "UPWORKS";
 
 interface WhatsAppMessageParams {
   category?: string;
@@ -29,7 +29,7 @@ export function buildWhatsAppMessage(params?: WhatsAppMessageParams): string {
   const requirements = params?.requirements || "";
 
   return (
-    `Hello Upwork Project Center Team,\n\n` +
+    `Hello UPWORKS Team,\n\n` +
     `I am interested in your project services.\n\n` +
     `Project Category: ${category}\n` +
     `Project Title: ${title}\n` +

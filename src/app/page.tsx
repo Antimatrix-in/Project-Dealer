@@ -11,9 +11,9 @@ import FaqSection from "@/components/home/FaqSection";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata = {
-  title: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
+  title: "UPWORKS – Project Development Services | Premier Technical Projects & Mentorship",
   description:
-    "Upwork Project Center provides premier project guidance in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
+    "UPWORKS provides premier project development services in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
 };
 
 export default function HomePage() {
@@ -25,10 +25,10 @@ export default function HomePage() {
       {/* 2. Statistics Section (500+ Projects, 1200+ Students, 25+ Domains, 99.8% Satisfaction) */}
       <StatisticsSection />
 
-      {/* 3. Popular Project Categories (10 Glassmorphism Cards) */}
+      {/* 3. Popular Project Categories (10 Cards) */}
       <CategoryGrid />
 
-      {/* 4. Why Choose Upwork Project Center (6 Premium Cards) */}
+      {/* 4. Why Choose UPWORKS (6 Premium Cards) */}
       <WhyChooseUs />
 
       {/* 5. Our Process (5 Modern Steps) */}

@@ -19,12 +19,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://upworkprojectcenter.com"),
   title: {
-    default: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
-    template: "%s | Upwork Project Center",
+    default: "UPWORKS – Project Development Services",
+    template: "%s | UPWORKS",
   },
   description:
-    "Upwork Project Center helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
+    "UPWORKS provides industry-grade academic project development, complete documentation, base paper reviews, and viva defense guidance for engineering students.",
   keywords: [
+    "UPWORKS",
+    "Project Development Services",
     "Final Year Projects",
     "Engineering Projects",
     "IEEE Projects 2025 2026",
@@ -42,39 +44,39 @@ export const metadata: Metadata = {
     "Viva Guidance",
     "Technical Support"
   ],
-  authors: [{ name: "Upwork Project Center" }],
+  authors: [{ name: "UPWORKS" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Upwork Project Center",
-    title: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
+    siteName: "UPWORKS",
+    title: "UPWORKS – Project Development Services",
     description:
-      "Upwork Project Center helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
+      "UPWORKS provides industry-grade academic project development, complete documentation, base paper reviews, and viva defense guidance for engineering students.",
     images: [
       {
-        url: "/images/upwork-project-center-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Upwork Project Center",
+        url: "/images/upworks-logo.png",
+        width: 1024,
+        height: 341,
+        alt: "UPWORKS – Project Development Services Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
+    title: "UPWORKS – Project Development Services",
     description:
-      "Upwork Project Center helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, and viva defense.",
-    images: ["/images/upwork-project-center-logo.png"],
+      "UPWORKS provides industry-grade academic project development, complete documentation, base paper reviews, and viva defense guidance for engineering students.",
+    images: ["/images/upworks-logo.png"],
   },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
       { url: "/icon.png", type: "image/png", sizes: "48x48" },
-      { url: "/images/upwork-project-center-icon.png", type: "image/png" },
+      { url: "/images/upworks-icon.png", type: "image/png" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-      { url: "/images/upwork-project-center-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/images/upworks-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
@@ -89,18 +91,19 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F5F1E7] text-[#1F2A22] selection:bg-[#285A3B] selection:text-[#FFFFFF] font-sans antialiased">
+      <body className="min-h-full flex flex-col bg-[#F4F6FA] text-[#263750] selection:bg-[#F58216] selection:text-[#FFFFFF] font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
-              name: "Upwork Project Center",
+              name: "UPWORKS",
+              alternateName: "UPWORKS – Project Development Services",
               url: "https://upworkprojectcenter.com",
-              logo: "https://upworkprojectcenter.com/images/upwork-project-center-logo.png",
+              logo: "https://upworkprojectcenter.com/images/upworks-logo.png",
               description:
-                "India's premier engineering research and final year project guidance center offering IEEE standard implementations and viva defense mentoring.",
+                "Premier engineering research and academic project development center offering IEEE standard implementations and viva defense mentoring.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Chennai",

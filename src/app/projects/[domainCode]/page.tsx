@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: DomainPageProps) {
 
   if (domain) {
     return {
-      title: `${domain.name} (${domain.code}) Projects - Upwork Project Center`,
+      title: `${domain.name} (${domain.code}) Projects – UPWORKS`,
       description: `Explore engineering projects under ${domain.name} (${domain.code}). Source code, IEEE base papers, and viva documentation included.`,
     };
   }
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: DomainPageProps) {
   const project = findProject(domainCode);
   if (project) {
     return {
-      title: `${project.title} - Upwork Project Center`,
+      title: `${project.title} – UPWORKS`,
       description: project.description?.slice(0, 160) || "Project details and IEEE documentation",
     };
   }

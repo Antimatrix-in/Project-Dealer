@@ -20,29 +20,29 @@ export default function StudentReviewsSection() {
   const current = STUDENT_REVIEWS[currentIndex];
 
   return (
-    <section className="py-24 bg-[#EEE9DC] relative border-t border-[#DDDCCF]">
+    <section className="py-24 bg-[#F4F6FA] relative border-t border-[#DCE2EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-xs font-semibold text-[#F58216] mb-4 shadow-xs font-mono">
+            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
             <span className="uppercase tracking-wider text-[11px] font-bold">
               Student Experiences
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Student <span className="text-[#315C3D]">Reviews</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101D38] tracking-tight">
+            Student <span className="text-[#F58216]">Reviews</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
-            See how engineering &amp; computer science students achieved distinction in their final year college project reviews with Upwork Project Center.
+          <p className="mt-4 text-base sm:text-lg text-[#263750] leading-relaxed">
+            See how engineering &amp; computer science students achieved distinction in their final year college project reviews with UPWORKS.
           </p>
         </div>
 
         {/* Interactive Modern Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] p-8 sm:p-12 shadow-xs overflow-hidden">
-            <div className="absolute top-6 right-8 text-[#315C3D]/15 pointer-events-none">
+          <div className="relative rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] p-8 sm:p-12 shadow-xs overflow-hidden">
+            <div className="absolute top-6 right-8 text-[#F58216]/15 pointer-events-none">
               <Quote className="w-24 h-24 stroke-[1]" />
             </div>
 
@@ -59,34 +59,34 @@ export default function StudentReviewsSection() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1">
                     {[...Array(current.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#315C3D] text-[#315C3D]" />
+                      <Star key={i} className="w-5 h-5 fill-[#F58216] text-[#F58216]" />
                     ))}
-                    <span className="ml-2 font-mono text-xs font-bold text-[#315C3D]">
+                    <span className="ml-2 font-mono text-xs font-bold text-[#F58216]">
                       5.0 / 5.0
                     </span>
                   </div>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#315C3D] bg-[#DCE8D9] px-2.5 py-1 rounded-full border border-[#DDDCCF]">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#F58216] bg-[#FFF5EB] px-2.5 py-1 rounded-full border border-[#FED7AA]">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     Verified Student Review
                   </span>
                 </div>
 
                 {/* Review Quote */}
-                <blockquote className="text-base sm:text-xl text-[#202820] font-medium leading-relaxed italic">
+                <blockquote className="text-base sm:text-xl text-[#101D38] font-medium leading-relaxed italic">
                   &ldquo;{current.comment}&rdquo;
                 </blockquote>
 
                 {/* Project Delivered Box */}
-                <div className="p-3.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="p-3.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#667064]">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#5A6B82]">
                       Project Delivered:
                     </span>
-                    <span className="font-bold text-[#315C3D]">
+                    <span className="font-bold text-[#101D38]">
                       {current.projectTitle}
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono font-medium text-[#667064]">
+                  <span className="text-[11px] font-mono font-medium text-[#5A6B82]">
                     {current.date}
                   </span>
                 </div>
@@ -94,15 +94,15 @@ export default function StudentReviewsSection() {
                 {/* Student Profile Info */}
                 <div className="pt-2 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-[#315C3D] text-white flex items-center justify-center font-bold text-base shadow-xs">
+                    <div className="w-12 h-12 rounded-full bg-[#101D38] text-white flex items-center justify-center font-bold text-base shadow-xs">
                       {current.studentName.charAt(0)}
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm text-[#202820]">
+                      <h4 className="font-bold text-sm text-[#101D38]">
                         {current.studentName}
                       </h4>
-                      <p className="text-xs text-[#667064]">
-                        {current.degree} • <span className="font-semibold text-[#202820]">{current.college}</span>
+                      <p className="text-xs text-[#5A6B82]">
+                        {current.degree} • <span className="font-semibold text-[#101D38]">{current.college}</span>
                       </p>
                     </div>
                   </div>
@@ -111,14 +111,14 @@ export default function StudentReviewsSection() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={prevReview}
-                      className="p-2.5 rounded-xl border border-[#DDDCCF] hover:border-[#315C3D] bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] transition-colors cursor-pointer"
+                      className="p-2.5 rounded-xl border border-[#DCE2EA] hover:border-[#F58216] bg-[#FFFFFF] hover:bg-[#F4F6FA] text-[#101D38] transition-colors cursor-pointer"
                       aria-label="Previous Review"
                     >
                       <ChevronLeft className="w-4 h-4" />
                     </button>
                     <button
                       onClick={nextReview}
-                      className="p-2.5 rounded-xl border border-[#DDDCCF] hover:border-[#315C3D] bg-[#FFFFFF] hover:bg-[#EEE9DC] text-[#202820] transition-colors cursor-pointer"
+                      className="p-2.5 rounded-xl border border-[#DCE2EA] hover:border-[#F58216] bg-[#FFFFFF] hover:bg-[#F4F6FA] text-[#101D38] transition-colors cursor-pointer"
                       aria-label="Next Review"
                     >
                       <ChevronRight className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function StudentReviewsSection() {
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? "w-6 bg-[#315C3D]" : "w-2 bg-[#DDDCCF] hover:bg-[#DCE8D9]"
+                  currentIndex === idx ? "w-6 bg-[#F58216]" : "w-2 bg-[#DCE2EA] hover:bg-[#FED7AA]"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -146,7 +146,7 @@ export default function StudentReviewsSection() {
           <div className="mt-8 text-center">
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#315C3D] hover:text-[#497A52] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F58216] hover:text-[#E0720F] transition-colors"
             >
               <span>Explore all verified student reviews &amp; project outcomes &rarr;</span>
             </Link>

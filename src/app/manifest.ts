@@ -2,13 +2,13 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Upwork Project Center",
-    short_name: "Upwork Projects",
-    description: "Premier Engineering Research and Final Year Project Guidance Center",
+    name: "UPWORKS – Project Development Services",
+    short_name: "UPWORKS",
+    description: "Premier Engineering Research and Final Year Project Development Services",
     start_url: "/",
     display: "standalone",
-    background_color: "#F5F1E7",
-    theme_color: "#285A3B",
+    background_color: "#F4F6FA",
+    theme_color: "#101D38",
     icons: [
       {
         src: "/icon.png",
@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: "/images/upwork-project-center-icon.png",
+        src: "/images/upworks-icon.png",
         sizes: "256x256",
         type: "image/png",
       },

@@ -126,7 +126,7 @@ export default function ConsultationModal() {
             particleCount: 80,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ["#315C3D", "#497A52", "#DCE8D9", "#FFFFFF"],
+            colors: ["#101D38", "#F58216", "#FFF5EB", "#FFFFFF"],
           });
         } catch (e) {}
       } else {
@@ -153,63 +153,57 @@ export default function ConsultationModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/40 backdrop-blur-xs animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/50 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-2xl bg-[#FFFFFF] border border-[#DDDCCF] rounded-3xl shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-2xl bg-[#FFFFFF] border border-[#DCE2EA] rounded-3xl shadow-2xl overflow-hidden my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#DDDCCF] bg-[#EEE9DC]">
+        <div className="flex items-center justify-between p-6 border-b border-[#1A2C50] bg-[#101D38] text-white">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#315C3D] flex items-center justify-center text-white font-bold shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-[#F58216] flex items-center justify-center text-white font-bold shadow-xs">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-[#202820]">Request a Requirement &amp; Consultation</h3>
-              <p className="text-xs text-[#667064]">
+              <h3 className="text-xl font-bold text-white">Request a Requirement &amp; Consultation</h3>
+              <p className="text-xs text-[#DCE2EA]">
                 Submit custom project specifications, unique domain topics, or special requests directly to admin
               </p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-xl text-[#667064] hover:text-[#202820] hover:bg-[#DDDCCF]/40 transition-colors"
+            className="p-2 rounded-xl text-[#DCE2EA] hover:text-white hover:bg-white/10 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Modal Content */}
-        <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto">
+        <div className="p-6 sm:p-8 max-h-[80vh] overflow-y-auto bg-white">
           {submitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] flex items-center justify-center mx-auto shadow-xs">
+              <div className="w-16 h-16 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] flex items-center justify-center mx-auto shadow-xs">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-2xl font-bold text-[#202820]">Requirement Request Received!</h4>
-              <p className="text-[#667064] max-w-md mx-auto text-sm leading-relaxed">
-                Thank you, <span className="text-[#315C3D] font-semibold">{formData.name}</span>. Your custom requirement has been submitted to the Upwork Project Center Admin Suite and assigned to our domain review team. A project coordinator will contact you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes. You can also send documentation directly to{" "}
-                <a
-                  href="mailto:projects@antimatrix.co.in"
-                  className="text-[#315C3D] font-bold hover:underline"
-                >
-                  projects@antimatrix.co.in
-                </a>.
+              <h4 className="text-2xl font-bold text-[#101D38]">Requirement Request Received!</h4>
+              <p className="text-[#263750] max-w-md mx-auto text-sm leading-relaxed">
+                Thank you, <span className="text-[#F58216] font-semibold">{formData.name}</span>. Your custom requirement has been submitted to UPWORKS and assigned to our domain review team. A project coordinator will contact you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes.
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                 <button
                   onClick={handleWhatsAppDirect}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm transition-all shadow-xs"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm transition-all shadow-xs cursor-pointer border border-[#F58216]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Chat Instantly on WhatsApp
                 </button>
                 <a
                   href={`tel:+${WHATSAPP_NUMBER}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FFFFFF] border border-[#DDDCCF] text-[#202820] hover:text-[#315C3D] text-sm font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FFFFFF] border border-[#DCE2EA] text-[#101D38] hover:text-[#F58216] hover:border-[#F58216] text-sm font-semibold transition-colors"
                 >
-                  <PhoneCall className="w-4 h-4 text-[#315C3D]" />
+                  <PhoneCall className="w-4 h-4 text-[#F58216]" />
                   Call {WHATSAPP_DISPLAY}
                 </a>
               </div>
@@ -238,18 +232,18 @@ export default function ConsultationModal() {
 
               {/* Error Alert */}
               {errorMessage && (
-                <div className="p-3.5 rounded-xl bg-[#FFFFFF] border border-[#315C3D]/40 text-[#202820] text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
-                  <AlertCircle className="w-4 h-4 text-[#315C3D] shrink-0 mt-0.5" />
+                <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs flex items-start gap-2.5 shadow-xs animate-in fade-in duration-200">
+                  <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span className="font-medium leading-relaxed">{errorMessage}</span>
                 </div>
               )}
 
-              <div className="bg-[#DCE8D9] border border-[#DDDCCF] rounded-xl p-3 text-xs text-[#315C3D] flex items-center justify-between gap-2">
+              <div className="bg-[#FFF5EB] border border-[#FED7AA] rounded-xl p-3 text-xs text-[#F58216] flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 shrink-0 text-[#315C3D]" />
+                  <Sparkles className="w-4 h-4 shrink-0 text-[#F58216]" />
                   <span>100% verified project guidance, standard base paper review, and free synopsis preparation.</span>
                 </div>
-                <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[10px] bg-white/80 px-2 py-0.5 rounded text-[#315C3D] shrink-0">
+                <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[10px] bg-white/80 px-2 py-0.5 rounded text-[#F58216] shrink-0 border border-[#FED7AA]">
                   <ShieldCheck className="w-3 h-3" />
                   Anti-Bot Protected
                 </span>
@@ -257,8 +251,8 @@ export default function ConsultationModal() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
-                    Student Name <span className="text-[#315C3D]">*</span>
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
+                    Student Name <span className="text-[#F58216]">*</span>
                   </label>
                   <input
                     type="text"
@@ -267,13 +261,13 @@ export default function ConsultationModal() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Karthik Rajan"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
-                    WhatsApp Number <span className="text-[#315C3D]">*</span>
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
+                    WhatsApp Number <span className="text-[#F58216]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -282,15 +276,15 @@ export default function ConsultationModal() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="e.g. +91 91595 14326"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
-                    Email Address <span className="text-[#315C3D]">*</span>
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
+                    Email Address <span className="text-[#F58216]">*</span>
                   </label>
                   <input
                     type="email"
@@ -299,12 +293,12 @@ export default function ConsultationModal() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="e.g. student@college.edu"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
                     College / University
                   </label>
                   <input
@@ -313,14 +307,14 @@ export default function ConsultationModal() {
                     value={formData.college}
                     onChange={handleChange}
                     placeholder="e.g. Anna University / SRM / VIT / VTU"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
                     Degree / Branch
                   </label>
                   <input
@@ -329,19 +323,19 @@ export default function ConsultationModal() {
                     value={formData.degree}
                     onChange={handleChange}
                     placeholder="e.g. B.E CSE / B.Tech IT / M.Tech / MCA"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
                     Target Domain
                   </label>
                   <select
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   >
                     <option value="" className="bg-[#FFFFFF]">Select Domain...</option>
                     {PROJECT_CATEGORIES.map((cat) => (
@@ -354,7 +348,7 @@ export default function ConsultationModal() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#202820] mb-1">
+                <label className="block text-xs font-semibold text-[#101D38] mb-1">
                   Specific Project Title or Topic Idea (If any)
                 </label>
                 <input
@@ -363,20 +357,20 @@ export default function ConsultationModal() {
                   value={formData.projectTitle}
                   onChange={handleChange}
                   placeholder="e.g. Multimodal Medical AI Diagnosis or Leave Blank for Suggestions"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
                     Target Review Deadline
                   </label>
                   <select
                     name="urgency"
                     value={formData.urgency}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   >
                     <option value="Immediate (1-3 days)" className="bg-[#FFFFFF]">Urgent Review (1 - 3 Days)</option>
                     <option value="1-2 Weeks" className="bg-[#FFFFFF]">1 - 2 Weeks</option>
@@ -386,7 +380,7 @@ export default function ConsultationModal() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#202820] mb-1">
+                  <label className="block text-xs font-semibold text-[#101D38] mb-1">
                     Specific Requirements or Questions
                   </label>
                   <input
@@ -395,7 +389,7 @@ export default function ConsultationModal() {
                     value={formData.requirement}
                     onChange={handleChange}
                     placeholder="e.g. Need code + base paper + PPT"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-[#202820] placeholder-stone-400 text-sm focus:outline-none focus:border-[#315C3D]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] text-[#101D38] placeholder-slate-400 text-sm focus:outline-none focus:border-[#F58216] focus:ring-1 focus:ring-[#F58216]"
                   />
                 </div>
               </div>
@@ -404,7 +398,7 @@ export default function ConsultationModal() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 border border-[#315C3D]"
+                  className="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 border border-[#F58216]"
                 >
                   {loading ? (
                     <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -418,9 +412,9 @@ export default function ConsultationModal() {
                 <button
                   type="button"
                   onClick={handleWhatsAppDirect}
-                  className="w-full sm:w-auto py-3.5 px-5 rounded-xl bg-[#FFFFFF] hover:bg-[#EEE9DC] border border-[#DDDCCF] hover:border-[#315C3D] text-[#315C3D] text-sm font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                  className="w-full sm:w-auto py-3.5 px-5 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#DCE2EA] hover:border-[#F58216] text-[#101D38] hover:text-[#F58216] text-sm font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#315C3D]" />
+                  <MessageCircle className="w-4 h-4 text-[#F58216]" />
                   WhatsApp Direct
                 </button>
               </div>
