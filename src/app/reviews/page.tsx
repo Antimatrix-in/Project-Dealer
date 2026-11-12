@@ -77,7 +77,7 @@ export default function ReviewsPage() {
             badge="100% Genuine Student Feedback"
             title="Student Reviews &amp;"
             titleGradient="Success Stories"
-            subtitle="Read real testimonials from engineering students who completed and defended their projects with AntiMatrix."
+            subtitle="Read real testimonials from engineering students who completed and defended their projects with Upwork Project Center."
           />
         </div>
       </div>
@@ -186,7 +186,7 @@ export default function ReviewsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs">
           <div className="w-full max-w-lg bg-[#FFFFFF] border border-[#DDDCCF] rounded-3xl shadow-2xl p-6 relative text-[#202820]">
             <div className="flex items-center justify-between pb-4 border-b border-[#DDDCCF] mb-4">
-              <h3 className="text-lg font-bold text-[#202820]">Share Your AntiMatrix Experience</h3>
+              <h3 className="text-lg font-bold text-[#202820]">Share Your Upwork Project Center Experience</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-[#667064] hover:text-[#315C3D] cursor-pointer"

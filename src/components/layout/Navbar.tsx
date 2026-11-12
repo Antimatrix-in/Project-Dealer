@@ -85,15 +85,15 @@ export default function Navbar() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
-          {/* LEFT: Official Anti-Matrix Brand Logo (Light transparent variant for dark header) */}
+          {/* LEFT: Official Upwork Project Center Brand Logo (Light transparent variant for dark header) */}
           <Link
             href="/"
             className="flex items-center shrink-0 group transition-opacity hover:opacity-90 py-0.5"
-            title="Anti-Matrix – Break The Matrix"
+            title="Upwork Project Center"
           >
             <Image
-              src="/images/anti-matrix-logo-white.png"
-              alt="Anti-Matrix Official Logo"
+              src="/images/upwork-project-center-logo-white.png"
+              alt="Upwork Project Center Official Logo"
               width={220}
               height={42}
               className="h-9 sm:h-10 md:h-10.5 lg:h-11 w-auto object-contain"
@@ -130,7 +130,7 @@ export default function Navbar() {
             <Link
               href="/admin/login"
               className="h-10 px-4 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] hover:bg-white/[0.08] text-[#E0EBE2] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
-              title="Log In to Anti-Matrix Portal"
+              title="Log In to Upwork Project Center Portal"
             >
               Log In
             </Link>
@@ -141,7 +141,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="h-10 px-5 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#3E7D54]"
-              title="Get Started with Anti-Matrix"
+              title="Get Started with Upwork Project Center"
             >
               Get Started
             </a>

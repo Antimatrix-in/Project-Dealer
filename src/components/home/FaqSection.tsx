@@ -18,7 +18,7 @@ export default function FaqSection() {
       answer: "Yes, absolutely. We guarantee low plagiarism (strictly under 10-15% as per university criteria). Our technical documentation team drafts fresh problem formulations, literature surveys, architecture breakdowns, and algorithm descriptions from scratch."
     },
     {
-      question: "Can AntiMatrix customize an existing topic or add new algorithms requested by my guide?",
+      question: "Can Upwork Project Center customize an existing topic or add new algorithms requested by my guide?",
       answer: "Yes! Our Project Customization service is tailored for guide-driven modifications. Whether your guide demands incorporating a novel attention block into a CNN, swapping datasets, adding a new UI module, or comparing two algorithms, our engineers implement the exact requirements."
     },
     {

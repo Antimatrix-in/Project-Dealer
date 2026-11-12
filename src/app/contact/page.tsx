@@ -127,7 +127,7 @@ export default function ContactPage() {
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
-            badge="AntiMatrix Support Cell"
+            badge="Upwork Project Center Support Cell"
             title="Need Help With Your"
             titleGradient="Project?"
             subtitle="Tell us about your project requirements and our team will contact you with the best solution."
@@ -481,7 +481,7 @@ export default function ContactPage() {
               <div className="flex items-center justify-between pb-2 border-b border-[#DDDCCF]">
                 <div className="flex items-center gap-2">
                   <Building2 className="w-5 h-5 text-[#315C3D]" />
-                  <h3 className="text-base font-bold text-[#202820]">AntiMatrix Project Center</h3>
+                  <h3 className="text-base font-bold text-[#202820]">Upwork Project Center</h3>
                 </div>
                 <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#DCE8D9] border border-[#DDDCCF] text-[#315C3D] font-mono">
                   <MapPin className="w-3 h-3 text-[#315C3D]" />
@@ -501,7 +501,7 @@ export default function ContactPage() {
             <div className="rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] overflow-hidden shadow-xs relative group">
               <div className="w-full h-64 sm:h-72 relative bg-[#EEE9DC]">
                 <iframe
-                  title="AntiMatrix Project Center - Chennai, Tamil Nadu"
+                  title="Upwork Project Center - Chennai, Tamil Nadu"
                   src="https://maps.google.com/maps?q=Chennai,+Tamil+Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
@@ -516,7 +516,7 @@ export default function ContactPage() {
               </div>
               <div className="p-3.5 bg-[#FFFFFF] border-t border-[#DDDCCF] flex items-center justify-between">
                 <div className="text-left">
-                  <p className="text-xs font-bold text-[#202820]">AntiMatrix Project Center</p>
+                  <p className="text-xs font-bold text-[#202820]">Upwork Project Center</p>
                   <p className="text-[11px] text-[#315C3D] font-mono">Chennai, Tamil Nadu</p>
                 </div>
                 <a

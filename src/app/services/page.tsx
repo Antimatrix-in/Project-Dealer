@@ -35,7 +35,7 @@ export default function ServicesPage() {
     },
     {
       q: "Will the project documentation pass our college Turnitin plagiarism check?",
-      a: "Absolutely. All documentation prepared by AntiMatrix is strictly written from scratch, adhering to university formatting and guaranteed below 10-15% similarity thresholds as per university guidelines."
+      a: "Absolutely. All documentation prepared by Upwork Project Center is strictly written from scratch, adhering to university formatting and guaranteed below 10-15% similarity thresholds as per university guidelines."
     },
     {
       q: "Do you provide remote setup assistance on my laptop?",

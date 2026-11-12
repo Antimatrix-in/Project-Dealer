@@ -105,7 +105,7 @@ export default function ProjectsCatalogClient({
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
-            badge="AntiMatrix Technical Repository"
+            badge="Upwork Project Center Technical Repository"
             title="Browse Projects by"
             titleGradient="Technical Domain"
             subtitle="Explore our 16 official engineering technical domains. Select a domain below to browse verified final-year projects, source code, and IEEE documentation."

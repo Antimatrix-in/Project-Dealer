@@ -188,7 +188,7 @@ export default function ConsultationModal() {
               </div>
               <h4 className="text-2xl font-bold text-[#202820]">Requirement Request Received!</h4>
               <p className="text-[#667064] max-w-md mx-auto text-sm leading-relaxed">
-                Thank you, <span className="text-[#315C3D] font-semibold">{formData.name}</span>. Your custom requirement has been submitted to the AntiMatrix Admin Suite and assigned to our domain review team. A project coordinator will contact you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes. You can also send documentation directly to{" "}
+                Thank you, <span className="text-[#315C3D] font-semibold">{formData.name}</span>. Your custom requirement has been submitted to the Upwork Project Center Admin Suite and assigned to our domain review team. A project coordinator will contact you on WhatsApp (<strong>{WHATSAPP_DISPLAY}</strong>) within 15 minutes. You can also send documentation directly to{" "}
                 <a
                   href="mailto:projects@antimatrix.co.in"
                   className="text-[#315C3D] font-bold hover:underline"

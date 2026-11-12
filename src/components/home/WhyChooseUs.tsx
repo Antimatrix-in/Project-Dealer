@@ -95,10 +95,10 @@ export default function WhyChooseUs() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DCE8D9] border border-[#DDDCCF] text-xs font-semibold text-[#315C3D] mb-4 shadow-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-[#315C3D] animate-pulse" />
-            <span className="uppercase tracking-wider text-[11px] font-bold">The AntiMatrix Standard</span>
+            <span className="uppercase tracking-wider text-[11px] font-bold">The Upwork Project Center Standard</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#202820] tracking-tight">
-            Why Choose <span className="text-[#315C3D]">AntiMatrix</span>
+            Why Choose <span className="text-[#315C3D]">Upwork Project Center</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
             We provide a startup-grade technology foundation and viva defense ecosystem that guarantees seamless project completion.

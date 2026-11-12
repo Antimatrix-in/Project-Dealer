@@ -35,7 +35,7 @@ export default function StudentReviewsSection() {
             Student <span className="text-[#315C3D]">Reviews</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#667064] leading-relaxed">
-            See how engineering &amp; computer science students achieved distinction in their final year college project reviews with AntiMatrix.
+            See how engineering &amp; computer science students achieved distinction in their final year college project reviews with Upwork Project Center.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ import AdminDashboardClient from "./AdminDashboardClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Admin Dashboard - AntiMatrix Project Center",
+  title: "Admin Dashboard - Upwork Project Center",
   description: "Secure administrator dashboard for managing project consultation requests.",
 };
 

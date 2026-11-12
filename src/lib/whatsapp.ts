@@ -29,7 +29,7 @@ export function buildWhatsAppMessage(params?: WhatsAppMessageParams): string {
   const requirements = params?.requirements || "";
 
   return (
-    `Hello AntiMatrix Team,\n\n` +
+    `Hello Upwork Project Center Team,\n\n` +
     `I am interested in your project services.\n\n` +
     `Project Category: ${category}\n` +
     `Project Title: ${title}\n` +

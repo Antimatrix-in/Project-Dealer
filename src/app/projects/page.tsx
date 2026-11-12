@@ -2,7 +2,7 @@ import { getAllDomains, getAllProjects } from "@/lib/projects";
 import ProjectsCatalogClient from "./ProjectsCatalogClient";
 
 export const metadata = {
-  title: "16 Technical Domains - AntiMatrix Project Center",
+  title: "16 Technical Domains - Upwork Project Center",
   description:
     "Browse final year IEEE engineering projects across 16 official technical domains: Python, Java, Deep Learning, Machine Learning, Cyber Security, Android, Cloud Computing, and more.",
 };

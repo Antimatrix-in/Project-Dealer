@@ -74,7 +74,7 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
       role="menu"
       aria-label="Projects Menu"
     >
-      {/* 1. Header Bar with Official AntiMatrix Logo */}
+      {/* 1. Header Bar with Official Upwork Project Center Logo */}
       <div className="px-6 py-3.5 bg-[#EEE9DC] border-b border-[#DDDCCF] flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link
@@ -84,8 +84,8 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
           >
             <div className="relative h-7 w-auto flex items-center">
               <Image
-                src="/images/anti-matrix-logo.png"
-                alt="Anti-Matrix Official Logo"
+                src="/images/upwork-project-center-logo.png"
+                alt="Upwork Project Center Official Logo"
                 width={140}
                 height={30}
                 className="h-6 w-auto object-contain"
@@ -126,7 +126,7 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
                   16 Technical Domains
                 </h3>
                 <p className="text-[11px] text-[#667064]">
-                  Official AntiMatrix Engineering Catalog
+                  Official Upwork Project Center Engineering Catalog
                 </p>
               </div>
             </div>

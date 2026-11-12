@@ -88,7 +88,7 @@ export default function WhatsAppButton() {
                 <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#315C3D] border-2 border-[#FFFFFF]" />
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[#202820]">AntiMatrix WhatsApp Desk</h4>
+                <h4 className="font-bold text-sm text-[#202820]">Upwork Project Center WhatsApp Desk</h4>
                 <p className="text-[11px] text-[#667064] flex items-center gap-1 font-mono">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#315C3D] animate-pulse" />
                   Online: {WHATSAPP_DISPLAY}

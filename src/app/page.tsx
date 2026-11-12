@@ -11,9 +11,9 @@ import FaqSection from "@/components/home/FaqSection";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata = {
-  title: "AntiMatrix - Transform Your Ideas Into Real-World Projects",
+  title: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
   description:
-    "AntiMatrix provides premier project guidance in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
+    "Upwork Project Center provides premier project guidance in AI, Machine Learning, Deep Learning, Python, Java, Web Development, Mobile Applications, Cloud Computing, Cyber Security, and Data Analytics.",
 };
 
 export default function HomePage() {
@@ -28,7 +28,7 @@ export default function HomePage() {
       {/* 3. Popular Project Categories (10 Glassmorphism Cards) */}
       <CategoryGrid />
 
-      {/* 4. Why Choose AntiMatrix (6 Premium Cards) */}
+      {/* 4. Why Choose Upwork Project Center (6 Premium Cards) */}
       <WhyChooseUs />
 
       {/* 5. Our Process (5 Modern Steps) */}

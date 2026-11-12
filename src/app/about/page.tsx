@@ -13,8 +13,8 @@ import {
 import CtaBanner from "@/components/home/CtaBanner";
 
 export const metadata = {
-  title: "About Us - AntiMatrix Project Center",
-  description: "Learn about AntiMatrix, our mission, vision, engineering mentors, and commitment to student project excellence.",
+  title: "About Us - Upwork Project Center",
+  description: "Learn about Upwork Project Center, our mission, vision, engineering mentors, and commitment to student project excellence.",
 };
 
 export default function AboutPage() {
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <SectionHeader
-            badge="About AntiMatrix"
+            badge="About Upwork Project Center"
             title="Pioneering Modern"
             titleGradient="Project Excellence"
             subtitle="Bridging the gap between cutting-edge technology innovation and university project requirements."
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-sm sm:text-base text-[#667064] leading-relaxed font-normal">
-              <strong className="text-[#315C3D]">AntiMatrix</strong> is a premier project development and research guidance center. Projects should not be a chore of blindly downloading broken internet code. Instead, they should be the ultimate showcase where students master genuine engineering practices, solid architectures, and confident technical defense.
+              <strong className="text-[#315C3D]">Upwork Project Center</strong> is a premier project development and research guidance center. Projects should not be a chore of blindly downloading broken internet code. Instead, they should be the ultimate showcase where students master genuine engineering practices, solid architectures, and confident technical defense.
             </p>
 
             <p className="text-sm sm:text-base text-[#667064] leading-relaxed font-normal">
@@ -101,15 +101,15 @@ export default function AboutPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-white border border-[#DDDCCF] p-1 flex items-center justify-center shadow-xs">
                     <Image
-                      src="/images/antimatrix-icon.png"
-                      alt="Anti-Matrix Official Logo"
+                      src="/images/upwork-project-center-icon.png"
+                      alt="Upwork Project Center Official Logo"
                       width={32}
                       height={32}
                       className="w-7 h-7 object-contain"
                     />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#202820]">AntiMatrix Standards</h4>
+                    <h4 className="text-sm font-bold text-[#202820]">Upwork Project Center Standards</h4>
                     <span className="text-[11px] text-[#315C3D] font-mono">Project Excellence Framework</span>
                   </div>
                 </div>

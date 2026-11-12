@@ -735,8 +735,8 @@ export default function AdminDashboardClient({
             <Link href="/" className="inline-block" onClick={() => setMobileSidebarOpen(false)}>
               <div className="relative h-8 w-auto flex items-center">
                 <Image
-                  src="/images/anti-matrix-logo.png"
-                  alt="Anti-Matrix Official Logo"
+                  src="/images/upwork-project-center-logo.png"
+                  alt="Upwork Project Center Official Logo"
                   width={150}
                   height={32}
                   className="h-7 w-auto object-contain"
@@ -852,7 +852,7 @@ export default function AdminDashboardClient({
                 {activeTab === "account" && "Administrator Account & Security"}
               </h1>
               <p className="text-xs text-[#667064] hidden sm:block">
-                AntiMatrix Admin Suite • Official 16 Domains Single Source of Truth
+                Upwork Project Center Admin Suite • Official 16 Domains Single Source of Truth
               </p>
             </div>
           </div>
@@ -901,7 +901,7 @@ export default function AdminDashboardClient({
                     <span>Welcome back, Administrator</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-black text-[#202820]">
-                    AntiMatrix Operations Center
+                    Upwork Project Center Operations Center
                   </h2>
                   <p className="text-xs sm:text-sm text-[#667064] max-w-2xl">
                     Review and coordinate final year engineering project consultations, verify IEEE project documentation pipelines, and monitor student requests across all 16 technical domains.
@@ -1232,7 +1232,7 @@ export default function AdminDashboardClient({
                 <div className="space-y-4">
                   {paginatedConsultations.map((inq) => {
                     const actualWa = (inq.whatsappNumber || inq.phone).replace(/[^0-9]/g, "");
-                    const waLink = `https://wa.me/${actualWa.startsWith("91") ? actualWa : "91" + actualWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your AntiMatrix project consultation for "${inq.projectTitle || inq.domainName || inq.projectDomain}":`)}`;
+                    const waLink = `https://wa.me/${actualWa.startsWith("91") ? actualWa : "91" + actualWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your Upwork Project Center project consultation for "${inq.projectTitle || inq.domainName || inq.projectDomain}":`)}`;
 
                     return (
                       <div
@@ -1883,8 +1883,8 @@ export default function AdminDashboardClient({
                     const actualWhatsApp = inq.whatsappNumber || inq.phone;
                     const cleanWa = actualWhatsApp.replace(/[^0-9]/g, "");
                     const targetTopic = inq.projectTitle || inq.projectDomain || inq.domainName || inq.category;
-                    const waLink = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your AntiMatrix Project Enquiry [${inq.id}] for "${targetTopic}":`)}`;
-                    const emailSubject = encodeURIComponent(`AntiMatrix Project Enquiry [${inq.id}]`);
+                    const waLink = `https://wa.me/${cleanWa.startsWith("91") ? cleanWa : "91" + cleanWa}?text=${encodeURIComponent(`Hello ${inq.name}, regarding your Upwork Project Center Project Enquiry [${inq.id}] for "${targetTopic}":`)}`;
+                    const emailSubject = encodeURIComponent(`Upwork Project Center Project Enquiry [${inq.id}]`);
                     const mailtoLink = `mailto:${inq.email}?subject=${emailSubject}`;
 
                     return (
@@ -2906,7 +2906,7 @@ export default function AdminDashboardClient({
                     const topic = selectedInquiry.projectTitle || selectedInquiry.domainName || selectedInquiry.projectDomain;
                     return (
                       <a
-                        href={`https://wa.me/${waNum}?text=${encodeURIComponent(`Hello ${selectedInquiry.name}, AntiMatrix coordinator regarding your Project Enquiry [${selectedInquiry.id}] for "${topic}":`)}`}
+                        href={`https://wa.me/${waNum}?text=${encodeURIComponent(`Hello ${selectedInquiry.name}, Upwork Project Center coordinator regarding your Project Enquiry [${selectedInquiry.id}] for "${topic}":`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="py-2.5 px-4 rounded-xl bg-[#315C3D] hover:bg-[#254930] text-white font-bold flex items-center justify-center gap-2 transition-colors shadow-sm"
@@ -2918,7 +2918,7 @@ export default function AdminDashboardClient({
                   })()}
 
                   <a
-                    href={`mailto:${selectedInquiry.email}?subject=${encodeURIComponent(`AntiMatrix Project Enquiry [${selectedInquiry.id}]`)}`}
+                    href={`mailto:${selectedInquiry.email}?subject=${encodeURIComponent(`Upwork Project Center Project Enquiry [${selectedInquiry.id}]`)}`}
                     className="py-2.5 px-4 rounded-xl bg-[#EEE9DC] hover:bg-[#DCE8D9] text-[#315C3D] border border-[#DDDCCF] font-bold flex items-center justify-center gap-2 transition-colors"
                   >
                     <Mail className="w-4 h-4 text-[#315C3D]" />

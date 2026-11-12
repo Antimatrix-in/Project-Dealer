@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: ProjectCodePageProps) {
   if (!project) return { title: "Project Not Found" };
 
   return {
-    title: `[${project.projectCode || project.id}] ${project.title} - AntiMatrix Project Center`,
+    title: `[${project.projectCode || project.id}] ${project.title} - Upwork Project Center`,
     description: (project.abstract || project.description || project.tagline).slice(0, 160),
   };
 }

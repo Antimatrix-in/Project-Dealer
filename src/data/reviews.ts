@@ -10,7 +10,7 @@ export const STUDENT_REVIEWS: StudentReview[] = [
     category: "AI & Data Science",
     rating: 5,
     date: "March 2026",
-    comment: "AntiMatrix saved my final year project! My college guide was very strict about having a genuine deep learning implementation with explainable heatmaps. The team not only provided flawless PyTorch code with Grad-CAM but also spent 3 hours over Google Meet explaining every single mathematical concept. I scored an 'O' grade in my final viva!",
+    comment: "Upwork Project Center saved my final year project! My college guide was very strict about having a genuine deep learning implementation with explainable heatmaps. The team not only provided flawless PyTorch code with Grad-CAM but also spent 3 hours over Google Meet explaining every single mathematical concept. I scored an 'O' grade in my final viva!",
     verified: true
   },
   {
@@ -22,7 +22,7 @@ export const STUDENT_REVIEWS: StudentReview[] = [
     category: "Machine Learning",
     rating: 5,
     date: "February 2026",
-    comment: "The level of engineering at AntiMatrix is unmatched. Most project centers just download generic GitHub repos, but AntiMatrix gave us a clean, production-grade microservices codebase with Kafka and Neo4j. The PPT was so impressive that our external examiner asked if we were submitting a patent!",
+    comment: "The level of engineering at Upwork Project Center is unmatched. Most project centers just download generic GitHub repos, but Upwork Project Center gave us a clean, production-grade microservices codebase with Kafka and Neo4j. The PPT was so impressive that our external examiner asked if we were submitting a patent!",
     verified: true
   },
   {
@@ -46,7 +46,7 @@ export const STUDENT_REVIEWS: StudentReview[] = [
     category: "AI & Data Science",
     rating: 5,
     date: "January 2026",
-    comment: "As an M.Tech student, expectations were very high regarding research novelty and base paper compliance. AntiMatrix helped formulate novel attention weighting on RoBERTa and provided a 75-page thesis with less than 6% Turnitin similarity. Totally recommended for PG scholars!",
+    comment: "As an M.Tech student, expectations were very high regarding research novelty and base paper compliance. Upwork Project Center helped formulate novel attention weighting on RoBERTa and provided a 75-page thesis with less than 6% Turnitin similarity. Totally recommended for PG scholars!",
     verified: true
   },
   {
@@ -58,7 +58,7 @@ export const STUDENT_REVIEWS: StudentReview[] = [
     category: "Python Projects",
     rating: 5,
     date: "March 2026",
-    comment: "The hardware and computer vision integration with Raspberry Pi worked out-of-the-box. AntiMatrix did a live AnyDesk session the night before my review to verify camera FPS and alarm triggers. Their 24/7 technical assistance is genuinely real.",
+    comment: "The hardware and computer vision integration with Raspberry Pi worked out-of-the-box. Upwork Project Center did a live AnyDesk session the night before my review to verify camera FPS and alarm triggers. Their 24/7 technical assistance is genuinely real.",
     verified: true
   },
   {

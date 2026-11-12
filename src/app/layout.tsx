@@ -17,9 +17,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "AntiMatrix - Transform Your Ideas Into Real-World Projects",
+  title: "Upwork Project Center - Transform Your Ideas Into Real-World Projects",
   description:
-    "AntiMatrix helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
+    "Upwork Project Center helps engineering and computer science students complete real-world projects with expert guidance, documentation support, PPT preparation, project customization, and technical assistance.",
   keywords: [
     "Final Year Projects",
     "Engineering Projects",
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     "Viva Guidance",
     "Technical Support"
   ],
-  authors: [{ name: "AntiMatrix Technologies" }],
+  authors: [{ name: "Upwork Project Center" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/antimatrix-icon.png", type: "image/png" },
+      { url: "/images/upwork-project-center-icon.png", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/images/upwork-project-center-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
