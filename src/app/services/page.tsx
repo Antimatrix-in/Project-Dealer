@@ -1,127 +1,142 @@
 "use client";
 
 import React from "react";
-import SectionHeader from "@/components/common/SectionHeader";
-import { SERVICES_DATA } from "@/data/services";
-import {
-  Code2,
-  SlidersHorizontal,
-  FileText,
-  Presentation,
-  GraduationCap,
-  Server,
-  CheckCircle2,
-  Sparkles,
-  ArrowRight,
-  HelpCircle
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { openConsultationModal } from "@/components/common/ConsultationModal";
 import CtaBanner from "@/components/home/CtaBanner";
 
+interface ServiceCard {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const SERVICES: ServiceCard[] = [
+  {
+    number: "01",
+    title: "Project Development",
+    description: "Complete academic projects with working source code and implementation support.",
+  },
+  {
+    number: "02",
+    title: "Project Customization",
+    description: "Customize existing projects with new features, algorithms and functionality.",
+  },
+  {
+    number: "03",
+    title: "Documentation Support",
+    description: "Get project reports, synopsis, SRS documents and UML diagrams.",
+  },
+  {
+    number: "04",
+    title: "AI & Machine Learning",
+    description: "Develop practical AI, ML, Deep Learning and Data Science projects.",
+  },
+  {
+    number: "05",
+    title: "Web & Application Development",
+    description: "Build responsive web applications and mobile applications.",
+  },
+  {
+    number: "06",
+    title: "Technical Mentorship",
+    description: "Get installation guidance, code walkthroughs, debugging and project support.",
+  },
+];
+
+const TECHNOLOGIES: string[] = [
+  "Python",
+  "TensorFlow",
+  "PyTorch",
+  "OpenCV",
+  "React / Next.js",
+  "Node.js",
+  "Java / Spring Boot",
+  "Flutter",
+  "FastAPI",
+  "MongoDB",
+  "PostgreSQL",
+  "Docker",
+];
+
+const FAQS = [
+  {
+    q: "Can I get assistance if my college guide demands specific module changes?",
+    a: "Yes. Our Project Customization service is designed to adapt code, algorithms, datasets, and reports to meet specific college advisor guidelines.",
+  },
+  {
+    q: "Will the project documentation pass our college plagiarism checks?",
+    a: "Yes. All project reports and documentation are crafted from scratch, adhering to university formatting and standard plagiarism thresholds.",
+  },
+  {
+    q: "Do you provide remote setup assistance on student laptops?",
+    a: "Yes. Our technical team assists with environment installation, dependencies, and database setup via remote desktop sessions.",
+  },
+  {
+    q: "How does the Technical Mentorship and viva guidance work?",
+    a: "We provide code walkthroughs, viva preparation questions, and architectural explanations to ensure you can confidently present your work.",
+  },
+];
+
 export default function ServicesPage() {
-  const iconMap: Record<string, React.ReactNode> = {
-    Code2: <Code2 className="w-7 h-7 text-[#F58216]" />,
-    SlidersAdjust: <SlidersHorizontal className="w-7 h-7 text-[#101D38]" />,
-    FileText: <FileText className="w-7 h-7 text-[#F58216]" />,
-    Presentation: <Presentation className="w-7 h-7 text-[#101D38]" />,
-    GraduationCap: <GraduationCap className="w-7 h-7 text-[#F58216]" />,
-    Server: <Server className="w-7 h-7 text-[#101D38]" />,
-  };
-
-  const serviceFaqs = [
-    {
-      q: "Can I get assistance if my college guide demands specific module changes?",
-      a: "Yes! Our Project Customization service is specifically built for this. We analyze your guide's remarks and modify the code, algorithms, dataset, and documentation accordingly."
-    },
-    {
-      q: "Will the project documentation pass our college Turnitin plagiarism check?",
-      a: "Absolutely. All documentation prepared by UPWORKS is strictly written from scratch, adhering to university formatting and guaranteed below 10-15% similarity thresholds as per university guidelines."
-    },
-    {
-      q: "Do you provide remote setup assistance on my laptop?",
-      a: "Yes. Our Technical Support team performs live remote desktop configuration via AnyDesk or Google Meet to ensure the database, runtime environment, and demo interfaces execute flawlessly on your personal machine."
-    },
-    {
-      q: "How does the Viva Guidance work?",
-      a: "We provide an exhaustive 100+ question viva booklet with technical explanations, mathematical foundations of the models, and 1-on-1 mock rehearsal drills simulating external examiner review."
-    }
-  ];
-
   return (
-    <div className="pt-32 sm:pt-36 pb-20 bg-[#F4F6FA] min-h-screen text-[#263750]">
-      {/* Background Header */}
-      <div className="relative py-16 bg-white border-b border-[#DCE2EA] mb-12 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <SectionHeader
-            badge="Comprehensive Project Support"
-            title="Complete Engineering"
-            titleGradient="Project Services"
-            subtitle="Everything you need from initial concept selection to source code implementation, thesis documentation, and final viva voce defense."
-          />
+    <div className="pt-28 sm:pt-32 pb-16 bg-[#F4F6FA] min-h-screen text-[#263750]">
+      {/* Page Heading */}
+      <div className="py-12 sm:py-14 bg-white border-b border-[#DCE2EA] mb-10 sm:mb-12">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F4F6FA] border border-[#DCE2EA] text-[#F58216] mb-3 font-mono">
+            <span>UPWORKS SERVICES</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-[#101D38] tracking-tight">
+            Our Services
+          </h1>
+          <div className="w-12 h-1 bg-[#F58216] mx-auto mt-3 mb-3.5 rounded-full" />
+          <p className="text-sm sm:text-base text-[#5A6B82] max-w-2xl mx-auto leading-relaxed">
+            Practical project development, customization and technical support for students.
+          </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Services Grid (6 Core Services) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {SERVICES_DATA.map((srv, idx) => (
+        {/* Services Grid (6 Clean Minimal Cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICES.map((service) => (
             <div
-              key={srv.id}
-              id={srv.id}
-              className="group relative rounded-3xl bg-[#FFFFFF] border border-[#DCE2EA] p-7 shadow-xs hover:border-[#F58216] hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              key={service.number}
+              className="bg-white rounded-2xl border border-[#DCE2EA] p-6 sm:p-7 flex flex-col justify-between hover:border-[#F58216] transition-colors"
             >
               <div>
-                {/* Header Icon & Service Number */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FFF5EB] border border-[#FED7AA] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                    {iconMap[srv.iconName]}
-                  </div>
-                  <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216]">
-                    Service 0{idx + 1}
+                {/* Number & Accent Line */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-mono font-bold text-[#F58216] tracking-wider">
+                    {service.number}
                   </span>
+                  <div className="w-6 h-0.5 bg-[#F58216]/40 rounded-full" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-[#101D38] mb-2 group-hover:text-[#F58216] transition-colors">
-                  {srv.title}
-                </h3>
+                {/* Heading */}
+                <h2 className="text-lg font-bold text-[#101D38] mb-2 tracking-tight">
+                  {service.title}
+                </h2>
 
-                {/* Short Desc */}
-                <p className="text-xs font-semibold text-[#F58216] mb-3">
-                  {srv.shortDesc}
+                {/* Description (concise: 12-20 words) */}
+                <p className="text-sm text-[#5A6B82] leading-relaxed">
+                  {service.description}
                 </p>
-
-                {/* Long Desc */}
-                <p className="text-xs text-[#5A6B82] leading-relaxed mb-5">
-                  {srv.description}
-                </p>
-
-                {/* Deliverables Checklist */}
-                <div className="space-y-2 mb-6 pt-4 border-t border-[#DCE2EA]">
-                  <span className="text-[11px] font-bold text-[#101D38] uppercase tracking-wider block font-mono">
-                    Key Deliverables:
-                  </span>
-                  {srv.deliverables.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start gap-2 text-xs text-[#263750]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#F58216] shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Action Button */}
-              <div className="pt-4 border-t border-[#DCE2EA]">
+              <div className="pt-5 mt-6 border-t border-[#DCE2EA]">
                 <button
+                  type="button"
                   onClick={() =>
                     openConsultationModal({
-                      serviceTitle: srv.title,
+                      serviceTitle: service.title,
                     })
                   }
-                  className="w-full py-3 px-4 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs border border-[#F58216] group/btn"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-none"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-white" />
-                  <span>Inquire for {srv.title}</span>
+                  <span>Enquire Now</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -129,28 +144,44 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* Service FAQ Section */}
-        <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-white border border-[#DCE2EA] shadow-xs">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] mb-3 shadow-xs font-mono">
-              <HelpCircle className="w-3.5 h-3.5 text-[#F58216]" />
-              <span>Common Inquiries</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#101D38]">Frequently Asked Questions</h3>
-            <p className="text-xs sm:text-sm text-[#5A6B82] mt-2">
-              Everything you need to know about our project development and technical support workflows.
+        {/* Technologies Section (Clean minimal name grid) */}
+        <div className="mt-16 pt-12 border-t border-[#DCE2EA]">
+          <div className="text-center max-w-xl mx-auto mb-6">
+            <h3 className="text-lg font-bold text-[#101D38]">Supported Technologies</h3>
+            <p className="text-xs text-[#5A6B82] mt-1">
+              Active engineering across industry-standard stacks and frameworks.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto">
+            {TECHNOLOGIES.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1.5 rounded-lg bg-white border border-[#DCE2EA] text-xs font-medium text-[#263750]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Minimal FAQ Section */}
+        <div className="mt-16 p-6 sm:p-8 rounded-2xl bg-white border border-[#DCE2EA]">
+          <div className="text-center max-w-xl mx-auto mb-8">
+            <h3 className="text-xl font-bold text-[#101D38]">Frequently Asked Questions</h3>
+            <p className="text-xs text-[#5A6B82] mt-1.5">
+              Answers to common queries regarding deliverables and technical support.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {serviceFaqs.map((faq, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
+            {FAQS.map((faq, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EA] shadow-xs space-y-2"
+                className="p-4 sm:p-5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA]"
               >
-                <h4 className="text-sm font-bold text-[#101D38] flex items-start gap-2">
+                <h4 className="text-xs sm:text-sm font-bold text-[#101D38] mb-1.5 flex items-start gap-2">
                   <span className="text-[#F58216] font-mono font-bold">Q.</span>
-                  {faq.q}
+                  <span>{faq.q}</span>
                 </h4>
                 <p className="text-xs text-[#5A6B82] leading-relaxed pl-5">
                   {faq.a}
@@ -160,7 +191,7 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Contact Section: Need Help With Your Project? */}
+        {/* Bottom CTA Banner */}
         <div className="pt-12">
           <CtaBanner />
         </div>
