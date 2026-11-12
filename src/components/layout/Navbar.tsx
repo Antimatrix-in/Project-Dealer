@@ -33,7 +33,7 @@ export default function Navbar() {
   }
 
   // Exactly 6 navigation items in the exact required order:
-  // 1. Home, 2. About, 3. Services, 4. Products, 5. Careers, 6. Support
+  // 1. Home, 2. About, 3. Services, 4. Domains, 5. Careers, 6. Support
   const navItems: NavItem[] = [
     {
       label: "Home",
@@ -51,9 +51,9 @@ export default function Navbar() {
       match: (p) => p.startsWith("/services"),
     },
     {
-      label: "Products",
+      label: "Domains",
       href: "/projects",
-      match: (p) => p.startsWith("/projects") || p === "/products",
+      match: (p) => p.startsWith("/projects") || p === "/products" || p === "/domains",
     },
     {
       label: "Careers",
