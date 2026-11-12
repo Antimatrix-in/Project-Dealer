@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, MessageCircle, Sparkles, PhoneCall, ShieldCheck, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 import { PROJECT_CATEGORIES } from "@/data/projects";
-import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
+import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 
 interface ConsultationEventDetail {
   projectTitle?: string;
@@ -16,6 +16,15 @@ interface ConsultationEventDetail {
 
 export function openConsultationModal(details?: ConsultationEventDetail) {
   if (typeof window !== "undefined") {
+    // Custom requirements open the official Google Form directly in a new tab
+    if (
+      details?.requirement ||
+      details?.source === "Custom Requirement" ||
+      (details?.serviceTitle && details.serviceTitle.toLowerCase().includes("requirement"))
+    ) {
+      window.open(GOOGLE_ENQUIRY_FORM_URL, "_blank", "noopener,noreferrer");
+      return;
+    }
     window.dispatchEvent(new CustomEvent("open-consultation-modal", { detail: details || {} }));
   }
 }
@@ -165,9 +174,9 @@ export default function ConsultationModal() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">Request a Requirement &amp; Consultation</h3>
+              <h3 className="text-xl font-bold text-white">Project Consultation</h3>
               <p className="text-xs text-[#DCE2EA]">
-                Submit custom project specifications, unique domain topics, or special requests directly to admin
+                Connect with UPWORKS technical mentors for project consultation and viva guidance
               </p>
             </div>
           </div>

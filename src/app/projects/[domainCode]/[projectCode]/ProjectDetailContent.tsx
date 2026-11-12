@@ -20,7 +20,6 @@ import {
   Check
 } from "lucide-react";
 import { getWhatsAppUrl, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
 import CtaBanner from "@/components/home/CtaBanner";
 
 interface ProjectDetailContentProps {
@@ -130,20 +129,15 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
                 </a>
 
                 {/* 3. Request a Requirement / Custom Modification */}
-                <button
-                  type="button"
-                  onClick={() =>
-                    openConsultationModal({
-                      projectTitle: project.title,
-                      category: domainName,
-                      requirement: `Custom requirement for project ${code}: ${project.title}`,
-                    })
-                  }
+                <a
+                  href={GOOGLE_ENQUIRY_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-[#F4F6FA] hover:bg-[#FFF5EB] text-[#101D38] hover:text-[#F58216] font-bold text-xs sm:text-sm border border-[#DCE2EA] hover:border-[#F58216] transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4 text-[#F58216]" />
                   <span>Request a Requirement</span>
-                </button>
+                </a>
               </div>
             </div>
 

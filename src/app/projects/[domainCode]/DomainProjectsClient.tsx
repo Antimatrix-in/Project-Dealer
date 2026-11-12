@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import CtaBanner from "@/components/home/CtaBanner";
 import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
 
 interface DomainProjectsClientProps {
   domain: TechnicalDomainWithCount;
@@ -136,20 +135,16 @@ export default function DomainProjectsClient({
             <span>
               Showing {filteredProjects.length} of {projects.length} {projects.length === 1 ? "Project" : "Projects"}
             </span>
-            <button
-              type="button"
-              onClick={() =>
-                openConsultationModal({
-                  category: domain.name,
-                  requirement: `Custom project requirement for domain ${domain.name} (${domain.code})`,
-                })
-              }
+            <a
+              href={GOOGLE_ENQUIRY_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FFF5EB] hover:bg-[#FED7AA] text-[#F58216] border border-[#FED7AA] text-xs font-bold transition-all shadow-xs cursor-pointer font-sans"
               title="Request a Custom Project or Special Requirement"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
               <span>Request a Requirement</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -173,18 +168,14 @@ export default function DomainProjectsClient({
             </div>
 
             <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
-              <button
-                type="button"
-                onClick={() =>
-                  openConsultationModal({
-                    category: domain.name,
-                    requirement: `Special requirement / custom project topic for ${domain.name} (${domain.code})`,
-                  })
-                }
-                className="px-6 py-3 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs shadow-xs transition-colors cursor-pointer border border-[#F58216]"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white font-bold text-xs shadow-xs transition-colors cursor-pointer border border-[#F58216] inline-flex items-center justify-center"
               >
                 Request a Requirement for {domain.code}
-              </button>
+              </a>
               <Link
                 href="/projects"
                 className="px-6 py-3 rounded-xl bg-[#FFFFFF] hover:bg-[#F4F6FA] border border-[#101D38] text-[#101D38] font-bold text-xs transition-colors"
@@ -207,18 +198,14 @@ export default function DomainProjectsClient({
               >
                 Clear search filter
               </button>
-              <button
-                type="button"
-                onClick={() =>
-                  openConsultationModal({
-                    category: domain.name,
-                    requirement: `Looking for: ${searchQuery} in ${domain.name} (${domain.code})`,
-                  })
-                }
-                className="px-4 py-2 rounded-lg bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold shadow-xs cursor-pointer border border-[#F58216]"
+              <a
+                href={GOOGLE_ENQUIRY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-lg bg-[#F58216] hover:bg-[#E0720F] text-white text-xs font-bold shadow-xs cursor-pointer border border-[#F58216] inline-flex items-center justify-center"
               >
                 Request this Requirement
-              </button>
+              </a>
             </div>
           </div>
         ) : (

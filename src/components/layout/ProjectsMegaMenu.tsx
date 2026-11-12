@@ -26,7 +26,7 @@ import {
   CATEGORY_SLUG_MAP
 } from "@/data/projects";
 import { ProjectCategory } from "@/types";
-import { openConsultationModal } from "@/components/common/ConsultationModal";
+import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 
 interface ProjectsMegaMenuProps {
   onClose: () => void;
@@ -254,17 +254,16 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
       <div className="px-6 py-3 bg-[#FFFFFF] border-t border-[#DCE2EA] flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-xs text-[#5A6B82]">
           <span className="font-semibold text-[#101D38]">Need a custom topic?</span>
-          <button
-            type="button"
-            onClick={() => {
-              onClose();
-              openConsultationModal({ requirement: "Custom Project / Special Requirement" });
-            }}
+          <a
+            href={GOOGLE_ENQUIRY_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
             className="text-[#F58216] hover:text-[#E0720F] hover:underline font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
           >
             <span>Request a Custom Requirement</span>
             <span aria-hidden="true">&rarr;</span>
-          </button>
+          </a>
         </div>
 
         <Link
