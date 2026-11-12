@@ -72,7 +72,7 @@ export default function CategoryGrid() {
 
   return (
     <section className="py-24 bg-[#F5F1E7] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

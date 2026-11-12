@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-subtle pointer-events-none opacity-30" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#DCE8D9]/40 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-6xl xl:max-w-7xl 2xl:max-w-[1560px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#1F2A22] tracking-tight leading-[1.12] max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-[80px] font-extrabold text-[#1F2A22] tracking-tight leading-[1.12] max-w-5xl xl:max-w-6xl mx-auto">
             Transform Your Ideas Into{" "}
             <span className="text-[#285A3B] block sm:inline">
               Real-World Projects
@@ -48,12 +48,12 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-[#657166] leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-base sm:text-lg md:text-xl text-[#657166] leading-relaxed max-w-3xl xl:max-w-4xl mx-auto font-normal">
             Expert guidance for AI, Machine Learning, Web Development, Mobile Applications, Python, Java, and Data Science Projects.
           </p>
 
           {/* Trust Features Checklist (Pill Badges) */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-3xl mx-auto pt-1 pb-2">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl xl:max-w-5xl mx-auto pt-1 pb-2">
             {trustFeatures.map((feat, idx) => (
               <div
                 key={idx}

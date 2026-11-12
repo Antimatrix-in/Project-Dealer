@@ -103,7 +103,7 @@ export default function ProjectsCatalogClient({
     <div className="pt-32 sm:pt-36 pb-20 bg-[#F5F1E7] min-h-screen text-[#1F2A22]">
       {/* Hero Header */}
       <div className="relative py-16 bg-[#EEE9DC] border-b border-[#DDDCCF] mb-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 relative z-10 text-center">
           <SectionHeader
             badge="Upwork Project Center Technical Repository"
             title="Browse Projects by"
@@ -120,7 +120,7 @@ export default function ProjectsCatalogClient({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 space-y-8">
         {/* Search & Navigation Bar */}
         <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#DDDCCF] shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
           {/* Search by project code or title */}

@@ -29,7 +29,7 @@ export default function ServicesSection() {
 
   return (
     <section className="py-20 bg-[#F5F1E7] relative border-t border-[#DDDCCF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         <SectionHeader
           badge="End-to-End Support"
           title="Our Core"

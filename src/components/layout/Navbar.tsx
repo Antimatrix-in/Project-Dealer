@@ -76,14 +76,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0B150F]/95 backdrop-blur-md shadow-md py-3 border-b border-[#244730]"
-          : "bg-[#0D1912]/95 backdrop-blur-md py-4 border-b border-[#1F3D29]"
+          ? "bg-[#0B150F]/95 backdrop-blur-md shadow-md py-3.5 border-b border-[#244730]"
+          : "bg-[#0D1912]/95 backdrop-blur-md py-4 sm:py-4.5 border-b border-[#1F3D29]"
       }`}
     >
       {/* Subtle radial emerald highlight at top center */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(40,90,59,0.32),rgba(11,21,15,0))] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
           {/* LEFT: Official Upwork Project Center Brand Logo (Light transparent variant for dark header) */}
           <Link
@@ -94,16 +94,16 @@ export default function Navbar() {
             <Image
               src="/images/upwork-project-center-logo-white.png"
               alt="Upwork Project Center Official Logo"
-              width={220}
-              height={42}
-              className="h-9 sm:h-10 md:h-10.5 lg:h-11 w-auto object-contain"
+              width={240}
+              height={46}
+              className="h-9 sm:h-10 md:h-10.5 lg:h-11 xl:h-12 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* CENTER: Navigation Menu (Single horizontal row of 6 items on desktop) */}
           <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2"
+            className="hidden lg:flex items-center gap-1 xl:gap-2.5 2xl:gap-3"
             aria-label="Main Navigation"
           >
             {navItems.map((item) => {
@@ -112,7 +112,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`px-3.5 xl:px-4 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] font-medium transition-all duration-200 ${
+                  className={`px-3.5 xl:px-4 2xl:px-4.5 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] 2xl:text-[15px] font-medium transition-all duration-200 ${
                     isActive
                       ? "text-white font-semibold bg-white/[0.1] border border-white/10 shadow-2xs"
                       : "text-[#D2DFD6] hover:text-white hover:bg-white/[0.05]"
@@ -125,11 +125,11 @@ export default function Navbar() {
           </nav>
 
           {/* RIGHT: Action Buttons [ Log In ] [ Get Started ] */}
-          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
             {/* Log In: clean subtle light / outlined button */}
             <Link
               href="/admin/login"
-              className="h-10 px-4 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] hover:bg-white/[0.08] text-[#E0EBE2] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
+              className="h-10 sm:h-10.5 px-4.5 xl:px-5 rounded-xl border border-[#2D5A3C] hover:border-[#4E9B66] bg-white/[0.04] hover:bg-white/[0.08] text-[#E0EBE2] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
               title="Log In to Upwork Project Center Portal"
             >
               Log In
@@ -140,7 +140,7 @@ export default function Navbar() {
               href={GOOGLE_ENQUIRY_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-10 px-5 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#3E7D54]"
+              className="h-10 sm:h-10.5 px-5 xl:px-6 rounded-xl bg-[#285A3B] hover:bg-[#326E49] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#3E7D54]"
               title="Get Started with Upwork Project Center"
             >
               Get Started
