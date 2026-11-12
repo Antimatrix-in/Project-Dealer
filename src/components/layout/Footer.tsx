@@ -68,7 +68,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-[#101D38] border-t border-[#1A2C50] pt-16 pb-12 overflow-hidden text-[#DCE2EA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         {/* Top Trust Banner */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-12 mb-12 border-b border-[#263750] text-xs">
           <div className="flex items-center gap-3 p-3.5 rounded-xl bg-[#182848] border border-[#263750] shadow-xs">

@@ -62,7 +62,7 @@ export default function DomainProjectsClient({
     <div className="pt-32 sm:pt-36 pb-20 bg-[#F4F6FA] min-h-screen text-[#263750]">
       {/* Top Header Bar */}
       <div className="relative py-14 bg-white border-b border-[#DCE2EA] mb-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 relative z-10">
           {/* Breadcrumb Navigation & Back to Domains */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#5A6B82]">

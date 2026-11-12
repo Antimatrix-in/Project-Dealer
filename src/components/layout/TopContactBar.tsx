@@ -12,8 +12,8 @@ import {
 
 export default function TopContactBar() {
   return (
-    <div className="bg-[#0C162A] text-[#DCE2EA] text-[11px] py-1.5 px-4 sm:px-6 lg:px-8 border-b border-[#1A2C50] transition-colors relative z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+    <div className="bg-[#0C162A] text-[#DCE2EA] text-[11px] py-1.5 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 border-b border-[#1A2C50] transition-colors relative z-50">
+      <div className="w-full flex items-center justify-between gap-3">
         {/* Left Side: Phone, Email, Location in one properly aligned row */}
         <div className="flex items-center gap-3 sm:gap-4 text-[#DCE2EA]/90 text-[11px] overflow-hidden whitespace-nowrap">
           <a

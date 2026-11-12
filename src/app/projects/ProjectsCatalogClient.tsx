@@ -103,7 +103,7 @@ export default function ProjectsCatalogClient({
     <div className="pt-32 sm:pt-36 pb-20 bg-[#F4F6FA] min-h-screen text-[#263750]">
       {/* Hero Header */}
       <div className="relative py-16 bg-white border-b border-[#DCE2EA] mb-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 relative z-10 text-center">
           <SectionHeader
             badge="UPWORKS Technical Repository"
             title="Browse Projects by"

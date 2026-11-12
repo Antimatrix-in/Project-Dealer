@@ -49,7 +49,7 @@ export default function ProjectDetailContent({ project }: ProjectDetailContentPr
 
   return (
     <div className="pt-32 sm:pt-36 pb-20 bg-[#F4F6FA] min-h-screen text-[#263750]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 relative z-10 space-y-8">
         
         {/* Navigation Breadcrumbs & Back Button */}
         <div className="flex flex-wrap items-center justify-between gap-4">

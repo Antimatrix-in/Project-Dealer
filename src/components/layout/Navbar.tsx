@@ -76,11 +76,11 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-2.5 border-b border-[#DCE2EA]"
-          : "bg-white/95 backdrop-blur-md py-3.5 border-b border-[#DCE2EA]"
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3.5 border-b border-[#DCE2EA]"
+          : "bg-white/95 backdrop-blur-md py-4.5 sm:py-5 border-b border-[#DCE2EA]"
       }`}
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
           {/* LEFT: Official UPWORKS Brand Logo */}
           <Link
@@ -91,16 +91,16 @@ export default function Navbar() {
             <Image
               src="/images/upworks-logo.png"
               alt="UPWORKS – Project Development Services Official Logo"
-              width={240}
-              height={50}
-              className="h-10 sm:h-11 md:h-11.5 lg:h-12 w-auto object-contain"
+              width={260}
+              height={55}
+              className="h-10 sm:h-11 md:h-12 lg:h-13 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* CENTER: Navigation Menu (Single horizontal row of 6 items on desktop) */}
           <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2.5 2xl:gap-3"
+            className="hidden lg:flex items-center gap-1.5 xl:gap-3 2xl:gap-4"
             aria-label="Main Navigation"
           >
             {navItems.map((item) => {
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`px-3.5 xl:px-4 2xl:px-4.5 py-2 rounded-xl text-[13.5px] xl:text-[14.5px] 2xl:text-[15px] font-medium transition-all duration-200 ${
+                  className={`px-3.5 xl:px-4 2xl:px-5 py-2.5 rounded-xl text-[14px] xl:text-[14.5px] 2xl:text-[15.5px] font-medium transition-all duration-200 ${
                     isActive
                       ? "text-[#F58216] font-semibold bg-[#FFF5EB] border border-[#F58216]/25 shadow-2xs"
                       : "text-[#101D38] hover:text-[#F58216] hover:bg-[#F4F6FA]"
@@ -122,11 +122,11 @@ export default function Navbar() {
           </nav>
 
           {/* RIGHT: Action Buttons [ Log In ] [ Get Started ] */}
-          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             {/* Log In: clean subtle light / outlined button */}
             <Link
               href="/admin/login"
-              className="h-10 px-4.5 rounded-xl border border-[#101D38] hover:bg-[#101D38] text-[#101D38] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
+              className="h-11 px-5 rounded-xl border border-[#101D38] hover:bg-[#101D38] text-[#101D38] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
               title="Log In to UPWORKS Portal"
             >
               Log In
@@ -137,7 +137,7 @@ export default function Navbar() {
               href={GOOGLE_ENQUIRY_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-10 px-5 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#F58216]"
+              className="h-11 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#F58216]"
               title="Get Started with UPWORKS"
             >
               Get Started
