@@ -28,25 +28,6 @@ import {
   INSTAGRAM_PROFILE_URL
 } from "@/lib/whatsapp";
 
-const FOOTER_DOMAINS = [
-  { name: "Python Projects", code: "AMPY" },
-  { name: "Java Projects", code: "AMJV" },
-  { name: "Cyber Security", code: "AMCY" },
-  { name: "Django – Python", code: "AMDJ" },
-  { name: "Data Science – Python", code: "AMDS" },
-  { name: "Image Processing – MATLAB", code: "AMIM" },
-  { name: "Deep Learning", code: "AMDL" },
-  { name: "Artificial Intelligence", code: "AMAI" },
-  { name: "Web Application – PHP", code: "AMPH" },
-  { name: "Android – Java", code: "AMAD" },
-  { name: "Big Data – Python/Java", code: "AMBD" },
-  { name: "Image Processing – Python", code: "AMIP" },
-  { name: "Cloud Computing – Python/Java", code: "AMCC" },
-  { name: "Data Mining – Python/Java", code: "AMDM" },
-  { name: "Blockchain – Python/Java/DotNet", code: "AMBC" },
-  { name: "Machine Learning – Python", code: "AMML" },
-];
-
 export default function Footer() {
   const pathname = usePathname();
   const whatsAppUrl = getWhatsAppUrl();
@@ -101,10 +82,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#263750]">
-          {/* Brand Column (lg:col-span-4) */}
-          <div className="lg:col-span-4 space-y-4">
+        {/* Main Footer Grid - 3 Balanced Columns (5 + 3 + 4) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 xl:gap-14 pb-12 border-b border-[#263750]">
+          {/* Brand Column (lg:col-span-5) */}
+          <div className="lg:col-span-5 space-y-4">
             <Link href="/" className="inline-flex items-center group" title="UPWORKS – Project Development Services">
               <div className="px-3.5 py-2 rounded-xl bg-white border border-[#DCE2EA] shadow-xs flex items-center justify-center group-hover:border-[#F58216] transition-colors">
                 <Image
@@ -117,7 +98,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm text-[#DCE2EA]/85 leading-relaxed max-w-sm">
+            <p className="text-sm text-[#DCE2EA]/85 leading-relaxed max-w-md">
               <strong className="text-white">Transform Your Ideas Into Real-World Projects.</strong>{" "}
               UPWORKS is India&apos;s premier academic project development and research guidance center empowering engineering and computer science students with industry-grade source code, comprehensive project documentation, and 1-on-1 viva defense mentoring.
             </p>
@@ -203,8 +184,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Column (lg:col-span-2) */}
-          <div className="lg:col-span-2">
+          {/* Quick Links Column (lg:col-span-3 lg:pl-8) */}
+          <div className="lg:col-span-3 lg:pl-8">
             <h4 className="text-white text-sm font-bold tracking-wider uppercase mb-4 font-mono">
               Quick Links
             </h4>
@@ -236,40 +217,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Categories Column (16 Project Domains - lg:col-span-3) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-white text-sm font-bold tracking-wider uppercase mb-4 font-mono">
-              16 Project Domains
-            </h4>
-            <ul className="space-y-1.5 text-xs">
-              {FOOTER_DOMAINS.map((domain) => (
-                <li key={domain.code}>
-                  <Link
-                    href={`/projects/${domain.code}`}
-                    className="text-[#DCE2EA]/80 hover:text-[#F58216] transition-colors flex items-center gap-1.5 font-medium group"
-                  >
-                    <ArrowRight className="w-3 h-3 text-[#F58216] shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                    <span>{domain.name}</span>
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
-                <Link
-                  href="/projects"
-                  className="text-[#F58216] hover:underline font-bold block"
-                >
-                  View All Projects &rarr;
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Information Column (lg:col-span-3) */}
-          <div className="lg:col-span-3">
+          {/* Contact Information Column (lg:col-span-4 lg:pl-8) */}
+          <div className="lg:col-span-4 lg:pl-8">
             <h4 className="text-white text-sm font-bold tracking-wider uppercase mb-4 font-mono">
               Contact Information
             </h4>
-            <ul className="space-y-3 text-xs">
+            <ul className="space-y-3.5 text-xs">
               <li className="flex items-center gap-2.5 text-[#DCE2EA]">
                 <MapPin className="w-4 h-4 text-[#F58216] shrink-0" />
                 <span>Chennai, Tamil Nadu</span>
@@ -297,7 +250,7 @@ export default function Footer() {
                   WhatsApp: {WHATSAPP_DISPLAY}
                 </a>
               </li>
-              <li className="text-[11px] text-[#DCE2EA]/70 pt-1 border-t border-[#263750]">
+              <li className="text-[11px] text-[#DCE2EA]/70 pt-2 border-t border-[#263750] leading-relaxed">
                 Mon - Sat: 9:00 AM - 9:00 PM IST<br />
                 Sunday: Emergency Review Support
               </li>

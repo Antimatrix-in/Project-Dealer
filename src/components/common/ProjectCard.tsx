@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Project } from "@/types";
-import { ArrowRight, CheckCircle, ClipboardList } from "lucide-react";
+import { ArrowRight, ClipboardList } from "lucide-react";
 import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 
 interface ProjectCardProps {
@@ -53,68 +53,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           />
         </Link>
 
-        {/* Top bar: Category badge & Year */}
-        <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#FFF5EB] text-[#F58216] border border-[#F58216]/20 font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#F58216]" />
-            {project.category}
-          </span>
-          <span className="text-[11px] font-mono font-medium text-[#5A6B82] bg-[#F4F6FA] px-2 py-0.5 rounded border border-[#DCE2EA]">
-            {project.year}
-          </span>
-        </div>
-
-        {/* Project Title */}
-        <h3 className="text-base sm:text-lg font-bold text-[#101D38] group-hover:text-[#F58216] transition-colors line-clamp-2 mb-2 leading-snug">
+        {/* Domain Title */}
+        <h3 className="text-lg sm:text-xl font-bold text-[#101D38] group-hover:text-[#F58216] transition-colors line-clamp-1 mb-4 leading-snug">
           <Link href={`/projects/${projectSlug}`}>
             {project.title}
           </Link>
         </h3>
-
-        {/* Description */}
-        <p className="text-xs text-[#263750] line-clamp-2 mb-3.5 leading-relaxed font-normal">
-          {project.tagline || project.description}
-        </p>
-
-        {/* Technology Stack */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {project.techStack.slice(0, 4).map((tech, idx) => (
-            <span
-              key={idx}
-              className="text-[10px] font-medium px-2 py-0.5 rounded bg-[#F4F6FA] text-[#263750] border border-[#DCE2EA] font-mono"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.techStack.length > 4 && (
-            <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-[#F4F6FA] text-[#263750] border border-[#DCE2EA]">
-              +{project.techStack.length - 4}
-            </span>
-          )}
-        </div>
-
-        {/* Key Deliverables Check */}
-        <div className="grid grid-cols-2 gap-1.5 p-2.5 rounded-xl bg-[#F4F6FA] border border-[#DCE2EA] mb-4 text-[11px] text-[#263750]">
-          <div className="flex items-center gap-1.5 truncate">
-            <CheckCircle className="w-3.5 h-3.5 text-[#F58216] shrink-0" />
-            <span className="truncate">Source Code</span>
-          </div>
-          <div className="flex items-center gap-1.5 truncate">
-            <CheckCircle className="w-3.5 h-3.5 text-[#F58216] shrink-0" />
-            <span className="truncate">Base Paper</span>
-          </div>
-          <div className="flex items-center gap-1.5 truncate">
-            <CheckCircle className="w-3.5 h-3.5 text-[#F58216] shrink-0" />
-            <span className="truncate">PPT &amp; Report</span>
-          </div>
-          <div className="flex items-center gap-1.5 truncate">
-            <CheckCircle className="w-3.5 h-3.5 text-[#F58216] shrink-0" />
-            <span className="truncate">Viva Defense Kit</span>
-          </div>
-        </div>
       </div>
 
-      {/* Buttons: [ Explore Projects ] [ Enquire Now ] */}
+      {/* Buttons: [ Explore Projects ] [ Enquire ] */}
       <div className="pt-3 border-t border-[#DCE2EA] flex items-center gap-2">
         <Link
           href={`/projects/${projectSlug}`}
