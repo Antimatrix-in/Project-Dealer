@@ -2158,7 +2158,7 @@ export default function AdminDashboardClient({
                         Session Identifier
                       </span>
                       <p className="font-mono text-xs text-[#202820]">
-                        antimatrix_admin_token (HTTP-Only, SameSite=Lax)
+                        upwork_admin_session (HTTP-Only, SameSite=Lax)
                       </p>
                     </div>
                   </div>

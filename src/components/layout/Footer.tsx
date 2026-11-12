@@ -307,7 +307,7 @@ export default function Footer() {
 
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DCE8D9]/80">
-          <p>© {new Date().getFullYear()} AntiMatrix Technologies. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Upwork Project Center. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             {quickLinks.map((link) =>
               link.isExternal ? (

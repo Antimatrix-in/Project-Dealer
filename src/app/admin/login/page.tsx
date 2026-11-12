@@ -137,7 +137,7 @@ export default function AdminLoginPage() {
                 id="admin-username"
                 name="username"
                 autoComplete="username"
-                placeholder="antimatrix2026"
+                placeholder="Enter administrator username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5F1E7] border border-[#DDDCCF] text-sm text-[#202820] placeholder-[#667064]/70 focus:outline-none focus:border-[#315C3D] focus:ring-1 focus:ring-[#315C3D] transition-all"

@@ -42,7 +42,7 @@ export async function submitProjectInquiry(inquiry: ProjectInquiry): Promise<{ s
     }
 
     // Local fallback: simulate successful inquiry save
-    console.log("AntiMatrix Inquiry Received:", inquiry);
+    console.log("Upwork Project Center Inquiry Received:", inquiry);
     return {
       success: true,
       message: "Consultation inquiry received! Our project coordinator will contact you on WhatsApp / Phone within 2 hours.",
