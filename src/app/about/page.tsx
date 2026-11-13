@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import SectionHeader from "@/components/common/SectionHeader";
-import { COMPANY_STATS } from "@/data/reviews";
 import {
   Sparkles,
   Target,
@@ -140,33 +139,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Statistics Counters Section */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#DCE2EA] shadow-xs">
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#F58216]">
-              Verified Track Record
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#101D38] mt-1">
-              Impact by the Numbers
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {COMPANY_STATS.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-[#F4F6FA] border border-[#DCE2EA] text-center space-y-2 shadow-xs"
-              >
-                <div className="text-3xl sm:text-4xl font-black text-[#101D38] font-mono">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-bold text-[#F58216]">{stat.label}</div>
-                <p className="text-[11px] text-[#5A6B82]">{stat.change}</p>
-              </div>
-            ))}
           </div>
         </div>
 
