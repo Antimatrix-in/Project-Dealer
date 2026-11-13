@@ -2,6 +2,8 @@
 
 Official repository for **UPWORKS – Project Development Services** web platform.
 
+Premier academic project development, complete documentation, and 1-on-1 viva defense mentorship for engineering and computer science students.
+
 ## Brand Identity & Theme
 
 - **Brand Name:** UPWORKS
@@ -21,6 +23,11 @@ Official repository for **UPWORKS – Project Development Services** web platfor
 - **Google Form Integration:** Custom requirement submission flows route directly to the official Google Form (`forms.gle/oKyzxdmdVZLwWWmU6`).
 - **Responsive Architecture:** Clean desktop and mobile responsive layout built with Next.js 16 (Turbopack), React 19, and Tailwind CSS.
 - **Admin Dashboard:** Secure portal for reviewing student applications and inquiry logs.
+
+## Tech Stack
+- **Framework**: Next.js (App Router)
+- **UI & Styling**: Tailwind CSS, Lucide Icons, Framer Motion
+- **Hosting**: Vercel (`https://project-dealer-vm3u.vercel.app/`)
 
 ## Getting Started
 
