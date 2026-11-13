@@ -20,7 +20,6 @@ import {
 import confetti from "canvas-confetti";
 import { PROJECT_CATEGORIES } from "@/data/projects";
 import { getWhatsAppUrl, WHATSAPP_NUMBER, WHATSAPP_DISPLAY, GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
-import CtaBanner from "@/components/home/CtaBanner";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -345,11 +344,6 @@ export default function ContactPage() {
               </form>
             )}
           </div>
-        </div>
-
-        {/* Dedicated WhatsApp & Project Assistance Section */}
-        <div className="pt-10">
-          <CtaBanner />
         </div>
       </div>
     </div>
