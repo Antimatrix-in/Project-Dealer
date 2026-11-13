@@ -191,7 +191,7 @@ export default function ProjectsCatalogClient({
                   Select any domain card to view curated IEEE projects and technical implementation details.
                 </p>
               </div>
-              <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#FFF5EB] text-[#F58216] border border-[#FED7AA]">
+              <span className="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-[#FFF5EB] text-[#F58216] border border-[#FED7AA]">
                 16 Verified Domains
               </span>
             </div>

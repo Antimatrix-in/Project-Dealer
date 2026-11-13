@@ -75,10 +75,6 @@ export default function CategoryGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-xs font-semibold text-[#F58216] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
-            <span className="uppercase tracking-wider text-[11px] font-bold">16 Technical Domains</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101D38] tracking-tight">
             Popular Project <span className="text-[#F58216]">Categories</span>
           </h2>

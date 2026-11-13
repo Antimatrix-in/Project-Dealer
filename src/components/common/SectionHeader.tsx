@@ -23,12 +23,6 @@ export default function SectionHeader({
         align === "center" ? "mx-auto text-center" : "text-left"
       } ${className}`}
     >
-      {badge && (
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-[#FFF5EB] border border-[#F58216]/25 text-[#F58216] mb-4 shadow-xs font-mono">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#F58216] animate-pulse" />
-          {badge}
-        </div>
-      )}
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#101D38] leading-tight">
         {title}{" "}
         {titleGradient && (

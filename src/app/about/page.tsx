@@ -62,11 +62,6 @@ export default function AboutPage() {
         {/* Company Overview Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] font-mono">
-              <Sparkles className="w-3.5 h-3.5 text-[#F58216]" />
-              <span>Founded by Engineers &amp; Industry Mentors</span>
-            </div>
-
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#101D38] tracking-tight leading-tight">
               Transforming Ideas into Real-World Success
             </h2>
@@ -168,10 +163,6 @@ export default function AboutPage() {
         {/* Our Expertise Grid */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] mb-2 font-mono">
-              <Cpu className="w-3.5 h-3.5 text-[#F58216]" />
-              <span>Technical Domain Mastery</span>
-            </div>
             <h3 className="text-3xl font-extrabold text-[#101D38]">Our Core Expertise</h3>
             <p className="text-sm text-[#5A6B82] mt-2">
               Covering the complete spectrum of modern computer science and engineering disciplines.

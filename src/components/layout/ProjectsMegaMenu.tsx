@@ -105,7 +105,7 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] text-[11px] font-semibold font-mono">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#FFF5EB] border border-[#FED7AA] text-[#F58216] text-[11px] font-semibold font-mono">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F58216] animate-pulse" />
             2025-26 Edition
           </span>
@@ -177,7 +177,7 @@ export default function ProjectsMegaMenu({ onClose }: ProjectsMegaMenuProps) {
                   Featured Projects
                 </h3>
               </div>
-              <span className="text-[10px] font-bold text-[#F58216] bg-[#FFF5EB] border border-[#FED7AA] px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold text-[#F58216] bg-[#FFF5EB] border border-[#FED7AA] px-2 py-0.5 rounded-md">
                 High Distinction
               </span>
             </div>

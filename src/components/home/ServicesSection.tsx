@@ -49,7 +49,7 @@ export default function ServicesSection() {
                   <div className="w-12 h-12 rounded-xl bg-[#FFF5EB] border border-[#F58216]/25 flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                     {iconMap[srv.iconName]}
                   </div>
-                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-[#FFF5EB] border border-[#F58216]/25 text-[#F58216]">
+                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-[#FFF5EB] border border-[#F58216]/25 text-[#F58216]">
                     Service 0{idx + 1}
                   </span>
                 </div>

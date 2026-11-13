@@ -93,10 +93,6 @@ export default function WhyChooseUs() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF5EB] border border-[#FED7AA] text-xs font-semibold text-[#F58216] mb-4 shadow-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse" />
-            <span className="uppercase tracking-wider text-[11px] font-bold">The UPWORKS Standard</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#101D38] tracking-tight">
             Why Choose <span className="text-[#F58216]">UPWORKS</span>
           </h2>
@@ -133,7 +129,7 @@ export default function WhyChooseUs() {
 
                   {/* Floating Badge */}
                   <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFFFFF]/95 text-[#F58216] font-mono shadow-xs border border-[#DCE2EA] backdrop-blur-xs">
+                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg bg-[#FFFFFF]/95 text-[#F58216] font-mono shadow-xs border border-[#DCE2EA] backdrop-blur-xs">
                       {item.badge}
                     </span>
                   </div>

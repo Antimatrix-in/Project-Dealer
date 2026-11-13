@@ -36,7 +36,7 @@ export default function CtaBanner() {
             {/* Checklist */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1 pb-3 text-xs sm:text-sm font-semibold text-white">
               {expertAssistance.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 bg-[#182848] px-3.5 py-1.5 rounded-full border border-[#263750] shadow-xs">
+                <div key={idx} className="flex items-center gap-2 bg-[#182848] px-3.5 py-1.5 rounded-xl border border-[#263750] shadow-xs">
                   <CheckCircle className="w-4 h-4 text-[#F58216] shrink-0" />
                   <span>{item}</span>
                 </div>

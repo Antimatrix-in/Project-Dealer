@@ -31,14 +31,6 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center flex flex-col items-center space-y-6 sm:space-y-7"
         >
-          {/* Small Premium Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF5EB] border border-[#F58216]/30 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#F58216] animate-pulse shrink-0" />
-            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-[#F58216] font-mono">
-              UPWORKS • Project Development Services
-            </span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#101D38] tracking-tight leading-[1.12] max-w-4xl mx-auto">
             Transform Your Ideas Into{" "}
@@ -52,14 +44,14 @@ export default function Hero() {
             Expert guidance for AI, Machine Learning, Web Development, Mobile Applications, Python, Java, and Data Science Projects.
           </p>
 
-          {/* Trust Features Checklist (Pill Badges) */}
+          {/* Trust Features Checklist */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl xl:max-w-5xl mx-auto pt-1 pb-2">
             {trustFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#DCE2EA] text-xs font-semibold text-[#101D38] shadow-2xs hover:border-[#F58216] transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#FFFFFF] border border-[#DCE2EA] text-xs font-semibold text-[#101D38] shadow-2xs hover:border-[#F58216] transition-colors"
               >
-                <div className="w-4 h-4 rounded-full bg-[#FFF5EB] flex items-center justify-center text-[#F58216] shrink-0">
+                <div className="w-4 h-4 rounded-md bg-[#FFF5EB] flex items-center justify-center text-[#F58216] shrink-0">
                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                 </div>
                 <span>{feat}</span>
