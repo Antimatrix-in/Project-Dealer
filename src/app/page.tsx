@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "@/components/home/Hero";
-import StatisticsSection from "@/components/home/StatisticsSection";
 import CategoryGrid from "@/components/home/CategoryGrid";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ProcessSection from "@/components/home/ProcessSection";
@@ -22,10 +21,7 @@ export default function HomePage() {
       {/* 1. Hero Section (Left: Headline, Subtitle, Checkmarks, CTAs; Right: Laptop Mockup with Live AI Project Dashboard) */}
       <Hero />
 
-      {/* 2. Statistics Section (500+ Projects, 1200+ Students, 25+ Domains, 99.8% Satisfaction) */}
-      <StatisticsSection />
-
-      {/* 3. Popular Project Categories (10 Cards) */}
+      {/* 2. Popular Project Categories (10 Cards) */}
       <CategoryGrid />
 
       {/* 4. Why Choose UPWORKS (6 Premium Cards) */}
