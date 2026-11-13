@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { GOOGLE_ENQUIRY_FORM_URL } from "@/lib/whatsapp";
 
 interface NavItem {
   label: string;
@@ -116,29 +115,6 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* RIGHT: Action Buttons [ Log In ] [ Get Started ] */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
-            {/* Log In: clean subtle light / outlined button */}
-            <Link
-              href="/admin/login"
-              className="h-11 px-5 rounded-xl border border-[#101D38] hover:bg-[#101D38] text-[#101D38] hover:text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-2xs"
-              title="Log In to UPWORKS Portal"
-            >
-              Log In
-            </Link>
-
-            {/* Get Started: prominent orange button using brand colors */}
-            <a
-              href={GOOGLE_ENQUIRY_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-11 px-6 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center transition-all shadow-xs hover:shadow-md border border-[#F58216]"
-              title="Get Started with UPWORKS"
-            >
-              Get Started
-            </a>
-          </div>
-
           {/* MOBILE: Hamburger Button */}
           <button
             type="button"
@@ -177,28 +153,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-          </div>
-
-          {/* Action buttons inside mobile drawer */}
-          <div className="border-t border-[#DCE2EA] pt-4">
-            <div className="grid grid-cols-2 gap-3">
-              <Link
-                href="/admin/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="h-11 rounded-xl border border-[#101D38] text-[#101D38] hover:bg-[#101D38] hover:text-white text-sm font-semibold inline-flex items-center justify-center transition-colors"
-              >
-                Log In
-              </Link>
-              <a
-                href={GOOGLE_ENQUIRY_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="h-11 rounded-xl bg-[#F58216] hover:bg-[#E0720F] text-white text-sm font-semibold inline-flex items-center justify-center transition-colors shadow-xs border border-[#F58216]"
-              >
-                Get Started
-              </a>
-            </div>
           </div>
         </div>
       )}
