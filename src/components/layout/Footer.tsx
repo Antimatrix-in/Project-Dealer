@@ -259,31 +259,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#DCE2EA]/80">
+        <div className="pt-8 text-center text-xs text-[#DCE2EA]/80">
           <p>© {new Date().getFullYear()} UPWORKS – Project Development Services. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            {quickLinks.map((link) =>
-              link.isExternal ? (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#F58216] transition-colors font-semibold text-white"
-                >
-                  {link.label} ↗
-                </a>
-              ) : (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="hover:text-[#F58216] transition-colors text-[#DCE2EA]/80"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
-          </div>
         </div>
       </div>
     </footer>
