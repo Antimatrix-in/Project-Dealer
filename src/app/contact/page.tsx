@@ -5,8 +5,6 @@ import Link from "next/link";
 import SectionHeader from "@/components/common/SectionHeader";
 import {
   Phone,
-  Mail,
-  MapPin,
   MessageCircle,
   Clock,
   Send,
@@ -106,7 +104,7 @@ export default function ContactPage() {
 
       <div className="w-full max-w-[1780px] 2xl:max-w-[1880px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 space-y-16">
         {/* Contact Information Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs space-y-3 hover:border-[#F58216] transition-colors">
             <div className="w-12 h-12 rounded-xl bg-[#FFF5EB] border border-[#FED7AA] flex items-center justify-center text-[#F58216]">
               <Phone className="w-6 h-6" />
@@ -140,24 +138,6 @@ export default function ContactPage() {
               >
                 <span>Chat on WhatsApp &rarr;</span>
               </button>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-[#FFFFFF] border border-[#DCE2EA] shadow-xs space-y-3 hover:border-[#F58216] transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-[#FFF5EB] border border-[#FED7AA] flex items-center justify-center text-[#F58216]">
-              <Mail className="w-6 h-6" />
-            </div>
-            <h4 className="text-base font-bold text-[#101D38]">Email Desk</h4>
-            <p className="text-xs text-[#5A6B82] leading-relaxed">
-              Send your synopsis drafts, problem statements, and requirements.
-            </p>
-            <div className="pt-1">
-              <a
-                href="mailto:projects@antimatrix.co.in"
-                className="text-xs font-bold text-[#F58216] hover:underline"
-              >
-                projects@antimatrix.co.in
-              </a>
             </div>
           </div>
 

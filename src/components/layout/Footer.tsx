@@ -6,15 +6,12 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Phone,
-  Mail,
   MapPin,
   ArrowRight
 } from "lucide-react";
 import {
   WHATSAPP_NUMBER,
   WHATSAPP_DISPLAY,
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_MAILTO,
   LINKEDIN_PROFILE_URL,
   INSTAGRAM_PROFILE_URL
 } from "@/lib/whatsapp";
@@ -140,15 +137,6 @@ export default function Footer() {
                   className="hover:text-[#F58216] transition-colors font-mono font-semibold text-white"
                 >
                   {WHATSAPP_DISPLAY}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5 text-[#DCE2EA]">
-                <Mail className="w-4 h-4 text-[#F58216] shrink-0" />
-                <a
-                  href={CONTACT_EMAIL_MAILTO}
-                  className="hover:text-[#F58216] transition-colors text-white"
-                >
-                  {CONTACT_EMAIL}
                 </a>
               </li>
             </ul>

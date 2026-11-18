@@ -1,8 +1,8 @@
 export const WHATSAPP_NUMBER = "919159514326";
 export const WHATSAPP_DISPLAY = "+91 91595 14326";
 export const WHATSAPP_BASE_URL = "https://wa.me/919159514326";
-export const CONTACT_EMAIL = "projects@antimatrix.co.in";
-export const CONTACT_EMAIL_MAILTO = "mailto:projects@antimatrix.co.in";
+export const CONTACT_EMAIL = "";
+export const CONTACT_EMAIL_MAILTO = "";
 export const CONTACT_LOCATION = "Chennai, Tamil Nadu";
 export const CONTACT_ADDRESS = "Chennai, Tamil Nadu";
 export const GOOGLE_ENQUIRY_FORM_URL =

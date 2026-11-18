@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import {
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
@@ -23,17 +23,6 @@ export default function TopContactBar() {
           >
             <Phone className="w-3 h-3 text-[#F58216] shrink-0" />
             <span className="font-medium text-white">{WHATSAPP_DISPLAY}</span>
-          </a>
-
-          <span className="text-[#263750] select-none hidden sm:inline">•</span>
-
-          <a
-            href="mailto:projects@antimatrix.co.in"
-            className="hidden sm:flex items-center gap-1.5 hover:text-[#F58216] transition-colors"
-            title="Email: projects@antimatrix.co.in"
-          >
-            <Mail className="w-3 h-3 text-[#F58216] shrink-0" />
-            <span className="font-medium">projects@antimatrix.co.in</span>
           </a>
 
           <span className="text-[#263750] select-none hidden md:inline">•</span>
